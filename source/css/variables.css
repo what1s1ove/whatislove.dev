@@ -1,0 +1,16 @@
+:root {
+  font-size: 62.5%;
+  --font-size--small: 1.4rem;
+  --font-size--default: 1.6rem;
+  --font-size--large: 2.4rem;
+
+  --color--primary: #000000;
+  --color--secondary: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {  
+    --color--primary: #ffffff;
+    --color--secondary: #000000;
+  }
+}
