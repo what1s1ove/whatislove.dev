@@ -14,7 +14,7 @@ body {
   min-height: 100vh;
   margin: 0;
 
-  font-family: "Roboto", "Arial", sans-serif;
+  font-family: "Muli", "Arial", sans-serif;
   font-size: var(--font-size--default);
   line-height: 1.5;
   color: var(--color--primary);

@@ -41,6 +41,14 @@ gulp.task('css', () =>
 
 gulp.task('clean', () => del('build'))
 
+gulp.task('copy', () =>
+  gulp
+    .src(['source/fonts/**/*.woff2'], {
+      base: 'source',
+    })
+    .pipe(gulp.dest('build'))
+)
+
 gulp.task('server', () => {
   server.init({
     server: 'build/',
@@ -61,6 +69,6 @@ gulp.task('refresh', (done) => {
   done()
 })
 
-gulp.task('build', gulp.series('clean', 'css', 'html'))
+gulp.task('build', gulp.series('clean', 'copy', 'css', 'html'))
 
 gulp.task('start', gulp.series('build', 'server'))
