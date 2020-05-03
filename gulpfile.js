@@ -15,6 +15,9 @@ const autoprefixer = require('autoprefixer')
 const mqpacker = require('css-mqpacker')
 const csso = require('gulp-csso')
 
+const rollup = require('gulp-rollup')
+const uglify = require('gulp-uglify-es').default
+
 gulp.task('html', () =>
   gulp
     .src('source/*.html')
@@ -39,6 +42,25 @@ gulp.task('css', () =>
     .pipe(server.stream())
 )
 
+gulp.task('js', () =>
+  gulp
+    .src('./source/js/**/*.js')
+    .pipe(sourcemap.init())
+    .pipe(
+      rollup({
+        input: './source/js/app.js',
+        output: {
+          format: 'iife',
+        },
+      })
+    )
+    .pipe(uglify())
+    .pipe(rename('main.min.js'))
+    .pipe(sourcemap.write('.'))
+    .pipe(gulp.dest('build/js'))
+    .pipe(server.stream())
+)
+
 gulp.task('clean', () => del('build'))
 
 gulp.task('copy', () =>
@@ -58,9 +80,11 @@ gulp.task('server', () => {
     ui: false,
   })
 
+  gulp.watch('source/*.html', gulp.series('html', 'refresh'))
+
   gulp.watch('source/css/**/*.css', gulp.series('css'))
 
-  gulp.watch('source/*.html', gulp.series('html', 'refresh'))
+  gulp.watch('source/js/**/*.js', gulp.series('js'))
 })
 
 gulp.task('refresh', (done) => {
@@ -69,6 +93,6 @@ gulp.task('refresh', (done) => {
   done()
 })
 
-gulp.task('build', gulp.series('clean', 'copy', 'css', 'html'))
+gulp.task('build', gulp.series('clean', 'copy', 'html', 'css', 'js'))
 
 gulp.task('start', gulp.series('build', 'server'))
