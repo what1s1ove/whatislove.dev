@@ -48,7 +48,7 @@ gulp.task('js', () =>
     .pipe(sourcemap.init())
     .pipe(
       rollup({
-        input: './source/js/app.js',
+        input: './source/js/main.js',
         output: {
           format: 'iife',
         },

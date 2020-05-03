@@ -1,15 +1,7 @@
-const ColorThemeTypes = {
-  DARK: `dark`,
-  LIGHT: `light`,
+import { initColorTheme } from './theme-button/theme-button.js'
+
+const init = () => {
+  initColorTheme()
 }
 
-const setColorTheme = (color) => {
-  document.documentElement.setAttribute(`data-theme`, color)
-}
-
-darkModeBtn.addEventListener(`click`, () => {
-  darkModeBtn.checked
-    ? setColorTheme(ColorThemeTypes.DARK)
-    : setColorTheme(ColorThemeTypes.LIGHT)
-})
-
+export default init

@@ -1,4 +1,5 @@
-:root {
+:root,
+html[data-theme="light"] {
   font-size: 62.5%;
   --font-size--small: 1.4rem;
   --font-size--default: 1.6rem;
@@ -9,7 +10,8 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {  
+  :root,
+  html[data-theme="dark"] {  
     --color--primary: #ffffff;
     --color--secondary: #000000;
   }
