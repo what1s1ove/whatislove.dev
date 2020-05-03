@@ -1,0 +1,72 @@
+.settings {
+  position: fixed;
+  bottom: 0;
+
+  display: flex;
+  justify-content: flex-end;
+
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 0 15px;
+
+  list-style: none;
+}
+
+.settings__theme-button {
+  display: flex;
+  align-items: center;
+
+  padding: 5px;
+
+  text-align: center;
+  color: var(--color--primary);
+
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+.settings__theme-button:focus-within {
+  box-shadow: 0 0 0 2px #a6c7ff;
+}
+
+.settings__theme-button input {
+  position: relative;
+
+  display: block;
+
+  width: 40px;
+  height: 20px;
+  margin: 0 5px 0 0;
+
+  border: 1px solid var(--color--primary);
+  border-radius: 20px;
+
+  appearance: none;
+  cursor: pointer;
+}
+
+.settings__theme-button input:before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(3px, -50%);
+
+  content: '';
+  width: 15px;
+  height: 15px;
+
+  background-color: var(--color--primary);
+  border-radius: 50%;
+
+  transition: transform 500ms;
+}
+
+.settings__theme-button input:checked:before {
+  transform: translate(19px, -50%);
+}
+
+.settings__theme-button input:focus {
+  box-shadow: none;
+}

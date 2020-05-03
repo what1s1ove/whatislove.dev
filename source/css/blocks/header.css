@@ -1,0 +1,8 @@
+
+@supports (font-variation-settings: normal) {
+  .font-size--large {
+    font-size: var(--font-size--large);
+    font-variation-settings: 'wdth' 400, 'wght' 500;
+    color: red;
+  }
+}
