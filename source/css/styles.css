@@ -1,5 +1,6 @@
 @import "./variables.css";
 @import "./fonts.css";
 @import "./scaffolding.css";
+@import "./blocks/intro.css";
 @import "./blocks/header.css";
 @import "./blocks/settings.css";

@@ -1,0 +1,22 @@
+.intro__social-list {
+  display: flex;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.intro__social-item:not(:last-child) {
+  margin: 0 15px 0 0;
+}
+
+.intro__social-item a {
+  display: block;
+}
+
+.intro__social-item svg {
+  display: block;
+
+  fill: var(--color--primary);
+}

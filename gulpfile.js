@@ -18,6 +18,8 @@ const csso = require('gulp-csso')
 const rollup = require('gulp-rollup')
 const uglify = require('gulp-uglify-es').default
 
+const svgstore = require('gulp-svgstore')
+
 gulp.task('html', () =>
   gulp
     .src('source/*.html')
@@ -61,6 +63,18 @@ gulp.task('js', () =>
     .pipe(server.stream())
 )
 
+gulp.task('sprite', () =>
+  gulp
+    .src('source/img/*.icon.svg')
+    .pipe(
+      svgstore({
+        inlineSvg: true,
+      })
+    )
+    .pipe(rename('sprite.svg'))
+    .pipe(gulp.dest('build/img'))
+)
+
 gulp.task('clean', () => del('build'))
 
 gulp.task('copy', () =>
@@ -93,6 +107,6 @@ gulp.task('refresh', (done) => {
   done()
 })
 
-gulp.task('build', gulp.series('clean', 'copy', 'html', 'css', 'js'))
+gulp.task('build', gulp.series('clean', 'copy', 'html', 'css', 'js', 'sprite'))
 
 gulp.task('start', gulp.series('build', 'server'))

@@ -9,9 +9,13 @@ html[data-theme="light"] {
   --color--secondary: #ffffff;
 }
 
+html[data-theme="dark"] {
+  --color--primary: #ffffff;
+  --color--secondary: #000000;
+}
+
 @media (prefers-color-scheme: dark) {
-  :root,
-  html[data-theme="dark"] {  
+  :root {  
     --color--primary: #ffffff;
     --color--secondary: #000000;
   }
