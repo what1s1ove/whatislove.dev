@@ -7,18 +7,62 @@
   <link rel="stylesheet" href="css/styles.min.css">
 </head>
 <body>
-  <h1 class="font-size--large">Hello world</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nisi maxime blanditiis officia nesciunt. Distinctio necessitatibus porro doloribus maxime quaerat facilis deleniti eos assumenda, repellendus neque eum nostrum enim ab!</p>
-  <p class="font-size--small">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, rerum?</p>
-  <p>Привет</p>
-  <ul class="settings">
-    <li class="settings__item">
-      <label class="settings__theme-button">
-        <input type="checkbox">
-        Darkmode
-      </label>
-    </li>
-  </ul>
+  <main>
+    <section class="intro">
+      <h1 class="intro__title" aria-label="What is love">
+        <span aria-hidden="true">W</span>
+        <span aria-hidden="true">h</span>
+        <span aria-hidden="true">a</span>
+        <span aria-hidden="true">t</span>
+        <span aria-hidden="true"> </span>
+        <span aria-hidden="true">i</span>
+        <span aria-hidden="true">s</span>
+        <span aria-hidden="true"> </span>
+        <span aria-hidden="true">l</span>
+        <span aria-hidden="true">o</span>
+        <span aria-hidden="true">v</span>
+        <span aria-hidden="true">e</span>
+      </h1>
+      <ul class="intro__social-list">
+        <li class="intro__social-item">
+          <a href="https://github.com/what1s1ove" target="_blank" rel="noreferrer">
+            <svg width="35" height="35" aria-hidden="true">
+              <use xlink:href="img/sprite.svg#social-github.icon"></use>
+            </svg>
+            <span class="visually-hidden">Go to GitHub</span>
+          </a>
+        </li>
+        <li class="intro__social-item">
+          <a href="https://t.me/dugga" target="_blank" rel="noreferrer">
+            <svg width="35" height="35" aria-hidden="true">
+              <use xlink:href="img/sprite.svg#social-telegram.icon"></use>
+            </svg>
+            <span class="visually-hidden">Go to Telegram</span>
+          </a>
+        </li>
+        <li class="intro__social-item">
+          <a href="https://www.linkedin.com/in/what1s1ove" target="_blank" rel="noreferrer">
+            <svg width="35" height="35" aria-hidden="true">
+              <use xlink:href="img/sprite.svg#social-linkedin.icon"></use>
+            </svg>
+            <span class="visually-hidden">Go to Linkedin</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <h1 class="font-size--large">Hello world</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nisi maxime blanditiis officia nesciunt. Distinctio necessitatibus porro doloribus maxime quaerat facilis deleniti eos assumenda, repellendus neque eum nostrum enim ab!</p>
+    <p class="font-size--small">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, rerum?</p>
+    <p>Привет</p>
+    <ul class="settings">
+      <li class="settings__item">
+        <label class="settings__theme-button">
+          <input type="checkbox">
+          <span class="visually-hidden">Toggle color theme</span>
+        </label>
+      </li>
+    </ul>
+  </main>
   <script src="js/main.min.js"></script>
 </body>
 </html>

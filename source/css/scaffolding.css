@@ -9,7 +9,7 @@
 :focus {
   outline: 0;
 
-  box-shadow: 0 0 0 2px #a6c7ff;
+  box-shadow: var(--box-shadow--focus);
 }
 
 body {

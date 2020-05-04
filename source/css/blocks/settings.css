@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
 
-  padding: 5px;
+  padding: 2px;
 
   text-align: center;
   color: var(--color--primary);
@@ -28,7 +28,7 @@
 }
 
 .settings__theme-button:focus-within {
-  box-shadow: 0 0 0 2px #a6c7ff;
+  box-shadow: var(--box-shadow--focus);
 }
 
 .settings__theme-button input {
@@ -36,9 +36,14 @@
 
   display: block;
 
-  width: 40px;
+  width: 45px;
   height: 20px;
-  margin: 0 5px 0 0;
+  margin: 0;
+
+  background-image: url("../img/theme-light.svg");
+  background-repeat: no-repeat;
+  background-position: right 5px top 50%;
+  background-size: 15px;
 
   border: 1px solid var(--color--primary);
   border-radius: 20px;
@@ -47,13 +52,19 @@
   cursor: pointer;
 }
 
+.settings__theme-button input:checked {
+  background-image: url("../img/theme-dark.svg");
+  background-position: left 5px top 50%;
+  background-size: 13px;
+}
+
 .settings__theme-button input:before {
   position: absolute;
   top: 50%;
   left: 0;
   transform: translate(3px, -50%);
 
-  content: '';
+  content: "";
   width: 15px;
   height: 15px;
 
@@ -64,7 +75,7 @@
 }
 
 .settings__theme-button input:checked:before {
-  transform: translate(19px, -50%);
+  transform: translate(25px, -50%);
 }
 
 .settings__theme-button input:focus {
