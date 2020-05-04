@@ -13,6 +13,12 @@
 
 .intro__social-item a {
   display: block;
+
+  transition: opacity 200ms ease-out;
+}
+
+.intro__social-item a:hover {
+  opacity: 0.7;
 }
 
 .intro__social-item svg {
