@@ -8,8 +8,31 @@
 </head>
 <body>
   <main>
-    <section class="intro">
-      <h1 class="intro__title" aria-label="What is love">
+    <header class="header">
+      <div class="header__navigation-wrapper">
+        <nav class="header__navigation navigation">
+          <ul class="navigation__list">
+            <li class="navigation__item">
+              <a href="#intro">Intro</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="header__toggle-button">
+          <span class="visually-hidden">Toggle menu</span>
+          <span class="header__toggle-object"></span>
+        </button>
+      </div>
+      <ul class="header__settings settings">
+        <li class="settings__item">
+          <label class="settings__theme-button">
+            <input type="checkbox">
+            <span class="visually-hidden">Toggle color theme</span>
+          </label>
+        </li>
+      </ul>
+    </header>
+    <section class="intro" id="intro">
+      <!-- <h1 class="intro__title" aria-label="What is love">
         <span aria-hidden="true">W</span>
         <span aria-hidden="true">h</span>
         <span aria-hidden="true">a</span>
@@ -22,7 +45,7 @@
         <span aria-hidden="true">o</span>
         <span aria-hidden="true">v</span>
         <span aria-hidden="true">e</span>
-      </h1>
+      </h1> -->
       <ul class="intro__social-list">
         <li class="intro__social-item">
           <a href="https://github.com/what1s1ove" target="_blank" rel="noreferrer">
@@ -54,14 +77,6 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nisi maxime blanditiis officia nesciunt. Distinctio necessitatibus porro doloribus maxime quaerat facilis deleniti eos assumenda, repellendus neque eum nostrum enim ab!</p>
     <p class="font-size--small">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, rerum?</p>
     <p>Привет</p>
-    <ul class="settings">
-      <li class="settings__item">
-        <label class="settings__theme-button">
-          <input type="checkbox">
-          <span class="visually-hidden">Toggle color theme</span>
-        </label>
-      </li>
-    </ul>
   </main>
   <script src="js/main.min.js"></script>
 </body>

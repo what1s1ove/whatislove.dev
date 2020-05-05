@@ -4,4 +4,5 @@
 @import "./scaffolding.css";
 @import "./blocks/intro.css";
 @import "./blocks/header.css";
+@import "./blocks/navigation.css";
 @import "./blocks/settings.css";
