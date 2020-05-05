@@ -3,8 +3,7 @@
 
   position: fixed;
   right: 15px;
-  /* bottom: 15px; */
-  top: 150px;
+  bottom: 15px;
 
   display: flex;
   flex-direction: column;

@@ -1,5 +1,6 @@
-import { setColorTheme } from './helpers'
-import { ColorThemeTypes } from './common'
+import { setAttribute } from '../../helpers/index'
+import { AttributeTypes } from '../../common/map/index'
+import { ColorThemeTypes } from './common.js'
 
 const initColorTheme = () => {
   const darkModeBtn = document.querySelector(`.settings__button--theme input`)
@@ -10,8 +11,8 @@ const initColorTheme = () => {
 
   darkModeBtn.addEventListener(`change`, () => {
     darkModeBtn.checked
-      ? setColorTheme(ColorThemeTypes.DARK)
-      : setColorTheme(ColorThemeTypes.LIGHT)
+      ? setAttribute(AttributeTypes.THEME, ColorThemeTypes.DARK)
+      : setAttribute(AttributeTypes.THEME, ColorThemeTypes.LIGHT)
   })
 }
 
