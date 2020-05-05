@@ -3,7 +3,7 @@
 *::after {
   box-sizing: border-box;
 
-  transition: color, background-color 500ms;
+  transition: color, background-color 0.5s;
 }
 
 :focus {
@@ -60,11 +60,24 @@ select {
   clip-path: inset(100%);
 }
 
+html[data-animate="notallow"] *,
+html[data-animate="notallow"] *::after,
+html[data-animate="notallow"] *::before {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  transition: unset !important;
+
+  scroll-behavior: auto !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    transition: unset !important;
+  
     scroll-behavior: auto !important;
   }
 }

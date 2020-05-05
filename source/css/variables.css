@@ -6,19 +6,25 @@ html[data-theme="light"] {
   --font-size--large: 2.4rem;
 
   --color--primary: #000000;
+  --color--primary--opacity: rgba(0, 0, 0, 0.85); 
   --color--secondary: #ffffff;
+  --color--secondary--opacity: rgba(255, 255, 255, 0.85);
 
   --box-shadow--focus: 0 0 0 2px #5793f9;
 }
 
 html[data-theme="dark"] {
   --color--primary: #ffffff;
+  --color--primary--opacity: rgba(255, 255, 255, 0.85); 
   --color--secondary: #000000;
+  --color--secondary--opacity: rgba(0, 0, 0, 0.85);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {  
     --color--primary: #ffffff;
+    --color--primary--opacity: rgba(255, 255, 255, 0.85); 
     --color--secondary: #000000;
+    --color--secondary--opacity: rgba(0, 0, 0, 0.85);
   }
 }

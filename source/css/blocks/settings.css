@@ -1,19 +1,30 @@
 .settings {
+  z-index: 10;
+
   position: fixed;
-  bottom: 0;
+  right: 15px;
+  bottom: 15px;
 
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
 
-  width: 100%;
-  max-width: 1220px;
-  margin: 0 auto;
-  padding: 0 0 15px;
+  margin: 0;
+  padding: 0;
 
   list-style: none;
 }
 
-.settings__theme-button {
+.header--active .settings {
+  display: none;
+}
+
+.settings__item:not(:last-child) {
+  margin: 0 0 7px;
+}
+
+.settings__button {
+  position: relative;
+
   display: flex;
   align-items: center;
 
@@ -27,11 +38,11 @@
   cursor: pointer;
 }
 
-.settings__theme-button:focus-within {
+.settings__button:focus-within {
   box-shadow: var(--box-shadow--focus);
 }
 
-.settings__theme-button input {
+.settings__button-input {
   position: relative;
 
   display: block;
@@ -40,11 +51,6 @@
   height: 20px;
   margin: 0;
 
-  background-image: url("../img/theme-light.svg");
-  background-repeat: no-repeat;
-  background-position: right 5px top 50%;
-  background-size: 15px;
-
   border: 1px solid var(--color--primary);
   border-radius: 20px;
 
@@ -52,13 +58,20 @@
   cursor: pointer;
 }
 
-.settings__theme-button input:checked {
+.settings__button--theme .settings__button-input {
+  background-image: url("../img/theme-light.svg");
+  background-repeat: no-repeat;
+  background-position: right 5px top 50%;
+  background-size: 15px;
+}
+
+.settings__button--theme .settings__button-input:checked {
   background-image: url("../img/theme-dark.svg");
   background-position: left 5px top 50%;
   background-size: 13px;
 }
 
-.settings__theme-button input:before {
+.settings__button-input:before {
   position: absolute;
   top: 50%;
   left: 0;
@@ -74,10 +87,36 @@
   transition: transform 500ms;
 }
 
-.settings__theme-button input:checked:before {
+.settings__button-input:checked:before {
   transform: translate(25px, -50%);
 }
 
-.settings__theme-button input:focus {
+.settings__button-input:focus {
   box-shadow: none;
+}
+
+.settings__icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  fill: var(--color--primary)
+}
+
+.settings__icon--checked {
+  left: 7px;
+
+  display: none;
+}
+
+.settings__button-input:checked ~ .settings__icon--checked {
+  display: block;
+}
+
+.settings__icon--unchecked {
+  right: 7px;
+}
+
+.settings__button-input:checked ~ .settings__icon--unchecked {
+  display: none;
 }
