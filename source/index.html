@@ -26,9 +26,21 @@
       </div>
       <ul class="header__settings settings">
         <li class="settings__item">
-          <label class="settings__theme-button">
-            <input type="checkbox">
+          <label class="settings__button settings__button--theme">
+            <input class="settings__button-input" type="checkbox">
             <span class="visually-hidden">Toggle color theme</span>
+          </label>
+        </li>
+        <li>
+          <label class="settings__button settings__button--animate">
+            <input class="settings__button-input" type="checkbox">
+            <span class="visually-hidden">Toggle animation resolution</span>
+            <svg class="settings__icon settings__icon--checked" width="15" height="15" aria-hidden="true">
+              <use xlink:href="img/sprite.svg#animation-allow.icon"></use>
+            </svg>
+            <svg class="settings__icon settings__icon--unchecked" width="15" height="15" aria-hidden="true">
+              <use xlink:href="img/sprite.svg#animation-notallow.icon"></use>
+            </svg>
           </label>
         </li>
       </ul>
