@@ -2,7 +2,8 @@
 @import "./fonts.css";
 @import "./animations.css";
 @import "./scaffolding.css";
-@import "./blocks/intro.css";
 @import "./blocks/header.css";
 @import "./blocks/navigation.css";
 @import "./blocks/settings.css";
+@import "./blocks/intro.css";
+@import "./blocks/timeline.css"

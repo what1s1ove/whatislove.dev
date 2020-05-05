@@ -1,0 +1,37 @@
+.timeline {
+  padding: 0 30px;
+}
+
+.timeline__list {
+  position: relative;
+
+  margin: 0;
+  padding: 0 0 20px;
+
+  list-style: none;
+}
+
+.timeline__list::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  content: "";
+  height: 99%;
+  width: 2px;
+
+  background-color: var(--color--primary);
+}
+
+.timeline__list::after {
+  position: absolute;
+  bottom: -10px;
+  left: -6px;
+
+  content: "";
+
+  border: 7px solid transparent;
+  border-top: 14px solid var(--color--primary);
+
+  transition-duration: 0.5s;
+}
