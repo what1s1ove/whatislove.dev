@@ -1,16 +1,25 @@
-:root,
-html[data-theme="light"] {
+:root {
   font-size: 62.5%;
   --font-size--small: 1.4rem;
   --font-size--default: 1.6rem;
   --font-size--large: 2.4rem;
 
+  --box-shadow--focus: 0 0 0 2px #5793f9;
+
+  --width--tablet: 640px;
+  --width--desktop: 960px;
+
+  --z-index--level-one: 100;
+  --z-index--level-two: 200;
+  --z-index--level-three: 300;
+}
+
+:root,
+html[data-theme="light"] {
   --color--primary: #000000;
   --color--primary--opacity: rgba(0, 0, 0, 0.85); 
   --color--secondary: #ffffff;
   --color--secondary--opacity: rgba(255, 255, 255, 0.85);
-
-  --box-shadow--focus: 0 0 0 2px #5793f9;
 }
 
 html[data-theme="dark"] {
