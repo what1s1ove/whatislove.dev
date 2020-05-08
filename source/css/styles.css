@@ -6,4 +6,5 @@
 @import "./blocks/navigation.css";
 @import "./blocks/settings.css";
 @import "./blocks/intro.css";
-@import "./blocks/timeline.css"
+@import "./blocks/timeline.css";
+@import "./blocks/exp-filter.css";

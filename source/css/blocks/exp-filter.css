@@ -1,0 +1,9 @@
+.exp-filter {
+  z-index: var(--z-index--level-two);
+  position: sticky;
+  top: -1px;
+
+  width: 100%;
+
+  background-color: var(--color--secondary);
+}

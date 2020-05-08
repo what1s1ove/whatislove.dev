@@ -25,6 +25,8 @@
 }
 
 .header__navigation-wrapper {
+  z-index: var(--z-index--level-three);
+
   position: fixed;
   top: 15px;
   right: 15px;

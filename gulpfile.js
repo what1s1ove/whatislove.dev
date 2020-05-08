@@ -38,7 +38,9 @@ gulp.task('css', () =>
     .src('source/css/styles.css')
     .pipe(plumber())
     .pipe(sourcemap.init())
-    .pipe(postcss([postcssimport(), autoprefixer(), mqpacker()]))
+    .pipe(
+      postcss([postcssimport(), autoprefixer(), mqpacker()])
+    )
     .pipe(csso())
     .pipe(rename('styles.min.css'))
     .pipe(sourcemap.write('.'))
