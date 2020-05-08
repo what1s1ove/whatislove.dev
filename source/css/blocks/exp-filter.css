@@ -6,27 +6,64 @@
   width: 100%;
 
   background-color: var(--color--primary);
+
+  box-shadow: 0 1px 10px 0 var(--color--primary--opacity);
 }
 
 .exp-filter__wrapper {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
-  padding: 10px 60px 10px 23px;
+  padding: 8px 60px 8px 23px;
 }
 
 .exp-filter__skills-type {
   margin: 0 20px 0 0;
-}
+  padding: 0;
 
-.exp-filter__skills-type .exp-filter__label:not(:last-child) {
-  margin: 0 0 10px;
+  border: 0;
 }
 
 .exp-filter__skill-types {
   margin: 0;
+  padding: 0;
+
+  border: 0;
 }
 
-.exp-filter__skill-types .exp-filter__label:not(:last-child) {
-  margin: 0 0 10px;
+.exp-filter__list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.exp-filter__skill-types .exp-filter__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+@media (min-width: 550px) {
+  .exp-filter__skills-type .exp-filter__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
+
+@media (min-width: 640px) {
+  .exp-filter__wrapper {
+    padding: 10px 60px 10px 8px;
+  }
+}
+
+@media (min-width: 940px) {
+  .exp-filter__wrapper {
+    max-width: 940px;
+
+    margin: 0 auto;
+  }
 }

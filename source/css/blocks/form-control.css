@@ -6,6 +6,7 @@
 
   font-size: var(--font-size--small);
   color: var(--color--secondary);
+  white-space: nowrap;
 
   border-radius: 10px;
 
@@ -22,6 +23,8 @@
   margin: 0;
 
   appearance: none;
+
+  cursor: pointer;
 }
 
 .form-controll__input--checkbox {
