@@ -5,5 +5,28 @@
 
   width: 100%;
 
-  background-color: var(--color--secondary);
+  background-color: var(--color--primary);
+}
+
+.exp-filter__wrapper {
+  display: flex;
+  align-items: center;
+
+  padding: 10px 60px 10px 23px;
+}
+
+.exp-filter__skills-type {
+  margin: 0 20px 0 0;
+}
+
+.exp-filter__skills-type .exp-filter__label:not(:last-child) {
+  margin: 0 0 10px;
+}
+
+.exp-filter__skill-types {
+  margin: 0;
+}
+
+.exp-filter__skill-types .exp-filter__label:not(:last-child) {
+  margin: 0 0 10px;
 }

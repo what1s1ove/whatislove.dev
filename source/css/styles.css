@@ -2,6 +2,7 @@
 @import "./fonts.css";
 @import "./animations.css";
 @import "./scaffolding.css";
+@import "./blocks/form-control.css";
 @import "./blocks/header.css";
 @import "./blocks/navigation.css";
 @import "./blocks/settings.css";

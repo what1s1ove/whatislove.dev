@@ -1,16 +1,20 @@
-.timeline__wrapper {
-  height: 100vh;
-
-  overflow-y: auto;
+.timeline__title {
+  margin: 0;
 }
 
+
 .timeline__list-wrapper {
+  height: 100vh;
+
   padding: 0 30px;
+
+  overflow-y: auto;
 }
 
 .timeline__list {
   position: relative;
 
+  
   margin: 0;
   padding: 20px 0;
 
@@ -192,7 +196,7 @@
 }
 
 @media (min-width: 940px) {
-  .timeline {
+  .timeline__list-wrapper {
     max-width: 940px;
 
     margin: 0 auto;
