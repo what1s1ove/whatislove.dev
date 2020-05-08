@@ -39,7 +39,7 @@
   border: 7px solid transparent;
   border-top: 14px solid var(--color--primary);
 
-  transition-duration: 0.5s;
+  transition-duration: var(--transition-duration--theme);
 }
 
 .timeline__item {
@@ -155,6 +155,8 @@
 
     border: 15px solid transparent;
     border-left-color: var(--color--primary);
+
+    transition-duration: var(--transition-duration--theme);
   }
 
   .timeline__item:nth-child(even) .timeline__item-wrapper::before {

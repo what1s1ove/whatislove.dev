@@ -1,15 +1,33 @@
+:focus {
+  outline: 0;
+
+  box-shadow: var(--box-shadow--focus);
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color--primary);
+
+  border-radius: 4px;
+
+  transition-duration: var(--transition-duration--theme);
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color--secondary);
+
+  transition-duration: var(--transition-duration--theme);
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 
-  transition: border-color, background-color 0.5s;
-}
-
-:focus {
-  outline: 0;
-
-  box-shadow: var(--box-shadow--focus);
+  transition: border-color, background-color var(--transition-duration--theme);
 }
 
 body {

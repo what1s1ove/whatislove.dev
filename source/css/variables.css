@@ -12,6 +12,8 @@
   --z-index--level-one: 100;
   --z-index--level-two: 200;
   --z-index--level-three: 300;
+
+  --transition-duration--theme: 0.5s;
 }
 
 :root,
