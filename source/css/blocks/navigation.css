@@ -1,5 +1,8 @@
 .navigation {
-  display: none;
+  min-width: 320px;
+
+  margin: 150px 0 0 auto;
+  padding: 0 15px;
 }
 
 .navigation__list {
@@ -7,4 +10,24 @@
   padding: 0;
 
   list-style: none;
+}
+
+.navigation__item:not(:last-child) {
+  margin: 0 0 15px;
+}
+
+.navigation__item a {
+  font-size: var(--font-size--large);
+  text-decoration: none;
+
+  color: var(--color--secondary);
+  text-transform: lowercase;
+
+  transition: letter-spacing 0.15s;
+}
+
+.navigation__item a:hover {
+  text-decoration: underline;
+
+  letter-spacing: 3px;
 }

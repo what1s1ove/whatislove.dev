@@ -1,5 +1,5 @@
 .settings {
-  z-index: var(--z-index--level-two);
+  z-index: var(--z-index--level-four);
 
   position: fixed;
   right: 15px;
@@ -12,10 +12,6 @@
   padding: 0;
 
   list-style: none;
-}
-
-.header--active .settings {
-  display: none;
 }
 
 .settings__item:not(:last-child) {

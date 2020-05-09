@@ -30,6 +30,10 @@
   transition: border-color, background-color var(--transition-duration--theme);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;
   min-width: 320px;
@@ -44,8 +48,6 @@ body {
   font-style: normal;
 
   background-color: var(--color--secondary);
-
-  scroll-behavior: smooth;
 
   text-rendering: optimizeSpeed;
 }
