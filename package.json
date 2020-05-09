@@ -20,9 +20,14 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-svgstore": "^7.0.1",
     "gulp-uglify-es": "^2.0.0",
+    "i": "^0.3.6",
     "imagemin-svgo": "^7.1.0",
+    "npm": "^6.14.5",
     "postcss-import": "^12.0.1",
-    "stylelint": "^13.3.3"
+    "prettier": "^2.0.5",
+    "stylelint": "^13.3.3",
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-prettier": "^1.1.2"
   },
   "scripts": {
     "stylelint": "stylelint \"source/css/**/*.css\" --syntax css",

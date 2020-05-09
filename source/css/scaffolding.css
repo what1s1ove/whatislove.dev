@@ -40,7 +40,7 @@ body {
   margin: 0;
   padding: 0 0 150px;
 
-  font-family: "Muli", "Arial", sans-serif;
+  font-family: 'Muli', 'Arial', sans-serif;
   font-size: var(--font-size--default);
   line-height: 1.5;
   color: var(--color--primary);
@@ -82,9 +82,9 @@ select {
   clip-path: inset(100%);
 }
 
-html[data-animate="notallow"] *,
-html[data-animate="notallow"] *::after,
-html[data-animate="notallow"] *::before {
+html[data-animate='notallow'] *,
+html[data-animate='notallow'] *::after,
+html[data-animate='notallow'] *::before {
   transition: unset !important;
   animation-duration: 0.01ms !important;
   animation-iteration-count: 1 !important;
