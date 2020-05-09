@@ -85,21 +85,21 @@ select {
 html[data-animate="notallow"] *,
 html[data-animate="notallow"] *::after,
 html[data-animate="notallow"] *::before {
+  transition: unset !important;
   animation-duration: 0.01ms !important;
   animation-iteration-count: 1 !important;
   transition-duration: 0.01ms !important;
-  transition: unset !important;
 
   scroll-behavior: auto !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
   * {
+    transition: unset !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    transition: unset !important;
-  
+
     scroll-behavior: auto !important;
   }
 }

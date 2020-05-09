@@ -2,7 +2,6 @@
   margin: 0;
 }
 
-
 .timeline__list-wrapper {
   height: 100vh;
 
@@ -14,7 +13,6 @@
 .timeline__list {
   position: relative;
 
-  
   margin: 0;
   padding: 20px 0;
 
@@ -69,13 +67,13 @@
 
 .timeline__item-desc {
   margin: 0 0 10px;
-  
+
   color: var(--color--secondary);
 }
 
 .timeline__dates {
   margin: 0;
-  
+
   text-align: right;
   color: var(--color--secondary);
 }
@@ -144,7 +142,7 @@
   opacity: 0;
   visibility: hidden;
   transition: transform 0.4s cubic-bezier(0.425, -0.195, 0.005, 1.215), opacity 0.4s linear;
-  transform: translate3D(0, -4em, 0) scale(0);
+  transform: translate3d(0, -4em, 0) scale(0);
 
   fill: var(--color--secondary);
 }
@@ -153,7 +151,7 @@
 .timeline__resume-link:focus .timeline__resume-icon {
   opacity: 1;
   visibility: visible;
-  transform: translate3D(0, 0, 0) scale(1);
+  transform: translate3d(0, 0, 0) scale(1);
 }
 
 .timeline__resume-text {
@@ -175,9 +173,9 @@
 
 .timeline__resume-link:hover .timeline__resume-text,
 .timeline__resume-link:focus .timeline__resume-text {
-    opacity: 0;
-    visibility: hidden;
-    transform: translate3D(0, 4em, 0) scale(0.25);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(0, 4em, 0) scale(0.25);
 }
 
 @media (min-width: 640px) {
@@ -250,7 +248,7 @@
     color: var(--color--primary);
   }
 
-  .timeline__item:nth-child(even) .timeline__dates  {
+  .timeline__item:nth-child(even) .timeline__dates {
     right: unset;
 
     left: -250px;

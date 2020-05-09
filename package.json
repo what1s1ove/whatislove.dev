@@ -26,7 +26,7 @@
   },
   "scripts": {
     "stylelint": "stylelint \"source/css/**/*.css\" --syntax css",
-    "test": "npm run editorconfig && npm run stylelint",
+    "test": "npm run stylelint",
     "build": "gulp build",
     "start": "gulp start"
   }

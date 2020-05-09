@@ -23,22 +23,22 @@
 :root,
 html[data-theme="light"] {
   --color--primary: #000000;
-  --color--primary--opacity: rgba(0, 0, 0, 0.9); 
+  --color--primary--opacity: rgba(0, 0, 0, 0.9);
   --color--secondary: #ffffff;
   --color--secondary--opacity: rgba(255, 255, 255, 0.9);
 }
 
 html[data-theme="dark"] {
   --color--primary: #ffffff;
-  --color--primary--opacity: rgba(255, 255, 255, 0.9); 
+  --color--primary--opacity: rgba(255, 255, 255, 0.9);
   --color--secondary: #000000;
   --color--secondary--opacity: rgba(0, 0, 0, 0.9);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {  
+  :root {
     --color--primary: #ffffff;
-    --color--primary--opacity: rgba(255, 255, 255, 0.9); 
+    --color--primary--opacity: rgba(255, 255, 255, 0.9);
     --color--secondary: #000000;
     --color--secondary--opacity: rgba(0, 0, 0, 1);
   }

@@ -48,7 +48,7 @@
   height: 100%;
   width: 100%;
 
-  background-color: var(--color--primary--opacity)
+  background-color: var(--color--primary--opacity);
 }
 
 .header__toggle-button {
@@ -129,7 +129,7 @@
   display: none;
 }
 
-.header--active  .header__navigation {
+.header--active .header__navigation {
   display: block;
 }
 
