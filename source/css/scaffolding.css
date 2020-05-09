@@ -26,6 +26,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  
+  scroll-behavior: smooth;
 
   transition: border-color, background-color var(--transition-duration--theme);
 }
@@ -44,8 +46,6 @@ body {
   font-style: normal;
 
   background-color: var(--color--secondary);
-
-  scroll-behavior: smooth;
 
   text-rendering: optimizeSpeed;
 }
