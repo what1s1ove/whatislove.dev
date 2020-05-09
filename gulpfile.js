@@ -39,7 +39,13 @@ gulp.task('css', () =>
     .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(
-      postcss([postcssimport(), autoprefixer(), mqpacker()])
+      postcss([
+        postcssimport(),
+        autoprefixer(),
+        mqpacker({
+          sort: (a, b) => a.localeCompare(b),
+        }),
+      ])
     )
     .pipe(csso())
     .pipe(rename('styles.min.css'))
@@ -90,7 +96,7 @@ gulp.task('clean', () => del('build'))
 
 gulp.task('copy', () =>
   gulp
-    .src(['source/fonts/**/*.woff2'], {
+    .src(['source/fonts/**/*.woff2', 'source/files/**.pdf'], {
       base: 'source',
     })
     .pipe(gulp.dest('build'))

@@ -15,7 +15,7 @@
   align-items: center;
   justify-content: space-between;
 
-  padding: 8px 60px 8px 23px;
+  padding: 3px 60px 3px 23px;
 }
 
 .exp-filter__skills-type {
@@ -51,8 +51,11 @@
     flex-wrap: wrap;
     align-items: center;
   }
-}
 
+  .exp-filter__wrapper {
+    padding: 10px 60px 10px 23px;
+  }
+}
 
 @media (min-width: 640px) {
   .exp-filter__wrapper {
