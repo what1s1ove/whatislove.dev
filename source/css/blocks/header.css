@@ -31,6 +31,9 @@
   top: 13px;
   right: 15px;
 
+  display: flex;
+  justify-content: flex-end;
+
   width: 45px;
   height: 45px;
 
@@ -38,6 +41,7 @@
 }
 
 .header--active .header__navigation-wrapper {
+  z-index: var(--z-index--level-five);
   top: 0;
   left: 0;
 
@@ -119,4 +123,16 @@
 
 .header--active .header__toggle-object::after {
   transform: rotate3d(0, 0, 1, -45deg);
+}
+
+.header__navigation {
+  display: none;
+}
+
+.header--active  .header__navigation {
+  display: block;
+}
+
+.header--active .header__settings {
+  display: none;
 }
