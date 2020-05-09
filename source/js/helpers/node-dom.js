@@ -1,4 +1,4 @@
-import { NodeMethods, ClassListActions } from '../common/map/node.js'
+import { NodeMethods, ClassListActions } from '../common/map/node'
 
 const setAttribute = (attr, value) => {
   document.documentElement.setAttribute(`data-${attr}`, value)

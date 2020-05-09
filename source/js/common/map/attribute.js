@@ -1,6 +1,6 @@
 const AttributeTypes = {
-  THEME: 'theme',
-  ANIMATE: 'animate',
+  THEME: `theme`,
+  ANIMATE: `animate`,
 }
 
 export { AttributeTypes }
