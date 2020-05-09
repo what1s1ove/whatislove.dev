@@ -1,10 +1,14 @@
-import { checkNodeHasClass } from '../../helpers/index.js'
+import { checkNodeHasClass, toggleFocusTrap } from '../../helpers/index.js'
+import { NodeMethods } from '../../common/map/index.js'
 import { toggleOverlay } from './helpers'
 import { HEADER_ACTIVE_CLASS } from './common'
 
-const header = document.querySelector('.header')
-const headerOverlay = document.querySelector('.header__navigation-wrapper')
-const toggleBtn = document.querySelector('.header__toggle-button')
+const header = document.querySelector(`.header`)
+const headerOverlay = document.querySelector(`.header__navigation-wrapper`)
+const headerNavLinks = document.querySelectorAll(`.navigation__item a[href]`)
+const toggleBtn = document.querySelector(`.header__toggle-button`)
+
+const focusTrapElemnts = [...headerNavLinks, toggleBtn]
 
 const onHeaderOverlay = () => {
   const isActive = checkNodeHasClass(header, HEADER_ACTIVE_CLASS)
@@ -13,19 +17,19 @@ const onHeaderOverlay = () => {
 }
 
 export const initHeader = () => {
-  toggleBtn.addEventListener('click', (evt) => {
+  toggleBtn.addEventListener(`click`, (evt) => {
     evt.stopPropagation()
 
-    const isActive = checkNodeHasClass(header, HEADER_ACTIVE_CLASS)
+    const hasActiveClass = checkNodeHasClass(header, HEADER_ACTIVE_CLASS)
 
-    if (isActive) {
-      toggleOverlay(header, isActive)
+    toggleOverlay(header, hasActiveClass)
 
-      headerOverlay.removeEventListener('click', onHeaderOverlay)
-    } else {
-      toggleOverlay(header, isActive)
+    headerOverlay[
+      hasActiveClass
+        ? NodeMethods.REMOVE_EVENT_LISTENER
+        : NodeMethods.ADD_EVET_LISTENER
+    ](`click`, onHeaderOverlay)
 
-      headerOverlay.addEventListener('click', onHeaderOverlay)
-    }
+    toggleFocusTrap(focusTrapElemnts, !hasActiveClass)
   })
 }

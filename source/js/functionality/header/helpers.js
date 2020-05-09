@@ -2,13 +2,13 @@ import { HEADER_ACTIVE_CLASS } from './common'
 
 const toggleOverlay = (header, isActive) => {
   if (isActive) {
+    document.body.style.overflowY = ``
+    
     header.classList.remove(HEADER_ACTIVE_CLASS)
-
-    document.body.style.overflowY = ''
   } else {
-    header.classList.add(HEADER_ACTIVE_CLASS)
+    document.body.style.overflowY = `hidden`
 
-    document.body.style.overflowY = 'hidden'
+    header.classList.add(HEADER_ACTIVE_CLASS)
   }
 }
 

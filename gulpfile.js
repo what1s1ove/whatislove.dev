@@ -66,7 +66,7 @@ gulp.task('js', () =>
         },
       })
     )
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(rename('main.min.js'))
     .pipe(sourcemap.write('.'))
     .pipe(gulp.dest('build/js'))
