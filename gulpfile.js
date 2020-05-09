@@ -57,7 +57,6 @@ gulp.task('css', () =>
 gulp.task('js', () =>
   gulp
     .src('./source/js/**/*.js')
-    .pipe(sourcemap.init())
     .pipe(
       rollup({
         input: './source/js/main.js',
@@ -66,7 +65,8 @@ gulp.task('js', () =>
         },
       })
     )
-    // .pipe(uglify())
+    .pipe(sourcemap.init())
+    .pipe(uglify())
     .pipe(rename('main.min.js'))
     .pipe(sourcemap.write('.'))
     .pipe(gulp.dest('build/js'))

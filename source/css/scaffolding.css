@@ -26,10 +26,12 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  
-  scroll-behavior: smooth;
 
   transition: border-color, background-color var(--transition-duration--theme);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

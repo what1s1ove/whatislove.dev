@@ -1,20 +1,64 @@
-import { checkNodeHasClass, toggleFocusTrap } from '../../helpers/index.js'
-import { NodeMethods } from '../../common/map/index.js'
-import { toggleOverlay } from './helpers'
-import { HEADER_ACTIVE_CLASS } from './common'
+import {
+  checkNodeHasClass,
+  getEventListener,
+  getClassAction,
+} from '../../helpers/index.js'
+import { KeyboardKeys } from '../../common/map/index.js'
 
 const header = document.querySelector(`.header`)
 const headerOverlay = document.querySelector(`.header__navigation-wrapper`)
 const headerNavLinks = document.querySelectorAll(`.navigation__item a[href]`)
 const toggleBtn = document.querySelector(`.header__toggle-button`)
 
-const focusTrapElemnts = [...headerNavLinks, toggleBtn]
+const focusTrapElements = [...headerNavLinks, toggleBtn]
+const firstNode = focusTrapElements[0]
+const lastNode = focusTrapElements[focusTrapElements.length - 1]
 
-const onHeaderOverlay = () => {
-  const isActive = checkNodeHasClass(header, HEADER_ACTIVE_CLASS)
+const HEADER_ACTIVE_CLASS = `header--active`
 
-  toggleOverlay(header, isActive)
+const onFirstElementFocus = (evt) => {
+  if (evt.key === KeyboardKeys.TAB && evt.shiftKey) {
+    evt.preventDefault()
+
+    lastNode.focus()
+  }
 }
+
+const onLastElementFocus = (evt) => {
+  if (evt.key === KeyboardKeys.TAB && !evt.shiftKey) {
+    evt.preventDefault()
+
+    console.log(focusTrapElements)
+
+    firstNode.focus()
+  }
+}
+
+const toggleOverlay = (isActive) => {
+  // document.body.style.overflowY = isActive ? 'hidden' : ``
+
+  header.classList[getClassAction(isActive)](HEADER_ACTIVE_CLASS)
+
+  if (isActive) {
+    firstNode.focus()
+  }
+
+  firstNode[getEventListener(isActive)](`keydown`, onFirstElementFocus)
+
+  lastNode[getEventListener(isActive)](`keydown`, onLastElementFocus)
+
+  headerOverlay[getEventListener(isActive)](`click`, onCloseOverlay)
+
+  window[getEventListener(isActive)](`keydown`, onEscapePress)
+}
+
+const onEscapePress = (evt) => {
+  if (evt.key === KeyboardKeys.ESCAPE) {
+    onCloseOverlay()
+  }
+}
+
+const onCloseOverlay = () => toggleOverlay(false)
 
 export const initHeader = () => {
   toggleBtn.addEventListener(`click`, (evt) => {
@@ -22,14 +66,6 @@ export const initHeader = () => {
 
     const hasActiveClass = checkNodeHasClass(header, HEADER_ACTIVE_CLASS)
 
-    toggleOverlay(header, hasActiveClass)
-
-    headerOverlay[
-      hasActiveClass
-        ? NodeMethods.REMOVE_EVENT_LISTENER
-        : NodeMethods.ADD_EVET_LISTENER
-    ](`click`, onHeaderOverlay)
-
-    toggleFocusTrap(focusTrapElemnts, !hasActiveClass)
+    toggleOverlay(!hasActiveClass)
   })
 }
