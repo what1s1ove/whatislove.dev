@@ -1,9 +1,71 @@
 .exp-filter {
-  z-index: var(--z-index--level-two);
+  z-index: var(--z-index--level-three);
   position: sticky;
   top: -1px;
 
-  width: 100%;
+  background-color: var(--color--primary);
 
-  background-color: var(--color--secondary);
+  box-shadow: 0 1px 10px 0 var(--color--primary--opacity);
+}
+
+.exp-filter__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 60px;
+  padding: 5px 23px;
+}
+
+.exp-filter__skills-type {
+  margin: 0 20px 0 0;
+  padding: 0;
+
+  border: 0;
+}
+
+.exp-filter__skill-types {
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+}
+
+.exp-filter__list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.exp-filter__skill-types .exp-filter__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+@media (min-width: 550px) {
+  .exp-filter__skills-type .exp-filter__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .exp-filter__wrapper {
+    padding: 10px 60px 10px 23px;
+  }
+}
+
+@media (min-width: 640px) {
+  .exp-filter__wrapper {
+    padding: 10px 60px 10px 8px;
+  }
+}
+
+@media (min-width: 940px) {
+  .exp-filter__wrapper {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 17px 60px 17px 8px;
+  }
 }

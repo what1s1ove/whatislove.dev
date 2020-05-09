@@ -1,9 +1,9 @@
 .settings {
-  z-index: var(--z-index--level-three);
+  z-index: var(--z-index--level-two);
 
   position: fixed;
   right: 15px;
-  bottom: 15px;
+  bottom: 13px;
 
   display: flex;
   flex-direction: column;
