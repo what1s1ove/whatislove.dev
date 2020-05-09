@@ -9,6 +9,9 @@
     "browser-sync": "^2.26.7",
     "css-mqpacker": "^7.0.0",
     "del": "^5.1.0",
+    "eslint": "^7.0.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
     "gulp": "^4.0.2",
     "gulp-csso": "^4.0.1",
     "gulp-htmlmin": "^5.0.1",
@@ -21,12 +24,17 @@
     "gulp-svgstore": "^7.0.1",
     "gulp-uglify-es": "^2.0.0",
     "imagemin-svgo": "^7.1.0",
+    "npm": "^6.14.5",
     "postcss-import": "^12.0.1",
-    "stylelint": "^13.3.3"
+    "prettier": "^2.0.5",
+    "stylelint": "^13.3.3",
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-prettier": "^1.1.2"
   },
   "scripts": {
+    "eslint": "eslint --ext .js source/js",
     "stylelint": "stylelint \"source/css/**/*.css\" --syntax css",
-    "test": "npm run editorconfig && npm run stylelint",
+    "test": "npm run stylelint && npm run eslint",
     "build": "gulp build",
     "start": "gulp start"
   }

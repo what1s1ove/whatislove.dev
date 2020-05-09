@@ -2,7 +2,6 @@
   margin: 0;
 }
 
-
 .timeline__list-wrapper {
   height: 100vh;
 
@@ -14,7 +13,6 @@
 .timeline__list {
   position: relative;
 
-  
   margin: 0;
   padding: 20px 0;
 
@@ -26,7 +24,7 @@
   top: 0;
   left: 0;
 
-  content: "";
+  content: '';
   height: 99%;
   width: 2px;
 
@@ -38,7 +36,7 @@
   left: -6px;
   bottom: 0;
 
-  content: "";
+  content: '';
 
   border: 7px solid transparent;
   border-top: 14px solid var(--color--primary);
@@ -69,13 +67,13 @@
 
 .timeline__item-desc {
   margin: 0 0 10px;
-  
+
   color: var(--color--secondary);
 }
 
 .timeline__dates {
   margin: 0;
-  
+
   text-align: right;
   color: var(--color--secondary);
 }
@@ -143,8 +141,9 @@
 
   opacity: 0;
   visibility: hidden;
-  transition: transform 0.4s cubic-bezier(0.425, -0.195, 0.005, 1.215), opacity 0.4s linear;
-  transform: translate3D(0, -4em, 0) scale(0);
+  transition: transform 0.4s cubic-bezier(0.425, -0.195, 0.005, 1.215),
+    opacity 0.4s linear;
+  transform: translate3d(0, -4em, 0) scale(0);
 
   fill: var(--color--secondary);
 }
@@ -153,7 +152,7 @@
 .timeline__resume-link:focus .timeline__resume-icon {
   opacity: 1;
   visibility: visible;
-  transform: translate3D(0, 0, 0) scale(1);
+  transform: translate3d(0, 0, 0) scale(1);
 }
 
 .timeline__resume-text {
@@ -167,7 +166,8 @@
   text-align: center;
 
   visibility: visible;
-  transition: transform 0.4s cubic-bezier(0.425, -0.195, 0.005, 1.215), opacity 0.13333s linear;
+  transition: transform 0.4s cubic-bezier(0.425, -0.195, 0.005, 1.215),
+    opacity 0.13333s linear;
   transform: scale(1);
 
   opacity: 1;
@@ -175,9 +175,9 @@
 
 .timeline__resume-link:hover .timeline__resume-text,
 .timeline__resume-link:focus .timeline__resume-text {
-    opacity: 0;
-    visibility: hidden;
-    transform: translate3D(0, 4em, 0) scale(0.25);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(0, 4em, 0) scale(0.25);
 }
 
 @media (min-width: 640px) {
@@ -222,7 +222,7 @@
 
     top: 30px;
     left: 99%;
-    content: "";
+    content: '';
 
     border: 15px solid transparent;
     border-left-color: var(--color--primary);
@@ -250,7 +250,7 @@
     color: var(--color--primary);
   }
 
-  .timeline__item:nth-child(even) .timeline__dates  {
+  .timeline__item:nth-child(even) .timeline__dates {
     right: unset;
 
     left: -250px;

@@ -1,11 +1,11 @@
 import { setAttribute } from '../../helpers/index'
 import { AttributeTypes } from '../../common/map/index'
-import { ColorThemeTypes } from './common.js'
+import { ColorThemeTypes } from './common'
 
 const initColorTheme = () => {
   const darkModeBtn = document.querySelector(`.settings__button--theme input`)
 
-  let isPreferDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+  const isPreferDark = window.matchMedia(`(prefers-color-scheme: dark)`).matches
 
   darkModeBtn.checked = isPreferDark
 

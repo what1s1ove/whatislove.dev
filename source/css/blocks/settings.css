@@ -57,25 +57,25 @@
 }
 
 .settings__button--theme .settings__button-input {
-  background-image: url("../img/theme-light.svg");
+  background-image: url('../img/theme-light.svg');
   background-repeat: no-repeat;
   background-position: right 5px top 50%;
   background-size: 15px;
 }
 
 .settings__button--theme .settings__button-input:checked {
-  background-image: url("../img/theme-dark.svg");
+  background-image: url('../img/theme-dark.svg');
   background-position: left 5px top 50%;
   background-size: 13px;
 }
 
-.settings__button-input:before {
+.settings__button-input::before {
   position: absolute;
   top: 50%;
   left: 0;
   transform: translate(3px, -50%);
 
-  content: "";
+  content: '';
   width: 15px;
   height: 15px;
 
@@ -85,7 +85,7 @@
   transition: transform 500ms;
 }
 
-.settings__button-input:checked:before {
+.settings__button-input:checked::before {
   transform: translate(25px, -50%);
 }
 
@@ -98,7 +98,7 @@
   top: 50%;
   transform: translateY(-50%);
 
-  fill: var(--color--primary)
+  fill: var(--color--primary);
 }
 
 .settings__icon--checked {

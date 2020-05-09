@@ -1,0 +1,23 @@
+env:
+  es6: true
+  browser: true
+
+extends: 'airbnb-base'
+
+rules:
+  semi:
+    - error
+    - never
+  quotes:
+    - error
+    - backtick
+  no-unused-expressions:
+    - error
+    - allowTernary: true
+  object-curly-newline:
+    - error
+    - minProperties: 5
+      multiline: true
+      consistent: true
+  linebreak-style: off
+  import/prefer-default-export: off

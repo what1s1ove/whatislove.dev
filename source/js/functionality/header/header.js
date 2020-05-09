@@ -3,8 +3,8 @@ import {
   getEventListener,
   getClassAction,
   toggleFocusTrap,
-} from '../../helpers/index.js'
-import { KeyboardKeys } from '../../common/map/index.js'
+} from '../../helpers/index'
+import { KeyboardKeys } from '../../common/map/index'
 
 const header = document.querySelector(`.header`)
 const headerOverlay = document.querySelector(`.header__navigation-wrapper`)
@@ -17,8 +17,17 @@ const HEADER_ACTIVE_CLASS = `header--active`
 
 let cleanFocusTrap
 
+// eslint-disable-next-line no-use-before-define
+const onCloseOverlay = () => toggleOverlay(false)
+
+const onEscapePress = (evt) => {
+  if (evt.key === KeyboardKeys.ESCAPE) {
+    onCloseOverlay()
+  }
+}
+
 const toggleOverlay = (isActive) => {
-  document.body.style.overflowY = isActive ? 'hidden' : ``
+  document.body.style.overflowY = isActive ? `hidden` : ``
 
   header.classList[getClassAction(isActive)](HEADER_ACTIVE_CLASS)
 
@@ -30,14 +39,6 @@ const toggleOverlay = (isActive) => {
 
   window[getEventListener(isActive)](`keydown`, onEscapePress)
 }
-
-const onEscapePress = (evt) => {
-  if (evt.key === KeyboardKeys.ESCAPE) {
-    onCloseOverlay()
-  }
-}
-
-const onCloseOverlay = () => toggleOverlay(false)
 
 export const initHeader = () => {
   toggleBtn.addEventListener(`click`, (evt) => {
