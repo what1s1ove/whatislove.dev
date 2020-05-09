@@ -4,8 +4,6 @@
   --font-size--default: 1.6rem;
   --font-size--large: 2.4rem;
 
-  --box-shadow--focus: 0 0 0 2px #5793f9;
-
   --width--tablet: 640px;
   --width--desktop: 960px;
 
@@ -14,6 +12,10 @@
   --z-index--level-three: 300;
 
   --transition-duration--theme: 0.5s;
+
+  --outline-color: #5793f9;
+
+  --box-shadow--focus: 0 0 0 2px var(--outline-color);
 }
 
 :root,
