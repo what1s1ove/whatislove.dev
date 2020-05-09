@@ -1,9 +1,8 @@
-import { getEventListener } from './index'
 import { KeyboardKeys } from '../common/map/index.js'
 
-const toggleFocusTrap = (nodeList, isActive) => {
-  const firstNode = nodeList[0]
-  const lastNode = nodeList[nodeList.length - 1]
+const toggleFocusTrap = (focusTrapElements) => {
+  const firstNode = focusTrapElements[0]
+  const lastNode = focusTrapElements[focusTrapElements.length - 1]
 
   const onFirstElementFocus = (evt) => {
     if (evt.key === KeyboardKeys.TAB && evt.shiftKey) {
@@ -23,9 +22,15 @@ const toggleFocusTrap = (nodeList, isActive) => {
 
   firstNode.focus()
 
-  firstNode[getEventListener(isActive)](`keydown`, onFirstElementFocus)
+  firstNode.addEventListener(`keydown`, onFirstElementFocus)
 
-  lastNode[getEventListener(isActive)](`keydown`, onLastElementFocus)
+  lastNode.addEventListener(`keydown`, onLastElementFocus)
+
+  return () => {
+    firstNode.removeEventListener(`keydown`, onFirstElementFocus)
+
+    lastNode.removeEventListener(`keydown`, onLastElementFocus)
+  }
 }
 
 export { toggleFocusTrap }
