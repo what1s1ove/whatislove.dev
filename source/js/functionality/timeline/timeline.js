@@ -18,7 +18,7 @@ const setNewFilter = (newFilter) => {
 setNewFilter(filterSettings)
 
 export const initTimelineForm = () => {
-  filterForm.addEventListener('change', ({ target }) => {
+  filterForm.addEventListener(`change`, ({ target }) => {
     const targetValue = getTargetValue(target)
 
     const newFilterSettings = changeObjectKey(

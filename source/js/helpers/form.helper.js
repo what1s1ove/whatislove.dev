@@ -25,6 +25,7 @@ const getFormValues = (formElements) => {
     const fieldsetsValues = [...fieldsets].reduce((acc, element) => {
       const { name, type, elements } = element
 
+      // eslint-disable-next-line no-nested-ternary
       return name
         ? type === FormElementTypes.FIELDSET
           ? { ...acc, [name]: getFieldsetsValues(elements) }

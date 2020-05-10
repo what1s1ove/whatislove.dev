@@ -1,6 +1,6 @@
 const FormElementTypes = {
-  FIELDSET: 'fieldset',
-  CHECKBOX: 'checkbox',
+  FIELDSET: `fieldset`,
+  CHECKBOX: `checkbox`,
 }
 
 export { FormElementTypes }

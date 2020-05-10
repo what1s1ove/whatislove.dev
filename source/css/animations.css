@@ -1,13 +1,11 @@
-@keyframes scatter {
-  0% {
-    top: 0;
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(70px);
   }
 
-  50% {
-    top: -10px;
-  }
-
-  100% {
-    top: 0;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

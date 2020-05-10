@@ -25,7 +25,8 @@ const getClassAction = (flag) => {
 }
 
 const outputStringNodes = (container, stringNodes) => {
-  container.innerHTML = ``  
+  // eslint-disable-next-line no-param-reassign
+  container.innerHTML = ``
 
   container.insertAdjacentHTML(`afterbegin`, stringNodes.join(``))
 }

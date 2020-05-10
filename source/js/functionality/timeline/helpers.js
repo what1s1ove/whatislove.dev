@@ -1,23 +1,6 @@
-import { outputStringNodes } from '../../helpers/index'
-import { getFormattedDate } from '../../helpers/index'
+/* eslint-disable indent */
+import { outputStringNodes, getFormattedDate } from '../../helpers/index'
 import { TimelineIcons } from '../../common/map/index'
-
-const outputTimelineItems = (timelineList, timelineData, filterValues) => {
-  const filterdTimelineData = timelineData.filter((it) => {
-    const isSuitable =
-      filterValues.skillTypes[it.skillType] && filterValues.types[it.type]
-
-    return isSuitable
-  })
-
-  const timelineItems = filterdTimelineData.reduce((acc, it) => {
-    const timelineItem = getTimelineItem(it)
-
-    return [...acc, timelineItem]
-  }, [])
-
-  outputStringNodes(timelineList, timelineItems)
-}
 
 const getTimelineItem = (itemData) => {
   const {
@@ -71,6 +54,24 @@ const getTimelineItem = (itemData) => {
 </li>`
 
   return itmelineItem
+}
+
+const outputTimelineItems = (timelineList, timelineData, filterValues) => {
+  const filterdTimelineData = timelineData.filter((it) => {
+    // eslint-disable-next-line operator-linebreak
+    const isSuitable =
+      filterValues.skillTypes[it.skillType] && filterValues.types[it.type]
+
+    return isSuitable
+  })
+
+  const timelineItems = filterdTimelineData.reduce((acc, it) => {
+    const timelineItem = getTimelineItem(it)
+
+    return [...acc, timelineItem]
+  }, [])
+
+  outputStringNodes(timelineList, timelineItems)
 }
 
 export { getTimelineItem, outputTimelineItems }

@@ -5,9 +5,6 @@
 .timeline__list-wrapper {
   position: relative;
 
-  display: flex;
-  flex-direction: column;
-
   height: 100vh;
   padding: 0 30px;
 
@@ -15,8 +12,6 @@
 }
 
 .timeline__list {
-  flex-grow: 1;
-
   position: relative;
 
   margin: 0;
@@ -55,6 +50,8 @@
 
   min-height: 175px;
   margin: 0 0 15px 30px;
+
+  animation: fadeUp 1s;
 }
 
 .timeline__item-wrapper {
