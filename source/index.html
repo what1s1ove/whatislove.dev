@@ -8,6 +8,7 @@
   </head>
   <body>
     <main>
+      <h1 class="visually-hidden">Vladislav Zubko - interface developer</h1>
       <header class="header">
         <p class="header__name">Vladislav Zubko</p>
         <p class="header__name-intro">Interface developer</p>
@@ -49,36 +50,78 @@
         </ul>
       </header>
       <section class="intro" id="intro">
-        <h2>About</h2>
-        <ul class="intro__social-list">
-          <li class="intro__social-item">
-            <a href="https://github.com/what1s1ove" target="_blank" rel="noreferrer">
-              <svg width="35" height="35" aria-hidden="true">
-                <use xlink:href="img/sprite.svg#social-github.icon"></use>
-              </svg>
-              <span class="visually-hidden">Go to GitHub</span>
-            </a>
-          </li>
-          <li class="intro__social-item">
-            <a href="https://t.me/dugga" target="_blank" rel="noreferrer">
-              <svg width="35" height="35" aria-hidden="true">
-                <use xlink:href="img/sprite.svg#social-telegram.icon"></use>
-              </svg>
-              <span class="visually-hidden">Go to Telegram</span>
-            </a>
-          </li>
-          <li class="intro__social-item">
-            <a href="https://www.linkedin.com/in/what1s1ove" target="_blank" rel="noreferrer">
-              <svg width="35" height="35" aria-hidden="true">
-                <use xlink:href="img/sprite.svg#social-linkedin.icon"></use>
-              </svg>
-              <span class="visually-hidden">Go to Linkedin</span>
-            </a>
-          </li>
-        </ul>
+        <header class="intro__header section__header">
+          <h2 class="section__header-title">About</h2>
+          <p class="section__header-desc">Let's get acquainted closer</p>
+        </header>
+        <div class="intro__wrapper">
+          <figure class="intro__image-wrapper">
+            <picture>
+              <img src="https://via.placeholder.com/290x290" srcset="https://via.placeholder.com/580x580 2x" width="290" height="290" alt="Vladislav Zubko" />
+            </picture>
+          </figure>
+          <div class="info__personal-wrapper">
+            <h3 class="info__personal-title">Personal information</h3>
+            <dl class="intro__list">
+              <div class="intro__item">
+                <dt class="intro__item-title">Full name</dt>
+                <dd class="intro__item-desc">Vladislav Zubko</dd>
+              </div>
+              <div class="intro__item">
+                <dt class="intro__item-title">Date of birth</dt>
+                <dd class="intro__item-desc">3 Aug 1998</dd>
+              </div>
+              <div class="intro__item">
+                <dt class="intro__item-title">E-mail</dt>
+                <dd class="intro__item-desc">
+                  <a href="mailto:zubko.2007@gmail.com">zubko.2007@gmail.com</a>
+                </dd>
+              </div>
+              <div class="intro__item">
+                <dt class="visually-hidden">List of social networks</dt>
+                <dd class="intro__item-desc">
+                  <ul class="intro__social-list">
+                    <li class="intro__social-item">
+                      <a href="https://github.com/what1s1ove" target="_blank" rel="noreferrer">
+                        <svg width="35" height="35" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#social-github.icon"></use>
+                        </svg>
+                        <span class="visually-hidden">Go to GitHub</span>
+                      </a>
+                    </li>
+                    <li class="intro__social-item">
+                      <a href="https://www.linkedin.com/in/what1s1ove" target="_blank" rel="noreferrer">
+                        <svg width="35" height="35" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#social-linkedin.icon"></use>
+                        </svg>
+                        <span class="visually-hidden">Go to Linkedin</span>
+                      </a>
+                    </li>
+                    <li class="intro__social-item">
+                      <a href="https://t.me/dugga" target="_blank" rel="noreferrer">
+                        <svg width="35" height="35" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#social-telegram.icon"></use>
+                        </svg>
+                        <span class="visually-hidden">Go to Telegram</span>
+                      </a>
+                    </li>
+                  </ul>
+                </dd>
+              </div>
+            </dl>
+            <h3 class="info__myself-title">A little bit about myself</h3>
+            <p class="info__myself-desk">
+              With semantics, a11y and love
+              <span aria-hidden="true">&lt;3</span>
+            </p>
+          </div>
+        </div>
       </section>
       <section class="timeline" id="timeline">
-        <h2 class="timeline__title">Experience</h2>
+        <header class="timeline__header section__header">
+          <h2 class="section__header-title">Experience</h2>
+          <p class="section__header-desc">My path</p>
+        </header>
         <form class="timeline__filter exp-filter" name="timeline">
           <div class="exp-filter__wrapper">
             <fieldset class="exp-filter__skills-type" name="skillTypes">
@@ -101,7 +144,7 @@
               <ul class="exp-filter__list">
                 <li class="exp-filter__item">
                   <label class="exp-filter__label form-controll">
-                    <input class="form-controll__input form-controll__input--checkbox" name="works" type="checkbox" />
+                    <input class="form-controll__input form-controll__input--checkbox" name="works" type="checkbox" checked />
                     Works
                   </label>
                 </li>
