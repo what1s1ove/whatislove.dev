@@ -1,8 +1,3 @@
-const timelimeFieldsets = {
-  SKILL_TYPES: `skillTypes`,
-  TYPES: `types`,
-}
-
 const TimelimeSkillTypes = {
   HARD_SKILLS: `hardSkills`,
   SOFT_SKILLS: `softSkills`,
@@ -20,4 +15,4 @@ const TimelineIcons = {
   [TimelimeTypes.WORKS]: `work`,
 }
 
-export { timelimeFieldsets, TimelimeSkillTypes, TimelimeTypes, TimelineIcons }
+export { TimelimeSkillTypes, TimelimeTypes, TimelineIcons }
