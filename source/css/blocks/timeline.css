@@ -3,6 +3,8 @@
 }
 
 .timeline__list-wrapper {
+  position: relative;
+
   display: flex;
   flex-direction: column;
 
@@ -132,6 +134,25 @@
 
 .timeline__item:hover .timeline__icon {
   fill: #ffffff;
+}
+
+.timeline__desc-empty {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+
+  width: 100%;
+  margin: 0;
+  padding: 0 15px;
+
+  text-align: center;
+  color: var(--color--primary);
+}
+
+.timeline__list:empty + .timeline__desc-empty {
+  display: block;
 }
 
 .timeline__resume-link {
