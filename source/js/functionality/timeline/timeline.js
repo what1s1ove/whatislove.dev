@@ -17,7 +17,7 @@ const setNewFilter = (newFilter) => {
 
 setNewFilter(filterSettings)
 
-export const initTimelineForm = () => {
+export default () => {
   filterForm.addEventListener(`change`, ({ target }) => {
     const targetValue = getTargetValue(target)
 

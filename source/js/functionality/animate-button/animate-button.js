@@ -3,7 +3,11 @@ import { AttributeTypes } from '../../common/map/index'
 import { AnimateTypes } from './common'
 
 const initAnimate = () => {
-  const animateBtn = document.querySelector(`.settings__button--animate input`)
+  
+
+  const isPreferReduce = window.matchMedia(`(prefers-reduced-motion: reduce)`).matches
+
+  animateBtn.checked = isPreferReduce
 
   animateBtn.addEventListener(`change`, () => {
     animateBtn.checked
