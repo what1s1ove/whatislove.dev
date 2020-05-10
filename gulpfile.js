@@ -31,6 +31,7 @@ gulp.task(`html`, () =>
     .pipe(
       htmlmin({
         collapseWhitespace: true,
+        removeComments: true,
       })
     )
     .pipe(gulp.dest(`build`))
