@@ -100,7 +100,7 @@ gulp.task(`clean`, () => del(`build`))
 
 gulp.task(`copy`, () =>
   gulp
-    .src([`source/fonts/**/*.woff2`, `source/files/**.pdf`], {
+    .src([`source/fonts/**/*.woff2`, `source/files/**/*.pdf`], {
       base: `source`,
     })
     .pipe(gulp.dest(`build`))

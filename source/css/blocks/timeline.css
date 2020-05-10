@@ -71,16 +71,33 @@
   color: var(--color--secondary);
 }
 
+.timeline__item-origin {
+  display: block;
+
+  margin: 0 0 10px;
+
+  color: red;
+}
+
 .timeline__item-desc {
   margin: 0 0 10px;
 
   color: var(--color--secondary);
 }
 
+.timeline__item-link {
+  display: block;
+
+  margin: 0 0 10px;
+
+  color: red;
+}
+
 .timeline__dates {
   margin: 0;
 
   text-align: right;
+  white-space: nowrap;
   color: var(--color--secondary);
 }
 
@@ -123,7 +140,7 @@
   display: block;
 
   min-height: 60px;
-  margin: 40px 0 0;
+  margin: 60px 0 0;
 
   color: var(--color--secondary);
   text-transform: uppercase;
@@ -245,22 +262,21 @@
     border-right-color: var(--color--primary);
   }
 
-  .timeline__item-desc {
+  .timeline__item-link {
     margin: 0;
   }
 
   .timeline__dates {
     position: absolute;
     top: 33px;
-    right: -250px;
+    left: calc(100% + 85px);
 
     color: var(--color--primary);
   }
 
   .timeline__item:nth-child(even) .timeline__dates {
-    right: unset;
-
-    left: -250px;
+    left: unset;
+    right: calc(100% + 85px);
   }
 
   .timeline__icon-wrapper {

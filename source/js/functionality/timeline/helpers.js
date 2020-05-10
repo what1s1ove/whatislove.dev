@@ -1,4 +1,5 @@
 import { outputStringNodes } from '../../helpers/index'
+import { getFormattedDate } from '../../helpers/index'
 import { TimelineIcons } from '../../common/map/index'
 
 const outputTimelineItems = (timelineList, timelineData, filterValues) => {
@@ -19,17 +20,43 @@ const outputTimelineItems = (timelineList, timelineData, filterValues) => {
 }
 
 const getTimelineItem = (itemData) => {
-  const { type, title, desk, date, endDate } = itemData
+  const {
+    type,
+    title,
+    origin,
+    originDesc,
+    desc,
+    link,
+    linkDesc,
+    date,
+    endDate,
+  } = itemData
 
   const itmelineItem = `<li class="timeline__item">
   <div class="timeline__item-wrapper">
     ${title ? `<h3 class="timeline__item-title">${title}</h3>` : ``}
-    ${desk ? `<p class="timeline__item-desc">${desk}</p>` : ``}
+    ${
+      origin
+        ? `<a class="timeline__item-origin" href="${origin}" target="_blank" rel="noreferrer">${originDesc}</a>`
+        : ``
+    }
+    ${desc ? `<p class="timeline__item-desc">${desc}</p>` : ``}
+    ${
+      link
+        ? `<a class="timeline__item-link" href="${link}" target="_blank" rel="noreferrer">${linkDesc}</a>`
+        : ``
+    }
     ${
       date
         ? `<p class="timeline__dates">
-            <time>${date}</time>
-            ${endDate ? `<time>- ${endDate}</time>` : ``}
+            <time datetime="${date}">${getFormattedDate(date)}</time>
+            ${
+              endDate
+                ? `<time datetime="${endDate}">- ${getFormattedDate(
+                    endDate
+                  )}</time>`
+                : ``
+            }
            </p>`
         : ``
     }
