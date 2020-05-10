@@ -15,8 +15,9 @@ const TimelimeTypes = {
 }
 
 const TimelineIcons = {
-  [TimelimeTypes.COURSES]: 'mortarboard',
+  [TimelimeTypes.COURSES]: 'course',
   [TimelimeTypes.BOOKS]: 'book',
+  [TimelimeTypes.WORKS]: 'work',
 }
 
 export { TimelimeSkillTypes, TimelimeTypes, TimelineIcons }
