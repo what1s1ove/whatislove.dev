@@ -24,4 +24,17 @@ const getClassAction = (flag) => {
   return classAction
 }
 
-export { setAttribute, checkNodeHasClass, getEventListener, getClassAction }
+const outputStringNodes = (container, stringNodes) => {
+  // eslint-disable-next-line no-param-reassign
+  container.innerHTML = ``
+
+  container.insertAdjacentHTML(`afterbegin`, stringNodes.join(``))
+}
+
+export {
+  setAttribute,
+  checkNodeHasClass,
+  getEventListener,
+  getClassAction,
+  outputStringNodes,
+}

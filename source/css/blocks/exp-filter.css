@@ -38,6 +38,10 @@
   list-style: none;
 }
 
+.exp-filter__item {
+  margin: 0 5px 0 0;
+}
+
 .exp-filter__skill-types .exp-filter__list {
   display: flex;
   flex-wrap: wrap;
