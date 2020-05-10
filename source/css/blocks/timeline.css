@@ -1,5 +1,9 @@
-.timeline__title {
-  margin: 0;
+.timeline {
+  padding: 30px 0 0;
+}
+
+.timeline__header {
+  margin: 0 0 35px;
 }
 
 .timeline__list-wrapper {
@@ -145,7 +149,6 @@
   padding: 0 15px;
 
   text-align: center;
-  color: var(--color--primary);
 }
 
 .timeline__list:empty + .timeline__desc-empty {
