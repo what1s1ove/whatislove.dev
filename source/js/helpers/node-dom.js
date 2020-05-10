@@ -24,4 +24,16 @@ const getClassAction = (flag) => {
   return classAction
 }
 
-export { setAttribute, checkNodeHasClass, getEventListener, getClassAction }
+const outputStringNodes = (container, stringNodes) => {
+  container.innerHTML = ``  
+
+  container.insertAdjacentHTML(`afterbegin`, stringNodes.join(``))
+}
+
+export {
+  setAttribute,
+  checkNodeHasClass,
+  getEventListener,
+  getClassAction,
+  outputStringNodes,
+}

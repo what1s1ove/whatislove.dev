@@ -215,6 +215,7 @@
     position: relative;
 
     width: 44%;
+    min-height: 90px;
   }
 
   .timeline__item-wrapper::before {

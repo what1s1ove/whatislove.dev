@@ -79,41 +79,41 @@
       </section>
       <section class="timeline" id="timeline">
         <h2 class="timeline__title">Experience</h2>
-        <form class="timeline__filter exp-filter">
+        <form class="timeline__filter exp-filter" name="timeline">
           <div class="exp-filter__wrapper">
-            <fieldset class="exp-filter__skills-type">
+            <fieldset class="exp-filter__skills-type" name="skillTypes">
               <ul class="exp-filter__list">
                 <li class="exp-filter__item">
                   <label class="exp-filter__label form-controll">
-                    <input class="form-controll__input form-controll__input--checkbox" type="checkbox" />
+                    <input class="form-controll__input form-controll__input--checkbox" name="hardSkills" type="checkbox" checked />
                     Hard skills
                   </label>
                 </li>
                 <li class="exp-filter__item">
                   <label class="exp-filter__label form-controll">
-                    <input class="form-controll__input form-controll__input--checkbox" type="checkbox" />
+                    <input class="form-controll__input form-controll__input--checkbox" name="softSkills" type="checkbox" />
                     Soft skills
                   </label>
                 </li>
               </ul>
             </fieldset>
-            <fieldset class="exp-filter__skill-types">
+            <fieldset class="exp-filter__skill-types" name="types">
               <ul class="exp-filter__list">
                 <li class="exp-filter__item">
                   <label class="exp-filter__label form-controll">
-                    <input class="form-controll__input form-controll__input--checkbox" type="checkbox" />
+                    <input class="form-controll__input form-controll__input--checkbox" name="works" type="checkbox" />
                     Works
                   </label>
                 </li>
                 <li class="exp-filter__item">
                   <label class="exp-filter__label form-controll">
-                    <input class="form-controll__input form-controll__input--checkbox" type="checkbox" />
+                    <input class="form-controll__input form-controll__input--checkbox" name="courses" type="checkbox" checked />
                     Courses
                   </label>
                 </li>
                 <li class="exp-filter__item">
                   <label class="exp-filter__label form-controll">
-                    <input class="form-controll__input form-controll__input--checkbox" type="checkbox" />
+                    <input class="form-controll__input form-controll__input--checkbox" name="books" type="checkbox" />
                     Books
                   </label>
                 </li>
@@ -123,7 +123,7 @@
         </form>
         <div class="timeline__list-wrapper">
           <ul class="timeline__list">
-            <li class="timeline__item">
+            <!-- <li class="timeline__item">
               <div class="timeline__item-wrapper">
                 <h3 class="timeline__item-title">Dnipropetrovsk National University of Railway Transport named after Academician V. Lazaryan</h3>
                 <p class="timeline__item-desc">Obtained qualification of bachelor of science in information and communication system security. Studied methodsof protecting information systems and data in all forms – digital, analog and physical.</p>
@@ -182,7 +182,7 @@
                   <use xlink:href="img/sprite.svg#timeline-mortarboard.icon"></use>
                 </svg>
               </span>
-            </li>
+            </li> -->
           </ul>
         </div>
         <a class="timeline__resume-link" href="files/CV.pdf" target="_blank" rel="noreferrer">
