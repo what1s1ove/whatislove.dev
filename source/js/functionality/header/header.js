@@ -40,7 +40,7 @@ const toggleOverlay = (isActive) => {
   window[getEventListener(isActive)](`keydown`, onEscapePress)
 }
 
-export default  () => {
+export default () => {
   toggleBtn.addEventListener(`click`, (evt) => {
     evt.stopPropagation()
 

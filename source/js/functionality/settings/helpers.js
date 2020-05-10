@@ -15,6 +15,7 @@ const initSettingBtn = (toggler, mediaQuery, attr, types) => {
     isChecked = window.matchMedia(mediaQuery).matches
   }
 
+  // eslint-disable-next-line no-param-reassign
   toggler.checked = isChecked
 
   toggler.addEventListener(`change`, (evt) => {
