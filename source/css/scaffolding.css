@@ -38,7 +38,7 @@ body {
   min-height: 100vh;
   min-width: 320px;
   margin: 0;
-  padding: 0 0 150px;
+  padding: 0 0 10px;
 
   font-family: 'Muli', 'Arial', sans-serif;
   font-size: var(--font-size--default);
