@@ -39,7 +39,7 @@
 .timeline__list:not(:empty)::after {
   position: absolute;
   left: -6px;
-  bottom: -7px;
+  bottom: 0;
 
   content: '';
 
