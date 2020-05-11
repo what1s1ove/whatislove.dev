@@ -332,6 +332,14 @@ const timelineData = [
     originDesc: `Amazon`,
     date: `2020-04-18T00:00:00+03:00`,
   },
+  {
+    skillType: TimelimeSkillTypes.HARD_SKILLS,
+    type: TimelimeTypes.MEETUPS,
+    title: `HTML5 Pocket Reference: Quick, Comprehensive, Indispensable (Jennifer Robbins)`,
+    origin: `https://www.amazon.com/HTML5-Pocket-Reference-Comprehensive-Indispensable/dp/1449363350`,
+    originDesc: `Amazon`,
+    date: `2020-04-18T00:00:00+03:00`,
+  },
 ]
 
 export { timelineData }
