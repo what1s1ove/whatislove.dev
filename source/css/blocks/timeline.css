@@ -72,6 +72,7 @@
   margin: 0 0 10px;
 
   color: var(--color--secondary);
+  font-weight: 600;
 }
 
 .timeline__item-origin {

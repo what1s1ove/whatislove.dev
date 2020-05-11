@@ -40,7 +40,7 @@ body {
   margin: 0;
   padding: 0 0 10px;
 
-  font-family: 'Muli', 'Arial', sans-serif;
+  font-family: 'Jost', 'Arial', sans-serif;
   font-size: var(--font-size--default);
   line-height: 1.5;
   color: var(--color--primary);

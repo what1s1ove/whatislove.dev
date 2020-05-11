@@ -1,9 +1,8 @@
 @font-face {
-  font-family: 'Muli';
+  font-family: 'Jost';
   font-display: swap;
 
-  src: local('Muli'),
-    url('../fonts/Muli-VariableFont.woff2') format('woff2-variations');
+  src: local('Jost'), url('../fonts/jost-VF.woff2') format('woff2-variations');
   font-weight: 200 900;
 
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,

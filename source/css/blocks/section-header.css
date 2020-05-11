@@ -8,6 +8,7 @@
   margin: 0;
 
   text-transform: uppercase;
+  font-weight: 600;
 }
 
 .section-header__desc {

@@ -26,10 +26,11 @@
 }
 
 .intro__personal-title {
+  margin: 0 0 15px;
+
   text-transform: uppercase;
   text-align: center;
-
-  margin: 0 0 15px;
+  font-weight: 600;
 }
 
 .intro__list {
@@ -41,7 +42,7 @@
 }
 
 .intro__item-title {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .intro__item-desc {
@@ -59,10 +60,11 @@
 }
 
 .intro__myself-title {
+  margin: 0 0 5px;
+
   text-transform: uppercase;
   text-align: center;
-
-  margin: 0 0 5px;
+  font-weight: 600;
 }
 
 .intro__myself-desk {
@@ -129,6 +131,7 @@
 
   .intro__myself-title {
     margin: 0 0 15px;
+
     text-align: left;
   }
 
