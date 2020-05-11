@@ -3,6 +3,11 @@ const AttributeTypes = {
   MOTION: `motion`,
 }
 
+const MediaBooleanTypes = {
+  true: true,
+  false: false,
+}
+
 const MediaQueriesTypes = {
   THEME: `(prefers-color-scheme: dark)`,
   MOTION: `(prefers-reduced-motion: no-preference)`,
@@ -18,4 +23,10 @@ const MotionTypes = {
   REDUCE: `reduce`,
 }
 
-export { AttributeTypes, MediaQueriesTypes, ColorThemeTypes, MotionTypes }
+export {
+  AttributeTypes,
+  MediaQueriesTypes,
+  ColorThemeTypes,
+  MotionTypes,
+  MediaBooleanTypes,
+}
