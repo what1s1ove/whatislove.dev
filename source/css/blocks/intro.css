@@ -141,3 +141,13 @@
     text-align: left;
   }
 }
+
+@media (min-width: 940px) {
+  .intro {
+    padding: 30px 0 80px;
+  }
+
+  .intro__header {
+    margin: 0 0 50px;
+  }
+}
