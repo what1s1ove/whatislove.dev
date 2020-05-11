@@ -18,7 +18,7 @@
 }
 
 .exp-filter__skills-type {
-  margin: 0 20px 0 0;
+  margin: 0;
   padding: 0;
 
   border: 0;
@@ -39,30 +39,28 @@
 }
 
 .exp-filter__item {
-  margin: 0 5px 0 0;
+  padding: 0 5px 0 0;
 }
 
-.exp-filter__skill-types .exp-filter__list {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-@media (min-width: 550px) {
-  .exp-filter__skills-type .exp-filter__list {
+@media (min-width: 350px) {
+  .exp-filter__list {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
   }
 
-  .exp-filter__wrapper {
-    padding: 10px 23px;
+  .exp-filter__skill-types .exp-filter__item {
+    width: 50%;
   }
 }
 
 @media (min-width: 640px) {
   .exp-filter__wrapper {
     padding: 10px 8px;
+  }
+
+  .exp-filter__skill-types .exp-filter__item {
+    width: unset;
   }
 }
 
