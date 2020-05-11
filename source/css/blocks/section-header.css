@@ -1,23 +1,23 @@
-.section__header {
+.section-header {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.section__header-title {
+.section-header__title {
   margin: 0;
 
   text-transform: uppercase;
 }
 
-.section__header-desc {
+.section-header__desc {
   position: relative;
 
   margin: 0;
   padding: 0 0 5px;
 }
 
-.section__header-desc::before {
+.section-header__desc::before {
   position: absolute;
   left: 50%;
   bottom: 0;

@@ -56,13 +56,13 @@
   }
 
   .exp-filter__wrapper {
-    padding: 10px 60px 10px 23px;
+    padding: 10px 23px;
   }
 }
 
 @media (min-width: 640px) {
   .exp-filter__wrapper {
-    padding: 10px 60px 10px 8px;
+    padding: 10px 8px;
   }
 }
 
@@ -70,6 +70,6 @@
   .exp-filter__wrapper {
     max-width: 940px;
     margin: 0 auto;
-    padding: 17px 60px 17px 8px;
+    padding: 17px 8px;
   }
 }
