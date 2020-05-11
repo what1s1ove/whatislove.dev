@@ -19,7 +19,7 @@
   position: relative;
 
   margin: 0;
-  padding: 20px 0;
+  padding: 20px 0 80px;
 
   list-style: none;
 }
@@ -30,7 +30,7 @@
   left: 0;
 
   content: '';
-  height: 99%;
+  height: 100%;
   width: 2px;
 
   background-color: var(--color--primary);
@@ -43,7 +43,7 @@
 
   content: '';
 
-  border: 7px solid transparent;
+  border: 7px solid var(--color--secondary);
   border-top: 14px solid var(--color--primary);
 
   transition-duration: var(--transition-duration--theme);
@@ -161,7 +161,7 @@
   display: block;
 
   min-height: 60px;
-  margin: 60px 0 0;
+  margin: 30px 0 0;
 
   color: var(--color--secondary);
   text-transform: uppercase;
