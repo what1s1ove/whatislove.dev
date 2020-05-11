@@ -30,7 +30,6 @@
 
   text-transform: uppercase;
   text-align: center;
-  font-weight: 600;
 }
 
 .intro__list {
@@ -42,7 +41,7 @@
 }
 
 .intro__item-title {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .intro__item-desc {
@@ -64,7 +63,6 @@
 
   text-transform: uppercase;
   text-align: center;
-  font-weight: 600;
 }
 
 .intro__myself-desk {
