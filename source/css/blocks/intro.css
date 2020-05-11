@@ -21,11 +21,11 @@
   border-radius: 50%;
 }
 
-.info__personal-wrapper {
+.intro__personal-wrapper {
   padding: 0 30px;
 }
 
-.info__personal-title {
+.intro__personal-title {
   text-transform: uppercase;
   text-align: center;
 
@@ -58,14 +58,14 @@
   text-decoration: underline;
 }
 
-.info__myself-title {
+.intro__myself-title {
   text-transform: uppercase;
   text-align: center;
 
   margin: 0 0 5px;
 }
 
-.info__myself-desk {
+.intro__myself-desk {
   margin: 0;
 
   text-align: center;
@@ -115,11 +115,11 @@
     margin: 0 60px 0 0;
   }
 
-  .info__personal-wrapper {
+  .intro__personal-wrapper {
     padding: 0;
   }
 
-  .info__personal-title {
+  .intro__personal-title {
     text-align: left;
   }
 
@@ -127,12 +127,12 @@
     padding: 0 0 0 15px;
   }
 
-  .info__myself-title {
+  .intro__myself-title {
     margin: 0 0 15px;
     text-align: left;
   }
 
-  .info__myself-desk {
+  .intro__myself-desk {
     padding: 0 0 0 15px;
 
     text-align: left;
