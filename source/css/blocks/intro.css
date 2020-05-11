@@ -26,10 +26,10 @@
 }
 
 .intro__personal-title {
+  margin: 0 0 15px;
+
   text-transform: uppercase;
   text-align: center;
-
-  margin: 0 0 15px;
 }
 
 .intro__list {
@@ -59,10 +59,10 @@
 }
 
 .intro__myself-title {
+  margin: 0 0 5px;
+
   text-transform: uppercase;
   text-align: center;
-
-  margin: 0 0 5px;
 }
 
 .intro__myself-desk {
@@ -102,7 +102,7 @@
 
 @media (min-width: 640px) {
   .intro {
-    padding: 30px 0 50px;
+    padding: 30px 15px 50px;
   }
 
   .intro__wrapper {
@@ -129,6 +129,7 @@
 
   .intro__myself-title {
     margin: 0 0 15px;
+
     text-align: left;
   }
 
@@ -136,5 +137,17 @@
     padding: 0 0 0 15px;
 
     text-align: left;
+  }
+}
+
+@media (min-width: 940px) {
+  .intro {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 30px 15px 80px;
+  }
+
+  .intro__header {
+    margin: 0 0 50px;
   }
 }

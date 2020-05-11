@@ -307,6 +307,10 @@
 }
 
 @media (min-width: 940px) {
+  .timeline__header {
+    margin: 0 0 50px;
+  }
+
   .timeline__list-wrapper {
     max-width: 940px;
 

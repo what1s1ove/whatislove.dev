@@ -9,7 +9,7 @@
 
 .header__name {
   width: calc(100% / 1.45);
-  margin: 0 15px 20px;
+  margin: 0 15px 30px;
   padding: 5px 10px;
 
   font-size: 35px;
@@ -20,6 +20,8 @@
 }
 
 .header__name-intro {
+  margin: 0;
+
   text-transform: uppercase;
   letter-spacing: 4px;
 }
