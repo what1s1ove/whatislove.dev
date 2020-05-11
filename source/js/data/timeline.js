@@ -176,7 +176,7 @@ const timelineData = [
     title: `Front-End developer (SGroup - Holding)`,
     desc: `Reduced the size of the average project bundle from 8 MB to <1.5 MB. Completely removed jquery, bootstrap, uikit and other libraries/frameworks on projects where it was necessary(refactoring everything to pure JS), and etc. See more in my CV.`,
     date: `2019-08-10T00:00:00+03:00`,
-    endDate: `2019-09-31T00:00:00+03:00`,
+    endDate: `2019-09-30T00:00:00+03:00`,
   },
   {
     skillType: TimelimeSkillTypes.HARD_SKILLS,
