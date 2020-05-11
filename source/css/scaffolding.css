@@ -85,20 +85,30 @@ select {
 html[data-motion='reduce'] *,
 html[data-motion='reduce'] *::after,
 html[data-motion='reduce'] *::before {
+  background-attachment: initial !important;
+
   transition: unset !important;
-  animation-duration: 0.01ms !important;
+  animation-delay: -1ms !important;
+  animation-duration: 1ms !important;
   animation-iteration-count: 1 !important;
-  transition-duration: 0.01ms !important;
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
 
   scroll-behavior: auto !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
+  *,
+  ::before,
+  ::after {
+    background-attachment: initial !important;
+
     transition: unset !important;
-    animation-duration: 0.01ms !important;
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
 
     scroll-behavior: auto !important;
   }

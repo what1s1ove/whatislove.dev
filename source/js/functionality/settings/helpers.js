@@ -1,4 +1,5 @@
 import { setAttribute } from '../../helpers/index'
+import { MediaBooleanTypes } from './common'
 
 const initSettingBtn = (toggler, mediaQuery, attr, types) => {
   const storageValue = localStorage.getItem(mediaQuery)
@@ -8,7 +9,7 @@ const initSettingBtn = (toggler, mediaQuery, attr, types) => {
   let isChecked
 
   if (storageValue) {
-    isChecked = Boolean(Number(storageValue))
+    isChecked = MediaBooleanTypes[storageValue]
 
     setAttribute(attr, isChecked ? checkedValue : uncheckedValue)
   } else {
@@ -23,7 +24,7 @@ const initSettingBtn = (toggler, mediaQuery, attr, types) => {
 
     setAttribute(attr, checked ? checkedValue : uncheckedValue)
 
-    localStorage.setItem(mediaQuery, Number(checked))
+    localStorage.setItem(mediaQuery, checked)
   })
 }
 
