@@ -1,10 +1,31 @@
 .header {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   height: 100vh;
+}
+
+.header__logo {
+  position: absolute;
+  top: 13px;
+  left: 15px;
+}
+
+.header__logo-icon--letter {
+  fill: var(--color--secondary);
+  stroke: var(--color--primary);
+
+  transition: stroke, fill var(--transition-duration--theme);
+}
+
+.header__logo-icon--heart {
+  transform: scale(0.83) translate(42px, 8px);
+
+  animation: heartbeat 1s infinite;
 }
 
 .header__name {

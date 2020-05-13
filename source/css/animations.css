@@ -9,3 +9,29 @@
     transform: translateY(0);
   }
 }
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(0.83) translate(42px, 8px);
+  }
+
+  20% {
+    transform: scale(1.03) translate(-6px, 0);
+  }
+
+  40% {
+    transform: scale(0.83) translate(42px, 8px);
+  }
+
+  60% {
+    transform: scale(1.03) translate(-6px, 0);
+  }
+
+  80% {
+    transform: scale(0.83) translate(42px, 8px);
+  }
+
+  100% {
+    transform: scale(0.83) translate(42px, 8px);
+  }
+}
