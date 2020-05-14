@@ -17,12 +17,12 @@ const postcssimport = require(`postcss-import`)
 const autoprefixer = require(`autoprefixer`)
 const mqpacker = require(`css-mqpacker`)
 const csso = require(`gulp-csso`)
-
 const rollup = require(`gulp-rollup`)
 const uglify = require(`gulp-uglify-es`).default
 
 const imagemin = require(`gulp-imagemin`)
 const svgo = require(`imagemin-svgo`)
+const pngquant = require(`imagemin-pngquant`)
 const svgstore = require(`gulp-svgstore`)
 
 gulp.task(`html`, () =>
@@ -80,7 +80,21 @@ gulp.task(`js`, () =>
 gulp.task(`images`, () =>
   gulp
     .src(`source/img/**/*.{png,jpg,svg}`)
-    .pipe(imagemin([svgo()]))
+    .pipe(
+      imagemin([
+        svgo({
+          plugins: [
+            {
+              collapseGroups: false,
+            },
+            {
+              inlineStyles: false
+            }
+          ],
+        }),
+        pngquant(),
+      ])
+    )
     .pipe(gulp.dest(`build/img`))
 )
 
@@ -100,9 +114,17 @@ gulp.task(`clean`, () => del(`build`))
 
 gulp.task(`copy`, () =>
   gulp
-    .src([`source/fonts/**/*.woff2`, `source/files/**/*.pdf`], {
-      base: `source`,
-    })
+    .src(
+      [
+        `source/fonts/**/*.woff2`,
+        `source/files/**/*.pdf`,
+        `source/favicon.ico`,
+        `source/manifest.json`,
+      ],
+      {
+        base: `source`,
+      }
+    )
     .pipe(gulp.dest(`build`))
 )
 
