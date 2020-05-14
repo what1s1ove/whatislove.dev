@@ -1,0 +1,13 @@
+{
+  "name": "Whatislove Zubko",
+  "short_name": "Whatislove",
+  "icons": [
+    {
+      "src": "img/favicons/google-touch-icon.png",
+      "sizes": "512x512"
+    }
+  ],
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "display": "fullscreen"
+}

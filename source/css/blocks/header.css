@@ -16,8 +16,7 @@
 }
 
 .header__logo-icon--letter {
-  fill: var(--color--secondary);
-  stroke: var(--color--primary);
+  fill: var(--color--primary);
 
   transition: stroke, fill var(--transition-duration--theme);
 }
