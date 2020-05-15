@@ -80,21 +80,7 @@ gulp.task(`js`, () =>
 gulp.task(`images`, () =>
   gulp
     .src(`source/img/**/*.{png,jpg,svg}`)
-    .pipe(
-      imagemin([
-        svgo({
-          plugins: [
-            {
-              collapseGroups: false,
-            },
-            {
-              inlineStyles: false
-            }
-          ],
-        }),
-        pngquant(),
-      ])
-    )
+    .pipe(imagemin([svgo(), pngquant()]))
     .pipe(gulp.dest(`build/img`))
 )
 
