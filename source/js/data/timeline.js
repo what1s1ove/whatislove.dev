@@ -388,7 +388,7 @@ const timelineData = [
   {
     skillType: TimelimeSkillTypes.HARD_SKILLS,
     type: TimelimeTypes.COURSES,
-    title: `HTML and CSS. Professional website layout`,
+    title: `HTML and CSS. Professional Website Coding`,
     origin: `https://htmlacademy.ru/intensive/htmlcss`,
     originDesc: `Course link`,
     desc: `Work with the git version control system. Work with the graphic layout in the Figma editor. Create expressive and accessible markup. Build page layout on CSS grids, work with custom properties, optimize the code and prepare the completed project for publication. At each stage, the work is checked and commented by a personal mentor.`,
@@ -408,7 +408,7 @@ const timelineData = [
   {
     skillType: TimelimeSkillTypes.HARD_SKILLS,
     type: TimelimeTypes.COURSES,
-    title: `HTML and CSS. Adaptive layout and automation`,
+    title: `HTML and CSS. Adaptive Website Coding and Automation`,
     origin: `https://htmlacademy.ru/intensive/adaptive`,
     originDesc: `Course link`,
     desc: `Create markup according to the BEM methodology. CSS-code on preprocessors. Make an adaptive grid, work with layout and retin graphics. Prepare project assembly automation for publication. At each stage, the work is checked and commented by a personal mentor.`,
