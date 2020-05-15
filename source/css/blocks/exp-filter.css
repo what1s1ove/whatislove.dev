@@ -10,11 +10,10 @@
 
 .exp-filter__wrapper {
   display: flex;
-  align-items: center;
   justify-content: space-between;
 
   min-height: 60px;
-  padding: 5px 23px;
+  padding: 5px 8px;
 }
 
 .exp-filter__skills-type {
@@ -25,42 +24,79 @@
 }
 
 .exp-filter__skill-types {
+  max-width: 250px;
   margin: 0;
   padding: 0;
 
   border: 0;
 }
 
+.exp-filter__skill-title {
+  color: var(--color--secondary);
+}
+
 .exp-filter__list {
+  display: flex;
+  flex-direction: column;
+
   margin: 0;
   padding: 0;
 
   list-style: none;
 }
 
+.exp-filter__skill-types .exp-filter__list {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 .exp-filter__item {
   padding: 0 5px 0 0;
 }
 
-@media (min-width: 350px) {
-  .exp-filter__list {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-  }
+.exp-filter__skill-types .exp-filter__item {
+  width: 50%;
+}
 
-  .exp-filter__skill-types .exp-filter__item {
-    width: 50%;
+@media (min-width: 550px) {
+  .exp-filter__skill-types {
+    max-width: unset;
   }
 }
 
 @media (min-width: 640px) {
   .exp-filter__wrapper {
+    align-items: center;
+
     padding: 10px 8px;
   }
 
   .exp-filter__skill-types .exp-filter__item {
     width: unset;
+  }
+
+  .exp-filter__skill-title {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+  }
+
+  .exp-filter__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
   }
 }
 

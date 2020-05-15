@@ -52,13 +52,13 @@
 .timeline__item {
   position: relative;
 
-  min-height: 175px;
   margin: 0 0 15px 30px;
 
   animation: fadeUp 1s;
 }
 
 .timeline__item-wrapper {
+  min-height: 175px;
   padding: 20px;
 
   background-color: var(--color--primary);
