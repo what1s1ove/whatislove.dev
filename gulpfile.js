@@ -26,6 +26,8 @@ const terser = require(`gulp-terser`)
 const imagemin = require(`gulp-imagemin`)
 const svgo = require(`imagemin-svgo`)
 const pngquant = require(`imagemin-pngquant`)
+const jpegtran = require(`imagemin-jpegtran`)
+const webp = require(`gulp-webp`)
 const svgstore = require(`gulp-svgstore`)
 
 gulp.task(`html`, () =>
@@ -89,7 +91,26 @@ gulp.task(`js`, () =>
 gulp.task(`images`, () =>
   gulp
     .src(`source/img/**/*.{png,jpg,svg}`)
-    .pipe(imagemin([svgo(), pngquant()]))
+    .pipe(
+      imagemin([
+        jpegtran({
+          progressive: true,
+        }),
+        pngquant(),
+        svgo(),
+      ])
+    )
+    .pipe(gulp.dest(`build/img`))
+)
+
+gulp.task(`webp`, () =>
+  gulp
+    .src(`build/img/**/*.photo.{png,jpg}`)
+    .pipe(
+      webp({
+        quality: 75,
+      })
+    )
     .pipe(gulp.dest(`build/img`))
 )
 
@@ -147,7 +168,7 @@ gulp.task(`refresh`, (done) => {
 
 gulp.task(
   `build`,
-  gulp.series(`clean`, `copy`, `html`, `css`, `js`, `images`, `sprite`)
+  gulp.series(`clean`, `copy`, `html`, `css`, `js`, `images`, `webp`, `sprite`)
 )
 
 gulp.task(`start`, gulp.series(`build`, `server`))
