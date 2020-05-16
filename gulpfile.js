@@ -15,10 +15,13 @@ const htmlmin = require(`gulp-htmlmin`)
 const postcss = require(`gulp-postcss`)
 const postcssimport = require(`postcss-import`)
 const autoprefixer = require(`autoprefixer`)
+const hexalpha = require(`postcss-color-hex-alpha`)
 const mqpacker = require(`css-mqpacker`)
 const csso = require(`gulp-csso`)
+
 const rollup = require(`gulp-rollup`)
-const uglify = require(`gulp-uglify-es`).default
+const babel = require(`gulp-babel`)
+const terser = require(`gulp-terser`)
 
 const imagemin = require(`gulp-imagemin`)
 const svgo = require(`imagemin-svgo`)
@@ -45,6 +48,7 @@ gulp.task(`css`, () =>
     .pipe(
       postcss([
         postcssimport(),
+        hexalpha(),
         autoprefixer(),
         mqpacker({
           sort: (a, b) => a.localeCompare(b),
@@ -61,6 +65,7 @@ gulp.task(`css`, () =>
 gulp.task(`js`, () =>
   gulp
     .src(`./source/js/**/*.js`)
+    .pipe(sourcemap.init())
     .pipe(
       rollup({
         input: `./source/js/main.js`,
@@ -69,8 +74,12 @@ gulp.task(`js`, () =>
         },
       })
     )
-    .pipe(sourcemap.init())
-    .pipe(uglify())
+    .pipe(
+      babel({
+        presets: [`@babel/preset-env`],
+      })
+    )
+    .pipe(terser())
     .pipe(rename(`main.min.js`))
     .pipe(sourcemap.write(`.`))
     .pipe(gulp.dest(`build/js`))

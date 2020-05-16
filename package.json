@@ -4,7 +4,20 @@
   "private": true,
   "description": "My own website",
   "author": "What1s1ove",
+  "scripts": {
+    "eslint": "eslint --ext .js source/js",
+    "stylelint": "stylelint \"source/css/**/*.css\" --syntax css",
+    "test": "npm run stylelint && npm run eslint",
+    "build": "gulp build",
+    "start": "gulp start"
+  },
+  "browserslist": [
+    "last 2 version",
+    "not dead"
+  ],
   "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
     "autoprefixer": "^9.7.6",
     "browser-sync": "^2.26.7",
     "css-mqpacker": "^7.0.0",
@@ -13,6 +26,7 @@
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
     "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
     "gulp-csso": "^4.0.1",
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^7.1.0",
@@ -22,21 +36,16 @@
     "gulp-rollup": "^2.17.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-svgstore": "^7.0.1",
+    "gulp-terser": "^1.2.0",
     "gulp-uglify-es": "^2.0.0",
     "imagemin-pngquant": "^8.0.0",
     "imagemin-svgo": "^7.1.0",
     "npm": "^6.14.5",
+    "postcss-color-hex-alpha": "^6.0.0",
     "postcss-import": "^12.0.1",
     "prettier": "^2.0.5",
     "stylelint": "^13.3.3",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-prettier": "^1.1.2"
-  },
-  "scripts": {
-    "eslint": "eslint --ext .js source/js",
-    "stylelint": "stylelint \"source/css/**/*.css\" --syntax css",
-    "test": "npm run stylelint && npm run eslint",
-    "build": "gulp build",
-    "start": "gulp start"
   }
 }
