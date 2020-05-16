@@ -4,3 +4,8 @@ extends:
   stylelint-prettier/recommended
 rules: 
     prettier/prettier: true
+    rule-empty-line-before: 
+      - always
+      - except: first-nested
+        ignore: after-comment
+    number-max-precision: 2
