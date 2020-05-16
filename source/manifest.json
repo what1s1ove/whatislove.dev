@@ -1,13 +1,16 @@
 {
-  "name": "Whatislove Zubko",
-  "short_name": "Whatislove",
+  "name": "Whatislove Zubko | Interface Developer",
+  "lang": "en",
+  "start_url": "/",
+  "display": "browser",
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "description": "Whatislove Zubko | Interface Developer",
   "icons": [
     {
       "src": "img/favicons/google-touch-icon.png",
       "sizes": "512x512"
     }
-  ],
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff",
-  "display": "fullscreen"
+  ]
 }
