@@ -5,8 +5,32 @@ const BASE_COURSES_URL = `files/courses`
 const timelineData = [
   {
     skillType: TimelimeSkillTypes.SOFT_SKILLS,
+    type: TimelimeTypes.COURSES,
+    title: `SpeakUp: Beginner 2`,
+    origin: `https://www.speak-up.com.ua/`,
+    originDesc: `SpeakUp`,
+    date: `2018-08-01T00:00:00+03:00`,
+  },
+  {
+    skillType: TimelimeSkillTypes.SOFT_SKILLS,
+    type: TimelimeTypes.COURSES,
+    title: `SpeakUp: Elementary 1`,
+    origin: `https://www.speak-up.com.ua/`,
+    originDesc: `SpeakUp`,
+    date: `2018-11-01T00:00:00+03:00`,
+  },
+  {
+    skillType: TimelimeSkillTypes.SOFT_SKILLS,
     type: TimelimeTypes.BOOKS,
     title: `21 true answer. How to change your attitude to life (Andrey Kurpatov)`,
+    date: `2018-12-12T00:00:00+03:00`,
+  },
+  {
+    skillType: TimelimeSkillTypes.SOFT_SKILLS,
+    type: TimelimeTypes.COURSES,
+    title: `SpeakUp: Elementary 1`,
+    origin: `https://www.speak-up.com.ua/`,
+    originDesc: `SpeakUp`,
     date: `2019-01-01T00:00:00+03:00`,
   },
   {
@@ -84,6 +108,14 @@ const timelineData = [
   },
   {
     skillType: TimelimeSkillTypes.SOFT_SKILLS,
+    type: TimelimeTypes.COURSES,
+    title: `SpeakUp: Elementary 2`,
+    origin: `https://www.speak-up.com.ua/`,
+    originDesc: `SpeakUp`,
+    date: `2019-04-01T00:00:00+03:00`,
+  },
+  {
+    skillType: TimelimeSkillTypes.SOFT_SKILLS,
     type: TimelimeTypes.BOOKS,
     title: `Reality Transurfing 1: The Space of Variations (Vadim Zeland)`,
     origin: `https://www.amazon.com/Reality-Transurfing-1-Space-Variations/dp/1846941229`,
@@ -138,6 +170,14 @@ const timelineData = [
     origin: `https://www.amazon.com/Love-Languages-Secret-that-Lasts/dp/080241270X`,
     originDesc: `Amazon`,
     date: `2019-06-15T00:00:00+03:00`,
+  },
+  {
+    skillType: TimelimeSkillTypes.SOFT_SKILLS,
+    type: TimelimeTypes.COURSES,
+    title: `SpeakUp: Intermediate 1`,
+    origin: `https://www.speak-up.com.ua/`,
+    originDesc: `SpeakUp`,
+    date: `2019-07-01T00:00:00+03:00`,
   },
   {
     skillType: TimelimeSkillTypes.SOFT_SKILLS,
@@ -202,6 +242,14 @@ const timelineData = [
     origin: `https://www.amazon.com/Have-Be-Bloomsbury-Revelations/dp/178093680X`,
     originDesc: `Amazon`,
     date: `2019-08-26T00:00:00+03:00`,
+  },
+  {
+    skillType: TimelimeSkillTypes.SOFT_SKILLS,
+    type: TimelimeTypes.COURSES,
+    title: `SpeakUp: Intermediate 2`,
+    origin: `https://www.speak-up.com.ua/`,
+    originDesc: `SpeakUp`,
+    date: `2019-09-01T00:00:00+03:00`,
   },
   {
     skillType: TimelimeSkillTypes.SOFT_SKILLS,
@@ -300,6 +348,14 @@ const timelineData = [
     origin: `https://javascript.info/`,
     originDesc: `learn.javascript`,
     date: `2019-11-28T00:00:00+03:00`,
+  },
+  {
+    skillType: TimelimeSkillTypes.SOFT_SKILLS,
+    type: TimelimeTypes.COURSES,
+    title: `SpeakUp: Upper Intermediate 1`,
+    origin: `https://www.speak-up.com.ua/`,
+    originDesc: `SpeakUp`,
+    date: `2019-12-01T00:00:00+03:00`,
   },
   {
     skillType: TimelimeSkillTypes.HARD_SKILLS,
@@ -406,6 +462,22 @@ const timelineData = [
     date: `2020-02-24T00:00:00+03:00`,
   },
   {
+    skillType: TimelimeSkillTypes.SOFT_SKILLS,
+    type: TimelimeTypes.COURSES,
+    title: `SpeakUp: Upper Intermediate 2`,
+    origin: `https://www.speak-up.com.ua/`,
+    originDesc: `SpeakUp`,
+    date: `2020-03-01T00:00:00+03:00`,
+  },
+  {
+    skillType: TimelimeSkillTypes.SOFT_SKILLS,
+    type: TimelimeTypes.BOOKS,
+    title: `Games People Play: The Basic Handbook of Transactional Analysis (Eric Berne)`,
+    origin: `https://www.amazon.com/Games-People-Play-Transactional-Analysis/dp/0345410033`,
+    originDesc: `Amazon`,
+    date: `2020-03-03T00:00:00+03:00`,
+  },
+  {
     skillType: TimelimeSkillTypes.HARD_SKILLS,
     type: TimelimeTypes.COURSES,
     title: `HTML and CSS. Adaptive Website Coding and Automation`,
@@ -416,14 +488,6 @@ const timelineData = [
     linkDesc: `Certificate`,
     date: `2020-03-23T00:00:00+03:00`,
     endDate: `2020-05-27T00:00:00+03:00`,
-  },
-  {
-    skillType: TimelimeSkillTypes.SOFT_SKILLS,
-    type: TimelimeTypes.BOOKS,
-    title: `Games People Play: The Basic Handbook of Transactional Analysis (Eric Berne)`,
-    origin: `https://www.amazon.com/Games-People-Play-Transactional-Analysis/dp/0345410033`,
-    originDesc: `Amazon`,
-    date: `2020-03-03T00:00:00+03:00`,
   },
   {
     skillType: TimelimeSkillTypes.HARD_SKILLS,
