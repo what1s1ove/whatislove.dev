@@ -11,12 +11,14 @@
 .exp-filter__wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   min-height: 60px;
   padding: 5px 8px;
 }
 
 .exp-filter__skills-type {
+  width: 75%;
   margin: 0;
   padding: 0;
 
@@ -24,7 +26,6 @@
 }
 
 .exp-filter__skill-types {
-  max-width: 250px;
   margin: 0;
   padding: 0;
 
@@ -59,9 +60,19 @@
   width: 50%;
 }
 
-@media (min-width: 550px) {
+@media (min-width: 375px) {
+  .exp-filter__wrapper {
+    padding: 5px 28px 5px 23px;
+  }
+}
+
+@media (min-width: 500px) {
+  .exp-filter__skills-type {
+    width: unset;
+  }
+
   .exp-filter__skill-types {
-    max-width: unset;
+    max-width: 270px;
   }
 }
 
@@ -70,6 +81,10 @@
     align-items: center;
 
     padding: 10px 8px;
+  }
+
+  .exp-filter__skill-types {
+    max-width: unset;
   }
 
   .exp-filter__skill-types .exp-filter__item {
