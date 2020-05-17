@@ -11,7 +11,6 @@
 .exp-filter__wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 
   min-height: 60px;
   padding: 5px 8px;
@@ -60,7 +59,7 @@
   width: 50%;
 }
 
-@media (min-width: 375px) {
+@media (min-width: 350px) {
   .exp-filter__wrapper {
     padding: 5px 28px 5px 23px;
   }
@@ -71,12 +70,14 @@
     width: unset;
   }
 
-  .exp-filter__skill-types {
-    max-width: 270px;
+  .exp-filter__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
   }
 }
 
-@media (min-width: 640px) {
+@media (min-width: 620px) {
   .exp-filter__wrapper {
     align-items: center;
 
@@ -106,12 +107,6 @@
 
     clip: rect(0 0 0 0);
     clip-path: inset(100%);
-  }
-
-  .exp-filter__list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
   }
 }
 
