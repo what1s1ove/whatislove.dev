@@ -11,7 +11,6 @@ const server = require(`browser-sync`).create()
 const sourcemap = require(`gulp-sourcemaps`)
 
 const htmlmin = require(`gulp-htmlmin`)
-const critical = require(`critical`).stream
 
 const postcss = require(`gulp-postcss`)
 const postcssimport = require(`postcss-import`)
