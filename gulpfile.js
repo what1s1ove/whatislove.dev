@@ -11,6 +11,7 @@ const server = require(`browser-sync`).create()
 const sourcemap = require(`gulp-sourcemaps`)
 
 const htmlmin = require(`gulp-htmlmin`)
+const critical = require(`critical`).stream
 
 const postcss = require(`gulp-postcss`)
 const postcssimport = require(`postcss-import`)
@@ -135,7 +136,7 @@ gulp.task(`copy`, () =>
         `source/fonts/**/*.woff2`,
         `source/files/**/*.pdf`,
         `source/favicon.ico`,
-        `source/manifest.json`,
+        `source/*.json`,
       ],
       {
         base: `source`,
