@@ -5,18 +5,10 @@ const initSettingBtn = (options) => {
   const { target, mediaQuery, attr, checkTypes, isDefaultSetAttr } = options  
 
   const storageValue = localStorage.getItem(mediaQuery)
-  let isChecked
+  const isChecked = storageValue ? MediaBooleanTypes[storageValue] : window.matchMedia(mediaQuery).matches
 
-  if (storageValue) {
-    isChecked = MediaBooleanTypes[storageValue]
-
+  if(storageValue || isDefaultSetAttr) {
     setAttribute(attr, isChecked ? checkTypes.checked : checkTypes.unchecked)
-  } else {
-    isChecked = window.matchMedia(mediaQuery).matches
-
-    if (isDefaultSetAttr) {
-      setAttribute(attr, isChecked ? checkTypes.checked : checkTypes.unchecked)
-    }
   }
 
   // eslint-disable-next-line no-param-reassign
