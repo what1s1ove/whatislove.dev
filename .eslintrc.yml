@@ -24,8 +24,7 @@ rules:
     - allowTernary: true
   object-curly-newline:
     - error
-    - minProperties: 5
-      multiline: true
+    - multiline: true
       consistent: true
   linebreak-style: off
   import/prefer-default-export: off

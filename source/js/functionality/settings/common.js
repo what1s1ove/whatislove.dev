@@ -13,20 +13,20 @@ const MediaQueriesTypes = {
   MOTION: `(prefers-reduced-motion: no-preference)`,
 }
 
-const ColorThemeTypes = {
-  DARK: `dark`,
-  LIGHT: `light`,
+const ThemeCheckTypes = {
+  checked: `dark`,
+  unchecked: `light`,
 }
 
-const MotionTypes = {
-  NOT_PREFERENCE: `noPreference`,
-  REDUCE: `reduce`,
+const MotionCheckTypes = {
+  checked: `noPreference`,
+  unchecked: `reduce`,
 }
 
 export {
   AttributeTypes,
   MediaQueriesTypes,
-  ColorThemeTypes,
-  MotionTypes,
+  ThemeCheckTypes,
+  MotionCheckTypes,
   MediaBooleanTypes,
 }

@@ -96,20 +96,3 @@ html[data-motion='reduce'] *::before {
 
   scroll-behavior: auto !important;
 }
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  ::before,
-  ::after {
-    background-attachment: initial !important;
-
-    transition: unset !important;
-    animation-delay: -1ms !important;
-    animation-duration: 1ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0s !important;
-    transition-delay: 0s !important;
-
-    scroll-behavior: auto !important;
-  }
-}

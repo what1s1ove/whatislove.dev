@@ -1,28 +1,25 @@
 import { setAttribute } from '../../helpers/index'
 import { MediaBooleanTypes } from './common'
 
-const initSettingBtn = (toggler, mediaQuery, attr, types) => {
+const initSettingBtn = (options) => {
+  const { target, mediaQuery, attr, checkTypes, isDefaultSetAttr } = options
+
   const storageValue = localStorage.getItem(mediaQuery)
-  const mappedTypes = Object.values(types)
-  const checkedValue = mappedTypes[0]
-  const uncheckedValue = mappedTypes[1]
-  let isChecked
+  const isChecked = storageValue
+    ? MediaBooleanTypes[storageValue]
+    : window.matchMedia(mediaQuery).matches
 
-  if (storageValue) {
-    isChecked = MediaBooleanTypes[storageValue]
-
-    setAttribute(attr, isChecked ? checkedValue : uncheckedValue)
-  } else {
-    isChecked = window.matchMedia(mediaQuery).matches
+  if (storageValue || isDefaultSetAttr) {
+    setAttribute(attr, isChecked ? checkTypes.checked : checkTypes.unchecked)
   }
 
   // eslint-disable-next-line no-param-reassign
-  toggler.checked = isChecked
+  target.checked = isChecked
 
-  toggler.addEventListener(`change`, (evt) => {
+  target.addEventListener(`change`, (evt) => {
     const { checked } = evt.target
 
-    setAttribute(attr, checked ? checkedValue : uncheckedValue)
+    setAttribute(attr, checked ? checkTypes.checked : checkTypes.unchecked)
 
     localStorage.setItem(mediaQuery, checked)
   })
