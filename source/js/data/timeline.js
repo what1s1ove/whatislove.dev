@@ -497,6 +497,14 @@ const timelineData = [
     originDesc: `Amazon`,
     date: `2020-04-18T00:00:00+03:00`,
   },
+  {
+    skillType: TimelimeSkillTypes.SOFT_SKILLS,
+    type: TimelimeTypes.BOOKS,
+    title: `How to Have Rewarding Relationships (Dale Carnegie)`,
+    origin: `https://www.amazon.com/Have-Rewarding-Relationships-Paperback-CARNEGIE/dp/9387383490`,
+    originDesc: `Amazon`,
+    date: `2020-05-24T00:00:00+03:00`,
+  },
 ]
 
 export { timelineData }
