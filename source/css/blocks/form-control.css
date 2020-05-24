@@ -1,4 +1,4 @@
-.form-controll {
+.form-control {
   display: flex;
   align-items: center;
 
@@ -13,11 +13,11 @@
   cursor: pointer;
 }
 
-.form-controll:focus-within {
+.form-control:focus-within {
   box-shadow: var(--box-shadow--focus);
 }
 
-.form-controll__input {
+.form-control__input {
   flex-shrink: 0;
   position: relative;
 
@@ -28,7 +28,7 @@
   cursor: pointer;
 }
 
-.form-controll__input--checkbox {
+.form-control__input--checkbox {
   display: block;
 
   width: 20px;
@@ -41,7 +41,7 @@
   border-radius: 0;
 }
 
-.form-controll__input--checkbox:checked::before {
+.form-control__input--checkbox:checked::before {
   position: absolute;
   top: 6px;
   left: 3px;
@@ -56,6 +56,6 @@
   border-right: 0;
 }
 
-.form-controll__input--checkbox:focus {
+.form-control__input--checkbox:focus {
   box-shadow: none;
 }
