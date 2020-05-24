@@ -505,6 +505,14 @@ const timelineData = [
     originDesc: `Amazon`,
     date: `2020-05-24T00:00:00+03:00`,
   },
+  {
+    skillType: TimelimeSkillTypes.SOFT_SKILLS,
+    type: TimelimeTypes.COURSES,
+    title: `SpeakUp: Advanced 1`,
+    origin: `https://www.speak-up.com.ua/`,
+    originDesc: `SpeakUp`,
+    date: `2020-05-24T00:00:00+03:00`,
+  },
 ]
 
 export { timelineData }
