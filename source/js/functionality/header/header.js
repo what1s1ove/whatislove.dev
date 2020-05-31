@@ -1,7 +1,6 @@
 import {
-  checkNodeHasClass,
   getEventListener,
-  getClassAction,
+  setAttribute,
   toggleFocusTrap,
 } from '../../helpers/index'
 import { KeyboardKeys } from '../../common/map/index'
@@ -29,7 +28,9 @@ const onEscapePress = (evt) => {
 const toggleOverlay = (isActive) => {
   document.body.style.overflowY = isActive ? `hidden` : ``
 
-  header.classList[getClassAction(isActive)](HEADER_ACTIVE_CLASS)
+  header.classList.toggle(HEADER_ACTIVE_CLASS)
+
+  setAttribute(toggleBtn, `aria-pressed`, isActive)
 
   cleanFocusTrap = isActive
     ? toggleFocusTrap(focusTrapElements)
@@ -44,7 +45,7 @@ export default () => {
   toggleBtn.addEventListener(`click`, (evt) => {
     evt.stopPropagation()
 
-    const hasActiveClass = checkNodeHasClass(header, HEADER_ACTIVE_CLASS)
+    const hasActiveClass = header.classList.contains(HEADER_ACTIVE_CLASS)
 
     toggleOverlay(!hasActiveClass)
   })
