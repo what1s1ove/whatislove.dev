@@ -5,11 +5,11 @@
   "description": "My own website",
   "author": "What1s1ove",
   "scripts": {
-    "eslint": "eslint --ext .js source/js",
-    "stylelint": "stylelint \"source/css/**/*.css\" --syntax css",
-    "test": "npm run stylelint && npm run eslint",
+    "start": "gulp start --development",
     "build": "gulp build",
-    "start": "gulp start"
+    "test": "npm run stylelint && npm run eslint",
+    "eslint": "eslint --ext .js source/js",
+    "stylelint": "stylelint \"source/css/**/*.css\" --syntax css"
   },
   "browserslist": [
     "last 2 version",
@@ -29,6 +29,7 @@
     "gulp-babel": "^8.0.0",
     "gulp-csso": "^4.0.1",
     "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^3.0.0",
     "gulp-imagemin": "^7.1.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
@@ -49,6 +50,7 @@
     "prettier": "^2.0.5",
     "stylelint": "^13.3.3",
     "stylelint-config-prettier": "^8.0.1",
-    "stylelint-prettier": "^1.1.2"
+    "stylelint-prettier": "^1.1.2",
+    "yargs": "^15.3.1"
   }
 }

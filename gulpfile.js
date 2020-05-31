@@ -4,7 +4,9 @@
 const gulp = require(`gulp`)
 const plumber = require(`gulp-plumber`)
 const del = require(`del`)
+const gulpif = require(`gulp-if`)
 const rename = require(`gulp-rename`)
+const argv = require(`yargs`).argv
 
 const server = require(`browser-sync`).create()
 
@@ -30,6 +32,8 @@ const jpegtran = require(`imagemin-jpegtran`)
 const webp = require(`gulp-webp`)
 const svgstore = require(`gulp-svgstore`)
 
+const isDevelopment = Boolean(argv.development)
+
 gulp.task(`html`, () =>
   gulp
     .src(`source/*.html`)
@@ -46,7 +50,7 @@ gulp.task(`css`, () =>
   gulp
     .src(`source/css/styles.css`)
     .pipe(plumber())
-    .pipe(sourcemap.init())
+    .pipe(gulpif(isDevelopment, sourcemap.init()))
     .pipe(
       postcss([
         postcssimport(),
@@ -59,7 +63,7 @@ gulp.task(`css`, () =>
     )
     .pipe(csso())
     .pipe(rename(`styles.min.css`))
-    .pipe(sourcemap.write(`.`))
+    .pipe(gulpif(isDevelopment, sourcemap.write(`.`)))
     .pipe(gulp.dest(`build/css`))
     .pipe(server.stream())
 )
@@ -67,7 +71,7 @@ gulp.task(`css`, () =>
 gulp.task(`js`, () =>
   gulp
     .src(`./source/js/**/*.js`)
-    .pipe(sourcemap.init())
+    .pipe(gulpif(isDevelopment, sourcemap.init()))
     .pipe(
       rollup({
         input: `./source/js/main.js`,
@@ -83,9 +87,8 @@ gulp.task(`js`, () =>
     )
     .pipe(terser())
     .pipe(rename(`main.min.js`))
-    .pipe(sourcemap.write(`.`))
+    .pipe(gulpif(isDevelopment, sourcemap.write(`.`)))
     .pipe(gulp.dest(`build/js`))
-    .pipe(server.stream())
 )
 
 gulp.task(`images`, () =>
@@ -157,7 +160,7 @@ gulp.task(`server`, () => {
 
   gulp.watch(`source/css/**/*.css`, gulp.series(`css`))
 
-  gulp.watch(`source/js/**/*.js`, gulp.series(`js`))
+  gulp.watch(`source/js/**/*.js`, gulp.series(`js`, `refresh`))
 })
 
 gulp.task(`refresh`, (done) => {

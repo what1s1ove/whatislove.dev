@@ -3,7 +3,7 @@ import { MediaBooleanTypes } from './common'
 
 const initSettingBtn = (options) => {
   const { target, mediaQuery, attr, checkTypes, isDefaultSetAttr } = options
-  const DataAttr = `data-${attr}`;
+  const DataAttr = `data-${attr}`
 
   const storageValue = localStorage.getItem(mediaQuery)
   const isChecked = storageValue
