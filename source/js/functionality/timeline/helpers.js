@@ -64,11 +64,11 @@ const outputTimelineItems = (timelineList, timelineData, filterValues) => {
     return isSuitable
   })
 
-  const timelineItems = filterdTimelineData.reduce((acc, it) => {
+  const timelineItems = filterdTimelineData.map((it) => {
     const timelineItem = getTimelineItem(it)
 
-    return [...acc, timelineItem]
-  }, [])
+    return timelineItem
+  })
 
   outputStringNodes(timelineList, timelineItems)
 }
