@@ -1,13 +1,7 @@
-import { NodeMethods, ClassListActions } from '../common/map/node'
+import { NodeMethods } from '../common/map/node'
 
-const setAttribute = (attr, value) => {
-  document.documentElement.setAttribute(`data-${attr}`, value)
-}
-
-const checkNodeHasClass = (node, className) => {
-  const hasClass = node.classList.contains(className)
-
-  return hasClass
+const setAttribute = (element, attr, value) => {
+  element.setAttribute(attr, value)
 }
 
 const getEventListener = (flag) => {
@@ -18,12 +12,6 @@ const getEventListener = (flag) => {
   return listener
 }
 
-const getClassAction = (flag) => {
-  const classAction = flag ? ClassListActions.ADD : ClassListActions.REMOVE
-
-  return classAction
-}
-
 const outputStringNodes = (container, stringNodes) => {
   // eslint-disable-next-line no-param-reassign
   container.innerHTML = ``
@@ -31,10 +19,4 @@ const outputStringNodes = (container, stringNodes) => {
   container.insertAdjacentHTML(`afterbegin`, stringNodes.join(``))
 }
 
-export {
-  setAttribute,
-  checkNodeHasClass,
-  getEventListener,
-  getClassAction,
-  outputStringNodes,
-}
+export { setAttribute, getEventListener, outputStringNodes }

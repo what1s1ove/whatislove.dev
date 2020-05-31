@@ -3,9 +3,4 @@ const NodeMethods = {
   REMOVE_EVENT_LISTENER: `removeEventListener`,
 }
 
-const ClassListActions = {
-  ADD: `add`,
-  REMOVE: `remove`,
-}
-
-export { NodeMethods, ClassListActions }
+export { NodeMethods }
