@@ -82,6 +82,7 @@ select {
   clip-path: inset(100%);
 }
 
+html[data-motion='reduce'],
 html[data-motion='reduce'] *,
 html[data-motion='reduce'] *::after,
 html[data-motion='reduce'] *::before {
