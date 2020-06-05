@@ -7,6 +7,34 @@
   align-items: center;
 
   height: 100vh;
+
+  overflow: hidden;
+}
+
+.header::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  content: '';
+  width: 500vw;
+  height: 500vh;
+
+  background-image: url('../img/stars-black.svg');
+  background-size: 250px;
+
+  animation: rotate 200s linear infinite;
+
+  pointer-events: none;
+}
+
+html[data-theme='light'] .header::before {
+  background-image: url('../img/stars-black.svg');
+}
+
+html[data-theme='dark'] .header::before {
+  background-image: url('../img/stars-white.svg');
 }
 
 .header__logo {
@@ -157,4 +185,10 @@
 
 .header--active .header__settings {
   display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .header::before {
+    background-image: url('../img/stars-white.svg');
+  }
 }

@@ -35,3 +35,9 @@
     transform: scale(0.83) translate(42px, 8px);
   }
 }
+
+@keyframes rotate {
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
