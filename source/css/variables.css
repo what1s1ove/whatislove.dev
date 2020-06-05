@@ -4,6 +4,8 @@
   --font-size--default: 1.6rem;
   --font-size--large: 2.4rem;
 
+  --color--red: #ff0000;
+
   --z-index--level-one: 100;
   --z-index--level-two: 200;
   --z-index--level-three: 300;
