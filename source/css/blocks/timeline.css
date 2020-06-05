@@ -79,7 +79,7 @@
 
   margin: 0 0 10px;
 
-  color: red;
+  color: var(--color--red);
 }
 
 .timeline__item-desc {
@@ -93,7 +93,7 @@
 
   margin: 0 0 10px;
 
-  color: red;
+  color: var(--color--red);
 }
 
 .timeline__dates {
@@ -126,7 +126,7 @@
 }
 
 .timeline__item:hover .timeline__icon-wrapper {
-  background-color: red;
+  background-color: var(--color--red);
 }
 
 .timeline__icon {
