@@ -15,11 +15,11 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
 
   content: '';
   width: 500vw;
   height: 500vh;
+  margin: -250vh 0 0 -250vw;
 
   background-image: url('../img/stars-black.svg');
   background-size: 250px;
