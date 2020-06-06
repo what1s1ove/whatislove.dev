@@ -37,6 +37,10 @@ html[data-theme='dark'] .header::before {
   background-image: url('../img/stars-white.svg');
 }
 
+.header--active::before {
+  display: none;
+}
+
 .header__logo {
   position: absolute;
   top: 13px;
