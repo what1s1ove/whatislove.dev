@@ -6,7 +6,7 @@ const plumber = require(`gulp-plumber`)
 const del = require(`del`)
 const gulpif = require(`gulp-if`)
 const rename = require(`gulp-rename`)
-const argv = require(`yargs`).argv
+const { argv } = require(`yargs`)
 
 const server = require(`browser-sync`).create()
 
