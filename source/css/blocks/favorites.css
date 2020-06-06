@@ -65,6 +65,12 @@
   background-image: url('../img/favorites-js.svg');
 }
 
+@media print {
+  .favorites {
+    display: none;
+  }
+}
+
 @media (min-width: 630px) {
   .favorites__list {
     padding: 40px 15px;
