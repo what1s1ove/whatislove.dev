@@ -25,3 +25,5 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm run lint:html
+      - run: npm run lint:css
+      - run: npm run lint:js
