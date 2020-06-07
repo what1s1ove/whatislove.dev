@@ -306,6 +306,12 @@
   }
 }
 
+@media print {
+  .timeline {
+    display: none;
+  }
+}
+
 @media (min-width: 940px) {
   .timeline__header {
     margin: 0 0 50px;

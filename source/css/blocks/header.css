@@ -191,6 +191,12 @@ html[data-theme='dark'] .header::before {
   display: none;
 }
 
+@media print {
+  .header {
+    display: none;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   .header::before {
     background-image: url('../img/stars-white.svg');

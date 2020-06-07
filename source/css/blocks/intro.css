@@ -71,6 +71,42 @@
   text-align: center;
 }
 
+@media print {
+  .intro * {
+    color: #000000;
+  }
+
+  .intro__header {
+    display: none;
+  }
+
+  .intro__item--phone {
+    position: unset;
+
+    width: unset;
+    height: unset;
+
+    clip-path: unset;
+  }
+
+  .intro__item-title::after {
+    content: ':';
+  }
+
+  .intro__item--socials .intro__item-title {
+    position: unset;
+
+    width: unset;
+    height: unset;
+
+    clip-path: unset;
+  }
+
+  .intro__item-desc {
+    padding: 0 0 0 7px;
+  }
+}
+
 @media (min-width: 640px) {
   .intro {
     padding: 30px 15px 50px;

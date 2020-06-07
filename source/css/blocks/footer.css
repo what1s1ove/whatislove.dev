@@ -13,3 +13,9 @@
 .footer__routine-wrapper svg {
   fill: var(--color--primary);
 }
+
+@media print {
+  .footer {
+    display: none;
+  }
+}

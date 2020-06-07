@@ -26,3 +26,32 @@
 
   fill: var(--color--primary);
 }
+
+@media print {
+  .social-list {
+    flex-direction: column;
+  }
+
+  .social-list__item {
+    display: flex;
+    align-items: center;
+  }
+
+  .social-list__item-title {
+    position: unset;
+
+    width: unset;
+    height: unset;
+    margin: 0 5px 0 0;
+
+    clip-path: unset;
+  }
+
+  .social-list__item a::before {
+    content: attr(href);
+  }
+
+  .social-list__item svg {
+    display: none;
+  }
+}
