@@ -7,14 +7,20 @@
   "scripts": {
     "start": "gulp start --development",
     "build": "gulp build",
-    "test": "npm run stylelint && npm run eslint",
-    "eslint": "eslint --ext .js source/js",
-    "stylelint": "stylelint \"source/css/**/*.css\" --syntax css"
+    "test": "npm run lint:html && npm run lint:css && npm run lint:js",
+    "lint:html": "node-w3c-validator -i build/*.html -f lint -evH",
+    "lint:css": "stylelint \"source/css/**/*.css\" --syntax css",
+    "lint:js": "eslint --ext .js source/js"
   },
   "browserslist": [
     "last 2 version",
     "not dead"
   ],
+  "nodeW3Cvalidator": {
+    "suppressErrors": [
+      "Attribute “loading” not allowed on element “img” at this point."
+    ]
+  },
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
@@ -38,13 +44,12 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-svgstore": "^7.0.1",
     "gulp-terser": "^1.2.0",
-    "gulp-uglify-es": "^2.0.0",
     "gulp-webp": "^4.0.1",
     "imagemin": "^7.0.1",
     "imagemin-jpegtran": "^6.0.0",
     "imagemin-pngquant": "^8.0.0",
     "imagemin-svgo": "^7.1.0",
-    "npm": "^6.14.5",
+    "node-w3c-validator": "^1.6.1",
     "postcss-color-hex-alpha": "^6.0.0",
     "postcss-import": "^12.0.1",
     "prettier": "^2.0.5",
