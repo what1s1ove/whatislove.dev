@@ -30,7 +30,7 @@ const toggleOverlay = (isActive) => {
 
   header.classList.toggle(HEADER_ACTIVE_CLASS)
 
-  setAttribute(toggleBtn, `aria-pressed`, isActive)
+  setAttribute(toggleBtn, `aria-expanded`, isActive)
 
   cleanFocusTrap = isActive
     ? toggleFocusTrap(focusTrapElements)
