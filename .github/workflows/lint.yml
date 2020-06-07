@@ -1,4 +1,4 @@
-name: HTML
+name: Lint
 
 on:
   pull_request:
