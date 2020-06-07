@@ -29,12 +29,12 @@
           </svg>
         </a>
         <div class="header__navigation-wrapper">
-          <button class="header__toggle-button" aria-pressed="false">
-            <span class="visually-hidden">Toggle menu</span>
+          <button class="header__toggle-button" aria-expanded="false" aria-controls="navigation-menu">
+            <span class="visually-hidden">Toggle navigation menu</span>
             <span class="header__toggle-object"></span>
           </button>
           <nav class="header__navigation navigation">
-            <ul class="navigation__list">
+            <ul class="navigation__list" id="navigation-menu">
               <li class="navigation__item">
                 <a href="#intro">About</a>
               </li>
