@@ -10,6 +10,7 @@ cache:
 branches:
   only:
     - master
+    - development
 
 install:
   - npm install
