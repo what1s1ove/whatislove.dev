@@ -156,6 +156,14 @@ html[data-theme='dark'] .header::before {
   transition: top 0.3s 0.3s, transform 0.3s, background-color 500ms;
 }
 
+.header__toggle-object::before {
+  top: 10px;
+}
+
+.header__toggle-object::after {
+  top: -10px;
+}
+
 .header--active .header__toggle-object::before,
 .header--active .header__toggle-object::after {
   top: 0;
@@ -163,16 +171,8 @@ html[data-theme='dark'] .header::before {
   transition: top 0.3s, transform 0.3s 0.5s;
 }
 
-.header__toggle-object::before {
-  top: 10px;
-}
-
 .header--active .header__toggle-object::before {
   transform: rotate3d(0, 0, 1, 45deg);
-}
-
-.header__toggle-object::after {
-  top: -10px;
 }
 
 .header--active .header__toggle-object::after {

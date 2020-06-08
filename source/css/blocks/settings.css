@@ -56,6 +56,10 @@
   cursor: pointer;
 }
 
+.settings__button-input:focus {
+  box-shadow: none;
+}
+
 .settings__button--theme .settings__button-input {
   background-image: url('../img/theme-light.svg');
   background-repeat: no-repeat;
@@ -87,10 +91,6 @@
 
 .settings__button-input:checked::before {
   transform: translate(25px, -50%);
-}
-
-.settings__button-input:focus {
-  box-shadow: none;
 }
 
 .settings__icon {
