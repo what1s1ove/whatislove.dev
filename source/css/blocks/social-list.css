@@ -47,7 +47,7 @@
     clip-path: unset;
   }
 
-  .social-list__item a::before {
+  .social-list__item a::after {
     content: attr(href);
   }
 
