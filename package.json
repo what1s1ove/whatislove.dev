@@ -7,7 +7,7 @@
   "scripts": {
     "start": "gulp start --development",
     "build": "gulp build",
-    "test": "npm run lint:html && npm run lint:css && npm run lint:js",
+    "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
     "lint:html": "node-w3c-validator -i build/*.html -f lint -evH",
     "lint:css": "stylelint \"source/css/**/*.css\" --syntax css",
     "lint:js": "eslint --ext .js source/js"
