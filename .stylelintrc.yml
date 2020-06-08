@@ -9,3 +9,4 @@ rules:
       - except: first-nested
         ignore: after-comment
     number-max-precision: 2
+    length-zero-no-unit: true
