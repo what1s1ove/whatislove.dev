@@ -35,12 +35,10 @@ const getTimelineItem = (itemData) => {
             <time datetime="${date}">${getFormattedDate(date)}</time>
             ${
               endDate
-                ? `<time datetime="${endDate}">- 
-                   ${getFormattedDate(endDate)}
-                  </time>`
+                ? `<time datetime="${endDate}"> — ${getFormattedDate(endDate)}</time>`
                 : ``
             }
-           </p>`
+          </p>`
         : ``
     }
   </div>

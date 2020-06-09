@@ -7,10 +7,11 @@
   "scripts": {
     "start": "gulp start --development",
     "build": "gulp build",
-    "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
+    "lint": "npm run lint:editorconfig && npm run lint:html && npm run lint:css && npm run lint:js",
     "lint:html": "node-w3c-validator -i build/*.html -f lint -evH",
     "lint:css": "stylelint \"source/css/**/*.css\" --syntax css",
-    "lint:js": "eslint --ext .js source/js"
+    "lint:js": "eslint --ext .js source/js",
+    "lint:editorconfig": "editorconfig-checker"
   },
   "browserslist": [
     "last 2 version",
@@ -28,6 +29,7 @@
     "browser-sync": "^2.26.7",
     "css-mqpacker": "^7.0.0",
     "del": "^5.1.0",
+    "editorconfig-checker": "^3.1.0",
     "eslint": "^7.0.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
