@@ -1,9 +1,5 @@
 {
-  "name": "own-website",
-  "version": "0.0.1",
   "private": true,
-  "description": "My own website",
-  "author": "What1s1ove",
   "scripts": {
     "start": "gulp start --development",
     "build": "gulp build",
