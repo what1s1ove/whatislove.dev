@@ -1,40 +1,38 @@
-/* eslint-disable function-paren-newline */
-/* eslint-disable comma-dangle */
 /* eslint-disable implicit-arrow-linebreak */
-const gulp = require(`gulp`)
-const plumber = require(`gulp-plumber`)
-const del = require(`del`)
-const gulpif = require(`gulp-if`)
-const rename = require(`gulp-rename`)
-const { argv } = require(`yargs`)
+import gulp from 'gulp'
+import plumber from 'gulp-plumber'
+import del from 'del'
+import gulpif from 'gulp-if'
+import rename from 'gulp-rename'
+import yargs from 'yargs'
 
-const server = require(`browser-sync`).create()
+import sync from 'browser-sync'
 
-const sourcemap = require(`gulp-sourcemaps`)
+import sourcemap from 'gulp-sourcemaps'
 
-const htmlmin = require(`gulp-htmlmin`)
+import htmlmin from 'gulp-htmlmin'
 
-const postcss = require(`gulp-postcss`)
-const postcssimport = require(`postcss-import`)
-const autoprefixer = require(`autoprefixer`)
-const hexalpha = require(`postcss-color-hex-alpha`)
-const mqpacker = require(`css-mqpacker`)
-const csso = require(`gulp-csso`)
+import postcss from 'gulp-postcss'
+import postcssimport from 'postcss-import'
+import autoprefixer from 'autoprefixer'
+import hexalpha from 'postcss-color-hex-alpha'
+import mqpacker from 'css-mqpacker'
+import csso from 'gulp-csso'
 
-const rollup = require(`gulp-rollup`)
-const babel = require(`gulp-babel`)
-const terser = require(`gulp-terser`)
+import rollup from 'gulp-rollup'
+import babel from 'gulp-babel'
+import terser from 'gulp-terser'
 
-const imagemin = require(`gulp-imagemin`)
-const svgo = require(`imagemin-svgo`)
-const pngquant = require(`imagemin-pngquant`)
-const jpegtran = require(`imagemin-jpegtran`)
-const webp = require(`gulp-webp`)
-const svgstore = require(`gulp-svgstore`)
+import imagemin from 'gulp-imagemin'
+import svgo from 'imagemin-svgo'
+import pngquant from 'imagemin-pngquant'
+import jpegtran from 'imagemin-jpegtran'
+import gulpwebp from 'gulp-webp'
+import svgstore from 'gulp-svgstore'
 
-const isDevelopment = Boolean(argv.development)
+const isDevelopment = Boolean(yargs.argv.development)
 
-gulp.task(`html`, () =>
+export const html = () =>
   gulp
     .src(`source/*.html`)
     .pipe(
@@ -44,9 +42,8 @@ gulp.task(`html`, () =>
       })
     )
     .pipe(gulp.dest(`build`))
-)
 
-gulp.task(`css`, () =>
+export const css = () =>
   gulp
     .src(`source/css/styles.css`)
     .pipe(plumber())
@@ -65,10 +62,9 @@ gulp.task(`css`, () =>
     .pipe(rename(`styles.min.css`))
     .pipe(gulpif(isDevelopment, sourcemap.write(`.`)))
     .pipe(gulp.dest(`build/css`))
-    .pipe(server.stream())
-)
+    .pipe(sync.stream())
 
-gulp.task(`js`, () =>
+export const js = () =>
   gulp
     .src(`./source/js/**/*.js`)
     .pipe(gulpif(isDevelopment, sourcemap.init()))
@@ -89,9 +85,8 @@ gulp.task(`js`, () =>
     .pipe(rename(`main.min.js`))
     .pipe(gulpif(isDevelopment, sourcemap.write(`.`)))
     .pipe(gulp.dest(`build/js`))
-)
 
-gulp.task(`images`, () =>
+export const images = () =>
   gulp
     .src(`source/img/**/*.{png,jpg,svg}`)
     .pipe(
@@ -104,20 +99,18 @@ gulp.task(`images`, () =>
       ])
     )
     .pipe(gulp.dest(`build/img`))
-)
 
-gulp.task(`webp`, () =>
+export const webp = () =>
   gulp
     .src(`build/img/**/*.photo.{png,jpg}`)
     .pipe(
-      webp({
+      gulpwebp({
         quality: 75,
       })
     )
     .pipe(gulp.dest(`build/img`))
-)
 
-gulp.task(`sprite`, () =>
+export const sprite = () =>
   gulp
     .src(`build/img/*.icon.svg`)
     .pipe(
@@ -127,11 +120,10 @@ gulp.task(`sprite`, () =>
     )
     .pipe(rename(`sprite.svg`))
     .pipe(gulp.dest(`build/img`))
-)
 
-gulp.task(`clean`, () => del(`build`))
+export const clean = () => del(`build`)
 
-gulp.task(`copy`, () =>
+export const copy = () =>
   gulp
     .src(
       [
@@ -145,10 +137,15 @@ gulp.task(`copy`, () =>
       }
     )
     .pipe(gulp.dest(`build`))
-)
 
-gulp.task(`server`, () => {
-  server.init({
+export const refresh = (done) => {
+  sync.reload()
+
+  done()
+}
+
+export const server = () => {
+  sync.init({
     server: `build/`,
     notify: false,
     open: true,
@@ -156,22 +153,16 @@ gulp.task(`server`, () => {
     ui: false,
   })
 
-  gulp.watch(`source/*.html`, gulp.series(`html`, `refresh`))
+  gulp.watch(`source/*.html`, gulp.series(html, refresh))
 
-  gulp.watch(`source/css/**/*.css`, gulp.series(`css`))
+  gulp.watch(`source/css/**/*.css`, gulp.series(css))
 
-  gulp.watch(`source/js/**/*.js`, gulp.series(`js`, `refresh`))
-})
+  gulp.watch(`source/js/**/*.js`, gulp.series(js, refresh))
+}
 
-gulp.task(`refresh`, (done) => {
-  server.reload()
+export const build = () =>
+  gulp.series(clean, copy, html, css, js, images, webp, sprite)
 
-  done()
-})
-
-gulp.task(
-  `build`,
-  gulp.series(`clean`, `copy`, `html`, `css`, `js`, `images`, `webp`, `sprite`)
-)
-
-gulp.task(`start`, gulp.series(`build`, `server`))
+export const start = () => {
+  gulp.series(build, server)
+}
