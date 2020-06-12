@@ -171,4 +171,6 @@ export const build = gulp.series(
   sprite
 )
 
-export const start = gulp.series(build, server)
+export const develop = gulp.series(build, server)
+
+export default isDevelopment ? develop : build
