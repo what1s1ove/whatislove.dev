@@ -1,5 +1,6 @@
 {
   "private": true,
+  "type": "module",
   "scripts": {
     "start": "gulp start --development",
     "build": "gulp build",
