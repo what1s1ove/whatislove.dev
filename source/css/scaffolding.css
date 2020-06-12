@@ -27,7 +27,8 @@
 *::after {
   box-sizing: border-box;
 
-  transition: border-color, background-color var(--transition-duration--theme);
+  transition: all var(--transition-duration--theme);
+  transition-property: border-color, background-color;
 }
 
 html {
