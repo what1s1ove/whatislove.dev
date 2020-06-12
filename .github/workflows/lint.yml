@@ -7,7 +7,7 @@ on:
       - development
 
 jobs:
-  validate:
+  linting:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -24,7 +24,4 @@ jobs:
           architecture: x64
       - run: npm ci
       - run: npm run build
-      - run: npm run lint:editorconfig
-      - run: npm run lint:html
-      - run: npm run lint:css
-      - run: npm run lint:js
+      - run: npm run lint

@@ -2,8 +2,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "gulp start --development",
-    "build": "gulp build",
+    "start": "gulp --development",
+    "build": "gulp",
     "lint": "npm run lint:editorconfig && npm run lint:html && npm run lint:css && npm run lint:js",
     "lint:html": "node-w3c-validator -i build/*.html -f lint -evH",
     "lint:css": "stylelint \"source/css/**/*.css\" --syntax css",
