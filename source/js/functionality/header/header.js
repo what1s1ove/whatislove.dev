@@ -5,15 +5,14 @@ import {
 } from '../../helpers/index'
 import { KeyboardKeys } from '../../common/map/index'
 
+const HEADER_ACTIVE_CLASS = `header--active`
+
 let header = document.querySelector(`.header`)
 let headerOverlay = document.querySelector(`.header__navigation-wrapper`)
 let headerNavLinks = document.querySelectorAll(`.navigation__item a[href]`)
 let toggleBtn = document.querySelector(`.header__toggle-button`)
 
 let focusTrapElements = [toggleBtn, ...headerNavLinks]
-
-const HEADER_ACTIVE_CLASS = `header--active`
-
 let cleanFocusTrap
 
 // eslint-disable-next-line no-use-before-define
