@@ -5,27 +5,27 @@ import {
 } from '../../helpers/index'
 import { KeyboardKeys } from '../../common/map/index'
 
-const header = document.querySelector(`.header`)
-const headerOverlay = document.querySelector(`.header__navigation-wrapper`)
-const headerNavLinks = document.querySelectorAll(`.navigation__item a[href]`)
-const toggleBtn = document.querySelector(`.header__toggle-button`)
+let header = document.querySelector(`.header`)
+let headerOverlay = document.querySelector(`.header__navigation-wrapper`)
+let headerNavLinks = document.querySelectorAll(`.navigation__item a[href]`)
+let toggleBtn = document.querySelector(`.header__toggle-button`)
 
-const focusTrapElements = [toggleBtn, ...headerNavLinks]
+let focusTrapElements = [toggleBtn, ...headerNavLinks]
 
 const HEADER_ACTIVE_CLASS = `header--active`
 
 let cleanFocusTrap
 
 // eslint-disable-next-line no-use-before-define
-const onCloseOverlay = () => toggleOverlay(false)
+let onCloseOverlay = () => toggleOverlay(false)
 
-const onEscapePress = (evt) => {
+let onEscapePress = (evt) => {
   if (evt.key === KeyboardKeys.ESCAPE) {
     onCloseOverlay()
   }
 }
 
-const toggleOverlay = (isActive) => {
+let toggleOverlay = (isActive) => {
   document.body.style.overflowY = isActive ? `hidden` : ``
 
   header.classList.toggle(HEADER_ACTIVE_CLASS)
@@ -45,7 +45,7 @@ export default () => {
   toggleBtn.addEventListener(`click`, (evt) => {
     evt.stopPropagation()
 
-    const hasActiveClass = header.classList.contains(HEADER_ACTIVE_CLASS)
+    let hasActiveClass = header.classList.contains(HEADER_ACTIVE_CLASS)
 
     toggleOverlay(!hasActiveClass)
   })

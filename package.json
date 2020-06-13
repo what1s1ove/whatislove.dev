@@ -30,6 +30,7 @@
     "eslint": "^7.0.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prefer-let": "^1.0.1",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-csso": "^4.0.1",

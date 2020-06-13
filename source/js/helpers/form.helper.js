@@ -1,15 +1,15 @@
 import { FormElementTypes } from '../common/map/index'
 
 const getTargetValue = (target) => {
-  const { type, checked, value } = target
+  let { type, checked, value } = target
 
-  const targetValue = type === FormElementTypes.CHECKBOX ? checked : value
+  let targetValue = type === FormElementTypes.CHECKBOX ? checked : value
 
   return targetValue
 }
 
 const getTargetNameValue = (target) => {
-  const targetValue = {
+  let targetValue = {
     [target.name]: getTargetValue(target),
   }
 
@@ -17,13 +17,13 @@ const getTargetNameValue = (target) => {
 }
 
 const getFormValues = (formElements) => {
-  const formFieldsets = [...formElements].filter(
+  let formFieldsets = [...formElements].filter(
     (it) => it.type === FormElementTypes.FIELDSET
   )
 
-  const getFieldsetsValues = (fieldsets) => {
-    const fieldsetsValues = [...fieldsets].reduce((acc, element) => {
-      const { name, type, elements } = element
+  let getFieldsetsValues = (fieldsets) => {
+    let fieldsetsValues = [...fieldsets].reduce((acc, element) => {
+      let { name, type, elements } = element
 
       // eslint-disable-next-line no-nested-ternary
       return name
@@ -36,9 +36,9 @@ const getFormValues = (formElements) => {
     return fieldsetsValues
   }
 
-  const formValues = getFieldsetsValues(formFieldsets)
+  let formValues = getFieldsetsValues(formFieldsets)
 
   return formValues
 }
 
-export { getTargetValue, getFormValues }
+export { getTargetValue, getFormValues, getTargetNameValue }
