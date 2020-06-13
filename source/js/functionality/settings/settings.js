@@ -6,10 +6,10 @@ import {
   MotionCheckTypes,
 } from './common'
 
-const themeBtn = document.querySelector(`.settings__button--theme input`)
-const motionBtn = document.querySelector(`.settings__button--animate input`)
+let themeBtn = document.querySelector(`.settings__button--theme input`)
+let motionBtn = document.querySelector(`.settings__button--animate input`)
 
-const themeBtnSettings = {
+let themeBtnSettings = {
   target: themeBtn,
   mediaQuery: MediaQueriesTypes.THEME,
   attr: AttributeTypes.THEME,
@@ -17,7 +17,7 @@ const themeBtnSettings = {
   isDefaultSetAttr: false
 }
 
-const motionBtnSettings = {
+let motionBtnSettings = {
   target: motionBtn,
   mediaQuery: MediaQueriesTypes.MOTION,
   attr: AttributeTypes.MOTION,

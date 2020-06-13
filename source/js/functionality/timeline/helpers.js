@@ -3,7 +3,7 @@ import { outputStringNodes, getFormattedDate } from '../../helpers/index'
 import { TimelineIcons } from '../../common/map/index'
 
 const getTimelineItem = (itemData) => {
-  const {
+  let {
     type,
     title,
     origin,
@@ -15,7 +15,7 @@ const getTimelineItem = (itemData) => {
     endDate,
   } = itemData
 
-  const itmelineItem = `<li class="timeline__item">
+  let itmelineItem = `<li class="timeline__item">
   <div class="timeline__item-wrapper">
     ${title ? `<h3 class="timeline__item-title">${title}</h3>` : ``}
     ${
@@ -54,16 +54,16 @@ const getTimelineItem = (itemData) => {
 }
 
 const outputTimelineItems = (timelineList, timelineData, filterValues) => {
-  const filterdTimelineData = timelineData.filter((it) => {
+  let filterdTimelineData = timelineData.filter((it) => {
     // eslint-disable-next-line operator-linebreak
-    const isSuitable =
+    let isSuitable =
       filterValues.skillTypes[it.skillType] && filterValues.types[it.type]
 
     return isSuitable
   })
 
-  const timelineItems = filterdTimelineData.map((it) => {
-    const timelineItem = getTimelineItem(it)
+  let timelineItems = filterdTimelineData.map((it) => {
+    let timelineItem = getTimelineItem(it)
 
     return timelineItem
   })

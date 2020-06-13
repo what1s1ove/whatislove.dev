@@ -5,7 +5,7 @@ const setAttribute = (element, attr, value) => {
 }
 
 const getEventListener = (flag) => {
-  const listener = flag
+  let listener = flag
     ? NodeMethods.ADD_EVET_LISTENER
     : NodeMethods.REMOVE_EVENT_LISTENER
 

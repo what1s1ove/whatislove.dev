@@ -6,12 +6,12 @@ import {
 import { timelineData } from '../../data/index'
 import { outputTimelineItems } from './helpers'
 
-const timelineList = document.querySelector(`.timeline__list`)
-const filterForm = document.forms.timeline
+let timelineList = document.querySelector(`.timeline__list`)
+let filterForm = document.forms.timeline
 
-const filterSettings = getFormValues(filterForm.elements)
+let filterSettings = getFormValues(filterForm.elements)
 
-const setNewFilter = (newFilter) => {
+let setNewFilter = (newFilter) => {
   outputTimelineItems(timelineList, timelineData, newFilter)
 }
 
@@ -19,9 +19,9 @@ setNewFilter(filterSettings)
 
 export default () => {
   filterForm.addEventListener(`change`, ({ target }) => {
-    const targetValue = getTargetValue(target)
+    let targetValue = getTargetValue(target)
 
-    const newFilterSettings = changeObjectKey(
+    let newFilterSettings = changeObjectKey(
       filterSettings,
       target.name,
       targetValue

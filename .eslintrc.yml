@@ -4,6 +4,9 @@ env:
 
 extends: 'airbnb-base'
 
+plugins:
+  - prefer-let
+
 rules:
   semi:
     - error
@@ -19,6 +22,8 @@ rules:
   quotes:
     - error
     - backtick
+  prefer-let/prefer-let:
+    - error
   no-unused-expressions:
     - error
     - allowTernary: true
@@ -26,5 +31,6 @@ rules:
     - error
     - multiline: true
       consistent: true
+  prefer-const: off
   linebreak-style: off
   import/prefer-default-export: off
