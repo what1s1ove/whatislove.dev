@@ -47,6 +47,10 @@
     clip-path: unset;
   }
 
+  .social-list__item-title::after {
+    content: ':';
+  }
+
   .social-list__item a::after {
     content: attr(href);
   }
