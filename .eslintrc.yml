@@ -22,6 +22,9 @@ rules:
   quotes:
     - error
     - backtick
+  curly:
+    - error
+    - multi
   prefer-let/prefer-let:
     - error
   no-unused-expressions:

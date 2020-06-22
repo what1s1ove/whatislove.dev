@@ -3,17 +3,18 @@ import { MediaBooleanTypes } from './common'
 
 const initSettingBtn = (options) => {
   let { target, mediaQuery, attr, checkTypes, isDefaultSetAttr } = options
-  let DataAttr = `data-${attr}`
+  let dataAttr = `data-${attr}`
 
   let storageValue = localStorage.getItem(mediaQuery)
   let isChecked = storageValue
     ? MediaBooleanTypes[storageValue]
     : window.matchMedia(mediaQuery).matches
 
+  // eslint-disable-next-line curly
   if (storageValue || isDefaultSetAttr) {
     setAttribute(
       document.documentElement,
-      DataAttr,
+      dataAttr,
       isChecked ? checkTypes.checked : checkTypes.unchecked
     )
   }
@@ -26,7 +27,7 @@ const initSettingBtn = (options) => {
 
     setAttribute(
       document.documentElement,
-      DataAttr,
+      dataAttr,
       checked ? checkTypes.checked : checkTypes.unchecked
     )
 
