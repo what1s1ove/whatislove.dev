@@ -19,9 +19,7 @@ let cleanFocusTrap
 let onCloseOverlay = () => toggleOverlay(false)
 
 let onEscapePress = (evt) => {
-  if (evt.key === KeyboardKeys.ESCAPE) {
-    onCloseOverlay()
-  }
+  if (evt.key === KeyboardKeys.ESCAPE) onCloseOverlay()
 }
 
 let toggleOverlay = (isActive) => {
