@@ -34,10 +34,6 @@
   cursor: pointer;
 }
 
-.settings__button:focus-within {
-  box-shadow: var(--box-shadow--focus);
-}
-
 .settings__button-input {
   position: relative;
 
@@ -54,10 +50,6 @@
 
   appearance: none;
   cursor: pointer;
-}
-
-.settings__button-input:focus {
-  box-shadow: none;
 }
 
 .settings__button--theme .settings__button-input {

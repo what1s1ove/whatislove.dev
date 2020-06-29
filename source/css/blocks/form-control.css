@@ -13,10 +13,6 @@
   cursor: pointer;
 }
 
-.form-control:focus-within {
-  box-shadow: var(--box-shadow--focus);
-}
-
 .form-control__input {
   flex-shrink: 0;
   position: relative;
@@ -54,8 +50,4 @@
   border: 2px solid var(--color--primary);
   border-top: 0;
   border-right: 0;
-}
-
-.form-control__input--checkbox:focus {
-  box-shadow: none;
 }

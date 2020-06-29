@@ -15,8 +15,6 @@
   --transition-duration--theme: 0.5s;
 
   --outline-color: #5793f9;
-
-  --box-shadow--focus: 0 0 0 2px var(--outline-color);
 }
 
 :root,
