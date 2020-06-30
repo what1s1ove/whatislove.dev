@@ -1,10 +1,11 @@
+import 'focus-visible/dist/focus-visible.min'
 import initHeader from './functionality/header/header'
-import initiSettings from './functionality/settings/settings'
+import initSettings from './functionality/settings/settings'
 import initTimelineForm from './functionality/timeline/timeline'
 
 const init = () => {
   initHeader()
-  initiSettings()
+  initSettings()
   initTimelineForm()
 }
 

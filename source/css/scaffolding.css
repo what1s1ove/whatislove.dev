@@ -17,9 +17,9 @@
 }
 
 :focus {
-  outline: 0;
+  outline: 3px solid var(--outline-color);
 
-  box-shadow: var(--box-shadow--focus);
+  outline-offset: 2px;
 }
 
 *,
@@ -81,6 +81,10 @@ select {
 
   clip: rect(0 0 0 0);
   clip-path: inset(100%);
+}
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
 }
 
 html[data-motion='reduce'],

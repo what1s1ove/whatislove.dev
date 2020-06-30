@@ -19,9 +19,11 @@ import hexalpha from 'postcss-color-hex-alpha'
 import mqpacker from 'css-mqpacker'
 import csso from 'gulp-csso'
 
-import rollup from 'gulp-rollup'
-import babel from 'gulp-babel'
-import terser from 'gulp-terser'
+import { rollup } from 'rollup'
+import babelInstance from '@rollup/plugin-babel'
+import resolve from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
+import { terser } from 'rollup-plugin-terser'
 
 import imagemin from 'gulp-imagemin'
 import svgo from 'imagemin-svgo'
@@ -65,26 +67,26 @@ export const css = () =>
     .pipe(sync.stream())
 
 export const js = () =>
-  gulp
-    .src(`./source/js/**/*.js`)
-    .pipe(gulpif(isDevelopment, sourcemap.init()))
-    .pipe(
-      rollup({
-        input: `./source/js/main.js`,
-        output: {
-          format: `iife`,
-        },
-      })
-    )
-    .pipe(
-      babel({
+  rollup({
+    input: `./source/js/main.js`,
+    plugins: [
+      resolve(),
+      commonjs(),
+      babelInstance.babel({
+        babelHelpers: `bundled`,
         presets: [`@babel/preset-env`],
-      })
-    )
-    .pipe(terser())
-    .pipe(rename(`main.min.js`))
-    .pipe(gulpif(isDevelopment, sourcemap.write(`.`)))
-    .pipe(gulp.dest(`build/js`))
+        babelrc: false,
+        exclude: `node_modules/**`,
+      }),
+      !isDevelopment && terser(),
+    ],
+  }).then((bundle) =>
+    bundle.write({
+      file: `./build/js/main.min.js`,
+      format: `iife`,
+      sourcemap: Boolean(isDevelopment),
+    })
+  )
 
 export const images = () =>
   gulp
