@@ -2,11 +2,11 @@ import { setAttribute } from '../../helpers'
 import { MediaBooleanTypes } from './common'
 
 const initSettingBtn = (options) => {
-  let { target, mediaQuery, attr, checkTypes, isDefaultSetAttr } = options
-  let dataAttr = `data-${attr}`
+  const { target, mediaQuery, attr, checkTypes, isDefaultSetAttr } = options
+  const dataAttr = `data-${attr}`
 
-  let storageValue = localStorage.getItem(mediaQuery)
-  let isChecked = storageValue
+  const storageValue = localStorage.getItem(mediaQuery)
+  const isChecked = storageValue
     ? MediaBooleanTypes[storageValue]
     : window.matchMedia(mediaQuery).matches
 
@@ -23,7 +23,7 @@ const initSettingBtn = (options) => {
   target.checked = isChecked
 
   target.addEventListener(`change`, (evt) => {
-    let { checked } = evt.target
+    const { checked } = evt.target
 
     setAttribute(
       document.documentElement,

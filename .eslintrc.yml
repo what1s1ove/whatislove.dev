@@ -4,8 +4,6 @@ env:
 
 extends: 'airbnb-base'
 
-plugins:
-  - prefer-let
 
 rules:
   semi:
@@ -25,8 +23,6 @@ rules:
   curly:
     - error
     - multi
-  prefer-let/prefer-let:
-    - error
   quote-props:
     - error
     - consistent
@@ -37,6 +33,5 @@ rules:
     - error
     - multiline: true
       consistent: true
-  prefer-const: off
   linebreak-style: off
   import/prefer-default-export: off

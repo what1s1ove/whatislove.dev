@@ -1,9 +1,9 @@
 const changeObjectKey = (object, keyName, value) => {
-  let changedObject = { ...object }
+  const changedObject = { ...object }
 
-  let changeKey = (obj) => {
+  const changeKey = (obj) => {
     // eslint-disable-next-line curly, no-restricted-syntax
-    for (let key in obj) {
+    for (const key in obj) {
       // eslint-disable-next-line no-param-reassign
       if (obj[keyName] !== undefined) obj[keyName] = value
       else if (typeof obj[key] === `object`) changeKey(obj[key])
