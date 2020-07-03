@@ -27,6 +27,9 @@ rules:
     - multi
   prefer-let/prefer-let:
     - error
+  quote-props:
+    - error
+    - consistent
   no-unused-expressions:
     - error
     - allowTernary: true
