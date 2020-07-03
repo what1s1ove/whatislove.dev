@@ -15,7 +15,6 @@ const toggleBtn = document.querySelector(`.header__toggle-button`)
 const focusTrapElements = [toggleBtn, ...headerNavLinks]
 let cleanFocusTrap
 
-// eslint-disable-next-line no-use-before-define
 const onCloseOverlay = () => toggleOverlay(false)
 
 const onEscapePress = (evt) => {
