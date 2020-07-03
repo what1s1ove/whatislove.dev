@@ -2,8 +2,8 @@ import {
   getTargetValue,
   getFormValues,
   changeObjectKey,
-} from '../../helpers/index'
-import { timelineData } from '../../data/index'
+} from '../../helpers'
+import { timelineData } from '../../data'
 import { outputTimelineItems } from './helpers'
 
 let timelineList = document.querySelector(`.timeline__list`)

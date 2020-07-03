@@ -1,6 +1,6 @@
 /* eslint-disable indent */
-import { outputStringNodes, getFormattedDate } from '../../helpers/index'
-import { TimelineIcons } from '../../common/map/index'
+import { outputStringNodes, getFormattedDate } from '../../helpers'
+import { TimelineIcons } from '../../common/map'
 
 const getTimelineItem = (itemData) => {
   let {

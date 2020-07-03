@@ -1,4 +1,4 @@
-import { KeyboardKeys } from '../common/map/index'
+import { KeyboardKeys } from '../common/map'
 
 const toggleFocusTrap = (focusTrapElements) => {
   let firstNode = focusTrapElements[0]

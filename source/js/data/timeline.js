@@ -1,4 +1,4 @@
-import { TimelimeSkillTypes, TimelimeTypes } from '../common/map/index'
+import { TimelimeSkillTypes, TimelimeTypes } from '../common/map'
 
 const BASE_COURSES_URL = `files/courses`
 

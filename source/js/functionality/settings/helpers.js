@@ -1,4 +1,4 @@
-import { setAttribute } from '../../helpers/index'
+import { setAttribute } from '../../helpers'
 import { MediaBooleanTypes } from './common'
 
 const initSettingBtn = (options) => {

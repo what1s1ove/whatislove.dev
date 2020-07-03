@@ -1,10 +1,11 @@
 /* eslint-disable implicit-arrow-linebreak */
+import del from 'del'
+import yargs from 'yargs'
+
 import gulp from 'gulp'
 import plumber from 'gulp-plumber'
-import del from 'del'
 import gulpif from 'gulp-if'
 import rename from 'gulp-rename'
-import yargs from 'yargs'
 
 import sync from 'browser-sync'
 
@@ -85,8 +86,7 @@ export const js = () =>
       file: `./build/js/main.min.js`,
       format: `iife`,
       sourcemap: Boolean(isDevelopment),
-    })
-  )
+    }))
 
 export const images = () =>
   gulp

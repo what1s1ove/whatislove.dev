@@ -1,4 +1,4 @@
-import { FormElementTypes } from '../common/map/index'
+import { FormElementTypes } from '../common/map'
 
 const getTargetValue = (target) => {
   let { type, checked, value } = target
