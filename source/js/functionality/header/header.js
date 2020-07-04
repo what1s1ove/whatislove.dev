@@ -15,6 +15,14 @@ const headerBtnNode = document.querySelector(`.header__toggle-button`)
 const focusTrapElements = [headerBtnNode, ...headerLinkNodes]
 let cleanFocusTrap = null
 
+const toggleListeners = (isActive) => {
+  const eventListener = getEventListener(isActive)
+
+  headerOverlayNode[eventListener](`click`, onCloseOverlay)
+
+  window[eventListener](`keydown`, onEscapePress)
+}
+
 const onCloseOverlay = () => {
   toggleOverlay(false)
 }
@@ -24,21 +32,17 @@ const onEscapePress = (evt) => {
 }
 
 const toggleOverlay = (isActive) => {
-  const eventListener = getEventListener(isActive)
-
   document.body.style.overflowY = isActive ? `hidden` : ``
 
   headerNode.classList.toggle(HEADER_ACTIVE_CLASS)
 
   headerBtnNode.setAttribute(`aria-expanded`, isActive)
 
+  toggleListeners(isActive)
+
   cleanFocusTrap = isActive
     ? subscribeFocusTrap(focusTrapElements)
     : cleanFocusTrap()
-
-  headerOverlayNode[eventListener](`click`, onCloseOverlay)
-
-  window[eventListener](`keydown`, onEscapePress)
 }
 
 export default () => {

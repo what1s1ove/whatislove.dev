@@ -26,9 +26,6 @@ rules:
   quotes:
     - error
     - backtick
-  curly:
-    - error
-    - multi
   quote-props:
     - error
     - consistent
