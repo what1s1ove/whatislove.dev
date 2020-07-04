@@ -1,28 +1,30 @@
 import { initSettingBtn } from './helpers'
 import {
-  AttributeTypes,
-  MediaQueriesTypes,
-  ThemeCheckTypes,
-  MotionCheckTypes,
+  AttributeType,
+  MediaQueriesType,
+  ThemeCheckType,
+  MotionCheckType,
 } from './common'
 
-let themeBtn = document.querySelector(`.settings__button--theme input`)
-let motionBtn = document.querySelector(`.settings__button--animate input`)
+const themeTogglerNode = document.querySelector(
+  `.settings__button--theme input`
+)
+const motionTogglerNode = document.querySelector(
+  `.settings__button--animate input`
+)
 
-let themeBtnSettings = {
-  target: themeBtn,
-  mediaQuery: MediaQueriesTypes.THEME,
-  attr: AttributeTypes.THEME,
-  checkTypes: ThemeCheckTypes,
-  isDefaultSetAttr: false
+const themeBtnSettings = {
+  togglerNode: themeTogglerNode,
+  mediaQuery: MediaQueriesType.THEME,
+  attr: AttributeType.THEME,
+  checkTypes: ThemeCheckType,
 }
 
-let motionBtnSettings = {
-  target: motionBtn,
-  mediaQuery: MediaQueriesTypes.MOTION,
-  attr: AttributeTypes.MOTION,
-  checkTypes: MotionCheckTypes,
-  isDefaultSetAttr: true
+const motionBtnSettings = {
+  togglerNode: motionTogglerNode,
+  mediaQuery: MediaQueriesType.MOTION,
+  attr: AttributeType.MOTION,
+  checkTypes: MotionCheckType,
 }
 
 export default () => {

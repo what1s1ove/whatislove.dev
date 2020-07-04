@@ -1,4 +1,4 @@
-let formatter = new Intl.DateTimeFormat(`en`, {
+const formatter = new Intl.DateTimeFormat(`en`, {
   month: `short`,
   year: `numeric`,
 })

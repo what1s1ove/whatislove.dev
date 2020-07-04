@@ -1,10 +1,12 @@
 /* eslint-disable implicit-arrow-linebreak */
+import del from 'del'
+import yargs from 'yargs'
+import path from 'path'
+
 import gulp from 'gulp'
 import plumber from 'gulp-plumber'
-import del from 'del'
 import gulpif from 'gulp-if'
 import rename from 'gulp-rename'
-import yargs from 'yargs'
 
 import sync from 'browser-sync'
 
@@ -21,6 +23,7 @@ import csso from 'gulp-csso'
 
 import { rollup } from 'rollup'
 import babelInstance from '@rollup/plugin-babel'
+import alias from '@rollup/plugin-alias'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import { terser } from 'rollup-plugin-terser'
@@ -70,6 +73,17 @@ export const js = () =>
   rollup({
     input: `./source/js/main.js`,
     plugins: [
+      alias({
+        entries: [
+          {
+            find: `~`,
+            replacement: path.join(path.resolve(), `source/js`),
+            customResolver: resolve({
+              extensions: [`.js`],
+            }),
+          },
+        ],
+      }),
       resolve(),
       commonjs(),
       babelInstance.babel({

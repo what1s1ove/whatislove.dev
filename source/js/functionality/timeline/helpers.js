@@ -1,9 +1,9 @@
 /* eslint-disable indent */
-import { outputStringNodes, getFormattedDate } from '../../helpers/index'
-import { TimelineIcons } from '../../common/map/index'
+import { renderStringNodes, getFormattedDate } from '~/helpers'
+import { timelineIconMap } from '~/common/map'
 
 const getTimelineItem = (itemData) => {
-  let {
+  const {
     type,
     title,
     origin,
@@ -15,60 +15,64 @@ const getTimelineItem = (itemData) => {
     endDate,
   } = itemData
 
-  let itmelineItem = `<li class="timeline__item">
-  <div class="timeline__item-wrapper">
-    ${title ? `<h3 class="timeline__item-title">${title}</h3>` : ``}
-    ${
-      origin
-        ? `<a class="timeline__item-origin" href="${origin}" target="_blank" rel="noreferrer">${originDesc}</a>`
-        : ``
-    }
-    ${desc ? `<p class="timeline__item-desc">${desc}</p>` : ``}
-    ${
-      link
-        ? `<a class="timeline__item-link" href="${link}" target="_blank" rel="noreferrer">${linkDesc}</a>`
-        : ``
-    }
-    ${
-      date
-        ? `<p class="timeline__dates">
-            <time datetime="${date}">${getFormattedDate(date)}</time>
-            ${
-              endDate
-                ? `<time datetime="${endDate}"> — ${getFormattedDate(endDate)}</time>`
-                : ``
-            }
-          </p>`
-        : ``
-    }
-  </div>
-  <span class="timeline__icon-wrapper">
-    <svg class="timeline__icon" width="28" height="28" aria-hidden="true">
-      <use xlink:href="img/sprite.svg#timeline-${TimelineIcons[type]}.icon">
-      </use>
-    </svg>
-  </span>
-</li>`
+  const timelineItem = `
+    <li class="timeline__item">
+      <div class="timeline__item-wrapper">
+        ${title ? `<h3 class="timeline__item-title">${title}</h3>` : ``}
+        ${
+          origin
+            ? `<a class="timeline__item-origin" href="${origin}" target="_blank" rel="noreferrer">${originDesc}</a>`
+            : ``
+        }
+        ${desc ? `<p class="timeline__item-desc">${desc}</p>` : ``}
+        ${
+          link
+            ? `<a class="timeline__item-link" href="${link}" target="_blank" rel="noreferrer">${linkDesc}</a>`
+            : ``
+        }
+        ${
+          date
+            ? `<p class="timeline__dates">
+                <time datetime="${date}">${getFormattedDate(date)}</time>
+                ${
+                  endDate
+                    ? `<time datetime="${endDate}">
+                        — ${getFormattedDate(endDate)}
+                      </time>`
+                    : ``
+                }
+              </p>`
+            : ``
+        }
+      </div>
+      <span class="timeline__icon-wrapper">
+        <svg class="timeline__icon" width="28" height="28" aria-hidden="true">
+          <use xlink:href="img/sprite.svg#timeline-${
+            timelineIconMap[type]
+          }.icon"></use>
+        </svg>
+      </span>
+    </li>`
 
-  return itmelineItem
+  return timelineItem
 }
 
 const outputTimelineItems = (timelineList, timelineData, filterValues) => {
-  let filterdTimelineData = timelineData.filter((it) => {
+  const filteredTimelineData = timelineData.filter((it) => {
     // eslint-disable-next-line operator-linebreak
-    let isSuitable =
+    const isSuitable =
       filterValues.skillTypes[it.skillType] && filterValues.types[it.type]
 
     return isSuitable
   })
 
-  let timelineItems = filterdTimelineData.map((it) => {
-    let timelineItem = getTimelineItem(it)
+  const timelineItems = filteredTimelineData.map((it) => {
+    const timelineItem = getTimelineItem(it)
 
     return timelineItem
   })
 
-  outputStringNodes(timelineList, timelineItems)
+  renderStringNodes(timelineList, timelineItems)
 }
 
-export { getTimelineItem, outputTimelineItems }
+export { outputTimelineItems }

@@ -4,8 +4,12 @@ env:
 
 extends: 'airbnb-base'
 
-plugins:
-  - prefer-let
+settings:
+  import/resolver:
+    alias:
+      extensions: ['.js']
+      map:
+        - ['~', './source/js']
 
 rules:
   semi:
@@ -22,11 +26,6 @@ rules:
   quotes:
     - error
     - backtick
-  curly:
-    - error
-    - multi
-  prefer-let/prefer-let:
-    - error
   quote-props:
     - error
     - consistent
@@ -37,6 +36,6 @@ rules:
     - error
     - multiline: true
       consistent: true
-  prefer-const: off
+  no-use-before-define: off
   linebreak-style: off
   import/prefer-default-export: off

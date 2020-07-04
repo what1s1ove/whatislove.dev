@@ -1,19 +1,19 @@
-import { KeyboardKeys } from '../common/map/index'
+import { KeyboardKey } from '~/common/enum'
 
-const toggleFocusTrap = (focusTrapElements) => {
-  let firstNode = focusTrapElements[0]
-  let lastNode = focusTrapElements[focusTrapElements.length - 1]
+const subscribeFocusTrap = (elements) => {
+  const firstNode = elements[0]
+  const lastNode = elements[elements.length - 1]
 
-  let onFirstElementFocus = (evt) => {
-    if (evt.key === KeyboardKeys.TAB && evt.shiftKey) {
+  const onFirstElementFocus = (evt) => {
+    if (evt.key === KeyboardKey.TAB && evt.shiftKey) {
       evt.preventDefault()
 
       lastNode.focus()
     }
   }
 
-  let onLastElementFocus = (evt) => {
-    if (evt.key === KeyboardKeys.TAB && !evt.shiftKey) {
+  const onLastElementFocus = (evt) => {
+    if (evt.key === KeyboardKey.TAB && !evt.shiftKey) {
       evt.preventDefault()
 
       firstNode.focus()
@@ -33,4 +33,4 @@ const toggleFocusTrap = (focusTrapElements) => {
   }
 }
 
-export { toggleFocusTrap }
+export { subscribeFocusTrap }

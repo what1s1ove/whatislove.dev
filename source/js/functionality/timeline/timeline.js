@@ -1,28 +1,24 @@
-import {
-  getTargetValue,
-  getFormValues,
-  changeObjectKey,
-} from '../../helpers/index'
-import { timelineData } from '../../data/index'
+import { getTargetValue, getFormValues, changeObjectKey } from '~/helpers'
+import { timelineData } from '~/data'
 import { outputTimelineItems } from './helpers'
 
-let timelineList = document.querySelector(`.timeline__list`)
-let filterForm = document.forms.timeline
+const timelineListNode = document.querySelector(`.timeline__list`)
+const filterFormNode = document.forms.timeline
 
-let filterSettings = getFormValues(filterForm.elements)
-
-let setNewFilter = (newFilter) => {
-  outputTimelineItems(timelineList, timelineData, newFilter)
+const setNewFilter = (newFilter) => {
+  outputTimelineItems(timelineListNode, timelineData, newFilter)
 }
 
-setNewFilter(filterSettings)
-
 export default () => {
-  filterForm.addEventListener(`change`, ({ target }) => {
-    let targetValue = getTargetValue(target)
+  const defaultFilterSettings = getFormValues(filterFormNode.elements)
 
-    let newFilterSettings = changeObjectKey(
-      filterSettings,
+  setNewFilter(defaultFilterSettings)
+
+  filterFormNode.addEventListener(`change`, ({ target }) => {
+    const targetValue = getTargetValue(target)
+
+    const newFilterSettings = changeObjectKey(
+      defaultFilterSettings,
       target.name,
       targetValue
     )
