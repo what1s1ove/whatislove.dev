@@ -1,35 +1,36 @@
-import { setAttribute } from '../../helpers'
-import { MediaBooleanTypes } from './common'
+import { MediaBooleanMap } from './common'
 
-const initSettingBtn = (options) => {
-  const { target, mediaQuery, attr, checkTypes, isDefaultSetAttr } = options
-  const dataAttr = `data-${attr}`
+const setSettingAttr = (isChecked, attr, checkTypes) => {
+  document.documentElement.setAttribute(
+    attr,
+    isChecked ? checkTypes.CHECKED : checkTypes.UNCHECKED
+  )
+}
 
+const getDefaultChecked = (mediaQuery) => {
   const storageValue = localStorage.getItem(mediaQuery)
+
   const isChecked = storageValue
-    ? MediaBooleanTypes[storageValue]
+    ? MediaBooleanMap[storageValue]
     : window.matchMedia(mediaQuery).matches
 
-  // eslint-disable-next-line curly
-  if (storageValue || isDefaultSetAttr) {
-    setAttribute(
-      document.documentElement,
-      dataAttr,
-      isChecked ? checkTypes.checked : checkTypes.unchecked
-    )
-  }
+  return isChecked
+}
 
-  // eslint-disable-next-line no-param-reassign
-  target.checked = isChecked
+const initSettingBtn = (options) => {
+  const { togglerNode, mediaQuery, attr, checkTypes } = options
+  const dataAttr = `data-${attr}`
 
-  target.addEventListener(`change`, (evt) => {
+  const isDefaultChecked = getDefaultChecked(mediaQuery)
+
+  setSettingAttr(isDefaultChecked, dataAttr, checkTypes)
+
+  togglerNode.checked = isDefaultChecked
+
+  togglerNode.addEventListener(`change`, (evt) => {
     const { checked } = evt.target
 
-    setAttribute(
-      document.documentElement,
-      dataAttr,
-      checked ? checkTypes.checked : checkTypes.unchecked
-    )
+    setSettingAttr(checked, dataAttr, checkTypes)
 
     localStorage.setItem(mediaQuery, checked)
   })

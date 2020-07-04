@@ -1,32 +1,32 @@
-const AttributeTypes = {
+const AttributeType = {
   THEME: `theme`,
   MOTION: `motion`,
 }
 
-const MediaBooleanTypes = {
-  true: true,
-  false: false,
+const MediaBooleanMap = {
+  'true': true,
+  'false': false,
 }
 
-const MediaQueriesTypes = {
+const MediaQueriesType = {
   THEME: `(prefers-color-scheme: dark)`,
   MOTION: `(prefers-reduced-motion: no-preference)`,
 }
 
-const ThemeCheckTypes = {
-  checked: `dark`,
-  unchecked: `light`,
+const ThemeCheckType = {
+  CHECKED: `dark`,
+  UNCHECKED: `light`,
 }
 
-const MotionCheckTypes = {
-  checked: `noPreference`,
-  unchecked: `reduce`,
+const MotionCheckType = {
+  CHECKED: `noPreference`,
+  UNCHECKED: `reduce`,
 }
 
 export {
-  AttributeTypes,
-  MediaQueriesTypes,
-  ThemeCheckTypes,
-  MotionCheckTypes,
-  MediaBooleanTypes,
+  AttributeType,
+  MediaBooleanMap,
+  MediaQueriesType,
+  ThemeCheckType,
+  MotionCheckType,
 }
