@@ -1,43 +1,51 @@
-import { getEventListener, setAttribute, toggleFocusTrap } from '~/helpers'
+import {
+  getEventListener,
+  checkKeydownEvent,
+  subscribeFocusTrap,
+} from '~/helpers'
 import { KeyboardKey } from '~/common/enum'
 
 const HEADER_ACTIVE_CLASS = `header--active`
 
-const header = document.querySelector(`.header`)
-const headerOverlay = document.querySelector(`.header__navigation-wrapper`)
-const headerNavLinks = document.querySelectorAll(`.navigation__item a[href]`)
-const toggleBtn = document.querySelector(`.header__toggle-button`)
+const headerNode = document.querySelector(`.header`)
+const headerOverlayNode = document.querySelector(`.header__navigation-wrapper`)
+const headerLinkNodes = document.querySelectorAll(`.navigation__item a[href]`)
+const headerBtnNode = document.querySelector(`.header__toggle-button`)
 
-const focusTrapElements = [toggleBtn, ...headerNavLinks]
-let cleanFocusTrap
+const focusTrapElements = [headerBtnNode, ...headerLinkNodes]
+let cleanFocusTrap = null
 
-const onCloseOverlay = () => toggleOverlay(false)
-
-const onEscapePress = (evt) => {
-  if (evt.key === KeyboardKey.ESCAPE) onCloseOverlay()
+const onCloseOverlay = () => {
+  toggleOverlay(false)
 }
 
-let toggleOverlay = (isActive) => {
+const onEscapePress = (evt) => {
+  checkKeydownEvent(evt, KeyboardKey.ESCAPE, onCloseOverlay)
+}
+
+const toggleOverlay = (isActive) => {
+  const eventListener = getEventListener(isActive)
+
   document.body.style.overflowY = isActive ? `hidden` : ``
 
-  header.classList.toggle(HEADER_ACTIVE_CLASS)
+  headerNode.classList.toggle(HEADER_ACTIVE_CLASS)
 
-  setAttribute(toggleBtn, `aria-expanded`, isActive)
+  headerBtnNode.setAttribute(`aria-expanded`, isActive)
 
   cleanFocusTrap = isActive
-    ? toggleFocusTrap(focusTrapElements)
+    ? subscribeFocusTrap(focusTrapElements)
     : cleanFocusTrap()
 
-  headerOverlay[getEventListener(isActive)](`click`, onCloseOverlay)
+  headerOverlayNode[eventListener](`click`, onCloseOverlay)
 
-  window[getEventListener(isActive)](`keydown`, onEscapePress)
+  window[eventListener](`keydown`, onEscapePress)
 }
 
 export default () => {
-  toggleBtn.addEventListener(`click`, (evt) => {
+  headerBtnNode.addEventListener(`click`, (evt) => {
     evt.stopPropagation()
 
-    const hasActiveClass = header.classList.contains(HEADER_ACTIVE_CLASS)
+    const hasActiveClass = headerNode.classList.contains(HEADER_ACTIVE_CLASS)
 
     toggleOverlay(!hasActiveClass)
   })

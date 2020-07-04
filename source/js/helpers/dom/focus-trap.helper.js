@@ -1,8 +1,8 @@
 import { KeyboardKey } from '~/common/enum'
 
-const toggleFocusTrap = (focusTrapElements) => {
-  const firstNode = focusTrapElements[0]
-  const lastNode = focusTrapElements[focusTrapElements.length - 1]
+const subscribeFocusTrap = (elements) => {
+  const firstNode = elements[0]
+  const lastNode = elements[elements.length - 1]
 
   const onFirstElementFocus = (evt) => {
     if (evt.key === KeyboardKey.TAB && evt.shiftKey) {
@@ -33,4 +33,4 @@ const toggleFocusTrap = (focusTrapElements) => {
   }
 }
 
-export { toggleFocusTrap }
+export { subscribeFocusTrap }

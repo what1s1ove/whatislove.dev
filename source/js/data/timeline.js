@@ -142,7 +142,7 @@ const timelineData = [
   {
     skillType: TimelineSkillType.HARD_SKILLS,
     type: TimelineType.MEETUPS,
-    title: `Zlit Tech: GtaphQL`,
+    title: `Zlit Tech: GraphQL`,
     origin: `https://www.facebook.com/events/635302956897916/`,
     originDesc: `Zlit`,
     date: `2019-05-10T00:00:00+03:00`,

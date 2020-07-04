@@ -1,3 +1,3 @@
 export * from './dom'
-export * from './event'
+export * from './events'
 export * from './timeline'
