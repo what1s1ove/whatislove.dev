@@ -4,7 +4,6 @@ env:
 
 extends: 'airbnb-base'
 
-
 rules:
   semi:
     - error
@@ -36,3 +35,4 @@ rules:
   no-use-before-define: off
   linebreak-style: off
   import/prefer-default-export: off
+  # import/no-unresolved: off

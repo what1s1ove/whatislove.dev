@@ -1,9 +1,5 @@
-import {
-  getEventListener,
-  setAttribute,
-  toggleFocusTrap,
-} from '../../helpers'
-import { KeyboardKeys } from '../../common/map'
+import { getEventListener, setAttribute, toggleFocusTrap } from '~/helpers'
+import { KeyboardKeys } from '~/common/map'
 
 const HEADER_ACTIVE_CLASS = `header--active`
 
