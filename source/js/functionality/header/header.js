@@ -1,5 +1,5 @@
 import { getEventListener, setAttribute, toggleFocusTrap } from '~/helpers'
-import { KeyboardKeys } from '~/common/map'
+import { KeyboardKey } from '~/common/enum'
 
 const HEADER_ACTIVE_CLASS = `header--active`
 
@@ -14,7 +14,7 @@ let cleanFocusTrap
 const onCloseOverlay = () => toggleOverlay(false)
 
 const onEscapePress = (evt) => {
-  if (evt.key === KeyboardKeys.ESCAPE) onCloseOverlay()
+  if (evt.key === KeyboardKey.ESCAPE) onCloseOverlay()
 }
 
 let toggleOverlay = (isActive) => {

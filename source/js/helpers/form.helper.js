@@ -1,9 +1,9 @@
-import { FormElementTypes } from '../common/map'
+import { FormElementType } from '~/common/enum'
 
 const getTargetValue = (target) => {
   const { type, checked, value } = target
 
-  const targetValue = type === FormElementTypes.CHECKBOX ? checked : value
+  const targetValue = type === FormElementType.CHECKBOX ? checked : value
 
   return targetValue
 }
@@ -18,7 +18,7 @@ const getTargetNameValue = (target) => {
 
 const getFormValues = (formElements) => {
   const formFieldsets = [...formElements].filter(
-    (it) => it.type === FormElementTypes.FIELDSET
+    (it) => it.type === FormElementType.FIELDSET
   )
 
   const getFieldsetsValues = (fieldsets) => {
@@ -27,7 +27,7 @@ const getFormValues = (formElements) => {
 
       // eslint-disable-next-line no-nested-ternary
       return name
-        ? type === FormElementTypes.FIELDSET
+        ? type === FormElementType.FIELDSET
           ? { ...acc, [name]: getFieldsetsValues(elements) }
           : { ...acc, ...getTargetNameValue(element) }
         : acc

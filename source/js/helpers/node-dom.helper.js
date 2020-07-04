@@ -1,4 +1,4 @@
-import { NodeMethods } from '../common/map/node'
+import { NodeEventListener } from '~/common/enum'
 
 const setAttribute = (element, attr, value) => {
   element.setAttribute(attr, value)
@@ -6,8 +6,8 @@ const setAttribute = (element, attr, value) => {
 
 const getEventListener = (flag) => {
   const listener = flag
-    ? NodeMethods.ADD_EVET_LISTENER
-    : NodeMethods.REMOVE_EVENT_LISTENER
+    ? NodeEventListener.ADD_EVET_LISTENER
+    : NodeEventListener.REMOVE_EVENT_LISTENER
 
   return listener
 }

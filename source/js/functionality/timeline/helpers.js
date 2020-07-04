@@ -1,6 +1,6 @@
 /* eslint-disable indent */
-import { outputStringNodes, getFormattedDate } from '../../helpers'
-import { TimelineIcons } from '../../common/map'
+import { outputStringNodes, getFormattedDate } from '~/helpers'
+import { timelineIconMap } from '~/common/map'
 
 const getTimelineItem = (itemData) => {
   const {
@@ -35,7 +35,9 @@ const getTimelineItem = (itemData) => {
             <time datetime="${date}">${getFormattedDate(date)}</time>
             ${
               endDate
-                ? `<time datetime="${endDate}"> — ${getFormattedDate(endDate)}</time>`
+                ? `<time datetime="${endDate}"> — ${getFormattedDate(
+                    endDate
+                  )}</time>`
                 : ``
             }
           </p>`
@@ -44,7 +46,7 @@ const getTimelineItem = (itemData) => {
   </div>
   <span class="timeline__icon-wrapper">
     <svg class="timeline__icon" width="28" height="28" aria-hidden="true">
-      <use xlink:href="img/sprite.svg#timeline-${TimelineIcons[type]}.icon">
+      <use xlink:href="img/sprite.svg#timeline-${timelineIconMap[type]}.icon">
       </use>
     </svg>
   </span>
