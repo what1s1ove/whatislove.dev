@@ -111,7 +111,9 @@ export const images = () =>
           progressive: true,
         }),
         pngquant(),
-        svgo(),
+        svgo({
+          floatPrecision: 1
+        }),
       ])
     )
     .pipe(gulp.dest(`build/img`))
