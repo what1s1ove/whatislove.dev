@@ -1,20 +1,5 @@
+import { getTargetNameValue } from './get-target-name-value.helper'
 import { FormElementType } from '~/common/enum'
-
-const getTargetValue = (target) => {
-  const { type, checked, value } = target
-
-  const targetValue = type === FormElementType.CHECKBOX ? checked : value
-
-  return targetValue
-}
-
-const getTargetNameValue = (target) => {
-  const targetValue = {
-    [target.name]: getTargetValue(target),
-  }
-
-  return targetValue
-}
 
 const getFormValues = (formElements) => {
   const formFieldsets = [...formElements].filter(
@@ -41,4 +26,4 @@ const getFormValues = (formElements) => {
   return formValues
 }
 
-export { getTargetValue, getFormValues, getTargetNameValue }
+export { getFormValues }
