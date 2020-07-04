@@ -511,6 +511,17 @@ const timelineData = [
     originDesc: `SpeakUp`,
     date: `2020-05-24T00:00:00+03:00`,
   },
+  {
+    skillType: TimelineSkillType.HARD_SKILLS,
+    type: TimelineType.COURSES,
+    title: `JavaScript. Professional Development of Web Interfaces`,
+    origin: `https://htmlacademy.ru/intensive/javascript`,
+    originDesc: `Course link`,
+    link: `${BASE_COURSES_URL}/htmlacademy.professional-development.pdf`,
+    linkDesc: `Certificate`,
+    date: `2020-05-26T00:00:00+03:00`,
+    endDate: `2020-07-29T00:00:00+03:00`,
+  },
 ]
 
 export { timelineData }
