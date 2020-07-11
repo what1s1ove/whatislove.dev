@@ -517,10 +517,19 @@ const timelineData = [
     title: `JavaScript. Professional Development of Web Interfaces`,
     origin: `https://htmlacademy.ru/intensive/javascript`,
     originDesc: `Course link`,
+    desc: `Code and Magick`,
     link: `${BASE_COURSES_URL}/htmlacademy.professional-development.pdf`,
     linkDesc: `Certificate`,
     date: `2020-05-26T00:00:00+03:00`,
     endDate: `2020-07-29T00:00:00+03:00`,
+  },
+  {
+    skillType: TimelineSkillType.HARD_SKILLS,
+    type: TimelineType.BOOKS,
+    title: `Eloquent JavaScript (Marijn Haverbeke)`,
+    origin: `https://eloquentjavascript.net/`,
+    originDesc: `eloquentjavascript.net`,
+    date: `2020-07-11T00:00:00+03:00`,
   },
 ]
 
