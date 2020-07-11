@@ -517,6 +517,7 @@ const timelineData = [
     title: `JavaScript. Professional Development of Web Interfaces`,
     origin: `https://htmlacademy.ru/intensive/javascript`,
     originDesc: `Course link`,
+    desc: `Code and Magick`,
     link: `${BASE_COURSES_URL}/htmlacademy.professional-development.pdf`,
     linkDesc: `Certificate`,
     date: `2020-05-26T00:00:00+03:00`,
