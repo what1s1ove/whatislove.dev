@@ -1,4 +1,4 @@
-import { TimelineType } from '~/common/enum'
+import { TimelineType } from '~/common/enums'
 
 const timelineIconMap = {
   [TimelineType.COURSES]: `course`,

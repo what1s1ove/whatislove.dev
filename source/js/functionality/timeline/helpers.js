@@ -1,6 +1,6 @@
 /* eslint-disable indent */
 import { renderStringNodes, getFormattedDate } from '~/helpers'
-import { timelineIconMap } from '~/common/map'
+import { timelineIconMap } from '~/common/maps'
 
 const getTimelineItem = (itemData) => {
   const {

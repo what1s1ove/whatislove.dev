@@ -1,4 +1,4 @@
-import { TimelineSkillType, TimelineType } from '~/common/enum'
+import { TimelineSkillType, TimelineType } from '~/common/enums'
 
 const BASE_COURSES_URL = `files/courses`
 

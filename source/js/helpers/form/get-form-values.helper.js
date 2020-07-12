@@ -1,5 +1,5 @@
 import { getTargetNameValue } from './get-target-name-value.helper'
-import { FormElementType } from '~/common/enum'
+import { FormElementType } from '~/common/enums'
 
 const getFormValues = (formElements) => {
   const formFieldsets = [...formElements].filter(

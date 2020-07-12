@@ -3,7 +3,7 @@ import {
   checkKeydownEvent,
   subscribeFocusTrap,
 } from '~/helpers'
-import { KeyboardKey } from '~/common/enum'
+import { KeyboardKey } from '~/common/enums'
 
 const HEADER_ACTIVE_CLASS = `header--active`
 

@@ -1,4 +1,4 @@
-import { FormElementType } from '~/common/enum'
+import { FormElementType } from '~/common/enums'
 
 const getTargetValue = (target) => {
   const { type, checked, value } = target
