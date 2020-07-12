@@ -531,6 +531,14 @@ const timelineData = [
     originDesc: `eloquentjavascript.net`,
     date: `2020-07-11T00:00:00+03:00`,
   },
+  {
+    skillType: TimelineSkillType.SOFT_SKILLS,
+    type: TimelineType.BOOKS,
+    title: `Skin in the Game (Nassim Nicholas Taleb)`,
+    origin: `https://www.amazon.com/Skin-Game-Hidden-Asymmetries-Daily/dp/042528462X`,
+    originDesc: `Amazon`,
+    date: `2020-07-12T00:00:00+03:00`,
+  },
 ]
 
 export { timelineData }
