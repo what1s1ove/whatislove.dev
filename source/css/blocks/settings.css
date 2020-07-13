@@ -26,12 +26,9 @@
 
   padding: 2px;
 
-  text-align: center;
   color: var(--color--primary);
 
   border-radius: 10px;
-
-  cursor: pointer;
 }
 
 .settings__button-input {
