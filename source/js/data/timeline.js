@@ -539,6 +539,14 @@ const timelineData = [
     originDesc: `Amazon`,
     date: `2020-07-12T00:00:00+03:00`,
   },
+  {
+    skillType: TimelineSkillType.SOFT_SKILLS,
+    type: TimelineType.BOOKS,
+    title: `The Master Key System (Charles F. Haanel)`,
+    origin: `https://www.amazon.com/Master-Key-System-Charles-Haanel/dp/1604502754`,
+    originDesc: `Amazon`,
+    date: `2020-07-27T00:00:00+03:00`,
+  },
 ]
 
 export { timelineData }
