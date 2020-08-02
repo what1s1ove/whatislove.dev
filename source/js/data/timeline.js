@@ -1,7 +1,5 @@
 import { TimelineSkillType, TimelineType } from '~/common/enums'
 
-const BASE_COURSES_URL = `files/courses`
-
 const timelineData = [
   {
     skillType: TimelineSkillType.SOFT_SKILLS,
@@ -446,7 +444,7 @@ const timelineData = [
     origin: `https://htmlacademy.ru/intensive/htmlcss`,
     originDesc: `Course link`,
     desc: `Work with the git version control system. Work with the graphic layout in the Figma editor. Create expressive and accessible markup. Build page layout on CSS grids, work with custom properties, optimize the code and prepare the completed project for publication. At each stage, the work is checked and commented by a personal mentor.`,
-    link: `${BASE_COURSES_URL}/htmlacademy.html-css1.pdf`,
+    link: `https://assets.htmlacademy.ru/certificates/intensive/155/573447.pdf?1583661065`,
     linkDesc: `Certificate`,
     date: `2020-01-20T00:00:00+03:00`,
     endDate: `2020-03-22T00:00:00+03:00`,
@@ -482,7 +480,7 @@ const timelineData = [
     origin: `https://htmlacademy.ru/intensive/adaptive`,
     originDesc: `Course link`,
     desc: `Create markup according to the BEM methodology. CSS-code on preprocessors. Make an adaptive grid, work with layout and retin graphics. Prepare project assembly automation for publication. At each stage, the work is checked and commented by a personal mentor.`,
-    link: `${BASE_COURSES_URL}/htmlacademy.html-css2.pdf`,
+    link: `https://assets.htmlacademy.ru/certificates/intensive/157/573447.pdf?1588515571`,
     linkDesc: `Certificate`,
     date: `2020-03-23T00:00:00+03:00`,
     endDate: `2020-05-27T00:00:00+03:00`,
@@ -518,7 +516,7 @@ const timelineData = [
     origin: `https://htmlacademy.ru/intensive/javascript`,
     originDesc: `Course link`,
     desc: `Code and Magick`,
-    link: `${BASE_COURSES_URL}/htmlacademy.professional-development.pdf`,
+    link: `https://assets.htmlacademy.ru/certificates/intensive/167/573447.pdf?1593535197`,
     linkDesc: `Certificate`,
     date: `2020-05-26T00:00:00+03:00`,
     endDate: `2020-07-29T00:00:00+03:00`,
