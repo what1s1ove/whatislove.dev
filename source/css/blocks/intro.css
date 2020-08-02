@@ -1,4 +1,8 @@
 .intro {
+  background-color: var(--color--secondary);
+}
+
+.intro__wrapper {
   padding: 30px 0;
 }
 
@@ -6,7 +10,7 @@
   margin: 0 0 35px;
 }
 
-.intro__wrapper {
+.intro__content {
   display: flex;
   flex-direction: column;
 }
@@ -108,11 +112,11 @@
 }
 
 @media (min-width: 640px) {
-  .intro {
+  .intro__wrapper {
     padding: 30px 15px 50px;
   }
 
-  .intro__wrapper {
+  .intro__content {
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -148,9 +152,10 @@
 }
 
 @media (min-width: 940px) {
-  .intro {
+  .intro__wrapper {
     max-width: 940px;
     margin: 0 auto;
+
     padding: 30px 15px 80px;
   }
 
