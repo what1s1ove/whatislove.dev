@@ -547,6 +547,14 @@ const timelineData = [
     originDesc: `Amazon`,
     date: `2020-07-27T00:00:00+03:00`,
   },
+  {
+    skillType: TimelineSkillType.SOFT_SKILLS,
+    type: TimelineType.COURSES,
+    title: `SpeakUp: Advanced 2`,
+    origin: `https://www.speak-up.com.ua/`,
+    originDesc: `SpeakUp`,
+    date: `2020-08-03T00:00:00+03:00`,
+  },
 ]
 
 export { timelineData }
