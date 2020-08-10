@@ -553,6 +553,14 @@ const timelineData = [
     originDesc: `SpeakUp`,
     date: `2020-08-03T00:00:00+03:00`,
   },
+  {
+    skillType: TimelineSkillType.SOFT_SKILLS,
+    type: TimelineType.BOOKS,
+    title: `Rip it up (Richard Wiseman)`,
+    origin: `https://www.amazon.com/Rip-Up-Richard-Wiseman/dp/1531845401`,
+    originDesc: `Amazon`,
+    date: `2020-08-10T00:00:00+03:00`,
+  },
 ]
 
 export { timelineData }
