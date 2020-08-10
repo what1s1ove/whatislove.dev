@@ -112,7 +112,7 @@ export const images = () =>
         }),
         pngquant(),
         svgo({
-          floatPrecision: 1
+          floatPrecision: 1,
         }),
       ])
     )
