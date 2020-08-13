@@ -559,7 +559,15 @@ const timelineData = [
     title: `Rip it up (Richard Wiseman)`,
     origin: `https://www.amazon.com/Rip-Up-Richard-Wiseman/dp/1531845401`,
     originDesc: `Amazon`,
-    date: `2020-08-10T00:00:00+03:00`,
+    date: `2020-08-09T00:00:00+03:00`,
+  },
+  {
+    skillType: TimelineSkillType.HARD_SKILLS,
+    type: TimelineType.BOOKS,
+    title: `CSS Pocket Reference. 5th edition (Eric A. Meyer)`,
+    origin: `https://www.amazon.com/CSS-Pocket-Reference-Visual-Presentation/dp/1492033391`,
+    originDesc: `Amazon`,
+    date: `2020-08-12T00:00:00+03:00`,
   },
 ]
 
