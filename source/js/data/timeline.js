@@ -569,6 +569,14 @@ const timelineData = [
     originDesc: `Amazon`,
     date: `2020-08-12T00:00:00+03:00`,
   },
+  {
+    skillType: TimelineSkillType.SOFT_SKILLS,
+    type: TimelineType.BOOKS,
+    title: `The Outward Mindset: Seeing Beyond Ourselves (the Arbinger Institute)`,
+    origin: `https://www.amazon.com/Outward-Mindset-Seeing-Beyond-Ourselves/dp/1626567158`,
+    originDesc: `Amazon`,
+    date: `2020-08-18T00:00:00+03:00`,
+  },
 ]
 
 export { timelineData }
