@@ -382,8 +382,8 @@ const timelineData = [
   {
     skillType: TimelineSkillType.SOFT_SKILLS,
     type: TimelineType.BOOKS,
-    title: `Reality Transurfing 5: Apples Fall to the Sky (Vadim Zeland)`,
-    origin: `https://www.amazon.com/Reality-Transurfing-Apples-Vadim-Zeland/dp/B00DIKWYJ4`,
+    title: `Reality Transurfing 4: Ruling Reality (Vadim Zeland)`,
+    origin: `https://www.amazon.com/Reality-Transurfing-4-Ruling/dp/1846946611`,
     originDesc: `Amazon`,
     date: `2020-01-15T00:00:00+03:00`,
   },
