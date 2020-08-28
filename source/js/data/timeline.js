@@ -585,6 +585,14 @@ const timelineData = [
     originDesc: `Amazon`,
     date: `2020-08-23T00:00:00+03:00`,
   },
+  {
+    skillType: TimelineSkillType.SOFT_SKILLS,
+    type: TimelineType.BOOKS,
+    title: `A Return to Love: Reflections on the Principles of "A Course in Miracles" (Marianne Williamson)`,
+    origin: `https://www.amazon.com/Return-Love-Reflections-Principles-Miracles/dp/0060927488`,
+    originDesc: `Amazon`,
+    date: `2020-08-28T00:00:00+03:00`,
+  },
 ]
 
 export { timelineData }
