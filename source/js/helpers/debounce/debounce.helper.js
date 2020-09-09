@@ -4,7 +4,7 @@ const debounce = (fn, delay) => {
   return (...args) => {
     clearTimeout(timeout)
 
-    timeout = setTimeout(() => fn.call(this, ...args), delay)
+    timeout = setTimeout(() => fn.call(null, ...args), delay)
   }
 }
 
