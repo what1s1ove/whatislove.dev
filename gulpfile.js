@@ -36,7 +36,30 @@ import svgstore from 'gulp-svgstore'
 
 const isDevelopment = Boolean(yargs.argv.development)
 
-export const html = () =>
+const rollupPlugins = [
+  alias({
+    entries: [
+      {
+        find: `~`,
+        replacement: path.join(path.resolve(), `source/js`),
+        customResolver: resolve({
+          extensions: [`.js`],
+        }),
+      },
+    ],
+  }),
+  resolve(),
+  commonjs(),
+  babelInstance.babel({
+    babelHelpers: `bundled`,
+    presets: [`@babel/preset-env`],
+    babelrc: false,
+    exclude: `node_modules/**`,
+  }),
+  !isDevelopment && terser(),
+]
+
+const html = () =>
   gulp
     .src(`source/*.html`)
     .pipe(
@@ -47,7 +70,7 @@ export const html = () =>
     )
     .pipe(gulp.dest(`build`))
 
-export const css = () =>
+const css = () =>
   gulp
     .src(`source/css/styles.css`)
     .pipe(plumber())
@@ -68,31 +91,10 @@ export const css = () =>
     .pipe(gulp.dest(`build/css`))
     .pipe(sync.stream())
 
-export const js = () =>
+const js = () =>
   rollup({
     input: `./source/js/main.js`,
-    plugins: [
-      alias({
-        entries: [
-          {
-            find: `~`,
-            replacement: path.join(path.resolve(), `source/js`),
-            customResolver: resolve({
-              extensions: [`.js`],
-            }),
-          },
-        ],
-      }),
-      resolve(),
-      commonjs(),
-      babelInstance.babel({
-        babelHelpers: `bundled`,
-        presets: [`@babel/preset-env`],
-        babelrc: false,
-        exclude: `node_modules/**`,
-      }),
-      !isDevelopment && terser(),
-    ],
+    plugins: rollupPlugins,
   }).then((bundle) =>
     bundle.write({
       file: `./build/js/main.min.js`,
@@ -101,7 +103,19 @@ export const js = () =>
     })
   )
 
-export const images = () =>
+const sw = () =>
+  rollup({
+    input: `./source/sw.js`,
+    plugins: rollupPlugins,
+  }).then((bundle) =>
+    bundle.write({
+      file: `./build/sw.js`,
+      format: `iife`,
+      sourcemap: Boolean(isDevelopment),
+    })
+  )
+
+const images = () =>
   gulp
     .src(`source/img/**/*.{png,jpg,svg}`)
     .pipe(
@@ -117,7 +131,7 @@ export const images = () =>
     )
     .pipe(gulp.dest(`build/img`))
 
-export const webp = () =>
+const webp = () =>
   gulp
     .src(`build/img/**/*.photo.{png,jpg}`)
     .pipe(
@@ -127,7 +141,7 @@ export const webp = () =>
     )
     .pipe(gulp.dest(`build/img`))
 
-export const sprite = () =>
+const sprite = () =>
   gulp
     .src(`build/img/*.icon.svg`)
     .pipe(
@@ -138,9 +152,9 @@ export const sprite = () =>
     .pipe(rename(`sprite.svg`))
     .pipe(gulp.dest(`build/img`))
 
-export const clean = () => del(`build`)
+const clean = () => del(`build`)
 
-export const copy = () =>
+const copy = () =>
   gulp
     .src(
       [
@@ -156,13 +170,13 @@ export const copy = () =>
     )
     .pipe(gulp.dest(`build`))
 
-export const refresh = (done) => {
+const refresh = (done) => {
   sync.reload()
 
   done()
 }
 
-export const server = () => {
+const server = () => {
   sync.init({
     server: `build/`,
     notify: false,
@@ -176,19 +190,27 @@ export const server = () => {
   gulp.watch(`source/css/**/*.css`, gulp.series(css))
 
   gulp.watch(`source/js/**/*.js`, gulp.series(js, refresh))
+
+  gulp.watch(`source/sw.js`, gulp.series(sw, refresh))
 }
 
-export const build = gulp.series(
-  clean,
-  copy,
+const build = gulp.series(clean, copy, html, css, js, sw, images, webp, sprite)
+
+const develop = gulp.series(build, server)
+
+export {
   html,
   css,
   js,
+  sw,
   images,
   webp,
-  sprite
-)
-
-export const develop = gulp.series(build, server)
+  sprite,
+  clean,
+  copy,
+  refresh,
+  build,
+  develop,
+}
 
 export default isDevelopment ? develop : build
