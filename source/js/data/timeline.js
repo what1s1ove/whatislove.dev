@@ -593,6 +593,18 @@ const timelineData = [
     originDesc: `Amazon`,
     date: `2020-08-28T00:00:00+03:00`,
   },
+  {
+    skillType: TimelineSkillType.HARD_SKILLS,
+    type: TimelineType.COURSES,
+    title: `JavaScript. Architecture of Front-end Applications`,
+    origin: `https://htmlacademy.ru/intensive/ecmascript`,
+    originDesc: `Course link`,
+    desc: `"Bad programmers worry about the code. Good programmers worry about data structures and their relationships". &copy; Linus Torvalds`,
+    link: `https://assets.htmlacademy.ru/certificates/intensive/169/573447.pdf`,
+    linkDesc: `Certificate`,
+    date: `2020-07-27T00:00:00+03:00`,
+    endDate: `2020-09-30T00:00:00+03:00`,
+  },
 ]
 
 export { timelineData }
