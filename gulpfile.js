@@ -26,6 +26,7 @@ import alias from '@rollup/plugin-alias'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import { terser } from 'rollup-plugin-terser'
+import workboxBuild from 'workbox-build'
 
 import imagemin from 'gulp-imagemin'
 import svgo from 'imagemin-svgo'
@@ -35,29 +36,6 @@ import gulpwebp from 'gulp-webp'
 import svgstore from 'gulp-svgstore'
 
 const isDevelopment = Boolean(yargs.argv.development)
-
-const rollupPlugins = [
-  alias({
-    entries: [
-      {
-        find: `~`,
-        replacement: path.join(path.resolve(), `source/js`),
-        customResolver: resolve({
-          extensions: [`.js`],
-        }),
-      },
-    ],
-  }),
-  resolve(),
-  commonjs(),
-  babelInstance.babel({
-    babelHelpers: `bundled`,
-    presets: [`@babel/preset-env`],
-    babelrc: false,
-    exclude: `node_modules/**`,
-  }),
-  !isDevelopment && terser(),
-]
 
 const html = () =>
   gulp
@@ -94,7 +72,28 @@ const css = () =>
 const js = () =>
   rollup({
     input: `./source/js/main.js`,
-    plugins: rollupPlugins,
+    plugins: [
+      alias({
+        entries: [
+          {
+            find: `~`,
+            replacement: path.join(path.resolve(), `source/js`),
+            customResolver: resolve({
+              extensions: [`.js`],
+            }),
+          },
+        ],
+      }),
+      resolve(),
+      commonjs(),
+      babelInstance.babel({
+        babelHelpers: `bundled`,
+        presets: [`@babel/preset-env`],
+        babelrc: false,
+        exclude: `node_modules/**`,
+      }),
+      !isDevelopment && terser(),
+    ],
   }).then((bundle) =>
     bundle.write({
       file: `./build/js/main.min.js`,
@@ -104,16 +103,12 @@ const js = () =>
   )
 
 const sw = () =>
-  rollup({
-    input: `./source/sw.js`,
-    plugins: rollupPlugins,
-  }).then((bundle) =>
-    bundle.write({
-      file: `./build/sw.js`,
-      format: `iife`,
-      sourcemap: Boolean(isDevelopment),
-    })
-  )
+  workboxBuild.generateSW({
+    globDirectory: `build`,
+    globPatterns: [`**/*.{html,json,js,css,svg,webp,woff2}`],
+    swDest: `build/sw.js`,
+    sourcemap: Boolean(isDevelopment),
+  })
 
 const images = () =>
   gulp
@@ -161,7 +156,6 @@ const copy = () =>
         `source/fonts/**/*.woff2`,
         `source/files/**/*.pdf`,
         `source/favicon.ico`,
-        `source/sw.js`,
         `source/*.json`,
       ],
       {
@@ -190,8 +184,6 @@ const server = () => {
   gulp.watch(`source/css/**/*.css`, gulp.series(css))
 
   gulp.watch(`source/js/**/*.js`, gulp.series(js, refresh))
-
-  gulp.watch(`source/sw.js`, gulp.series(sw, refresh))
 }
 
 const build = gulp.series(clean, copy, html, css, js, sw, images, webp, sprite)
