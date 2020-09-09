@@ -1,4 +1,3 @@
-/* eslint-disable implicit-arrow-linebreak */
 import del from 'del'
 import yargs from 'yargs'
 import path from 'path'
@@ -148,6 +147,7 @@ export const copy = () =>
         `source/fonts/**/*.woff2`,
         `source/files/**/*.pdf`,
         `source/favicon.ico`,
+        `source/sw.js`,
         `source/*.json`,
       ],
       {

@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 import { renderStringNodes, getFormattedDate } from '~/helpers'
 import { timelineIconMap } from '~/common/maps'
 
@@ -59,9 +58,7 @@ const getTimelineItem = (itemData) => {
 
 const outputTimelineItems = (timelineList, timelineData, filterValues) => {
   const filteredTimelineData = timelineData.filter((it) => {
-    // eslint-disable-next-line operator-linebreak
-    const isSuitable =
-      filterValues.skillTypes[it.skillType] && filterValues.types[it.type]
+    const isSuitable = filterValues.skillTypes[it.skillType] && filterValues.types[it.type]
 
     return isSuitable
   })
