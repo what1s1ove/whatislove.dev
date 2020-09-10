@@ -1,5 +1,6 @@
 {
   "name": "Whatislove Zubko | Interface Developer",
+  "display": "browser",
   "lang": "en",
   "start_url": "/",
   "orientation": "any",
@@ -7,8 +8,27 @@
   "theme_color": "#ffffff",
   "icons": [
     {
-      "src": "img/favicons/google-touch-icon.png",
-      "sizes": "512x512"
+      "src": "img/favicons/160.png",
+      "sizes": "160x160",
+      "type": "image/png"
+    },
+    {
+      "src": "img/favicons/32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "img/favicons/16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "img/favicons/any.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "img/favicons/any.svg"
     }
   ]
 }

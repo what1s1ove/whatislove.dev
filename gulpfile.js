@@ -155,7 +155,6 @@ const copy = () =>
       [
         `source/fonts/**/*.woff2`,
         `source/files/**/*.pdf`,
-        `source/favicon.ico`,
         `source/*.json`,
       ],
       {
