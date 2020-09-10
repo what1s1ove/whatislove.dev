@@ -1,4 +1,3 @@
-/* eslint-disable implicit-arrow-linebreak */
 import del from 'del'
 import yargs from 'yargs'
 import path from 'path'
@@ -27,6 +26,7 @@ import alias from '@rollup/plugin-alias'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import { terser } from 'rollup-plugin-terser'
+import workboxBuild from 'workbox-build'
 
 import imagemin from 'gulp-imagemin'
 import svgo from 'imagemin-svgo'
@@ -37,7 +37,7 @@ import svgstore from 'gulp-svgstore'
 
 const isDevelopment = Boolean(yargs.argv.development)
 
-export const html = () =>
+const html = () =>
   gulp
     .src(`source/*.html`)
     .pipe(
@@ -48,7 +48,7 @@ export const html = () =>
     )
     .pipe(gulp.dest(`build`))
 
-export const css = () =>
+const css = () =>
   gulp
     .src(`source/css/styles.css`)
     .pipe(plumber())
@@ -69,7 +69,7 @@ export const css = () =>
     .pipe(gulp.dest(`build/css`))
     .pipe(sync.stream())
 
-export const js = () =>
+const js = () =>
   rollup({
     input: `./source/js/main.js`,
     plugins: [
@@ -102,7 +102,15 @@ export const js = () =>
     })
   )
 
-export const images = () =>
+const sw = () =>
+  workboxBuild.generateSW({
+    globDirectory: `build`,
+    globPatterns: [`**/*.{html,json,js,css,svg,webp,woff2,ico}`],
+    swDest: `build/sw.js`,
+    sourcemap: Boolean(isDevelopment),
+  })
+
+const images = () =>
   gulp
     .src(`source/img/**/*.{png,jpg,svg}`)
     .pipe(
@@ -118,7 +126,7 @@ export const images = () =>
     )
     .pipe(gulp.dest(`build/img`))
 
-export const webp = () =>
+const webp = () =>
   gulp
     .src(`build/img/**/*.photo.{png,jpg}`)
     .pipe(
@@ -128,7 +136,7 @@ export const webp = () =>
     )
     .pipe(gulp.dest(`build/img`))
 
-export const sprite = () =>
+const sprite = () =>
   gulp
     .src(`build/img/*.icon.svg`)
     .pipe(
@@ -139,16 +147,16 @@ export const sprite = () =>
     .pipe(rename(`sprite.svg`))
     .pipe(gulp.dest(`build/img`))
 
-export const clean = () => del(`build`)
+const clean = () => del(`build`)
 
-export const copy = () =>
+const copy = () =>
   gulp
     .src(
       [
         `source/fonts/**/*.woff2`,
         `source/files/**/*.pdf`,
-        `source/favicon.ico`,
         `source/*.json`,
+        `source/*.ico`,
       ],
       {
         base: `source`,
@@ -156,13 +164,13 @@ export const copy = () =>
     )
     .pipe(gulp.dest(`build`))
 
-export const refresh = (done) => {
+const refresh = (done) => {
   sync.reload()
 
   done()
 }
 
-export const server = () => {
+const server = () => {
   sync.init({
     server: `build/`,
     notify: false,
@@ -178,17 +186,23 @@ export const server = () => {
   gulp.watch(`source/js/**/*.js`, gulp.series(js, refresh))
 }
 
-export const build = gulp.series(
-  clean,
-  copy,
+const build = gulp.series(clean, copy, html, css, js, sw, images, webp, sprite)
+
+const develop = gulp.series(build, server)
+
+export {
   html,
   css,
   js,
+  sw,
   images,
   webp,
-  sprite
-)
-
-export const develop = gulp.series(build, server)
+  sprite,
+  clean,
+  copy,
+  refresh,
+  build,
+  develop,
+}
 
 export default isDevelopment ? develop : build
