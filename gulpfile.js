@@ -105,7 +105,7 @@ const js = () =>
 const sw = () =>
   workboxBuild.generateSW({
     globDirectory: `build`,
-    globPatterns: [`**/*.{html,json,js,css,svg,webp,woff2}`],
+    globPatterns: [`**/*.{html,json,js,css,svg,webp,woff2,ico}`],
     swDest: `build/sw.js`,
     sourcemap: Boolean(isDevelopment),
   })
@@ -156,6 +156,7 @@ const copy = () =>
         `source/fonts/**/*.woff2`,
         `source/files/**/*.pdf`,
         `source/*.json`,
+        `source/*.ico`,
       ],
       {
         base: `source`,

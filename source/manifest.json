@@ -1,34 +1,27 @@
 {
   "name": "Whatislove Zubko | Interface Developer",
-  "display": "browser",
   "lang": "en",
   "start_url": "/",
+  "display": "browser",
   "orientation": "any",
-  "background_color": "#ffffff",
+  "background_color": "ffffff",
   "theme_color": "#ffffff",
+  "description": "Interface Developer",
   "icons": [
     {
-      "src": "img/favicons/160.png",
+      "src": "/img/icons/160.png",
       "sizes": "160x160",
       "type": "image/png"
     },
     {
-      "src": "img/favicons/32.png",
+      "src": "/img/icons/32.png",
       "sizes": "32x32",
       "type": "image/png"
     },
     {
-      "src": "img/favicons/16.png",
+      "src": "/img/icons/16.png",
       "sizes": "16x16",
       "type": "image/png"
-    },
-    {
-      "src": "img/favicons/any.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
-    },
-    {
-      "src": "img/favicons/any.svg"
     }
   ]
 }
