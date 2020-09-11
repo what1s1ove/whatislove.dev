@@ -26,7 +26,6 @@ import alias from '@rollup/plugin-alias'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import { terser } from 'rollup-plugin-terser'
-import workboxBuild from 'workbox-build'
 
 import imagemin from 'gulp-imagemin'
 import svgo from 'imagemin-svgo'
@@ -101,14 +100,6 @@ const js = () =>
       sourcemap: Boolean(isDevelopment),
     })
   )
-
-const sw = () =>
-  workboxBuild.generateSW({
-    globDirectory: `build`,
-    globPatterns: [`**/*.{html,json,js,css,svg,webp,woff2,ico}`],
-    swDest: `build/sw.js`,
-    sourcemap: Boolean(isDevelopment),
-  })
 
 const images = () =>
   gulp
@@ -186,7 +177,7 @@ const server = () => {
   gulp.watch(`source/js/**/*.js`, gulp.series(js, refresh))
 }
 
-const build = gulp.series(clean, copy, html, css, js, sw, images, webp, sprite)
+const build = gulp.series(clean, copy, html, css, js, images, webp, sprite)
 
 const develop = gulp.series(build, server)
 
@@ -194,7 +185,6 @@ export {
   html,
   css,
   js,
-  sw,
   images,
   webp,
   sprite,
