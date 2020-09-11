@@ -4,7 +4,7 @@
   "start_url": "/",
   "display": "browser",
   "orientation": "any",
-  "background_color": "ffffff",
+  "background_color": "#ffffff",
   "theme_color": "#ffffff",
   "description": "Interface Developer",
   "icons": [
