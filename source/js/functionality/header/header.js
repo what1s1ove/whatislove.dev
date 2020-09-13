@@ -18,17 +18,17 @@ let cleanFocusTrap = null
 const toggleListeners = (isActive) => {
   const eventListener = getEventListener(isActive)
 
-  headerOverlayNode[eventListener](`click`, onCloseOverlay)
+  headerOverlayNode[eventListener](`click`, onOverlayClose)
 
   window[eventListener](`keydown`, onEscapePress)
 }
 
-const onCloseOverlay = () => {
+const onOverlayClose = () => {
   toggleOverlay(false)
 }
 
 const onEscapePress = (evt) => {
-  checkKeydownEvent(evt, KeyboardKey.ESCAPE, onCloseOverlay)
+  checkKeydownEvent(evt, KeyboardKey.ESCAPE, onOverlayClose)
 }
 
 const toggleOverlay = (isActive) => {

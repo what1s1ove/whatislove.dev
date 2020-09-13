@@ -4,21 +4,32 @@ import {
   changeObjectKey,
   debounce,
 } from '~/helpers'
-import { timelineData } from '~/data'
-import { outputTimelineItems } from './helpers'
+import { timelineData as timelineItems } from '~/data'
+import { getTimelineItemNodes } from './helpers'
 
 const DEBOUNCE_DELAY = 200
 
 const timelineListNode = document.querySelector(`.timeline__list`)
+const timelineItemNode = document
+  .querySelector(`.timeline-item`)
+  .content.querySelector(`.timeline__item`)
 const filterFormNode = document.forms.timeline
 
-const setNewFilter = (newFilter) => {
-  outputTimelineItems(timelineListNode, timelineData, newFilter)
+const renderTimelineItems = (filterValues) => {
+  const timelineItemNodes = getTimelineItemNodes(
+    timelineItemNode,
+    timelineItems,
+    filterValues
+  )
+
+  timelineListNode.innerHTML = ``
+
+  timelineListNode.append(...timelineItemNodes)
 }
 
 const defaultFilterSettings = getFormValues(filterFormNode.elements)
 
-const onChangeForm = ({ target }) => {
+const onFormChange = ({ target }) => {
   const targetValue = getTargetValue(target)
 
   const newFilterSettings = changeObjectKey(
@@ -27,14 +38,14 @@ const onChangeForm = ({ target }) => {
     targetValue
   )
 
-  setNewFilter(newFilterSettings)
+  renderTimelineItems(newFilterSettings)
 }
 
 export default () => {
-  setNewFilter(defaultFilterSettings)
+  renderTimelineItems(defaultFilterSettings)
 
   filterFormNode.addEventListener(
     `change`,
-    debounce(onChangeForm, DEBOUNCE_DELAY)
+    debounce(onFormChange, DEBOUNCE_DELAY)
   )
 }

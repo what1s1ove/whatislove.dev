@@ -6,6 +6,9 @@ import gulp from 'gulp'
 import plumber from 'gulp-plumber'
 import gulpif from 'gulp-if'
 import rename from 'gulp-rename'
+import rev from 'gulp-rev'
+import revRewrite from 'gulp-rev-rewrite'
+import paths from 'vinyl-paths'
 
 import sync from 'browser-sync'
 
@@ -36,8 +39,8 @@ import svgstore from 'gulp-svgstore'
 
 const isDevelopment = Boolean(yargs.argv.development)
 
-const html = () =>
-  gulp
+const html = () => {
+  return gulp
     .src(`source/*.html`)
     .pipe(
       htmlmin({
@@ -46,9 +49,10 @@ const html = () =>
       })
     )
     .pipe(gulp.dest(`build`))
+}
 
-const css = () =>
-  gulp
+const css = () => {
+  return gulp
     .src(`source/css/styles.css`)
     .pipe(plumber())
     .pipe(gulpif(isDevelopment, sourcemap.init()))
@@ -67,9 +71,10 @@ const css = () =>
     .pipe(gulpif(isDevelopment, sourcemap.write(`.`)))
     .pipe(gulp.dest(`build/css`))
     .pipe(sync.stream())
+}
 
-const js = () =>
-  rollup({
+const js = () => {
+  return rollup({
     input: `./source/js/main.js`,
     plugins: [
       alias({
@@ -100,9 +105,10 @@ const js = () =>
       sourcemap: Boolean(isDevelopment),
     })
   )
+}
 
-const images = () =>
-  gulp
+const images = () => {
+  return gulp
     .src(`source/img/**/*.{png,jpg,svg}`)
     .pipe(
       imagemin([
@@ -116,9 +122,10 @@ const images = () =>
       ])
     )
     .pipe(gulp.dest(`build/img`))
+}
 
-const webp = () =>
-  gulp
+const webp = () => {
+  return gulp
     .src(`build/img/**/*.photo.{png,jpg}`)
     .pipe(
       gulpwebp({
@@ -126,9 +133,10 @@ const webp = () =>
       })
     )
     .pipe(gulp.dest(`build/img`))
+}
 
-const sprite = () =>
-  gulp
+const sprite = () => {
+  return gulp
     .src(`build/img/*.icon.svg`)
     .pipe(
       svgstore({
@@ -137,11 +145,14 @@ const sprite = () =>
     )
     .pipe(rename(`sprite.svg`))
     .pipe(gulp.dest(`build/img`))
+}
 
-const clean = () => del(`build`)
+const clean = () => {
+  return del(`build`)
+}
 
-const copy = () =>
-  gulp
+const copy = () => {
+  return gulp
     .src(
       [
         `source/fonts/**/*.woff2`,
@@ -154,6 +165,7 @@ const copy = () =>
       }
     )
     .pipe(gulp.dest(`build`))
+}
 
 const refresh = (done) => {
   sync.reload()
@@ -177,9 +189,45 @@ const server = () => {
   gulp.watch(`source/js/**/*.js`, gulp.series(js, refresh))
 }
 
-const build = gulp.series(clean, copy, html, css, js, images, webp, sprite)
+const hashCache = () => {
+  return gulp
+    .src(
+      [
+        `build/fonts/*.woff2`,
+        `build/img/**/*.{svg,png,jpg,webp}`,
+        `build/js/*.js`,
+        `build/css/*.css`,
+        `build/manifest.json`,
+      ],
+      {
+        base: `dist`,
+      }
+    )
+    .pipe(paths(del))
+    .pipe(rev())
+    .pipe(gulp.dest(`build`))
+    .pipe(rev.manifest(`rev.json`))
+    .pipe(gulp.dest(`build`))
+}
 
-const develop = gulp.series(build, server)
+const replaceCache = () => {
+  return gulp
+    .src([`build/**/*.{html,css}`, `build/manifest-*.json`])
+    .pipe(
+      revRewrite({
+        manifest: gulp.src(`build/rev.json`).pipe(paths(del)),
+      })
+    )
+    .pipe(gulp.dest(`build`))
+}
+
+const cache = gulp.series(hashCache, replaceCache)
+
+const assembly = gulp.series(clean, copy, html, css, js, images, webp, sprite)
+
+const develop = gulp.series(assembly, server)
+
+const build = gulp.series(assembly, cache)
 
 export {
   html,
@@ -191,7 +239,10 @@ export {
   clean,
   copy,
   refresh,
-  build,
+  hashCache,
+  replaceCache,
+  cache,
+  assembly,
   develop,
 }
 
