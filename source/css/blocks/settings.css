@@ -50,14 +50,14 @@
 }
 
 .settings__button--theme .settings__button-input {
-  background-image: url('../img/theme-light.svg');
+  background-image: url('../img/theme-light.bg.svg');
   background-repeat: no-repeat;
   background-position: right 5px top 50%;
   background-size: 15px;
 }
 
 .settings__button--theme .settings__button-input:checked {
-  background-image: url('../img/theme-dark.svg');
+  background-image: url('../img/theme-dark.bg.svg');
   background-position: left 5px top 50%;
   background-size: 13px;
 }

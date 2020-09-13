@@ -83,15 +83,15 @@ html[data-theme='light'] .favorites::before {
 }
 
 .favorites__item--html {
-  background-image: url('../img/favorites-html.svg');
+  background-image: url('../img/favorites-html.bg.svg');
 }
 
 .favorites__item--css {
-  background-image: url('../img/favorites-css.svg');
+  background-image: url('../img/favorites-css.bg.svg');
 }
 
 .favorites__item--js {
-  background-image: url('../img/favorites-js.svg');
+  background-image: url('../img/favorites-js.bg.svg');
 }
 
 @media (prefers-color-scheme: dark) {
