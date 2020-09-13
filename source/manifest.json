@@ -9,19 +9,24 @@
   "description": "Interface Developer",
   "icons": [
     {
-      "src": "/img/icons/160.png",
+      "src": "/img/icons/160.favicon.png",
       "sizes": "160x160",
       "type": "image/png"
     },
     {
-      "src": "/img/icons/32.png",
+      "src": "/img/icons/32.favicon.png",
       "sizes": "32x32",
       "type": "image/png"
     },
     {
-      "src": "/img/icons/16.png",
+      "src": "/img/icons/16.favicon.png",
       "sizes": "16x16",
       "type": "image/png"
+    },
+    {
+      "src": "/img/icons/any.favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
     }
   ]
 }
