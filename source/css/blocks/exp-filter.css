@@ -1,7 +1,7 @@
 .exp-filter {
-  z-index: var(--z-index--level-three);
   position: sticky;
   top: -1px;
+  z-index: var(--z-index--level-three);
 
   background-color: var(--color--primary);
 
@@ -99,12 +99,13 @@
     width: 1px;
     height: 1px;
     margin: -1px;
-    border: 0;
     padding: 0;
+
+    overflow: hidden;
 
     white-space: nowrap;
 
-    overflow: hidden;
+    border: 0;
 
     clip: rect(0 0 0 0);
     clip-path: inset(100%);

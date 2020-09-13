@@ -17,17 +17,15 @@
 }
 
 .navigation__item a {
-  font-size: var(--font-size--large);
-  text-decoration: none;
-
   color: var(--color--secondary);
+  font-size: var(--font-size--large);
   text-transform: lowercase;
+  text-decoration: none;
 
   transition: letter-spacing 0.15s;
 }
 
 .navigation__item a:hover {
-  text-decoration: underline;
-
   letter-spacing: 3px;
+  text-decoration: underline;
 }

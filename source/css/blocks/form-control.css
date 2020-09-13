@@ -4,8 +4,8 @@
 
   padding: 2px 2px 2px 7px;
 
-  font-size: var(--font-size--small);
   color: var(--color--secondary);
+  font-size: var(--font-size--small);
   white-space: nowrap;
 
   border-radius: 10px;
@@ -14,14 +14,14 @@
 }
 
 .form-control__input {
-  flex-shrink: 0;
   position: relative;
+
+  flex-shrink: 0;
 
   margin: 0;
 
-  appearance: none;
-
   cursor: pointer;
+  appearance: none;
 }
 
 .form-control__input--checkbox {
@@ -50,10 +50,10 @@
   border-top: 0;
   border-right: 0;
 
+  transition: transform 0.1s ease-in 25ms;
+
   transform: scale(0) rotate(-45deg);
   transform-origin: bottom left;
-
-  transition: transform 0.1s ease-in 25ms;
 }
 
 .form-control__input--checkbox:checked::before {

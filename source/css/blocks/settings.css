@@ -1,9 +1,9 @@
 .settings {
-  z-index: var(--z-index--level-four);
-
   position: fixed;
   right: 15px;
   bottom: 13px;
+
+  z-index: var(--z-index--level-four);
 
   display: flex;
   flex-direction: column;
@@ -45,8 +45,8 @@
   border: 1px solid var(--color--primary);
   border-radius: 20px;
 
-  appearance: none;
   cursor: pointer;
+  appearance: none;
 }
 
 .settings__button--theme .settings__button-input {
@@ -66,7 +66,6 @@
   position: absolute;
   top: 50%;
   left: 0;
-  transform: translate(3px, -50%);
 
   content: '';
   width: 15px;
@@ -76,6 +75,8 @@
   border-radius: 50%;
 
   transition: transform 500ms;
+
+  transform: translate(3px, -50%);
 }
 
 .settings__button-input:checked::before {
