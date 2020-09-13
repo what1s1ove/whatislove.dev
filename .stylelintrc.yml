@@ -1,7 +1,9 @@
 plugins:
-  stylelint-prettier
+  - stylelint-prettier
+  - stylelint-order
 extends:
-  stylelint-prettier/recommended
+  - stylelint-prettier/recommended
+  - ./stylelint.config.rational-order.js
 rules:
     prettier/prettier: true
     rule-empty-line-before:
