@@ -1,5 +1,4 @@
 :root {
-  font-size: 62.5%;
   --font-size--small: 1.4rem;
   --font-size--default: 1.6rem;
   --font-size--large: 2.4rem;
@@ -15,6 +14,8 @@
   --transition-duration--theme: 0.5s;
 
   --outline-color: #5793f9;
+
+  font-size: 62.5%;
 }
 
 :root,

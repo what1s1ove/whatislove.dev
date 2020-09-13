@@ -3,7 +3,7 @@ plugins:
   - stylelint-order
 extends:
   - stylelint-prettier/recommended
-  - ./stylelint.config.rational-order.js
+  - ./stylelint.config.rational-order.cjs
 rules:
     prettier/prettier: true
     rule-empty-line-before:

@@ -29,9 +29,9 @@
     )
     50%/ 50px 50px;
 
-  opacity: 0;
-
   transition: opacity var(--transition-duration--theme);
+
+  opacity: 0;
 }
 
 html[data-theme='light'] .favorites::before {
@@ -54,9 +54,8 @@ html[data-theme='light'] .favorites::before {
 }
 
 .favorites__item {
-  z-index: var(--z-index--level-one);
-
   position: relative;
+  z-index: var(--z-index--level-one);
 
   display: flex;
   justify-content: center;
@@ -67,9 +66,9 @@ html[data-theme='light'] .favorites::before {
   margin: 10px;
 
   color: #ffffff;
+  font-weight: bold;
   font-size: 28px;
   letter-spacing: 2px;
-  font-weight: bold;
 
   background-color: var(--color--secondary);
   background-repeat: no-repeat;

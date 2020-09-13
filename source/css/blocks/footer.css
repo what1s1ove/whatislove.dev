@@ -1,11 +1,11 @@
 .footer {
-  background-color: var(--color--secondary);
-
   display: flex;
   flex-direction: column;
   align-items: center;
 
   padding: 30px 15px;
+
+  background-color: var(--color--secondary);
 }
 
 .footer__social-list {

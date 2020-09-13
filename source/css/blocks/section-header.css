@@ -22,13 +22,14 @@
 
 .section-header__desc::before {
   position: absolute;
-  left: 50%;
   bottom: 0;
-  transform: translateX(-50%);
+  left: 50%;
 
   content: '';
   width: calc(100% / 1.2);
   height: 1px;
 
   background-color: var(--color--primary);
+
+  transform: translateX(-50%);
 }

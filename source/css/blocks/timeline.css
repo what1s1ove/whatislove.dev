@@ -32,16 +32,16 @@
   left: 0;
 
   content: '';
-  height: 100%;
   width: 2px;
+  height: 100%;
 
   background-color: var(--color--primary);
 }
 
 .timeline__list:not(:empty)::after {
   position: absolute;
-  left: -6px;
   bottom: 0;
+  left: -6px;
 
   content: '';
 
@@ -99,9 +99,9 @@
 .timeline__dates {
   margin: 0;
 
-  text-align: right;
-  white-space: nowrap;
   color: var(--color--secondary);
+  white-space: nowrap;
+  text-align: right;
 }
 
 .timeline__dates time {
@@ -141,7 +141,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+
   display: none;
 
   width: 100%;
@@ -149,6 +149,8 @@
   padding: 0 15px;
 
   text-align: center;
+
+  transform: translate(-50%, -50%);
 }
 
 .timeline__list:empty + .timeline__desc-empty {
@@ -163,13 +165,13 @@
   min-height: 60px;
   margin: 30px 0 0;
 
+  overflow: hidden;
+
   color: var(--color--secondary);
   text-transform: uppercase;
   text-decoration: none;
 
   background-color: var(--color--primary);
-
-  overflow: hidden;
 
   box-shadow: 0 1px 10px 0 var(--color--primary--opacity);
 }
@@ -183,33 +185,37 @@
 
   margin: 10px auto;
 
-  opacity: 0;
   visibility: hidden;
+
   transition: transform 0.4s cubic-bezier(0.42, -0.2, 0.01, 1.22),
     opacity 0.4s linear;
   transform: translate3d(0, -4em, 0) scale(0);
+
+  opacity: 0;
 
   fill: var(--color--secondary);
 }
 
 .timeline__resume-link:hover .timeline__resume-icon,
 .timeline__resume-link:focus .timeline__resume-icon {
-  opacity: 1;
   visibility: visible;
   transform: translate3d(0, 0, 0) scale(1);
+
+  opacity: 1;
 }
 
 .timeline__resume-text {
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
+  left: 0;
 
   margin: 18px 0;
 
   text-align: center;
 
   visibility: visible;
+
   transition: transform 0.4s cubic-bezier(0.42, -0.2, 0.01, 1.22),
     opacity 0.13s linear;
   transform: scale(1);
@@ -219,9 +225,11 @@
 
 .timeline__resume-link:hover .timeline__resume-text,
 .timeline__resume-link:focus .timeline__resume-text {
-  opacity: 0;
   visibility: hidden;
+
   transform: translate3d(0, 4em, 0) scale(0.25);
+
+  opacity: 0;
 }
 
 @media (min-width: 640px) {
@@ -274,8 +282,8 @@
   }
 
   .timeline__item:nth-child(even) .timeline__item-wrapper::before {
-    left: unset;
     right: 99%;
+    left: unset;
 
     border-color: transparent;
     border-right-color: var(--color--primary);
@@ -294,12 +302,13 @@
   }
 
   .timeline__item:nth-child(even) .timeline__dates {
-    left: unset;
     right: calc(100% + 85px);
+    left: unset;
   }
 
   .timeline__icon-wrapper {
     left: 50%;
+
     transform: translateX(-50%);
   }
 }
