@@ -74,6 +74,10 @@
   color: var(--color--secondary);
 }
 
+.timeline__item-title:empty {
+  display: none;
+}
+
 .timeline__item-origin {
   display: block;
 
@@ -82,10 +86,18 @@
   color: var(--color--red);
 }
 
+.timeline__item-origin:empty {
+  display: none;
+}
+
 .timeline__item-desc {
   margin: 0 0 10px;
 
   color: var(--color--secondary);
+}
+
+.timeline__item-desc:empty {
+  display: none;
 }
 
 .timeline__item-link {
@@ -96,6 +108,10 @@
   color: var(--color--red);
 }
 
+.timeline__item-link:empty {
+  display: none;
+}
+
 .timeline__dates {
   margin: 0;
 
@@ -104,8 +120,16 @@
   text-align: right;
 }
 
-.timeline__dates time {
+.timeline__dates-date {
   text-transform: uppercase;
+}
+
+.timeline__dates-date--start:empty {
+  display: none;
+}
+
+.timeline__dates-date--end:empty {
+  display: none;
 }
 
 .timeline__icon-wrapper {

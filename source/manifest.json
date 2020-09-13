@@ -22,11 +22,6 @@
       "src": "/img/icons/16.favicon.png",
       "sizes": "16x16",
       "type": "image/png"
-    },
-    {
-      "src": "/img/icons/any.favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
     }
   ]
 }
