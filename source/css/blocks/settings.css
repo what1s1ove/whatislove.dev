@@ -67,7 +67,7 @@
   top: 50%;
   left: 0;
 
-  content: '';
+  content: '' / '';
   width: 15px;
   height: 15px;
 

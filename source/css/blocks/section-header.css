@@ -25,7 +25,7 @@
   bottom: 0;
   left: 50%;
 
-  content: '';
+  content: '' / '';
   width: calc(100% / 1.2);
   height: 1px;
 

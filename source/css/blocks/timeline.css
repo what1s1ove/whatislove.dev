@@ -31,7 +31,7 @@
   top: 0;
   left: 0;
 
-  content: '';
+  content: '' / '';
   width: 2px;
   height: 100%;
 
@@ -43,7 +43,7 @@
   bottom: 0;
   left: -6px;
 
-  content: '';
+  content: '' / '';
 
   border: 7px solid var(--color--secondary);
   border-top: 14px solid var(--color--primary);
@@ -299,7 +299,7 @@
 
     top: 30px;
     left: 99%;
-    content: '';
+    content: '' / '';
 
     border: 15px solid transparent;
     border-left-color: var(--color--primary);
