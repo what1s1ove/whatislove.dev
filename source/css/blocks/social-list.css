@@ -48,7 +48,7 @@
   }
 
   .social-list__item-title::after {
-    content: ':' / '';
+    content: ':';
   }
 
   .social-list__item a::after {

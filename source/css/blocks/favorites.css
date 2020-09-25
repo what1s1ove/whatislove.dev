@@ -12,6 +12,7 @@
       var(--color--secondary) 0% 50%
     )
     50%/ 50px 50px;
+  background-color: var(--color--primary);
 }
 
 .favorites__wrapper::before {
@@ -19,7 +20,7 @@
   top: 0;
   left: 0;
 
-  content: '' / '';
+  content: '';
   width: 100%;
   height: 100%;
 
