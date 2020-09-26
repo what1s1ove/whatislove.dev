@@ -306,5 +306,5 @@ module.exports = {
   rules: {
     'order/order': ruleOrder,
     'order/properties-order': propertiesOrder,
-  },
+  }
 }
