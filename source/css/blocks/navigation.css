@@ -1,6 +1,5 @@
 .navigation {
   min-width: 320px;
-
   margin: 150px 0 0 auto;
   padding: 0 15px;
 }
@@ -8,7 +7,6 @@
 .navigation__list {
   margin: 0;
   padding: 0;
-
   list-style: none;
 }
 
@@ -21,7 +19,6 @@
   font-size: var(--font-size--large);
   text-transform: lowercase;
   text-decoration: none;
-
   transition: letter-spacing 0.15s;
 }
 

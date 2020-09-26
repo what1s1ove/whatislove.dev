@@ -2,15 +2,11 @@
   position: fixed;
   right: 15px;
   bottom: 13px;
-
   z-index: var(--z-index--level-four);
-
   display: flex;
   flex-direction: column;
-
   margin: 0;
   padding: 0;
-
   list-style: none;
 }
 
@@ -20,31 +16,22 @@
 
 .settings__button {
   position: relative;
-
   display: flex;
   align-items: center;
-
   padding: 2px;
-
   color: var(--color--primary);
-
   border-radius: 10px;
 }
 
 .settings__button-input {
   position: relative;
-
   display: block;
-
   width: 45px;
   height: 20px;
   margin: 0;
-
   background-color: var(--color--secondary);
-
   border: 1px solid var(--color--primary);
   border-radius: 20px;
-
   cursor: pointer;
   appearance: none;
 }
@@ -66,16 +53,12 @@
   position: absolute;
   top: 50%;
   left: 0;
-
   content: '';
   width: 15px;
   height: 15px;
-
   background-color: var(--color--primary);
   border-radius: 50%;
-
   transition: transform 500ms;
-
   transform: translate(3px, -50%);
 }
 
@@ -87,13 +70,11 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-
   fill: var(--color--primary);
 }
 
 .settings__icon--checked {
   left: 7px;
-
   display: none;
 }
 

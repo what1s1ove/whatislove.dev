@@ -1,6 +1,5 @@
 .timeline {
   padding: 30px 0 0;
-
   background-color: var(--color--secondary);
 }
 
@@ -10,19 +9,15 @@
 
 .timeline__list-wrapper {
   position: relative;
-
   height: 100vh;
   padding: 0 30px;
-
   overflow-y: auto;
 }
 
 .timeline__list {
   position: relative;
-
   margin: 0;
   padding: 20px 0 80px;
-
   list-style: none;
 }
 
@@ -30,11 +25,9 @@
   position: absolute;
   top: 0;
   left: 0;
-
   content: '';
   width: 2px;
   height: 100%;
-
   background-color: var(--color--primary);
 }
 
@@ -42,35 +35,27 @@
   position: absolute;
   bottom: 0;
   left: -6px;
-
   content: '';
-
   border: 7px solid var(--color--secondary);
   border-top: 14px solid var(--color--primary);
 }
 
 .timeline__item {
   position: relative;
-
   margin: 0 0 15px 30px;
-
   animation: fadeUp 1s;
 }
 
 .timeline__item-wrapper {
   min-height: 175px;
   padding: 20px;
-
   background-color: var(--color--primary);
-
   border-radius: 4px;
-
   box-shadow: 0 1px 10px 0 var(--color--primary--opacity);
 }
 
 .timeline__item-title {
   margin: 0 0 10px;
-
   color: var(--color--secondary);
 }
 
@@ -80,9 +65,7 @@
 
 .timeline__item-origin {
   display: block;
-
   margin: 0 0 10px;
-
   color: var(--color--red);
 }
 
@@ -92,7 +75,6 @@
 
 .timeline__item-desc {
   margin: 0 0 10px;
-
   color: var(--color--secondary);
 }
 
@@ -102,9 +84,7 @@
 
 .timeline__item-link {
   display: block;
-
   margin: 0 0 10px;
-
   color: var(--color--red);
 }
 
@@ -114,7 +94,6 @@
 
 .timeline__dates {
   margin: 0;
-
   color: var(--color--secondary);
   white-space: nowrap;
   text-align: right;
@@ -136,16 +115,12 @@
   position: absolute;
   top: 20px;
   left: -52px;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 46px;
   height: 46px;
-
   background-color: var(--color--primary);
-
   border-radius: 50%;
 }
 
@@ -165,15 +140,11 @@
   position: absolute;
   top: 50%;
   left: 50%;
-
   display: none;
-
   width: 100%;
   margin: 0;
   padding: 0 15px;
-
   text-align: center;
-
   transform: translate(-50%, -50%);
 }
 
@@ -183,20 +154,14 @@
 
 .timeline__resume-link {
   position: relative;
-
   display: block;
-
   min-height: 60px;
   margin: 30px 0 0;
-
   overflow: hidden;
-
   color: var(--color--secondary);
   text-transform: uppercase;
   text-decoration: none;
-
   background-color: var(--color--primary);
-
   box-shadow: 0 1px 10px 0 var(--color--primary--opacity);
 }
 
@@ -206,17 +171,12 @@
 
 .timeline__resume-icon {
   display: block;
-
   margin: 10px auto;
-
   visibility: hidden;
-
   transition: transform 0.4s cubic-bezier(0.42, -0.2, 0.01, 1.22),
     opacity 0.4s linear;
   transform: translate3d(0, -4em, 0) scale(0);
-
   opacity: 0;
-
   fill: var(--color--secondary);
 }
 
@@ -224,7 +184,6 @@
 .timeline__resume-link:focus .timeline__resume-icon {
   visibility: visible;
   transform: translate3d(0, 0, 0) scale(1);
-
   opacity: 1;
 }
 
@@ -233,26 +192,19 @@
   top: 0;
   right: 0;
   left: 0;
-
   margin: 18px 0;
-
   text-align: center;
-
   visibility: visible;
-
   transition: transform 0.4s cubic-bezier(0.42, -0.2, 0.01, 1.22),
     opacity 0.13s linear;
   transform: scale(1);
-
   opacity: 1;
 }
 
 .timeline__resume-link:hover .timeline__resume-text,
 .timeline__resume-link:focus .timeline__resume-text {
   visibility: hidden;
-
   transform: translate3d(0, 4em, 0) scale(0.25);
-
   opacity: 0;
 }
 
@@ -279,7 +231,6 @@
   .timeline__item {
     display: flex;
     flex-direction: column;
-
     margin: 0 0 25px;
   }
 
@@ -289,18 +240,15 @@
 
   .timeline__item-wrapper {
     position: relative;
-
     width: 44%;
     min-height: 90px;
   }
 
   .timeline__item-wrapper::before {
     position: absolute;
-
     top: 30px;
     left: 99%;
     content: '';
-
     border: 15px solid transparent;
     border-left-color: var(--color--primary);
   }
@@ -308,7 +256,6 @@
   .timeline__item:nth-child(even) .timeline__item-wrapper::before {
     right: 99%;
     left: unset;
-
     border-color: transparent;
     border-right-color: var(--color--primary);
   }
@@ -321,7 +268,6 @@
     position: absolute;
     top: 33px;
     left: calc(100% + 85px);
-
     color: var(--color--primary);
   }
 
@@ -332,7 +278,6 @@
 
   .timeline__icon-wrapper {
     left: 50%;
-
     transform: translateX(-50%);
   }
 }
@@ -350,7 +295,6 @@
 
   .timeline__list-wrapper {
     max-width: 940px;
-
     margin: 0 auto;
   }
 

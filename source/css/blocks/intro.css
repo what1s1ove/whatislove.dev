@@ -17,7 +17,6 @@
 
 .intro__image-wrapper {
   align-self: center;
-
   margin: 0 0 25px;
 }
 
@@ -31,7 +30,6 @@
 
 .intro__personal-title {
   margin: 0 0 15px;
-
   text-align: center;
   text-transform: uppercase;
 }
@@ -54,7 +52,6 @@
 
 .intro__item-desc a {
   color: inherit;
-
   text-decoration: none;
 }
 
@@ -64,14 +61,12 @@
 
 .intro__myself-title {
   margin: 0 0 5px;
-
   text-align: center;
   text-transform: uppercase;
 }
 
 .intro__myself-desk {
   margin: 0;
-
   text-align: center;
 }
 
@@ -86,10 +81,8 @@
 
   .intro__item--phone {
     position: unset;
-
     width: unset;
     height: unset;
-
     clip-path: unset;
   }
 
@@ -99,10 +92,8 @@
 
   .intro__item--socials .intro__item-title {
     position: unset;
-
     width: unset;
     height: unset;
-
     clip-path: unset;
   }
 
@@ -140,13 +131,11 @@
 
   .intro__myself-title {
     margin: 0 0 15px;
-
     text-align: left;
   }
 
   .intro__myself-desk {
     padding: 0 0 0 15px;
-
     text-align: left;
   }
 }
@@ -155,7 +144,6 @@
   .intro__wrapper {
     max-width: 940px;
     margin: 0 auto;
-
     padding: 30px 15px 80px;
   }
 
