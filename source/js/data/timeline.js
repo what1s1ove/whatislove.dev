@@ -612,7 +612,15 @@ const timelineData = [
     origin: `https://www.amazon.com/Power-Now-Guide-Spiritual-Enlightenment/dp/1577314808`,
     originDesc: `Amazon`,
     date: `2020-10-11T00:00:00+03:00`,
-  }
+  },
+  {
+    skillType: TimelineSkillType.SOFT_SKILLS,
+    type: TimelineType.BOOKS,
+    title: `Stillness Speaks (Eckhart Tolle)`,
+    origin: `https://www.amazon.com/Stillness-Speaks-Eckhart-Tolle/dp/157731400X`,
+    originDesc: `Amazon`,
+    date: `2020-10-20T00:00:00+03:00`,
+  },
 ]
 
 export { timelineData }
