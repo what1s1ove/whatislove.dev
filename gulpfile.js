@@ -1,5 +1,6 @@
 import del from 'del'
 import yargs from 'yargs'
+import { hideBin } from 'yargs/helpers'
 import path from 'path'
 
 import gulp from 'gulp'
@@ -37,7 +38,7 @@ import jpegtran from 'imagemin-jpegtran'
 import gulpwebp from 'gulp-webp'
 import svgstore from 'gulp-svgstore'
 
-const isDevelopment = Boolean(yargs.argv.development)
+const isDevelopment = Boolean(yargs(hideBin(process.argv)).argv.development)
 
 const html = () => {
   return gulp
