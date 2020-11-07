@@ -1,3 +1,4 @@
+/* eslint-disable no-script-url */
 import { TimelineSkillType, TimelineType } from '~/common/enums'
 
 const timelineData = [
@@ -646,6 +647,5 @@ const timelineData = [
     endDate: `2020-12-02T00:00:00+03:00`,
   },
 ]
-
 
 export { timelineData }
