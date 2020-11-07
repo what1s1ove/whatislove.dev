@@ -633,6 +633,18 @@ const timelineData = [
     date: `2020-09-28T00:00:00+03:00`,
     endDate: `2020-12-02T00:00:00+03:00`,
   },
+  {
+    skillType: TimelineSkillType.HARD_SKILLS,
+    type: TimelineType.COURSES,
+    title: `Profession. React Developer`,
+    origin: `https://htmlacademy.ru/profession/react`,
+    originDesc: `Course link`,
+    desc: `⚛️`,
+    link: `https://assets.htmlacademy.ru/certificates/profession/13/573447.pdf`,
+    linkDesc: `Certificate`,
+    date: `2020-01-20T00:00:00+03:00`,
+    endDate: `2020-12-02T00:00:00+03:00`,
+  },
 ]
 
 
