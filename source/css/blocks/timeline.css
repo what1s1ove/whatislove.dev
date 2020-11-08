@@ -59,18 +59,10 @@
   color: var(--color--secondary);
 }
 
-.timeline__item-title:empty {
-  display: none;
-}
-
 .timeline__item-origin {
   display: block;
   margin: 0 0 10px;
   color: var(--color--red);
-}
-
-.timeline__item-origin:empty {
-  display: none;
 }
 
 .timeline__item-desc {
@@ -78,18 +70,10 @@
   color: var(--color--secondary);
 }
 
-.timeline__item-desc:empty {
-  display: none;
-}
-
 .timeline__item-link {
   display: block;
   margin: 0 0 10px;
   color: var(--color--red);
-}
-
-.timeline__item-link:empty {
-  display: none;
 }
 
 .timeline__dates {
@@ -101,14 +85,6 @@
 
 .timeline__dates-date {
   text-transform: uppercase;
-}
-
-.timeline__dates-date--start:empty {
-  display: none;
-}
-
-.timeline__dates-date--end:empty {
-  display: none;
 }
 
 .timeline__icon-wrapper {
