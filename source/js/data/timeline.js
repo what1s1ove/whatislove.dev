@@ -646,6 +646,14 @@ const timelineData = [
     date: `2020-01-20T00:00:00+03:00`,
     endDate: `2020-12-02T00:00:00+03:00`,
   },
+  {
+    skillType: TimelineSkillType.SOFT_SKILLS,
+    type: TimelineType.COURSES,
+    title: `SpeakUp: Master 1`,
+    origin: `https://www.speak-up.com.ua/`,
+    originDesc: `SpeakUp`,
+    date: `2020-11-08T00:00:00+03:00`,
+  },
 ]
 
 export { timelineData }
