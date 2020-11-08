@@ -1,4 +1,4 @@
-import { getFormattedDate } from '~/helpers'
+import { getFormattedDate, configureNode } from '~/helpers'
 import { timelineIconMap } from '~/common/maps'
 
 const SVG_HREF_ATTR = `xlink:href`
@@ -17,7 +17,7 @@ const getReplacedIconPath = (iconSourceNode, iconType) => {
   return replacedIconPath
 }
 
-const getTimelineItemNode = (getTimelineItemTemplateNode, itemData) => {
+const getTimelineItemNode = (timelineItemTemplateNode, itemData) => {
   const {
     type,
     title,
@@ -29,7 +29,7 @@ const getTimelineItemNode = (getTimelineItemTemplateNode, itemData) => {
     date,
     endDate,
   } = itemData
-  const timelineItemNode = getTimelineItemTemplateNode.cloneNode(true)
+  const timelineItemNode = timelineItemTemplateNode.cloneNode(true)
   const originLinkNode = timelineItemNode.querySelector(`.timeline__item-origin`)
   const titleNode = timelineItemNode.querySelector(`.timeline__item-title`)
   const descriptionNode = timelineItemNode.querySelector(`.timeline__item-desc`)
@@ -39,21 +39,33 @@ const getTimelineItemNode = (getTimelineItemTemplateNode, itemData) => {
   const iconSourceNode = timelineItemNode.querySelector(`.timeline__icon-source`)
   const replacedIconPage = getReplacedIconPath(iconSourceNode, type)
 
-  titleNode.textContent = title
+  configureNode(titleNode, {
+    textContent: title,
+  })
 
-  originLinkNode.textContent = originDesc
-  originLinkNode.href = origin || ``
+  configureNode(originLinkNode, {
+    textContent: originDesc,
+    href: origin || ``
+  })
 
-  descriptionNode.textContent = desc
+  configureNode(descriptionNode, {
+    textContent: desc,
+  })
 
-  linkNode.textContent = linkDesc
-  linkNode.href = link || ``
+  configureNode(linkNode, {
+    textContent: linkDesc,
+    href: link || ``
+  })
 
-  dateStartNode.textContent = date ? getFormattedDate(date) : ``
-  dateStartNode.dateTime = date || ``
+  configureNode(dateStartNode, {
+    textContent: date ? getFormattedDate(date) : ``,
+    dateTime: date || ``
+  })
 
-  dateEndNode.textContent = endDate ? `— ${getFormattedDate(endDate)}` : ``
-  dateEndNode.dateTime = endDate || ``
+  configureNode(dateEndNode, {
+    textContent: endDate ? `— ${getFormattedDate(endDate)}` : ``,
+    dateTime: endDate || ``
+  })
 
   iconSourceNode.setAttribute(SVG_HREF_ATTR, replacedIconPage)
 
