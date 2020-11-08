@@ -17,7 +17,7 @@ const getReplacedIconPath = (iconSourceNode, iconType) => {
   return replacedIconPath
 }
 
-const getTimelineItemNode = (getTimelineItemTemplateNode, itemData) => {
+const getTimelineItemNode = (timelineItemTemplateNode, itemData) => {
   const {
     type,
     title,
@@ -29,7 +29,7 @@ const getTimelineItemNode = (getTimelineItemTemplateNode, itemData) => {
     date,
     endDate,
   } = itemData
-  const timelineItemNode = getTimelineItemTemplateNode.cloneNode(true)
+  const timelineItemNode = timelineItemTemplateNode.cloneNode(true)
   const originLinkNode = timelineItemNode.querySelector(`.timeline__item-origin`)
   const titleNode = timelineItemNode.querySelector(`.timeline__item-title`)
   const descriptionNode = timelineItemNode.querySelector(`.timeline__item-desc`)
