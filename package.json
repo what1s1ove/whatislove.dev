@@ -56,7 +56,7 @@
     "imagemin-jpegtran": "7.0.0",
     "imagemin-pngquant": "9.0.1",
     "imagemin-svgo": "8.0.0",
-    "node-w3c-validator": "1.6.4",
+    "node-w3c-validator": "2.0.1",
     "postcss": "8.1.6",
     "postcss-color-hex-alpha": "6.0.0",
     "postcss-import": "13.0.0",
