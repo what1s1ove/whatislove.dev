@@ -14,11 +14,6 @@
     "last 2 version",
     "not dead"
   ],
-  "nodeW3Cvalidator": {
-    "suppressErrors": [
-      "Attribute “loading” not allowed on element “img” at this point."
-    ]
-  },
   "dependencies": {
     "focus-visible": "5.2.0"
   },
