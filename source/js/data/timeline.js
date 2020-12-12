@@ -654,6 +654,14 @@ const timelineData = [
     originDesc: `SpeakUp`,
     date: `2020-11-08T00:00:00+03:00`,
   },
+  {
+    skillType: TimelineSkillType.SOFT_SKILLS,
+    type: TimelineType.BOOKS,
+    title: `Breaking The Habit of Being Yourself: How to Lose Your Mind and Create a New One (Joe Dr. Dispenza)`,
+    origin: `https://www.amazon.com/Breaking-Habit-Being-Yourself-Create/dp/1401938094`,
+    originDesc: `Amazon`,
+    date: `2020-12-12T00:00:00+03:00`,
+  },
 ]
 
 export { timelineData }
