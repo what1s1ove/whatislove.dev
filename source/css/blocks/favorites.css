@@ -25,11 +25,11 @@
       var(--color--primary) 0% 50%
     )
     50%/ 50px 50px;
-  transition: opacity var(--transition-duration--theme);
+  transition: opacity var(--transition-duration--theme) ease;
   opacity: 0;
 }
 
-html[data-theme='light'] .favorites::before {
+html[data-theme='light'] .favorites__wrapper::before {
   opacity: 1;
 }
 
