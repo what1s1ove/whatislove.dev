@@ -70,7 +70,7 @@ html[data-theme='light'] .favorites__wrapper::before {
   font-size: 28px;
   letter-spacing: 2px;
   text-align: center;
-  background-image: url('../img/favorites-shadow.mask.svg');
+  background-image: url('../img/favorites-shadow.bg.svg');
   background-repeat: no-repeat;
   background-position: right 10px top 50%;
   background-size: 50px;
