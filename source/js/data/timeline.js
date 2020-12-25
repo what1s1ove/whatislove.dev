@@ -662,6 +662,22 @@ const timelineData = [
     originDesc: `Amazon`,
     date: `2020-12-12T00:00:00+03:00`,
   },
+  {
+    skillType: TimelineSkillType.HARD_SKILLS,
+    type: TimelineType.BOOKS,
+    title: `CSS Secrets: Better Solutions to Everyday Web Design Problems (Lea Verou)`,
+    origin: `https://www.amazon.com/CSS-Secrets-Solutions-Everyday-Problems/dp/1449372635`,
+    originDesc: `Amazon`,
+    date: `2020-12-18T00:00:00+03:00`,
+  },
+  {
+    skillType: TimelineSkillType.SOFT_SKILLS,
+    type: TimelineType.BOOKS,
+    title: `Emotional Intelligence (Daniel Goleman)`,
+    origin: `https://www.amazon.com/Emotional-Intelligence-Matter-More-Than/dp/055338371X`,
+    originDesc: `Amazon`,
+    date: `2020-12-23T00:00:00+03:00`,
+  },
 ]
 
 export { timelineData }
