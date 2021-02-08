@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 import {
   getEventListener,
   checkKeydownEvent,
@@ -45,7 +46,7 @@ const toggleOverlay = (isActive) => {
     : cleanFocusTrap()
 }
 
-export default () => {
+const initHeader = () => {
   headerBtnNode.addEventListener(`click`, (evt) => {
     evt.stopPropagation()
 
@@ -54,3 +55,5 @@ export default () => {
     toggleOverlay(!hasActiveClass)
   })
 }
+
+export { initHeader }
