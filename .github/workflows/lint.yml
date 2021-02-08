@@ -32,7 +32,7 @@ jobs:
 
       - name: Code Building
         run: |
-          npm run ci
+          npm ci
           npm run build
 
       - name: Code Linting
