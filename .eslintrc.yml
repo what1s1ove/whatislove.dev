@@ -20,11 +20,6 @@ rules:
   comma-dangle:
     - error
     - only-multiline
-    - arrays: never
-      objects: always
-      imports: never
-      exports: never
-      functions: never
   quotes:
     - error
     - backtick
@@ -38,6 +33,45 @@ rules:
     - error
     - multiline: true
       consistent: true
-  no-use-before-define: off
-  linebreak-style: off
-  import/prefer-default-export: off
+  curly:
+    - error
+    - all
+  object-curly-spacing:
+    - error
+    - always
+  implicit-arrow-linebreak:
+    - error
+    - beside
+  function-paren-newline:
+    - error
+    - consistent
+  no-confusing-arrow:
+    - error
+    - allowParens: true
+  no-process-exit:
+    - error
+  require-atomic-updates:
+    - error
+  no-console:
+    - error
+    - allow:
+      - warn
+      - error
+      - info
+  arrow-parens:
+    - error
+    - always
+  default-case:
+    - off
+  no-param-reassign:
+    - off
+  import/exports-last:
+    - error
+  import/group-exports:
+    - error
+  import/no-default-export:
+    - error
+  import/no-anonymous-default-export:
+    - error
+  import/prefer-default-export:
+    - off

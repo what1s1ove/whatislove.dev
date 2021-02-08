@@ -19,7 +19,7 @@ const renderTimelineItems = (filterValues) => {
   const timelineItemNodes = getTimelineItemNodes(
     timelineItemNode,
     timelineItems,
-    filterValues
+    filterValues,
   )
 
   timelineListNode.innerHTML = ``
@@ -35,17 +35,19 @@ const onFormChange = ({ target }) => {
   const newFilterSettings = changeObjectKey(
     defaultFilterSettings,
     target.name,
-    targetValue
+    targetValue,
   )
 
   renderTimelineItems(newFilterSettings)
 }
 
-export default () => {
+const initTimeline = () => {
   renderTimelineItems(defaultFilterSettings)
 
   filterFormNode.addEventListener(
     `change`,
-    debounce(onFormChange, DEBOUNCE_DELAY)
+    debounce(onFormChange, DEBOUNCE_DELAY),
   )
 }
+
+export { initTimeline }

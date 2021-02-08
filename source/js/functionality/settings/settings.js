@@ -7,10 +7,10 @@ import {
 } from './common'
 
 const themeTogglerNode = document.querySelector(
-  `.settings__button--theme input`
+  `.settings__button--theme input`,
 )
 const motionTogglerNode = document.querySelector(
-  `.settings__button--animate input`
+  `.settings__button--animate input`,
 )
 
 const themeBtnSettings = {
@@ -27,8 +27,10 @@ const motionBtnSettings = {
   checkTypes: MotionCheckType,
 }
 
-export default () => {
+const initSettings = () => {
   initSettingBtn(themeBtnSettings)
 
   initSettingBtn(motionBtnSettings)
 }
+
+export { initSettings }

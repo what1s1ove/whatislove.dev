@@ -678,6 +678,14 @@ const timelineData = [
     originDesc: `Amazon`,
     date: `2020-12-23T00:00:00+03:00`,
   },
+  {
+    skillType: TimelineSkillType.SOFT_SKILLS,
+    type: TimelineType.BOOKS,
+    title: `Man's Search For Meaning (Victor Frankl)`,
+    origin: `https://www.amazon.com/Mans-Search-Meaning-Viktor-Frankl-ebook/dp/B009U9S6FI`,
+    originDesc: `Amazon`,
+    date: `2021-01-04T00:00:00+03:00`,
+  },
 ]
 
 export { timelineData }
