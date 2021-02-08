@@ -1,14 +1,15 @@
+import path from 'path'
+import fs from 'fs'
 import del from 'del'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
-import path from 'path'
 
 import gulp from 'gulp'
 import plumber from 'gulp-plumber'
 import gulpif from 'gulp-if'
 import rename from 'gulp-rename'
 import rev from 'gulp-rev'
-import revRewrite from 'gulp-rev-rewrite'
+import rewrite from 'gulp-rev-rewrite'
 import paths from 'vinyl-paths'
 
 import sync from 'browser-sync'
@@ -210,11 +211,13 @@ const hashCache = () => {
 }
 
 const replaceCache = () => {
+  const manifest = fs.readFileSync('build/rev.json');
+
   return gulp
     .src([`build/**/*.{html,css}`, `build/manifest-*.json`])
     .pipe(
-      revRewrite({
-        manifest: gulp.src(`build/rev.json`).pipe(paths(del)),
+      rewrite({
+        manifest,
       }),
     )
     .pipe(gulp.dest(`build`))
