@@ -11,18 +11,20 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: '14'
-        java: '8'
+        node-version:
+          - 14
+        java-version:
+          - 8
     steps:
       - name: Instal NodeJS v${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install Java v${{ matrix.java }}
+      - name: Install Java v${{ matrix.java-version }}
         uses: actions/setup-java@v1
         with:
-          java-version: ${{ matrix.java }}
+          java-version: ${{ matrix.java-version }}
           architecture: x64
 
       - name: Code Checkout
