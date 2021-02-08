@@ -13,6 +13,9 @@ settings:
       map:
         - ['~', './source/js']
 
+ignorePatterns:
+  - 'gulpfile.js'
+
 rules:
   semi:
     - error

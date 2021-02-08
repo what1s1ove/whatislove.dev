@@ -1,14 +1,15 @@
+import path from 'path'
+import fs from 'fs'
 import del from 'del'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
-import path from 'path'
 
 import gulp from 'gulp'
 import plumber from 'gulp-plumber'
 import gulpif from 'gulp-if'
 import rename from 'gulp-rename'
 import rev from 'gulp-rev'
-import revRewrite from 'gulp-rev-rewrite'
+import rewrite from 'gulp-rev-rewrite'
 import paths from 'vinyl-paths'
 
 import sync from 'browser-sync'
@@ -20,7 +21,6 @@ import htmlmin from 'gulp-htmlmin'
 import postcss from 'gulp-postcss'
 import postcssimport from 'postcss-import'
 import autoprefixer from 'autoprefixer'
-import hexalpha from 'postcss-color-hex-alpha'
 import mqpacker from 'css-mqpacker'
 import csso from 'gulp-csso'
 
@@ -47,7 +47,7 @@ const html = () => {
       htmlmin({
         collapseWhitespace: true,
         removeComments: true,
-      })
+      }),
     )
     .pipe(gulp.dest(`build`))
 }
@@ -60,12 +60,11 @@ const css = () => {
     .pipe(
       postcss([
         postcssimport(),
-        hexalpha(),
         autoprefixer(),
         mqpacker({
           sort: (a, b) => a.localeCompare(b),
         }),
-      ])
+      ]),
     )
     .pipe(csso())
     .pipe(rename(`styles.min.css`))
@@ -99,13 +98,13 @@ const js = () => {
       }),
       !isDevelopment && terser(),
     ],
-  }).then((bundle) =>
-    bundle.write({
+  }).then((bundle) => {
+    return bundle.write({
       file: `./build/js/main.min.js`,
       format: `iife`,
       sourcemap: Boolean(isDevelopment),
     })
-  )
+  })
 }
 
 const images = () => {
@@ -120,7 +119,7 @@ const images = () => {
         svgo({
           floatPrecision: 1,
         }),
-      ])
+      ]),
     )
     .pipe(gulp.dest(`build/img`))
 }
@@ -131,7 +130,7 @@ const webp = () => {
     .pipe(
       gulpwebp({
         quality: 75,
-      })
+      }),
     )
     .pipe(gulp.dest(`build/img`))
 }
@@ -142,7 +141,7 @@ const sprite = () => {
     .pipe(
       svgstore({
         inlineSvg: true,
-      })
+      }),
     )
     .pipe(rename(`sprite.svg`))
     .pipe(gulp.dest(`build/img`))
@@ -163,7 +162,7 @@ const copy = () => {
       ],
       {
         base: `source`,
-      }
+      },
     )
     .pipe(gulp.dest(`build`))
 }
@@ -202,7 +201,7 @@ const hashCache = () => {
       ],
       {
         base: `dist`,
-      }
+      },
     )
     .pipe(paths(del))
     .pipe(rev())
@@ -212,12 +211,14 @@ const hashCache = () => {
 }
 
 const replaceCache = () => {
+  const manifest = fs.readFileSync('build/rev.json');
+
   return gulp
     .src([`build/**/*.{html,css}`, `build/manifest-*.json`])
     .pipe(
-      revRewrite({
-        manifest: gulp.src(`build/rev.json`).pipe(paths(del)),
-      })
+      rewrite({
+        manifest,
+      }),
     )
     .pipe(gulp.dest(`build`))
 }
