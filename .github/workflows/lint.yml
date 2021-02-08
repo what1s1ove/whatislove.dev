@@ -17,7 +17,7 @@ jobs:
           - 8
     steps:
       - name: Instal NodeJS v${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -30,9 +30,12 @@ jobs:
       - name: Code Checkout
         uses: actions/checkout@v2
 
+      - name: Install Dependencies
+        uses: |
+          npm ci
+
       - name: Code Building
         run: |
-          npm ci
           npm run build
 
       - name: Code Linting
