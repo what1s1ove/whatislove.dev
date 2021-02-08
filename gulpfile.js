@@ -20,7 +20,6 @@ import htmlmin from 'gulp-htmlmin'
 import postcss from 'gulp-postcss'
 import postcssimport from 'postcss-import'
 import autoprefixer from 'autoprefixer'
-import hexalpha from 'postcss-color-hex-alpha'
 import mqpacker from 'css-mqpacker'
 import csso from 'gulp-csso'
 
@@ -60,7 +59,6 @@ const css = () => {
     .pipe(
       postcss([
         postcssimport(),
-        hexalpha(),
         autoprefixer(),
         mqpacker({
           sort: (a, b) => a.localeCompare(b),
