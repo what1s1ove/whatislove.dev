@@ -47,7 +47,7 @@ const html = () => {
       htmlmin({
         collapseWhitespace: true,
         removeComments: true,
-      })
+      }),
     )
     .pipe(gulp.dest(`build`))
 }
@@ -65,7 +65,7 @@ const css = () => {
         mqpacker({
           sort: (a, b) => a.localeCompare(b),
         }),
-      ])
+      ]),
     )
     .pipe(csso())
     .pipe(rename(`styles.min.css`))
@@ -99,13 +99,13 @@ const js = () => {
       }),
       !isDevelopment && terser(),
     ],
-  }).then((bundle) =>
-    bundle.write({
+  }).then((bundle) => {
+    return bundle.write({
       file: `./build/js/main.min.js`,
       format: `iife`,
       sourcemap: Boolean(isDevelopment),
     })
-  )
+  })
 }
 
 const images = () => {
@@ -120,7 +120,7 @@ const images = () => {
         svgo({
           floatPrecision: 1,
         }),
-      ])
+      ]),
     )
     .pipe(gulp.dest(`build/img`))
 }
@@ -131,7 +131,7 @@ const webp = () => {
     .pipe(
       gulpwebp({
         quality: 75,
-      })
+      }),
     )
     .pipe(gulp.dest(`build/img`))
 }
@@ -142,7 +142,7 @@ const sprite = () => {
     .pipe(
       svgstore({
         inlineSvg: true,
-      })
+      }),
     )
     .pipe(rename(`sprite.svg`))
     .pipe(gulp.dest(`build/img`))
@@ -163,7 +163,7 @@ const copy = () => {
       ],
       {
         base: `source`,
-      }
+      },
     )
     .pipe(gulp.dest(`build`))
 }
@@ -202,7 +202,7 @@ const hashCache = () => {
       ],
       {
         base: `dist`,
-      }
+      },
     )
     .pipe(paths(del))
     .pipe(rev())
@@ -217,7 +217,7 @@ const replaceCache = () => {
     .pipe(
       revRewrite({
         manifest: gulp.src(`build/rev.json`).pipe(paths(del)),
-      })
+      }),
     )
     .pipe(gulp.dest(`build`))
 }
