@@ -157,8 +157,8 @@ const copy = () => {
       [
         `source/fonts/**/*.woff2`,
         `source/files/**/*.pdf`,
-        `source/*.json`,
-        `source/*.ico`,
+        `source/manifest.webmanifest`,
+        `source/favicon.ico`,
       ],
       {
         base: `source`,
@@ -197,7 +197,7 @@ const hashCache = () => {
         `build/img/**/*.{svg,png,jpg,webp}`,
         `build/js/*.js`,
         `build/css/*.css`,
-        `build/manifest.json`,
+        `build/manifest.webmanifest`,
       ],
       {
         base: `dist`,
@@ -214,7 +214,7 @@ const replaceCache = () => {
   const manifest = fs.readFileSync('build/rev.json');
 
   return gulp
-    .src([`build/**/*.{html,css}`, `build/manifest-*.json`])
+    .src([`build/**/*.{html,css}`, `build/manifest.webmanifest*`])
     .pipe(
       rewrite({
         manifest,
