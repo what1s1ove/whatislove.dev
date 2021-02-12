@@ -67,6 +67,8 @@ rules:
   no-underscore-dangle:
     - error
     - allowAfterThis: true
+  arrow-body-style:
+    - off
   default-case:
     - off
   no-param-reassign:
