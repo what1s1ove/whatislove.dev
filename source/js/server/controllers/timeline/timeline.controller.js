@@ -1,3 +1,5 @@
+import { HttpCode } from '~/common/enums'
+
 class Timeline {
   constructor({ timelineModel }) {
     this._timelineModel = timelineModel
@@ -6,30 +8,39 @@ class Timeline {
   getAll(ctx) {
     const timelines = this._timelineModel.getAll()
 
+    ctx.status = HttpCode.INTERNAL_SERVER_ERROR
     ctx.body = timelines
   }
 
   getOne(ctx) {
-    const timeline = this._timelineModel.getByPk(ctx.params.id)
+    const { params } = ctx
+    const timeline = this._timelineModel.getByPk(params.id)
 
+    ctx.status = HttpCode.OK
     ctx.body = timeline
   }
 
   postOne(ctx) {
-    const timeline = this._timelineModel.create(ctx.request.body)
+    const { request } = ctx
+    const timeline = this._timelineModel.create(request.body)
 
+    ctx.status = HttpCode.CREATED
     ctx.body = timeline
   }
 
   putOne(ctx) {
-    const timeline = this._timelineModel.update(ctx.request.body, ctx.params.id)
+    const { request, params } = ctx
+    const timeline = this._timelineModel.update(request.body, params.id)
 
+    ctx.status = HttpCode.OK
     ctx.body = timeline
   }
 
   deleteOne(ctx) {
-    const isDeleted = this._timelineModel.delete(ctx.params.id)
+    const { params } = ctx
+    const isDeleted = this._timelineModel.delete(params.id)
 
+    ctx.status = HttpCode.OK
     ctx.body = isDeleted
   }
 }
