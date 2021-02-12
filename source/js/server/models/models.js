@@ -1,5 +1,5 @@
 import { DatabaseColumn } from '../common/enums'
-import { Timeline } from './timeline/timeline'
+import { Timeline } from './timeline/timeline.model'
 
 const initModels = ({ database }) => {
   const timeline = new Timeline({
