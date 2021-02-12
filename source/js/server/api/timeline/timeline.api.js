@@ -1,4 +1,4 @@
-import { ApiPath } from '../../common/enums'
+import { ApiPath, TimelineApiPath } from '../../common/enums'
 
 const initTimelineApi = ({ Router, controllers }) => {
   const { timeline } = controllers
@@ -6,15 +6,15 @@ const initTimelineApi = ({ Router, controllers }) => {
     prefix: ApiPath.TIMELINE,
   })
 
-  router.get(`/`, (ctx) => timeline.getAll(ctx))
+  router.get(TimelineApiPath.ROOT, (ctx) => timeline.getAll(ctx))
 
-  router.get(`/:id`, (ctx) => timeline.getOne(ctx))
+  router.get(TimelineApiPath.$ID, (ctx) => timeline.getOne(ctx))
 
-  router.post(`/`, (ctx) => timeline.postOne(ctx))
+  router.post(TimelineApiPath.ROOT, (ctx) => timeline.postOne(ctx))
 
-  router.put(`/:id`, (ctx) => timeline.putOne(ctx))
+  router.put(TimelineApiPath.$ID, (ctx) => timeline.putOne(ctx))
 
-  router.delete(`/:id`, (ctx) => timeline.deleteOne(ctx))
+  router.delete(TimelineApiPath.$ID, (ctx) => timeline.deleteOne(ctx))
 
   return router
 }
