@@ -1,0 +1,3 @@
+const DEFAULT_DB_SEPARATOR = `/`
+
+export { DEFAULT_DB_SEPARATOR }
