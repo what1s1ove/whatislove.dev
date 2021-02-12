@@ -45,8 +45,7 @@ class Database {
     return entity
   }
 
-  update({ column, payload }) {
-    const { id: entityId } = payload
+  update({ id: entityId, column, payload }) {
     const entityIdx = this._getIdx({
       id: entityId,
       column,
