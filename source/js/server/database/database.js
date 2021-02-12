@@ -6,7 +6,7 @@ import { DbError } from '../exceptions'
 import { getEntityWithId } from './helpers'
 import { DEFAULT_DB_SEPARATOR } from './common/constants'
 
-class DataBase {
+class Database {
   constructor({
     isHumanReadable = true,
     separator = DEFAULT_DB_SEPARATOR,
@@ -94,4 +94,4 @@ class DataBase {
   }
 }
 
-export { DataBase }
+export { Database }
