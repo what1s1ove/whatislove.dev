@@ -10,7 +10,6 @@ import { AppEvent, DatabaseName } from './common/enums'
 
 const app = new Koa()
 app.use(bodyParser())
-
 app.use(catchError)
 
 const database = new Database({
