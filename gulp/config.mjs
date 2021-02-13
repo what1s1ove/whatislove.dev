@@ -11,6 +11,7 @@ const Config = {
     BUILD_IMG: `img`,
     BUILD_JS: `js`,
     BUILD_CSS: `css`,
+    BUILD_FONTS: `fonts`,
     BUILD_API: `api`,
     SOURCE: `source`,
     SOURCE_IMG: `img`,
