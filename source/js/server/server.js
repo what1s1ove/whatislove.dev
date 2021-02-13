@@ -6,7 +6,7 @@ import { initModels } from './models/models'
 import { initControllers } from './controllers/controllers'
 import { initApi } from './api/api'
 import { catchError } from './middlewares'
-import { AppEvent, DatabaseName } from './common/enums'
+import { AppEvent, AppConfig, DatabaseName } from './common/enums'
 
 const app = new Koa()
 app.use(bodyParser())
@@ -35,4 +35,4 @@ routes.forEach((router) => {
 
 app.on(AppEvent.ERROR, console.error)
 
-app.listen(3001)
+app.listen(AppConfig.PORT)
