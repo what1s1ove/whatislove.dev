@@ -1,0 +1,34 @@
+# get-all
+GET http://localhost:3001/timeline HTTP/1.1
+
+###
+
+# get-one
+GET http://localhost:3001/timeline/Ec6lUxnY1n HTTP/1.1
+
+###
+
+# post-one
+POST http://localhost:3001/timeline HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Новая"
+}
+
+###
+
+# put-one
+PUT http://localhost:3001/timeline/-AuZZD1RkS HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Самая Новая1"
+}
+
+###
+
+# delete-one
+DELETE http://localhost:3001/timeline/z1pWNxkGli HTTP/1.1
+
+###

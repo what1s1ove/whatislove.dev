@@ -13,9 +13,6 @@ settings:
       map:
         - ['~', './source/js']
 
-ignorePatterns:
-  - 'gulpfile.js'
-
 rules:
   semi:
     - error
@@ -87,3 +84,14 @@ rules:
     - off
   import/no-extraneous-dependencies:
     - off
+
+overrides:
+  - files:
+    - gulpfile.mjs
+    - gulp/**/*
+    rules:
+      import/extensions:
+        - error
+        - ignorePackages
+      import/no-default-export:
+        - off

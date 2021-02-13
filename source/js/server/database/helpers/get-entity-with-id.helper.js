@@ -1,8 +1,8 @@
 import { getRandomId } from '~/helpers'
 
 const getEntityWithId = (entity) => ({
-  ...entity,
   id: getRandomId(),
+  ...entity,
 })
 
 export { getEntityWithId }

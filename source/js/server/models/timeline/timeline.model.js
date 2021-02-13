@@ -24,9 +24,8 @@ class Timeline {
     })
   }
 
-  update(id, payload) {
+  update(payload) {
     return this._database.update({
-      id,
       payload,
       column: this._column,
     })

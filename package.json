@@ -4,9 +4,10 @@
     "node": "14.15.4"
   },
   "scripts": {
-    "start": "gulp --development",
-    "server": "nodemon -r esm -r module-alias/register source/js/server/server.js",
     "build": "gulp",
+    "start": "concurrently -k -p \"{name}: {time}\" -n \"CLIENT,SERVER\" -c \"green,blue\" \"npm:start:client\" \"npm:start:server\"",
+    "start:client": "gulp --development",
+    "start:server": "nodemon -r esm -r module-alias/register source/js/server/server.js",
     "lint": "npm run lint:editorconfig && npm run lint:html && npm run lint:css && npm run lint:js",
     "lint:html": "node-w3c-validator -i build/*.html -f lint -evH",
     "lint:css": "stylelint \"source/css/**/*.css\" --syntax css",
@@ -32,6 +33,7 @@
     "@rollup/plugin-node-resolve": "11.1.1",
     "autoprefixer": "10.2.4",
     "browser-sync": "2.26.14",
+    "concurrently": "5.3.0",
     "css-mqpacker": "7.0.0",
     "del": "6.0.0",
     "editorconfig-checker": "3.3.0",
