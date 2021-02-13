@@ -64,9 +64,16 @@ rules:
   arrow-parens:
     - error
     - always
+  no-underscore-dangle:
+    - error
+    - allowAfterThis: true
+  arrow-body-style:
+    - off
   default-case:
     - off
   no-param-reassign:
+    - off
+  class-methods-use-this:
     - off
   import/exports-last:
     - error
@@ -77,4 +84,6 @@ rules:
   import/no-anonymous-default-export:
     - error
   import/prefer-default-export:
+    - off
+  import/no-extraneous-dependencies:
     - off
