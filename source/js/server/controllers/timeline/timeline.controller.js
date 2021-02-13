@@ -30,7 +30,7 @@ class Timeline {
 
   putOne(ctx) {
     const { request, params } = ctx
-    const timeline = this._timelineModel.update(request.body, params.id)
+    const timeline = this._timelineModel.update(params.id, request.body)
 
     ctx.status = HttpCode.OK
     ctx.body = timeline
