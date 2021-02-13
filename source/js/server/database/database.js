@@ -4,7 +4,7 @@ import { ARRAY_IDX_NOT_FOUND } from '~/common/constants'
 import { DbErrorMessage } from '../common/enums'
 import { DbError } from '../exceptions'
 import { getEntityWithId } from './helpers'
-import { DEFAULT_DB_SEPARATOR } from './common/constants'
+import { DEFAULT_DB_SEPARATOR, DATA_BASE_PATH } from './common/constants'
 
 class Database {
   constructor({
@@ -14,7 +14,7 @@ class Database {
     isSaveOnPush,
   }) {
     this._instance = new JsonDB(
-      filename,
+      `${DATA_BASE_PATH}${filename}`,
       isSaveOnPush,
       isHumanReadable,
       separator,
