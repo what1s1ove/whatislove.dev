@@ -1,10 +1,9 @@
-import fs from 'fs'
 import del from 'del'
 import gulp from 'gulp'
 import rev from 'gulp-rev'
 import paths from 'vinyl-paths'
 import rewrite from 'gulp-rev-rewrite'
-import { joinPaths } from '../../helpers/helpers.mjs'
+import { joinPaths, readFile } from '../../helpers/helpers.mjs'
 import { Config } from '../../config.mjs'
 
 const hashCache = () => {
@@ -29,7 +28,7 @@ const hashCache = () => {
 }
 
 const replaceCache = () => {
-  const manifest = fs.readFileSync(`${Config.FOLDER.BUILD}/rev.json`)
+  const manifest = readFile(`${Config.FOLDER.BUILD}/rev.json`, true)
 
   return gulp
     .src([`${Config.FOLDER.BUILD}/**/*.{html,css}`, `${Config.FOLDER.BUILD}/manifest.webmanifest*`])
