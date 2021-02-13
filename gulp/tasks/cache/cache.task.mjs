@@ -4,39 +4,41 @@ import gulp from 'gulp'
 import rev from 'gulp-rev'
 import paths from 'vinyl-paths'
 import rewrite from 'gulp-rev-rewrite'
+import { joinPaths } from '../../helpers/helpers.mjs'
+import { Config } from '../../config.mjs'
 
 const hashCache = () => {
   return gulp
     .src(
       [
-        `build/fonts/*.woff2`,
-        `build/img/**/*.{svg,png,jpg,webp}`,
-        `build/js/*.js`,
-        `build/css/*.css`,
-        `build/manifest.webmanifest`,
+        `${joinPaths(Config.FOLDER.BUILD, Config.FOLDER.BUILD_FONTS)}/*.woff2`,
+        `${joinPaths(Config.FOLDER.BUILD, Config.FOLDER.BUILD_IMG)}/**/*.{svg,png,jpg,webp}`,
+        `${joinPaths(Config.FOLDER.BUILD, Config.FOLDER.BUILD_JS)}/*.js`,
+        `${joinPaths(Config.FOLDER.BUILD, Config.FOLDER.BUILD_CSS)}/*.css`,
+        `${Config.FOLDER.BUILD}/manifest.webmanifest`,
       ],
       {
-        base: `dist`,
+        base: Config.FOLDER.BUILD,
       },
     )
     .pipe(paths(del))
     .pipe(rev())
-    .pipe(gulp.dest(`build`))
+    .pipe(gulp.dest(Config.FOLDER.BUILD))
     .pipe(rev.manifest(`rev.json`))
-    .pipe(gulp.dest(`build`))
+    .pipe(gulp.dest(Config.FOLDER.BUILD))
 }
 
 const replaceCache = () => {
-  const manifest = fs.readFileSync(`build/rev.json`)
+  const manifest = fs.readFileSync(`${Config.FOLDER.BUILD}/rev.json`)
 
   return gulp
-    .src([`build/**/*.{html,css}`, `build/manifest.webmanifest*`])
+    .src([`${Config.FOLDER.BUILD}/**/*.{html,css}`, `${Config.FOLDER.BUILD}/manifest.webmanifest*`])
     .pipe(
       rewrite({
         manifest,
       }),
     )
-    .pipe(gulp.dest(`build`))
+    .pipe(gulp.dest(Config.FOLDER.BUILD))
 }
 
 const cache = gulp.series(hashCache, replaceCache)

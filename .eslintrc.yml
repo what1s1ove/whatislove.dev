@@ -88,7 +88,7 @@ rules:
 overrides:
   - files:
     - gulpfile.mjs
-    - gulp/*
+    - gulp/**/*
     rules:
       import/extensions:
         - error

@@ -14,7 +14,17 @@ import {
   cache,
 } from './gulp/tasks/tasks.mjs'
 
-const assembly = gulp.series(clean, copy, html, css, js, images, webp, sprite)
+const assembly = gulp.series(
+  clean,
+  copy,
+  html,
+  css,
+  js,
+  images,
+  webp,
+  sprite,
+  api,
+)
 
 const develop = gulp.series(assembly, server)
 

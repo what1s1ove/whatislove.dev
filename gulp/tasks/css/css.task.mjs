@@ -9,11 +9,12 @@ import postcssimport from 'postcss-import'
 import autoprefixer from 'autoprefixer'
 import mqpacker from 'css-mqpacker'
 import csso from 'gulp-csso'
+import { joinPaths } from '../../helpers/helpers.mjs'
 import { Config } from '../../config.mjs'
 
 const css = () => {
   return gulp
-    .src(`source/css/styles.css`)
+    .src(`${joinPaths(Config.FOLDER.SOURCE, Config.FOLDER.SOURCE_CSS)}/styles.css`)
     .pipe(plumber())
     .pipe(gulpif(Config.isDevelopment, sourcemap.init()))
     .pipe(
@@ -28,7 +29,7 @@ const css = () => {
     .pipe(csso())
     .pipe(rename(`styles.min.css`))
     .pipe(gulpif(Config.isDevelopment, sourcemap.write(`.`)))
-    .pipe(gulp.dest(`build/css`))
+    .pipe(gulp.dest(`${Config.FOLDER.BUILD}/css`))
     .pipe(sync.stream())
 }
 

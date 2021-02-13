@@ -3,10 +3,12 @@ import imagemin from 'gulp-imagemin'
 import svgo from 'imagemin-svgo'
 import pngquant from 'imagemin-pngquant'
 import jpegtran from 'imagemin-jpegtran'
+import { joinPaths } from '../../helpers/helpers.mjs'
+import { Config } from '../../config.mjs'
 
 const images = () => {
   return gulp
-    .src(`source/img/**/*.{png,jpg,svg}`)
+    .src(`${joinPaths(Config.FOLDER.SOURCE, Config.FOLDER.BUILD_IMG)}/**/*.{png,jpg,svg}`)
     .pipe(
       imagemin([
         jpegtran({
@@ -18,7 +20,7 @@ const images = () => {
         }),
       ]),
     )
-    .pipe(gulp.dest(`build/img`))
+    .pipe(gulp.dest(joinPaths(Config.FOLDER.BUILD, Config.FOLDER.BUILD_IMG)))
 }
 
 export { images }
