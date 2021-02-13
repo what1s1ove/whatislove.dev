@@ -5,6 +5,7 @@
   },
   "scripts": {
     "start": "gulp --development",
+    "client": "gulp --development",
     "server": "nodemon -r esm -r module-alias/register source/js/server/server.js",
     "build": "gulp",
     "lint": "npm run lint:editorconfig && npm run lint:html && npm run lint:css && npm run lint:js",
@@ -32,6 +33,7 @@
     "@rollup/plugin-node-resolve": "11.1.1",
     "autoprefixer": "10.2.4",
     "browser-sync": "2.26.14",
+    "concurrently": "5.3.0",
     "css-mqpacker": "7.0.0",
     "del": "6.0.0",
     "editorconfig-checker": "3.3.0",
