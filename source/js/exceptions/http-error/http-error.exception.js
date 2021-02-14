@@ -1,5 +1,4 @@
-import { HttpCode } from '~/common/enums'
-import { CustomExceptionName, ApiErrorMessage } from '../../common/enums'
+import { HttpCode, CustomExceptionName, ApiErrorMessage } from '~/common/enums'
 
 class HttpError extends Error {
   constructor({

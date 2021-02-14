@@ -1,8 +1,8 @@
 import { JsonDB } from 'node-json-db'
 import { checkIsOneOf } from '~/helpers'
+import { DbError } from '~/exceptions'
 import { ARRAY_IDX_NOT_FOUND } from '~/common/constants'
 import { DbErrorMessage } from '../common/enums'
-import { DbError } from '../exceptions'
 import { getEntityWithId } from './helpers'
 import { DEFAULT_DB_SEPARATOR, DATA_BASE_PATH } from './common/constants'
 
