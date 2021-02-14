@@ -19,7 +19,7 @@ rules:
     - never
   comma-dangle:
     - error
-    - only-multiline
+    - always-multiline
   quotes:
     - error
     - backtick
