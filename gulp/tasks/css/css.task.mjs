@@ -14,7 +14,7 @@ import { Config } from '../../config.mjs'
 
 const css = () => {
   return gulp
-    .src(`${joinPaths(Config.FOLDER.SOURCE, Config.FOLDER.SOURCE_CSS)}/styles.css`)
+    .src(`${joinPaths(Config.FOLDER.SOURCE, Config.FOLDER.SOURCE_CSS)}/${Config.FILE.CSS.STYLES}.css`)
     .pipe(plumber())
     .pipe(gulpif(Config.isDevelopment, sourcemap.init()))
     .pipe(
@@ -27,7 +27,7 @@ const css = () => {
       ]),
     )
     .pipe(csso())
-    .pipe(rename(`styles.min.css`))
+    .pipe(rename(`${Config.FILE.CSS.STYLES}.min.css`))
     .pipe(gulpif(Config.isDevelopment, sourcemap.write(`.`)))
     .pipe(gulp.dest(`${Config.FOLDER.BUILD}/css`))
     .pipe(sync.stream())

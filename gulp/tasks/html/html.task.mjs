@@ -7,7 +7,7 @@ const html = () => {
   return gulp
     .src([
       `${Config.FOLDER.SOURCE}/*.html`,
-      includeFile(`${Config.FOLDER.SOURCE}/form.html`, Config.isDevelopment),
+      includeFile(`${Config.FOLDER.SOURCE}/${Config.FILE.HTML.FORM}.html`, Config.isDevelopment),
     ])
     .pipe(
       htmlmin({

@@ -8,7 +8,7 @@ import { terser } from 'rollup-plugin-terser'
 import { joinPaths, getTruthyItems } from '../../helpers/helpers.mjs'
 import { Config } from '../../config.mjs'
 
-const jsFiles = getTruthyItems(`main`, Config.isDevelopment && `form`)
+const jsFiles = getTruthyItems(Config.FILE.JS.MAIN, Config.isDevelopment && Config.FILE.JS.FORM)
 
 const js = () => {
   return Promise.all(
@@ -20,7 +20,7 @@ const js = () => {
             entries: [
               {
                 find: `~`,
-                replacement: path.resolve(joinPaths(Config.FOLDER.SOURCE, Config.FOLDER.SOURCE_JS),),
+                replacement: path.resolve(joinPaths(Config.FOLDER.SOURCE, Config.FOLDER.SOURCE_JS)),
                 customResolver: resolve({
                   extensions: [`.js`],
                 }),
