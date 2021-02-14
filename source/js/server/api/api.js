@@ -1,10 +1,10 @@
 import { initTimelineApi } from './timeline/timeline.api'
 
-const routes = [initTimelineApi]
+const apis = [initTimelineApi]
 
 const initApi = ({ Router, controllers }) => {
-  return routes.map((router) => {
-    return router({
+  return apis.map((api) => {
+    return api({
       Router,
       controllers,
     })

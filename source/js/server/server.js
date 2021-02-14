@@ -1,7 +1,7 @@
 import Koa from 'koa'
 import Router from 'koa-router'
 import bodyParser from 'koa-bodyparser'
-import cors from '@koa/cors';
+import cors from '@koa/cors'
 import { AppConfig } from '~/common/enums'
 import { Database } from './database/database'
 import { initModels } from './models/models'
@@ -11,6 +11,9 @@ import { catchError } from './middlewares'
 import { AppEvent, DatabaseName } from './common/enums'
 
 const app = new Koa()
+const apiRouter = new Router({
+  prefix: AppConfig.SERVER_API_PREFIX,
+})
 app.use(bodyParser())
 app.use(catchError)
 app.use(cors())
@@ -33,8 +36,10 @@ const routes = initApi({
 })
 
 routes.forEach((router) => {
-  app.use(router.routes()).use(router.allowedMethods())
+  apiRouter.use(router.routes()).use(router.allowedMethods())
 })
+
+app.use(apiRouter.routes())
 
 app.on(AppEvent.ERROR, console.error)
 
