@@ -1,4 +1,4 @@
-import { ApiPath, TimelineApiPath } from '../../common/enums'
+import { ApiPath, TimelineApiPath } from '~/common/enums'
 
 const initTimelineApi = ({ Router, controllers }) => {
   const { timeline } = controllers
