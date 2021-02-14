@@ -8,7 +8,7 @@ class Timeline {
   getAll(ctx) {
     const timelines = this._timelineModel.getAll()
 
-    ctx.status = HttpCode.INTERNAL_SERVER_ERROR
+    ctx.status = HttpCode.OK
     ctx.body = timelines
   }
 
