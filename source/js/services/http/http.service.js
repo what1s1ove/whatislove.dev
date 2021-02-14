@@ -3,7 +3,7 @@ import { ContentType, HttpHeader, HttpMethod } from '~/common/enums'
 import { checkIsOneOf } from '~/helpers'
 
 class Http {
-  _load(url, options) {
+  load(url, options = {}) {
     const { method = HttpMethod.GET, payload = null, contentType } = options
     const headers = this._getHeaders({
       contentType,
@@ -32,7 +32,7 @@ class Http {
 
   static checkStatus(response) {
     if (!response.ok) {
-      throw new HttpError({})
+      throw new HttpError()
     }
 
     return response
