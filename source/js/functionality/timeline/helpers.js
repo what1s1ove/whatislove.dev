@@ -1,5 +1,4 @@
 import { getFormattedDate, configureNode } from '~/helpers'
-import { timelineIconMap } from '~/common/maps'
 
 const SVG_HREF_ATTR = `xlink:href`
 
@@ -9,10 +8,10 @@ const checkIsSuitableItem = (timelineItem, filterValues) => {
   return isSuitable
 }
 
-const getReplacedIconPath = (iconSourceNode, iconType) => {
+const getReplacedIconPath = (iconSourceNode, type) => {
   const replacedIconPath = iconSourceNode
     .getAttribute(SVG_HREF_ATTR)
-    .replace(/timeline-(.*)\./, `timeline-${timelineIconMap[iconType]}.`)
+    .replace(/timeline-(.*)\./, `timeline-${type}.`)
 
   return replacedIconPath
 }
