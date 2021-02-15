@@ -1,4 +1,4 @@
-import { CustomExceptionName } from '../../common/enums'
+import { CustomExceptionName } from '~/common/enums'
 
 class DbError extends Error {
   constructor({ message }) {

@@ -8,8 +8,8 @@ const copy = () => {
       [
         `${joinPaths(Config.FOLDER.SOURCE, Config.FOLDER.SOURCE_FONTS)}/**/*.woff2`,
         `${joinPaths(Config.FOLDER.SOURCE, Config.FOLDER.SOURCE_FILES)}/**/*.pdf`,
-        `${Config.FOLDER.SOURCE}/manifest.webmanifest`,
-        `${Config.FOLDER.SOURCE}/favicon.ico`,
+        `${Config.FOLDER.SOURCE}/${Config.FILE.MANIFEST}.webmanifest`,
+        `${Config.FOLDER.SOURCE}/${Config.FILE.FAVICON}.ico`,
       ],
       {
         base: Config.FOLDER.SOURCE,

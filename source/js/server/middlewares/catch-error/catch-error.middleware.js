@@ -1,6 +1,6 @@
+import { HttpError } from '~/exceptions'
 import { HttpCode } from '~/common/enums'
 import { getErrorMessageResponse } from '../../helpers'
-import { HttpError } from '../../exceptions'
 import { AppEvent } from '../../common/enums'
 
 const catchError = async (ctx, next) => {

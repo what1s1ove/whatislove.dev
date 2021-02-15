@@ -1,13 +1,8 @@
-const TimelineSkillType = {
-  HARD_SKILLS: `hardSkills`,
-  SOFT_SKILLS: `softSkills`,
-}
-
 const TimelineType = {
-  WORKS: `works`,
-  COURSES: `courses`,
-  BOOKS: `books`,
-  MEETUPS: `meetups`,
+  WORK: `work`,
+  COURSE: `course`,
+  BOOK: `book`,
+  MEETUP: `meetup`,
 }
 
-export { TimelineSkillType, TimelineType }
+export { TimelineType }

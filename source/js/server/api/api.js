@@ -1,14 +1,25 @@
+import { AppConfig } from '~/common/enums'
 import { initTimelineApi } from './timeline/timeline.api'
 
-const routes = [initTimelineApi]
+const apis = [initTimelineApi]
 
 const initApi = ({ Router, controllers }) => {
-  return routes.map((router) => {
-    return router({
+  const apiRouter = new Router({
+    prefix: AppConfig.SERVER_API_PREFIX,
+  })
+
+  const routes = apis.map((api) => {
+    return api({
       Router,
       controllers,
     })
   })
+
+  routes.forEach((router) => {
+    apiRouter.use(router.routes()).use(router.allowedMethods())
+  })
+
+  return apiRouter
 }
 
 export { initApi }

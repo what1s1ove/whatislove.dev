@@ -14,7 +14,7 @@ const hashCache = () => {
         `${joinPaths(Config.FOLDER.BUILD, Config.FOLDER.BUILD_IMG)}/**/*.{svg,png,jpg,webp}`,
         `${joinPaths(Config.FOLDER.BUILD, Config.FOLDER.BUILD_JS)}/*.js`,
         `${joinPaths(Config.FOLDER.BUILD, Config.FOLDER.BUILD_CSS)}/*.css`,
-        `${Config.FOLDER.BUILD}/manifest.webmanifest`,
+        `${Config.FOLDER.BUILD}/${Config.FILE.MANIFEST}.webmanifest`,
       ],
       {
         base: Config.FOLDER.BUILD,
@@ -23,15 +23,15 @@ const hashCache = () => {
     .pipe(paths(del))
     .pipe(rev())
     .pipe(gulp.dest(Config.FOLDER.BUILD))
-    .pipe(rev.manifest(`rev.json`))
+    .pipe(rev.manifest(`${Config.FILE.REV}.json`))
     .pipe(gulp.dest(Config.FOLDER.BUILD))
 }
 
 const replaceCache = () => {
-  const manifest = readFile(`${Config.FOLDER.BUILD}/rev.json`, true)
+  const manifest = readFile(`${Config.FOLDER.BUILD}/${Config.FILE.REV}.json`, true)
 
   return gulp
-    .src([`${Config.FOLDER.BUILD}/**/*.{html,css}`, `${Config.FOLDER.BUILD}/manifest.webmanifest*`])
+    .src([`${Config.FOLDER.BUILD}/**/*.{html,css}`, `${Config.FOLDER.BUILD}/${Config.FILE.MANIFEST}.webmanifest*`])
     .pipe(
       rewrite({
         manifest,

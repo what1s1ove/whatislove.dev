@@ -1,4 +1,6 @@
-import { ApiPath, TimelineApiPath } from '../../common/enums'
+import { validateSchema } from '~/server/middlewares'
+import { timelineSchema } from '~/server/validation-schemas'
+import { ApiPath, TimelineApiPath } from '~/common/enums'
 
 const initTimelineApi = ({ Router, controllers }) => {
   const { timeline } = controllers
@@ -10,9 +12,13 @@ const initTimelineApi = ({ Router, controllers }) => {
 
   router.get(TimelineApiPath.$ID, (ctx) => timeline.getOne(ctx))
 
-  router.post(TimelineApiPath.ROOT, (ctx) => timeline.postOne(ctx))
+  router.post(TimelineApiPath.ROOT, validateSchema(timelineSchema), (ctx) => {
+    return timeline.postOne(ctx)
+  })
 
-  router.put(TimelineApiPath.$ID, (ctx) => timeline.putOne(ctx))
+  router.put(TimelineApiPath.$ID, validateSchema(timelineSchema), (ctx) => {
+    return timeline.putOne(ctx)
+  })
 
   router.delete(TimelineApiPath.$ID, (ctx) => timeline.deleteOne(ctx))
 

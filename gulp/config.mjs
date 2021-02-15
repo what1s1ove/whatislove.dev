@@ -20,6 +20,25 @@ const Config = {
     SOURCE_FONTS: `fonts`,
     SOURCE_FILES: `files`,
   },
+  FILE: {
+    HTML: {
+      INDEX: `index`,
+      FORM: `form`,
+    },
+    CSS: {
+      STYLES: `styles`,
+    },
+    JS: {
+      MAIN: `main`,
+      FORM: `form`,
+    },
+    IMG: {
+      SPRITE: `sprite`,
+    },
+    MANIFEST: `manifest`,
+    REV: `rev`,
+    FAVICON: `favicon`,
+  },
 }
 
 export { Config }

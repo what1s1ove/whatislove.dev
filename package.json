@@ -26,7 +26,9 @@
   },
   "devDependencies": {
     "@babel/core": "7.12.13",
+    "@babel/plugin-transform-runtime": "7.12.15",
     "@babel/preset-env": "7.12.13",
+    "@koa/cors": "3.1.0",
     "@rollup/plugin-alias": "3.1.2",
     "@rollup/plugin-babel": "5.2.3",
     "@rollup/plugin-commonjs": "17.1.0",
@@ -60,6 +62,7 @@
     "imagemin-jpegtran": "7.0.0",
     "imagemin-pngquant": "9.0.1",
     "imagemin-svgo": "8.0.0",
+    "joi": "17.3.0",
     "koa": "2.13.1",
     "koa-bodyparser": "4.3.0",
     "koa-router": "10.0.0",

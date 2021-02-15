@@ -3,7 +3,7 @@ import { FormElementType } from '~/common/enums'
 
 const getFormValues = (formElements) => {
   const formFieldsets = [...formElements].filter(
-    (it) => it.type === FormElementType.FIELDSET
+    (it) => it.type === FormElementType.FIELDSET,
   )
 
   const getFieldsetsValues = (fieldsets) => {

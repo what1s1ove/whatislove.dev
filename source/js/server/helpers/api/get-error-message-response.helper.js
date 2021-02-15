@@ -1,5 +1,5 @@
-const getErrorMessageResponse = (...messages) => ({
-  message: messages.join(` `),
+const getErrorMessageResponse = (message) => ({
+  message,
 })
 
 export { getErrorMessageResponse }

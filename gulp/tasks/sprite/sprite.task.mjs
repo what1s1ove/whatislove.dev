@@ -12,7 +12,7 @@ const sprite = () => {
         inlineSvg: true,
       }),
     )
-    .pipe(rename(`sprite.svg`))
+    .pipe(rename(`${Config.FILE.IMG.SPRITE}.svg`))
     .pipe(gulp.dest(joinPaths(Config.FOLDER.BUILD, Config.FOLDER.BUILD_IMG)))
 }
 
