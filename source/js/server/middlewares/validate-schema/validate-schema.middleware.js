@@ -1,5 +1,5 @@
-/* eslint-disable require-atomic-updates */
-import { HttpError, ValidationError } from '~/exceptions'
+import { ValidationError } from 'joi'
+import { HttpError } from '~/exceptions'
 import { HttpCode } from '~/common/enums'
 
 const validateSchema = (schema) => async (ctx, next) => {
