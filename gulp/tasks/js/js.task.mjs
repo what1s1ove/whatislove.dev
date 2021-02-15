@@ -30,10 +30,17 @@ const js = () => {
           resolve(),
           commonjs(),
           babelInstance.babel({
-            babelHelpers: `bundled`,
+            babelHelpers: `runtime`,
             presets: [`@babel/preset-env`],
             babelrc: false,
             exclude: `node_modules/**`,
+            plugins: [
+              [`@babel/plugin-transform-runtime`,
+                {
+                  "regenerator": true,
+                },
+              ],
+            ],
           }),
           !Config.isDevelopment && terser(),
         ],
