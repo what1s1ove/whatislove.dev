@@ -44,7 +44,7 @@ const getTimelineItemNode = (timelineItemTemplateNode, itemData) => {
 
   configureNode(originLinkNode, {
     textContent: originDesc,
-    href: origin || ``
+    href: origin || ``,
   })
 
   configureNode(descriptionNode, {
@@ -53,17 +53,17 @@ const getTimelineItemNode = (timelineItemTemplateNode, itemData) => {
 
   configureNode(linkNode, {
     textContent: linkDesc,
-    href: link || ``
+    href: link || ``,
   })
 
   configureNode(dateStartNode, {
     textContent: date ? getFormattedDate(date) : ``,
-    dateTime: date || ``
+    dateTime: date || ``,
   })
 
   configureNode(dateEndNode, {
     textContent: endDate ? `— ${getFormattedDate(endDate)}` : ``,
-    dateTime: endDate || ``
+    dateTime: endDate || ``,
   })
 
   iconSourceNode.setAttribute(SVG_HREF_ATTR, replacedIconPage)
