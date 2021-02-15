@@ -26,7 +26,7 @@ const timelineSchema = Joi.object({
     'string.base': TimelineValidationMessage.TITLE_BASE,
     'any.required': TimelineValidationMessage.TITLE_REQUIRE,
   }),
-  [TimelineKey.DESC]: Joi.string().required().messages({
+  [TimelineKey.DESC]: Joi.string().allow(``).required().messages({
     'string.base': TimelineValidationMessage.DESC_BASE,
     'any.required': TimelineValidationMessage.DESC_REQUIRE,
   }),
