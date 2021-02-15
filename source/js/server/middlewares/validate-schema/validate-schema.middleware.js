@@ -1,5 +1,4 @@
-import { ValidationError } from 'joi'
-import { HttpError } from '~/exceptions'
+import { HttpError, ValidationError } from '../../exceptions'
 import { HttpCode } from '~/common/enums'
 
 const validateSchema = (schema) => async (ctx, next) => {
