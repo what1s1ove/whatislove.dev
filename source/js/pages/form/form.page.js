@@ -42,6 +42,8 @@ class FormPage {
     const values = Object.fromEntries(new FormData(evt.target).entries())
 
     await this._timelineApi.saveTimeline(values)
+
+    this._formNode.reset()
   }
 }
 
