@@ -4,7 +4,6 @@ import {
   changeObjectKey,
   debounce,
 } from '~/helpers'
-import { timelineData as timelineItems } from '~/data'
 import { getTimelineItemNodes } from './helpers'
 
 const DEBOUNCE_DELAY = 200
@@ -18,7 +17,7 @@ const filterFormNode = document.forms.timeline
 const renderTimelineItems = (filterValues) => {
   const timelineItemNodes = getTimelineItemNodes(
     timelineItemNode,
-    timelineItems,
+    [],
     filterValues,
   )
 
