@@ -16,25 +16,33 @@ class FormPage {
   init() {
     this._formNode = document.querySelector(`form[name="timeline"]`)
 
-    fillSelectOptions(this._formNode.querySelector(`select[name="skillType"]`), skillTypeOptions)
-    fillSelectOptions(this._formNode.querySelector(`select[name="type"]`), TimelineTypeOptions)
+    this._initSelects()
 
     this._initListeners()
+  }
+
+  _initSelects() {
+    fillSelectOptions(
+      this._formNode.querySelector(`select[name="skillType"]`),
+      skillTypeOptions,
+    )
+    fillSelectOptions(
+      this._formNode.querySelector(`select[name="type"]`),
+      TimelineTypeOptions,
+    )
   }
 
   _initListeners() {
     this._formNode.addEventListener(`submit`, this._handleSubmit)
   }
 
-  _handleSubmit(evt) {
+  async _handleSubmit(evt) {
     evt.preventDefault()
 
     const values = Object.fromEntries(new FormData(evt.target).entries())
 
-    this._timelineApi.saveTimeline(values)
+    await this._timelineApi.saveTimeline(values)
   }
 }
 
 export { FormPage }
-
-
