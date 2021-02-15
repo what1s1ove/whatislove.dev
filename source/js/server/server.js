@@ -11,9 +11,7 @@ import { catchError } from './middlewares'
 import { AppEvent, DatabaseName } from './common/enums'
 
 const app = new Koa()
-const apiRouter = new Router({
-  prefix: AppConfig.SERVER_API_PREFIX,
-})
+
 app.use(bodyParser())
 app.use(catchError)
 app.use(cors())
@@ -30,13 +28,9 @@ const controllers = initControllers({
   models,
 })
 
-const routes = initApi({
+const apiRouter = initApi({
   Router,
   controllers,
-})
-
-routes.forEach((router) => {
-  apiRouter.use(router.routes()).use(router.allowedMethods())
 })
 
 app.use(apiRouter.routes())
