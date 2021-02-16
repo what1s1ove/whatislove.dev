@@ -1,4 +1,4 @@
-import { FormPage } from '~/pages/form/form.page'
+import { FormPage } from '~/pages'
 import { timelineApi } from '~/services/services'
 
 const formPage = new FormPage({
