@@ -1,12 +1,10 @@
 import 'focus-visible/dist/focus-visible.min'
-import { initHeader } from './functionality/header/header'
-import { initSettings } from './functionality/settings/settings'
-import { initTimeline } from './functionality/timeline/timeline'
+import { IndexPage } from './pages'
+import { timelineApi, storage } from '~/services/services'
 
-const initApp = () => {
-  initHeader()
-  initSettings()
-  initTimeline()
-}
+const indexPage = new IndexPage({
+  timelineApi,
+  storage,
+})
 
-initApp()
+indexPage.init()
