@@ -1,4 +1,3 @@
-export * from './events'
 export * from './dom'
 export * from './date'
 export * from './form'
