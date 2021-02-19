@@ -1,6 +1,6 @@
 import { KeyboardKey } from '~/common/enums'
 
-const subscribeFocusTrap = (elements) => {
+const subscribeFocusTrap = (...elements) => {
   const firstNode = elements[0]
   const lastNode = elements[elements.length - 1]
 
