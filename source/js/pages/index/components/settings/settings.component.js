@@ -1,11 +1,8 @@
 import { checkIsMediaQueryMatch, getCustomAttrName } from '~/helpers'
+import { numberToBoolean } from '~/common/maps'
 import { SettingButton } from './components'
-import {
-  SettingName,
-  MediaQueriesType,
-  settingNameToCheckTypes,
-  numberToBoolean,
-} from './common'
+import { SettingName, MediaQueriesType } from './common/enums'
+import { settingNameToCheckTypes } from './common/maps'
 
 class Settings {
   constructor({ storage }) {
@@ -47,11 +44,11 @@ class Settings {
   _setSettingAttr({ name, checkTypes, isChecked }) {
     document.documentElement.setAttribute(
       getCustomAttrName(name),
-      isChecked ? checkTypes.CHECKED : checkTypes.UNCHECKED,
+      isChecked ? checkTypes.checked : checkTypes.unchecked,
     )
   }
 
-  _checkIsBtnChecked(name, mediaQuery) {
+  _checkIsBtnChecked({ name, mediaQuery }) {
     const settingStoredValue = this._storage.getItem(name)
 
     return settingStoredValue
