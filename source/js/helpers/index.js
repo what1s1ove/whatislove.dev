@@ -1,7 +1,6 @@
 export * from './dom'
 export * from './date'
 export * from './form'
-export * from './object'
 export * from './debounce'
 export * from './string'
 export * from './boolean'
