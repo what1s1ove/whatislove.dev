@@ -1,8 +1,12 @@
-const formatter = new Intl.DateTimeFormat(`en`, {
-  month: `short`,
-  year: `numeric`,
-})
+const getFormattedDate = (date) => {
+  if (!date) {
+    return ``
+  }
 
-const getFormattedDate = (date) => formatter.format(new Date(date))
+  return new Date(date).toLocaleDateString(`en`, {
+    month: `short`,
+    year: `numeric`,
+  })
+}
 
 export { getFormattedDate }
