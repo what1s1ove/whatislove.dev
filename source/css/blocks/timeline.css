@@ -125,8 +125,12 @@
   transform: translate(-50%, -50%);
 }
 
-.timeline__list:empty + .timeline__desc-empty {
+.timeline__list:empty ~ .timeline__desc-empty {
   display: block;
+}
+
+.loader:not(:empty) ~ .timeline__desc-empty {
+  display: none;
 }
 
 .timeline__resume-link {
