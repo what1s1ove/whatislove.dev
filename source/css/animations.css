@@ -1,3 +1,13 @@
+@keyframes iconFadeUp {
+  from {
+    transform: translateY(70px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
 @keyframes fadeUp {
   from {
     transform: translateY(70px);
@@ -39,5 +49,17 @@
 @keyframes rotate {
   to {
     transform: rotate(-360deg);
+  }
+}
+
+@media (min-width: 640px) {
+  @keyframes iconFadeUp {
+    from {
+      transform: translate(-50%, 70px);
+    }
+
+    to {
+      transform: translateY(-50%, 0);
+    }
   }
 }

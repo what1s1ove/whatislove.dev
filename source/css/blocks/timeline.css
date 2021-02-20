@@ -43,7 +43,6 @@
 .timeline__item {
   position: relative;
   margin: 0 0 15px 30px;
-  animation: fadeUp 1s;
 }
 
 .timeline__item-wrapper {
@@ -52,6 +51,7 @@
   background-color: var(--color--primary);
   border-radius: 4px;
   box-shadow: 0 1px 10px 0 var(--color--primary--opacity);
+  animation: fadeUp 1s;
 }
 
 .timeline__item-title {
@@ -98,6 +98,7 @@
   height: 46px;
   background-color: var(--color--primary);
   border-radius: 50%;
+  animation: iconFadeUp 1s;
 }
 
 .timeline__item:hover .timeline__icon-wrapper {
