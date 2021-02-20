@@ -1,17 +1,5 @@
 import { TimelineForm, TimelineList } from './components'
-
-const checkIsTimelineSuit = (timelineItem, filterValues) => {
-  return (
-    filterValues.skillTypes[timelineItem.skillType] &&
-    filterValues.types[timelineItem.type]
-  )
-}
-
-const getSuitTimelines = (timelines, filterValues) => {
-  return timelines.filter((timeline) => {
-    return checkIsTimelineSuit(timeline, filterValues)
-  })
-}
+import { getSuitTimelines } from './helpers'
 
 class Timeline {
   constructor({ timelineApi }) {
