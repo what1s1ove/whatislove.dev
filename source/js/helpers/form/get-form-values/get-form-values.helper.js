@@ -4,7 +4,7 @@ import { getAllowedElements } from './helpers'
 const getFormValues = (formNode) => {
   const elements = getAllowedElements(Array.from(formNode.elements))
 
-  return getElementsValues(formNode, elements)
+  return getElementsValues(elements)
 }
 
 export { getFormValues }

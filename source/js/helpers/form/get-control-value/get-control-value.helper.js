@@ -24,7 +24,7 @@ const geControlValue = (controlNode) => {
     case ControlType.MONTH:
     case ControlType.TIME:
     case ControlType.WEEK: {
-      return valueAsDate
+      return valueAsDate || value
     }
     case ControlType.NUMBER:
     case ControlType.RANGE: {
@@ -35,15 +35,15 @@ const geControlValue = (controlNode) => {
     }
     case ControlType.FIELDSET: {
       // eslint-disable-next-line no-use-before-define
-      return getElementsValues(controlNode)
+      return getElementsValues(controlNode.elements)
     }
   }
 
   return null
 }
 
-const getElementsValues = (controlNode) => {
-  return Array.from(controlNode.elements).reduce((acc, element, _idx, arr) => {
+const getElementsValues = (controlNodeElements) => {
+  return Array.from(controlNodeElements).reduce((acc, element, _idx, arr) => {
     const isReferToAnotherNode = checkIsReferToAnotherNode(element, ...arr)
 
     if (isReferToAnotherNode) {
