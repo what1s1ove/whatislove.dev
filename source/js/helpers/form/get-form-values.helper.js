@@ -1,29 +1,32 @@
-import { getTargetNameValue } from './get-target-name-value.helper'
-import { FormElementType } from '~/common/enums'
+import { ControlType } from '~/common/enums'
+import { getElementsValues } from './get-control-value.helper'
 
-const getFormValues = (formElements) => {
-  const formFieldsets = [...formElements].filter(
-    (it) => it.type === FormElementType.FIELDSET,
-  )
+const BANNED_CONTROL_TYPES = [ControlType.BUTTON, ControlType.RESET, ControlType.SUBMIT]
 
-  const getFieldsetsValues = (fieldsets) => {
-    const fieldsetsValues = [...fieldsets].reduce((acc, element) => {
-      const { name, type, elements } = element
+const checkHasName = (element) => {
+  return Boolean(element.name)
+}
 
-      // eslint-disable-next-line no-nested-ternary
-      return name
-        ? type === FormElementType.FIELDSET
-          ? { ...acc, [name]: getFieldsetsValues(elements) }
-          : { ...acc, ...getTargetNameValue(element) }
-        : acc
-    }, {})
+const checkHasAllowedType = (element) => {
+  const hasBannedType = BANNED_CONTROL_TYPES.some((type) => type === element.type)
 
-    return fieldsetsValues
-  }
+  return !hasBannedType
+}
 
-  const formValues = getFieldsetsValues(formFieldsets)
+const checkFunctions = [checkHasName, checkHasAllowedType]
 
-  return formValues
+const checkIsElementAllowed = (element) => {
+  return checkFunctions.every((checkFunction) => checkFunction(element))
+}
+
+const getAllowedElements = (elements) => {
+  return elements.filter(checkIsElementAllowed)
+}
+
+const getFormValues = (formNode) => {
+  const elements = getAllowedElements(Array.from(formNode.elements))
+
+  return getElementsValues(formNode, elements)
 }
 
 export { getFormValues }

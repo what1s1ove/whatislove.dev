@@ -11,7 +11,7 @@ class TimelineForm {
   }
 
   get formValues() {
-    return getFormValues(this._formNode.elements)
+    return getFormValues(this._formNode)
   }
 
   init() {
