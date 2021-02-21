@@ -2,9 +2,12 @@
 @import './fonts.css';
 @import './animations.css';
 @import './scaffolding.css';
+
 @import './blocks/section-header.css';
 @import './blocks/form-control.css';
 @import './blocks/social-list.css';
+@import './blocks/loader.css';
+
 @import './blocks/header.css';
 @import './blocks/footer.css';
 @import './blocks/navigation.css';

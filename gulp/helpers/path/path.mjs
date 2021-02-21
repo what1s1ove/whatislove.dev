@@ -1,1 +1,1 @@
-export * from './join-paths.helper.mjs'
+export * from './join-paths/join-paths.helper.mjs'

@@ -1,1 +1,1 @@
-export * from './get-formatted-date.helper'
+export * from './get-formatted-date/get-formatted-date.helper'

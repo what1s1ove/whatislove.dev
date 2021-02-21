@@ -1,1 +1,1 @@
-export * from './get-server-api-url.helper'
+export * from './get-server-api-url/get-server-api-url.helper'

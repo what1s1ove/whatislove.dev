@@ -1,4 +1,4 @@
-import { fillSelectOptions } from '~/helpers'
+import { fillSelectOptions, getFormValues } from '~/helpers'
 import { TimelineType, SkillType } from '~/common/enums'
 
 const skillTypeOptions = Object.values(SkillType)
@@ -39,9 +39,9 @@ class FormPage {
   async _handleSubmit(evt) {
     evt.preventDefault()
 
-    const values = Object.fromEntries(new FormData(evt.target).entries())
+    const formValues = getFormValues(this._formNode)
 
-    await this._timelineApi.saveTimeline(values)
+    await this._timelineApi.saveTimeline(formValues)
 
     this._formNode.reset()
   }

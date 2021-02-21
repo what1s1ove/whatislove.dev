@@ -2,7 +2,11 @@ import { getServerApiUrl } from '~/helpers'
 import { AppConfig } from '~/common/enums'
 import { Http } from './http/http.service'
 import { TimelineApi } from './timeline-api/timeline-api.server'
+import { Storage } from './storage/storage.service'
 
+const storage = new Storage({
+  storage: localStorage,
+})
 const http = new Http()
 const timelineApi = new TimelineApi({
   http,
@@ -14,4 +18,4 @@ const timelineApi = new TimelineApi({
   filesApiPath: AppConfig.FILES_API_PATH,
 })
 
-export { http, timelineApi }
+export { storage, http, timelineApi }
