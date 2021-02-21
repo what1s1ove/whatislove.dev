@@ -58,8 +58,8 @@
   height: 15px;
   background-color: var(--color--primary);
   border-radius: 50%;
-  transition: transform 500ms;
   transform: translate(3px, -50%);
+  transition: transform 500ms;
 }
 
 .settings__button-input:checked::before {
