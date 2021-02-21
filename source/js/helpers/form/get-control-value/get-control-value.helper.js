@@ -1,4 +1,5 @@
 import { ControlType } from '~/common/enums'
+import { checkIsReferToAnotherNode } from './helpers'
 
 const geControlValue = (controlNode) => {
   const { type, checked, value, valueAsDate, valueAsNumber } = controlNode
@@ -43,11 +44,9 @@ const geControlValue = (controlNode) => {
 
 const getElementsValues = (controlNode) => {
   return Array.from(controlNode.elements).reduce((acc, element, _idx, arr) => {
-    const alreadyHas = arr.some((it) => {
-      return Boolean(it.elements?.[element.name])
-    })
+    const isReferToAnotherNode = checkIsReferToAnotherNode(element, ...arr)
 
-    if (alreadyHas) {
+    if (isReferToAnotherNode) {
       return acc
     }
 
@@ -58,4 +57,4 @@ const getElementsValues = (controlNode) => {
   }, {})
 }
 
-export { getElementsValues, geControlValue }
+export { geControlValue, getElementsValues }
