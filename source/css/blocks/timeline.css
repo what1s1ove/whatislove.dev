@@ -232,6 +232,7 @@
     content: '';
     border: 15px solid transparent;
     border-left-color: var(--color--primary);
+    filter: drop-shadow(0 0 10px var(--color--primary));
   }
 
   .timeline__item:nth-child(even) .timeline__item-wrapper::before {
