@@ -48,8 +48,8 @@ html[data-theme='dark'] .header::before {
 }
 
 .header__logo-icon--heart {
-  animation: heartbeat 1s infinite;
   transform: scale(0.83) translate(42px, 8px);
+  animation: heartbeat 1s infinite;
 }
 
 .header__name {
@@ -124,8 +124,8 @@ html[data-theme='dark'] .header::before {
   width: 100%;
   height: 3px;
   background-color: var(--color--secondary);
-  transition: top 0.3s 0.3s, transform 0.3s, background-color 500ms;
   transform-origin: 50% 50%;
+  transition: top 0.3s 0.3s, transform 0.3s, background-color 500ms;
 }
 
 .header__toggle-object::before {

@@ -37,9 +37,9 @@
   border: 2px solid var(--color--primary);
   border-top: 0;
   border-right: 0;
-  transition: transform 0.1s ease-in 25ms;
   transform: scale(0) rotate(-45deg);
   transform-origin: bottom left;
+  transition: transform 0.1s ease-in 25ms;
 }
 
 .form-control__input--checkbox:checked::before {

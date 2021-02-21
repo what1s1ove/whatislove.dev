@@ -7,8 +7,8 @@
 
 .loader circle {
   display: block;
-  animation: 800ms ease-in-out infinite both loader-circle-animation;
   transform-origin: 50% 50%;
+  animation: 800ms ease-in-out infinite both loader-circle-animation;
   fill: transparent;
   stroke: var(--color--primary);
   stroke-linecap: round;
