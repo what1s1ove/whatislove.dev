@@ -1,8 +1,44 @@
 .easter-egg {
   position: absolute;
-  top: 100px;
-  left: 100px;
+  z-index: var(--z-index--level-four);
   margin: 0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.easter-egg::before {
+  position: absolute;
+  top: 50%;
+  left: -75%;
+  z-index: 2;
+  display: block;
+  content: '';
+  width: 50%;
+  height: 100%;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255 255 255 / 0),
+    rgb(255 215 0 / 0.15)
+  );
+  transform: skewX(-25deg) translateY(-50%);
+  animation: shine 10s infinite;
+  pointer-events: none;
+}
+
+.easter-egg:hover::before {
+  display: none;
+}
+
+.easter-egg__button-wrapper {
+  display: block;
+  padding: 12px;
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+}
+
+.easter-egg__button-wrapper:hover,
+.easter-egg__button-wrapper:focus-within {
+  opacity: 1;
 }
 
 .easter-egg__button {
@@ -25,7 +61,7 @@
   content: '';
   width: calc(100% + 4px);
   height: calc(100% + 4px);
-  background: linear-gradient(
+  background-image: linear-gradient(
     45deg,
     #ff0000,
     #ff7300,
@@ -39,9 +75,7 @@
   );
   background-size: 400%;
   border-radius: 10px;
-  opacity: 0;
   filter: blur(5px);
-  transition: opacity 0.3s ease-in-out;
   animation: glowing 20s linear infinite;
 }
 
@@ -63,9 +97,4 @@
 
 .easter-egg__button:active:after {
   background: transparent;
-}
-
-.easter-egg__button:hover:before,
-.easter-egg__button:focus::before {
-  opacity: 1;
 }

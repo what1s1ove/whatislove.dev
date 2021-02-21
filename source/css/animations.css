@@ -95,6 +95,16 @@
   }
 }
 
+@keyframes shine {
+  15% {
+    left: 125%;
+  }
+
+  100% {
+    left: 125%;
+  }
+}
+
 @media (min-width: 640px) {
   @keyframes icon-fade-up {
     from {

@@ -2,7 +2,7 @@
   position: fixed;
   right: 15px;
   bottom: 13px;
-  z-index: var(--z-index--level-four);
+  z-index: var(--z-index--level-five);
   display: flex;
   flex-direction: column;
   margin: 0;
