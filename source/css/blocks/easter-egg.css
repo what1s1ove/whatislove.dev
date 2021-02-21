@@ -1,0 +1,71 @@
+.easter-egg {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  margin: 0;
+}
+
+.easter-egg__button {
+  position: relative;
+  z-index: 0;
+  min-width: 220px;
+  padding: 10px 15px;
+  color: var(--color--primary);
+  background-color: var(--color--secondary);
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.easter-egg__button:before {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  z-index: -1;
+  content: '';
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  background-size: 400%;
+  border-radius: 10px;
+  opacity: 0;
+  filter: blur(5px);
+  transition: opacity 0.3s ease-in-out;
+  animation: glowing 20s linear infinite;
+}
+
+.easter-egg__button:active {
+  color: var(--color--primary);
+}
+
+.easter-egg__button:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: var(--color--secondary);
+  border-radius: 10px;
+}
+
+.easter-egg__button:active:after {
+  background: transparent;
+}
+
+.easter-egg__button:hover:before,
+.easter-egg__button:focus::before {
+  opacity: 1;
+}
