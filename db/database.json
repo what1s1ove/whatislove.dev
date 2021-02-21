@@ -976,6 +976,19 @@
       "endDate": ""
     },
     {
+      "id": "aJkGLtygAU",
+      "skillType": "hardSkill",
+      "type": "work",
+      "title": "Mentor (HTML Academy)",
+      "desc": "📚",
+      "origin": "https://htmlacademy.ru",
+      "originDesc": "htmlacademy.ru",
+      "link": "",
+      "linkDesc": "",
+      "date": "2020-11-23T00:00:00.000Z",
+      "endDate": ""
+    },
+    {
       "id": "o4Pq1mHgN7",
       "skillType": "hardSkill",
       "type": "course",
@@ -1065,6 +1078,19 @@
       "linkDesc": "",
       "date": "2021-01-04T00:00:00+03:00",
       "endDate": ""
+    },
+    {
+      "id": "y_58UT-y9R",
+      "skillType": "hardSkill",
+      "type": "course",
+      "title": "NodeJS. Development of App Servers and API",
+      "desc": "with async 💚",
+      "origin": "https://htmlacademy.ru/intensive/nodejs",
+      "originDesc": "Course link",
+      "link": "https://assets.htmlacademy.ru/certificates/intensive/185/573447.pdf",
+      "linkDesc": "Certificate",
+      "date": "2020-12-20T00:00:00.000Z",
+      "endDate": "2021-02-11T00:00:00.000Z"
     }
   ]
 }
