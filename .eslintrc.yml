@@ -68,6 +68,9 @@ rules:
   no-underscore-dangle:
     - error
     - allowAfterThis: true
+  no-multiple-empty-lines:
+    - error
+    - max: 1
   arrow-body-style:
     - off
   default-case:
