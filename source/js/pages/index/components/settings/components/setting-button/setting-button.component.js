@@ -1,3 +1,6 @@
+import { checkIsChecked } from './helpers'
+import { CHECKED_ATTR } from './common/constants'
+
 class SettingButton {
   constructor({ name, isDefaultChecked, onClick }) {
     this._name = name
@@ -9,10 +12,14 @@ class SettingButton {
     this._handleBtnClick = this._handleBtnClick.bind(this)
   }
 
+  set _isChecked(isChecked) {
+    this._btnNode.setAttribute(CHECKED_ATTR, isChecked)
+  }
+
   init(selector) {
     this._btnNode = document.querySelector(selector)
 
-    this._btnNode.checked = this._isDefaultChecked
+    this._isChecked = this._isDefaultChecked
 
     this._initListeners()
 
@@ -23,13 +30,17 @@ class SettingButton {
   }
 
   _initListeners() {
-    this._btnNode.addEventListener(`change`, this._handleBtnClick)
+    this._btnNode.addEventListener(`click`, this._handleBtnClick)
   }
 
   _handleBtnClick({ target }) {
+    const isChecked = !checkIsChecked(target)
+
+    this._isChecked = isChecked
+
     this._onClick({
       name: this._name,
-      isChecked: target.checked,
+      isChecked,
     })
   }
 }

@@ -19,7 +19,7 @@ class Settings {
         mediaQuery: MediaQueriesType.THEME,
       }),
       onClick: this._handleSettingBtnClick,
-    }).init(`.settings__button--theme input`)
+    }).init(`.settings__button--theme`)
 
     new SettingButton({
       name: SettingName.MOTION,
@@ -28,7 +28,7 @@ class Settings {
         mediaQuery: MediaQueriesType.MOTION,
       }),
       onClick: this._handleSettingBtnClick,
-    }).init(`.settings__button--animate input`)
+    }).init(`.settings__button--motion`)
   }
 
   _handleSettingBtnClick({ name, isChecked }) {
