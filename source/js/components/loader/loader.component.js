@@ -1,5 +1,4 @@
-import { createElement } from '~/helpers'
-import { getLoaderTemplate } from './helpers'
+import { getLoaderElement } from './helpers'
 
 class Loader {
   constructor({ containerNode }) {
@@ -9,7 +8,7 @@ class Loader {
   }
 
   init() {
-    this._loaderNode = createElement(getLoaderTemplate())
+    this._loaderNode = getLoaderElement()
 
     this._containerNode.prepend(this._loaderNode)
   }

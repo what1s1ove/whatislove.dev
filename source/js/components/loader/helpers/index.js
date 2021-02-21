@@ -1,1 +1,1 @@
-export * from './get-loader-template/get-loader-template.helper'
+export * from './get-loader-element/get-loader-element.helper'

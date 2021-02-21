@@ -19,6 +19,7 @@ const Config = {
     SOURCE_CSS: `css`,
     SOURCE_FONTS: `fonts`,
     SOURCE_FILES: `files`,
+    SOURCE_SOUND: `sound`,
   },
   FILE: {
     HTML: {

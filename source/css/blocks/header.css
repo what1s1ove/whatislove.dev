@@ -83,7 +83,7 @@ html[data-theme='dark'] .header::before {
 .header--active .header__navigation-wrapper {
   top: 0;
   left: 0;
-  z-index: var(--z-index--level-five);
+  z-index: var(--z-index--level-six);
   width: 100%;
   height: 100%;
   background-color: var(--color--primary--opacity);
