@@ -21,22 +21,33 @@
   height: 20px;
   padding: 0;
   background-color: var(--color--secondary);
+  background-repeat: no-repeat;
+  background-position: right 5px top 50%;
+  background-size: 15px;
   border: 1px solid var(--color--primary);
   border-radius: 20px;
   cursor: pointer;
 }
 
+.settings__button[aria-checked='true'] {
+  background-position: left 5px top 50%;
+}
+
 .settings__button--theme {
   background-image: url('../img/theme-light.bg.svg');
-  background-repeat: no-repeat;
-  background-position: right 5px top 50%;
-  background-size: 15px;
 }
 
 .settings__button--theme[aria-checked='true'] {
   background-image: url('../img/theme-dark.bg.svg');
-  background-position: left 5px top 50%;
   background-size: 13px;
+}
+
+.settings__button--whatislove {
+  background-image: url('../img/heart.bg.svg');
+}
+
+.settings__button--whatislove[aria-checked='true'] {
+  background-image: url('../img/heart-broken.bg.svg');
 }
 
 .settings__button::before {
