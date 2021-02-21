@@ -1,5 +1,5 @@
 import { ControlType } from '~/common/enums'
-import { getElementsValues } from './get-control-value.helper'
+import { getElementsValues } from '../get-control-value/get-control-value.helper'
 
 const BANNED_CONTROL_TYPES = [ControlType.BUTTON, ControlType.RESET, ControlType.SUBMIT]
 

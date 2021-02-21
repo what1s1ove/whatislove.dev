@@ -1,1 +1,1 @@
-export * from './get-check-types.helper'
+export * from './get-check-types/get-check-types.helper'
