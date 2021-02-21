@@ -43,11 +43,11 @@
 }
 
 .settings__button--whatislove {
-  background-image: url('../img/heart.bg.svg');
+  background-image: url('../img/heart-broken.bg.svg');
 }
 
 .settings__button--whatislove[aria-checked='true'] {
-  background-image: url('../img/heart-broken.bg.svg');
+  background-image: url('../img/heart.bg.svg');
 }
 
 .settings__button::before {
