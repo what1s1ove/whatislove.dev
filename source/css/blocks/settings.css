@@ -16,40 +16,30 @@
 
 .settings__button {
   position: relative;
-  display: flex;
-  align-items: center;
-  padding: 2px;
-  color: var(--color--primary);
-  border-radius: 10px;
-}
-
-.settings__button-input {
-  position: relative;
   display: block;
   width: 45px;
   height: 20px;
-  margin: 0;
+  padding: 0;
   background-color: var(--color--secondary);
   border: 1px solid var(--color--primary);
   border-radius: 20px;
   cursor: pointer;
-  appearance: none;
 }
 
-.settings__button--theme .settings__button-input {
+.settings__button--theme {
   background-image: url('../img/theme-light.bg.svg');
   background-repeat: no-repeat;
   background-position: right 5px top 50%;
   background-size: 15px;
 }
 
-.settings__button--theme .settings__button-input:checked {
+.settings__button--theme[aria-checked='true'] {
   background-image: url('../img/theme-dark.bg.svg');
   background-position: left 5px top 50%;
   background-size: 13px;
 }
 
-.settings__button-input::before {
+.settings__button::before {
   position: absolute;
   top: 50%;
   left: 0;
@@ -62,7 +52,7 @@
   transition: transform 500ms;
 }
 
-.settings__button-input:checked::before {
+.settings__button[aria-checked='true']::before {
   transform: translate(25px, -50%);
 }
 
@@ -78,7 +68,7 @@
   display: none;
 }
 
-.settings__button-input:checked ~ .settings__icon--checked {
+.settings__button--motion[aria-checked='true'] .settings__icon--checked {
   display: block;
 }
 
@@ -86,6 +76,6 @@
   right: 7px;
 }
 
-.settings__button-input:checked ~ .settings__icon--unchecked {
+.settings__button--motion[aria-checked='true'] .settings__icon--unchecked {
   display: none;
 }
