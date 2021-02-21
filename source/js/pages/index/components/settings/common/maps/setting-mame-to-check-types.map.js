@@ -1,5 +1,5 @@
+import { SettingName } from '~/common/enums'
 import { getCheckTypes } from '../../helpers'
-import { SettingName } from '../enums'
 
 const settingNameToCheckTypes = {
   [SettingName.THEME]: getCheckTypes({

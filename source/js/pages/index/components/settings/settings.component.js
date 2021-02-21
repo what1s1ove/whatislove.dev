@@ -1,17 +1,23 @@
 import { checkIsMediaQueryMatch, getCustomAttrName } from '~/helpers'
 import { numberToBoolean } from '~/common/maps'
+import { SettingName } from '~/common/enums'
+import { getSettingItemElement } from './helpers'
 import { SettingButton } from './components'
-import { SettingName, MediaQueriesType } from './common/enums'
+import { MediaQueriesType } from './common/enums'
 import { settingNameToCheckTypes } from './common/maps'
 
 class Settings {
   constructor({ storage }) {
     this._storage = storage
 
+    this._settingListNode = null
+
     this._handleSettingBtnClick = this._handleSettingBtnClick.bind(this)
   }
 
   init() {
+    this._settingListNode = document.querySelector(`.settings`)
+
     new SettingButton({
       name: SettingName.THEME,
       isDefaultChecked: this._checkIsBtnChecked({
@@ -29,6 +35,20 @@ class Settings {
       }),
       onClick: this._handleSettingBtnClick,
     }).init(`.settings__button--motion`)
+  }
+
+  appendNewBtn(settings) {
+    const { name, label, isDefaultChecked, onClick } = settings
+
+    const newSettingItemNode = getSettingItemElement({ name, label })
+
+    this._settingListNode.append(newSettingItemNode)
+
+    new SettingButton({
+      name,
+      isDefaultChecked,
+      onClick,
+    }).init(`.settings__button--${name}`)
   }
 
   _handleSettingBtnClick({ name, isChecked }) {
