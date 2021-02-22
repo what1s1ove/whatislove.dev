@@ -158,10 +158,6 @@ html[data-theme='dark'] .header::before {
   display: block;
 }
 
-.header--active .header__settings {
-  display: none;
-}
-
 @media print {
   .header {
     display: none;
