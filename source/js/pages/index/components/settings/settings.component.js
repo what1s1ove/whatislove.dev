@@ -42,7 +42,7 @@ class Settings {
 
     const newSettingItemNode = getSettingItemElement({ name, label })
 
-    this._settingListNode.append(newSettingItemNode)
+    this._settingListNode.prepend(newSettingItemNode)
 
     new SettingButton({
       name,

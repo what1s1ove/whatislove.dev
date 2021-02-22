@@ -1,11 +1,16 @@
 import { debounce } from '~/helpers'
-import { SettingBtnLabel, SettingName } from '~/common/enums'
+import {
+  NotificationMessage,
+  SettingBtnLabel,
+  SettingName,
+} from '~/common/enums'
 import { getPlayerElement, getNodeRandomCoords } from './helpers'
-import { SOUND_SRC, RESIZE_DELAY } from './common/constants'
+import { SOUND_SRC, RESIZE_DELAY, NOTIFICATION_DELAY } from './common/constants'
 
 class EasterEgg {
-  constructor({ onClick }) {
+  constructor({ onClick, onNotificationAdd }) {
     this._onClick = onClick
+    this._handleNotificationAdd = onNotificationAdd
 
     this._easterEggContainer = null
     this._easterEggBtn = null
@@ -52,14 +57,20 @@ class EasterEgg {
   }
 
   _handleEasterEggClick() {
-    this._renderPlayer()
-
-    this._onClick({
-      name: SettingName.WHATISLOVE,
-      label: SettingBtnLabel.SWITCH_LOVE,
-      isDefaultChecked: true,
-      onClick: this._handleSettingBtnClick,
+    this._handleNotificationAdd({
+      message: NotificationMessage.LOVE,
+      duration: NOTIFICATION_DELAY,
+      cb: () => {
+        this._onClick({
+          name: SettingName.WHATISLOVE,
+          label: SettingBtnLabel.SWITCH_LOVE,
+          isDefaultChecked: true,
+          onClick: this._handleSettingBtnClick,
+        })
+      },
     })
+
+    this._renderPlayer()
 
     this._removeListeners()
 

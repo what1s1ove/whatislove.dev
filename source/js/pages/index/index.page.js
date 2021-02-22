@@ -1,8 +1,10 @@
+import { Toast } from '~/components'
 import { Settings, Navigation, Timeline, EasterEgg } from './components'
 
 class IndexPage {
   constructor({ timelineApi, storage }) {
     this._handleSettingBtnAppend = this._handleSettingBtnAppend.bind(this)
+    this._handleNotificationAdd = this._handleNotificationAdd.bind(this)
 
     this._settingsComponent = new Settings({
       storage,
@@ -13,10 +15,13 @@ class IndexPage {
     })
     this._easterEggComponent = new EasterEgg({
       onClick: this._handleSettingBtnAppend,
+      onNotificationAdd: this._handleNotificationAdd,
     })
+    this._toastComponent = new Toast()
   }
 
   init() {
+    this._toastComponent.init()
     this._settingsComponent.init()
     this._navigationComponent.init()
     this._timelineComponent.init()
@@ -25,6 +30,10 @@ class IndexPage {
 
   _handleSettingBtnAppend(settings) {
     this._settingsComponent.appendNewBtn(settings)
+  }
+
+  _handleNotificationAdd(message) {
+    this._toastComponent.pushMessage(message)
   }
 }
 
