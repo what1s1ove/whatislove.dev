@@ -9,6 +9,7 @@ class Timeline {
 
     this._containerNode = null
     this._timelines = []
+    this._isLoading = false
 
     this._handleFormChange = this._handleFormChange.bind(this)
     this._handleTimelineShow = this._handleTimelineShow.bind(this)
@@ -55,7 +56,9 @@ class Timeline {
       this._containerNode.offsetTop,
     )
 
-    if (shouldLoadTimelines) {
+    if (shouldLoadTimelines && !this._isLoading) {
+      this._isLoading = true
+
       await this._fetchTimelines()
 
       this._loaderComponent.remove()
