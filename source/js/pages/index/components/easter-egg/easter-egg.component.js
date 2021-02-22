@@ -63,7 +63,7 @@ class EasterEgg {
 
     this._removeListeners()
 
-    this._easterEggBtn.remove()
+    this._easterEggContainer.remove()
   }
 
   _handleSettingBtnClick({ isChecked }) {
