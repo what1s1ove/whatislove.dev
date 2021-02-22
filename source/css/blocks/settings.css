@@ -44,6 +44,7 @@
 
 .settings__button--whatislove {
   background-image: url('../img/heart-broken.bg.svg');
+  animation: append 1s ease-out;
 }
 
 .settings__button--whatislove[aria-checked='true'] {
