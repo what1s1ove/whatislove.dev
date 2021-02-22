@@ -3,7 +3,7 @@ import gulp from 'gulp'
 import rev from 'gulp-rev'
 import paths from 'vinyl-paths'
 import rewrite from 'gulp-rev-rewrite'
-import { joinPaths, readFile } from '../../helpers/helpers.mjs'
+import { joinPaths, readFile, includeFile } from '../../helpers/helpers.mjs'
 import { Config } from '../../config.mjs'
 
 const hashCache = () => {
@@ -14,7 +14,8 @@ const hashCache = () => {
         `${joinPaths(Config.FOLDER.BUILD, Config.FOLDER.BUILD_IMG)}/**/*.{svg,png,jpg,webp}`,
         `${joinPaths(Config.FOLDER.BUILD, Config.FOLDER.BUILD_JS)}/*.js`,
         `${joinPaths(Config.FOLDER.BUILD, Config.FOLDER.BUILD_CSS)}/*.css`,
-        `${Config.FOLDER.BUILD}/${Config.FILE.MANIFEST}.webmanifest`,
+        `${joinPaths(Config.FOLDER.BUILD, Config.FILE.MANIFEST)}.webmanifest`,
+        `${includeFile(`${joinPaths(Config.FOLDER.BUILD, Config.FOLDER.BUILD_IMG)}/sprite.svg`, false)}`,
       ],
       {
         base: Config.FOLDER.BUILD,
@@ -31,7 +32,7 @@ const replaceCache = () => {
   const manifest = readFile(`${Config.FOLDER.BUILD}/${Config.FILE.REV}.json`, true)
 
   return gulp
-    .src([`${Config.FOLDER.BUILD}/**/*.{html,css}`, `${Config.FOLDER.BUILD}/${Config.FILE.MANIFEST}.webmanifest*`])
+    .src([`${Config.FOLDER.BUILD}/**/*.{html,css}`, `${Config.FOLDER.BUILD}/${Config.FILE.MANIFEST}-*.webmanifest`])
     .pipe(
       rewrite({
         manifest,
