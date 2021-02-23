@@ -12,6 +12,7 @@ import {
   copy,
   server,
   cache,
+  cleanup,
 } from './gulp/tasks/tasks.mjs'
 
 const assembly = gulp.series(
@@ -28,7 +29,7 @@ const assembly = gulp.series(
 
 const develop = gulp.series(assembly, server)
 
-const build = gulp.series(assembly, cache)
+const build = gulp.series(assembly, cache, cleanup)
 
 export {
   api,
@@ -41,6 +42,7 @@ export {
   clean,
   copy,
   cache,
+  cleanup,
   assembly,
   develop,
 }
