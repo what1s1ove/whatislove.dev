@@ -24,7 +24,7 @@ const geControlValue = (controlNode) => {
     case ControlType.MONTH:
     case ControlType.TIME:
     case ControlType.WEEK: {
-      return valueAsDate || value
+      return valueAsDate ?? value
     }
     case ControlType.NUMBER:
     case ControlType.RANGE: {
