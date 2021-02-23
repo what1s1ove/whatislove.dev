@@ -1,6 +1,7 @@
 import del from 'del'
+import { joinPaths } from '../../helpers/helpers.mjs'
 import { Config } from '../../config.mjs'
 
-const cleanup = () => del([`${Config.FOLDER.BUILD}/${Config.FILE.REV}.json`])
+const cleanup = () => del([`${joinPaths(Config.FOLDER.BUILD, Config.FILE.REV)}.json`])
 
 export { cleanup }
