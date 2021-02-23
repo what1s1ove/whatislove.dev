@@ -976,19 +976,6 @@
       "endDate": ""
     },
     {
-      "id": "aJkGLtygAU",
-      "skillType": "hardSkill",
-      "type": "work",
-      "title": "Mentor (HTML Academy)",
-      "desc": "📚",
-      "origin": "https://htmlacademy.ru",
-      "originDesc": "htmlacademy.ru",
-      "link": "",
-      "linkDesc": "",
-      "date": "2020-11-23T00:00:00.000Z",
-      "endDate": ""
-    },
-    {
       "id": "o4Pq1mHgN7",
       "skillType": "hardSkill",
       "type": "course",
@@ -1000,6 +987,19 @@
       "linkDesc": "Certificate",
       "date": "2020-09-28T00:00:00+03:00",
       "endDate": "2020-12-02T00:00:00+03:00"
+    },
+    {
+      "id": "aJkGLtygAU",
+      "skillType": "hardSkill",
+      "type": "work",
+      "title": "Mentor (HTML Academy)",
+      "desc": "📚",
+      "origin": "https://htmlacademy.ru",
+      "originDesc": "htmlacademy.ru",
+      "link": "",
+      "linkDesc": "",
+      "date": "2020-11-23T00:00:00.000Z",
+      "endDate": ""
     },
     {
       "id": "DHewosYUQx",
