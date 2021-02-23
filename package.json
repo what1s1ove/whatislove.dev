@@ -7,7 +7,7 @@
     "build": "gulp",
     "start": "concurrently -k -p \"{name}: {time}\" -n \"CLIENT,SERVER\" -c \"green,blue\" \"npm:start:client\" \"npm:start:server\"",
     "start:client": "gulp --development",
-    "start:server": "nodemon -r module-alias/register source/js/server/server.js --exec \"babel-node\"",
+    "start:server": "nodemon --exec babel-node -r module-alias/register source/js/server/server.js",
     "lint": "npm run lint:editorconfig && npm run lint:html && npm run lint:css && npm run lint:js",
     "lint:html": "node-w3c-validator -i build/*.html -f lint -evH",
     "lint:css": "stylelint \"source/css/**/*.css\" --syntax css",
