@@ -29,10 +29,10 @@ const hashCache = () => {
 }
 
 const replaceCache = () => {
-  const manifest = readFile(`${Config.FOLDER.BUILD}/${Config.FILE.REV}.json`, true)
+  const manifest = readFile(`${joinPaths(Config.FOLDER.BUILD, Config.FILE.REV)}.json`, true)
 
   return gulp
-    .src([`${Config.FOLDER.BUILD}/**/*.{html,css}`, `${Config.FOLDER.BUILD}/${Config.FILE.MANIFEST}-*.webmanifest`])
+    .src([`${joinPaths(Config.FOLDER.BUILD)}/**/*.{html,css}`, `${joinPaths(Config.FOLDER.BUILD, Config.FILE.MANIFEST)}-*.webmanifest`])
     .pipe(
       rewrite({
         manifest,
