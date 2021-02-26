@@ -1,0 +1,153 @@
+.intro {
+  background-color: var(--color--secondary);
+}
+
+.intro__wrapper {
+  padding: 30px 0;
+}
+
+.intro__header {
+  margin: 0 0 35px;
+}
+
+.intro__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.intro__image-wrapper {
+  align-self: center;
+  margin: 0 0 25px;
+}
+
+.intro__image-wrapper img {
+  border-radius: 50%;
+}
+
+.intro__personal-wrapper {
+  padding: 0 30px;
+}
+
+.intro__personal-title {
+  margin: 0 0 15px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.intro__list {
+  margin: 0 0 25px;
+}
+
+.intro__item:not(:last-child) {
+  margin: 0 0 10px;
+}
+
+.intro__item-title {
+  font-weight: 700;
+}
+
+.intro__item-desc {
+  margin: 0;
+}
+
+.intro__item-desc a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.intro__item-desc a[href]:hover {
+  text-decoration: underline;
+}
+
+.intro__myself-title {
+  margin: 0 0 5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.intro__myself-desk {
+  margin: 0;
+  text-align: center;
+}
+
+@media print {
+  .intro * {
+    color: #000000;
+  }
+
+  .intro__header {
+    display: none;
+  }
+
+  .intro__item--phone {
+    position: unset;
+    width: unset;
+    height: unset;
+    clip-path: unset;
+  }
+
+  .intro__item-title::after {
+    content: ':';
+  }
+
+  .intro__item--socials .intro__item-title {
+    position: unset;
+    width: unset;
+    height: unset;
+    clip-path: unset;
+  }
+
+  .intro__item-desc {
+    padding: 0 0 0 7px;
+  }
+}
+
+@media (min-width: 640px) {
+  .intro__wrapper {
+    padding: 30px 15px 50px;
+  }
+
+  .intro__content {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .intro__image-wrapper {
+    margin: 0 60px 0 0;
+  }
+
+  .intro__personal-wrapper {
+    padding: 0;
+  }
+
+  .intro__personal-title {
+    text-align: left;
+  }
+
+  .intro__list {
+    padding: 0 0 0 15px;
+  }
+
+  .intro__myself-title {
+    margin: 0 0 15px;
+    text-align: left;
+  }
+
+  .intro__myself-desk {
+    padding: 0 0 0 15px;
+    text-align: left;
+  }
+}
+
+@media (min-width: 940px) {
+  .intro__wrapper {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 30px 15px 80px;
+  }
+
+  .intro__header {
+    margin: 0 0 50px;
+  }
+}

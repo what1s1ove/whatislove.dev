@@ -1,0 +1,123 @@
+.favorites {
+  padding: 30px 0 0;
+  background-color: var(--color--secondary);
+}
+
+.favorites__wrapper {
+  position: relative;
+  background: repeating-conic-gradient(
+      var(--color--primary) 0% 25%,
+      var(--color--secondary) 0% 50%
+    )
+    50%/ 50px 50px;
+  background-color: var(--color--primary);
+}
+
+.favorites__wrapper::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: repeating-conic-gradient(
+      var(--color--secondary) 0% 25%,
+      var(--color--primary) 0% 50%
+    )
+    50%/ 50px 50px;
+  opacity: 0;
+  transition: opacity var(--transition-duration--theme) ease;
+}
+
+html[data-theme='light'] .favorites__wrapper::before {
+  opacity: 1;
+}
+
+.favorites__header {
+  margin: 0 0 35px;
+}
+
+.favorites__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 35px 15px;
+  list-style: none;
+}
+
+.favorites__item {
+  position: relative;
+  z-index: var(--z-index--level-one);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  height: 240px;
+  margin: 10px;
+  background-color: var(--color--secondary);
+  border: 2px solid var(--color--primary);
+  border-radius: 50%;
+  box-shadow: 0 1px 10px 0 var(--color--primary);
+}
+
+.favorites__item-text {
+  min-width: 120px;
+  margin: 0;
+  padding: 45px 10px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 28px;
+  letter-spacing: 2px;
+  text-align: center;
+  background-image: url('../img/favorites-shadow.bg.svg');
+  background-repeat: no-repeat;
+  background-position: right 10px top 50%;
+  background-size: 50px;
+  mask: url('../img/favorites.mask.svg');
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: 50% 0;
+}
+
+.favorites__item-text--html {
+  background-color: #ff5722;
+}
+
+.favorites__item-text--css {
+  background-color: #2196f3;
+}
+
+.favorites__item-text--js {
+  background-color: #ffe100;
+}
+
+@media (prefers-color-scheme: dark) {
+  .favorites__wrapper::before {
+    opacity: 1;
+  }
+}
+
+@media print {
+  .favorites {
+    display: none;
+  }
+}
+
+@media (min-width: 550px) {
+  .favorites__list {
+    padding: 40px 15px;
+  }
+}
+
+@media (min-width: 810px) {
+  .favorites__list {
+    padding: 45px 15px;
+  }
+}
+
+@media (min-width: 940px) {
+  .favorites__header {
+    margin: 0 0 50px;
+  }
+}

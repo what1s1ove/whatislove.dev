@@ -1,0 +1,104 @@
+env:
+  es2021: true
+  browser: true
+
+extends:
+  - airbnb-base
+  - prettier
+
+parserOptions:
+  ecmaVersion: 2021
+  sourceType: module
+
+settings:
+  import/resolver:
+    alias:
+      extensions: ['.js']
+      map:
+        - ['~', './source/js']
+
+rules:
+  semi:
+    - error
+    - never
+  comma-dangle:
+    - error
+    - always-multiline
+  quotes:
+    - error
+    - backtick
+  quote-props:
+    - error
+    - consistent
+  no-unused-expressions:
+    - error
+    - allowTernary: true
+  object-curly-newline:
+    - error
+    - multiline: true
+      consistent: true
+  curly:
+    - error
+    - all
+  object-curly-spacing:
+    - error
+    - always
+  implicit-arrow-linebreak:
+    - error
+    - beside
+  function-paren-newline:
+    - error
+    - consistent
+  no-confusing-arrow:
+    - error
+    - allowParens: true
+  no-process-exit:
+    - error
+  require-atomic-updates:
+    - error
+  no-console:
+    - error
+    - allow:
+      - warn
+      - error
+      - info
+  arrow-parens:
+    - error
+    - always
+  no-underscore-dangle:
+    - error
+    - allowAfterThis: true
+  no-multiple-empty-lines:
+    - error
+    - max: 1
+  arrow-body-style:
+    - off
+  default-case:
+    - off
+  no-param-reassign:
+    - off
+  class-methods-use-this:
+    - off
+  import/exports-last:
+    - error
+  import/group-exports:
+    - error
+  import/no-default-export:
+    - error
+  import/no-anonymous-default-export:
+    - error
+  import/prefer-default-export:
+    - off
+  import/no-extraneous-dependencies:
+    - off
+
+overrides:
+  - files:
+    - gulpfile.mjs
+    - gulp/**/*
+    rules:
+      import/extensions:
+        - error
+        - ignorePackages
+      import/no-default-export:
+        - off

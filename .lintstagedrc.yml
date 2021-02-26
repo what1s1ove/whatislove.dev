@@ -1,0 +1,3 @@
+"*": npm run lint:editorconfig
+"*.css": npm run lint:css
+"*.js": npm run lint:js

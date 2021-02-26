@@ -1,0 +1,21 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 15px;
+  background-color: var(--color--secondary);
+}
+
+.footer__social-list {
+  margin: 0 0 15px;
+}
+
+.footer__routine-wrapper svg {
+  fill: var(--color--primary);
+}
+
+@media print {
+  .footer {
+    display: none;
+  }
+}

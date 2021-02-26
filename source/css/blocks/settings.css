@@ -1,0 +1,96 @@
+.settings {
+  position: fixed;
+  right: 15px;
+  bottom: 13px;
+  z-index: var(--z-index--level-five);
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.settings__item:not(:last-child) {
+  margin: 0 0 7px;
+}
+
+.settings__button {
+  position: relative;
+  display: block;
+  width: 45px;
+  height: 20px;
+  padding: 0;
+  background-color: var(--color--secondary);
+  background-repeat: no-repeat;
+  background-position: right 5px top 50%;
+  background-size: 15px;
+  border: 1px solid var(--color--primary);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.settings__button[aria-checked='true'] {
+  background-position: left 5px top 50%;
+}
+
+.settings__button--theme {
+  background-image: url('../img/theme-light.bg.svg');
+}
+
+.settings__button--theme[aria-checked='true'] {
+  background-image: url('../img/theme-dark.bg.svg');
+  background-size: 13px;
+}
+
+.settings__button--whatislove {
+  background-image: url('../img/heart-broken.bg.svg');
+  animation-name: append;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+.settings__button--whatislove[aria-checked='true'] {
+  background-image: url('../img/heart.bg.svg');
+}
+
+.settings__button::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-color: var(--color--primary);
+  border-radius: 50%;
+  transform: translate(3px, -50%);
+  transition: transform 500ms;
+}
+
+.settings__button[aria-checked='true']::before {
+  transform: translate(25px, -50%);
+}
+
+.settings__icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  fill: var(--color--primary);
+}
+
+.settings__icon--checked {
+  left: 7px;
+  display: none;
+}
+
+.settings__button--motion[aria-checked='true'] .settings__icon--checked {
+  display: block;
+}
+
+.settings__icon--unchecked {
+  right: 7px;
+}
+
+.settings__button--motion[aria-checked='true'] .settings__icon--unchecked {
+  display: none;
+}
