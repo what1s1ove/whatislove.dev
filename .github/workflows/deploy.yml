@@ -1,34 +1,32 @@
-name: Lint
+name: Deploy
 
 on:
-  pull_request:
+  push:
     branches:
-      - development
+      - master
 
 jobs:
-  linting:
-    name: Linting
+  deploy:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version:
           - 14
-        java-version:
-          - 8
     steps:
       - name: Install NodeJS v${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install Java v${{ matrix.java-version }}
-        uses: actions/setup-java@v1
-        with:
-          java-version: ${{ matrix.java-version }}
-          architecture: x64
-
       - name: Code Checkout
         uses: actions/checkout@v2
+
+      - name: Setup Key
+        run: |
+          set -eu
+          mkdir "$HOME/.ssh"
+          echo "${{ secrets.KEY }}" > "$HOME/.ssh/key"
+          chmod 600 "$HOME/.ssh/key"
 
       - name: Install Dependencies
         run: |
@@ -38,6 +36,7 @@ jobs:
         run: |
           npm run build
 
-      - name: Code Linting
+      - name: Deploy
+        working-directory: ./build
         run: |
-          npm run lint
+          rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . whatislove@whatislove.dev:/var/www/whatislove.dev/html/
