@@ -14,9 +14,9 @@
   top: 50%;
   left: 50%;
   content: '';
-  width: 500vw;
-  height: 500vh;
-  margin: -250vh 0 0 -250vw;
+  width: 300vw;
+  height: 300vh;
+  margin: -150vh 0 0 -150vw;
   background-image: url('../img/stars-black.bg.svg');
   background-size: 250px;
   animation: rotate 200s linear infinite;
