@@ -1091,6 +1091,19 @@
       "linkDesc": "Certificate",
       "date": "2020-12-20T00:00:00.000Z",
       "endDate": "2021-02-11T00:00:00.000Z"
+    },
+    {
+      "id": "nZhZXylLWV",
+      "skillType": "hardSkill",
+      "type": "book",
+      "title": "Clean Code (Robert C. Martin)",
+      "desc": "",
+      "origin": "https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882",
+      "originDesc": "Amazon",
+      "link": "",
+      "linkDesc": "",
+      "date": "2021-02-28T00:00:00.000Z",
+      "endDate": ""
     }
   ]
 }
