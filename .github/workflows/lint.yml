@@ -16,7 +16,7 @@ jobs:
         java-version:
           - 8
     steps:
-      - name: Instal NodeJS v${{ matrix.node-version }}
+      - name: Install NodeJS v${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}

@@ -5,12 +5,10 @@
 ::-webkit-scrollbar-thumb {
   background-color: var(--color--primary);
   border-radius: 4px;
-  transition-duration: var(--transition-duration--theme);
 }
 
 ::-webkit-scrollbar-track {
   background-color: var(--color--secondary);
-  transition-duration: var(--transition-duration--theme);
 }
 
 :focus {
@@ -22,7 +20,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  transition: all var(--transition-duration--theme);
+  transition-duration: var(--transition-duration--theme);
   transition-property: border-color, background-color, filter;
 }
 

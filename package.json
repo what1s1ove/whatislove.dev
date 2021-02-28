@@ -6,7 +6,7 @@
   "scripts": {
     "lint:editorconfig": "editorconfig-checker",
     "lint:html": "node-w3c-validator -i build/*.html -f lint -evH",
-    "lint:css": "stylelint \"source/css/**/*.css\" --syntax css",
+    "lint:css": "stylelint source/css/**/*.css --syntax css",
     "lint:js": "eslint --ext .js source/js",
     "lint": "npm run lint:editorconfig && npm run lint:html && npm run lint:css && npm run lint:js",
     "start": "concurrently -k -p \"{name}: {time}\" -n \"CLIENT,SERVER\" -c \"green,blue\" \"npm:start:client\" \"npm:start:server\"",
