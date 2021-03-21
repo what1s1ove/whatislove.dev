@@ -4,11 +4,12 @@
     "node": "14.15.4"
   },
   "scripts": {
+    "lint:fs": "ls-lint",
     "lint:editorconfig": "editorconfig-checker",
     "lint:html": "node-w3c-validator -i build/*.html -f lint -evH",
     "lint:css": "stylelint source/css/**/*.css --syntax css",
     "lint:js": "eslint --ext .js source/js",
-    "lint": "npm run lint:editorconfig && npm run lint:html && npm run lint:css && npm run lint:js",
+    "lint": "npm run lint:fs && npm run lint:editorconfig && npm run lint:html && npm run lint:css && npm run lint:js",
     "start": "concurrently -k -p \"{name}: {time}\" -n \"CLIENT,SERVER\" -c \"green,blue\" \"npm:start:client\" \"npm:start:server\"",
     "start:client": "gulp --development",
     "start:server": "nodemon --exec babel-node -r module-alias/register source/js/server/server.js",
@@ -32,6 +33,7 @@
     "@babel/plugin-transform-runtime": "7.12.15",
     "@babel/preset-env": "7.12.13",
     "@koa/cors": "3.1.0",
+    "@ls-lint/ls-lint": "1.9.2",
     "@rollup/plugin-alias": "3.1.2",
     "@rollup/plugin-babel": "5.2.3",
     "@rollup/plugin-commonjs": "17.1.0",
