@@ -1,4 +1,3 @@
-export * from './get-control-value/get-control-value.helper'
 export * from './get-form-values/get-form-values.helper'
 export * from './add-select-options/add-select-options.helper'
 export * from './create-select-options/create-select-options.helper'
