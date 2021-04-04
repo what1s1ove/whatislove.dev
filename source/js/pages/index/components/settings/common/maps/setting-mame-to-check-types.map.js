@@ -7,7 +7,7 @@ const settingNameToCheckTypes = {
     unchecked: `light`,
   }),
   [SettingName.MOTION]: getCheckTypes({
-    checked: `noPreference`,
+    checked: `no-preference`,
     unchecked: `reduce`,
   }),
 }
