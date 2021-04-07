@@ -1104,6 +1104,19 @@
       "linkDesc": "",
       "date": "2021-02-28T00:00:00.000Z",
       "endDate": ""
+    },
+    {
+      "id": "fJBJIB1N5C",
+      "skillType": "softSkill",
+      "type": "book",
+      "title": "Evolve Your Brain: The Science of Changing Your Mind (Joe Dr. Dispenza)",
+      "desc": "",
+      "origin": "https://www.amazon.com/Evolve-Your-Brain-Science-Changing/dp/0757307655",
+      "originDesc": "Amazon",
+      "link": "",
+      "linkDesc": "",
+      "date": "2021-04-07T00:00:00.000Z",
+      "endDate": ""
     }
   ]
 }
