@@ -65,8 +65,7 @@
     "stylelint": "13.12.0",
     "stylelint-config-recommended": "4.0.0",
     "stylelint-order": "4.1.0",
-    "vinyl-paths": "3.0.1",
-    "yargs": "16.2.0"
+    "vinyl-paths": "3.0.1"
   },
   "browserslist": [
     "last 2 version",
