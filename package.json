@@ -7,7 +7,6 @@
     "~": "source/js"
   },
   "dependencies": {
-    "focus-visible": "5.2.0",
     "form-payload": "0.0.4"
   },
   "devDependencies": {
