@@ -65,9 +65,10 @@ const timelineSchema = Joi.object({
   [TimelineKey.DATE]: Joi.string().isoDate().required().messages({
     'any.required': TimelineValidationMessage.DATE_REQUIRE,
   }),
-  [TimelineKey.END_DATE]: Joi.string().allow(``).isoDate().required().messages({
-    'any.required': TimelineValidationMessage.END_DATE_REQUIRE,
-  }),
+  [TimelineKey.END_DATE]: Joi.string().allow(``).isoDate().required()
+    .messages({
+      'any.required': TimelineValidationMessage.END_DATE_REQUIRE,
+    }),
 })
 
 export { timelineSchema }
