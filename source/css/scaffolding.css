@@ -11,9 +11,14 @@
   background-color: var(--color--secondary);
 }
 
-:focus {
+:focus,
+:focus-visible {
   outline: 3px solid var(--outline-color);
   outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
 }
 
 *,
@@ -66,10 +71,6 @@ select {
   border: 0;
   clip: rect(0 0 0 0);
   clip-path: inset(100%);
-}
-
-.js-focus-visible :focus:not(.focus-visible) {
-  outline: none;
 }
 
 html[data-motion='reduce'],
