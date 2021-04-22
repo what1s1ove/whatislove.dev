@@ -4,7 +4,6 @@ env:
 
 extends:
   - airbnb-base
-  - prettier
 
 parserOptions:
   ecmaVersion: 2021
