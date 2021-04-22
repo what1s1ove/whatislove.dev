@@ -13,6 +13,8 @@ build: clean
 deploy:
 	rsync --archive --compress --delete build whatislove@whatislove.dev:/var/www/whatislove.dev/html/
 
+# Lint
+
 lint_fs:
 	npx ls-lint
 lint_editorconfig:
