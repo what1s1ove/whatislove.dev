@@ -1,8 +1,7 @@
 plugins:
-  - stylelint-prettier
   - stylelint-order
 extends:
-  - stylelint-prettier/recommended
+  - stylelint-config-recommended
 rules:
     rule-empty-line-before:
       - always
@@ -12,7 +11,6 @@ rules:
     length-zero-no-unit: true
     no-descending-specificity: true
     declaration-empty-line-before: never
-    prettier/prettier: true
     order/order:
     - custom-properties
     - declarations

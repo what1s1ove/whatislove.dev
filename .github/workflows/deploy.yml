@@ -1,22 +1,22 @@
 name: Deploy
 
+env:
+  NODE_VERSION: 14
+
 on:
   push:
     branches:
-      - master
+      - production
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version:
-          - 14
+
     steps:
-      - name: Install NodeJS v${{ matrix.node-version }}
+      - name: Install NodeJS v${{ env.NODE_VERSION }}
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Code Checkout
         uses: actions/checkout@v2
@@ -34,9 +34,9 @@ jobs:
 
       - name: Code Building
         run: |
-          npm run build
+          make build
 
       - name: Deploy
-        working-directory: ./build
+        working-directory: build
         run: |
           rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . whatislove@whatislove.dev:/var/www/whatislove.dev/html/
