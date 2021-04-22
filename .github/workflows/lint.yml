@@ -1,30 +1,29 @@
 name: Lint
 
+env:
+  NODE_VERSION: 14
+  JAVA_VERSION: 8
+
 on:
   pull_request:
     branches:
       - development
+      - production
 
 jobs:
   linting:
-    name: Linting
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version:
-          - 14
-        java-version:
-          - 8
+
     steps:
-      - name: Install NodeJS v${{ matrix.node-version }}
+      - name: Install NodeJS v${{ env.NODE_VERSION }}
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: ${{ env.NODE_VERSION }}
 
-      - name: Install Java v${{ matrix.java-version }}
+      - name: Install Java v${{ env.JAVA_VERSION }}
         uses: actions/setup-java@v1
         with:
-          java-version: ${{ matrix.java-version }}
+          java-version: ${{ env.JAVA_VERSION }}
           architecture: x64
 
       - name: Code Checkout
@@ -36,8 +35,8 @@ jobs:
 
       - name: Code Building
         run: |
-          npm run build
+          make build
 
       - name: Code Linting
         run: |
-          npm run lint
+          make lint
