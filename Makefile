@@ -5,7 +5,7 @@ clean:
 start:
 	npx concurrently -k -p "{name}: {time}" -n "CLIENT,SERVER" -c "green,blue" "make start_client" "make start_server"
 start_client:
-	npx gulp --development
+	NODE_ENV=development npx gulp
 start_server:
 	npx nodemon --exec babel-node -r module-alias/register source/js/server/server.js
 build: clean
