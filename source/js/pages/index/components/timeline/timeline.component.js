@@ -1,7 +1,7 @@
-import { Loader } from '~/components'
-import { checkIsBeforeElement } from '~/helpers'
-import { TimelineForm, TimelineList } from './components'
-import { getSuitTimelines } from './helpers'
+import { Loader } from '~/components/components.js'
+import { checkIsBeforeElement } from '~/helpers/helpers.js'
+import { TimelineForm, TimelineList } from './components/components.js'
+import { getSuitTimelines } from './helpers/helpers.js'
 
 class Timeline {
   constructor({ timelineApi }) {

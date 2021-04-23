@@ -1,9 +1,9 @@
-import { setAsyncTimeout } from '~/helpers'
+import { setAsyncTimeout } from '~/helpers/helpers.js'
 import {
   TOAST_DEFAULT_DURATION,
   CLEAN_MESSAGE_DELAY,
   TOAST_SHOW_CLASS_NAME,
-} from './common/constants'
+} from './common/constants.js'
 
 class Toast {
   constructor() {

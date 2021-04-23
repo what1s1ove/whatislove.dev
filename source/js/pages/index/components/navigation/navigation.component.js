@@ -1,6 +1,6 @@
-import { checkIsOneOf, subscribeFocusTrap } from '~/helpers'
-import { KeyboardKey } from '~/common/enums'
-import { HEADER_ACTIVE_CLASS } from './common/constants'
+import { checkIsOneOf, subscribeFocusTrap } from '~/helpers/helpers.js'
+import { KeyboardKey } from '~/common/enums/enums.js'
+import { HEADER_ACTIVE_CLASS } from './common/constants.js'
 
 class Navigation {
   constructor() {

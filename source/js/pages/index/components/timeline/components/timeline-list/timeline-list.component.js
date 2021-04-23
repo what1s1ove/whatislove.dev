@@ -1,4 +1,4 @@
-import { getTimelineTemplates, getIconPath } from './helpers'
+import { getTimelineTemplates, getIconPath } from './helpers/helpers.js'
 
 class TimelineList {
   constructor() {

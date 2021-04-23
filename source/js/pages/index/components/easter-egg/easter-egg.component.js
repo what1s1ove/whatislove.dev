@@ -1,11 +1,11 @@
-import { debounce } from '~/helpers'
+import { debounce } from '~/helpers/helpers.js'
 import {
   NotificationMessage,
   SettingBtnLabel,
   SettingName,
-} from '~/common/enums'
-import { getPlayerElement, getNodeRandomCoords } from './helpers'
-import { SOUND_SRC, RESIZE_DELAY, NOTIFICATION_DELAY } from './common/constants'
+} from '~/common/enums/enums.js'
+import { getPlayerElement, getNodeRandomCoords } from './helpers/helpers.js'
+import { SOUND_SRC, RESIZE_DELAY, NOTIFICATION_DELAY } from './common/constants.js'
 
 class EasterEgg {
   constructor({ onClick, onNotificationAdd }) {
