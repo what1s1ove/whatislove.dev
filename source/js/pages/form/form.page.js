@@ -1,5 +1,6 @@
 import { fillSelectOptions, getFormValues } from '~/helpers'
 import { TimelineType, SkillType } from '~/common/enums'
+import { getTransformedTimeline } from './helpers'
 
 const skillTypeOptions = Object.values(SkillType)
 const TimelineTypeOptions = Object.values(TimelineType)
@@ -41,7 +42,7 @@ class FormPage {
 
     const formValues = getFormValues(this._formNode)
 
-    await this._timelineApi.saveTimeline(formValues)
+    await this._timelineApi.saveTimeline(getTransformedTimeline(formValues))
 
     this._formNode.reset()
   }
