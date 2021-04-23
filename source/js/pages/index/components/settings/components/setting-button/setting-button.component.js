@@ -1,5 +1,5 @@
-import { checkIsChecked } from './helpers'
-import { CHECKED_ATTR } from './common/constants'
+import { checkIsChecked } from './helpers/helpers.js'
+import { CHECKED_ATTR } from './common/constants.js'
 
 class SettingButton {
   constructor({ name, isDefaultChecked, onClick }) {

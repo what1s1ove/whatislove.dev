@@ -1,5 +1,5 @@
-import { getFormattedDate, getStringWitCheck } from '~/helpers'
-import { getReplacedIconPath } from '../get-replaced-icon-path/get-replaced-icon-path.helper'
+import { getFormattedDate, getStringWitCheck } from '~/helpers/helpers.js'
+import { getReplacedIconPath } from '../get-replaced-icon-path/get-replaced-icon-path.helper.js'
 
 const getTimelineTemplate = (timeline, iconPath) => {
   const {

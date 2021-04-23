@@ -1,4 +1,4 @@
-import { createElement } from '~/helpers'
+import { createElement } from '~/helpers/helpers.js'
 
 const getSettingItemElement = ({ name, label }) => {
   return createElement(`

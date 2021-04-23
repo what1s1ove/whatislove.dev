@@ -1,5 +1,5 @@
-import { Toast } from '~/components'
-import { Settings, Navigation, Timeline, EasterEgg } from './components'
+import { Toast } from '~/components/components.js'
+import { Settings, Navigation, Timeline, EasterEgg } from './components/components.js'
 
 class IndexPage {
   constructor({ timelineApi, storage }) {

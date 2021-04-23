@@ -1,6 +1,6 @@
-import { fillSelectOptions, getFormValues } from '~/helpers'
-import { TimelineType, SkillType } from '~/common/enums'
-import { getTransformedTimeline } from './helpers'
+import { fillSelectOptions, getFormValues } from '~/helpers/helpers.js'
+import { TimelineType, SkillType } from '~/common/enums/enums.js'
+import { getTransformedTimeline } from './helpers/helpers.js'
 
 const skillTypeOptions = Object.values(SkillType)
 const TimelineTypeOptions = Object.values(TimelineType)

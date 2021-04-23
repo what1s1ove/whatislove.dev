@@ -1,4 +1,4 @@
-import { getRandomNumber } from '~/helpers'
+import { getRandomNumber } from '~/helpers/helpers.js'
 
 const MIN_COORD_NUMBER = 0
 

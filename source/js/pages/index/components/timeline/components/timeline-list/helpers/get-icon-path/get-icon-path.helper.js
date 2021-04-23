@@ -1,4 +1,4 @@
-import { ICON_HREF_ATTR } from '../../common/constants'
+import { ICON_HREF_ATTR } from '../../common/constants.js'
 
 const getIconPath = () => {
   return document
