@@ -1,4 +1,4 @@
-import { getLoaderElement } from './helpers'
+import { getLoaderElement } from './helpers/helpers.js'
 
 class Loader {
   constructor({ containerNode }) {
