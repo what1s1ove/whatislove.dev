@@ -32,7 +32,9 @@ class Http {
 
   static checkStatus(response) {
     if (!response.ok) {
-      throw new HttpError()
+      throw new HttpError({
+        message: response.statusText,
+      })
     }
 
     return response
