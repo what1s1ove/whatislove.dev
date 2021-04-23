@@ -7,7 +7,7 @@ start:
 start_client:
 	NODE_ENV=development npx gulp
 start_server:
-	npx nodemon --exec babel-node -r module-alias/register source/js/server/server.js
+	npx json-server db/database.json
 build: clean
 	npx gulp
 deploy:
