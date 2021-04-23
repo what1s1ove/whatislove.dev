@@ -1,7 +1,7 @@
 import gulp from 'gulp'
 import htmlmin from 'gulp-htmlmin'
-import { includeFile, joinPaths } from '../../helpers/helpers.mjs'
-import { Config } from '../../config.mjs'
+import { includeFile, joinPaths } from '../../helpers/helpers.js'
+import { Config } from '../../config.js'
 
 const html = () => {
   return gulp

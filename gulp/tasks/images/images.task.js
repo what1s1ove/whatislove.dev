@@ -3,8 +3,8 @@ import imagemin from 'gulp-imagemin'
 import svgo from 'imagemin-svgo'
 import pngquant from 'imagemin-pngquant'
 import jpegtran from 'imagemin-jpegtran'
-import { joinPaths } from '../../helpers/helpers.mjs'
-import { Config } from '../../config.mjs'
+import { joinPaths } from '../../helpers/helpers.js'
+import { Config } from '../../config.js'
 
 const images = () => {
   return gulp

@@ -1,5 +1,5 @@
 import gulp from 'gulp'
-import { Config } from './gulp/config.mjs'
+import { Config } from './gulp/config.js'
 import {
   html,
   css,
@@ -13,7 +13,7 @@ import {
   server,
   cache,
   cleanup,
-} from './gulp/tasks/tasks.mjs'
+} from './gulp/tasks/tasks.js'
 
 const assembly = gulp.series(
   clean,

@@ -1,6 +1,6 @@
 import gulp from 'gulp'
-import { joinPaths } from '../../helpers/helpers.mjs'
-import { Config } from '../../config.mjs'
+import { joinPaths } from '../../helpers/helpers.js'
+import { Config } from '../../config.js'
 
 const copy = () => {
   return gulp

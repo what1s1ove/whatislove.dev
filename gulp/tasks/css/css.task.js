@@ -9,8 +9,8 @@ import postcssimport from 'postcss-import'
 import autoprefixer from 'autoprefixer'
 import mqpacker from 'css-mqpacker'
 import csso from 'gulp-csso'
-import { joinPaths } from '../../helpers/helpers.mjs'
-import { Config } from '../../config.mjs'
+import { joinPaths } from '../../helpers/helpers.js'
+import { Config } from '../../config.js'
 
 const css = () => {
   return gulp

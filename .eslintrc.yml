@@ -93,7 +93,7 @@ rules:
 
 overrides:
   - files:
-    - gulpfile.mjs
+    - gulpfile.js
     - gulp/**/*
     rules:
       import/extensions:

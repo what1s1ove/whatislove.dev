@@ -5,8 +5,8 @@ import alias from '@rollup/plugin-alias'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import { terser } from 'rollup-plugin-terser'
-import { joinPaths, getTruthyItems } from '../../helpers/helpers.mjs'
-import { Config } from '../../config.mjs'
+import { joinPaths, getTruthyItems } from '../../helpers/helpers.js'
+import { Config } from '../../config.js'
 
 const jsFiles = getTruthyItems(Config.FILE.JS.MAIN, Config.isDevelopment && Config.FILE.JS.FORM)
 

@@ -1,8 +1,8 @@
 import gulp from 'gulp'
 import rename from 'gulp-rename'
 import svgstore from 'gulp-svgstore'
-import { joinPaths } from '../../helpers/helpers.mjs'
-import { Config } from '../../config.mjs'
+import { joinPaths } from '../../helpers/helpers.js'
+import { Config } from '../../config.js'
 
 const sprite = () => {
   return gulp

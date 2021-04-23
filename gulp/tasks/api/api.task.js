@@ -5,8 +5,8 @@ import {
   makeDir,
   writeFile,
   readFile,
-} from '../../helpers/helpers.mjs'
-import { Config } from '../../config.mjs'
+} from '../../helpers/helpers.js'
+import { Config } from '../../config.js'
 
 const api = async () => {
   const databases = await readDir(Config.FOLDER.DB)

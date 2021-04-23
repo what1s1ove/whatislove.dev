@@ -1,11 +1,11 @@
 import gulp from 'gulp'
 import sync from 'browser-sync'
-import { html } from '../html/html.task.mjs'
-import { css } from '../css/css.task.mjs'
-import { js } from '../js/js.task.mjs'
-import { api } from '../api/api.task.mjs'
-import { joinPaths } from '../../helpers/helpers.mjs'
-import { Config } from '../../config.mjs'
+import { html } from '../html/html.task.js'
+import { css } from '../css/css.task.js'
+import { js } from '../js/js.task.js'
+import { api } from '../api/api.task.js'
+import { joinPaths } from '../../helpers/helpers.js'
+import { Config } from '../../config.js'
 
 const refresh = (done) => {
   sync.reload()

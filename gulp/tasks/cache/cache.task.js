@@ -3,8 +3,8 @@ import gulp from 'gulp'
 import rev from 'gulp-rev'
 import paths from 'vinyl-paths'
 import rewrite from 'gulp-rev-rewrite'
-import { joinPaths, readFile } from '../../helpers/helpers.mjs'
-import { Config } from '../../config.mjs'
+import { joinPaths, readFile } from '../../helpers/helpers.js'
+import { Config } from '../../config.js'
 
 const hashCache = () => {
   return gulp
