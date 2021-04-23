@@ -1,6 +1,6 @@
-import { HttpError } from '~/exceptions'
-import { ContentType, HttpHeader, HttpMethod } from '~/common/enums'
-import { checkIsOneOf } from '~/helpers'
+import { checkIsOneOf } from '~/helpers/helpers.js'
+import { HttpError } from '~/exceptions/exceptions.js'
+import { ContentType, HttpHeader, HttpMethod } from '~/common/enums/enums.js'
 
 class Http {
   load(url, options = {}) {

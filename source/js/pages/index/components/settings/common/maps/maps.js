@@ -1,1 +1,1 @@
-export * from './setting-mame-to-check-types.map'
+export * from './setting-name-to-check-types.map.js'
