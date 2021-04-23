@@ -1,5 +1,0 @@
-const DEFAULT_DB_SEPARATOR = `/`
-
-const DATA_BASE_PATH = `db/`
-
-export { DEFAULT_DB_SEPARATOR, DATA_BASE_PATH }
