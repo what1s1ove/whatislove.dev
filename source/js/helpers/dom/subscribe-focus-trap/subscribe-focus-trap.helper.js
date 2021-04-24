@@ -1,4 +1,4 @@
-import { KeyboardKey } from '~/common/enums'
+import { KeyboardKey } from '~/common/enums/enums.js'
 
 const subscribeFocusTrap = (...elements) => {
   const firstNode = elements[0]

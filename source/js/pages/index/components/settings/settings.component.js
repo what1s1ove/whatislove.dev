@@ -1,10 +1,10 @@
-import { checkIsMediaQueryMatch, getCustomAttrName } from '~/helpers'
-import { numberToBoolean } from '~/common/maps'
-import { SettingName } from '~/common/enums'
-import { getSettingItemElement } from './helpers'
-import { SettingButton } from './components'
-import { MediaQueriesType } from './common/enums'
-import { settingNameToCheckTypes } from './common/maps'
+import { checkIsMediaQueryMatch, getCustomAttrName } from '~/helpers/helpers.js'
+import { numberToBoolean } from '~/common/maps/maps.js'
+import { SettingName } from '~/common/enums/enums.js'
+import { getSettingItemElement } from './helpers/helpers.js'
+import { SettingButton } from './components/components.js'
+import { MediaQueriesType } from './common/enums/enums.js'
+import { settingNameToCheckTypes } from './common/maps/maps.js'
 
 class Settings {
   constructor({ storage }) {
@@ -44,7 +44,7 @@ class Settings {
 
     this._settingListNode.prepend(newSettingItemNode)
 
-    new SettingButton({
+    return new SettingButton({
       name,
       isDefaultChecked,
       onClick,

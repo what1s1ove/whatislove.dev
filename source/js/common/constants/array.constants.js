@@ -1,3 +1,0 @@
-const ARRAY_IDX_NOT_FOUND = -1
-
-export { ARRAY_IDX_NOT_FOUND }

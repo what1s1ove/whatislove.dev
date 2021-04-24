@@ -1,4 +1,4 @@
-import { createElement } from '~/helpers'
+import { createElement } from '~/helpers/helpers.js'
 
 const getPlayerElement = (src) => {
   return createElement(`

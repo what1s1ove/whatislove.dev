@@ -3,7 +3,7 @@ import {
   TimelineApiPath,
   ApiPath,
   ContentType,
-} from '~/common/enums'
+} from '~/common/enums/enums.js'
 
 class TimelineApi {
   constructor({ http, baseUrl, filesApiPath }) {

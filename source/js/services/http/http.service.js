@@ -1,6 +1,6 @@
-import { HttpError } from '~/exceptions'
-import { ContentType, HttpHeader, HttpMethod } from '~/common/enums'
-import { checkIsOneOf } from '~/helpers'
+import { checkIsOneOf } from '~/helpers/helpers.js'
+import { HttpError } from '~/exceptions/exceptions.js'
+import { ContentType, HttpHeader, HttpMethod } from '~/common/enums/enums.js'
 
 class Http {
   load(url, options = {}) {
@@ -32,7 +32,9 @@ class Http {
 
   static checkStatus(response) {
     if (!response.ok) {
-      throw new HttpError()
+      throw new HttpError({
+        message: response.statusText,
+      })
     }
 
     return response

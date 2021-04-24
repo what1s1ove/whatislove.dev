@@ -40,3 +40,14 @@ jobs:
         working-directory: build
         run: |
           rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . whatislove@whatislove.dev:/var/www/whatislove.dev/html/
+
+      - name: Send notification
+        if: always()
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
+          message: |
+            *Repository* — ${{ github.repository }}
+            *Deployment Status* — ${{ job.status }}

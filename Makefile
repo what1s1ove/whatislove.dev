@@ -5,13 +5,15 @@ clean:
 start:
 	npx concurrently -k -p "{name}: {time}" -n "CLIENT,SERVER" -c "green,blue" "make start_client" "make start_server"
 start_client:
-	npx gulp --development
+	NODE_ENV=development npx gulp
 start_server:
-	npx nodemon --exec babel-node -r module-alias/register source/js/server/server.js
+	npx json-server db/database.json
 build: clean
 	npx gulp
 deploy:
 	rsync --archive --compress --delete build whatislove@whatislove.dev:/var/www/whatislove.dev/html/
+
+# Lint
 
 lint_fs:
 	npx ls-lint
