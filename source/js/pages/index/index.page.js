@@ -14,7 +14,7 @@ class IndexPage {
       timelineApi,
     })
     this._easterEggComponent = new EasterEgg({
-      onClick: this._handleSettingBtnAppend,
+      onSettingBtnAppend: this._handleSettingBtnAppend,
       onNotificationAdd: this._handleNotificationAdd,
     })
     this._toastComponent = new Toast()
@@ -29,7 +29,7 @@ class IndexPage {
   }
 
   _handleSettingBtnAppend(settings) {
-    this._settingsComponent.appendNewBtn(settings)
+    return this._settingsComponent.appendNewBtn(settings)
   }
 
   _handleNotificationAdd(message) {
