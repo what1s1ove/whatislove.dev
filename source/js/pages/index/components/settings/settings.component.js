@@ -44,7 +44,7 @@ class Settings {
 
     this._settingListNode.prepend(newSettingItemNode)
 
-    new SettingButton({
+    return new SettingButton({
       name,
       isDefaultChecked,
       onClick,

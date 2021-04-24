@@ -27,6 +27,8 @@ class SettingButton {
       name: this._name,
       isChecked: this._isDefaultChecked,
     })
+
+    return this._btnNode
   }
 
   _initListeners() {

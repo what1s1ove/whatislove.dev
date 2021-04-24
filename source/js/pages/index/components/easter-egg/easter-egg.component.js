@@ -5,12 +5,16 @@ import {
   SettingName,
 } from '~/common/enums/enums.js'
 import { getPlayerElement, getNodeRandomCoords } from './helpers/helpers.js'
-import { SOUND_SRC, RESIZE_DELAY, NOTIFICATION_DELAY } from './common/constants.js'
+import {
+  SOUND_SRC,
+  RESIZE_DELAY,
+  NOTIFICATION_DELAY,
+} from './common/constants.js'
 
 class EasterEgg {
-  constructor({ onClick, onNotificationAdd }) {
-    this._onClick = onClick
-    this._handleNotificationAdd = onNotificationAdd
+  constructor({ onSettingBtnAppend, onNotificationAdd }) {
+    this._onSettingBtnAppend = onSettingBtnAppend
+    this._onNotificationAdd = onNotificationAdd
 
     this._easterEggContainer = null
     this._easterEggBtn = null
@@ -57,16 +61,18 @@ class EasterEgg {
   }
 
   _handleEasterEggClick() {
-    this._handleNotificationAdd({
+    this._onNotificationAdd({
       message: NotificationMessage.LOVE,
       duration: NOTIFICATION_DELAY,
       cb: () => {
-        this._onClick({
+        const btn = this._onSettingBtnAppend({
           name: SettingName.WHATISLOVE,
           label: SettingBtnLabel.SWITCH_LOVE,
           isDefaultChecked: true,
           onClick: this._handleSettingBtnClick,
         })
+
+        btn.focus()
       },
     })
 
