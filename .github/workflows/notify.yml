@@ -2,6 +2,9 @@ name: Notify
 
 on:
   pull_request:
+    types:
+      - opened
+      - reopened
 
 jobs:
   notify:
