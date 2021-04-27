@@ -11,9 +11,9 @@ on:
       - production
 
 jobs:
-  linting:
+  lint:
+    name: Lint
     runs-on: ubuntu-latest
-
     steps:
       - name: Install NodeJS v${{ env.NODE_VERSION }}
         uses: actions/setup-node@v2
