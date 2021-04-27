@@ -51,8 +51,6 @@ rules:
   no-confusing-arrow:
     - error
     - allowParens: true
-  no-process-exit:
-    - error
   require-atomic-updates:
     - error
   no-console:
