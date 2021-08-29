@@ -1,2 +1,2 @@
-export * from './timeline-list/timeline-list.component'
-export * from './timeline-form/timeline-form.component'
+export * from './timeline-list/timeline-list.component.js'
+export * from './timeline-form/timeline-form.component.js'

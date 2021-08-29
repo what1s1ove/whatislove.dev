@@ -1,1 +1,1 @@
-export * from './get-transformed-timeline/get-transformed-timeline.helper'
+export * from './get-transformed-timeline/get-transformed-timeline.helper.js'
