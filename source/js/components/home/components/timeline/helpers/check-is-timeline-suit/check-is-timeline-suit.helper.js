@@ -1,7 +1,8 @@
 const checkIsTimelineSuit = (timelineItem, filterValues) => {
-  return (
-    filterValues.skillTypes[timelineItem.skillType] && filterValues.types[timelineItem.type]
-  )
+  const hasSkillType = filterValues.skillTypes[timelineItem.skillType]
+  const hasType = filterValues.types[timelineItem.type]
+
+  return hasSkillType && hasType
 }
 
 export { checkIsTimelineSuit }

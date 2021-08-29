@@ -47,6 +47,7 @@
     "node-w3c-validator": "2.0.1",
     "postcss": "8.3.6",
     "postcss-import": "14.0.2",
+    "prettier": "2.3.2",
     "rollup": "2.56.3",
     "rollup-plugin-terser": "7.0.2",
     "simple-git-hooks": "2.6.1",

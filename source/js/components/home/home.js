@@ -1,5 +1,10 @@
 import { Toast } from '~/components/common/common.js'
-import { Settings, Navigation, Timeline, EasterEgg } from './components/components.js'
+import {
+  Settings,
+  Navigation,
+  Timeline,
+  EasterEgg,
+} from './components/components.js'
 
 class Home {
   constructor({ timelineApi, storage }) {
