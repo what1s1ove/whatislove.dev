@@ -1,1 +1,1 @@
-export * from './setting-button/setting-button.component'
+export * from './setting-button/setting-button.component.js'

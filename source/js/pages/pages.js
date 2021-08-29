@@ -1,2 +1,2 @@
-export * from './index/index.page'
-export * from './form/form.page'
+export * from './index/index.page.js'
+export * from './form/form.page.js'
