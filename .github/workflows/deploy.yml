@@ -21,13 +21,6 @@ jobs:
       - name: Code Checkout
         uses: actions/checkout@v2
 
-      - name: Setup Key
-        run: |
-          set -eu
-          mkdir "$HOME/.ssh"
-          echo "${{ secrets.KEY }}" > "$HOME/.ssh/key"
-          chmod 600 "$HOME/.ssh/key"
-
       - name: Install Dependencies
         run: |
           npm ci
@@ -37,9 +30,10 @@ jobs:
           make build
 
       - name: Deploy
-        working-directory: build
-        run: |
-          rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . whatislove@whatislove.dev:/var/www/whatislove.dev/html/
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          branch: gh-pages
+          folder: build
 
       - name: Send notification
         if: always()
