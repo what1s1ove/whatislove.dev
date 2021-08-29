@@ -3,7 +3,11 @@ env:
   browser: true
 
 extends:
-  - airbnb-base
+  - eslint:recommended
+  - plugin:import/recommended
+
+plugins:
+  - import
 
 parserOptions:
   ecmaVersion: 2021
@@ -69,14 +73,6 @@ rules:
   no-multiple-empty-lines:
     - error
     - max: 1
-  arrow-body-style:
-    - off
-  default-case:
-    - off
-  no-param-reassign:
-    - off
-  class-methods-use-this:
-    - off
   import/exports-last:
     - error
   import/group-exports:
@@ -88,10 +84,6 @@ rules:
   import/extensions:
     - error
     - ignorePackages
-  import/prefer-default-export:
-    - off
-  import/no-extraneous-dependencies:
-    - off
 
 overrides:
   - files:
