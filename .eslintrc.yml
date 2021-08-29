@@ -12,7 +12,8 @@ parserOptions:
 settings:
   import/resolver:
     alias:
-      extensions: ['.js']
+      extensions:
+        - .js
       map:
         - ['~', './source/js']
 
