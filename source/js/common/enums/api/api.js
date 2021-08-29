@@ -1,3 +1,3 @@
-export * from './api-path.enum.js'
-export * from './timeline-api-path.enum.js'
-export * from './api-error-message.enum.js'
+export { ApiErrorMessage } from './api-error-message.enum.js'
+export { ApiPath } from './api-path.enum.js'
+export { TimelineApiPath } from './timeline-api-path.enum.js'

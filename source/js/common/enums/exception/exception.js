@@ -1,1 +1,1 @@
-export * from './custom-exception-name.enum.js'
+export { CustomExceptionName } from './custom-exception-name.enum.js'

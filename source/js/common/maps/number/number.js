@@ -1,1 +1,1 @@
-export * from './boolean-to-number.map.js'
+export { booleanToNumber } from './boolean-to-number.map.js'
