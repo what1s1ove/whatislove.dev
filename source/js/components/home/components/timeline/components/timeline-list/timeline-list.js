@@ -12,7 +12,10 @@ class TimelineList {
   }
 
   renderTimelines(timelines) {
-    this._listNode.innerHTML = getTimelineTemplates(timelines, this._timelineIconPath)
+    this._listNode.innerHTML = getTimelineTemplates(
+      timelines,
+      this._timelineIconPath,
+    )
   }
 }
 

@@ -20,8 +20,12 @@ class Navigation {
 
   init() {
     this._headerNode = document.querySelector(`.header`)
-    this._headerOverlayNode = this._headerNode.querySelector(`.header__navigation-wrapper`)
-    this._headerBtnNode = this._headerNode.querySelector(`.header__toggle-button`)
+    this._headerOverlayNode = this._headerNode.querySelector(
+      `.header__navigation-wrapper`,
+    )
+    this._headerBtnNode = this._headerNode.querySelector(
+      `.header__toggle-button`,
+    )
 
     this._initListeners()
   }
@@ -50,16 +54,19 @@ class Navigation {
   }
 
   _removeOverlayListeners() {
-    this._headerOverlayNode.removeEventListener(`click`, this._handleOverlayClick)
+    this._headerOverlayNode.removeEventListener(
+      `click`,
+      this._handleOverlayClick,
+    )
     window.removeEventListener(`keydown`, this._handleEscapePress)
   }
 
   _handleNavBtnClick(evt) {
     evt.stopPropagation()
 
-    const hasActiveClass = this._headerNode.classList.contains(HEADER_ACTIVE_CLASS)
+    const hasClass = this._headerNode.classList.contains(HEADER_ACTIVE_CLASS)
 
-    this._toggleOverlay(!hasActiveClass)
+    this._toggleOverlay(!hasClass)
   }
 
   _handleEscapePress({ key }) {
