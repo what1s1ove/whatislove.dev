@@ -1,4 +1,4 @@
-name: Lint
+name: CI
 
 env:
   NODE_VERSION: 14
@@ -11,8 +11,8 @@ on:
       - production
 
 jobs:
-  lint:
-    name: Lint
+  ci:
+    name: CI
     runs-on: ubuntu-latest
     steps:
       - name: Install NodeJS v${{ env.NODE_VERSION }}
