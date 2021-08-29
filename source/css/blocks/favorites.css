@@ -41,8 +41,9 @@ html[data-theme='light'] .favorites__wrapper::before {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 20px;
   margin: 0;
-  padding: 35px 15px;
+  padding: 45px 15px;
   list-style: none;
 }
 
@@ -54,7 +55,6 @@ html[data-theme='light'] .favorites__wrapper::before {
   align-items: center;
   width: 240px;
   height: 240px;
-  margin: 10px;
   background-color: var(--color--secondary);
   border: 2px solid var(--color--primary);
   border-radius: 50%;
@@ -106,13 +106,13 @@ html[data-theme='light'] .favorites__wrapper::before {
 
 @media (min-width: 550px) {
   .favorites__list {
-    padding: 40px 15px;
+    padding: 50px 15px;
   }
 }
 
 @media (min-width: 810px) {
   .favorites__list {
-    padding: 45px 15px;
+    padding: 55px 15px;
   }
 }
 

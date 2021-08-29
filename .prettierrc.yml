@@ -3,11 +3,11 @@ tabWidth: 2
 useTabs: false
 semi: false
 singleQuote: true
-quoteProps: as-needed
+quoteProps: preserve
 trailingComma: all
 bracketSpacing: true
 arrowParens: always
 overrides:
-  - files: "*.html"
+  - files: '*.html'
     options:
       printWidth: 9999
