@@ -1,8 +1,8 @@
-import { FormPage } from '~/pages/pages.js'
+import { Form } from '~/components/form/form.js'
 import { timelineApi } from '~/services/services.js'
 
-const formPage = new FormPage({
+const form = new Form({
   timelineApi,
 })
 
-formPage.init()
+form.init()

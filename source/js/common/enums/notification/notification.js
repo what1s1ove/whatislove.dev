@@ -1,1 +1,1 @@
-export * from './notification-message.enum.js'
+export { NotificationMessage } from './notification-message.enum.js'

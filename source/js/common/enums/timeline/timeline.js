@@ -1,2 +1,2 @@
-export * from './timeline-type.enum.js'
-export * from './skill-type.enum.js'
+export { SkillType } from './skill-type.enum.js'
+export { TimelineType } from './timeline-type.enum.js'

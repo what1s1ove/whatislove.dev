@@ -1,1 +1,1 @@
-export * from './app-config.enum.js'
+export { AppConfig } from './app-config.enum.js'

@@ -1,2 +1,2 @@
-export * from './setting-name.enum.js'
-export * from './setting-btn-label.enum.js'
+export { SettingBtnLabel } from './setting-btn-label.enum.js'
+export { SettingName } from './setting-name.enum.js'

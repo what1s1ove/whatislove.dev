@@ -1,1 +1,1 @@
-export * from './include-file/include-file.helper.js'
+export { includeFile } from './include-file/include-file.helper.js'

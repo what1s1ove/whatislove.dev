@@ -1,9 +1,9 @@
-import { IndexPage } from '~/pages/pages.js'
+import { Home } from '~/components/home/home.js'
 import { timelineApi, storage } from '~/services/services.js'
 
-const indexPage = new IndexPage({
+const home = new Home({
   timelineApi,
   storage,
 })
 
-indexPage.init()
+home.init()

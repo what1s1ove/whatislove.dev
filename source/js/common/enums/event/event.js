@@ -1,1 +1,1 @@
-export * from './keyboard-key.enum.js'
+export { KeyboardKey } from './keyboard-key.enum.js'
