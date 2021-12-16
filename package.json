@@ -2,8 +2,8 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": "14.x.x",
-    "npm": "6.x.x"
+    "node": ">=16 <17",
+    "npm": ">=8 <9"
   },
   "dependencies": {
     "form-payload": "0.0.7"
