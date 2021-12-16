@@ -1,7 +1,7 @@
 name: CI
 
 env:
-  NODE_VERSION: 14
+  NODE_VERSION: 16
   JAVA_VERSION: 8
 
 on:
@@ -31,7 +31,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          npm ci
+          npm install
 
       - name: Code Building
         run: |
