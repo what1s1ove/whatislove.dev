@@ -106,11 +106,32 @@
 }
 
 .timeline__icon {
-  fill: var(--color--secondary);
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 28px 28px;
+  filter: var(--invert-icon--secondary);
+}
+
+.timeline__icon--book {
+  background-image: url('../img/timeline-book.bg.svg');
+}
+
+.timeline__icon--course {
+  background-image: url('../img/timeline-course.bg.svg');
+}
+
+.timeline__icon--meetup {
+  background-image: url('../img/timeline-meetup.bg.svg');
+}
+
+.timeline__icon--work {
+  background-image: url('../img/timeline-work.bg.svg');
 }
 
 .timeline__item:hover .timeline__icon {
-  fill: #ffffff;
+  filter: invert(1);
 }
 
 .timeline__desc-empty {
@@ -152,13 +173,17 @@
 
 .timeline__resume-icon {
   display: block;
+  width: 40px;
+  height: 40px;
   margin: 10px auto;
+  background-image: url('../img/download.bg.svg');
+  background-size: cover;
   visibility: hidden;
   transform: translate3d(0, -4em, 0) scale(0);
   opacity: 0;
+  filter: var(--invert-icon--secondary);
   transition: transform 0.4s cubic-bezier(0.42, -0.2, 0.01, 1.22),
     opacity 0.4s linear;
-  fill: var(--color--secondary);
 }
 
 .timeline__resume-link:hover .timeline__resume-icon,

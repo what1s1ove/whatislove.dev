@@ -42,6 +42,14 @@
   background-size: 13px;
 }
 
+.settings__button--motion {
+  background-image: url('../img/animation-allow.bg.svg');
+}
+
+.settings__button--motion[aria-checked='true'] {
+  background-image: url('../img/animation-notallow.bg.svg');
+}
+
 .settings__button--whatislove {
   background-image: url('../img/heart-broken.bg.svg');
   animation-name: append;
@@ -68,29 +76,4 @@
 
 .settings__button[aria-checked='true']::before {
   transform: translate(25px, -50%);
-}
-
-.settings__icon {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  fill: var(--color--primary);
-}
-
-.settings__icon--checked {
-  left: 7px;
-  display: none;
-}
-
-.settings__button--motion[aria-checked='true'] .settings__icon--checked {
-  display: block;
-}
-
-.settings__icon--unchecked {
-  right: 7px;
-}
-
-.settings__button--motion[aria-checked='true'] .settings__icon--unchecked {
-  display: none;
 }
