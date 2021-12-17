@@ -1,0 +1,9 @@
+:focus,
+:focus-visible {
+  outline: 3px solid var(--outline-color);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: 0;
+}
