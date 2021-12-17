@@ -10,8 +10,29 @@
   margin: 0 0 15px;
 }
 
-.footer__routine-wrapper svg {
-  fill: var(--color--primary);
+.footer__routine-wrapper {
+  position: relative;
+  width: 210px;
+  height: 47px;
+}
+
+.footer__routine-wrapper::before {
+  position: absolute;
+  top: 4px;
+  right: 30px;
+  z-index: var(--z-index--level-one);
+  content: '';
+  width: 42px;
+  height: 32px;
+  background-image: url('../img/routine-rose.bg.svg');
+}
+
+.footer__routine {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/routine.bg.svg');
+  filter: var(--invert-icon--primary);
 }
 
 @media print {

@@ -1,7 +1,6 @@
 import { getFormattedDate, getStringWitCheck } from '~/helpers/helpers.js'
-import { getReplacedIconPath } from '../get-replaced-icon-path/get-replaced-icon-path.helper.js'
 
-const getTimelineTemplate = (timeline, iconPath) => {
+const getTimelineTemplate = (timeline) => {
   const {
     type,
     title,
@@ -14,7 +13,6 @@ const getTimelineTemplate = (timeline, iconPath) => {
     endDate,
   } = timeline
 
-  const replacedIconPath = getReplacedIconPath(iconPath, type)
   const titleStrNode = getStringWitCheck(
     title,
     `<h3 class="timeline__item-title">${title}</h3>`,
@@ -54,10 +52,8 @@ const getTimelineTemplate = (timeline, iconPath) => {
         ${linkStrNode}
         ${dateStrNode}
       </div>
-      <span class="timeline__icon-wrapper">
-        <svg class="timeline__icon" width="28" height="28" aria-hidden="true">
-          <use xlink:href="${replacedIconPath}"></use>
-        </svg>
+      <span class="timeline__icon-wrapper" aria-hidden="true">
+        <span class="timeline__icon timeline__icon--${type}"></span>
       </span>
     </li>
   `

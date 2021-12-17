@@ -55,12 +55,6 @@
         <li class="settings__item">
           <button class="settings__button settings__button--motion" type="button" role="switch" aria-checked="false">
             <span class="visually-hidden">Switch animation resolution</span>
-            <svg class="settings__icon settings__icon--checked" width="15" height="15" aria-hidden="true">
-              <use xlink:href="/img/sprite.svg#animation-allow.icon"></use>
-            </svg>
-            <svg class="settings__icon settings__icon--unchecked" width="15" height="15" aria-hidden="true">
-              <use xlink:href="/img/sprite.svg#animation-notallow.icon"></use>
-            </svg>
           </button>
         </li>
       </ul>
@@ -109,27 +103,18 @@
                   <dd class="intro__item-desc">
                     <ul class="intro__social-list social-list">
                       <li class="social-list__item">
-                        <a href="https://github.com/what1s1ove" target="_blank" rel="noreferrer">
+                        <a class="social-list__item-link social-list__item-link--github" href="https://github.com/what1s1ove" target="_blank" rel="noreferrer">
                           <span class="social-list__item-title visually-hidden">GitHub</span>
-                          <svg width="35" height="35" aria-hidden="true">
-                            <use xlink:href="/img/sprite.svg#social-github.icon"></use>
-                          </svg>
                         </a>
                       </li>
                       <li class="social-list__item">
-                        <a href="https://www.linkedin.com/in/what1s1ove" target="_blank" rel="noreferrer">
+                        <a class="social-list__item-link social-list__item-link--linkedin" href="https://www.linkedin.com/in/what1s1ove" target="_blank" rel="noreferrer">
                           <span class="social-list__item-title visually-hidden">Linkedin</span>
-                          <svg width="35" height="35" aria-hidden="true">
-                            <use xlink:href="/img/sprite.svg#social-linkedin.icon"></use>
-                          </svg>
                         </a>
                       </li>
                       <li class="social-list__item">
-                        <a href="https://t.me/dugga" target="_blank" rel="noreferrer">
+                        <a class="social-list__item-link social-list__item-link--telegram" href="https://t.me/dugga" target="_blank" rel="noreferrer">
                           <span class="social-list__item-title visually-hidden">Telegram</span>
-                          <svg width="35" height="35" aria-hidden="true">
-                            <use xlink:href="/img/sprite.svg#social-telegram.icon"></use>
-                          </svg>
                         </a>
                       </li>
                     </ul>
@@ -205,9 +190,7 @@
           <p class="timeline__desc-empty">Nothing here yet. Try to select more options in the filter.</p>
         </div>
         <a class="timeline__resume-link" href="/files/fe-developer-zubko-vladyslav.pdf" target="_blank" rel="noreferrer">
-          <svg class="timeline__resume-icon" width="40" height="40" aria-hidden="true">
-            <use xlink:href="/img/sprite.svg#download.icon"></use>
-          </svg>
+          <span class="timeline__resume-icon" aria-hidden="true"></span>
           <span class="timeline__resume-text">View my resume</span>
         </a>
       </section>
@@ -234,34 +217,23 @@
     <footer class="footer">
       <ul class="footer__social-list social-list">
         <li class="social-list__item">
-          <a href="https://github.com/what1s1ove" target="_blank" rel="noreferrer">
+          <a class="social-list__item-link social-list__item-link--github" href="https://github.com/what1s1ove" target="_blank" rel="noreferrer">
             <span class="social-list__item-title visually-hidden">GitHub</span>
-            <svg width="35" height="35" aria-hidden="true">
-              <use xlink:href="/img/sprite.svg#social-github.icon"></use>
-            </svg>
           </a>
         </li>
         <li class="social-list__item">
-          <a href="https://www.linkedin.com/in/what1s1ove" target="_blank" rel="noreferrer">
+          <a class="social-list__item-link social-list__item-link--linkedin" href="https://www.linkedin.com/in/what1s1ove" target="_blank" rel="noreferrer">
             <span class="social-list__item-title visually-hidden">Linkedin</span>
-            <svg width="35" height="35" aria-hidden="true">
-              <use xlink:href="/img/sprite.svg#social-linkedin.icon"></use>
-            </svg>
           </a>
         </li>
         <li class="social-list__item">
-          <a href="https://t.me/dugga" target="_blank" rel="noreferrer">
+          <a class="social-list__item-link social-list__item-link--telegram" href="https://t.me/dugga" target="_blank" rel="noreferrer">
             <span class="social-list__item-title visually-hidden">Telegram</span>
-            <svg width="35" height="35" aria-hidden="true">
-              <use xlink:href="/img/sprite.svg#social-telegram.icon"></use>
-            </svg>
           </a>
         </li>
       </ul>
       <span class="footer__routine-wrapper" aria-hidden="true">
-        <svg width="210" height="47">
-          <use xlink:href="/img/sprite.svg#routine.icon"></use>
-        </svg>
+        <span class="footer__routine"></span>
       </span>
     </footer>
     <p class="easter-egg">
@@ -282,16 +254,11 @@
             <time class="timeline__dates-date timeline__dates-date--end" datetime="1970-01-01T00:00:00+03:00">01 Jan 1970</time>
           </p>
         </div>
-        <span class="timeline__icon-wrapper">
-          <svg class="timeline__icon" width="28" height="28" aria-hidden="true">
-            <use class="timeline__icon-source" xlink:href="/img/sprite.svg#timeline-book.icon"></use>
-          </svg>
+        <span class="timeline__icon-wrapper" aria-hidden="true">
+          <span class="timeline__icon timeline__icon--book"></span>
         </span>
       </li>
     </template> -->
-    <template class="timeline-icon">
-      <use class="timeline__icon-source" xlink:href="/img/sprite.svg#timeline-book.icon"></use>
-    </template>
     <script src="/js/main.min.js" defer></script>
   </body>
 </html>

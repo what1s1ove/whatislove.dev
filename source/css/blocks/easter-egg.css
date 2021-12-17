@@ -96,5 +96,5 @@
 }
 
 .easter-egg__button:active:after {
-  background: transparent;
+  background-color: transparent;
 }

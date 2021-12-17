@@ -37,7 +37,6 @@
     "gulp-rev": "9.0.0",
     "gulp-rev-rewrite": "5.0.0",
     "gulp-sourcemaps": "3.0.0",
-    "gulp-svgstore": "9.0.0",
     "gulp-webp": "4.0.1",
     "imagemin-jpegtran": "7.0.0",
     "imagemin-pngquant": "9.0.2",
