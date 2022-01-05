@@ -9,6 +9,7 @@ const copy = () => {
         `${joinPaths(Config.FOLDER.SOURCE, Config.FOLDER.SOURCE_FONTS)}/**/*.woff2`,
         `${joinPaths(Config.FOLDER.SOURCE, Config.FOLDER.SOURCE_FILES)}/**/*.pdf`,
         `${joinPaths(Config.FOLDER.SOURCE, Config.FOLDER.SOURCE_SOUND)}/**/*.mp3`,
+        `${joinPaths(Config.FOLDER.SOURCE, Config.FOLDER.SOURCE_IMG)}/icons/icon.svg`,
         `${joinPaths(Config.FOLDER.SOURCE, Config.FILE.MANIFEST)}.webmanifest`,
         `${joinPaths(Config.FOLDER.SOURCE, Config.FILE.FAVICON)}.ico`,
       ],
