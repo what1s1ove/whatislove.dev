@@ -1,9 +1,5 @@
 export { getServerApiUrl } from './api/api.js'
-export {
-  checkIsBeforeElement,
-  checkIsMediaQueryMatch,
-  checkIsOneOf,
-} from './boolean/boolean.js'
+export { checkIsBeforeElement, checkIsOneOf } from './boolean/boolean.js'
 export { getFormattedDate } from './date/date.js'
 export {
   createElement,
