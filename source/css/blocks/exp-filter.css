@@ -40,8 +40,7 @@
 }
 
 .exp-filter__skill-types .exp-filter__list {
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   align-items: center;
 }
 
@@ -65,8 +64,7 @@
   }
 
   .exp-filter__list {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     align-items: center;
   }
 }

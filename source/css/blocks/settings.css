@@ -39,7 +39,7 @@
 
 .settings__item-control::before {
   position: absolute;
-  content: '';
+  content: "";
   inset: 0;
   z-index: var(--z-index--level-two);
   background-repeat: no-repeat;
@@ -58,7 +58,7 @@
   left: 50%;
   z-index: var(--z-index--level-one);
   display: none;
-  content: '';
+  content: "";
   width: 21px;
   height: 21px;
   background-color: var(--color--primary);
@@ -71,23 +71,23 @@
 }
 
 .settings__item-control--auto::before {
-  background-image: url('../img/auto.bg.svg');
+  background-image: url("../img/auto.bg.svg");
 }
 
 .settings__item-control--light::before {
-  background-image: url('../img/theme-light.bg.svg');
+  background-image: url("../img/theme-light.bg.svg");
 }
 
 .settings__item-control--dark::before {
-  background-image: url('../img/theme-dark.bg.svg');
+  background-image: url("../img/theme-dark.bg.svg");
 }
 
 .settings__item-control--nopreference::before {
-  background-image: url('../img/notion-no-preference.bg.svg');
+  background-image: url("../img/notion-no-preference.bg.svg");
 }
 
 .settings__item-control--reduce::before {
-  background-image: url('../img/notion-reduce.bg.svg');
+  background-image: url("../img/notion-reduce.bg.svg");
 }
 
 .settings__item-switch {
@@ -105,26 +105,26 @@
   cursor: pointer;
 }
 
-.settings__item-switch[aria-checked='true'] {
+.settings__item-switch[aria-checked="true"] {
   background-position: left 8px top 50%;
 }
 
 .settings__item-switch--whatislove {
-  background-image: url('../img/heart-broken.bg.svg');
+  background-image: url("../img/heart-broken.bg.svg");
   animation-name: append;
   animation-duration: 1s;
   animation-timing-function: ease-out;
 }
 
-.settings__item-switch--whatislove[aria-checked='true'] {
-  background-image: url('../img/heart.bg.svg');
+.settings__item-switch--whatislove[aria-checked="true"] {
+  background-image: url("../img/heart.bg.svg");
 }
 
 .settings__item-switch::before {
   position: absolute;
   top: 50%;
   left: 0;
-  content: '';
+  content: "";
   width: 50%;
   height: 21px;
   background-color: var(--color--primary);
@@ -132,7 +132,7 @@
   transform: translate(2px, -50%);
 }
 
-.settings__item-switch[aria-checked='true']::before {
+.settings__item-switch[aria-checked="true"]::before {
   right: 0;
   left: unset;
   transform: translate(-2px, -50%);

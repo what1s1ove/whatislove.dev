@@ -89,7 +89,7 @@
   }
 
   .intro__item-title::after {
-    content: ':';
+    content: ":";
   }
 
   .intro__item--socials .intro__item-title {

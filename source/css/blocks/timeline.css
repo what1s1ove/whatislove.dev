@@ -25,7 +25,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  content: '';
+  content: "";
   width: 2px;
   height: 100%;
   background-color: var(--color--primary);
@@ -35,7 +35,7 @@
   position: absolute;
   bottom: 0;
   left: -6px;
-  content: '';
+  content: "";
   border: 7px solid var(--color--secondary);
   border-top: 14px solid var(--color--primary);
 }
@@ -115,19 +115,19 @@
 }
 
 .timeline__icon--book {
-  background-image: url('../img/timeline-book.bg.svg');
+  background-image: url("../img/timeline-book.bg.svg");
 }
 
 .timeline__icon--course {
-  background-image: url('../img/timeline-course.bg.svg');
+  background-image: url("../img/timeline-course.bg.svg");
 }
 
 .timeline__icon--meetup {
-  background-image: url('../img/timeline-meetup.bg.svg');
+  background-image: url("../img/timeline-meetup.bg.svg");
 }
 
 .timeline__icon--work {
-  background-image: url('../img/timeline-work.bg.svg');
+  background-image: url("../img/timeline-work.bg.svg");
 }
 
 .timeline__item:hover .timeline__icon {
@@ -176,20 +176,21 @@
   width: 40px;
   height: 40px;
   margin: 10px auto;
-  background-image: url('../img/download.bg.svg');
+  background-image: url("../img/download.bg.svg");
   background-size: cover;
   visibility: hidden;
-  transform: translate3d(0, -4em, 0) scale(0);
+  transform: translateY(-60px) scale(0);
   opacity: 0;
   filter: var(--invert-icon--secondary);
-  transition: transform 0.4s cubic-bezier(0.42, -0.2, 0.01, 1.22),
+  transition:
+    transform 0.4s ease-out,
     opacity 0.4s linear;
 }
 
 .timeline__resume-link:hover .timeline__resume-icon,
 .timeline__resume-link:focus .timeline__resume-icon {
   visibility: visible;
-  transform: translate3d(0, 0, 0) scale(1);
+  transform: translateY(0) scale(1);
   opacity: 1;
 }
 
@@ -203,14 +204,15 @@
   visibility: visible;
   transform: scale(1);
   opacity: 1;
-  transition: transform 0.4s cubic-bezier(0.42, -0.2, 0.01, 1.22),
-    opacity 0.13s linear;
+  transition:
+    transform 0.4s ease-out,
+    opacity 0.1s linear;
 }
 
 .timeline__resume-link:hover .timeline__resume-text,
 .timeline__resume-link:focus .timeline__resume-text {
   visibility: hidden;
-  transform: translate3d(0, 4em, 0) scale(0.25);
+  transform: translateY(60px) scale(0);
   opacity: 0;
 }
 
@@ -254,7 +256,7 @@
     position: absolute;
     top: 30px;
     left: 99%;
-    content: '';
+    content: "";
     border: 15px solid transparent;
     border-left-color: var(--color--primary);
     filter: drop-shadow(0 0 10px var(--color--primary));

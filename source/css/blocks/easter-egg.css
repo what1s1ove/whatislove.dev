@@ -12,14 +12,15 @@
   left: -75%;
   z-index: 2;
   display: block;
-  content: '';
+  content: "";
   width: 50%;
   height: 100%;
-  background-image: linear-gradient(
-    90deg,
-    rgba(255 255 255 / 0),
-    rgb(255 215 0 / 0.15)
-  );
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(255 255 255 / 0%),
+      rgb(255 215 0 / 0.15%)
+    );
   transform: skewX(-25deg) translateY(-50%);
   animation: shine 10s infinite;
   pointer-events: none;
@@ -53,26 +54,27 @@
   cursor: pointer;
 }
 
-.easter-egg__button:before {
+.easter-egg__button::before {
   position: absolute;
   top: -2px;
   left: -2px;
   z-index: -1;
-  content: '';
+  content: "";
   width: calc(100% + 4px);
   height: calc(100% + 4px);
-  background-image: linear-gradient(
-    45deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #002bff,
-    #7a00ff,
-    #ff00c8,
-    #ff0000
-  );
+  background-image:
+    linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000
+    );
   background-size: 400%;
   border-radius: 10px;
   filter: blur(5px);
@@ -83,18 +85,18 @@
   color: var(--color--primary);
 }
 
-.easter-egg__button:after {
+.easter-egg__button::after {
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
-  content: '';
+  content: "";
   width: 100%;
   height: 100%;
   background-color: var(--color--secondary);
   border-radius: 10px;
 }
 
-.easter-egg__button:active:after {
+.easter-egg__button:active::after {
   background-color: transparent;
 }

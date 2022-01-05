@@ -1,16 +1,11 @@
 plugins:
   - stylelint-order
 extends:
-  - stylelint-config-recommended
+  - stylelint-config-standard
 rules:
-    rule-empty-line-before:
-      - always
-      - except: first-nested
-        ignore: after-comment
-    number-max-precision: 2
-    length-zero-no-unit: true
-    no-descending-specificity: true
-    declaration-empty-line-before: never
+    selector-class-pattern: null
+    custom-property-pattern: null
+    color-hex-length: long
     order/order:
     - custom-properties
     - declarations
@@ -268,4 +263,3 @@ rules:
     - clip-rule
     - stroke
     - stroke-width
-

@@ -10,9 +10,10 @@
 
 .favorites__wrapper::before {
   position: absolute;
-  content: '';
+  content: "";
   inset: 0;
-  background: repeating-conic-gradient(
+  background:
+    repeating-conic-gradient(
       var(--color--secondary) 0% 25%,
       var(--color--primary) 0% 50%
     )
@@ -57,11 +58,11 @@
   font-size: 28px;
   letter-spacing: 2px;
   text-align: center;
-  background-image: url('../img/favorites-shadow.bg.svg');
+  background-image: url("../img/favorites-shadow.bg.svg");
   background-repeat: no-repeat;
   background-position: right 10px top 50%;
   background-size: 50px;
-  mask: url('../img/favorites.mask.svg');
+  mask: url("../img/favorites.mask.svg");
   mask-repeat: no-repeat;
   mask-size: contain;
   mask-position: 50% 0;
