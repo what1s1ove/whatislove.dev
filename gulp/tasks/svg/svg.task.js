@@ -1,22 +1,18 @@
 import gulp from 'gulp'
-import squoosh from 'gulp-libsquoosh'
+import svgo from 'gulp-svgmin'
 import { joinPaths } from '../../helpers/helpers.js'
 import { Config } from '../../config.js'
 
-const webp = () => {
+const svg = () => {
   return gulp
     .src(
       `${joinPaths(
-        Config.FOLDER.BUILD,
+        Config.FOLDER.SOURCE,
         Config.FOLDER.BUILD_IMG,
-      )}/**/*.photo.{png,jpg}`,
+      )}/*.svg`,
     )
-    .pipe(
-      squoosh({
-        webp: {},
-      }),
-    )
+    .pipe(svgo())
     .pipe(gulp.dest(joinPaths(Config.FOLDER.BUILD, Config.FOLDER.BUILD_IMG)))
 }
 
-export { webp }
+export { svg }
