@@ -1,10 +1,9 @@
-import { checkIsMediaQueryMatch, getCustomAttrName } from '~/helpers/helpers.js'
-import { numberToBoolean } from '~/common/maps/maps.js'
+import { getCustomAttrName } from '~/helpers/helpers.js'
 import { SettingName } from '~/common/enums/enums.js'
 import { getSettingItemElement } from './helpers/helpers.js'
-import { SettingButton } from './components/components.js'
-import { MediaQueriesType } from './common/enums/enums.js'
-import { settingNameToCheckTypes } from './common/maps/maps.js'
+import { Switch, Control } from './components/components.js'
+
+const RESULT_VALUE = `auto`
 
 class Settings {
   constructor({ storage }) {
@@ -12,29 +11,14 @@ class Settings {
 
     this._settingListNode = null
 
-    this._handleSettingBtnClick = this._handleSettingBtnClick.bind(this)
+    this._handleControlChange = this._handleControlChange.bind(this)
   }
 
   init() {
     this._settingListNode = document.querySelector(`.settings`)
 
-    new SettingButton({
-      name: SettingName.THEME,
-      isDefaultChecked: this._checkIsBtnChecked({
-        name: SettingName.THEME,
-        mediaQuery: MediaQueriesType.THEME,
-      }),
-      onClick: this._handleSettingBtnClick,
-    }).init(`.settings__button--theme`)
-
-    new SettingButton({
-      name: SettingName.MOTION,
-      isDefaultChecked: this._checkIsBtnChecked({
-        name: SettingName.MOTION,
-        mediaQuery: MediaQueriesType.MOTION,
-      }),
-      onClick: this._handleSettingBtnClick,
-    }).init(`.settings__button--motion`)
+    this._initControl(SettingName.THEME)
+    this._initControl(SettingName.MOTION)
   }
 
   appendNewBtn(settings) {
@@ -44,36 +28,52 @@ class Settings {
 
     this._settingListNode.prepend(newSettingItemNode)
 
-    return new SettingButton({
+    return new Switch({
       name,
       isDefaultChecked,
       onClick,
-    }).init(`.settings__button--${name}`)
+    }).init(`.settings__item-switch--${name}`)
   }
 
-  _handleSettingBtnClick({ name, isChecked }) {
-    this._setSettingAttr({
+  _handleControlChange({ name, value }) {
+    if (value === RESULT_VALUE) {
+      this._removeSettingAttr(name)
+
+      return this._storage.removeItem(name)
+    }
+
+    this._setSettingAttr(name, value)
+
+    this._storage.setItem(name, value)
+  }
+
+  _initControl(name) {
+    const defaultValue = this._setInitialSettingAttr(name)
+
+    new Control({
       name,
-      isChecked,
-      checkTypes: settingNameToCheckTypes[name],
-    })
-
-    this._storage.setItem(name, Number(isChecked))
+      defaultValue,
+      onChange: this._handleControlChange,
+    }).init(`.settings__item-fieldset--${name}`)
   }
 
-  _setSettingAttr({ name, checkTypes, isChecked }) {
-    document.documentElement.setAttribute(
-      getCustomAttrName(name),
-      isChecked ? checkTypes.checked : checkTypes.unchecked,
-    )
+  _setSettingAttr(name, value) {
+    document.documentElement.setAttribute(getCustomAttrName(name), value)
   }
 
-  _checkIsBtnChecked({ name, mediaQuery }) {
-    const settingStoredValue = this._storage.getItem(name)
+  _removeSettingAttr(name) {
+    document.documentElement.removeAttribute(getCustomAttrName(name))
+  }
 
-    return settingStoredValue
-      ? numberToBoolean[settingStoredValue]
-      : checkIsMediaQueryMatch(mediaQuery)
+  _setInitialSettingAttr(name) {
+    const value = this._storage.getItem(name)
+    const hasValue = Boolean(value)
+
+    if (hasValue) {
+      this._setSettingAttr(name, value)
+    }
+
+    return value
   }
 }
 

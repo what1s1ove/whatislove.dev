@@ -1,1 +1,2 @@
-export { SettingButton } from './setting-button/setting-button.js'
+export { Control } from './control/control.js'
+export { Switch } from './switch/switch.js'

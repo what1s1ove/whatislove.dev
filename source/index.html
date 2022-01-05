@@ -48,14 +48,38 @@
       <p class="header__name-intro">Interface developer</p>
       <ul class="header__settings settings">
         <li class="settings__item">
-          <button class="settings__button settings__button--theme" type="button" role="switch" aria-checked="false">
-            <span class="visually-hidden">Switch color theme</span>
-          </button>
+          <fieldset class="settings__item-fieldset settings__item-fieldset--theme">
+            <legend class="visually-hidden">Color theme</legend>
+            <label class="settings__item-wrapper">
+              <input class="settings__item-control settings__item-control--light" type="radio" name="theme" value="light" />
+              <span class="visually-hidden">Light</span>
+            </label>
+            <label class="settings__item-wrapper">
+              <input class="settings__item-control settings__item-control--auto" type="radio" name="theme" value="auto" checked />
+              <span class="visually-hidden">Auto</span>
+            </label>
+            <label class="settings__item-wrapper">
+              <input class="settings__item-control settings__item-control--dark" type="radio" name="theme" value="dark" />
+              <span class="visually-hidden">Dark</span>
+            </label>
+          </fieldset>
         </li>
         <li class="settings__item">
-          <button class="settings__button settings__button--motion" type="button" role="switch" aria-checked="false">
-            <span class="visually-hidden">Switch animation resolution</span>
-          </button>
+          <fieldset class="settings__item-fieldset settings__item-fieldset--motion">
+            <legend class="visually-hidden">Reduced Motion</legend>
+            <label class="settings__item-wrapper">
+              <input class="settings__item-control settings__item-control--nopreference" type="radio" name="motion" value="no-preference" />
+              <span class="visually-hidden">No Preference</span>
+            </label>
+            <label class="settings__item-wrapper">
+              <input class="settings__item-control settings__item-control--auto" type="radio" name="motion" value="auto" checked />
+              <span class="visually-hidden">Auto</span>
+            </label>
+            <label class="settings__item-wrapper">
+              <input class="settings__item-control settings__item-control--reduce" type="radio" name="motion" value="reduce" />
+              <span class="visually-hidden">Reduce</span>
+            </label>
+          </fieldset>
         </li>
       </ul>
     </header>
