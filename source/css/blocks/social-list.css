@@ -24,15 +24,15 @@
 }
 
 .social-list__item-link--github {
-  background-image: url('../img/social-github.bg.svg');
+  background-image: url("../img/social-github.bg.svg");
 }
 
 .social-list__item-link--linkedin {
-  background-image: url('../img/social-linkedin.bg.svg');
+  background-image: url("../img/social-linkedin.bg.svg");
 }
 
 .social-list__item-link--telegram {
-  background-image: url('../img/social-telegram.bg.svg');
+  background-image: url("../img/social-telegram.bg.svg");
 }
 
 @media print {
@@ -54,7 +54,7 @@
   }
 
   .social-list__item-title::after {
-    content: ':';
+    content: ":";
   }
 
   .social-list__item-link {

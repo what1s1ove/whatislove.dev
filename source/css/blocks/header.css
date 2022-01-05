@@ -13,11 +13,11 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  content: '';
+  content: "";
   width: 300vw;
   height: 300vh;
   margin: -150vh 0 0 -150vw;
-  background-image: url('../img/stars.bg.svg');
+  background-image: url("../img/stars.bg.svg");
   background-size: 250px;
   filter: var(--invert-icon--secondary);
   animation: rotate 200s linear infinite;
@@ -57,15 +57,16 @@
   margin: 0;
   letter-spacing: 4px;
   text-transform: uppercase;
-  background-image: linear-gradient(
-    45deg,
-    #13a12f 0%,
-    #f5ff05 20%,
-    #1e32ff 40%,
-    #ff00fe 60%,
-    #02e853 80%,
-    #00d4ff 100%
-  );
+  background-image:
+    linear-gradient(
+      45deg,
+      #13a12f 0%,
+      #f5ff05 20%,
+      #1e32ff 40%,
+      #ff00fe 60%,
+      #02e853 80%,
+      #00d4ff 100%
+    );
   background-size: 1000% 1000%;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -124,7 +125,7 @@
 .header__toggle-object::after {
   position: absolute;
   left: 0;
-  content: '';
+  content: "";
   width: 100%;
   height: 3px;
   background-color: var(--color--secondary);

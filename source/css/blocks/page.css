@@ -10,7 +10,7 @@
   color: var(--color--primary);
   font-weight: 400;
   font-size: var(--font-size--default);
-  font-family: 'Roboto', 'Arial', sans-serif;
+  font-family: Roboto, Arial, sans-serif;
   font-style: normal;
   line-height: 1.5;
   background-color: var(--color--secondary);
