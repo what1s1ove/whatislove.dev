@@ -14,6 +14,9 @@ jobs:
     name: CI
     runs-on: ubuntu-latest
     steps:
+      - name: Check Files
+        run: ls
+
       - name: Install NodeJS
         uses: actions/setup-node@v2
         with:
