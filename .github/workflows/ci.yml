@@ -14,22 +14,19 @@ jobs:
     name: CI
     runs-on: ubuntu-latest
     steps:
-      - name: Check Files
-        run: ls
+      - name: Code Checkout
+        uses: actions/checkout@v2
 
       - name: Install NodeJS
         uses: actions/setup-node@v2
         with:
-          node-version-file: './.nvmrc'
+          node-version-file: .nvmrc
 
       - name: Install Java v${{ env.JAVA_VERSION }}
         uses: actions/setup-java@v1
         with:
           java-version: ${{ env.JAVA_VERSION }}
           architecture: x64
-
-      - name: Code Checkout
-        uses: actions/checkout@v2
 
       - name: Install Dependencies
         run: |
