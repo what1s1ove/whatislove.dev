@@ -17,7 +17,7 @@ jobs:
       - name: Install NodeJS
         uses: actions/setup-node@v2
         with:
-          node-version-file: '.nvmrc'
+          node-version-file: './.nvmrc'
 
       - name: Install Java v${{ env.JAVA_VERSION }}
         uses: actions/setup-java@v1
