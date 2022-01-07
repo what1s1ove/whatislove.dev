@@ -21,6 +21,8 @@
 }
 
 .intro__image-wrapper img {
+  display: block;
+  max-width: 100%;
   border-radius: 50%;
 }
 
@@ -87,7 +89,7 @@
   }
 
   .intro__item-title::after {
-    content: ':';
+    content: ":";
   }
 
   .intro__item--socials .intro__item-title {

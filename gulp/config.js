@@ -30,9 +30,6 @@ const Config = {
       MAIN: `main`,
       FORM: `form`,
     },
-    IMG: {
-      SPRITE: `sprite`,
-    },
     MANIFEST: `manifest`,
     REV: `rev`,
     FAVICON: `favicon`,

@@ -1,1 +1,1 @@
-export * from './get-random-number/get-random-number.helper.js'
+export { getRandomNumber } from './get-random-number/get-random-number.helper.js'

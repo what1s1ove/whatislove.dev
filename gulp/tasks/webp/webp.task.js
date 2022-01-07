@@ -1,14 +1,19 @@
 import gulp from 'gulp'
-import gulpwebp from 'gulp-webp'
+import squoosh from 'gulp-libsquoosh'
 import { joinPaths } from '../../helpers/helpers.js'
 import { Config } from '../../config.js'
 
 const webp = () => {
   return gulp
-    .src(`${joinPaths(Config.FOLDER.BUILD, Config.FOLDER.BUILD_IMG)}/**/*.photo.{png,jpg}`)
+    .src(
+      `${joinPaths(
+        Config.FOLDER.BUILD,
+        Config.FOLDER.BUILD_IMG,
+      )}/**/*.photo.{png,jpg}`,
+    )
     .pipe(
-      gulpwebp({
-        quality: 75,
+      squoosh({
+        webp: {},
       }),
     )
     .pipe(gulp.dest(joinPaths(Config.FOLDER.BUILD, Config.FOLDER.BUILD_IMG)))

@@ -10,7 +10,7 @@ import { Config } from '../../config.js'
 
 const api = async () => {
   const databases = await readDir(Config.FOLDER.DB)
-  const isApiFolderExists = checkIsFileExists(joinPaths(Config.FOLDER.BUILD, Config.FOLDER.BUILD_API));
+  const isApiFolderExists = checkIsFileExists(joinPaths(Config.FOLDER.BUILD, Config.FOLDER.BUILD_API))
 
   if (!isApiFolderExists) {
     makeDir(joinPaths(Config.FOLDER.BUILD, Config.FOLDER.BUILD_API))

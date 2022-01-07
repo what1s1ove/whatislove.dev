@@ -1,0 +1,41 @@
+name: CI
+
+env:
+  JAVA_VERSION: 8
+
+on:
+  pull_request:
+    branches:
+      - development
+      - production
+
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v2
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v2
+        with:
+          node-version-file: .nvmrc
+
+      - name: Install Java v${{ env.JAVA_VERSION }}
+        uses: actions/setup-java@v1
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          architecture: x64
+
+      - name: Install Dependencies
+        run: |
+          npm install
+
+      - name: Code Building
+        run: |
+          make build
+
+      - name: Code Linting
+        run: |
+          make lint

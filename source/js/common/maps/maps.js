@@ -1,2 +1,1 @@
-export * from './boolean/boolean.js'
-export * from './number/number.js'
+export { booleanToNumber } from './number/number.js'

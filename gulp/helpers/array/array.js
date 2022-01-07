@@ -1,1 +1,1 @@
-export * from './get-truthy-items/get-truthy-items.helper.js'
+export { getTruthyItems } from './get-truthy-items/get-truthy-items.helper.js'

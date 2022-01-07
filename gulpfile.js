@@ -5,27 +5,17 @@ import {
   css,
   js,
   images,
-  sprite,
   webp,
   api,
   clean,
   copy,
   server,
+  svg,
   cache,
   cleanup,
 } from './gulp/tasks/tasks.js'
 
-const assembly = gulp.series(
-  clean,
-  copy,
-  html,
-  css,
-  js,
-  images,
-  webp,
-  sprite,
-  api,
-)
+const assembly = gulp.series(clean, copy, html, css, js, images, svg, webp, api)
 
 const develop = gulp.series(assembly, server)
 
@@ -37,8 +27,8 @@ export {
   css,
   js,
   images,
+  svg,
   webp,
-  sprite,
   clean,
   copy,
   cache,

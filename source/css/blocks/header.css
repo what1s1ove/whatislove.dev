@@ -13,22 +13,15 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  content: '';
+  content: "";
   width: 300vw;
   height: 300vh;
   margin: -150vh 0 0 -150vw;
-  background-image: url('../img/stars-black.bg.svg');
+  background-image: url("../img/stars.bg.svg");
   background-size: 250px;
+  filter: var(--invert-icon--secondary);
   animation: rotate 200s linear infinite;
   pointer-events: none;
-}
-
-html[data-theme='light'] .header::before {
-  background-image: url('../img/stars-black.bg.svg');
-}
-
-html[data-theme='dark'] .header::before {
-  background-image: url('../img/stars-white.bg.svg');
 }
 
 .header--active::before {
@@ -42,9 +35,7 @@ html[data-theme='dark'] .header::before {
 }
 
 .header__logo-icon--letter {
-  transition: all var(--transition-duration--theme);
-  transition-property: fill;
-  fill: var(--color--primary);
+  filter: var(--invert-icon--primary);
 }
 
 .header__logo-icon--heart {
@@ -66,6 +57,20 @@ html[data-theme='dark'] .header::before {
   margin: 0;
   letter-spacing: 4px;
   text-transform: uppercase;
+  background-image:
+    linear-gradient(
+      45deg,
+      #13a12f 0%,
+      #f5ff05 20%,
+      #1e32ff 40%,
+      #ff00fe 60%,
+      #02e853 80%,
+      #00d4ff 100%
+    );
+  background-size: 1000% 1000%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-text 12s ease infinite;
 }
 
 .header__navigation-wrapper {
@@ -120,7 +125,7 @@ html[data-theme='dark'] .header::before {
 .header__toggle-object::after {
   position: absolute;
   left: 0;
-  content: '';
+  content: "";
   width: 100%;
   height: 3px;
   background-color: var(--color--secondary);
@@ -161,11 +166,5 @@ html[data-theme='dark'] .header::before {
 @media print {
   .header {
     display: none;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .header::before {
-    background-image: url('../img/stars-white.bg.svg');
   }
 }

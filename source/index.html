@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="page" lang="en">
   <head>
-    <title>Whatislove Zubko | Interface Developer</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Whatislove Zubko | Interface Developer</title>
+
     <meta name="description" content="Interface Developer" />
+
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Vladyslav Zubko" />
     <meta property="og:site_name" content="Interface Developer" />
     <meta property="og:url" content="https://whatislove.dev/" />
     <meta property="og:image" content="https://whatislove.dev/img/logo-social.og.png" />
+
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="icon" href="/img/icons/icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/img/icons/apple-touch-icon.png" />
     <link rel="stylesheet" href="/css/styles.min.css" />
   </head>
-  <body>
+  <body class="page__body">
     <h1 class="visually-hidden">Vladyslav Zubko - interface developer</h1>
     <header class="header">
       <span class="header__logo">
@@ -48,20 +51,38 @@
       <p class="header__name-intro">Interface developer</p>
       <ul class="header__settings settings">
         <li class="settings__item">
-          <button class="settings__button settings__button--theme" type="button" role="switch" aria-checked="false">
-            <span class="visually-hidden">Switch color theme</span>
-          </button>
+          <fieldset class="settings__item-fieldset settings__item-fieldset--theme">
+            <legend class="visually-hidden">Color theme</legend>
+            <label class="settings__item-wrapper">
+              <input class="settings__item-control settings__item-control--light" type="radio" name="theme" value="light" />
+              <span class="visually-hidden">Light</span>
+            </label>
+            <label class="settings__item-wrapper">
+              <input class="settings__item-control settings__item-control--auto" type="radio" name="theme" value="auto" checked />
+              <span class="visually-hidden">Auto</span>
+            </label>
+            <label class="settings__item-wrapper">
+              <input class="settings__item-control settings__item-control--dark" type="radio" name="theme" value="dark" />
+              <span class="visually-hidden">Dark</span>
+            </label>
+          </fieldset>
         </li>
         <li class="settings__item">
-          <button class="settings__button settings__button--motion" type="button" role="switch" aria-checked="false">
-            <span class="visually-hidden">Switch animation resolution</span>
-            <svg class="settings__icon settings__icon--checked" width="15" height="15" aria-hidden="true">
-              <use xlink:href="/img/sprite.svg#animation-allow.icon"></use>
-            </svg>
-            <svg class="settings__icon settings__icon--unchecked" width="15" height="15" aria-hidden="true">
-              <use xlink:href="/img/sprite.svg#animation-notallow.icon"></use>
-            </svg>
-          </button>
+          <fieldset class="settings__item-fieldset settings__item-fieldset--motion">
+            <legend class="visually-hidden">Reduced Motion</legend>
+            <label class="settings__item-wrapper">
+              <input class="settings__item-control settings__item-control--nopreference" type="radio" name="motion" value="no-preference" />
+              <span class="visually-hidden">No Preference</span>
+            </label>
+            <label class="settings__item-wrapper">
+              <input class="settings__item-control settings__item-control--auto" type="radio" name="motion" value="auto" checked />
+              <span class="visually-hidden">Auto</span>
+            </label>
+            <label class="settings__item-wrapper">
+              <input class="settings__item-control settings__item-control--reduce" type="radio" name="motion" value="reduce" />
+              <span class="visually-hidden">Reduce</span>
+            </label>
+          </fieldset>
         </li>
       </ul>
     </header>
@@ -109,27 +130,18 @@
                   <dd class="intro__item-desc">
                     <ul class="intro__social-list social-list">
                       <li class="social-list__item">
-                        <a href="https://github.com/what1s1ove" target="_blank" rel="noreferrer">
+                        <a class="social-list__item-link social-list__item-link--github" href="https://github.com/what1s1ove" target="_blank" rel="noreferrer">
                           <span class="social-list__item-title visually-hidden">GitHub</span>
-                          <svg width="35" height="35" aria-hidden="true">
-                            <use xlink:href="/img/sprite.svg#social-github.icon"></use>
-                          </svg>
                         </a>
                       </li>
                       <li class="social-list__item">
-                        <a href="https://www.linkedin.com/in/what1s1ove" target="_blank" rel="noreferrer">
+                        <a class="social-list__item-link social-list__item-link--linkedin" href="https://www.linkedin.com/in/what1s1ove" target="_blank" rel="noreferrer">
                           <span class="social-list__item-title visually-hidden">Linkedin</span>
-                          <svg width="35" height="35" aria-hidden="true">
-                            <use xlink:href="/img/sprite.svg#social-linkedin.icon"></use>
-                          </svg>
                         </a>
                       </li>
                       <li class="social-list__item">
-                        <a href="https://t.me/dugga" target="_blank" rel="noreferrer">
+                        <a class="social-list__item-link social-list__item-link--telegram" href="https://t.me/dugga" target="_blank" rel="noreferrer">
                           <span class="social-list__item-title visually-hidden">Telegram</span>
-                          <svg width="35" height="35" aria-hidden="true">
-                            <use xlink:href="/img/sprite.svg#social-telegram.icon"></use>
-                          </svg>
                         </a>
                       </li>
                     </ul>
@@ -204,10 +216,8 @@
           <ul class="timeline__list"></ul>
           <p class="timeline__desc-empty">Nothing here yet. Try to select more options in the filter.</p>
         </div>
-        <a class="timeline__resume-link" href="/files/fe-developer-zubko-vladyslav.pdf" target="_blank" rel="noreferrer">
-          <svg class="timeline__resume-icon" width="40" height="40" aria-hidden="true">
-            <use xlink:href="/img/sprite.svg#download.icon"></use>
-          </svg>
+        <a class="timeline__resume-link" href="/files/vladyslav-zubko-cv.pdf" target="_blank" rel="noreferrer">
+          <span class="timeline__resume-icon" aria-hidden="true"></span>
           <span class="timeline__resume-text">View my resume</span>
         </a>
       </section>
@@ -234,39 +244,28 @@
     <footer class="footer">
       <ul class="footer__social-list social-list">
         <li class="social-list__item">
-          <a href="https://github.com/what1s1ove" target="_blank" rel="noreferrer">
+          <a class="social-list__item-link social-list__item-link--github" href="https://github.com/what1s1ove" target="_blank" rel="noreferrer">
             <span class="social-list__item-title visually-hidden">GitHub</span>
-            <svg width="35" height="35" aria-hidden="true">
-              <use xlink:href="/img/sprite.svg#social-github.icon"></use>
-            </svg>
           </a>
         </li>
         <li class="social-list__item">
-          <a href="https://www.linkedin.com/in/what1s1ove" target="_blank" rel="noreferrer">
+          <a class="social-list__item-link social-list__item-link--linkedin" href="https://www.linkedin.com/in/what1s1ove" target="_blank" rel="noreferrer">
             <span class="social-list__item-title visually-hidden">Linkedin</span>
-            <svg width="35" height="35" aria-hidden="true">
-              <use xlink:href="/img/sprite.svg#social-linkedin.icon"></use>
-            </svg>
           </a>
         </li>
         <li class="social-list__item">
-          <a href="https://t.me/dugga" target="_blank" rel="noreferrer">
+          <a class="social-list__item-link social-list__item-link--telegram" href="https://t.me/dugga" target="_blank" rel="noreferrer">
             <span class="social-list__item-title visually-hidden">Telegram</span>
-            <svg width="35" height="35" aria-hidden="true">
-              <use xlink:href="/img/sprite.svg#social-telegram.icon"></use>
-            </svg>
           </a>
         </li>
       </ul>
       <span class="footer__routine-wrapper" aria-hidden="true">
-        <svg width="210" height="47">
-          <use xlink:href="/img/sprite.svg#routine.icon"></use>
-        </svg>
+        <span class="footer__routine"></span>
       </span>
     </footer>
     <p class="easter-egg">
       <span class="easter-egg__button-wrapper">
-        <button class="easter-egg__button" type="button">What else can I say, It's up to you...</button>
+        <button class="easter-egg__button" type="button">what else can I say, It's up to you...</button>
       </span>
     </p>
     <p class="toast" role="alert" aria-live="polite"></p>
@@ -282,16 +281,11 @@
             <time class="timeline__dates-date timeline__dates-date--end" datetime="1970-01-01T00:00:00+03:00">01 Jan 1970</time>
           </p>
         </div>
-        <span class="timeline__icon-wrapper">
-          <svg class="timeline__icon" width="28" height="28" aria-hidden="true">
-            <use class="timeline__icon-source" xlink:href="/img/sprite.svg#timeline-book.icon"></use>
-          </svg>
+        <span class="timeline__icon-wrapper" aria-hidden="true">
+          <span class="timeline__icon timeline__icon--book"></span>
         </span>
       </li>
     </template> -->
-    <template class="timeline-icon">
-      <use class="timeline__icon-source" xlink:href="/img/sprite.svg#timeline-book.icon"></use>
-    </template>
     <script src="/js/main.min.js" defer></script>
   </body>
 </html>

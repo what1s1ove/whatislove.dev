@@ -10,8 +10,6 @@ start_server:
 	npx json-server db/database.json
 build: clean
 	npx gulp
-deploy:
-	rsync --archive --compress --delete build whatislove@whatislove.dev:/var/www/whatislove.dev/html/
 
 # Lint
 
