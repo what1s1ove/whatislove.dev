@@ -9,7 +9,7 @@ class Switch {
 
     this._switchNode = null
 
-    this._handleSwitchClick = this._handleBtnClick.bind(this)
+    this._handleSwitchClick = this._handleSwitchClick.bind(this)
   }
 
   set _isChecked(isChecked) {
