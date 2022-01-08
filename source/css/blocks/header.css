@@ -35,7 +35,7 @@
 }
 
 .header__logo-icon--letter {
-  filter: var(--invert-icon--primary);
+  fill: var(--color--primary);
 }
 
 .header__logo-icon--heart {
