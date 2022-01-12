@@ -1208,6 +1208,19 @@
       "linkDesc": "",
       "date": "2021-10-30T00:00:00.000Z",
       "endDate": ""
+    },
+    {
+      "id": "6lpW2RU",
+      "skillType": "hardSkill",
+      "type": "book",
+      "title": "Clean Architecture (Robert C. Martin)",
+      "desc": "",
+      "origin": "https://www.amazon.com/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164",
+      "originDesc": "Amazon",
+      "link": "",
+      "linkDesc": "",
+      "date": "2022-01-12T00:00:00.000Z",
+      "endDate": ""
     }
   ]
 }
