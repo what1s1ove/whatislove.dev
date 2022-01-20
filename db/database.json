@@ -1221,6 +1221,19 @@
       "linkDesc": "",
       "date": "2022-01-12T00:00:00.000Z",
       "endDate": ""
+    },
+    {
+      "id": "w8FGmzN",
+      "skillType": "hardSkill",
+      "type": "book",
+      "title": "Clean Agile (Robert C. Martin)",
+      "desc": "",
+      "origin": "https://www.amazon.com/Clean-Agile-Basics-Robert-Martin/dp/0135781868",
+      "originDesc": "Amazon",
+      "link": "",
+      "linkDesc": "",
+      "date": "2022-01-19T00:00:00.000Z",
+      "endDate": ""
     }
   ]
 }
