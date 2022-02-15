@@ -6,17 +6,5 @@
   "orientation": "any",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
-  "description": "Interface Developer",
-  "icons": [
-    {
-      "src": "/img/icons/icon-512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    },
-    {
-      "src": "/img/icons/icon-192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    }
-  ]
+  "description": "Interface Developer"
 }
