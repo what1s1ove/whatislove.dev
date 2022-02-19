@@ -238,10 +238,10 @@
       "id": "Ex1LJJgcD9",
       "skillType": "softSkill",
       "type": "book",
-      "title": "Jedi techniques. How to raise your monkey, empty the inbox and save thought (Maxim Dorofeev)",
+      "title": "Джедайские техники (Maxim Dorofeev)",
       "desc": "",
-      "origin": "",
-      "originDesc": "",
+      "origin": "https://mnogosdelal.ru/",
+      "originDesc": "Maxim Dorofeev",
       "link": "",
       "linkDesc": "",
       "date": "2019-05-29T00:00:00+03:00",
@@ -1233,6 +1233,19 @@
       "link": "",
       "linkDesc": "",
       "date": "2022-01-19T00:00:00.000Z",
+      "endDate": ""
+    },
+    {
+      "id": "euJJ3Ts",
+      "skillType": "softSkill",
+      "type": "book",
+      "title": "Путь Джедая (Maxim Dorofeev)",
+      "desc": "",
+      "origin": "https://mnogosdelal.ru/",
+      "originDesc": "Maxim Dorofeev",
+      "link": "",
+      "linkDesc": "",
+      "date": "2022-02-19T00:00:00.000Z",
       "endDate": ""
     }
   ]
