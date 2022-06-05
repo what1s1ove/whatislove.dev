@@ -1247,6 +1247,19 @@
       "linkDesc": "",
       "date": "2022-02-19T00:00:00.000Z",
       "endDate": ""
+    },
+    {
+      "id": "ibroasL",
+      "skillType": "softSkill",
+      "type": "book",
+      "title": "Sapiens: A Brief History of Humankind (Yuval Noah Harari)",
+      "desc": "",
+      "origin": "https://www.amazon.com/Sapiens-Humankind-Yuval-Noah-Harari/dp/0062316095",
+      "originDesc": "Amazon",
+      "link": "",
+      "linkDesc": "",
+      "date": "2022-06-05T00:00:00.000Z",
+      "endDate": ""
     }
   ]
 }
