@@ -1260,6 +1260,19 @@
       "linkDesc": "",
       "date": "2022-06-05T00:00:00.000Z",
       "endDate": ""
+    },
+    {
+      "id": "yxpSSw7",
+      "skillType": "softSkill",
+      "type": "book",
+      "title": "Диалоги о медитации (Дада Садананда)",
+      "desc": "",
+      "origin": "https://umbook.ru/",
+      "originDesc": "umbook",
+      "link": "",
+      "linkDesc": "",
+      "date": "2022-06-25T00:00:00.000Z",
+      "endDate": ""
     }
   ]
 }
