@@ -1286,6 +1286,19 @@
       "linkDesc": "",
       "date": "2022-07-04T00:00:00.000Z",
       "endDate": ""
+    },
+    {
+      "skillType": "softSkill",
+      "type": "book",
+      "title": "Thinking, Fast and Slow (Daniel Kahneman)",
+      "desc": "",
+      "origin": "https://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555",
+      "originDesc": "Amazon",
+      "link": "",
+      "linkDesc": "",
+      "date": "2022-07-16T00:00:00.000Z",
+      "endDate": "",
+      "id": "NUpnTqE"
     }
   ]
 }
