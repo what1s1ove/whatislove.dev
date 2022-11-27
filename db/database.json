@@ -1299,6 +1299,19 @@
       "date": "2022-07-16T00:00:00.000Z",
       "endDate": "",
       "id": "NUpnTqe"
+    },
+    {
+      "skillType": "softSkill",
+      "type": "book",
+      "title": "Steve Jobs (Walter Isaacson)",
+      "desc": "",
+      "origin": "https://www.amazon.com/Steve-Jobs-Walter-Isaacson/dp/1501127624",
+      "originDesc": "Amazon",
+      "link": "",
+      "linkDesc": "",
+      "date": "2022-11-27T00:00:00.000Z",
+      "endDate": "",
+      "id": "l95CAYv"
     }
   ]
 }
