@@ -1312,6 +1312,19 @@
       "date": "2022-11-27T00:00:00.000Z",
       "endDate": "",
       "id": "l95CAYv"
+    },
+    {
+      "id": "2rfidUy",
+      "skillType": "softSkill",
+      "type": "book",
+      "title": "What I Talk About When I Talk About Running (Haruki Murakami)",
+      "desc": "",
+      "origin": "https://www.amazon.com/What-Talk-About-When-Running/dp/0307389839",
+      "originDesc": "Amazon",
+      "link": "",
+      "linkDesc": "",
+      "date": "2022-12-07T00:00:00.000Z",
+      "endDate": ""
     }
   ]
 }
