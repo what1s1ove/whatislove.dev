@@ -1,5 +1,5 @@
 const TimelineType = {
-  WORK: `work`,
+  POSITION: `position`,
   COURSE: `course`,
   BOOK: `book`,
   MEETUP: `meetup`,

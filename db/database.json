@@ -107,7 +107,7 @@
     {
       "id": "OxcTRm3zIT",
       "skillType": "hardSkill",
-      "type": "work",
+      "type": "position",
       "title": "HTML Developer (KIES - SEO company)",
       "desc": "Rewrote the front-end part of the project. Bootstrap and jquery were completely removed. Made indicators Lighthouse 100% in all sections.",
       "origin": "",
@@ -458,7 +458,7 @@
     {
       "id": "JY8-AZbCaK",
       "skillType": "hardSkill",
-      "type": "work",
+      "type": "position",
       "title": "HTML Developer (SGroup - Holding)",
       "desc": "Reduced the size of the average project bundle from 8mb to <1.5mb. Completely removed jquery, bootstrap, uikit and other libraries/frameworks from the projects where it was necessary.",
       "origin": "",
@@ -627,7 +627,7 @@
     {
       "id": "iFI6X1tekP",
       "skillType": "hardSkill",
-      "type": "work",
+      "type": "position",
       "title": "Front-End Developer (Binary Studio)",
       "desc": "Just love ❤️",
       "origin": "https://binary-studio.com/",
@@ -991,7 +991,7 @@
     {
       "id": "aJkGLtygAU",
       "skillType": "hardSkill",
-      "type": "work",
+      "type": "position",
       "title": "Mentor / Captain / Interviewer / Author (HTML Academy)",
       "desc": "📚",
       "origin": "https://htmlacademy.ru",
@@ -1121,7 +1121,7 @@
     {
       "id": "kRHMrpc",
       "skillType": "hardSkill",
-      "type": "work",
+      "type": "position",
       "title": "Head Mentor (Лига А)",
       "desc": "",
       "origin": "https://ligaa.agency/",

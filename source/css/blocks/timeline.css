@@ -126,8 +126,8 @@
   background-image: url("../img/timeline-meetup.bg.svg");
 }
 
-.timeline__icon--work {
-  background-image: url("../img/timeline-work.bg.svg");
+.timeline__icon--position {
+  background-image: url("../img/timeline-position.bg.svg");
 }
 
 .timeline__item:hover .timeline__icon {
