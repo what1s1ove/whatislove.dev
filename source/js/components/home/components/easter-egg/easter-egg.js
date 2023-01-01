@@ -29,8 +29,8 @@ class EasterEgg {
   }
 
   init() {
-    this._easterEggContainer = document.querySelector(`.easter-egg`)
-    this._easterEggBtn = document.querySelector(`.easter-egg__button`)
+    this._easterEggContainer = document.querySelector(`.not-easter-egg`)
+    this._easterEggBtn = document.querySelector(`.not-easter-egg__button`)
 
     this._setRandomPosition()
 
