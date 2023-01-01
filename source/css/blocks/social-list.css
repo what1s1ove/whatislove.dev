@@ -1,12 +1,9 @@
 .social-list {
   display: flex;
+  gap: 0 15px;
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-.social-list__item:not(:last-child) {
-  margin: 0 15px 0 0;
 }
 
 .social-list__item-link {

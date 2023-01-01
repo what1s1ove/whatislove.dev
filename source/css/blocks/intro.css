@@ -11,18 +11,18 @@
 }
 
 .intro__content {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  gap: 25px 0;
 }
 
 .intro__image-wrapper {
-  align-self: center;
-  margin: 0 0 25px;
+  margin: 0;
 }
 
 .intro__image-wrapper img {
   display: block;
   max-width: 100%;
+  margin: 0 auto;
   border-radius: 50%;
 }
 
@@ -37,11 +37,14 @@
 }
 
 .intro__list {
+  display: grid;
+  gap: 15px 0;
   margin: 0 0 25px;
 }
 
-.intro__item:not(:last-child) {
-  margin: 0 0 10px;
+.intro__item {
+  display: grid;
+  gap: 3px 0;
 }
 
 .intro__item-title {
@@ -50,6 +53,7 @@
 
 .intro__item-desc {
   margin: 0;
+  line-height: 1;
 }
 
 .intro__item-desc a {
@@ -110,13 +114,9 @@
   }
 
   .intro__content {
-    flex-direction: row;
+    grid-auto-flow: column;
     justify-content: center;
-    align-items: center;
-  }
-
-  .intro__image-wrapper {
-    margin: 0 60px 0 0;
+    gap: 0 60px;
   }
 
   .intro__personal-wrapper {

@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 30px;
   height: 100vh;
   overflow: hidden;
   background-color: var(--color--secondary);
@@ -45,7 +46,7 @@
 
 .header__name {
   width: calc(100% / 1.45);
-  margin: 0 15px 30px;
+  margin: 0 15px;
   padding: 5px 10px;
   font-size: 35px;
   text-align: center;
@@ -98,9 +99,8 @@
   position: fixed;
   top: 13px;
   right: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-content: center;
   width: 45px;
   height: 45px;
   padding: 0;

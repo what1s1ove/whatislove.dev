@@ -16,8 +16,10 @@
 
 .timeline__list {
   position: relative;
+  display: grid;
+  gap: 15px 0;
   margin: 0;
-  padding: 20px 0 80px;
+  padding: 20px 0 80px 30px;
   list-style: none;
 }
 
@@ -42,7 +44,6 @@
 
 .timeline__item {
   position: relative;
-  margin: 0 0 15px 30px;
 }
 
 .timeline__item-wrapper {
@@ -91,9 +92,6 @@
   position: absolute;
   top: 20px;
   left: -52px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 46px;
   height: 46px;
   background-color: var(--color--primary);
@@ -222,8 +220,8 @@
   }
 
   .timeline__list {
-    display: flex;
-    flex-direction: column;
+    gap: 25px 0;
+    padding: 20px 0 80px;
   }
 
   .timeline__list:not(:empty)::before {
@@ -239,7 +237,6 @@
   .timeline__item {
     display: flex;
     flex-direction: column;
-    margin: 0 0 25px;
   }
 
   .timeline__item:nth-child(even) {

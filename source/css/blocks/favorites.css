@@ -38,9 +38,8 @@
 .favorites__item {
   position: relative;
   z-index: var(--z-index--level-one);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-content: center;
   width: 240px;
   height: 240px;
   background-color: var(--color--secondary);
