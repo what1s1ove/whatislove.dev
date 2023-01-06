@@ -18,8 +18,8 @@
 .intro__image-wrapper {
   width: 290px;
   height: 290px;
-  margin: 0;
-  padding: 10px 15px;
+  margin: 0 auto;
+  padding: 10px 15px 0;
   background-color: var(--color--primary);
   border-radius: 50%;
 }
