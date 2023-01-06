@@ -86,6 +86,10 @@
     color: #000000;
   }
 
+  .intro__image-wrapper {
+    margin: 0 auto;
+  }
+
   .intro__header {
     display: none;
   }
