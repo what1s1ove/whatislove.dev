@@ -30,7 +30,10 @@
   width: 100%;
   height: 275px;
   background-color: var(--color--primary);
-  clip-path: url("#intro-bg");
+  mask: url("../img/intro-photo.mask.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: 50% 50%;
 }
 
 .intro__image-wrapper img {
