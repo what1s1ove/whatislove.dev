@@ -16,14 +16,19 @@
 }
 
 .intro__image-wrapper {
+  width: 290px;
+  height: 290px;
   margin: 0;
+  padding: 10px 15px;
+  background-color: var(--color--primary);
+  border-radius: 50%;
 }
 
 .intro__image-wrapper img {
   display: block;
   max-width: 100%;
   margin: 0 auto;
-  border-radius: 50%;
+  filter: drop-shadow(15px 4px 0 var(--color--secondary));
 }
 
 .intro__personal-wrapper {
