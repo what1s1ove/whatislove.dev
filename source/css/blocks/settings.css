@@ -41,10 +41,12 @@
   background-position: center;
   background-size: 16px;
   filter: var(--invert-icon--primary);
+  transition-duration: unset;
 }
 
 .settings__item-control:checked::before {
   filter: var(--invert-icon--secondary);
+  transition-duration: unset;
 }
 
 .settings__item-control::after {
