@@ -16,9 +16,9 @@
   content: "";
   width: 50%;
   height: 100%;
-  background-color: rgb(255 255 255 / 20%);
+  background-color: rgb(255 215 0 / 20%);
   transform: skewX(-25deg) translateY(-50%);
-  animation: shine 10s infinite;
+  animation: shine 7s infinite;
   pointer-events: none;
 }
 
