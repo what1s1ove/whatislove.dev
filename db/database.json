@@ -1325,6 +1325,19 @@
       "linkDesc": "",
       "date": "2022-12-07T00:00:00.000Z",
       "endDate": ""
+    },
+    {
+      "id": "KMBv_JI",
+      "skillType": "softSkill",
+      "type": "book",
+      "title": "The Willpower Instinct: How Self-Control Works, Why It Matters, and What You Can Do to Get More of It (Kelly McGonigal)",
+      "desc": "",
+      "origin": "https://www.amazon.com/Willpower-Instinct-Self-Control-Works-Matters/dp/1583335080",
+      "originDesc": "Amazon",
+      "link": "",
+      "linkDesc": "",
+      "date": "2023-01-08T00:00:00.000Z",
+      "endDate": ""
     }
   ]
 }
