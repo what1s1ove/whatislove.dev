@@ -40,7 +40,7 @@
   display: block;
   max-width: 100%;
   margin: 0 auto;
-  will-change: transform;
+  will-change: filter;
   filter: drop-shadow(-8px 7px 0.3px var(--color--secondary));
 }
 
