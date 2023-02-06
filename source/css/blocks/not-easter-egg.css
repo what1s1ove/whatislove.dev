@@ -37,3 +37,9 @@
 .not-easter-egg__button:focus-within {
   opacity: 1;
 }
+
+@media print {
+  .not-easter-egg {
+    display: none;
+  }
+}

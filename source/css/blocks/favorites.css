@@ -61,7 +61,7 @@
   background-repeat: no-repeat;
   background-position: right 10px top 50%;
   background-size: 50px;
-  mask: url("../img/favorites.mask.svg");
+  mask-image: url("../img/favorites.mask.svg");
   mask-repeat: no-repeat;
   mask-size: contain;
   mask-position: 50% 0;
