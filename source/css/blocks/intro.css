@@ -17,6 +17,9 @@
 
 .intro__image-wrapper {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: end;
   width: 305px;
   margin: 0 auto;
   overflow: hidden;
