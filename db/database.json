@@ -1351,6 +1351,19 @@
       "linkDesc": "",
       "date": "2023-04-09T00:00:00.000Z",
       "endDate": ""
+    },
+    {
+      "id": "8KSMPye",
+      "skillType": "softSkill",
+      "type": "course",
+      "title": "Tim Cook: The Genius Who Took Apple to the Next Level (Leander Kahney)",
+      "desc": "",
+      "origin": "https://www.amazon.com/Tim-Cook-Genius-Apple-Level/dp/0525537600",
+      "originDesc": "Amazon",
+      "link": "",
+      "linkDesc": "",
+      "date": "2023-04-20T00:00:00.000Z",
+      "endDate": ""
     }
   ]
 }
