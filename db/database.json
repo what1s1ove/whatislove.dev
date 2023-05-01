@@ -460,7 +460,7 @@
       "skillType": "hardSkill",
       "type": "position",
       "title": "HTML Developer (SGroup)",
-      "desc": "Completely removed jQuery, Bootstrap, UIkit from the projects where it was needed. Optimized the average project bundle size from 8 MB to <1.5 MB.",
+      "desc": "Completely removed jQuery, Bootstrap, UIkit from the projects where they are not needed. Optimized the average project bundle size from 8 MB to <1.5 MB.",
       "origin": "",
       "originDesc": "",
       "link": "",
