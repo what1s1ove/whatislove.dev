@@ -19,7 +19,7 @@
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
   width: 305px;
   margin: 0 auto;
   overflow: hidden;

@@ -1364,6 +1364,19 @@
       "linkDesc": "",
       "date": "2023-04-20T00:00:00.000Z",
       "endDate": ""
+    },
+    {
+      "id": "vnOnxOg",
+      "skillType": "softSkill",
+      "type": "book",
+      "title": "The 7 Habits of Highly Effective People: Powerful Lessons in Personal Change",
+      "desc": "",
+      "origin": "https://www.amazon.com/Habits-Highly-Effective-People-Powerful/dp/0743269519",
+      "originDesc": "Amazon",
+      "link": "",
+      "linkDesc": "",
+      "date": "2023-05-06T00:00:00.000Z",
+      "endDate": ""
     }
   ]
 }
