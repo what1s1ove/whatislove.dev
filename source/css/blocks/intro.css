@@ -130,13 +130,6 @@
     display: none;
   }
 
-  .intro__item--phone {
-    position: unset;
-    width: unset;
-    height: unset;
-    clip-path: unset;
-  }
-
   .intro__item-title::after {
     content: ":";
   }
