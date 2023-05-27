@@ -1377,6 +1377,19 @@
       "linkDesc": "",
       "date": "2023-05-06T00:00:00.000Z",
       "endDate": ""
+    },
+    {
+      "id": "lV4Dd_8",
+      "skillType": "softSkill",
+      "type": "book",
+      "title": "My Life And Work (Henry Ford)",
+      "desc": "",
+      "origin": "https://www.amazon.com/My-Life-Work-Henry-Ford/dp/1920265171",
+      "originDesc": "Amazon",
+      "link": "",
+      "linkDesc": "",
+      "date": "2023-05-27T00:00:00.000Z",
+      "endDate": ""
     }
   ]
 }
