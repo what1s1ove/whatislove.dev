@@ -1390,6 +1390,19 @@
       "linkDesc": "",
       "date": "2023-05-27T00:00:00.000Z",
       "endDate": ""
+    },
+    {
+      "id": "7rkKTLI",
+      "skillType": "softSkill",
+      "type": "book",
+      "title": "Tools of Titans (Timothy Ferriss)",
+      "desc": "",
+      "origin": "https://www.amazon.com/Tools-Titans-Billionaires-World-Class-Performers/dp/1328683788",
+      "originDesc": "Amazon",
+      "link": "",
+      "linkDesc": "",
+      "date": "2023-07-03T00:00:00.000Z",
+      "endDate": ""
     }
   ]
 }
