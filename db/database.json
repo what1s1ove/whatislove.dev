@@ -1403,6 +1403,19 @@
       "linkDesc": "",
       "date": "2023-07-03T00:00:00.000Z",
       "endDate": ""
+    },
+    {
+      "id": "ipcLGsz",
+      "skillType": "softSkill",
+      "type": "book",
+      "title": "Getting Things Done (David Allen)",
+      "desc": "",
+      "origin": "https://www.amazon.com/Getting-Things-Done-Stress-Free-Productivity/dp/0142000280",
+      "originDesc": "Amazon",
+      "link": "",
+      "linkDesc": "",
+      "date": "2023-07-19T00:00:00.000Z",
+      "endDate": ""
     }
   ]
 }
