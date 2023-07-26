@@ -1369,7 +1369,7 @@
       "id": "vnOnxOg",
       "skillType": "softSkill",
       "type": "book",
-      "title": "The 7 Habits of Highly Effective People: Powerful Lessons in Personal Change",
+      "title": "The 7 Habits of Highly Effective People: Powerful Lessons in Personal Change (Stephen Covey)",
       "desc": "",
       "origin": "https://www.amazon.com/Habits-Highly-Effective-People-Powerful/dp/0743269519",
       "originDesc": "Amazon",
@@ -1415,6 +1415,19 @@
       "link": "",
       "linkDesc": "",
       "date": "2023-07-19T00:00:00.000Z",
+      "endDate": ""
+    },
+    {
+      "id": "nP2NX7K",
+      "skillType": "softSkill",
+      "type": "book",
+      "title": "Convict Conditioning (Paul Wade)",
+      "desc": "",
+      "origin": "https://www.amazon.com/Convict-Conditioning-Weakness-Using-Survival-Strength/dp/0938045768",
+      "originDesc": "Amazon",
+      "link": "",
+      "linkDesc": "",
+      "date": "2023-07-26T00:00:00.000Z",
       "endDate": ""
     }
   ]
