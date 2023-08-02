@@ -1429,6 +1429,19 @@
       "linkDesc": "",
       "date": "2023-07-26T00:00:00.000Z",
       "endDate": ""
+    },
+    {
+      "id": "VJNupUe",
+      "skillType": "softSkill",
+      "type": "book",
+      "title": "The Diamond Cutter: The Buddha on Managing Your Business and Your Life (Geshe Michael Roach)",
+      "desc": "",
+      "origin": "https://www.amazon.com/Diamond-Cutter-Buddha-Managing-Business/dp/038552868X",
+      "originDesc": "Amazon",
+      "link": "",
+      "linkDesc": "",
+      "date": "2023-08-02T00:00:00.000Z",
+      "endDate": ""
     }
   ]
 }
