@@ -1137,7 +1137,7 @@
       "type": "course",
       "title": "AWS Certified Cloud Practitioner",
       "desc": "",
-      "origin": "https://www.certmetrics.com/amazon/public/transcript.aspx?transcript=E8M0BWQCD1QE12W1",
+      "origin": "https://www.credly.com/badges/b62359a0-0525-4b3e-aeb2-208c40a3e21b/public_url",
       "originDesc": "Certificate",
       "link": "",
       "linkDesc": "",
@@ -1441,6 +1441,19 @@
       "link": "",
       "linkDesc": "",
       "date": "2023-08-02T00:00:00.000Z",
+      "endDate": ""
+    },
+    {
+      "id": "V3fqbae",
+      "skillType": "hardSkill",
+      "type": "course",
+      "title": "AWS Certified Solutions Architect – Associate",
+      "desc": "",
+      "origin": "https://www.credly.com/badges/91491f61-4cb4-4cd2-9dee-c1d19f70cf70/public_url",
+      "originDesc": "Certificate",
+      "link": "",
+      "linkDesc": "",
+      "date": "2023-07-31T00:00:00.000Z",
       "endDate": ""
     }
   ]
