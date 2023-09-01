@@ -1476,10 +1476,36 @@
       "title": "Changing on the Job: Developing Leaders for a Complex World (Jennifer Garvey Berger)",
       "desc": "",
       "origin": "https://www.amazon.com/Changing-Job-Developing-Leaders-Complex/dp/0804786968",
-      "originDesc": "Amazin",
+      "originDesc": "Amazon",
       "link": "",
       "linkDesc": "",
       "date": "2023-08-16T00:00:00.000Z",
+      "endDate": ""
+    },
+    {
+      "id": "09XKfhX",
+      "skillType": "hardSkill",
+      "type": "book",
+      "title": "Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems (Martin Kleppmann)",
+      "desc": "",
+      "origin": "https://www.amazon.com/Designing-Data-Intensive-Applications-Reliable-Maintainable/dp/1449373321",
+      "originDesc": "Amazon",
+      "link": "",
+      "linkDesc": "",
+      "date": "2023-09-01T00:00:00.000Z",
+      "endDate": ""
+    },
+    {
+      "id": "aWVqFSR",
+      "skillType": "hardSkill",
+      "type": "book",
+      "title": "PostgreSQL Inside (Oleg Bartunov)",
+      "desc": "",
+      "origin": "https://postgrespro.ru/education/books/internals",
+      "originDesc": "postgrespro.com",
+      "link": "",
+      "linkDesc": "",
+      "date": "2023-09-01T00:00:00.000Z",
       "endDate": ""
     }
   ]
