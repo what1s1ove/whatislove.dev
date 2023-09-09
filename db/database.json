@@ -1507,6 +1507,19 @@
       "linkDesc": "",
       "date": "2023-09-01T00:00:00.000Z",
       "endDate": ""
+    },
+    {
+      "id": "y7gwe05",
+      "skillType": "softSkill",
+      "type": "book",
+      "title": "A Woman Makes a Plan: Advice for a Lifetime of Adventure, Beauty, and Success (Maye Musk)",
+      "desc": "",
+      "origin": "https://www.amazon.com/A-Woman-Makes-Plan-Maye-Musk-audiobook/dp/B07Z9M33M8",
+      "originDesc": "Amazon",
+      "link": "",
+      "linkDesc": "",
+      "date": "2023-09-09T00:00:00.000Z",
+      "endDate": ""
     }
   ]
 }
