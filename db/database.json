@@ -1520,6 +1520,19 @@
       "linkDesc": "",
       "date": "2023-09-09T00:00:00.000Z",
       "endDate": ""
+    },
+    {
+      "id": "kdRAXj0",
+      "skillType": "softSkill",
+      "type": "book",
+      "title": "Daily Rituals: How Artists Work (Mason Currey)",
+      "desc": "",
+      "origin": "https://www.amazon.com/Daily-Rituals-How-Artists-Work/dp/0307273601",
+      "originDesc": "Amazon",
+      "link": "",
+      "linkDesc": "",
+      "date": "2023-09-17T00:00:00.000Z",
+      "endDate": ""
     }
   ]
 }
