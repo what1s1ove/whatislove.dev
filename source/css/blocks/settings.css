@@ -40,11 +40,14 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 16px;
+  will-change: filter;
   filter: var(--invert-icon--primary);
+  transition-duration: unset;
 }
 
 .settings__item-control:checked::before {
   filter: var(--invert-icon--secondary);
+  transition-duration: unset;
 }
 
 .settings__item-control::after {
