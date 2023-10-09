@@ -2,8 +2,8 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=16 <17",
-    "npm": ">=8 <9"
+    "node": "18.x.x",
+    "npm": "9.x.x"
   },
   "dependencies": {
     "form-payload": "0.0.8"
@@ -28,18 +28,6 @@
     "eslint": "8.4.1",
     "eslint-import-resolver-alias": "1.1.2",
     "eslint-plugin-import": "2.25.3",
-    "gulp": "4.0.2",
-    "gulp-csso": "4.0.1",
-    "gulp-htmlmin": "5.0.1",
-    "gulp-if": "3.0.0",
-    "gulp-libsquoosh": "1.0.12",
-    "gulp-plumber": "1.2.1",
-    "gulp-postcss": "9.0.1",
-    "gulp-rename": "2.0.0",
-    "gulp-rev": "9.0.0",
-    "gulp-rev-rewrite": "5.0.0",
-    "gulp-sourcemaps": "3.0.0",
-    "gulp-svgmin": "4.1.0",
     "json-server": "0.17.0",
     "lint-staged": "12.1.2",
     "node-w3c-validator": "2.0.2",
