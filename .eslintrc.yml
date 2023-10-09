@@ -19,7 +19,7 @@ settings:
       extensions:
         - .js
       map:
-        - ['~', './src/js']
+        - ['~', './source/js']
 
 rules:
   semi:
