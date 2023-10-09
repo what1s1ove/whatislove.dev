@@ -88,6 +88,7 @@ rules:
 overrides:
   - files:
     - gulpfile.js
+    - commitlint.config.js
     rules:
       import/no-default-export:
         - off
