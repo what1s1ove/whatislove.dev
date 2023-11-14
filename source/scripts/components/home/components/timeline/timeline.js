@@ -24,26 +24,6 @@ class Timeline {
     this._timelineListComponent = new TimelineList()
   }
 
-  async init() {
-    this._containerNode = document.querySelector(`.timeline`)
-
-    this._loaderComponent.init()
-    this._timelineFormComponent.init()
-    this._timelineListComponent.init()
-
-    this._initListeners()
-  }
-
-  _renderTimelines(formValues) {
-    let timelines = getSuitTimelines(this._timelines, formValues)
-
-    this._timelineListComponent.renderTimelines(timelines)
-  }
-
-  _initListeners() {
-    document.addEventListener(`scroll`, this._handleTimelineShow)
-  }
-
   async _fetchTimelines() {
     this._timelines = await this._timelineApi.getTimelines()
   }
@@ -68,6 +48,26 @@ class Timeline {
 
       document.removeEventListener(`scroll`, this._handleTimelineShow)
     }
+  }
+
+  _initListeners() {
+    document.addEventListener(`scroll`, this._handleTimelineShow)
+  }
+
+  _renderTimelines(formValues) {
+    let timelines = getSuitTimelines(this._timelines, formValues)
+
+    this._timelineListComponent.renderTimelines(timelines)
+  }
+
+  init() {
+    this._containerNode = document.querySelector(`.timeline`)
+
+    this._loaderComponent.init()
+    this._timelineFormComponent.init()
+    this._timelineListComponent.init()
+
+    this._initListeners()
   }
 }
 

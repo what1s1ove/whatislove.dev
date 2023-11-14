@@ -1,6 +1,6 @@
 import { createElement } from '~/helpers/helpers.js'
 
-let getSettingItemElement = ({ name, label }) => {
+let getSettingItemElement = ({ label, name }) => {
   return createElement(`
     <li class="settings__item">
       <button

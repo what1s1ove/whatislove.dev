@@ -8,7 +8,7 @@ import {
 } from './components/components.js'
 
 class Home {
-  constructor({ timelineApi, storage }) {
+  constructor({ storage, timelineApi }) {
     this._handleSettingBtnAppend = this._handleSettingBtnAppend.bind(this)
     this._handleNotificationAdd = this._handleNotificationAdd.bind(this)
 
@@ -20,10 +20,18 @@ class Home {
       timelineApi,
     })
     this._easterEggComponent = new EasterEgg({
-      onSettingBtnAppend: this._handleSettingBtnAppend,
       onNotificationAdd: this._handleNotificationAdd,
+      onSettingBtnAppend: this._handleSettingBtnAppend,
     })
     this._toastComponent = new Toast()
+  }
+
+  _handleNotificationAdd(message) {
+    this._toastComponent.pushMessage(message)
+  }
+
+  _handleSettingBtnAppend(settings) {
+    return this._settingsComponent.appendNewBtn(settings)
   }
 
   init() {
@@ -32,14 +40,6 @@ class Home {
     this._navigationComponent.init()
     this._timelineComponent.init()
     this._easterEggComponent.init()
-  }
-
-  _handleSettingBtnAppend(settings) {
-    return this._settingsComponent.appendNewBtn(settings)
-  }
-
-  _handleNotificationAdd(message) {
-    this._toastComponent.pushMessage(message)
   }
 }
 

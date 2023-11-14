@@ -1,17 +1,8 @@
 import { getFormattedDate, getStringWitCheck } from '~/helpers/helpers.js'
 
 let getTimelineTemplate = (timeline) => {
-  let {
-    type,
-    title,
-    origin,
-    originDesc,
-    desc,
-    link,
-    linkDesc,
-    date,
-    endDate,
-  } = timeline
+  let { date, desc, endDate, link, linkDesc, origin, originDesc, title, type } =
+    timeline
 
   let titleStringNode = getStringWitCheck(
     title,

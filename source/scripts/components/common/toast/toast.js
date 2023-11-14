@@ -13,16 +13,21 @@ class Toast {
     this._isShowingMessage = false
   }
 
-  init() {
-    this._toastNode = document.querySelector(`.toast`)
-  }
+  async _displayToastMessage(messagePayload) {
+    let { cb, duration = TOAST_DEFAULT_DURATION, message } = messagePayload
 
-  pushMessage(message) {
-    this._messages.push(message)
+    this._toastNode.classList.add(TOAST_SHOW_CLASS_NAME)
+    this._toastNode.textContent = message
 
-    if (!this._isShowingMessage) {
-      this._initShowingMessages()
-    }
+    await setAsyncTimeout(() => {
+      this._toastNode.classList.remove(TOAST_SHOW_CLASS_NAME)
+    }, duration)
+
+    await setAsyncTimeout(() => {
+      this._toastNode.textContent = ``
+    }, CLEAN_MESSAGE_DELAY)
+
+    cb?.()
   }
 
   async _initShowingMessages() {
@@ -43,21 +48,16 @@ class Toast {
     this._isShowingMessage = false
   }
 
-  async _displayToastMessage(messagePayload) {
-    let { duration = TOAST_DEFAULT_DURATION, message, cb } = messagePayload
+  init() {
+    this._toastNode = document.querySelector(`.toast`)
+  }
 
-    this._toastNode.classList.add(TOAST_SHOW_CLASS_NAME)
-    this._toastNode.textContent = message
+  pushMessage(message) {
+    this._messages.push(message)
 
-    await setAsyncTimeout(() => {
-      this._toastNode.classList.remove(TOAST_SHOW_CLASS_NAME)
-    }, duration)
-
-    await setAsyncTimeout(() => {
-      this._toastNode.textContent = ``
-    }, CLEAN_MESSAGE_DELAY)
-
-    cb?.()
+    if (!this._isShowingMessage) {
+      this._initShowingMessages()
+    }
   }
 }
 

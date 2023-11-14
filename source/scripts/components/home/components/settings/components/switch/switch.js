@@ -2,7 +2,7 @@ import { CHECKED_ATTR } from './common/constants.js'
 import { checkIsChecked } from './helpers/helpers.js'
 
 class Switch {
-  constructor({ name, isDefaultChecked, onClick }) {
+  constructor({ isDefaultChecked, name, onClick }) {
     this._name = name
     this._isDefaultChecked = isDefaultChecked
     this._onClick = onClick
@@ -10,6 +10,21 @@ class Switch {
     this._switchNode = undefined
 
     this._handleSwitchClick = this._handleSwitchClick.bind(this)
+  }
+
+  _handleSwitchClick({ target }) {
+    let isChecked = !checkIsChecked(target)
+
+    this._isChecked = isChecked
+
+    this._onClick({
+      isChecked,
+      name: this._name,
+    })
+  }
+
+  _initListeners() {
+    this._switchNode.addEventListener(`click`, this._handleSwitchClick)
   }
 
   set _isChecked(isChecked) {
@@ -24,26 +39,11 @@ class Switch {
     this._initListeners()
 
     this._onClick({
-      name: this._name,
       isChecked: this._isDefaultChecked,
+      name: this._name,
     })
 
     return this._switchNode
-  }
-
-  _initListeners() {
-    this._switchNode.addEventListener(`click`, this._handleSwitchClick)
-  }
-
-  _handleSwitchClick({ target }) {
-    let isChecked = !checkIsChecked(target)
-
-    this._isChecked = isChecked
-
-    this._onClick({
-      name: this._name,
-      isChecked,
-    })
   }
 }
 

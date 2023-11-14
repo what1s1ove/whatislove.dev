@@ -12,12 +12,12 @@ let storage = new Storage({
 let http = new Http()
 
 let timelineApi = new TimelineApi({
-  http,
   baseUrl: getServerApiUrl({
     host: AppConfig.SERVER_HOST,
     port: AppConfig.SERVER_PORT,
   }),
   filesApiPath: AppConfig.FILES_API_PATH,
+  http,
 })
 
 export { http, storage, timelineApi }

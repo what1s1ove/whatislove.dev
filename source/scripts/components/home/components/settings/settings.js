@@ -15,27 +15,6 @@ class Settings {
     this._handleControlChange = this._handleControlChange.bind(this)
   }
 
-  init() {
-    this._settingListNode = document.querySelector(`.settings`)
-
-    this._initControl(SettingName.THEME)
-    this._initControl(SettingName.MOTION)
-  }
-
-  appendNewBtn(settings) {
-    let { name, label, isDefaultChecked, onClick } = settings
-
-    let newSettingItemNode = getSettingItemElement({ name, label })
-
-    this._settingListNode.prepend(newSettingItemNode)
-
-    return new Switch({
-      name,
-      isDefaultChecked,
-      onClick,
-    }).init(`.settings__item-switch--${name}`)
-  }
-
   _handleControlChange({ name, value }) {
     if (value === RESULT_VALUE) {
       this._removeSettingAttr(name)
@@ -52,14 +31,10 @@ class Settings {
     let defaultValue = this._setInitialSettingAttr(name)
 
     new Control({
-      name,
       defaultValue,
+      name,
       onChange: this._handleControlChange,
     }).init(`.settings__item-fieldset--${name}`)
-  }
-
-  _setSettingAttr(name, value) {
-    document.documentElement.setAttribute(getCustomAttributeName(name), value)
   }
 
   _removeSettingAttr(name) {
@@ -75,6 +50,31 @@ class Settings {
     }
 
     return value
+  }
+
+  _setSettingAttr(name, value) {
+    document.documentElement.setAttribute(getCustomAttributeName(name), value)
+  }
+
+  appendNewBtn(settings) {
+    let { isDefaultChecked, label, name, onClick } = settings
+
+    let newSettingItemNode = getSettingItemElement({ label, name })
+
+    this._settingListNode.prepend(newSettingItemNode)
+
+    return new Switch({
+      isDefaultChecked,
+      name,
+      onClick,
+    }).init(`.settings__item-switch--${name}`)
+  }
+
+  init() {
+    this._settingListNode = document.querySelector(`.settings`)
+
+    this._initControl(SettingName.THEME)
+    this._initControl(SettingName.MOTION)
   }
 }
 

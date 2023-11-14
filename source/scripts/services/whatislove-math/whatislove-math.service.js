@@ -1,11 +1,11 @@
 class WhatisloveMath {
-  static NOTHING_TODO_VALUE = 10
-
   static BoostEntity = {
     BOOK: `book`,
     COURSE: `course`,
     MENTEE: `mentee`,
   }
+
+  static NOTHING_TODO_VALUE = 10
 
   static boostEntityToProfessionalValue = {
     [WhatisloveMath.BoostEntity.BOOK]: 1,
@@ -13,12 +13,10 @@ class WhatisloveMath {
     [WhatisloveMath.BoostEntity.MENTEE]: 10,
   }
 
-  static multiplyBoostEntities(boostEntity, count = 0) {
-    return Array.from({ length: count }).fill(boostEntity)
-  }
+  constructor() {}
 
   static calculateProfessionalLevel(initialValue = 0, ...boostEntities) {
-    let { NOTHING_TODO_VALUE, BoostEntity, boostEntityToProfessionalValue } =
+    let { BoostEntity, NOTHING_TODO_VALUE, boostEntityToProfessionalValue } =
       WhatisloveMath
 
     let hasBoostEntities = boostEntities.length > 0
@@ -46,7 +44,9 @@ class WhatisloveMath {
     return professionalLevel
   }
 
-  constructor() {}
+  static multiplyBoostEntities(boostEntity, count = 0) {
+    return Array.from({ length: count }).fill(boostEntity)
+  }
 }
 
 export { WhatisloveMath }

@@ -1,8 +1,8 @@
 let TimelineType = {
-  POSITION: `position`,
-  COURSE: `course`,
   BOOK: `book`,
+  COURSE: `course`,
   MEETUP: `meetup`,
+  POSITION: `position`,
 }
 
 export { TimelineType }

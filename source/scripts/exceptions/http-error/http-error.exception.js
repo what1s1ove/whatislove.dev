@@ -6,8 +6,8 @@ import {
 
 class HttpError extends Error {
   constructor({
-    status = HttpCode.INTERNAL_SERVER_ERROR,
     message = ApiErrorMessage.NETWORK_ERROR,
+    status = HttpCode.INTERNAL_SERVER_ERROR,
   } = {}) {
     super(message)
     this.status = status

@@ -1,6 +1,6 @@
 let SettingName = {
-  THEME: `theme`,
   MOTION: `motion`,
+  THEME: `theme`,
   WHATISLOVE: `whatislove`,
 }
 

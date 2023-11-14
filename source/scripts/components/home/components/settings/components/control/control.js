@@ -1,5 +1,5 @@
 class Control {
-  constructor({ name, defaultValue, onChange }) {
+  constructor({ defaultValue, name, onChange }) {
     this._name = name
     this._onChange = onChange
     this._defaultValue = defaultValue
@@ -9,12 +9,15 @@ class Control {
     this._handleSwitchChange = this._handleSwitchChange.bind(this)
   }
 
-  init(selector) {
-    this._controlNode = document.querySelector(selector)
+  _handleSwitchChange({ target }) {
+    this._onChange({
+      name: this._name,
+      value: target.value,
+    })
+  }
 
-    this._setInitialValue()
-
-    this._initListeners()
+  _initListeners() {
+    this._controlNode.addEventListener(`change`, this._handleSwitchChange)
   }
 
   _setInitialValue() {
@@ -31,15 +34,12 @@ class Control {
     }
   }
 
-  _initListeners() {
-    this._controlNode.addEventListener(`change`, this._handleSwitchChange)
-  }
+  init(selector) {
+    this._controlNode = document.querySelector(selector)
 
-  _handleSwitchChange({ target }) {
-    this._onChange({
-      name: this._name,
-      value: target.value,
-    })
+    this._setInitialValue()
+
+    this._initListeners()
   }
 }
 

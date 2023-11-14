@@ -15,12 +15,18 @@ class Form {
     this._handleSubmit = this._handleSubmit.bind(this)
   }
 
-  init() {
-    this._formNode = document.querySelector(`form[name="timeline"]`)
+  async _handleSubmit(event_) {
+    event_.preventDefault()
 
-    this._initSelects()
+    let formValues = getFormValues(this._formNode)
 
-    this._initListeners()
+    await this._timelineApi.saveTimeline(getTransformedTimeline(formValues))
+
+    this._formNode.reset()
+  }
+
+  _initListeners() {
+    this._formNode.addEventListener(`submit`, this._handleSubmit)
   }
 
   _initSelects() {
@@ -34,18 +40,12 @@ class Form {
     )
   }
 
-  _initListeners() {
-    this._formNode.addEventListener(`submit`, this._handleSubmit)
-  }
+  init() {
+    this._formNode = document.querySelector(`form[name="timeline"]`)
 
-  async _handleSubmit(event_) {
-    event_.preventDefault()
+    this._initSelects()
 
-    let formValues = getFormValues(this._formNode)
-
-    await this._timelineApi.saveTimeline(getTransformedTimeline(formValues))
-
-    this._formNode.reset()
+    this._initListeners()
   }
 }
 

@@ -13,7 +13,7 @@ import {
 import { getNodeRandomCoords, getPlayerElement } from './helpers/helpers.js'
 
 class EasterEgg {
-  constructor({ onSettingBtnAppend, onNotificationAdd }) {
+  constructor({ onNotificationAdd, onSettingBtnAppend }) {
     this._onSettingBtnAppend = onSettingBtnAppend
     this._onNotificationAdd = onNotificationAdd
 
@@ -29,13 +29,35 @@ class EasterEgg {
     )
   }
 
-  init() {
-    this._easterEggContainer = document.querySelector(`.not-easter-egg`)
-    this._easterEggBtn = document.querySelector(`.not-easter-egg__button`)
+  _handleEasterEggClick() {
+    this._onNotificationAdd({
+      cb: () => {
+        let buttonNode = this._onSettingBtnAppend({
+          isDefaultChecked: true,
+          label: SettingButtonLabel.SWITCH_LOVE,
+          name: SettingName.WHATISLOVE,
+          onClick: this._handleSettingBtnClick,
+        })
 
+        buttonNode.focus()
+      },
+      duration: NOTIFICATION_DELAY,
+      message: NotificationMessage.LOVE,
+    })
+
+    this._renderPlayer()
+
+    this._removeListeners()
+
+    this._easterEggContainer.remove()
+  }
+
+  _handleSettingBtnClick({ isChecked }) {
+    isChecked ? this._audio.play() : this._audio.pause()
+  }
+
+  _handleWindowResize() {
     this._setRandomPosition()
-
-    this._initListeners()
   }
 
   _initListeners() {
@@ -61,35 +83,13 @@ class EasterEgg {
     this._easterEggContainer.style.left = `${x}px`
   }
 
-  _handleEasterEggClick() {
-    this._onNotificationAdd({
-      message: NotificationMessage.LOVE,
-      duration: NOTIFICATION_DELAY,
-      cb: () => {
-        let buttonNode = this._onSettingBtnAppend({
-          name: SettingName.WHATISLOVE,
-          label: SettingButtonLabel.SWITCH_LOVE,
-          isDefaultChecked: true,
-          onClick: this._handleSettingBtnClick,
-        })
+  init() {
+    this._easterEggContainer = document.querySelector(`.not-easter-egg`)
+    this._easterEggBtn = document.querySelector(`.not-easter-egg__button`)
 
-        buttonNode.focus()
-      },
-    })
-
-    this._renderPlayer()
-
-    this._removeListeners()
-
-    this._easterEggContainer.remove()
-  }
-
-  _handleSettingBtnClick({ isChecked }) {
-    isChecked ? this._audio.play() : this._audio.pause()
-  }
-
-  _handleWindowResize() {
     this._setRandomPosition()
+
+    this._initListeners()
   }
 }
 

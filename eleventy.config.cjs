@@ -2,7 +2,7 @@ let esbuild = require(`esbuild`)
 let lightningcss = require(`lightningcss`)
 let htmlMin = require(`html-minifier-terser`)
 let { existsSync } = require(`fs`)
-let { readFile, writeFile, mkdir } = require(`fs/promises`)
+let { mkdir, readFile, writeFile } = require(`fs/promises`)
 let browserslist = require(`browserslist`)
 let packageJson = require(`./package.json`)
 let Image = require(`@11ty/eleventy-img`)
@@ -13,12 +13,6 @@ let fs = require(`node:fs/promises`)
 let isDevelopment = process.env.NODE_ENV === `development`
 
 let Path = {
-  CSS: `./source/styles/index.css`,
-  JS: {
-    MAIN: `./source/scripts/index.js`,
-    FORM: `./source/scripts/form.js`,
-  },
-  DB: `./source/database.json`,
   COPY: [
     `./source/fonts`,
     `./source/files`,
@@ -26,6 +20,12 @@ let Path = {
     `./source/manifest.webmanifest`,
     `./source/favicon.ico`,
   ],
+  CSS: `./source/styles/index.css`,
+  DB: `./source/database.json`,
+  JS: {
+    FORM: `./source/scripts/form.js`,
+    MAIN: `./source/scripts/index.js`,
+  },
 }
 
 /** @param {import("@11ty/eleventy").UserConfig} config */
@@ -44,7 +44,6 @@ let init = (config) => {
   config.addTemplateFormats(`json`)
 
   config.addExtension(`json`, {
-    outputFileExtension: `json`,
     compile: async (_content, url) => {
       if (url !== Path.DB) {
         return
@@ -65,6 +64,7 @@ let init = (config) => {
         }),
       )
     },
+    outputFileExtension: `json`,
   })
 
   // html
@@ -84,7 +84,6 @@ let init = (config) => {
   config.addTemplateFormats(`css`)
 
   config.addExtension(`css`, {
-    outputFileExtension: `css`,
     compile: async (_content, url) => {
       if (url !== Path.CSS) {
         return
@@ -108,13 +107,13 @@ let init = (config) => {
           : code
       }
     },
+    outputFileExtension: `css`,
   })
 
   // js
   config.addTemplateFormats(`js`)
 
   config.addExtension(`js`, {
-    outputFileExtension: `js`,
     compile: async (_content, url) => {
       if (url !== Path.JS.MAIN) {
         return
@@ -124,12 +123,12 @@ let init = (config) => {
         let {
           outputFiles: [formOutputFile],
         } = await esbuild.build({
-          entryPoints: [Path.JS.FORM],
-          target: `es2020`,
-          minify: true,
           bundle: true,
-          write: false,
+          entryPoints: [Path.JS.FORM],
+          minify: true,
           sourcemap: isDevelopment,
+          target: `es2020`,
+          write: false,
         })
 
         let isFolderExists = existsSync(`build/scripts`)
@@ -145,24 +144,24 @@ let init = (config) => {
         let {
           outputFiles: [mainOutputFile],
         } = await esbuild.build({
-          entryPoints: [url],
-          target: `es2020`,
-          minify: true,
           bundle: true,
-          write: false,
+          entryPoints: [url],
+          minify: true,
           sourcemap: isDevelopment,
+          target: `es2020`,
+          write: false,
         })
 
         return mainOutputFile.text
       }
     },
+    outputFileExtension: `js`,
   })
 
   // png
   config.addTemplateFormats(`png`)
 
   config.addExtension(`png`, {
-    outputFileExtension: `png`,
     compile: async (_content, url) => {
       return async () => {
         let {
@@ -174,27 +173,27 @@ let init = (config) => {
 
         if (url.includes(`.photo.`)) {
           await Image(url, {
-            formats: [`webp`, `avif`],
-            outputDir: `build/images`,
             filenameFormat: (_id, source, _width, format) => {
               let extension = path.extname(source)
               let name = path.basename(source, extension)
 
               return `${name}.${format}`
             },
+            formats: [`webp`, `avif`],
+            outputDir: `build/images`,
           })
         }
 
         return originalImg.buffer
       }
     },
+    outputFileExtension: `png`,
   })
 
   // svg
   config.addTemplateFormats(`svg`)
 
   config.addExtension(`svg`, {
-    outputFileExtension: `svg`,
     compile: (content, url) => {
       return () => {
         if (url === `./source/images/icons/icon.svg`) {
@@ -204,16 +203,17 @@ let init = (config) => {
         return svgo.optimize(content).data
       }
     },
+    outputFileExtension: `svg`,
   })
 
   return {
+    dataTemplateEngine: `njk`,
     dir: {
       input: `source`,
       output: `build`,
     },
-    dataTemplateEngine: `njk`,
-    markdownTemplateEngine: `njk`,
     htmlTemplateEngine: `njk`,
+    markdownTemplateEngine: `njk`,
     passthroughFileCopy: true,
     templateFormats: [`md`, `njk`],
   }

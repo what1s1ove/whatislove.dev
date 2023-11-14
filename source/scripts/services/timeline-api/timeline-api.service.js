@@ -6,11 +6,19 @@ import {
 } from '~/common/enums/enums.js'
 
 class TimelineApi {
-  constructor({ http, baseUrl, filesApiPath }) {
+  constructor({ baseUrl, filesApiPath, http }) {
     this._http = http
     this._baseUrl = baseUrl
     this._filesApiPath = filesApiPath
     this._apiPath = ApiPath.TIMELINE
+  }
+
+  _getApiUrl(path) {
+    return `${this._baseUrl}${this._apiPath}${path}`
+  }
+
+  _getFileUrl(path) {
+    return `${this._filesApiPath}${path}.json`
   }
 
   getTimelines() {
@@ -21,18 +29,10 @@ class TimelineApi {
 
   saveTimeline(payload) {
     return this._http.load(this._getApiUrl(TimelineApiPath.ROOT), {
-      method: HttpMethod.POST,
       contentType: ContentType.JSON,
+      method: HttpMethod.POST,
       payload,
     })
-  }
-
-  _getApiUrl(path) {
-    return `${this._baseUrl}${this._apiPath}${path}`
-  }
-
-  _getFileUrl(path) {
-    return `${this._filesApiPath}${path}.json`
   }
 }
 

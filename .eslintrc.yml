@@ -7,6 +7,7 @@ extends:
   - plugin:import/recommended
   - plugin:sonarjs/recommended
   - plugin:unicorn/recommended
+  - plugin:perfectionist/recommended-natural
 
 plugins:
   - simple-import-sort
@@ -92,6 +93,9 @@ rules:
     - error
   simple-import-sort/exports:
     - error
+  perfectionist/sort-named-imports:
+    - error
+    - type: alphabetical
   import/exports-last:
     - error
   import/group-exports:

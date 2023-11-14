@@ -1,6 +1,6 @@
 let KeyboardKey = {
-  TAB: `Tab`,
   ESCAPE: `Escape`,
+  TAB: `Tab`,
 }
 
 export { KeyboardKey }
