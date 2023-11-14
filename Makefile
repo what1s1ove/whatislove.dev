@@ -29,5 +29,5 @@ lint_html:
 lint_css:
 	npx stylelint "source/styles/**/*.css"
 lint_js:
-	npx eslint --ext .js source/scripts
+	npx eslint --ext .js "**/*.{js,cjs}"
 lint: lint_fs lint_editorconfig lint_prettify lint_html lint_css lint_js

@@ -21,6 +21,9 @@ settings:
       map:
         - ['~', './source/scripts']
 
+ignorePatterns:
+  - build
+
 rules:
   semi:
     - error
