@@ -10,7 +10,7 @@ class Form {
   constructor({ timelineApi }) {
     this._timelineApi = timelineApi
 
-    this._formNode = null
+    this._formNode = undefined
 
     this._handleSubmit = this._handleSubmit.bind(this)
   }
@@ -38,8 +38,8 @@ class Form {
     this._formNode.addEventListener(`submit`, this._handleSubmit)
   }
 
-  async _handleSubmit(evt) {
-    evt.preventDefault()
+  async _handleSubmit(event_) {
+    event_.preventDefault()
 
     const formValues = getFormValues(this._formNode)
 

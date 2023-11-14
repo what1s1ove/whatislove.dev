@@ -1,8 +1,11 @@
 const getTransformedTimeline = (timeline) => {
-  return Object.keys(timeline).reduce((acc, key) => {
-    acc[key] = timeline[key] ?? ``
-    return acc
-  }, {})
+  const transformedTimeline = { ...timeline }
+
+  for (const key of Object.keys(transformedTimeline)) {
+    transformedTimeline[key] = transformedTimeline[key] ?? ``
+  }
+
+  return transformedTimeline
 }
 
 export { getTransformedTimeline }

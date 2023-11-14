@@ -6,6 +6,7 @@ extends:
   - eslint:recommended
   - plugin:import/recommended
   - plugin:sonarjs/recommended
+  - plugin:unicorn/recommended
 
 plugins:
   - simple-import-sort
@@ -87,7 +88,11 @@ rules:
     - error
   import/no-default-export:
     - error
-  import/no-anonymous-default-export:
+  import/first:
+    - error
+  import/newline-after-import:
+    - error
+  import/no-duplicates:
     - error
   import/extensions:
     - error

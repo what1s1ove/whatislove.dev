@@ -4,7 +4,7 @@ import { checkIsOneOf } from '~/helpers/helpers.js'
 
 class Http {
   load(url, options = {}) {
-    const { method = HttpMethod.GET, payload = null, contentType } = options
+    const { method = HttpMethod.GET, payload, contentType } = options
     const headers = this._getHeaders({
       contentType,
     })
@@ -44,8 +44,8 @@ class Http {
     return response.json()
   }
 
-  static throwError(err) {
-    throw err
+  static throwError(error) {
+    throw error
   }
 }
 

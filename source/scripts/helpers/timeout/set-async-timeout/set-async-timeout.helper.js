@@ -1,7 +1,7 @@
-const setAsyncTimeout = (cb, timeout = 0) => {
+const setAsyncTimeout = (callback, timeout = 0) => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      cb()
+      callback()
       resolve()
     }, timeout)
   })

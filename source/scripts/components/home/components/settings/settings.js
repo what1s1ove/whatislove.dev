@@ -1,5 +1,5 @@
 import { SettingName } from '~/common/enums/enums.js'
-import { getCustomAttrName } from '~/helpers/helpers.js'
+import { getCustomAttributeName } from '~/helpers/helpers.js'
 
 import { Control, Switch } from './components/components.js'
 import { getSettingItemElement } from './helpers/helpers.js'
@@ -10,7 +10,7 @@ class Settings {
   constructor({ storage }) {
     this._storage = storage
 
-    this._settingListNode = null
+    this._settingListNode = undefined
 
     this._handleControlChange = this._handleControlChange.bind(this)
   }
@@ -59,11 +59,11 @@ class Settings {
   }
 
   _setSettingAttr(name, value) {
-    document.documentElement.setAttribute(getCustomAttrName(name), value)
+    document.documentElement.setAttribute(getCustomAttributeName(name), value)
   }
 
   _removeSettingAttr(name) {
-    document.documentElement.removeAttribute(getCustomAttrName(name))
+    document.documentElement.removeAttribute(getCustomAttributeName(name))
   }
 
   _setInitialSettingAttr(name) {

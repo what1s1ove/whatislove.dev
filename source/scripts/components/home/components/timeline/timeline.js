@@ -8,7 +8,7 @@ class Timeline {
   constructor({ timelineApi }) {
     this._timelineApi = timelineApi
 
-    this._containerNode = null
+    this._containerNode = undefined
     this._timelines = []
     this._isLoading = false
 

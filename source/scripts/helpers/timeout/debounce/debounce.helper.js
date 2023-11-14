@@ -1,10 +1,10 @@
-const debounce = (fn, delay) => {
-  let timeout = null
+const debounce = (callback, delay) => {
+  let timeout
 
-  return (...args) => {
+  return (...arguments_) => {
     clearTimeout(timeout)
 
-    timeout = setTimeout(() => fn.call(null, ...args), delay)
+    timeout = setTimeout(() => callback.call(undefined, ...arguments_), delay)
   }
 }
 

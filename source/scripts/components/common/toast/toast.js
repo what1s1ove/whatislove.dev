@@ -8,7 +8,7 @@ import {
 
 class Toast {
   constructor() {
-    this._toastNode = null
+    this._toastNode = undefined
     this._messages = []
     this._isShowingMessage = false
   }
@@ -32,7 +32,9 @@ class Toast {
 
     await this._displayToastMessage(messagePayload)
 
-    if (this._messages.length) {
+    const hasMessages = this._messages.length > 0
+
+    if (hasMessages) {
       this._initShowingMessages()
 
       return

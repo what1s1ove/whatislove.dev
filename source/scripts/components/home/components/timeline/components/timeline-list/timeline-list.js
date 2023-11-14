@@ -2,7 +2,7 @@ import { getTimelineTemplates } from './helpers/helpers.js'
 
 class TimelineList {
   constructor() {
-    this._listNode = null
+    this._listNode = undefined
   }
 
   init() {

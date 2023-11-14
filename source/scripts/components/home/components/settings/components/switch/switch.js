@@ -7,7 +7,7 @@ class Switch {
     this._isDefaultChecked = isDefaultChecked
     this._onClick = onClick
 
-    this._switchNode = null
+    this._switchNode = undefined
 
     this._handleSwitchClick = this._handleSwitchClick.bind(this)
   }

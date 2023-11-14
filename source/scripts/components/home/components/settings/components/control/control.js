@@ -4,7 +4,7 @@ class Control {
     this._onChange = onChange
     this._defaultValue = defaultValue
 
-    this._controlNode = null
+    this._controlNode = undefined
 
     this._handleSwitchChange = this._handleSwitchChange.bind(this)
   }
@@ -22,13 +22,13 @@ class Control {
       `input[name="${this._name}"]`,
     )
 
-    inputNodes.forEach((it) => {
+    for (const it of inputNodes) {
       const isChecked = it.value === this._defaultValue
 
       if (isChecked) {
         it.checked = isChecked
       }
-    })
+    }
   }
 
   _initListeners() {

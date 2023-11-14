@@ -14,20 +14,20 @@ class WhatisloveMath {
   }
 
   static multiplyBoostEntities(boostEntity, count = 0) {
-    return new Array(count).fill(boostEntity)
+    return Array.from({ length: count }).fill(boostEntity)
   }
 
   static calculateProfessionalLevel(initialValue = 0, ...boostEntities) {
     const { NOTHING_TODO_VALUE, BoostEntity, boostEntityToProfessionalValue } =
       WhatisloveMath
 
-    const hasBoostEntities = Boolean(boostEntities.length)
+    const hasBoostEntities = boostEntities.length > 0
 
     if (!hasBoostEntities) {
       return (initialValue -= NOTHING_TODO_VALUE)
     }
 
-    const flattenBoostEntities = boostEntities.flat(Infinity)
+    const flattenBoostEntities = boostEntities.flat(Number.POSITIVE_INFINITY)
     const allBoostEntities = Object.values(BoostEntity)
     const isValid = flattenBoostEntities.every((it) => {
       return allBoostEntities.includes(it)
@@ -37,11 +37,16 @@ class WhatisloveMath {
       throw new SyntaxError(`Unknown boost entity type`)
     }
 
-    return flattenBoostEntities.reduce(
-      (acc, it) => (acc += boostEntityToProfessionalValue[it]),
-      initialValue,
-    )
+    let professionalLevel = initialValue
+
+    for (const boostEntity of flattenBoostEntities) {
+      professionalLevel += boostEntityToProfessionalValue[boostEntity]
+    }
+
+    return professionalLevel
   }
+
+  constructor() {}
 }
 
 export { WhatisloveMath }

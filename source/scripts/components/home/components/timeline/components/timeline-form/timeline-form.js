@@ -6,7 +6,7 @@ class TimelineForm {
   constructor({ onChange }) {
     this._onChange = onChange
 
-    this._formNode = null
+    this._formNode = undefined
 
     this._handleFormChange = this._handleFormChange.bind(this)
   }

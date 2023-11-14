@@ -13,32 +13,32 @@ const getTimelineTemplate = (timeline) => {
     endDate,
   } = timeline
 
-  const titleStrNode = getStringWitCheck(
+  const titleStringNode = getStringWitCheck(
     title,
     `<h3 class="timeline__item-title">${title}</h3>`,
   )
-  const originStrNode = getStringWitCheck(
+  const originStringNode = getStringWitCheck(
     origin,
     `<a class="timeline__item-origin" href="${origin}" target="_blank" rel="noreferrer">${originDesc}</a>`,
   )
-  const descStrNode = getStringWitCheck(
+  const descStringNode = getStringWitCheck(
     desc,
     `<p class="timeline__item-desc">${desc}</p>`,
   )
-  const linkStrNode = getStringWitCheck(
+  const linkStringNode = getStringWitCheck(
     link,
     `<a class="timeline__item-link" href="${link}" target="_blank" rel="noreferrer">${linkDesc}</a>`,
   )
-  const endDateStrNode = getStringWitCheck(
+  const endDateStringNode = getStringWitCheck(
     endDate,
     `<time datetime="${endDate}"> — ${getFormattedDate(endDate)}</time>`,
   )
-  const dateStrNode = getStringWitCheck(
+  const dateStringNode = getStringWitCheck(
     date,
     `
       <p class="timeline__dates">
         <time datetime="${date}">${getFormattedDate(date)}</time>
-        ${endDateStrNode}
+        ${endDateStringNode}
       </p>
     `,
   )
@@ -46,11 +46,11 @@ const getTimelineTemplate = (timeline) => {
   return `
     <li class="timeline__item">
       <div class="timeline__item-wrapper">
-        ${titleStrNode}
-        ${originStrNode}
-        ${descStrNode}
-        ${linkStrNode}
-        ${dateStrNode}
+        ${titleStringNode}
+        ${originStringNode}
+        ${descStringNode}
+        ${linkStringNode}
+        ${dateStringNode}
       </div>
       <span class="timeline__icon-wrapper" aria-hidden="true">
         <span class="timeline__icon timeline__icon--${type}"></span>

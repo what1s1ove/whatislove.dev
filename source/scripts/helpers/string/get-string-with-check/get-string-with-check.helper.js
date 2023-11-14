@@ -1,5 +1,5 @@
-const getStringWitCheck = (checkValue, str) => {
-  return checkValue ? str : ``
+const getStringWitCheck = (checkValue, payload) => {
+  return checkValue ? payload : ``
 }
 
 export { getStringWitCheck }

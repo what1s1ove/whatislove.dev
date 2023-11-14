@@ -3,7 +3,7 @@ export { checkIsBeforeElement, checkIsOneOf } from './boolean/boolean.js'
 export { getFormattedDate } from './date/date.js'
 export {
   createElement,
-  getCustomAttrName,
+  getCustomAttributeName,
   subscribeFocusTrap,
 } from './dom/dom.js'
 export {

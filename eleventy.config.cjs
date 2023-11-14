@@ -36,7 +36,9 @@ const init = (config) => {
   }
 
   // copy
-  Path.COPY.forEach((url) => config.addPassthroughCopy(url))
+  for (const url of Path.COPY) {
+    config.addPassthroughCopy(url)
+  }
 
   // api
   config.addTemplateFormats(`json`)
@@ -174,9 +176,9 @@ const init = (config) => {
           await Image(url, {
             formats: [`webp`, `avif`],
             outputDir: `build/images`,
-            filenameFormat: (_id, src, _width, format) => {
-              const extension = path.extname(src)
-              const name = path.basename(src, extension)
+            filenameFormat: (_id, source, _width, format) => {
+              const extension = path.extname(source)
+              const name = path.basename(source, extension)
 
               return `${name}.${format}`
             },

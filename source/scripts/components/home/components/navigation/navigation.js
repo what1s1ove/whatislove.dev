@@ -5,10 +5,10 @@ import { HEADER_ACTIVE_CLASS } from './common/constants.js'
 
 class Navigation {
   constructor() {
-    this._headerNode = null
-    this._headerOverlayNode = null
-    this._headerBtnNode = null
-    this._cleanFocusTrap = null
+    this._headerNode = undefined
+    this._headerOverlayNode = undefined
+    this._headerBtnNode = undefined
+    this._cleanFocusTrap = undefined
 
     this._handleEscapePress = this._handleEscapePress.bind(this)
     this._handleOverlayClick = this._handleOverlayClick.bind(this)
@@ -62,8 +62,8 @@ class Navigation {
     window.removeEventListener(`keydown`, this._handleEscapePress)
   }
 
-  _handleNavBtnClick(evt) {
-    evt.stopPropagation()
+  _handleNavBtnClick(event_) {
+    event_.stopPropagation()
 
     const hasClass = this._headerNode.classList.contains(HEADER_ACTIVE_CLASS)
 

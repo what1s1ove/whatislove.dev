@@ -1,6 +1,6 @@
 import {
   NotificationMessage,
-  SettingBtnLabel,
+  SettingButtonLabel,
   SettingName,
 } from '~/common/enums/enums.js'
 import { debounce } from '~/helpers/helpers.js'
@@ -17,9 +17,9 @@ class EasterEgg {
     this._onSettingBtnAppend = onSettingBtnAppend
     this._onNotificationAdd = onNotificationAdd
 
-    this._easterEggContainer = null
-    this._easterEggBtn = null
-    this._audio = null
+    this._easterEggContainer = undefined
+    this._easterEggBtn = undefined
+    this._audio = undefined
 
     this._handleEasterEggClick = this._handleEasterEggClick.bind(this)
     this._handleSettingBtnClick = this._handleSettingBtnClick.bind(this)
@@ -66,14 +66,14 @@ class EasterEgg {
       message: NotificationMessage.LOVE,
       duration: NOTIFICATION_DELAY,
       cb: () => {
-        const btn = this._onSettingBtnAppend({
+        const buttonNode = this._onSettingBtnAppend({
           name: SettingName.WHATISLOVE,
-          label: SettingBtnLabel.SWITCH_LOVE,
+          label: SettingButtonLabel.SWITCH_LOVE,
           isDefaultChecked: true,
           onClick: this._handleSettingBtnClick,
         })
 
-        btn.focus()
+        buttonNode.focus()
       },
     })
 
