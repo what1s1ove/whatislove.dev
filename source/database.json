@@ -1559,6 +1559,19 @@
       "linkDesc": "",
       "date": "2023-10-13T00:00:00.000Z",
       "endDate": ""
+    },
+    {
+      "id": "6z1Yk2N",
+      "skillType": "softSkill",
+      "type": "book",
+      "title": "An Elegant Puzzle: Systems of Engineering Management",
+      "desc": "",
+      "origin": "https://www.amazon.com/Elegant-Puzzle-Systems-Engineering-Management/dp/1732265186",
+      "originDesc": "Amazon",
+      "link": "",
+      "linkDesc": "",
+      "date": "2023-10-25T00:00:00.000Z",
+      "endDate": ""
     }
   ]
 }
