@@ -1546,6 +1546,19 @@
       "linkDesc": "",
       "date": "2023-09-23T00:00:00.000Z",
       "endDate": ""
+    },
+    {
+      "id": "abPXxG3",
+      "skillType": "softSkill",
+      "type": "book",
+      "title": "Staff Engineer: Leadership beyond the management track (Will Larson)",
+      "desc": "",
+      "origin": "https://staffeng.com/book",
+      "originDesc": "staffeng.com",
+      "link": "",
+      "linkDesc": "",
+      "date": "2023-10-13T00:00:00.000Z",
+      "endDate": ""
     }
   ]
 }
