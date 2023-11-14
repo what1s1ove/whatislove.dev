@@ -57,11 +57,11 @@
   font-size: 28px;
   letter-spacing: 2px;
   text-align: center;
-  background-image: url("../img/favorites-shadow.bg.svg");
+  background-image: url("../images/favorites-shadow.bg.svg");
   background-repeat: no-repeat;
   background-position: right 10px top 50%;
   background-size: 50px;
-  mask-image: url("../img/favorites.mask.svg");
+  mask-image: url("../images/favorites.mask.svg");
   mask-repeat: no-repeat;
   mask-size: contain;
   mask-position: 50% 0;
@@ -85,19 +85,19 @@
   }
 }
 
-@media (min-width: 550px) {
+@media (width >= 550px) {
   .favorites__list {
     padding: 50px 15px;
   }
 }
 
-@media (min-width: 810px) {
+@media (width >= 810px) {
   .favorites__list {
     padding: 55px 15px;
   }
 }
 
-@media (min-width: 940px) {
+@media (width >= 940px) {
   .favorites__header {
     margin: 0 0 50px;
   }

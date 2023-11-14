@@ -52,13 +52,13 @@
   width: 50%;
 }
 
-@media (min-width: 350px) {
+@media (width >= 350px) {
   .exp-filter__wrapper {
     padding: 5px 28px 5px 23px;
   }
 }
 
-@media (min-width: 500px) {
+@media (width >= 500px) {
   .exp-filter__skills-type {
     width: unset;
   }
@@ -69,7 +69,7 @@
   }
 }
 
-@media (min-width: 620px) {
+@media (width >= 620px) {
   .exp-filter__wrapper {
     align-items: center;
     padding: 10px 8px;
@@ -97,7 +97,7 @@
   }
 }
 
-@media (min-width: 940px) {
+@media (width >= 940px) {
   .exp-filter__wrapper {
     max-width: 940px;
     margin: 0 auto;

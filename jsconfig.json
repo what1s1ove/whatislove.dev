@@ -1,10 +1,10 @@
 {
-  "include": ["source/js/**/*"],
+  "include": ["source/scripts/**/*"],
   "exclude": ["node_modules/*"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "~/*": ["source/js/*"]
+      "~/*": ["source/scripts/*"]
     }
   }
 }

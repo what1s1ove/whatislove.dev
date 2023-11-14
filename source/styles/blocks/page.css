@@ -14,5 +14,5 @@
   font-style: normal;
   line-height: 1.5;
   background-color: var(--color--secondary);
-  text-rendering: optimizeSpeed;
+  text-rendering: optimizespeed;
 }

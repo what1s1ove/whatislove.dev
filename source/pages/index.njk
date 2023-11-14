@@ -1,3 +1,8 @@
+---
+permalink: 'index.html'
+---
+{% set MAIN_IMAGE_FORMATS = ['avif', 'webp'] %}
+
 <!DOCTYPE html>
 <html class="page" lang="en">
   <head>
@@ -11,12 +16,12 @@
     <meta property="og:title" content="Vladyslav Zubko" />
     <meta property="og:site_name" content="Interface Developer" />
     <meta property="og:url" content="https://whatislove.dev/" />
-    <meta property="og:image" content="https://whatislove.dev/img/logo-social.og.png" />
+    <meta property="og:image" content="https://whatislove.dev/images/logo-social.og.png" />
 
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" href="/img/icons/icon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/css/styles.min.css" />
+    <link rel="icon" href="/images/icons/icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles/index.css" />
   </head>
   <body class="page__body">
     <h1 class="visually-hidden">Vladyslav Zubko - interface developer</h1>
@@ -96,8 +101,10 @@
           <div class="intro__content">
             <figure class="intro__image-wrapper">
               <picture>
-                <source srcset="/img/whatislove-zubko.photo.webp 1x, /img/whatislove-zubko@2x.photo.webp 2x" type="image/webp" />
-                <img src="/img/whatislove-zubko.photo.png" srcset="/img/whatislove-zubko@2x.photo.png 2x" loading="lazy" width="202" height="303" alt="Vladyslav Zubko" />
+                {% for format in MAIN_IMAGE_FORMATS %}
+                  <source srcset="/images/whatislove-zubko.photo.{{ format }} 1x, /images/whatislove-zubko@2x.photo.{{ format }} 2x" type="image/{{ format }}" />
+                {% endfor %}
+                <img src="/images/whatislove-zubko.photo.png" srcset="/images/whatislove-zubko@2x.photo.png 2x" loading="lazy" width="202" height="303" alt="Vladyslav Zubko" />
               </picture>
             </figure>
             <div class="intro__personal-wrapper">
@@ -272,6 +279,6 @@
         </span>
       </li>
     </template> -->
-    <script src="/js/main.min.js" defer></script>
+    <script src="/scripts/index.js" defer></script>
   </body>
 </html>

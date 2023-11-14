@@ -69,23 +69,23 @@
 }
 
 .settings__item-control--auto::before {
-  background-image: url("../img/auto.bg.svg");
+  background-image: url("../images/auto.bg.svg");
 }
 
 .settings__item-control--light::before {
-  background-image: url("../img/theme-light.bg.svg");
+  background-image: url("../images/theme-light.bg.svg");
 }
 
 .settings__item-control--dark::before {
-  background-image: url("../img/theme-dark.bg.svg");
+  background-image: url("../images/theme-dark.bg.svg");
 }
 
 .settings__item-control--nopreference::before {
-  background-image: url("../img/notion-no-preference.bg.svg");
+  background-image: url("../images/notion-no-preference.bg.svg");
 }
 
 .settings__item-control--reduce::before {
-  background-image: url("../img/notion-reduce.bg.svg");
+  background-image: url("../images/notion-reduce.bg.svg");
 }
 
 .settings__item-switch {
@@ -108,14 +108,14 @@
 }
 
 .settings__item-switch--whatislove {
-  background-image: url("../img/heart-broken.bg.svg");
+  background-image: url("../images/heart-broken.bg.svg");
   animation-name: append;
   animation-duration: 1s;
   animation-timing-function: ease-out;
 }
 
 .settings__item-switch--whatislove[aria-checked="true"] {
-  background-image: url("../img/heart.bg.svg");
+  background-image: url("../images/heart.bg.svg");
 }
 
 .settings__item-switch::before {

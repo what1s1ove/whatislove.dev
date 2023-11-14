@@ -24,14 +24,14 @@
   content: "";
   width: 42px;
   height: 32px;
-  background-image: url("../img/routine-rose.bg.svg");
+  background-image: url("../images/routine-rose.bg.svg");
 }
 
 .footer__routine {
   display: block;
   width: 100%;
   height: 100%;
-  background-image: url("../img/routine.bg.svg");
+  background-image: url("../images/routine.bg.svg");
   filter: var(--invert-icon--primary);
 }
 

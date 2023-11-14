@@ -41,14 +41,14 @@
   bottom: 0;
   height: 275px;
   background-color: var(--color--primary);
-  mask-image: url("../img/intro-photo.mask.svg");
+  mask-image: url("../images/intro-photo.mask.svg");
 }
 
 .intro__image-wrapper::after {
   bottom: -0.5px;
   height: 145px;
   background-color: var(--color--secondary);
-  mask-image: url("../img/intro-photo-border.mask.svg");
+  mask-image: url("../images/intro-photo-border.mask.svg");
 }
 
 .intro__image-wrapper img {
@@ -146,7 +146,7 @@
   }
 }
 
-@media (min-width: 640px) {
+@media (width >= 640px) {
   .intro__wrapper {
     padding: 30px 15px 50px;
   }
@@ -175,7 +175,7 @@
   }
 }
 
-@media (min-width: 940px) {
+@media (width >= 940px) {
   .intro__wrapper {
     max-width: 940px;
     margin: 0 auto;

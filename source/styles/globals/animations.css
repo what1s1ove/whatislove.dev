@@ -129,7 +129,7 @@
   }
 }
 
-@media (min-width: 640px) {
+@media (width >= 640px) {
   @keyframes icon-fade-up {
     from {
       transform: translate(-50%, 70px);

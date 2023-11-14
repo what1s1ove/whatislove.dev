@@ -19,7 +19,7 @@ settings:
       extensions:
         - .js
       map:
-        - ['~', './source/js']
+        - ['~', './source/scripts']
 
 rules:
   semi:
@@ -91,3 +91,7 @@ overrides:
     rules:
       import/no-default-export:
         - off
+  - files:
+    - eleventy.config.cjs
+    env:
+      node: true
