@@ -1,0 +1,142 @@
+@keyframes rainbow-text {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    transform: translateY(70px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes icon-fade-up {
+  from {
+    transform: translateY(70px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(0.83) translate(42px, 8px);
+  }
+
+  20% {
+    transform: scale(1.03) translate(-6px, -2px);
+  }
+
+  40% {
+    transform: scale(0.83) translate(42px, 8px);
+  }
+
+  60% {
+    transform: scale(1.03) translate(-6px, -2px);
+  }
+
+  80% {
+    transform: scale(0.83) translate(42px, 8px);
+  }
+
+  100% {
+    transform: scale(0.83) translate(42px, 8px);
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes loader-animation {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes loader-circle-animation {
+  0%,
+  25% {
+    stroke-dashoffset: 280;
+    transform: rotate(0);
+  }
+
+  50%,
+  75% {
+    stroke-dashoffset: 75;
+    transform: rotate(45deg);
+  }
+
+  100% {
+    stroke-dashoffset: 280;
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@keyframes shine {
+  15% {
+    left: 125%;
+  }
+
+  100% {
+    left: 125%;
+  }
+}
+
+@keyframes append {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (width >= 640px) {
+  @keyframes icon-fade-up {
+    from {
+      transform: translate(-50%, 70px);
+    }
+
+    to {
+      transform: translateY(-50%, 0);
+    }
+  }
+}

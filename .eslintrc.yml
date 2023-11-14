@@ -19,7 +19,7 @@ settings:
       extensions:
         - .js
       map:
-        - ['~', './source/js']
+        - ['~', './source/scripts']
 
 rules:
   semi:
@@ -87,8 +87,11 @@ rules:
 
 overrides:
   - files:
-    - gulpfile.js
     - commitlint.config.js
     rules:
       import/no-default-export:
         - off
+  - files:
+    - eleventy.config.cjs
+    env:
+      node: true
