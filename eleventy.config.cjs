@@ -98,12 +98,12 @@ const init = (config) => {
           ),
         })
 
-        return (
+        return isDevelopment ? (
           code +
           `\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,${map.toString(
             `base64`,
           )}*/`
-        )
+        ) : code
       }
     },
   })
