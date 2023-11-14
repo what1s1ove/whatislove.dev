@@ -5,6 +5,7 @@ env:
 extends:
   - eslint:recommended
   - plugin:import/recommended
+  - plugin:sonarjs/recommended
 
 plugins:
   - import
@@ -98,3 +99,6 @@ overrides:
       - eleventy.config.cjs
     env:
       node: true
+    rules:
+      sonarjs/cognitive-complexity:
+        - off
