@@ -1564,13 +1564,26 @@
       "id": "6z1Yk2N",
       "skillType": "softSkill",
       "type": "book",
-      "title": "An Elegant Puzzle: Systems of Engineering Management",
+      "title": "An Elegant Puzzle: Systems of Engineering Management (Will Larson)",
       "desc": "",
       "origin": "https://www.amazon.com/Elegant-Puzzle-Systems-Engineering-Management/dp/1732265186",
       "originDesc": "Amazon",
       "link": "",
       "linkDesc": "",
       "date": "2023-10-25T00:00:00.000Z",
+      "endDate": ""
+    },
+    {
+      "id": "pseQKgq",
+      "skillType": "softSkill",
+      "type": "book",
+      "title": "Influence: Science and Practice (Robert Cialdini)",
+      "desc": "",
+      "origin": "https://www.amazon.com/Influence-Practice-Robert-B-Cialdini/dp/0205609996",
+      "originDesc": "Amazon",
+      "link": "",
+      "linkDesc": "",
+      "date": "2023-11-11T00:00:00.000Z",
       "endDate": ""
     }
   ]
