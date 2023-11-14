@@ -1,4 +1,4 @@
-'*.{html,json,md}': prettier --write
+'*.{json,md}': prettier --write
 '*': make lint_editorconfig lint_fs
 '*.css': make lint_css
 '*.js': make lint_js

@@ -61,9 +61,9 @@ rules:
   no-console:
     - error
     - allow:
-      - warn
-      - error
-      - info
+        - warn
+        - error
+        - info
   arrow-parens:
     - error
     - always
@@ -87,11 +87,11 @@ rules:
 
 overrides:
   - files:
-    - commitlint.config.js
+      - commitlint.config.js
     rules:
       import/no-default-export:
         - off
   - files:
-    - eleventy.config.cjs
+      - eleventy.config.cjs
     env:
       node: true

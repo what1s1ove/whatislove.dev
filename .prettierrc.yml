@@ -8,6 +8,6 @@ trailingComma: all
 bracketSpacing: true
 arrowParens: always
 overrides:
-  - files: '*.html'
+  - files: '*.css'
     options:
-      printWidth: 9999
+      singleQuote: false
