@@ -35,7 +35,7 @@ class Timeline {
   }
 
   _renderTimelines(formValues) {
-    const timelines = getSuitTimelines(this._timelines, formValues)
+    let timelines = getSuitTimelines(this._timelines, formValues)
 
     this._timelineListComponent.renderTimelines(timelines)
   }
@@ -53,7 +53,7 @@ class Timeline {
   }
 
   async _handleTimelineShow() {
-    const shouldLoadTimelines = checkIsBeforeElement(
+    let shouldLoadTimelines = checkIsBeforeElement(
       this._containerNode.offsetTop,
     )
 

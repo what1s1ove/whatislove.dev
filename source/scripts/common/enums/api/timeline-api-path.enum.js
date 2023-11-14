@@ -1,4 +1,4 @@
-const TimelineApiPath = {
+let TimelineApiPath = {
   ROOT: `/`,
 }
 

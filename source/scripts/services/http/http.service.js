@@ -4,11 +4,11 @@ import { checkIsOneOf } from '~/helpers/helpers.js'
 
 class Http {
   load(url, options = {}) {
-    const { method = HttpMethod.GET, payload, contentType } = options
-    const headers = this._getHeaders({
+    let { method = HttpMethod.GET, payload, contentType } = options
+    let headers = this._getHeaders({
       contentType,
     })
-    const isJSON = checkIsOneOf(contentType, ContentType.JSON)
+    let isJSON = checkIsOneOf(contentType, ContentType.JSON)
 
     return fetch(url, {
       method,
@@ -21,7 +21,7 @@ class Http {
   }
 
   _getHeaders({ contentType }) {
-    const headers = new Headers()
+    let headers = new Headers()
 
     if (contentType) {
       headers.append(HttpHeader.CONTENT_TYPE, contentType)

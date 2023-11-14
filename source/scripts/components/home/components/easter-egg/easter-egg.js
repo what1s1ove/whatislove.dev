@@ -55,7 +55,7 @@ class EasterEgg {
   }
 
   _setRandomPosition() {
-    const { x, y } = getNodeRandomCoords(this._easterEggContainer)
+    let { x, y } = getNodeRandomCoords(this._easterEggContainer)
 
     this._easterEggContainer.style.top = `${y}px`
     this._easterEggContainer.style.left = `${x}px`
@@ -66,7 +66,7 @@ class EasterEgg {
       message: NotificationMessage.LOVE,
       duration: NOTIFICATION_DELAY,
       cb: () => {
-        const buttonNode = this._onSettingBtnAppend({
+        let buttonNode = this._onSettingBtnAppend({
           name: SettingName.WHATISLOVE,
           label: SettingButtonLabel.SWITCH_LOVE,
           isDefaultChecked: true,

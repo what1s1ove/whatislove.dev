@@ -1,4 +1,4 @@
-const HttpMethod = {
+let HttpMethod = {
   GET: `GET`,
   POST: `POST`,
 }

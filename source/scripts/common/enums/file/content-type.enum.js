@@ -1,4 +1,4 @@
-const ContentType = {
+let ContentType = {
   JSON: `application/json`,
 }
 

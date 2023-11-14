@@ -4,7 +4,7 @@ import { getCustomAttributeName } from '~/helpers/helpers.js'
 import { Control, Switch } from './components/components.js'
 import { getSettingItemElement } from './helpers/helpers.js'
 
-const RESULT_VALUE = `auto`
+let RESULT_VALUE = `auto`
 
 class Settings {
   constructor({ storage }) {
@@ -23,9 +23,9 @@ class Settings {
   }
 
   appendNewBtn(settings) {
-    const { name, label, isDefaultChecked, onClick } = settings
+    let { name, label, isDefaultChecked, onClick } = settings
 
-    const newSettingItemNode = getSettingItemElement({ name, label })
+    let newSettingItemNode = getSettingItemElement({ name, label })
 
     this._settingListNode.prepend(newSettingItemNode)
 
@@ -49,7 +49,7 @@ class Settings {
   }
 
   _initControl(name) {
-    const defaultValue = this._setInitialSettingAttr(name)
+    let defaultValue = this._setInitialSettingAttr(name)
 
     new Control({
       name,
@@ -67,8 +67,8 @@ class Settings {
   }
 
   _setInitialSettingAttr(name) {
-    const value = this._storage.getItem(name)
-    const hasValue = Boolean(value)
+    let value = this._storage.getItem(name)
+    let hasValue = Boolean(value)
 
     if (hasValue) {
       this._setSettingAttr(name, value)

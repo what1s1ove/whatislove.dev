@@ -1,5 +1,5 @@
-const addSelectOptions = (selectNode, options) => {
-  for (const option of options) {
+let addSelectOptions = (selectNode, options) => {
+  for (let option of options) {
     selectNode.add(option)
   }
 }

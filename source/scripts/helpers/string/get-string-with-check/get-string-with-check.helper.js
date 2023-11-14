@@ -1,4 +1,4 @@
-const getStringWitCheck = (checkValue, payload) => {
+let getStringWitCheck = (checkValue, payload) => {
   return checkValue ? payload : ``
 }
 

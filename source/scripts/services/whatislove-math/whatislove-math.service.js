@@ -18,18 +18,18 @@ class WhatisloveMath {
   }
 
   static calculateProfessionalLevel(initialValue = 0, ...boostEntities) {
-    const { NOTHING_TODO_VALUE, BoostEntity, boostEntityToProfessionalValue } =
+    let { NOTHING_TODO_VALUE, BoostEntity, boostEntityToProfessionalValue } =
       WhatisloveMath
 
-    const hasBoostEntities = boostEntities.length > 0
+    let hasBoostEntities = boostEntities.length > 0
 
     if (!hasBoostEntities) {
       return (initialValue -= NOTHING_TODO_VALUE)
     }
 
-    const flattenBoostEntities = boostEntities.flat(Number.POSITIVE_INFINITY)
-    const allBoostEntities = Object.values(BoostEntity)
-    const isValid = flattenBoostEntities.every((it) => {
+    let flattenBoostEntities = boostEntities.flat(Number.POSITIVE_INFINITY)
+    let allBoostEntities = Object.values(BoostEntity)
+    let isValid = flattenBoostEntities.every((it) => {
       return allBoostEntities.includes(it)
     })
 
@@ -39,7 +39,7 @@ class WhatisloveMath {
 
     let professionalLevel = initialValue
 
-    for (const boostEntity of flattenBoostEntities) {
+    for (let boostEntity of flattenBoostEntities) {
       professionalLevel += boostEntityToProfessionalValue[boostEntity]
     }
 

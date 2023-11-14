@@ -1,4 +1,4 @@
-const booleanToNumber = {
+let booleanToNumber = {
   'false': 0,
   'true': 1,
 }

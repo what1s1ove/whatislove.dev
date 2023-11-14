@@ -1,4 +1,4 @@
-const KeyboardKey = {
+let KeyboardKey = {
   TAB: `Tab`,
   ESCAPE: `Escape`,
 }

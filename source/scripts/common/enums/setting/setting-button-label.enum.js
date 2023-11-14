@@ -1,4 +1,4 @@
-const SettingButtonLabel = {
+let SettingButtonLabel = {
   SWITCH_LOVE: `Switch playing of love`,
 }
 

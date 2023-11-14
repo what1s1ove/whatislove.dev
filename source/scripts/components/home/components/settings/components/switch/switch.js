@@ -36,7 +36,7 @@ class Switch {
   }
 
   _handleSwitchClick({ target }) {
-    const isChecked = !checkIsChecked(target)
+    let isChecked = !checkIsChecked(target)
 
     this._isChecked = isChecked
 

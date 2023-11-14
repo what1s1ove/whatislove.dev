@@ -1,3 +1,3 @@
-const CHECKED_ATTR = `aria-checked`
+let CHECKED_ATTR = `aria-checked`
 
 export { CHECKED_ATTR }

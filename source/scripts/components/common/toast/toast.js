@@ -26,13 +26,13 @@ class Toast {
   }
 
   async _initShowingMessages() {
-    const messagePayload = this._messages.shift()
+    let messagePayload = this._messages.shift()
 
     this._isShowingMessage = true
 
     await this._displayToastMessage(messagePayload)
 
-    const hasMessages = this._messages.length > 0
+    let hasMessages = this._messages.length > 0
 
     if (hasMessages) {
       this._initShowingMessages()
@@ -44,7 +44,7 @@ class Toast {
   }
 
   async _displayToastMessage(messagePayload) {
-    const { duration = TOAST_DEFAULT_DURATION, message, cb } = messagePayload
+    let { duration = TOAST_DEFAULT_DURATION, message, cb } = messagePayload
 
     this._toastNode.classList.add(TOAST_SHOW_CLASS_NAME)
     this._toastNode.textContent = message

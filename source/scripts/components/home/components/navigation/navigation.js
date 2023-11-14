@@ -65,7 +65,7 @@ class Navigation {
   _handleNavBtnClick(event_) {
     event_.stopPropagation()
 
-    const hasClass = this._headerNode.classList.contains(HEADER_ACTIVE_CLASS)
+    let hasClass = this._headerNode.classList.contains(HEADER_ACTIVE_CLASS)
 
     this._toggleOverlay(!hasClass)
   }

@@ -1,6 +1,6 @@
 import { createElement } from '~/helpers/helpers.js'
 
-const getPlayerElement = (source) => {
+let getPlayerElement = (source) => {
   return createElement(`
     <audio class="visually-hidden" preload="auto" src="${source}">
   `)

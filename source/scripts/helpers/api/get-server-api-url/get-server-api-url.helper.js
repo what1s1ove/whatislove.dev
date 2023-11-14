@@ -1,4 +1,4 @@
-const getServerApiUrl = ({ host = ``, port = 0, apiPrefix = `` } = {}) => {
+let getServerApiUrl = ({ host = ``, port = 0, apiPrefix = `` } = {}) => {
   return `${host}${port}${apiPrefix}`
 }
 

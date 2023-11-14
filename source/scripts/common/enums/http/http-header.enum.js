@@ -1,4 +1,4 @@
-const HttpHeader = {
+let HttpHeader = {
   CONTENT_TYPE: `content-type`,
 }
 

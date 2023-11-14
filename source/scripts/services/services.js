@@ -5,13 +5,13 @@ import { Http } from './http/http.service.js'
 import { Storage } from './storage/storage.service.js'
 import { TimelineApi } from './timeline-api/timeline-api.service.js'
 
-const storage = new Storage({
+let storage = new Storage({
   storage: localStorage,
 })
 
-const http = new Http()
+let http = new Http()
 
-const timelineApi = new TimelineApi({
+let timelineApi = new TimelineApi({
   http,
   baseUrl: getServerApiUrl({
     host: AppConfig.SERVER_HOST,

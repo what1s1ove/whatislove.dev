@@ -1,4 +1,4 @@
-const checkIsOneOf = (checkItem, ...checksItems) => {
+let checkIsOneOf = (checkItem, ...checksItems) => {
   return checksItems.includes(checkItem)
 }
 

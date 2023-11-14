@@ -1,4 +1,4 @@
-const getCustomAttributeName = (name) => {
+let getCustomAttributeName = (name) => {
   return `data-${name}`
 }
 

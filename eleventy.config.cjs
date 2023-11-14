@@ -1,18 +1,18 @@
-const esbuild = require(`esbuild`)
-const lightningcss = require(`lightningcss`)
-const htmlMin = require(`html-minifier-terser`)
-const { existsSync } = require(`fs`)
-const { readFile, writeFile, mkdir } = require(`fs/promises`)
-const browserslist = require(`browserslist`)
-const packageJson = require(`./package.json`)
-const Image = require(`@11ty/eleventy-img`)
-const svgo = require(`svgo`)
-const path = require(`node:path`)
-const fs = require(`node:fs/promises`)
+let esbuild = require(`esbuild`)
+let lightningcss = require(`lightningcss`)
+let htmlMin = require(`html-minifier-terser`)
+let { existsSync } = require(`fs`)
+let { readFile, writeFile, mkdir } = require(`fs/promises`)
+let browserslist = require(`browserslist`)
+let packageJson = require(`./package.json`)
+let Image = require(`@11ty/eleventy-img`)
+let svgo = require(`svgo`)
+let path = require(`node:path`)
+let fs = require(`node:fs/promises`)
 
-const isDevelopment = process.env.NODE_ENV === `development`
+let isDevelopment = process.env.NODE_ENV === `development`
 
-const Path = {
+let Path = {
   CSS: `./source/styles/index.css`,
   JS: {
     MAIN: `./source/scripts/index.js`,
@@ -29,14 +29,14 @@ const Path = {
 }
 
 /** @param {import("@11ty/eleventy").UserConfig} config */
-const init = (config) => {
+let init = (config) => {
   // ignores
   if (!isDevelopment) {
     config.ignores.add(`source/pages/form.njk`)
   }
 
   // copy
-  for (const url of Path.COPY) {
+  for (let url of Path.COPY) {
     config.addPassthroughCopy(url)
   }
 
@@ -50,8 +50,8 @@ const init = (config) => {
         return
       }
 
-      const database = JSON.parse(await readFile(Path.DB))
-      const isFolderExists = existsSync(`build/api`)
+      let database = JSON.parse(await readFile(Path.DB))
+      let isFolderExists = existsSync(`build/api`)
 
       if (!isFolderExists) {
         await mkdir(`build/api`)
@@ -59,7 +59,7 @@ const init = (config) => {
 
       await Promise.all(
         Object.keys(database).map((databaseKey) => {
-          const payload = JSON.stringify(database[databaseKey])
+          let payload = JSON.stringify(database[databaseKey])
 
           return writeFile(`build/api/${databaseKey}.json`, payload)
         }),
@@ -91,7 +91,7 @@ const init = (config) => {
       }
 
       return async () => {
-        const { code, map } = await lightningcss.bundleAsync({
+        let { code, map } = await lightningcss.bundleAsync({
           filename: url,
           minify: true,
           sourceMap: isDevelopment,
@@ -121,7 +121,7 @@ const init = (config) => {
       }
 
       if (isDevelopment) {
-        const {
+        let {
           outputFiles: [formOutputFile],
         } = await esbuild.build({
           entryPoints: [Path.JS.FORM],
@@ -132,7 +132,7 @@ const init = (config) => {
           sourcemap: isDevelopment,
         })
 
-        const isFolderExists = existsSync(`build/scripts`)
+        let isFolderExists = existsSync(`build/scripts`)
 
         if (!isFolderExists) {
           await mkdir(`build/scripts`)
@@ -142,7 +142,7 @@ const init = (config) => {
       }
 
       return async () => {
-        const {
+        let {
           outputFiles: [mainOutputFile],
         } = await esbuild.build({
           entryPoints: [url],
@@ -165,7 +165,7 @@ const init = (config) => {
     outputFileExtension: `png`,
     compile: async (_content, url) => {
       return async () => {
-        const {
+        let {
           png: [originalImg],
         } = await Image(url, {
           dryRun: true,
@@ -177,8 +177,8 @@ const init = (config) => {
             formats: [`webp`, `avif`],
             outputDir: `build/images`,
             filenameFormat: (_id, source, _width, format) => {
-              const extension = path.extname(source)
-              const name = path.basename(source, extension)
+              let extension = path.extname(source)
+              let name = path.basename(source, extension)
 
               return `${name}.${format}`
             },

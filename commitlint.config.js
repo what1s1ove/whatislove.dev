@@ -1,7 +1,7 @@
 import { ProjectPrefix } from './project.config.js'
 
 /** @type {import('@commitlint/types').UserConfig} */
-const configuration = {
+let configuration = {
   parserPreset: {
     parserOpts: {
       issuePrefixes: ProjectPrefix.APPS.map((it) => `${it}-`),

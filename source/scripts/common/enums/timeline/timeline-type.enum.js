@@ -1,4 +1,4 @@
-const TimelineType = {
+let TimelineType = {
   POSITION: `position`,
   COURSE: `course`,
   BOOK: `book`,

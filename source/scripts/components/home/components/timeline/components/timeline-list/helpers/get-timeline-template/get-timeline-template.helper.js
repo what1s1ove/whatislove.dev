@@ -1,7 +1,7 @@
 import { getFormattedDate, getStringWitCheck } from '~/helpers/helpers.js'
 
-const getTimelineTemplate = (timeline) => {
-  const {
+let getTimelineTemplate = (timeline) => {
+  let {
     type,
     title,
     origin,
@@ -13,27 +13,27 @@ const getTimelineTemplate = (timeline) => {
     endDate,
   } = timeline
 
-  const titleStringNode = getStringWitCheck(
+  let titleStringNode = getStringWitCheck(
     title,
     `<h3 class="timeline__item-title">${title}</h3>`,
   )
-  const originStringNode = getStringWitCheck(
+  let originStringNode = getStringWitCheck(
     origin,
     `<a class="timeline__item-origin" href="${origin}" target="_blank" rel="noreferrer">${originDesc}</a>`,
   )
-  const descStringNode = getStringWitCheck(
+  let descStringNode = getStringWitCheck(
     desc,
     `<p class="timeline__item-desc">${desc}</p>`,
   )
-  const linkStringNode = getStringWitCheck(
+  let linkStringNode = getStringWitCheck(
     link,
     `<a class="timeline__item-link" href="${link}" target="_blank" rel="noreferrer">${linkDesc}</a>`,
   )
-  const endDateStringNode = getStringWitCheck(
+  let endDateStringNode = getStringWitCheck(
     endDate,
     `<time datetime="${endDate}"> — ${getFormattedDate(endDate)}</time>`,
   )
-  const dateStringNode = getStringWitCheck(
+  let dateStringNode = getStringWitCheck(
     date,
     `
       <p class="timeline__dates">

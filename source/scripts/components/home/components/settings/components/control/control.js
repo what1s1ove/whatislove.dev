@@ -18,12 +18,12 @@ class Control {
   }
 
   _setInitialValue() {
-    const inputNodes = this._controlNode.querySelectorAll(
+    let inputNodes = this._controlNode.querySelectorAll(
       `input[name="${this._name}"]`,
     )
 
-    for (const it of inputNodes) {
-      const isChecked = it.value === this._defaultValue
+    for (let it of inputNodes) {
+      let isChecked = it.value === this._defaultValue
 
       if (isChecked) {
         it.checked = isChecked

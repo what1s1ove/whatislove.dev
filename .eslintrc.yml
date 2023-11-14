@@ -27,6 +27,10 @@ ignorePatterns:
   - build
 
 rules:
+  no-restricted-syntax:
+    - error
+    - selector: VariableDeclaration[kind!=let]
+      message: Only let can be used for the variable declaration.
   semi:
     - error
     - never

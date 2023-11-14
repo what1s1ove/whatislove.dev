@@ -1,7 +1,7 @@
-const getTransformedTimeline = (timeline) => {
-  const transformedTimeline = { ...timeline }
+let getTransformedTimeline = (timeline) => {
+  let transformedTimeline = { ...timeline }
 
-  for (const key of Object.keys(transformedTimeline)) {
+  for (let key of Object.keys(transformedTimeline)) {
     transformedTimeline[key] = transformedTimeline[key] ?? ``
   }
 

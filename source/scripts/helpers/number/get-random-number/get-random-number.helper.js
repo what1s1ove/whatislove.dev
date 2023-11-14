@@ -1,6 +1,6 @@
-const RANDOM_NUMBER_INCREMENT = 1
+let RANDOM_NUMBER_INCREMENT = 1
 
-const getRandomNumber = (min, max) => {
+let getRandomNumber = (min, max) => {
   return Math.floor(Math.random() * (max - min + RANDOM_NUMBER_INCREMENT)) + min
 }
 

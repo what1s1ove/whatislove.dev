@@ -1,4 +1,4 @@
-const ApiPath = {
+let ApiPath = {
   TIMELINE: `/timeline`,
 }
 

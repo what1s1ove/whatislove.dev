@@ -1,4 +1,4 @@
-const ProjectPrefix = {
+let ProjectPrefix = {
   APPS: [`wd`],
   ENVIRONMENTS: [`production`, `development`],
 }

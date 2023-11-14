@@ -3,8 +3,8 @@ import { fillSelectOptions, getFormValues } from '~/helpers/helpers.js'
 
 import { getTransformedTimeline } from './helpers/helpers.js'
 
-const skillTypeOptions = Object.values(SkillType)
-const TimelineTypeOptions = Object.values(TimelineType)
+let skillTypeOptions = Object.values(SkillType)
+let TimelineTypeOptions = Object.values(TimelineType)
 
 class Form {
   constructor({ timelineApi }) {
@@ -41,7 +41,7 @@ class Form {
   async _handleSubmit(event_) {
     event_.preventDefault()
 
-    const formValues = getFormValues(this._formNode)
+    let formValues = getFormValues(this._formNode)
 
     await this._timelineApi.saveTimeline(getTransformedTimeline(formValues))
 

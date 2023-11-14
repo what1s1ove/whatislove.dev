@@ -1,7 +1,7 @@
 import { Form } from '~/components/form/form.js'
 import { timelineApi } from '~/services/services.js'
 
-const form = new Form({
+let form = new Form({
   timelineApi,
 })
 

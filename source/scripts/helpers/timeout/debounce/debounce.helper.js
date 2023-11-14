@@ -1,4 +1,4 @@
-const debounce = (callback, delay) => {
+let debounce = (callback, delay) => {
   let timeout
 
   return (...arguments_) => {
