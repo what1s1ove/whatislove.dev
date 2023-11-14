@@ -1,8 +1,8 @@
-const TimelineType = {
-  POSITION: `position`,
-  COURSE: `course`,
+let TimelineType = {
   BOOK: `book`,
+  COURSE: `course`,
   MEETUP: `meetup`,
+  POSITION: `position`,
 }
 
 export { TimelineType }

@@ -1,4 +1,4 @@
-const SkillType = {
+let SkillType = {
   HARD_SKILL: `hardSkill`,
   SOFT_SKILL: `softSkill`,
 }

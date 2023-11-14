@@ -5,9 +5,12 @@ env:
 extends:
   - eslint:recommended
   - plugin:import/recommended
+  - plugin:sonarjs/recommended
+  - plugin:unicorn/recommended
+  - plugin:perfectionist/recommended-natural
 
 plugins:
-  - import
+  - simple-import-sort
 
 parserOptions:
   ecmaVersion: 2022
@@ -21,7 +24,20 @@ settings:
       map:
         - ['~', './source/scripts']
 
+ignorePatterns:
+  - build
+
 rules:
+  no-restricted-syntax:
+    - error
+    - selector: VariableDeclaration[kind!=let]
+      message: Only let can be used for the variable declaration.
+    - selector: SwitchCase > *.consequent[type!="BlockStatement"]
+      message: Switch cases without blocks are forbidden.
+    - selector: ExportAllDeclaration,ImportAllDeclaration
+      message: Export/Import all (*) is forbidden.
+    - selector: ExportNamedDeclaration[declaration!=null]
+      message: Exports should be at the end of the file.
   semi:
     - error
     - never
@@ -73,13 +89,24 @@ rules:
   no-multiple-empty-lines:
     - error
     - max: 1
+  simple-import-sort/imports:
+    - error
+  simple-import-sort/exports:
+    - error
+  perfectionist/sort-named-imports:
+    - error
+    - type: alphabetical
   import/exports-last:
     - error
   import/group-exports:
     - error
   import/no-default-export:
     - error
-  import/no-anonymous-default-export:
+  import/first:
+    - error
+  import/newline-after-import:
+    - error
+  import/no-duplicates:
     - error
   import/extensions:
     - error
@@ -95,3 +122,6 @@ overrides:
       - eleventy.config.cjs
     env:
       node: true
+    rules:
+      sonarjs/cognitive-complexity:
+        - off

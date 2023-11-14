@@ -1,5 +1,5 @@
-const checkIsBeforeElement = (elementOffset) => {
-  const breakPoint = window.scrollY + document.documentElement.clientHeight
+let checkIsBeforeElement = (elementOffset) => {
+  let breakPoint = window.scrollY + document.documentElement.clientHeight
 
   return breakPoint >= elementOffset
 }

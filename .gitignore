@@ -1,7 +1,9 @@
-.DS_Store
-.idea
-.vscode
-build
+# dependencies
 node_modules
-npm-debug.*
-Thumbs.db
+
+# production
+build
+
+# misc
+.DS_Store
+.env

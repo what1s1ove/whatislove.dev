@@ -1,6 +1,6 @@
-const SettingName = {
-  THEME: `theme`,
+let SettingName = {
   MOTION: `motion`,
+  THEME: `theme`,
   WHATISLOVE: `whatislove`,
 }
 

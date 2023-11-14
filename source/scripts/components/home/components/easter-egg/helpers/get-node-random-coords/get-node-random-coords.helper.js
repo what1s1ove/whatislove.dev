@@ -1,13 +1,13 @@
 import { getRandomNumber } from '~/helpers/helpers.js'
 
-const MIN_COORD_NUMBER = 0
+let MIN_COORD_NUMBER = 0
 
-const getNodeRandomCoords = (node) => {
-  const y = getRandomNumber(
+let getNodeRandomCoords = (node) => {
+  let y = getRandomNumber(
     MIN_COORD_NUMBER,
     document.documentElement.offsetHeight - node.offsetHeight,
   )
-  const x = getRandomNumber(
+  let x = getRandomNumber(
     MIN_COORD_NUMBER,
     document.documentElement.offsetWidth - node.offsetWidth,
   )

@@ -1,12 +1,12 @@
 import { Home } from '~/components/home/home.js'
-import { WhatisloveMath, timelineApi, storage } from '~/services/services.js'
+import { storage, timelineApi, WhatisloveMath } from '~/services/services.js'
 
-const home = new Home({
-  timelineApi,
+let home = new Home({
   storage,
+  timelineApi,
 })
 
-const init = () => {
+let init = () => {
   home.init()
 
   window.WhatisloveMath = WhatisloveMath

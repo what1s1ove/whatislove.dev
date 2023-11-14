@@ -1,5 +1,6 @@
 import { Loader } from '~/components/common/common.js'
 import { checkIsBeforeElement } from '~/helpers/helpers.js'
+
 import { TimelineForm, TimelineList } from './components/components.js'
 import { getSuitTimelines } from './helpers/helpers.js'
 
@@ -7,7 +8,7 @@ class Timeline {
   constructor({ timelineApi }) {
     this._timelineApi = timelineApi
 
-    this._containerNode = null
+    this._containerNode = undefined
     this._timelines = []
     this._isLoading = false
 
@@ -23,26 +24,6 @@ class Timeline {
     this._timelineListComponent = new TimelineList()
   }
 
-  async init() {
-    this._containerNode = document.querySelector(`.timeline`)
-
-    this._loaderComponent.init()
-    this._timelineFormComponent.init()
-    this._timelineListComponent.init()
-
-    this._initListeners()
-  }
-
-  _renderTimelines(formValues) {
-    const timelines = getSuitTimelines(this._timelines, formValues)
-
-    this._timelineListComponent.renderTimelines(timelines)
-  }
-
-  _initListeners() {
-    document.addEventListener(`scroll`, this._handleTimelineShow)
-  }
-
   async _fetchTimelines() {
     this._timelines = await this._timelineApi.getTimelines()
   }
@@ -52,7 +33,7 @@ class Timeline {
   }
 
   async _handleTimelineShow() {
-    const shouldLoadTimelines = checkIsBeforeElement(
+    let shouldLoadTimelines = checkIsBeforeElement(
       this._containerNode.offsetTop,
     )
 
@@ -67,6 +48,26 @@ class Timeline {
 
       document.removeEventListener(`scroll`, this._handleTimelineShow)
     }
+  }
+
+  _initListeners() {
+    document.addEventListener(`scroll`, this._handleTimelineShow)
+  }
+
+  _renderTimelines(formValues) {
+    let timelines = getSuitTimelines(this._timelines, formValues)
+
+    this._timelineListComponent.renderTimelines(timelines)
+  }
+
+  init() {
+    this._containerNode = document.querySelector(`.timeline`)
+
+    this._loaderComponent.init()
+    this._timelineFormComponent.init()
+    this._timelineListComponent.init()
+
+    this._initListeners()
   }
 }
 

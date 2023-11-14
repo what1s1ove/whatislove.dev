@@ -4,7 +4,7 @@ class Loader {
   constructor({ containerNode }) {
     this._containerNode = containerNode
 
-    this._loaderNode = null
+    this._loaderNode = undefined
   }
 
   init() {

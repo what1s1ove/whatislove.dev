@@ -1,23 +1,18 @@
-import { getFormValues, debounce } from '~/helpers/helpers.js'
+import { debounce, getFormValues } from '~/helpers/helpers.js'
+
 import { DEBOUNCE_DELAY } from './common/constants.js'
 
 class TimelineForm {
   constructor({ onChange }) {
     this._onChange = onChange
 
-    this._formNode = null
+    this._formNode = undefined
 
     this._handleFormChange = this._handleFormChange.bind(this)
   }
 
-  get formValues() {
-    return getFormValues(this._formNode)
-  }
-
-  init() {
-    this._formNode = document.forms.timeline
-
-    this._initListeners()
+  _handleFormChange() {
+    this._onChange(this.formValues)
   }
 
   _initListeners() {
@@ -27,8 +22,14 @@ class TimelineForm {
     )
   }
 
-  _handleFormChange() {
-    this._onChange(this.formValues)
+  init() {
+    this._formNode = document.forms.timeline
+
+    this._initListeners()
+  }
+
+  get formValues() {
+    return getFormValues(this._formNode)
   }
 }
 

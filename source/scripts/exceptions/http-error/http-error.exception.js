@@ -1,13 +1,13 @@
 import {
-  HttpCode,
-  CustomExceptionName,
   ApiErrorMessage,
+  CustomExceptionName,
+  HttpCode,
 } from '~/common/enums/enums.js'
 
 class HttpError extends Error {
   constructor({
-    status = HttpCode.INTERNAL_SERVER_ERROR,
     message = ApiErrorMessage.NETWORK_ERROR,
+    status = HttpCode.INTERNAL_SERVER_ERROR,
   } = {}) {
     super(message)
     this.status = status

@@ -1,5 +1,6 @@
-const createElement = (template) => {
-  const newElement = document.createElement(`div`)
+let createElement = (template) => {
+  let newElement = document.createElement(`div`)
+
   newElement.innerHTML = template
 
   return newElement.firstElementChild

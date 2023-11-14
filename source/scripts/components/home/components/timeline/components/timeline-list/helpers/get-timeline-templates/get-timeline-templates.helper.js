@@ -1,9 +1,13 @@
 import { getTimelineTemplate } from '../get-timeline-template/get-timeline-template.helper.js'
 
-const getTimelineTemplates = (timelines) => {
-  return timelines.reduce((acc, timeline) => {
-    return acc.concat(getTimelineTemplate(timeline))
-  }, ``)
+let getTimelineTemplates = (timelines) => {
+  let timelineTemplates = ``
+
+  for (let timeline of timelines) {
+    timelineTemplates += getTimelineTemplate(timeline)
+  }
+
+  return timelineTemplates
 }
 
 export { getTimelineTemplates }

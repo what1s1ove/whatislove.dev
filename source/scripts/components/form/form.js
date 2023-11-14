@@ -1,25 +1,32 @@
+import { SkillType, TimelineType } from '~/common/enums/enums.js'
 import { fillSelectOptions, getFormValues } from '~/helpers/helpers.js'
-import { TimelineType, SkillType } from '~/common/enums/enums.js'
+
 import { getTransformedTimeline } from './helpers/helpers.js'
 
-const skillTypeOptions = Object.values(SkillType)
-const TimelineTypeOptions = Object.values(TimelineType)
+let skillTypeOptions = Object.values(SkillType)
+let TimelineTypeOptions = Object.values(TimelineType)
 
 class Form {
   constructor({ timelineApi }) {
     this._timelineApi = timelineApi
 
-    this._formNode = null
+    this._formNode = undefined
 
     this._handleSubmit = this._handleSubmit.bind(this)
   }
 
-  init() {
-    this._formNode = document.querySelector(`form[name="timeline"]`)
+  async _handleSubmit(event_) {
+    event_.preventDefault()
 
-    this._initSelects()
+    let formValues = getFormValues(this._formNode)
 
-    this._initListeners()
+    await this._timelineApi.saveTimeline(getTransformedTimeline(formValues))
+
+    this._formNode.reset()
+  }
+
+  _initListeners() {
+    this._formNode.addEventListener(`submit`, this._handleSubmit)
   }
 
   _initSelects() {
@@ -33,18 +40,12 @@ class Form {
     )
   }
 
-  _initListeners() {
-    this._formNode.addEventListener(`submit`, this._handleSubmit)
-  }
+  init() {
+    this._formNode = document.querySelector(`form[name="timeline"]`)
 
-  async _handleSubmit(evt) {
-    evt.preventDefault()
+    this._initSelects()
 
-    const formValues = getFormValues(this._formNode)
-
-    await this._timelineApi.saveTimeline(getTransformedTimeline(formValues))
-
-    this._formNode.reset()
+    this._initListeners()
   }
 }
 

@@ -1,20 +1,20 @@
 import { KeyboardKey } from '~/common/enums/enums.js'
 
-const subscribeFocusTrap = (...elements) => {
-  const firstNode = elements[0]
-  const lastNode = elements[elements.length - 1]
+let subscribeFocusTrap = (...elements) => {
+  let [firstNode] = elements
+  let lastNode = elements.at(-1)
 
-  const onFirstElementFocus = (evt) => {
-    if (evt.key === KeyboardKey.TAB && evt.shiftKey) {
-      evt.preventDefault()
+  let onFirstElementFocus = (event_) => {
+    if (event_.key === KeyboardKey.TAB && event_.shiftKey) {
+      event_.preventDefault()
 
       lastNode.focus()
     }
   }
 
-  const onLastElementFocus = (evt) => {
-    if (evt.key === KeyboardKey.TAB && !evt.shiftKey) {
-      evt.preventDefault()
+  let onLastElementFocus = (event_) => {
+    if (event_.key === KeyboardKey.TAB && !event_.shiftKey) {
+      event_.preventDefault()
 
       firstNode.focus()
     }

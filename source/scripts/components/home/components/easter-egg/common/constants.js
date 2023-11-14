@@ -1,7 +1,7 @@
-const SOUND_SRC = `/sounds/haddaway-whatislove.mp3`
+let SOUND_SRC = `/sounds/haddaway-whatislove.mp3`
 
-const RESIZE_DELAY = 400
+let RESIZE_DELAY = 400
 
-const NOTIFICATION_DELAY = 5000
+let NOTIFICATION_DELAY = 5000
 
-export { SOUND_SRC, RESIZE_DELAY, NOTIFICATION_DELAY }
+export { NOTIFICATION_DELAY, RESIZE_DELAY, SOUND_SRC }

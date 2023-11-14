@@ -1,4 +1,4 @@
-const ApiErrorMessage = {
+let ApiErrorMessage = {
   NETWORK_ERROR: `Network Error`,
 }
 

@@ -1,5 +1,7 @@
-const addSelectOptions = (selectNode, options) => {
-  options.forEach((option) => selectNode.add(option))
+let addSelectOptions = (selectNode, options) => {
+  for (let option of options) {
+    selectNode.add(option)
+  }
 }
 
 export { addSelectOptions }

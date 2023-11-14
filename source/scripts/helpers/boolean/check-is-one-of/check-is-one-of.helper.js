@@ -1,5 +1,5 @@
-const checkIsOneOf = (checkItem, ...checksItems) => {
-  return checksItems.some((item) => item === checkItem)
+let checkIsOneOf = (checkItem, ...checksItems) => {
+  return checksItems.includes(checkItem)
 }
 
 export { checkIsOneOf }

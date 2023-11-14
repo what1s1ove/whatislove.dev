@@ -3,20 +3,20 @@ class Storage {
     this._storage = storage
   }
 
-  getItem(key) {
-    return this._storage.getItem(key)
+  clear() {
+    return this._storage.clear()
   }
 
-  setItem(key, value) {
-    return this._storage.setItem(key, value)
+  getItem(key) {
+    return this._storage.getItem(key)
   }
 
   removeItem(key) {
     return this._storage.removeItem(key)
   }
 
-  clear() {
-    return this._storage.clear()
+  setItem(key, value) {
+    return this._storage.setItem(key, value)
   }
 }
 

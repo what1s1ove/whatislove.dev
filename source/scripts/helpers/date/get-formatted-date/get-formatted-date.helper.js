@@ -1,4 +1,4 @@
-const getFormattedDate = (date) => {
+let getFormattedDate = (date) => {
   if (!date) {
     return ``
   }

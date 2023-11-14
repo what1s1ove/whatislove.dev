@@ -1,4 +1,4 @@
-const CustomExceptionName = {
+let CustomExceptionName = {
   HTTP_ERROR: `HttpError`,
 }
 

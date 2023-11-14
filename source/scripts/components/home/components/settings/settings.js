@@ -1,38 +1,18 @@
-import { getCustomAttrName } from '~/helpers/helpers.js'
 import { SettingName } from '~/common/enums/enums.js'
-import { getSettingItemElement } from './helpers/helpers.js'
-import { Switch, Control } from './components/components.js'
+import { getCustomAttributeName } from '~/helpers/helpers.js'
 
-const RESULT_VALUE = `auto`
+import { Control, Switch } from './components/components.js'
+import { getSettingItemElement } from './helpers/helpers.js'
+
+let RESULT_VALUE = `auto`
 
 class Settings {
   constructor({ storage }) {
     this._storage = storage
 
-    this._settingListNode = null
+    this._settingListNode = undefined
 
     this._handleControlChange = this._handleControlChange.bind(this)
-  }
-
-  init() {
-    this._settingListNode = document.querySelector(`.settings`)
-
-    this._initControl(SettingName.THEME)
-    this._initControl(SettingName.MOTION)
-  }
-
-  appendNewBtn(settings) {
-    const { name, label, isDefaultChecked, onClick } = settings
-
-    const newSettingItemNode = getSettingItemElement({ name, label })
-
-    this._settingListNode.prepend(newSettingItemNode)
-
-    return new Switch({
-      name,
-      isDefaultChecked,
-      onClick,
-    }).init(`.settings__item-switch--${name}`)
   }
 
   _handleControlChange({ name, value }) {
@@ -48,32 +28,53 @@ class Settings {
   }
 
   _initControl(name) {
-    const defaultValue = this._setInitialSettingAttr(name)
+    let defaultValue = this._setInitialSettingAttr(name)
 
     new Control({
-      name,
       defaultValue,
+      name,
       onChange: this._handleControlChange,
     }).init(`.settings__item-fieldset--${name}`)
   }
 
-  _setSettingAttr(name, value) {
-    document.documentElement.setAttribute(getCustomAttrName(name), value)
-  }
-
   _removeSettingAttr(name) {
-    document.documentElement.removeAttribute(getCustomAttrName(name))
+    document.documentElement.removeAttribute(getCustomAttributeName(name))
   }
 
   _setInitialSettingAttr(name) {
-    const value = this._storage.getItem(name)
-    const hasValue = Boolean(value)
+    let value = this._storage.getItem(name)
+    let hasValue = Boolean(value)
 
     if (hasValue) {
       this._setSettingAttr(name, value)
     }
 
     return value
+  }
+
+  _setSettingAttr(name, value) {
+    document.documentElement.setAttribute(getCustomAttributeName(name), value)
+  }
+
+  appendNewBtn(settings) {
+    let { isDefaultChecked, label, name, onClick } = settings
+
+    let newSettingItemNode = getSettingItemElement({ label, name })
+
+    this._settingListNode.prepend(newSettingItemNode)
+
+    return new Switch({
+      isDefaultChecked,
+      name,
+      onClick,
+    }).init(`.settings__item-switch--${name}`)
+  }
+
+  init() {
+    this._settingListNode = document.querySelector(`.settings`)
+
+    this._initControl(SettingName.THEME)
+    this._initControl(SettingName.MOTION)
   }
 }
 

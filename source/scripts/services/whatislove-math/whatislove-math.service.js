@@ -1,11 +1,11 @@
 class WhatisloveMath {
-  static NOTHING_TODO_VALUE = 10
-
   static BoostEntity = {
     BOOK: `book`,
     COURSE: `course`,
     MENTEE: `mentee`,
   }
+
+  static NOTHING_TODO_VALUE = 10
 
   static boostEntityToProfessionalValue = {
     [WhatisloveMath.BoostEntity.BOOK]: 1,
@@ -13,23 +13,21 @@ class WhatisloveMath {
     [WhatisloveMath.BoostEntity.MENTEE]: 10,
   }
 
-  static multiplyBoostEntities(boostEntity, count = 0) {
-    return new Array(count).fill(boostEntity)
-  }
+  constructor() {}
 
   static calculateProfessionalLevel(initialValue = 0, ...boostEntities) {
-    const { NOTHING_TODO_VALUE, BoostEntity, boostEntityToProfessionalValue } =
+    let { BoostEntity, NOTHING_TODO_VALUE, boostEntityToProfessionalValue } =
       WhatisloveMath
 
-    const hasBoostEntities = Boolean(boostEntities.length)
+    let hasBoostEntities = boostEntities.length > 0
 
     if (!hasBoostEntities) {
       return (initialValue -= NOTHING_TODO_VALUE)
     }
 
-    const flattenBoostEntities = boostEntities.flat(Infinity)
-    const allBoostEntities = Object.values(BoostEntity)
-    const isValid = flattenBoostEntities.every((it) => {
+    let flattenBoostEntities = boostEntities.flat(Number.POSITIVE_INFINITY)
+    let allBoostEntities = Object.values(BoostEntity)
+    let isValid = flattenBoostEntities.every((it) => {
       return allBoostEntities.includes(it)
     })
 
@@ -37,10 +35,17 @@ class WhatisloveMath {
       throw new SyntaxError(`Unknown boost entity type`)
     }
 
-    return flattenBoostEntities.reduce(
-      (acc, it) => (acc += boostEntityToProfessionalValue[it]),
-      initialValue,
-    )
+    let professionalLevel = initialValue
+
+    for (let boostEntity of flattenBoostEntities) {
+      professionalLevel += boostEntityToProfessionalValue[boostEntity]
+    }
+
+    return professionalLevel
+  }
+
+  static multiplyBoostEntities(boostEntity, count = 0) {
+    return Array.from({ length: count }).fill(boostEntity)
   }
 }
 
