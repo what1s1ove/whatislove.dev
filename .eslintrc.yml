@@ -8,7 +8,7 @@ extends:
   - plugin:sonarjs/recommended
 
 plugins:
-  - import
+  - simple-import-sort
 
 parserOptions:
   ecmaVersion: 2022
@@ -77,6 +77,10 @@ rules:
   no-multiple-empty-lines:
     - error
     - max: 1
+  simple-import-sort/imports:
+    - error
+  simple-import-sort/exports:
+    - error
   import/exports-last:
     - error
   import/group-exports:

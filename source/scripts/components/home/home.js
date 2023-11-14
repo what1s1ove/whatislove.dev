@@ -1,9 +1,10 @@
 import { Toast } from '~/components/common/common.js'
+
 import {
-  Settings,
-  Navigation,
-  Timeline,
   EasterEgg,
+  Navigation,
+  Settings,
+  Timeline,
 } from './components/components.js'
 
 class Home {

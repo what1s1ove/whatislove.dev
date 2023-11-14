@@ -1,5 +1,5 @@
-import { checkIsChecked } from './helpers/helpers.js'
 import { CHECKED_ATTR } from './common/constants.js'
+import { checkIsChecked } from './helpers/helpers.js'
 
 class Switch {
   constructor({ name, isDefaultChecked, onClick }) {

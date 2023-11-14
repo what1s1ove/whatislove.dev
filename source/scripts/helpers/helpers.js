@@ -7,10 +7,10 @@ export {
   subscribeFocusTrap,
 } from './dom/dom.js'
 export {
-  getFormValues,
   addSelectOptions,
   createSelectOptions,
   fillSelectOptions,
+  getFormValues,
 } from './form/form.js'
 export { getRandomNumber } from './number/number.js'
 export { getStringWitCheck } from './string/string.js'

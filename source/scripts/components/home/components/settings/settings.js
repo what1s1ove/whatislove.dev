@@ -1,7 +1,8 @@
-import { getCustomAttrName } from '~/helpers/helpers.js'
 import { SettingName } from '~/common/enums/enums.js'
+import { getCustomAttrName } from '~/helpers/helpers.js'
+
+import { Control, Switch } from './components/components.js'
 import { getSettingItemElement } from './helpers/helpers.js'
-import { Switch, Control } from './components/components.js'
 
 const RESULT_VALUE = `auto`
 

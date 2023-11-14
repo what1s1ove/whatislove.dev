@@ -1,7 +1,8 @@
 import { setAsyncTimeout } from '~/helpers/helpers.js'
+
 import {
-  TOAST_DEFAULT_DURATION,
   CLEAN_MESSAGE_DELAY,
+  TOAST_DEFAULT_DURATION,
   TOAST_SHOW_CLASS_NAME,
 } from './common/constants.js'
 

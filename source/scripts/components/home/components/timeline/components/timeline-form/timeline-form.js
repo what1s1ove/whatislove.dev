@@ -1,4 +1,5 @@
-import { getFormValues, debounce } from '~/helpers/helpers.js'
+import { debounce, getFormValues } from '~/helpers/helpers.js'
+
 import { DEBOUNCE_DELAY } from './common/constants.js'
 
 class TimelineForm {

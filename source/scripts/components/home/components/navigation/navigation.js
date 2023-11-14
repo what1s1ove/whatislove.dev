@@ -1,5 +1,6 @@
-import { checkIsOneOf, subscribeFocusTrap } from '~/helpers/helpers.js'
 import { KeyboardKey } from '~/common/enums/enums.js'
+import { checkIsOneOf, subscribeFocusTrap } from '~/helpers/helpers.js'
+
 import { HEADER_ACTIVE_CLASS } from './common/constants.js'
 
 class Navigation {

@@ -1,8 +1,8 @@
 import {
-  HttpMethod,
-  TimelineApiPath,
   ApiPath,
   ContentType,
+  HttpMethod,
+  TimelineApiPath,
 } from '~/common/enums/enums.js'
 
 class TimelineApi {
