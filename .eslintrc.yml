@@ -31,6 +31,12 @@ rules:
     - error
     - selector: VariableDeclaration[kind!=let]
       message: Only let can be used for the variable declaration.
+    - selector: SwitchCase > *.consequent[type!="BlockStatement"]
+      message: Switch cases without blocks are forbidden.
+    - selector: ExportAllDeclaration,ImportAllDeclaration
+      message: Export/Import all (*) is forbidden.
+    - selector: ExportNamedDeclaration[declaration!=null]
+      message: Exports should be at the end of the file.
   semi:
     - error
     - never
