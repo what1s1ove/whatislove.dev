@@ -12,8 +12,7 @@
   position: absolute;
   content: "";
   inset: 0;
-  background:
-    repeating-conic-gradient(
+  background: repeating-conic-gradient(
       var(--color--secondary) 0% 25%,
       var(--color--primary) 0% 50%
     )

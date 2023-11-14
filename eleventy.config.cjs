@@ -98,12 +98,12 @@ const init = (config) => {
           ),
         })
 
-        return isDevelopment ? (
-          code +
-          `\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,${map.toString(
-            `base64`,
-          )}*/`
-        ) : code
+        return isDevelopment
+          ? code +
+              `\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,${map.toString(
+                `base64`,
+              )}*/`
+          : code
       }
     },
   })
@@ -136,7 +136,7 @@ const init = (config) => {
           await mkdir(`build/scripts`)
         }
 
-        await fs.writeFile(`build/scripts/form.js`,formOutputFile.text)
+        await fs.writeFile(`build/scripts/form.js`, formOutputFile.text)
       }
 
       return async () => {
