@@ -1,11 +1,21 @@
-let getTransformedTimeline = (timeline) => {
-  let transformedTimeline = { ...timeline }
+/** @typedef {import('~/common/types/timeline/timeline').TimelineCreatePayload} TimelineCreatePayload */
 
-  for (let key of Object.keys(transformedTimeline)) {
+/**
+ * @param {TimelineCreatePayload} timeline
+ * @returns {TimelineCreatePayload}
+ */
+let getTransformedTimeline = (timeline) => {
+  let transformedTimeline = /** @type {Record<string, unknown>} */ ({
+    ...timeline,
+  })
+
+  for (let key of /** @type {(keyof TimelineCreatePayload)[]} */ (
+    Object.keys(timeline)
+  )) {
     transformedTimeline[key] = transformedTimeline[key] ?? ``
   }
 
-  return transformedTimeline
+  return /** @type {TimelineCreatePayload} */ (transformedTimeline)
 }
 
 export { getTransformedTimeline }

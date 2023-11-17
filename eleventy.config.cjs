@@ -1,3 +1,5 @@
+let fs = require(`node:fs/promises`)
+let process = require(`node:process`)
 let esbuild = require(`esbuild`)
 let lightningcss = require(`lightningcss`)
 let htmlMin = require(`html-minifier-terser`)
@@ -8,7 +10,6 @@ let packageJson = require(`./package.json`)
 let Image = require(`@11ty/eleventy-img`)
 let svgo = require(`svgo`)
 let path = require(`node:path`)
-let fs = require(`node:fs/promises`)
 
 let isDevelopment = process.env.NODE_ENV === `development`
 
@@ -28,7 +29,10 @@ let Path = {
   },
 }
 
-/** @param {import("@11ty/eleventy").UserConfig} config */
+/**
+ * @param {import('@11ty/eleventy').UserConfig} config
+ * @returns {ReturnType<typeof import('@11ty/eleventy/src/defaultConfig')>}
+ */
 let init = (config) => {
   // ignores
   if (!isDevelopment) {
@@ -44,6 +48,7 @@ let init = (config) => {
   config.addTemplateFormats(`json`)
 
   config.addExtension(`json`, {
+    /** @type {import('@11ty/eleventy/src/Engines/TemplateEngine')['compile']} */
     compile: async (_content, url) => {
       if (url !== Path.DB) {
         return
@@ -84,6 +89,7 @@ let init = (config) => {
   config.addTemplateFormats(`css`)
 
   config.addExtension(`css`, {
+    /** @type {import('@11ty/eleventy/src/Engines/TemplateEngine')['compile']} */
     compile: async (_content, url) => {
       if (url !== Path.CSS) {
         return
@@ -114,6 +120,7 @@ let init = (config) => {
   config.addTemplateFormats(`js`)
 
   config.addExtension(`js`, {
+    /** @type {import('@11ty/eleventy/src/Engines/TemplateEngine')['compile']} */
     compile: async (_content, url) => {
       if (url !== Path.JS.MAIN) {
         return
@@ -162,6 +169,7 @@ let init = (config) => {
   config.addTemplateFormats(`png`)
 
   config.addExtension(`png`, {
+    /** @type {import('@11ty/eleventy/src/Engines/TemplateEngine')['compile']} */
     compile: async (_content, url) => {
       return async () => {
         let {
@@ -173,6 +181,7 @@ let init = (config) => {
 
         if (url.includes(`.photo.`)) {
           await Image(url, {
+            /** @type {import('@11ty/eleventy-img').BaseImageOptions['filenameFormat']} */
             filenameFormat: (_id, source, _width, format) => {
               let extension = path.extname(source)
               let name = path.basename(source, extension)
@@ -194,6 +203,7 @@ let init = (config) => {
   config.addTemplateFormats(`svg`)
 
   config.addExtension(`svg`, {
+    /** @type {import('@11ty/eleventy/src/Engines/TemplateEngine')['compile']} */
     compile: (content, url) => {
       return () => {
         if (url === `./source/images/icons/icon.svg`) {

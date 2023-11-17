@@ -1,28 +1,45 @@
+/** @typedef {typeof import('~/common/enums/enums.js').SettingName} SettingName */
+
 class Control {
+  /**
+   * @param {{
+   *   defaultValue: string | null
+   *   name: SettingName[keyof SettingName]
+   *   onChange: (name: SettingName[keyof SettingName], value: string) => void
+   * }} constructor
+   */
   constructor({ defaultValue, name, onChange }) {
     this._name = name
     this._onChange = onChange
     this._defaultValue = defaultValue
 
+    /** @type {HTMLFieldSetElement | undefined} */
     this._controlNode = undefined
 
     this._handleSwitchChange = this._handleSwitchChange.bind(this)
   }
 
+  /**
+   * @param {Event} event_
+   * @returns {void}
+   */
   _handleSwitchChange({ target }) {
-    this._onChange({
-      name: this._name,
-      value: target.value,
-    })
+    this._onChange(this._name, /** @type {HTMLInputElement} */ (target).value)
   }
 
+  /** @returns {void} */
   _initListeners() {
-    this._controlNode.addEventListener(`change`, this._handleSwitchChange)
+    let controlNode = /** @type {HTMLFieldSetElement} */ (this._controlNode)
+
+    controlNode.addEventListener(`change`, this._handleSwitchChange)
   }
 
+  /** @returns {void} */
   _setInitialValue() {
-    let inputNodes = this._controlNode.querySelectorAll(
-      `input[name="${this._name}"]`,
+    let controlNode = /** @type {HTMLFieldSetElement} */ (this._controlNode)
+
+    let inputNodes = /** @type {NodeListOf<HTMLInputElement>} */ (
+      controlNode.querySelectorAll(`input[name="${this._name}"]`)
     )
 
     for (let it of inputNodes) {
@@ -34,8 +51,14 @@ class Control {
     }
   }
 
+  /**
+   * @param {string} selector
+   * @returns {void}
+   */
   init(selector) {
-    this._controlNode = document.querySelector(selector)
+    this._controlNode = /** @type {HTMLFieldSetElement} */ (
+      document.querySelector(selector)
+    )
 
     this._setInitialValue()
 

@@ -5,6 +5,12 @@ import {
 } from '~/common/enums/enums.js'
 
 class HttpError extends Error {
+  /**
+   * @param {{
+   *   message?: (typeof ApiErrorMessage)[keyof typeof ApiErrorMessage]
+   *   status?: (typeof HttpCode)[keyof typeof HttpCode]
+   * }} [properties]
+   */
   constructor({
     message = ApiErrorMessage.NETWORK_ERROR,
     status = HttpCode.INTERNAL_SERVER_ERROR,

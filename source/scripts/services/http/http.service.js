@@ -1,26 +1,55 @@
-import { ContentType, HttpHeader, HttpMethod } from '~/common/enums/enums.js'
+import {
+  ApiErrorMessage,
+  ContentType,
+  HttpHeader,
+  HttpMethod,
+} from '~/common/enums/enums.js'
 import { HttpError } from '~/exceptions/exceptions.js'
 import { checkIsOneOf } from '~/helpers/helpers.js'
 
 class Http {
+  /**
+   * @param {Response} response
+   * @returns {Response | never}
+   * @throws {HttpError}
+   */
   static checkStatus(response) {
     if (!response.ok) {
       throw new HttpError({
-        message: response.statusText,
+        message:
+          /** @type {(typeof ApiErrorMessage)[keyof typeof ApiErrorMessage]} */ (
+            response.statusText ?? ApiErrorMessage.NETWORK_ERROR
+          ),
       })
     }
 
     return response
   }
 
+  /**
+   * @template T
+   * @param {Response} response
+   * @returns {Promise<T>}
+   */
   static parseJSON(response) {
     return response.json()
   }
 
+  /**
+   * @param {Error} error
+   * @returns {never}
+   * @throws {Error}
+   */
   static throwError(error) {
     throw error
   }
 
+  /**
+   * @param {{
+   *   contentType?: (typeof ContentType)[keyof typeof ContentType] | undefined
+   * }} options
+   * @returns {Headers}
+   */
   _getHeaders({ contentType }) {
     let headers = new Headers()
 
@@ -31,6 +60,16 @@ class Http {
     return headers
   }
 
+  /**
+   * @template T
+   * @param {string} url
+   * @param {{
+   *   contentType?: (typeof ContentType)[keyof typeof ContentType]
+   *   method?: (typeof HttpMethod)[keyof typeof HttpMethod]
+   *   payload?: unknown
+   * }} [options]
+   * @returns {Promise<T>}
+   */
   load(url, options = {}) {
     let { contentType, method = HttpMethod.GET, payload } = options
     let headers = this._getHeaders({
@@ -39,13 +78,15 @@ class Http {
     let isJSON = checkIsOneOf(contentType, ContentType.JSON)
 
     return fetch(url, {
-      body: isJSON ? JSON.stringify(payload) : payload,
+      body: /** @type {BodyInit} */ (
+        isJSON ? JSON.stringify(payload) : undefined
+      ),
       headers,
       method,
     })
-      .then(Http.checkStatus)
-      .then(Http.parseJSON)
-      .catch(Http.throwError)
+      .then((response) => Http.checkStatus(response))
+      .then((response) => Http.parseJSON(response))
+      .catch((error) => Http.throwError(error))
   }
 }
 

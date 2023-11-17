@@ -3,45 +3,74 @@ import { fillSelectOptions, getFormValues } from '~/helpers/helpers.js'
 
 import { getTransformedTimeline } from './helpers/helpers.js'
 
+/** @typedef {import('~/services/timeline-api/timeline-api.service.js').TimelineApi} TimelineApi */
+/** @typedef {import('~/common/types/timeline/timeline').TimelineCreatePayload} TimelineCreatePayload */
+
 let skillTypeOptions = Object.values(SkillType)
 let TimelineTypeOptions = Object.values(TimelineType)
 
 class Form {
+  /**
+   * @param {{
+   *   timelineApi: TimelineApi
+   * }} constructor
+   */
   constructor({ timelineApi }) {
     this._timelineApi = timelineApi
 
+    /** @type {HTMLFormElement | undefined} */
     this._formNode = undefined
 
     this._handleSubmit = this._handleSubmit.bind(this)
   }
 
+  /**
+   * @param {SubmitEvent} event_
+   * @returns {Promise<void>}
+   */
   async _handleSubmit(event_) {
     event_.preventDefault()
 
-    let formValues = getFormValues(this._formNode)
+    let formNode = /** @type {HTMLFormElement} */ (this._formNode)
+    let formValues = /** @type {TimelineCreatePayload} */ (
+      getFormValues(formNode)
+    )
 
     await this._timelineApi.saveTimeline(getTransformedTimeline(formValues))
 
-    this._formNode.reset()
+    formNode.reset()
   }
 
+  /** @returns {void} */
   _initListeners() {
-    this._formNode.addEventListener(`submit`, this._handleSubmit)
+    let formNode = /** @type {HTMLFormElement} */ (this._formNode)
+
+    formNode.addEventListener(`submit`, this._handleSubmit)
   }
 
+  /** @returns {void} */
   _initSelects() {
+    let formNode = /** @type {HTMLFormElement} */ (this._formNode)
+
     fillSelectOptions(
-      this._formNode.querySelector(`select[name="skillType"]`),
+      /** @type {HTMLSelectElement} */ (
+        formNode.querySelector(`select[name="skillType"]`)
+      ),
       skillTypeOptions,
     )
     fillSelectOptions(
-      this._formNode.querySelector(`select[name="type"]`),
+      /** @type {HTMLSelectElement} */ (
+        formNode.querySelector(`select[name="type"]`)
+      ),
       TimelineTypeOptions,
     )
   }
 
+  /** @returns {void} */
   init() {
-    this._formNode = document.querySelector(`form[name="timeline"]`)
+    this._formNode = /** @type {HTMLFormElement} */ (
+      document.querySelector(`form[name="timeline"]`)
+    )
 
     this._initSelects()
 

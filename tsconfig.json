@@ -1,0 +1,22 @@
+{
+  "include": ["**/*.js"],
+  "exclude": ["node_modules", "build"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["source/scripts/*"]
+    },
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "types": ["./source/scripts/globals.d.ts"],
+    "esModuleInterop": true,
+    "moduleResolution": "Bundler",
+    "target": "ESNext",
+    "module": "ESNext",
+    "allowJs": true,
+    "checkJs": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noPropertyAccessFromIndexSignature": true
+  }
+}

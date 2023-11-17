@@ -1,9 +1,15 @@
 import { createElement } from '~/helpers/helpers.js'
 
+/**
+ * @param {string} source
+ * @returns {HTMLAudioElement}
+ */
 let getPlayerElement = (source) => {
-  return createElement(`
+  return /** @type {HTMLAudioElement} */ (
+    createElement(`
     <audio class="visually-hidden" preload="auto" src="${source}">
   `)
+  )
 }
 
 export { getPlayerElement }

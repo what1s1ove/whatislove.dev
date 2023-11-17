@@ -1,7 +1,19 @@
 import { CHECKED_ATTR } from './common/constants.js'
 import { checkIsChecked } from './helpers/helpers.js'
 
+/** @typedef {typeof import('~/common/enums/enums.js').SettingName} SettingName */
+
 class Switch {
+  /**
+   * @param {{
+   *   isDefaultChecked: boolean
+   *   name: SettingName[keyof SettingName]
+   *   onClick: (
+   *     name: SettingName[keyof SettingName],
+   *     isChecked: boolean,
+   *   ) => void
+   * }} constructor
+   */
   constructor({ isDefaultChecked, name, onClick }) {
     this._name = name
     this._isDefaultChecked = isDefaultChecked
@@ -12,36 +24,49 @@ class Switch {
     this._handleSwitchClick = this._handleSwitchClick.bind(this)
   }
 
+  /**
+   * @param {Event} event_
+   * @returns {void}
+   */
   _handleSwitchClick({ target }) {
-    let isChecked = !checkIsChecked(target)
+    let isChecked = !checkIsChecked(/** @type {HTMLElement} */ (target))
 
     this._isChecked = isChecked
 
-    this._onClick({
-      isChecked,
-      name: this._name,
-    })
+    this._onClick(this._name, isChecked)
   }
 
+  /** @returns {void} */
   _initListeners() {
-    this._switchNode.addEventListener(`click`, this._handleSwitchClick)
+    let switchNode = /** @type {HTMLElement} */ (this._switchNode)
+
+    switchNode.addEventListener(`click`, this._handleSwitchClick)
   }
 
+  /**
+   * @param {boolean} isChecked
+   * @returns {void}
+   */
   set _isChecked(isChecked) {
-    this._switchNode.setAttribute(CHECKED_ATTR, isChecked)
+    let switchNode = /** @type {HTMLElement} */ (this._switchNode)
+
+    switchNode.setAttribute(CHECKED_ATTR, isChecked.toString())
   }
 
+  /**
+   * @param {string} selector
+   * @returns {HTMLButtonElement}
+   */
   init(selector) {
-    this._switchNode = document.querySelector(selector)
+    this._switchNode = /** @type {HTMLButtonElement} */ (
+      document.querySelector(selector)
+    )
 
     this._isChecked = this._isDefaultChecked
 
     this._initListeners()
 
-    this._onClick({
-      isChecked: this._isDefaultChecked,
-      name: this._name,
-    })
+    this._onClick(this._name, this._isDefaultChecked)
 
     return this._switchNode
   }

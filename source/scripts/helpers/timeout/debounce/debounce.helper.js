@@ -1,5 +1,10 @@
+/**
+ * @param {(...args: unknown[]) => unknown} callback
+ * @param {number} delay
+ * @returns {(...args: unknown[]) => unknown}
+ */
 let debounce = (callback, delay) => {
-  let timeout
+  let /** @type {undefined | number} */ timeout
 
   return (...arguments_) => {
     clearTimeout(timeout)

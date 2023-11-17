@@ -6,10 +6,11 @@ let home = new Home({
   timelineApi,
 })
 
+/** @returns {void} */
 let init = () => {
   home.init()
 
-  window.WhatisloveMath = WhatisloveMath
+  globalThis.WhatisloveMath = WhatisloveMath
 }
 
 init()

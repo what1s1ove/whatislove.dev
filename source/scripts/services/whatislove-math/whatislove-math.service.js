@@ -1,20 +1,26 @@
 class WhatisloveMath {
-  static BoostEntity = {
+  static BoostEntity = /** @type {const} */ ({
     BOOK: `book`,
     COURSE: `course`,
     MENTEE: `mentee`,
-  }
+  })
 
-  static NOTHING_TODO_VALUE = 10
+  static NOTHING_TODO_VALUE = /** @type {const} */ (10)
 
-  static boostEntityToProfessionalValue = {
+  static boostEntityToProfessionalValue = /** @type {const} */ ({
     [WhatisloveMath.BoostEntity.BOOK]: 1,
     [WhatisloveMath.BoostEntity.COURSE]: 3,
     [WhatisloveMath.BoostEntity.MENTEE]: 10,
-  }
+  })
 
   constructor() {}
 
+  /**
+   * @param {number} initialValue
+   * @param {(typeof WhatisloveMath.BoostEntity)[keyof typeof WhatisloveMath.BoostEntity][]} boostEntities
+   * @returns {number}
+   * @throws {SyntaxError}
+   */
   static calculateProfessionalLevel(initialValue = 0, ...boostEntities) {
     let { BoostEntity, NOTHING_TODO_VALUE, boostEntityToProfessionalValue } =
       WhatisloveMath
@@ -44,6 +50,11 @@ class WhatisloveMath {
     return professionalLevel
   }
 
+  /**
+   * @param {(typeof WhatisloveMath.BoostEntity)[keyof typeof WhatisloveMath.BoostEntity]} boostEntity
+   * @param {number} count
+   * @returns {WhatisloveMath.BoostEntity[]}
+   */
   static multiplyBoostEntities(boostEntity, count = 0) {
     return Array.from({ length: count }).fill(boostEntity)
   }
