@@ -25,7 +25,6 @@ class EasterEgg {
    *   onSettingBtnAppend: (payload: SettingButtonPayload) => HTMLButtonElement
    * }} constructor
    */
-
   constructor({ onNotificationAdd, onSettingBtnAppend }) {
     this._onNotificationAdd = onNotificationAdd
     this._onSettingBtnAppend = onSettingBtnAppend

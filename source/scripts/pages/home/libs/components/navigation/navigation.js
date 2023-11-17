@@ -87,7 +87,7 @@ class Navigation {
 
     headerNode.classList.toggle(HEADER_ACTIVE_CLASS)
 
-    headerButtonNode.setAttribute(`aria-expanded`, isActive.toString())
+    headerButtonNode.ariaExpanded = isActive.toString()
 
     isActive ? this._initOverlayListeners() : this._removeOverlayListeners()
 

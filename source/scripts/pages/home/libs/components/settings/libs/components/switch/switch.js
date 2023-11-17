@@ -1,5 +1,4 @@
-import { CHECKED_ATTR } from './libs/constants/constants.js'
-import { checkIsChecked } from './libs/helpers/helpers.js'
+import { booleanToNumber } from '~/libs/maps/maps.js'
 
 /** @typedef {typeof import('~/pages/home/libs/enums/enums').SettingName} SettingName */
 
@@ -29,11 +28,17 @@ class Switch {
    * @returns {void}
    */
   _handleSwitchClick({ target }) {
-    let isChecked = !checkIsChecked(/** @type {HTMLElement} */ (target))
+    let isChecked = Boolean(
+      booleanToNumber[
+        /** @type {keyof typeof booleanToNumber} */ (
+          /** @type {HTMLElement} */ (target).ariaChecked
+        ) ?? `false`
+      ],
+    )
 
-    this._isChecked = isChecked
+    this._isChecked = !isChecked
 
-    this._onClick(this._name, isChecked)
+    this._onClick(this._name, !isChecked)
   }
 
   /** @returns {void} */
@@ -50,7 +55,7 @@ class Switch {
   set _isChecked(isChecked) {
     let switchNode = /** @type {HTMLElement} */ (this._switchNode)
 
-    switchNode.setAttribute(CHECKED_ATTR, isChecked.toString())
+    switchNode.ariaChecked = isChecked.toString()
   }
 
   /**
