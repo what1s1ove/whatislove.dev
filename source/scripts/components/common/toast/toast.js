@@ -6,32 +6,45 @@ import {
   TOAST_SHOW_CLASS_NAME,
 } from './common/constants.js'
 
+/** @typedef {import('~/common/types/toast/toast').ToastMessagePayload} ToastMessagePayload */
+
 class Toast {
   constructor() {
+    /** @type {HTMLElement | undefined} */
     this._toastNode = undefined
+    /** @type {ToastMessagePayload[]} */
     this._messages = []
+    /** @type {boolean} */
     this._isShowingMessage = false
   }
 
+  /**
+   * @param {ToastMessagePayload} messagePayload
+   * @returns {Promise<void>}
+   */
   async _displayToastMessage(messagePayload) {
+    let toastNode = /** @type {HTMLElement} */ (this._toastNode)
     let { cb, duration = TOAST_DEFAULT_DURATION, message } = messagePayload
 
-    this._toastNode.classList.add(TOAST_SHOW_CLASS_NAME)
-    this._toastNode.textContent = message
+    toastNode.classList.add(TOAST_SHOW_CLASS_NAME)
+    toastNode.textContent = message
 
     await setAsyncTimeout(() => {
-      this._toastNode.classList.remove(TOAST_SHOW_CLASS_NAME)
+      toastNode.classList.remove(TOAST_SHOW_CLASS_NAME)
     }, duration)
 
     await setAsyncTimeout(() => {
-      this._toastNode.textContent = ``
+      toastNode.textContent = ``
     }, CLEAN_MESSAGE_DELAY)
 
     cb?.()
   }
 
+  /** @returns {Promise<void>} */
   async _initShowingMessages() {
-    let messagePayload = this._messages.shift()
+    let messagePayload = /** @type {ToastMessagePayload} */ (
+      this._messages.shift()
+    )
 
     this._isShowingMessage = true
 
@@ -48,10 +61,17 @@ class Toast {
     this._isShowingMessage = false
   }
 
+  /** @returns {void} */
   init() {
-    this._toastNode = document.querySelector(`.toast`)
+    this._toastNode = /** @type {HTMLElement} */ (
+      document.querySelector(`.toast`)
+    )
   }
 
+  /**
+   * @param {ToastMessagePayload} message
+   * @returns {void}
+   */
   pushMessage(message) {
     this._messages.push(message)
 

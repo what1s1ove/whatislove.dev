@@ -1,3 +1,7 @@
+/**
+ * @param {string | null} date
+ * @returns {string}
+ */
 let getFormattedDate = (date) => {
   if (!date) {
     return ``

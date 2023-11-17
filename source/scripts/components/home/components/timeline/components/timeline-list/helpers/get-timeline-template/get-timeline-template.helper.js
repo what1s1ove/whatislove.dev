@@ -1,5 +1,11 @@
 import { getFormattedDate, getStringWitCheck } from '~/helpers/helpers.js'
 
+/** @typedef {import('~/common/types/timeline/timeline').Timeline} Timeline */
+
+/**
+ * @param {Timeline} timeline
+ * @returns {string}
+ */
 let getTimelineTemplate = (timeline) => {
   let { date, desc, endDate, link, linkDesc, origin, originDesc, title, type } =
     timeline

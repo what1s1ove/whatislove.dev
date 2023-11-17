@@ -7,7 +7,18 @@ import {
   Timeline,
 } from './components/components.js'
 
+/** @typedef {import('~/common/types/settings/settings').SettingButtonPayload} SettingButtonPayload */
+/** @typedef {import('~/common/types/toast/toast').ToastMessagePayload} ToastMessagePayload */
+/** @typedef {import('~/services/storage/storage.service').Storage} Storage */
+/** @typedef {import('~/services/timeline-api/timeline-api.service').TimelineApi} TimelineApi */
+
 class Home {
+  /**
+   * @param {{
+   *   storage: Storage
+   *   timelineApi: TimelineApi
+   * }} constructor
+   */
   constructor({ storage, timelineApi }) {
     this._handleSettingBtnAppend = this._handleSettingBtnAppend.bind(this)
     this._handleNotificationAdd = this._handleNotificationAdd.bind(this)
@@ -26,14 +37,23 @@ class Home {
     this._toastComponent = new Toast()
   }
 
+  /**
+   * @param {ToastMessagePayload} message
+   * @returns {void}
+   */
   _handleNotificationAdd(message) {
     this._toastComponent.pushMessage(message)
   }
 
+  /**
+   * @param {SettingButtonPayload} settings
+   * @returns {HTMLButtonElement}
+   */
   _handleSettingBtnAppend(settings) {
     return this._settingsComponent.appendNewBtn(settings)
   }
 
+  /** @returns {void} */
   init() {
     this._toastComponent.init()
     this._settingsComponent.init()

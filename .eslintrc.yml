@@ -8,6 +8,7 @@ extends:
   - plugin:sonarjs/recommended
   - plugin:unicorn/recommended
   - plugin:perfectionist/recommended-natural
+  - plugin:jsdoc/recommended-typescript-flavor-error
 
 plugins:
   - simple-import-sort
@@ -17,6 +18,8 @@ parserOptions:
   sourceType: module
 
 settings:
+  jsdoc:
+    mode: typescript
   import/resolver:
     alias:
       extensions:
@@ -111,6 +114,25 @@ rules:
   import/extensions:
     - error
     - ignorePackages
+  jsdoc/require-jsdoc:
+    - error
+    - checkConstructors: false
+      checkGetters: true
+      checkSetters: true
+      contexts:
+        - ArrowFunctionExpression
+        - ClassProperty
+        - FunctionDeclaration
+        - FunctionExpression
+        - MethodDefinition
+  jsdoc/valid-types:
+    - off
+  jsdoc/require-returns-description:
+    - off
+  jsdoc/require-param-description:
+    - off
+  jsdoc/require-property-description:
+    - off
 
 overrides:
   - files:

@@ -1,7 +1,14 @@
 import { getRandomNumber } from '~/helpers/helpers.js'
 
-let MIN_COORD_NUMBER = 0
+let MIN_COORD_NUMBER = /** @type {const} */ (0)
 
+/**
+ * @param {HTMLElement} node
+ * @returns {{
+ *   x: number
+ *   y: number
+ * }}
+ */
 let getNodeRandomCoords = (node) => {
   let y = getRandomNumber(
     MIN_COORD_NUMBER,

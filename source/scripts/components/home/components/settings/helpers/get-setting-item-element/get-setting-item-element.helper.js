@@ -1,5 +1,15 @@
 import { createElement } from '~/helpers/helpers.js'
 
+/** @typedef {typeof import('~/common/enums/enums.js').SettingName} SettingName */
+/** @typedef {typeof import('~/common/enums/enums.js').SettingButtonLabel} SettingButtonLabel */
+
+/**
+ * @param {{
+ *   label: SettingButtonLabel[keyof SettingButtonLabel]
+ *   name: SettingName[keyof SettingName]
+ * }} params
+ * @returns {HTMLElement}
+ */
 let getSettingItemElement = ({ label, name }) => {
   return createElement(`
     <li class="settings__item">
