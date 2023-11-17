@@ -1,4 +1,3 @@
-import { CHECKED_ATTR } from './libs/constants/constants.js'
 import { checkIsChecked } from './libs/helpers/helpers.js'
 
 /** @typedef {typeof import('~/pages/home/libs/enums/enums').SettingName} SettingName */
@@ -50,7 +49,7 @@ class Switch {
   set _isChecked(isChecked) {
     let switchNode = /** @type {HTMLElement} */ (this._switchNode)
 
-    switchNode.setAttribute(CHECKED_ATTR, isChecked.toString())
+    switchNode.ariaChecked = isChecked.toString()
   }
 
   /**
