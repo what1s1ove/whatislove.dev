@@ -3,13 +3,13 @@ plugins:
 extends:
   - stylelint-config-standard
 rules:
-    selector-class-pattern: null
-    custom-property-pattern: null
-    color-hex-length: long
-    order/order:
+  selector-class-pattern: null
+  custom-property-pattern: null
+  color-hex-length: long
+  order/order:
     - custom-properties
     - declarations
-    order/properties-order:
+  order/properties-order:
     - all
     - position
     - top

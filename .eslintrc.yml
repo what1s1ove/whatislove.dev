@@ -5,23 +5,42 @@ env:
 extends:
   - eslint:recommended
   - plugin:import/recommended
+  - plugin:sonarjs/recommended
+  - plugin:unicorn/recommended
+  - plugin:perfectionist/recommended-natural
+  - plugin:jsdoc/recommended-typescript-flavor-error
 
 plugins:
-  - import
+  - simple-import-sort
 
 parserOptions:
   ecmaVersion: 2022
   sourceType: module
 
 settings:
+  jsdoc:
+    mode: typescript
   import/resolver:
     alias:
       extensions:
         - .js
       map:
-        - ['~', './source/js']
+        - ['~', './source/scripts']
+
+ignorePatterns:
+  - build
 
 rules:
+  no-restricted-syntax:
+    - error
+    - selector: VariableDeclaration[kind!=let]
+      message: Only let can be used for the variable declaration.
+    - selector: SwitchCase > *.consequent[type!="BlockStatement"]
+      message: Switch cases without blocks are forbidden.
+    - selector: ExportAllDeclaration,ImportAllDeclaration
+      message: Export/Import all (*) is forbidden.
+    - selector: ExportNamedDeclaration[declaration!=null]
+      message: Exports should be at the end of the file.
   semi:
     - error
     - never
@@ -61,9 +80,9 @@ rules:
   no-console:
     - error
     - allow:
-      - warn
-      - error
-      - info
+        - warn
+        - error
+        - info
   arrow-parens:
     - error
     - always
@@ -73,21 +92,58 @@ rules:
   no-multiple-empty-lines:
     - error
     - max: 1
+  simple-import-sort/imports:
+    - error
+  simple-import-sort/exports:
+    - error
+  perfectionist/sort-named-imports:
+    - error
+    - type: alphabetical
   import/exports-last:
     - error
   import/group-exports:
     - error
   import/no-default-export:
     - error
-  import/no-anonymous-default-export:
+  import/first:
+    - error
+  import/newline-after-import:
+    - error
+  import/no-duplicates:
     - error
   import/extensions:
     - error
     - ignorePackages
+  jsdoc/require-jsdoc:
+    - error
+    - checkConstructors: false
+      checkGetters: true
+      checkSetters: true
+      contexts:
+        - ArrowFunctionExpression
+        - ClassProperty
+        - FunctionDeclaration
+        - FunctionExpression
+        - MethodDefinition
+  jsdoc/valid-types:
+    - off
+  jsdoc/require-returns-description:
+    - off
+  jsdoc/require-param-description:
+    - off
+  jsdoc/require-property-description:
+    - off
 
 overrides:
   - files:
-    - gulpfile.js
+      - commitlint.config.js
     rules:
       import/no-default-export:
+        - off
+  - files:
+      - eleventy.config.cjs
+    env:
+      node: true
+    rules:
+      sonarjs/cognitive-complexity:
         - off
