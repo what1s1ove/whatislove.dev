@@ -28,7 +28,7 @@ jobs:
 
       - name: Code Building
         run: |
-          npm run build
+          make build
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v2
