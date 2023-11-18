@@ -1,17 +1,17 @@
-import { danger, fail } from 'danger'
+let { danger, fail } = require(`danger`)
 
-import { ProjectPrefix } from './project.config.js'
-
-let appsPattern = ProjectPrefix.APPS.join(`|`)
-let environmentsPattern = ProjectPrefix.ENVIRONMENTS.join(`|`)
+let APP_PREFIX = /** @type {const} */ (`wd`)
+let ENVIRONMENTS_PATTERN = /** @type {const} */ (
+  [`production`, `development`].join(`|`)
+)
 
 let Config = /** @type {const} */ ({
   BRANCH_PATTERN: new RegExp(
-    `^((${appsPattern})-[0-9]{1,6})-[a-zA-Z0-9-]+$|(${environmentsPattern})$`,
+    `^((${APP_PREFIX})-[0-9]{1,6})-[a-zA-Z0-9-]+$|(${ENVIRONMENTS_PATTERN})$`,
   ),
   IS_ASSIGNEE_REQUIRED: true,
   TITLE_PATTERN: new RegExp(
-    `^((${appsPattern})-[0-9]{1,6}): (.*\\S)$|(${environmentsPattern}) to (${environmentsPattern})$`,
+    `^((${APP_PREFIX})-[0-9]{1,6}): (.*\\S)$|(${ENVIRONMENTS_PATTERN}) to (${ENVIRONMENTS_PATTERN})$`,
   ),
 })
 

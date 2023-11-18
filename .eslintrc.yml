@@ -141,6 +141,7 @@ overrides:
       import/no-default-export:
         - off
   - files:
+      - dangerfile.cjs
       - eleventy.config.cjs
     env:
       node: true

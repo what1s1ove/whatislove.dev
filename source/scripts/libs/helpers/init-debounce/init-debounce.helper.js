@@ -4,7 +4,7 @@
  * @returns {(...args: unknown[]) => unknown}
  */
 let initDebounce = (callback, delay) => {
-  let /** @type {undefined | NodeJS.Timeout} */ timeout
+  let /** @type {undefined | number} */ timeout
 
   return (...arguments_) => {
     clearTimeout(timeout)
