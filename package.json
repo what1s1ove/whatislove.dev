@@ -16,6 +16,7 @@
     "@ls-lint/ls-lint": "2.2.2",
     "browserslist": "4.22.1",
     "concurrently": "8.2.2",
+    "danger": "11.3.0",
     "editorconfig-checker": "5.1.1",
     "esbuild": "0.19.5",
     "eslint": "8.53.0",
