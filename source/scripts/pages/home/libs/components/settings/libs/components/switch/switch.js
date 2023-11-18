@@ -1,5 +1,3 @@
-import { booleanToNumber } from '~/libs/maps/maps.js'
-
 /** @typedef {typeof import('~/pages/home/libs/enums/enums').SettingName} SettingName */
 
 class Switch {
@@ -28,13 +26,7 @@ class Switch {
    * @returns {void}
    */
   _handleSwitchClick({ target }) {
-    let isChecked = Boolean(
-      booleanToNumber[
-        /** @type {keyof typeof booleanToNumber} */ (
-          /** @type {HTMLElement} */ (target).ariaChecked
-        ) ?? `false`
-      ],
-    )
+    let isChecked = /** @type {HTMLElement} */ (target).ariaChecked === `true`
 
     this._isChecked = !isChecked
 
