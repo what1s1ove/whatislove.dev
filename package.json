@@ -5,6 +5,9 @@
     "node": "18.x.x",
     "npm": "9.x.x"
   },
+  "scripts": {
+    "postinstall": "npx simple-git-hooks"
+  },
   "dependencies": {
     "form-payload": "0.0.8"
   },
