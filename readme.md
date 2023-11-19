@@ -1,4 +1,4 @@
-## Vladyslav Zubko's website
+# Vladyslav Zubko's website
 
 This repository is responsible for the Vladyslav Zubko's website.
 
