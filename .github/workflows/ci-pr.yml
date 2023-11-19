@@ -38,7 +38,12 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          npm install
+          npm ci
+
+      - name: Add Environment Labels
+        uses: ffittschen/pr-branch-labeler@v1
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
 
       - name: Lint Commits
         run: |
