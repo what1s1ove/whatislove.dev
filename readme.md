@@ -10,4 +10,4 @@
 
 ## License
 
-This project is open source under the [MIT license]('./LICENSE'), which means you have access to the source code and can use it all, except design, to fit your own needs but don't have access to deploy.
+This project is open source under the [MIT license](./LICENSE), which means you have access to the source code and can use it all, except design, to fit your own needs but don't have access to deploy.
