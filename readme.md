@@ -4,7 +4,7 @@ This repository is responsible for the Vladyslav Zubko's website.
 
 ## Requirements
 - Node.js ([LTS](https://nodejs.org/en/about/previous-releases))
-- NPM ((LTS)(https://nodejs.org/en/about/previous-releases))
+- NPM ([LTS](https://nodejs.org/en/about/previous-releases))
 
 ## Development
 - Install dependencies: **`npm install`**
