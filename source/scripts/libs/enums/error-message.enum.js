@@ -1,5 +1,5 @@
 let ErrorMessage = /** @type {const} */ ({
-  NETWORK_ERROR: `Network Error`,
+	NETWORK_ERROR: `Network Error`,
 })
 
 export { ErrorMessage }

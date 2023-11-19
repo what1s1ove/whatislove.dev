@@ -1,4 +1,4 @@
 '*.{json,yml,css,js,cjs,d.ts}': prettier --write
-'*': make lint_editorconfig lint_fs
+'*': make lint_editor lint_fs
 '*.css': make lint_css
 '*.js': make lint_js lint_type

@@ -7,13 +7,13 @@ import { getTimelineTemplate } from '../get-timeline-template/get-timeline-templ
  * @returns {string}
  */
 let getTimelineTemplates = (timelines) => {
-  let timelineTemplates = ``
+	let timelineTemplates = ``
 
-  for (let timeline of timelines) {
-    timelineTemplates += getTimelineTemplate(timeline)
-  }
+	for (let timeline of timelines) {
+		timelineTemplates += getTimelineTemplate(timeline)
+	}
 
-  return timelineTemplates
+	return timelineTemplates
 }
 
 export { getTimelineTemplates }

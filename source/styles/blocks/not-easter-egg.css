@@ -1,45 +1,45 @@
 .not-easter-egg {
-  position: absolute;
-  z-index: var(--z-index--level-four);
-  margin: 0;
-  padding: 15px;
-  overflow: hidden;
-  border-radius: 50%;
+	position: absolute;
+	z-index: var(--z-index--level-four);
+	margin: 0;
+	padding: 15px;
+	overflow: hidden;
+	border-radius: 50%;
 }
 
 .not-easter-egg::before {
-  position: absolute;
-  top: 50%;
-  left: -75%;
-  z-index: 2;
-  display: block;
-  content: "";
-  width: 50%;
-  height: 100%;
-  background-color: rgb(255 215 0 / 20%);
-  transform: skewX(-25deg) translateY(-50%);
-  animation: shine 5s infinite;
-  pointer-events: none;
+	position: absolute;
+	top: 50%;
+	left: -75%;
+	z-index: 2;
+	display: block;
+	content: "";
+	width: 50%;
+	height: 100%;
+	background-color: rgb(255 215 0 / 20%);
+	transform: skewX(-25deg) translateY(-50%);
+	animation: shine 5s infinite;
+	pointer-events: none;
 }
 
 .not-easter-egg__button {
-  padding: 0;
-  font-size: 50px;
-  line-height: 1;
-  background-color: transparent;
-  border: 0;
-  cursor: pointer;
-  opacity: 0;
-  transition: opacity 0.7s ease-in-out;
+	padding: 0;
+	font-size: 50px;
+	line-height: 1;
+	background-color: transparent;
+	border: 0;
+	cursor: pointer;
+	opacity: 0;
+	transition: opacity 0.7s ease-in-out;
 }
 
 .not-easter-egg__button:hover,
 .not-easter-egg__button:focus-within {
-  opacity: 1;
+	opacity: 1;
 }
 
 @media print {
-  .not-easter-egg {
-    display: none;
-  }
+	.not-easter-egg {
+		display: none;
+	}
 }

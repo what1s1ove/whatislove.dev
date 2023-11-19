@@ -3,14 +3,14 @@
  * @returns {string}
  */
 let getFormattedDate = (date) => {
-  if (!date) {
-    return ``
-  }
+	if (!date) {
+		return ``
+	}
 
-  return new Date(date).toLocaleDateString(`en`, {
-    month: `short`,
-    year: `numeric`,
-  })
+	return new Date(date).toLocaleDateString(`en`, {
+		month: `short`,
+		year: `numeric`,
+	})
 }
 
 export { getFormattedDate }

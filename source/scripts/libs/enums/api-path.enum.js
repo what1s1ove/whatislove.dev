@@ -1,5 +1,5 @@
 let ApiPath = /** @type {const} */ ({
-  TIMELINE: `/timeline`,
+	TIMELINE: `/timeline`,
 })
 
 export { ApiPath }

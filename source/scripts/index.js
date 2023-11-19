@@ -4,15 +4,15 @@ import { timelineApi } from '~/packages/timeline/timeline.js'
 import { Home } from '~/pages/home/home.js'
 
 let home = new Home({
-  storage,
-  timelineApi,
+	storage,
+	timelineApi,
 })
 
 /** @returns {void} */
 let init = () => {
-  home.init()
+	home.init()
 
-  globalThis.WhatisloveMath = WhatisloveMath
+	globalThis.WhatisloveMath = WhatisloveMath
 }
 
 init()

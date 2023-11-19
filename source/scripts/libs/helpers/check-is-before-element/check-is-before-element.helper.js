@@ -3,9 +3,9 @@
  * @returns {boolean}
  */
 let checkIsBeforeElement = (elementOffset) => {
-  let breakPoint = globalThis.scrollY + document.documentElement.clientHeight
+	let breakPoint = globalThis.scrollY + document.documentElement.clientHeight
 
-  return breakPoint >= elementOffset
+	return breakPoint >= elementOffset
 }
 
 export { checkIsBeforeElement }

@@ -1,64 +1,64 @@
 .social-list {
-  display: flex;
-  gap: 0 15px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+	display: flex;
+	gap: 0 15px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 
 .social-list__item-link {
-  display: block;
-  min-width: 35px;
-  min-height: 35px;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  filter: var(--invert-icon--primary);
-  transition: opacity 200ms ease-out;
+	display: block;
+	min-width: 35px;
+	min-height: 35px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	filter: var(--invert-icon--primary);
+	transition: opacity 200ms ease-out;
 }
 
 .social-list__item-link:hover {
-  opacity: 0.7;
+	opacity: 0.7;
 }
 
 .social-list__item-link--github {
-  background-image: url("../images/social-github.bg.svg");
+	background-image: url("../images/social-github.bg.svg");
 }
 
 .social-list__item-link--linkedin {
-  background-image: url("../images/social-linkedin.bg.svg");
+	background-image: url("../images/social-linkedin.bg.svg");
 }
 
 .social-list__item-link--telegram {
-  background-image: url("../images/social-telegram.bg.svg");
+	background-image: url("../images/social-telegram.bg.svg");
 }
 
 @media print {
-  .social-list {
-    flex-direction: column;
-  }
+	.social-list {
+		flex-direction: column;
+	}
 
-  .social-list__item {
-    display: flex;
-    align-items: center;
-  }
+	.social-list__item {
+		display: flex;
+		align-items: center;
+	}
 
-  .social-list__item-title {
-    position: unset;
-    width: unset;
-    height: unset;
-    margin: 0 5px 0 0;
-    clip-path: unset;
-  }
+	.social-list__item-title {
+		position: unset;
+		width: unset;
+		height: unset;
+		margin: 0 5px 0 0;
+		clip-path: unset;
+	}
 
-  .social-list__item-title::after {
-    content: ":";
-  }
+	.social-list__item-title::after {
+		content: ":";
+	}
 
-  .social-list__item-link {
-    filter: none;
-  }
+	.social-list__item-link {
+		filter: none;
+	}
 
-  .social-list__item-link::after {
-    content: attr(href);
-  }
+	.social-list__item-link::after {
+		content: attr(href);
+	}
 }

@@ -3,11 +3,11 @@
  * @returns {HTMLElement}
  */
 let createElement = (template) => {
-  let newElement = document.createElement(`div`)
+	let newElement = document.createElement(`div`)
 
-  newElement.innerHTML = template
+	newElement.innerHTML = template
 
-  return /** @type {HTMLElement} */ (newElement.firstElementChild)
+	return /** @type {HTMLElement} */ (newElement.firstElementChild)
 }
 
 export { createElement }

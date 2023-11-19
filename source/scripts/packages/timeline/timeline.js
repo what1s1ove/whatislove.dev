@@ -9,12 +9,12 @@ import { TimelineApi } from './timeline-api.js'
 /** @typedef {import('./libs/types/types').TimelineFilter} TimelineFilter */
 
 let timelineApi = new TimelineApi({
-  baseUrl: getServerApiUrl({
-    host: AppConfig.SERVER_HOST,
-    port: AppConfig.SERVER_PORT,
-  }),
-  filesApiPath: AppConfig.FILES_API_PATH,
-  http,
+	baseUrl: getServerApiUrl({
+		host: AppConfig.SERVER_HOST,
+		port: AppConfig.SERVER_PORT,
+	}),
+	filesApiPath: AppConfig.FILES_API_PATH,
+	http,
 })
 
 export { timelineApi }
