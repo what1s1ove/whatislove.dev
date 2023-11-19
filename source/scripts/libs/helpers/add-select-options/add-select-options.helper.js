@@ -4,9 +4,9 @@
  * @returns {void}
  */
 let addSelectOptions = (selectNode, options) => {
-  for (let option of options) {
-    selectNode.add(option)
-  }
+	for (let option of options) {
+		selectNode.add(option)
+	}
 }
 
 export { addSelectOptions }

@@ -3,7 +3,7 @@
  * @returns {string}
  */
 let getCustomAttributeName = (name) => {
-  return `data-${name}`
+	return `data-${name}`
 }
 
 export { getCustomAttributeName }

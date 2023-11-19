@@ -7,9 +7,9 @@ import { createSelectOptions } from '../create-select-options/create-select-opti
  * @returns {void}
  */
 let fillSelectOptions = (selectNode, options) => {
-  let selectOptions = createSelectOptions(options)
+	let selectOptions = createSelectOptions(options)
 
-  addSelectOptions(selectNode, selectOptions)
+	addSelectOptions(selectNode, selectOptions)
 }
 
 export { fillSelectOptions }

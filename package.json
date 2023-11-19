@@ -1,54 +1,54 @@
 {
-  "private": true,
-  "type": "module",
-  "engines": {
-    "node": "18.x.x",
-    "npm": "9.x.x"
-  },
-  "scripts": {
-    "postinstall": "npx simple-git-hooks"
-  },
-  "dependencies": {
-    "form-payload": "0.0.8"
-  },
-  "devDependencies": {
-    "@11ty/eleventy": "2.0.1",
-    "@11ty/eleventy-img": "3.1.8",
-    "@commitlint/cli": "17.8.1",
-    "@commitlint/config-conventional": "18.4.0",
-    "@ls-lint/ls-lint": "2.2.2",
-    "browserslist": "4.22.1",
-    "concurrently": "8.2.2",
-    "editorconfig-checker": "5.1.1",
-    "esbuild": "0.19.5",
-    "eslint": "8.53.0",
-    "eslint-import-resolver-alias": "1.1.2",
-    "eslint-plugin-import": "2.29.0",
-    "eslint-plugin-jsdoc": "46.9.0",
-    "eslint-plugin-perfectionist": "2.3.0",
-    "eslint-plugin-simple-import-sort": "10.0.0",
-    "eslint-plugin-sonarjs": "0.23.0",
-    "eslint-plugin-unicorn": "49.0.0",
-    "html-minifier-terser": "7.2.0",
-    "json-server": "0.17.4",
-    "lightningcss": "1.22.1",
-    "lint-staged": "15.1.0",
-    "node-w3c-validator": "2.0.2",
-    "prettier": "3.1.0",
-    "prettier-plugin-jsdoc": "1.1.1",
-    "simple-git-hooks": "2.9.0",
-    "stylelint": "15.11.0",
-    "stylelint-config-standard": "34.0.0",
-    "stylelint-order": "6.0.3",
-    "svgo": "3.0.3",
-    "typescript": "5.2.2"
-  },
-  "browserslist": [
-    "last 2 version",
-    "not dead"
-  ],
-  "simple-git-hooks": {
-    "pre-commit": "npx lint-staged",
-    "commit-msg": "npx commitlint --edit $1"
-  }
+	"private": true,
+	"type": "module",
+	"engines": {
+		"node": "18.x.x",
+		"npm": "9.x.x"
+	},
+	"scripts": {
+		"postinstall": "npx simple-git-hooks"
+	},
+	"dependencies": {
+		"form-payload": "0.0.8"
+	},
+	"devDependencies": {
+		"@11ty/eleventy": "2.0.1",
+		"@11ty/eleventy-img": "3.1.8",
+		"@commitlint/cli": "17.8.1",
+		"@commitlint/config-conventional": "18.4.0",
+		"@ls-lint/ls-lint": "2.2.2",
+		"browserslist": "4.22.1",
+		"concurrently": "8.2.2",
+		"editorconfig-checker": "5.1.1",
+		"esbuild": "0.19.5",
+		"eslint": "8.53.0",
+		"eslint-import-resolver-alias": "1.1.2",
+		"eslint-plugin-import": "2.29.0",
+		"eslint-plugin-jsdoc": "46.9.0",
+		"eslint-plugin-perfectionist": "2.3.0",
+		"eslint-plugin-simple-import-sort": "10.0.0",
+		"eslint-plugin-sonarjs": "0.23.0",
+		"eslint-plugin-unicorn": "49.0.0",
+		"html-minifier-terser": "7.2.0",
+		"json-server": "0.17.4",
+		"lightningcss": "1.22.1",
+		"lint-staged": "15.1.0",
+		"node-w3c-validator": "2.0.2",
+		"prettier": "3.1.0",
+		"prettier-plugin-jsdoc": "1.1.1",
+		"simple-git-hooks": "2.9.0",
+		"stylelint": "15.11.0",
+		"stylelint-config-standard": "34.0.0",
+		"stylelint-order": "6.0.3",
+		"svgo": "3.0.3",
+		"typescript": "5.2.2"
+	},
+	"browserslist": [
+		"last 2 version",
+		"not dead"
+	],
+	"simple-git-hooks": {
+		"pre-commit": "npx lint-staged",
+		"commit-msg": "npx commitlint --edit $1"
+	}
 }

@@ -1,5 +1,5 @@
 let ContentType = /** @type {const} */ ({
-  JSON: `application/json`,
+	JSON: `application/json`,
 })
 
 export { ContentType }

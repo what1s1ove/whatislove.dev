@@ -1,52 +1,52 @@
 :root {
-  --font-size--small: 14px;
-  --font-size--default: 16px;
-  --font-size--large: 24px;
-  --color--red: #ff0000;
-  --z-index--level-one: 100;
-  --z-index--level-two: 200;
-  --z-index--level-three: 300;
-  --z-index--level-four: 400;
-  --z-index--level-five: 500;
-  --z-index--level-six: 600;
-  --transition-duration--theme: 0.5s;
-  --outline-color: #5793f9;
+	--font-size--small: 14px;
+	--font-size--default: 16px;
+	--font-size--large: 24px;
+	--color--red: #ff0000;
+	--z-index--level-one: 100;
+	--z-index--level-two: 200;
+	--z-index--level-three: 300;
+	--z-index--level-four: 400;
+	--z-index--level-five: 500;
+	--z-index--level-six: 600;
+	--transition-duration--theme: 0.5s;
+	--outline-color: #5793f9;
 
-  color-scheme: light;
+	color-scheme: light;
 }
 
 :root,
 html[data-theme="light"] {
-  --color--primary: #000000;
-  --color--primary--opacity: rgb(0 0 0 / 90%);
-  --color--secondary: #ffffff;
-  --color--secondary--opacity: rgb(255 255 255 / 90%);
-  --invert-icon--primary: invert(0);
-  --invert-icon--secondary: invert(1);
+	--color--primary: #000000;
+	--color--primary--opacity: rgb(0 0 0 / 90%);
+	--color--secondary: #ffffff;
+	--color--secondary--opacity: rgb(255 255 255 / 90%);
+	--invert-icon--primary: invert(0);
+	--invert-icon--secondary: invert(1);
 
-  color-scheme: light;
+	color-scheme: light;
 }
 
 html[data-theme="dark"] {
-  --color--primary: #ffffff;
-  --color--primary--opacity: rgb(255 255 255 / 90%);
-  --color--secondary: #000000;
-  --color--secondary--opacity: rgb(0 0 0 / 90%);
-  --invert-icon--primary: invert(1);
-  --invert-icon--secondary: invert(0);
+	--color--primary: #ffffff;
+	--color--primary--opacity: rgb(255 255 255 / 90%);
+	--color--secondary: #000000;
+	--color--secondary--opacity: rgb(0 0 0 / 90%);
+	--invert-icon--primary: invert(1);
+	--invert-icon--secondary: invert(0);
 
-  color-scheme: dark;
+	color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --color--primary: #ffffff;
-    --color--primary--opacity: rgb(255 255 255 / 90%);
-    --color--secondary: #000000;
-    --color--secondary--opacity: rgb(0 0 0 / 90%);
-    --invert-icon--primary: invert(1);
-    --invert-icon--secondary: invert(0);
+	:root {
+		--color--primary: #ffffff;
+		--color--primary--opacity: rgb(255 255 255 / 90%);
+		--color--secondary: #000000;
+		--color--secondary--opacity: rgb(0 0 0 / 90%);
+		--invert-icon--primary: invert(1);
+		--invert-icon--secondary: invert(0);
 
-    color-scheme: dark;
-  }
+		color-scheme: dark;
+	}
 }

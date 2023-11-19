@@ -5,7 +5,7 @@
  * @returns {boolean}
  */
 let checkIsOneOf = (checkItem, ...checksItems) => {
-  return checksItems.includes(checkItem)
+	return checksItems.includes(checkItem)
 }
 
 export { checkIsOneOf }

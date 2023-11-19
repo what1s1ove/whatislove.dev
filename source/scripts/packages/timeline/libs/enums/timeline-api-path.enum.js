@@ -1,5 +1,5 @@
 let TimelineApiPath = /** @type {const} */ ({
-  ROOT: `/`,
+	ROOT: `/`,
 })
 
 export { TimelineApiPath }

@@ -1,10 +1,10 @@
 {
-  "name": "Vladyslav Zubko | Interface Developer",
-  "lang": "en",
-  "start_url": "/",
-  "display": "browser",
-  "orientation": "any",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff",
-  "description": "Interface Developer"
+	"name": "Vladyslav Zubko | Interface Developer",
+	"lang": "en",
+	"start_url": "/",
+	"display": "browser",
+	"orientation": "any",
+	"background_color": "#ffffff",
+	"theme_color": "#ffffff",
+	"description": "Interface Developer"
 }

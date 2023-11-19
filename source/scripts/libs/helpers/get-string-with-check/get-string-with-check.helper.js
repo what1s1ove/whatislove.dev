@@ -4,7 +4,7 @@
  * @returns {string}
  */
 let getStringWitCheck = (checkValue, payload) => {
-  return checkValue ? payload : ``
+	return checkValue ? payload : ``
 }
 
 export { getStringWitCheck }

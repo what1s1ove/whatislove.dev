@@ -1,7 +1,7 @@
 import { Storage } from './storage.package.js'
 
 let storage = new Storage({
-  storage: localStorage,
+	storage: localStorage,
 })
 
 export { storage }
