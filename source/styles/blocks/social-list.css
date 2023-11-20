@@ -4,6 +4,31 @@
 	margin: 0;
 	padding: 0;
 	list-style: none;
+
+	@media print {
+		flex-direction: column;
+	}
+}
+
+.social-list__item {
+	@media print {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.social-list__item-title {
+	@media print {
+		position: unset;
+		width: unset;
+		height: unset;
+		margin: 0 5px 0 0;
+		clip-path: unset;
+
+		&::after {
+			content: ":";
+		}
+	}
 }
 
 .social-list__item-link {
@@ -14,10 +39,18 @@
 	background-position: 50% 50%;
 	filter: var(--invert-icon--primary);
 	transition: opacity 200ms ease-out;
-}
 
-.social-list__item-link:hover {
-	opacity: 0.7;
+	&:hover {
+		opacity: 0.7;
+	}
+
+	@media print {
+		filter: none;
+
+		&::after {
+			content: attr(href);
+		}
+	}
 }
 
 .social-list__item-link--github {
@@ -30,35 +63,4 @@
 
 .social-list__item-link--telegram {
 	background-image: url("../images/social-telegram.bg.svg");
-}
-
-@media print {
-	.social-list {
-		flex-direction: column;
-	}
-
-	.social-list__item {
-		display: flex;
-		align-items: center;
-	}
-
-	.social-list__item-title {
-		position: unset;
-		width: unset;
-		height: unset;
-		margin: 0 5px 0 0;
-		clip-path: unset;
-	}
-
-	.social-list__item-title::after {
-		content: ":";
-	}
-
-	.social-list__item-link {
-		filter: none;
-	}
-
-	.social-list__item-link::after {
-		content: attr(href);
-	}
 }
