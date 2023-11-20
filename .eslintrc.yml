@@ -140,6 +140,7 @@ overrides:
         - off
   - files:
       - eleventy.config.cjs
+      - stylelint.config.cjs
     env:
       node: true
     rules:
