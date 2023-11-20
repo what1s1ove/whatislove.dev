@@ -134,6 +134,7 @@ rules:
 overrides:
   - files:
       - commitlint.config.js
+      - prettier.config.js
     rules:
       import/no-default-export:
         - off
