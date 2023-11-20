@@ -68,7 +68,7 @@ class EasterEgg {
 		this.#handleSettingButtonClick =
 			this.#clickSettingButtonHandler.bind(this)
 		this.#handleWindowResize = initDebounce(
-			this.#resizeWindowHandler,
+			this.#resizeWindowHandler.bind(this),
 			RESIZE_DELAY,
 		)
 	}
