@@ -4,87 +4,104 @@ import { checkIsOneOf, subscribeFocusTrap } from '~/libs/helpers/helpers.js'
 import { HEADER_ACTIVE_CLASS } from './libs/constants/constants.js'
 
 class Navigation {
+	/** @type {(() => void) | undefined} */
+	#cleanFocusTrap
+
+	/** @type {(event_: KeyboardEvent) => void} */
+	#handleEscapePress
+
+	/** @type {(event_: Event) => void} */
+	#handleNavButtonClick
+
+	/** @type {() => void} */
+	#handleOverlayClick
+
+	/** @type {HTMLButtonElement | undefined} */
+	#headerButtonNode
+
+	/** @type {HTMLElement | undefined} */
+	#headerNode
+
+	/** @type {HTMLElement | undefined} */
+	#headerOverlayNode
+
 	constructor() {
-		/** @type {HTMLElement | undefined} */
-		this._headerNode = undefined
-		/** @type {HTMLElement | undefined} */
-		this._headerOverlayNode = undefined
-		/** @type {HTMLButtonElement | undefined} */
-		this._headerButtonNode = undefined
-		/** @type {(() => void) | undefined} */
-		this._cleanFocusTrap = undefined
+		this.#headerNode = undefined
+		this.#headerOverlayNode = undefined
+		this.#headerButtonNode = undefined
+		this.#cleanFocusTrap = undefined
 
-		this._handleEscapePress = this._handleEscapePress.bind(this)
-		this._handleOverlayClick = this._handleOverlayClick.bind(this)
-		this._handleNavBtnClick = this._handleNavBtnClick.bind(this)
-	}
-
-	/**
-	 * @param {KeyboardEvent} event_
-	 * @returns {void}
-	 */
-	_handleEscapePress({ key }) {
-		if (checkIsOneOf(key, KeyboardKey.ESCAPE)) {
-			this._handleOverlayClick()
-		}
+		this.#handleNavButtonClick = this.#clickNavButtonHandler.bind(this)
+		this.#handleOverlayClick = this.#clickOverlayHandler.bind(this)
+		this.#handleEscapePress = this.#pressEscapeHandler.bind(this)
 	}
 
 	/**
 	 * @param {Event} event_
 	 * @returns {void}
 	 */
-	_handleNavBtnClick(event_) {
+	#clickNavButtonHandler(event_) {
 		event_.stopPropagation()
 
 		let hasClass = /** @type {HTMLElement} */ (
-			this._headerNode
+			this.#headerNode
 		).classList.contains(HEADER_ACTIVE_CLASS)
 
-		this._toggleOverlay(!hasClass)
+		this.#toggleOverlay(!hasClass)
 	}
 
 	/** @returns {void} */
-	_handleOverlayClick() {
-		this._toggleOverlay(false)
+	#clickOverlayHandler() {
+		this.#toggleOverlay(false)
 	}
 
 	/** @returns {void} */
-	_initListeners() {
+	#initListeners() {
 		let headerButtonNode = /** @type {HTMLButtonElement} */ (
-			this._headerButtonNode
+			this.#headerButtonNode
 		)
 
-		headerButtonNode.addEventListener(`click`, this._handleNavBtnClick)
+		headerButtonNode.addEventListener(`click`, this.#handleNavButtonClick)
 	}
 
 	/** @returns {void} */
-	_initOverlayListeners() {
+	#initOverlayListeners() {
 		let headerOverlayNode = /** @type {HTMLElement} */ (
-			this._headerOverlayNode
+			this.#headerOverlayNode
 		)
 
-		headerOverlayNode.addEventListener(`click`, this._handleOverlayClick)
-		globalThis.addEventListener(`keydown`, this._handleEscapePress)
+		headerOverlayNode.addEventListener(`click`, this.#handleOverlayClick)
+		globalThis.addEventListener(`keydown`, this.#handleEscapePress)
+	}
+
+	/**
+	 * @param {KeyboardEvent} event_
+	 * @returns {void}
+	 */
+	#pressEscapeHandler({ key }) {
+		if (checkIsOneOf(key, KeyboardKey.ESCAPE)) {
+			this.#handleOverlayClick()
+		}
 	}
 
 	/** @returns {void} */
-	_removeOverlayListeners() {
+	#removeOverlayListeners() {
 		let headerOverlayNode = /** @type {HTMLElement} */ (
-			this._headerOverlayNode
+			this.#headerOverlayNode
 		)
 
-		headerOverlayNode.removeEventListener(`click`, this._handleOverlayClick)
-		globalThis.removeEventListener(`keydown`, this._handleEscapePress)
+		headerOverlayNode.removeEventListener(`click`, this.#handleOverlayClick)
+		globalThis.removeEventListener(`keydown`, this.#handleEscapePress)
 	}
 
 	/**
 	 * @param {boolean} isActive
 	 * @returns {void}
 	 */
-	_toggleOverlay(isActive) {
-		let headerNode = /** @type {HTMLElement} */ (this._headerNode)
+	#toggleOverlay(isActive) {
+		let headerNode = /** @type {HTMLElement} */ (this.#headerNode)
 		let headerButtonNode = /** @type {HTMLButtonElement} */ (
-			this._headerButtonNode
+			this.#headerButtonNode
 		)
 
 		document.body.style.overflowY = isActive ? `hidden` : ``
@@ -93,36 +110,36 @@ class Navigation {
 
 		headerButtonNode.ariaExpanded = isActive.toString()
 
-		isActive ? this._initOverlayListeners() : this._removeOverlayListeners()
+		isActive ? this.#initOverlayListeners() : this.#removeOverlayListeners()
 
 		let focusTrapElements = /** @type {HTMLElement[]} */ ([
 			headerButtonNode,
 			...this.headerLinkNodes,
 		])
 
-		this._cleanFocusTrap = isActive
+		this.#cleanFocusTrap = isActive
 			? subscribeFocusTrap(...focusTrapElements)
-			: /** @type {() => undefined} */ (this._cleanFocusTrap)()
+			: /** @type {() => undefined} */ (this.#cleanFocusTrap)()
 	}
 
 	/** @returns {void} */
 	init() {
-		this._headerNode = /** @type {HTMLElement} */ (
+		this.#headerNode = /** @type {HTMLElement} */ (
 			document.querySelector(`.header`)
 		)
-		this._headerOverlayNode = /** @type {HTMLElement} */ (
-			this._headerNode.querySelector(`.header__navigation-wrapper`)
+		this.#headerOverlayNode = /** @type {HTMLElement} */ (
+			this.#headerNode.querySelector(`.header__navigation-wrapper`)
 		)
-		this._headerButtonNode = /** @type {HTMLButtonElement} */ (
-			this._headerNode.querySelector(`.header__toggle-button`)
+		this.#headerButtonNode = /** @type {HTMLButtonElement} */ (
+			this.#headerNode.querySelector(`.header__toggle-button`)
 		)
 
-		this._initListeners()
+		this.#initListeners()
 	}
 
 	/** @returns {NodeListOf<HTMLAnchorElement>} */
 	get headerLinkNodes() {
-		let headerNode = /** @type {HTMLElement} */ (this._headerNode)
+		let headerNode = /** @type {HTMLElement} */ (this.#headerNode)
 
 		return headerNode.querySelectorAll(`.navigation__item a[href]`)
 	}

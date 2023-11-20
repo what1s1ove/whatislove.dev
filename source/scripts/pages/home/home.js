@@ -13,6 +13,27 @@ import {
 /** @typedef {import('~/packages/timeline/timeline').TimelineApi} TimelineApi */
 
 class Home {
+	/** @type {EasterEgg} */
+	#easterEggComponent
+
+	/** @type {(message: ToastMessagePayload) => void} */
+	#handleNotificationAdd
+
+	/** @type {(settings: SettingButtonPayload) => HTMLButtonElement} */
+	#handleSettingButtonAppend
+
+	/** @type {Navigation} */
+	#navigationComponent
+
+	/** @type {Settings} */
+	#settingsComponent
+
+	/** @type {Timeline} */
+	#timelineComponent
+
+	/** @type {Toast} */
+	#toastComponent
+
 	/**
 	 * @param {{
 	 * 	storage: Storage
@@ -20,46 +41,47 @@ class Home {
 	 * }} constructor
 	 */
 	constructor({ storage, timelineApi }) {
-		this._handleSettingBtnAppend = this._handleSettingBtnAppend.bind(this)
-		this._handleNotificationAdd = this._handleNotificationAdd.bind(this)
+		this.#handleSettingButtonAppend =
+			this.#appendSettingButtonHandler.bind(this)
+		this.#handleNotificationAdd = this.#addSettingButtonHandler.bind(this)
 
-		this._settingsComponent = new Settings({
+		this.#settingsComponent = new Settings({
 			storage,
 		})
-		this._navigationComponent = new Navigation()
-		this._timelineComponent = new Timeline({
+		this.#navigationComponent = new Navigation()
+		this.#timelineComponent = new Timeline({
 			timelineApi,
 		})
-		this._easterEggComponent = new EasterEgg({
-			onNotificationAdd: this._handleNotificationAdd,
-			onSettingBtnAppend: this._handleSettingBtnAppend,
+		this.#easterEggComponent = new EasterEgg({
+			onNotificationAdd: this.#handleNotificationAdd,
+			onSettingButtonAppend: this.#handleSettingButtonAppend,
 		})
-		this._toastComponent = new Toast()
+		this.#toastComponent = new Toast()
 	}
 
 	/**
 	 * @param {ToastMessagePayload} message
 	 * @returns {void}
 	 */
-	_handleNotificationAdd(message) {
-		this._toastComponent.pushMessage(message)
+	#addSettingButtonHandler(message) {
+		this.#toastComponent.pushMessage(message)
 	}
 
 	/**
 	 * @param {SettingButtonPayload} settings
 	 * @returns {HTMLButtonElement}
 	 */
-	_handleSettingBtnAppend(settings) {
-		return this._settingsComponent.appendNewBtn(settings)
+	#appendSettingButtonHandler(settings) {
+		return this.#settingsComponent.appendNewButton(settings)
 	}
 
 	/** @returns {void} */
 	init() {
-		this._toastComponent.init()
-		this._settingsComponent.init()
-		this._navigationComponent.init()
-		this._timelineComponent.init()
-		this._easterEggComponent.init()
+		this.#toastComponent.init()
+		this.#settingsComponent.init()
+		this.#navigationComponent.init()
+		this.#timelineComponent.init()
+		this.#easterEggComponent.init()
 	}
 }
 

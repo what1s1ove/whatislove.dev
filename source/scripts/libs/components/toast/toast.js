@@ -9,21 +9,27 @@ import {
 /** @typedef {import('~/libs/types/types').ToastMessagePayload} ToastMessagePayload */
 
 class Toast {
+	/** @type {boolean} */
+	#isShowingMessage
+
+	/** @type {ToastMessagePayload[]} */
+	#messages
+
+	/** @type {HTMLElement | undefined} */
+	#toastNode
+
 	constructor() {
-		/** @type {HTMLElement | undefined} */
-		this._toastNode = undefined
-		/** @type {ToastMessagePayload[]} */
-		this._messages = []
-		/** @type {boolean} */
-		this._isShowingMessage = false
+		this.#toastNode = undefined
+		this.#messages = []
+		this.#isShowingMessage = false
 	}
 
 	/**
 	 * @param {ToastMessagePayload} messagePayload
 	 * @returns {Promise<void>}
 	 */
-	async _displayToastMessage(messagePayload) {
-		let toastNode = /** @type {HTMLElement} */ (this._toastNode)
+	async #displayToastMessage(messagePayload) {
+		let toastNode = /** @type {HTMLElement} */ (this.#toastNode)
 		let { cb, duration = TOAST_DEFAULT_DURATION, message } = messagePayload
 
 		toastNode.classList.add(TOAST_SHOW_CLASS_NAME)
@@ -41,29 +47,29 @@ class Toast {
 	}
 
 	/** @returns {Promise<void>} */
-	async _initShowingMessages() {
+	async #initShowingMessages() {
 		let messagePayload = /** @type {ToastMessagePayload} */ (
-			this._messages.shift()
+			this.#messages.shift()
 		)
 
-		this._isShowingMessage = true
+		this.#isShowingMessage = true
 
-		await this._displayToastMessage(messagePayload)
+		await this.#displayToastMessage(messagePayload)
 
-		let hasMessages = this._messages.length > 0
+		let hasMessages = this.#messages.length > 0
 
 		if (hasMessages) {
-			this._initShowingMessages()
+			this.#initShowingMessages()
 
 			return
 		}
 
-		this._isShowingMessage = false
+		this.#isShowingMessage = false
 	}
 
 	/** @returns {void} */
 	init() {
-		this._toastNode = /** @type {HTMLElement} */ (
+		this.#toastNode = /** @type {HTMLElement} */ (
 			document.querySelector(`.toast`)
 		)
 	}
@@ -73,10 +79,10 @@ class Toast {
 	 * @returns {void}
 	 */
 	pushMessage(message) {
-		this._messages.push(message)
+		this.#messages.push(message)
 
-		if (!this._isShowingMessage) {
-			this._initShowingMessages()
+		if (!this.#isShowingMessage) {
+			this.#initShowingMessages()
 		}
 	}
 }

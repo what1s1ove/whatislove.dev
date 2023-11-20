@@ -1,28 +1,33 @@
 import { getLoaderElement } from './libs/helpers/helpers.js'
 
 class Loader {
+	/** @type {HTMLElement} */
+	#containerNode
+
+	/** @type {HTMLElement | undefined} */
+	#loaderNode
+
 	/**
 	 * @param {{
 	 * 	containerNode: HTMLElement
 	 * }} constructor
 	 */
 	constructor({ containerNode }) {
-		this._containerNode = containerNode
+		this.#containerNode = containerNode
 
-		/** @type {HTMLElement | undefined} */
-		this._loaderNode = undefined
+		this.#loaderNode = undefined
 	}
 
 	/** @returns {void} */
 	init() {
-		this._loaderNode = getLoaderElement()
+		this.#loaderNode = getLoaderElement()
 
-		this._containerNode.prepend(this._loaderNode)
+		this.#containerNode.prepend(this.#loaderNode)
 	}
 
 	/** @returns {void} */
 	remove() {
-		let loaderNode = /** @type {HTMLElement} */ (this._loaderNode)
+		let loaderNode = /** @type {HTMLElement} */ (this.#loaderNode)
 
 		loaderNode.remove()
 	}

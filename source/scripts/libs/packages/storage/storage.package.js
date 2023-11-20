@@ -1,20 +1,19 @@
 class Storage {
+	/** @type {globalThis.Storage} */
+	#storage
+
 	/**
 	 * @param {{
 	 * 	storage: globalThis.Storage
 	 * }} constructor
 	 */
 	constructor({ storage }) {
-		/**
-		 * @private
-		 * @type {globalThis.Storage}
-		 */
-		this._storage = storage
+		this.#storage = storage
 	}
 
 	/** @returns {void} */
 	clear() {
-		return this._storage.clear()
+		return this.#storage.clear()
 	}
 
 	/**
@@ -22,7 +21,7 @@ class Storage {
 	 * @returns {string | null}
 	 */
 	getItem(key) {
-		return this._storage.getItem(key)
+		return this.#storage.getItem(key)
 	}
 
 	/**
@@ -30,7 +29,7 @@ class Storage {
 	 * @returns {void}
 	 */
 	removeItem(key) {
-		return this._storage.removeItem(key)
+		return this.#storage.removeItem(key)
 	}
 
 	/**
@@ -39,7 +38,7 @@ class Storage {
 	 * @returns {void}
 	 */
 	setItem(key, value) {
-		return this._storage.setItem(key, value)
+		return this.#storage.setItem(key, value)
 	}
 }
 

@@ -8,6 +8,18 @@ import { TimelineApiPath } from './libs/enums/enums.js'
 /** @typedef {import('./libs/types/types')} TimelineCreatePayload */
 
 class TimelineApi {
+	/** @type {(typeof ApiPath)[keyof typeof ApiPath]} */
+	#apiPath
+
+	/** @type {string} */
+	#baseUrl
+
+	/** @type {string} */
+	#filesApiPath
+
+	/** @type {Http} */
+	#http
+
 	/**
 	 * @param {{
 	 * 	baseUrl: string
@@ -16,31 +28,31 @@ class TimelineApi {
 	 * }} config
 	 */
 	constructor({ baseUrl, filesApiPath, http }) {
-		this._http = http
-		this._baseUrl = baseUrl
-		this._filesApiPath = filesApiPath
-		this._apiPath = ApiPath.TIMELINE
+		this.#http = http
+		this.#baseUrl = baseUrl
+		this.#filesApiPath = filesApiPath
+		this.#apiPath = ApiPath.TIMELINE
 	}
 
 	/**
 	 * @param {string} path
 	 * @returns {string}
 	 */
-	_getApiUrl(path) {
-		return `${this._baseUrl}${this._apiPath}${path}`
+	#getApiUrl(path) {
+		return `${this.#baseUrl}${this.#apiPath}${path}`
 	}
 
 	/**
 	 * @param {string} path
 	 * @returns {string}
 	 */
-	_getFileUrl(path) {
-		return `${this._filesApiPath}${path}.json`
+	#getFileUrl(path) {
+		return `${this.#filesApiPath}${path}.json`
 	}
 
 	/** @returns {Promise<Timeline[]>} */
 	getTimelines() {
-		return this._http.load(this._getFileUrl(this._apiPath), {
+		return this.#http.load(this.#getFileUrl(this.#apiPath), {
 			method: HttpMethod.GET,
 		})
 	}
@@ -50,7 +62,7 @@ class TimelineApi {
 	 * @returns {Promise<Timeline>}
 	 */
 	saveTimeline(payload) {
-		return this._http.load(this._getApiUrl(TimelineApiPath.ROOT), {
+		return this.#http.load(this.#getApiUrl(TimelineApiPath.ROOT), {
 			contentType: ContentType.JSON,
 			method: HttpMethod.POST,
 			payload,

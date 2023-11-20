@@ -3,14 +3,16 @@ import { getTimelineTemplates } from './libs/helpers/helpers.js'
 /** @typedef {import('~/packages/timeline/timeline').Timeline} Timeline */
 
 class TimelineList {
+	/** @type {HTMLElement | undefined} */
+	#listNode
+
 	constructor() {
-		/** @type {HTMLElement | undefined} */
-		this._listNode = undefined
+		this.#listNode = undefined
 	}
 
 	/** @returns {void} */
 	init() {
-		this._listNode = /** @type {HTMLElement} */ (
+		this.#listNode = /** @type {HTMLElement} */ (
 			document.querySelector(`.timeline__list`)
 		)
 	}
@@ -20,7 +22,7 @@ class TimelineList {
 	 * @returns {void}
 	 */
 	renderTimelines(timelines) {
-		let listNode = /** @type {HTMLElement} */ (this._listNode)
+		let listNode = /** @type {HTMLElement} */ (this.#listNode)
 
 		listNode.innerHTML = getTimelineTemplates(timelines)
 	}
