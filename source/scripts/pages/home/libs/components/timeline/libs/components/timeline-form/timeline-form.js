@@ -5,47 +5,55 @@ import { DEBOUNCE_DELAY } from './libs/constants/constants.js'
 /** @typedef {import('~/packages/timeline/timeline').TimelineFilter} TimelineFilter */
 
 class TimelineForm {
+	/** @type {HTMLFormElement | undefined} */
+	#formNode
+
+	/** @type {() => void} */
+	#handleFormChange
+
+	/** @type {(formValues: TimelineFilter) => void} */
+	#onChange
+
 	/**
 	 * @param {{
 	 * 	onChange: (formValues: TimelineFilter) => void
 	 * }} constructor
 	 */
 	constructor({ onChange }) {
-		this._onChange = onChange
+		this.#onChange = onChange
 
-		/** @type {HTMLFormElement | undefined} */
-		this._formNode = undefined
+		this.#formNode = undefined
 
-		this._handleFormChange = this._handleFormChange.bind(this)
+		this.#handleFormChange = this.#changeFormHandler.bind(this)
 	}
 
 	/** @returns {void} */
-	_handleFormChange() {
-		this._onChange(this.formValues)
+	#changeFormHandler() {
+		this.#onChange(this.formValues)
 	}
 
 	/** @returns {void} */
-	_initListeners() {
-		let formNode = /** @type {HTMLFormElement} */ (this._formNode)
+	#initListeners() {
+		let formNode = /** @type {HTMLFormElement} */ (this.#formNode)
 
 		formNode.addEventListener(
 			`change`,
-			initDebounce(this._handleFormChange, DEBOUNCE_DELAY),
+			initDebounce(this.#handleFormChange, DEBOUNCE_DELAY),
 		)
 	}
 
 	/** @returns {void} */
 	init() {
-		this._formNode = /** @type {HTMLFormElement} */ (
+		this.#formNode = /** @type {HTMLFormElement} */ (
 			document.querySelector(`.timeline__filter`)
 		)
 
-		this._initListeners()
+		this.#initListeners()
 	}
 
 	/** @returns {TimelineFilter} */
 	get formValues() {
-		return getFormValues(/** @type {HTMLFormElement} */ (this._formNode))
+		return getFormValues(/** @type {HTMLFormElement} */ (this.#formNode))
 	}
 }
 

@@ -9,93 +9,117 @@ import { getSuitTimelines } from './libs/helpers/helpers.js'
 /** @typedef {import('~/packages/timeline/timeline').TimelineApi} TimelineApi */
 
 class Timeline {
+	/** @type {HTMLElement | undefined} */
+	#containerNode
+
+	/** @type {(formValues: TimelineFilter) => void} */
+	#handleFormChange
+
+	/** @type {() => Promise<void>} */
+	#handleTimelineShow
+
+	/** @type {boolean} */
+	#isLoading
+
+	/** @type {Loader} */
+	#loaderComponent
+
+	/** @type {TimelineApi} */
+	#timelineApi
+
+	/** @type {TimelineForm} */
+	#timelineFormComponent
+
+	/** @type {TimelineList} */
+	#timelineListComponent
+
+	/** @type {TTimeline[]} */
+	#timelines
+
 	/**
 	 * @param {{
 	 * 	timelineApi: TimelineApi
 	 * }} constructor
 	 */
 	constructor({ timelineApi }) {
-		this._timelineApi = timelineApi
+		this.#timelineApi = timelineApi
 
-		/** @type {HTMLElement | undefined} */
-		this._containerNode = undefined
-		/** @type {TTimeline[]} */
-		this._timelines = []
-		/** @type {boolean} */
-		this._isLoading = false
+		this.#containerNode = undefined
+		this.#timelines = []
+		this.#isLoading = false
 
-		this._handleFormChange = this._handleFormChange.bind(this)
-		this._handleTimelineShow = this._handleTimelineShow.bind(this)
+		this.#handleFormChange = this.#changeFormHandler.bind(this)
+		this.#handleTimelineShow = this.#showTimelineHandler.bind(this)
 
-		this._timelineFormComponent = new TimelineForm({
-			onChange: this._handleFormChange,
+		this.#timelineFormComponent = new TimelineForm({
+			onChange: this.#handleFormChange,
 		})
-		this._loaderComponent = new Loader({
+		this.#loaderComponent = new Loader({
 			containerNode: /** @type {HTMLElement} */ (
 				document.querySelector(`.timeline__list-wrapper`)
 			),
 		})
-		this._timelineListComponent = new TimelineList()
-	}
-
-	/** @returns {Promise<void>} */
-	async _fetchTimelines() {
-		this._timelines = await this._timelineApi.getTimelines()
+		this.#timelineListComponent = new TimelineList()
 	}
 
 	/**
 	 * @param {TimelineFilter} formValues
 	 * @returns {void}
 	 */
-	_handleFormChange(formValues) {
-		this._renderTimelines(formValues)
+	#changeFormHandler(formValues) {
+		this.#renderTimelines(formValues)
 	}
 
 	/** @returns {Promise<void>} */
-	async _handleTimelineShow() {
+	async #fetchTimelines() {
+		this.#timelines = await this.#timelineApi.getTimelines()
+	}
+
+	/** @returns {void} */
+	#initListeners() {
+		document.addEventListener(`scroll`, this.#handleTimelineShow)
+	}
+
+	/**
+	 * @param {TimelineFilter} formValues
+	 * @returns {void}
+	 */
+	#renderTimelines(formValues) {
+		let timelines = getSuitTimelines(this.#timelines, formValues)
+
+		this.#timelineListComponent.renderTimelines(timelines)
+	}
+
+	/** @returns {Promise<void>} */
+	async #showTimelineHandler() {
 		let shouldLoadTimelines = checkIsBeforeElement(
-			/** @type {HTMLElement} */ (this._containerNode).offsetTop,
+			/** @type {HTMLElement} */ (this.#containerNode).offsetTop,
 		)
 
-		if (shouldLoadTimelines && !this._isLoading) {
-			this._isLoading = true
+		if (shouldLoadTimelines && !this.#isLoading) {
+			this.#isLoading = true
 
-			await this._fetchTimelines()
+			await this.#fetchTimelines()
 
-			this._loaderComponent.remove()
+			this.#loaderComponent.remove()
 
-			this._renderTimelines(this._timelineFormComponent.formValues)
+			this.#renderTimelines(this.#timelineFormComponent.formValues)
 
-			document.removeEventListener(`scroll`, this._handleTimelineShow)
+			document.removeEventListener(`scroll`, this.#handleTimelineShow)
 		}
 	}
 
 	/** @returns {void} */
-	_initListeners() {
-		document.addEventListener(`scroll`, this._handleTimelineShow)
-	}
-
-	/**
-	 * @param {TimelineFilter} formValues
-	 * @returns {void}
-	 */
-	_renderTimelines(formValues) {
-		let timelines = getSuitTimelines(this._timelines, formValues)
-
-		this._timelineListComponent.renderTimelines(timelines)
-	}
-
-	/** @returns {void} */
 	init() {
-		this._containerNode = /** @type {HTMLElement} */ (
+		this.#containerNode = /** @type {HTMLElement} */ (
 			document.querySelector(`.timeline`)
 		)
 
-		this._loaderComponent.init()
-		this._timelineFormComponent.init()
-		this._timelineListComponent.init()
+		this.#loaderComponent.init()
+		this.#timelineFormComponent.init()
+		this.#timelineListComponent.init()
 
-		this._initListeners()
+		this.#initListeners()
 	}
 }
 

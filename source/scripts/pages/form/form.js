@@ -13,47 +13,38 @@ let timelineSkillTypes = Object.values(TimelineSkillType)
 let timelineTypes = Object.values(TimelineType)
 
 class Form {
+	/** @type {HTMLFormElement | undefined} */
+	#formNode
+
+	/** @type {(event_: SubmitEvent) => Promise<void>} */
+	#handleSubmit
+
+	/** @type {TimelineApi} */
+	#timelineApi
+
 	/**
 	 * @param {{
 	 * 	timelineApi: TimelineApi
 	 * }} constructor
 	 */
 	constructor({ timelineApi }) {
-		this._timelineApi = timelineApi
+		this.#timelineApi = timelineApi
 
-		/** @type {HTMLFormElement | undefined} */
-		this._formNode = undefined
+		this.#formNode = undefined
 
-		this._handleSubmit = this._handleSubmit.bind(this)
+		this.#handleSubmit = this.#submitHandler.bind(this)
 	}
 
-	/**
-	 * @param {SubmitEvent} event_
-	 * @returns {Promise<void>}
-	 */
-	async _handleSubmit(event_) {
-		event_.preventDefault()
+	/** @type {() => void} */
+	#initListeners() {
+		let formNode = /** @type {HTMLFormElement} */ (this.#formNode)
 
-		let formNode = /** @type {HTMLFormElement} */ (this._formNode)
-		let formValues = /** @type {TimelineCreatePayload} */ (
-			getFormValues(formNode)
-		)
-
-		await this._timelineApi.saveTimeline(getTransformedTimeline(formValues))
-
-		formNode.reset()
+		formNode.addEventListener(`submit`, this.#handleSubmit)
 	}
 
 	/** @returns {void} */
-	_initListeners() {
-		let formNode = /** @type {HTMLFormElement} */ (this._formNode)
-
-		formNode.addEventListener(`submit`, this._handleSubmit)
-	}
-
-	/** @returns {void} */
-	_initSelects() {
-		let formNode = /** @type {HTMLFormElement} */ (this._formNode)
+	#initSelects() {
+		let formNode = /** @type {HTMLFormElement} */ (this.#formNode)
 
 		fillSelectOptions(
 			/** @type {HTMLSelectElement} */ (
@@ -69,15 +60,32 @@ class Form {
 		)
 	}
 
+	/**
+	 * @param {SubmitEvent} event_
+	 * @returns {Promise<void>}
+	 */
+	async #submitHandler(event_) {
+		event_.preventDefault()
+
+		let formNode = /** @type {HTMLFormElement} */ (this.#formNode)
+		let formValues = /** @type {TimelineCreatePayload} */ (
+			getFormValues(formNode)
+		)
+
+		await this.#timelineApi.saveTimeline(getTransformedTimeline(formValues))
+
+		formNode.reset()
+	}
+
 	/** @returns {void} */
 	init() {
-		this._formNode = /** @type {HTMLFormElement} */ (
+		this.#formNode = /** @type {HTMLFormElement} */ (
 			document.querySelector(`form[name="timeline"]`)
 		)
 
-		this._initSelects()
+		this.#initSelects()
 
-		this._initListeners()
+		this.#initListeners()
 	}
 }
 

@@ -19,47 +19,74 @@ import {
 /** @typedef {import('~/pages/home/libs/types/types').SettingButtonPayload} SettingButtonPayload */
 
 class EasterEgg {
+	/** @type {HTMLAudioElement | undefined} */
+	#audioNode
+
+	/** @type {HTMLButtonElement | undefined} */
+	#easterEggButtonNode
+
+	/** @type {HTMLElement | undefined} */
+	#easterEggContainerNode
+
+	/** @type {() => void} */
+	#handleEasterEggClick
+
+	/**
+	 * @type {(
+	 * 	name: (typeof SettingName)[keyof typeof SettingName],
+	 * 	isChecked: boolean,
+	 * ) => void}
+	 */
+	#handleSettingButtonClick
+
+	/** @type {() => void} */
+	#handleWindowResize
+
+	/** @type {(payload: ToastMessagePayload) => void} */
+	#onNotificationAdd
+
+	/** @type {(payload: SettingButtonPayload) => HTMLButtonElement} */
+	#onSettingButtonAppend
+
 	/**
 	 * @param {{
 	 * 	onNotificationAdd: (payload: ToastMessagePayload) => void
-	 * 	onSettingBtnAppend: (
+	 * 	onSettingButtonAppend: (
 	 * 		payload: SettingButtonPayload,
 	 * 	) => HTMLButtonElement
 	 * }} constructor
 	 */
-	constructor({ onNotificationAdd, onSettingBtnAppend }) {
-		this._onNotificationAdd = onNotificationAdd
-		this._onSettingBtnAppend = onSettingBtnAppend
+	constructor({ onNotificationAdd, onSettingButtonAppend }) {
+		this.#onNotificationAdd = onNotificationAdd
+		this.#onSettingButtonAppend = onSettingButtonAppend
 
-		/** @type {HTMLElement | undefined} */
-		this._easterEggContainerNode = undefined
-		/** @type {HTMLButtonElement | undefined} */
-		this._easterEggButtonNode = undefined
-		/** @type {HTMLAudioElement | undefined} */
-		this._audioNode = undefined
+		this.#easterEggContainerNode = undefined
+		this.#easterEggButtonNode = undefined
+		this.#audioNode = undefined
 
-		this._handleEasterEggClick = this._handleEasterEggClick.bind(this)
-		this._handleSettingBtnClick = this._handleSettingBtnClick.bind(this)
-		this._handleWindowResize = initDebounce(
-			this._handleWindowResize.bind(this),
+		this.#handleEasterEggClick = this.#clickEasterEggClickHandler.bind(this)
+		this.#handleSettingButtonClick =
+			this.#clickSettingButtonHandler.bind(this)
+		this.#handleWindowResize = initDebounce(
+			this.#resizeWindowHandler,
 			RESIZE_DELAY,
 		)
 	}
 
 	/** @returns {void} */
-	_handleEasterEggClick() {
+	#clickEasterEggClickHandler() {
 		let easterEggContainerNode = /** @type {HTMLElement} */ (
-			this._easterEggContainerNode
+			this.#easterEggContainerNode
 		)
 
-		this._onNotificationAdd({
+		this.#onNotificationAdd({
 			/** @returns {void} */
 			cb: () => {
-				let buttonNode = this._onSettingBtnAppend({
+				let buttonNode = this.#onSettingButtonAppend({
 					isDefaultChecked: true,
 					label: SettingButtonLabel.SWITCH_LOVE,
 					name: SettingName.WHATISLOVE,
-					onClick: this._handleSettingBtnClick,
+					onClick: this.#handleSettingButtonClick,
 				})
 
 				buttonNode.focus()
@@ -68,9 +95,9 @@ class EasterEgg {
 			message: NotificationMessage.LOVE,
 		})
 
-		this._renderPlayer()
+		this.#renderPlayer()
 
-		this._removeListeners()
+		this.#removeListeners()
 
 		easterEggContainerNode.remove()
 	}
@@ -80,54 +107,54 @@ class EasterEgg {
 	 * @param {boolean} isChecked
 	 * @returns {void}
 	 */
-	_handleSettingBtnClick(_name, isChecked) {
-		let audioNode = /** @type {HTMLAudioElement} */ (this._audioNode)
+	#clickSettingButtonHandler(_name, isChecked) {
+		let audioNode = /** @type {HTMLAudioElement} */ (this.#audioNode)
 
 		isChecked ? audioNode.play() : audioNode.pause()
 	}
 
 	/** @returns {void} */
-	_handleWindowResize() {
-		this._setRandomPosition()
-	}
-
-	/** @returns {void} */
-	_initListeners() {
+	#initListeners() {
 		let easterEggButtonNode = /** @type {HTMLElement} */ (
-			this._easterEggButtonNode
+			this.#easterEggButtonNode
 		)
 
 		easterEggButtonNode.addEventListener(
 			`click`,
-			this._handleEasterEggClick,
+			this.#handleEasterEggClick,
 		)
-		globalThis.addEventListener(`resize`, this._handleWindowResize)
+		globalThis.addEventListener(`resize`, this.#handleWindowResize)
 	}
 
 	/** @returns {void} */
-	_removeListeners() {
+	#removeListeners() {
 		let easterEggButtonNode = /** @type {HTMLElement} */ (
-			this._easterEggButtonNode
+			this.#easterEggButtonNode
 		)
 
 		easterEggButtonNode.removeEventListener(
 			`click`,
-			this._handleEasterEggClick,
+			this.#handleEasterEggClick,
 		)
-		globalThis.removeEventListener(`resize`, this._handleWindowResize)
+		globalThis.removeEventListener(`resize`, this.#handleWindowResize)
 	}
 
 	/** @returns {void} */
-	_renderPlayer() {
-		this._audioNode = getPlayerElement(SOUND_SRC)
+	#renderPlayer() {
+		this.#audioNode = getPlayerElement(SOUND_SRC)
 
-		document.body.append(this._audioNode)
+		document.body.append(this.#audioNode)
 	}
 
 	/** @returns {void} */
-	_setRandomPosition() {
+	#resizeWindowHandler() {
+		this.#setRandomPosition()
+	}
+
+	/** @returns {void} */
+	#setRandomPosition() {
 		let easterEggContainerNode = /** @type {HTMLElement} */ (
-			this._easterEggContainerNode
+			this.#easterEggContainerNode
 		)
 		let { x, y } = getNodeRandomCoords(easterEggContainerNode)
 
@@ -137,16 +164,16 @@ class EasterEgg {
 
 	/** @returns {void} */
 	init() {
-		this._easterEggContainerNode = /** @type {HTMLElement} */ (
+		this.#easterEggContainerNode = /** @type {HTMLElement} */ (
 			document.querySelector(`.not-easter-egg`)
 		)
-		this._easterEggButtonNode = /** @type {HTMLButtonElement} */ (
+		this.#easterEggButtonNode = /** @type {HTMLButtonElement} */ (
 			document.querySelector(`.not-easter-egg__button`)
 		)
 
-		this._setRandomPosition()
+		this.#setRandomPosition()
 
-		this._initListeners()
+		this.#initListeners()
 	}
 }
 

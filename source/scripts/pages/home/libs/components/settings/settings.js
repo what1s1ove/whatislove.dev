@@ -11,17 +11,30 @@ let RESULT_VALUE = /** @type {const} */ (`auto`)
 
 class Settings {
 	/**
+	 * @type {(
+	 * 	name: (typeof SettingName)[keyof typeof SettingName],
+	 * 	value: string,
+	 * ) => void}
+	 */
+	#handleControlChange
+
+	/** @type {HTMLElement | undefined} */
+	#settingListNode
+
+	/** @type {Storage} */
+	#storage
+
+	/**
 	 * @param {{
 	 * 	storage: Storage
 	 * }} constructor
 	 */
 	constructor({ storage }) {
-		this._storage = storage
+		this.#storage = storage
 
-		/** @type {HTMLElement | undefined} */
-		this._settingListNode = undefined
+		this.#settingListNode = undefined
 
-		this._handleControlChange = this._handleControlChange.bind(this)
+		this.#handleControlChange = this.#changeControlHandler.bind(this)
 	}
 
 	/**
@@ -29,29 +42,29 @@ class Settings {
 	 * @param {string} value
 	 * @returns {void}
 	 */
-	_handleControlChange(name, value) {
+	#changeControlHandler(name, value) {
 		if (value === RESULT_VALUE) {
-			this._removeSettingAttr(name)
+			this.#removeSettingAttr(name)
 
-			return this._storage.removeItem(name)
+			return this.#storage.removeItem(name)
 		}
 
-		this._setSettingAttr(name, value)
+		this.#setSettingAttr(name, value)
 
-		this._storage.setItem(name, value)
+		this.#storage.setItem(name, value)
 	}
 
 	/**
 	 * @param {(typeof SettingName)[keyof typeof SettingName]} name
 	 * @returns {void}
 	 */
-	_initControl(name) {
-		let defaultValue = this._setInitialSettingAttr(name)
+	#initControl(name) {
+		let defaultValue = this.#setInitialSettingAttr(name)
 
 		new Control({
 			defaultValue,
 			name,
-			onChange: this._handleControlChange,
+			onChange: this.#handleControlChange,
 		}).init(`.settings__item-fieldset--${name}`)
 	}
 
@@ -59,7 +72,7 @@ class Settings {
 	 * @param {(typeof SettingName)[keyof typeof SettingName]} name
 	 * @returns {void}
 	 */
-	_removeSettingAttr(name) {
+	#removeSettingAttr(name) {
 		document.documentElement.removeAttribute(getCustomAttributeName(name))
 	}
 
@@ -67,12 +80,12 @@ class Settings {
 	 * @param {(typeof SettingName)[keyof typeof SettingName]} name
 	 * @returns {string | null}
 	 */
-	_setInitialSettingAttr(name) {
-		let value = this._storage.getItem(name)
+	#setInitialSettingAttr(name) {
+		let value = this.#storage.getItem(name)
 		let hasValue = Boolean(value)
 
 		if (hasValue) {
-			this._setSettingAttr(name, /** @type {string} */ (value))
+			this.#setSettingAttr(name, /** @type {string} */ (value))
 		}
 
 		return value
@@ -83,7 +96,7 @@ class Settings {
 	 * @param {string} value
 	 * @returns {void}
 	 */
-	_setSettingAttr(name, value) {
+	#setSettingAttr(name, value) {
 		document.documentElement.setAttribute(
 			getCustomAttributeName(name),
 			value,
@@ -94,11 +107,11 @@ class Settings {
 	 * @param {SettingButtonPayload} settings
 	 * @returns {HTMLButtonElement}
 	 */
-	appendNewBtn(settings) {
+	appendNewButton(settings) {
 		let { isDefaultChecked, label, name, onClick } = settings
 
 		let newSettingItemNode = getSettingItemElement({ label, name })
-		let settingListNode = /** @type {HTMLElement} */ (this._settingListNode)
+		let settingListNode = /** @type {HTMLElement} */ (this.#settingListNode)
 
 		settingListNode.prepend(newSettingItemNode)
 
@@ -111,12 +124,12 @@ class Settings {
 
 	/** @returns {void} */
 	init() {
-		this._settingListNode = /** @type {HTMLElement} */ (
+		this.#settingListNode = /** @type {HTMLElement} */ (
 			document.querySelector(`.settings`)
 		)
 
-		this._initControl(SettingName.THEME)
-		this._initControl(SettingName.MOTION)
+		this.#initControl(SettingName.THEME)
+		this.#initControl(SettingName.MOTION)
 	}
 }
 

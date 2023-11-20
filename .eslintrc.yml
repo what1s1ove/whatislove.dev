@@ -86,9 +86,6 @@ rules:
   arrow-parens:
     - error
     - always
-  no-underscore-dangle:
-    - error
-    - allowAfterThis: true
   no-multiple-empty-lines:
     - error
     - max: 1

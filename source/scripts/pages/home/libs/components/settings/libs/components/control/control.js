@@ -1,6 +1,21 @@
 /** @typedef {typeof import('~/pages/home/libs/enums/enums').SettingName} SettingName */
 
 class Control {
+	/** @type {HTMLFieldSetElement | undefined} */
+	#controlNode
+
+	/** @type {string | null} */
+	#defaultValue
+
+	/** @type {(event_: Event) => void} */
+	#handleSwitchChange
+
+	/** @type {SettingName[keyof SettingName]} */
+	#name
+
+	/** @type {(name: SettingName[keyof SettingName], value: string) => void} */
+	#onChange
+
 	/**
 	 * @param {{
 	 * 	defaultValue: string | null
@@ -12,44 +27,32 @@ class Control {
 	 * }} constructor
 	 */
 	constructor({ defaultValue, name, onChange }) {
-		this._name = name
-		this._onChange = onChange
-		this._defaultValue = defaultValue
+		this.#name = name
+		this.#onChange = onChange
+		this.#defaultValue = defaultValue
 
-		/** @type {HTMLFieldSetElement | undefined} */
-		this._controlNode = undefined
+		this.#controlNode = undefined
 
-		this._handleSwitchChange = this._handleSwitchChange.bind(this)
-	}
-
-	/**
-	 * @param {Event} event_
-	 * @returns {void}
-	 */
-	_handleSwitchChange({ target }) {
-		this._onChange(
-			this._name,
-			/** @type {HTMLInputElement} */ (target).value,
-		)
+		this.#handleSwitchChange = this.#switchChangeHandler.bind(this)
 	}
 
 	/** @returns {void} */
-	_initListeners() {
-		let controlNode = /** @type {HTMLFieldSetElement} */ (this._controlNode)
+	#initListeners() {
+		let controlNode = /** @type {HTMLFieldSetElement} */ (this.#controlNode)
 
-		controlNode.addEventListener(`change`, this._handleSwitchChange)
+		controlNode.addEventListener(`change`, this.#handleSwitchChange)
 	}
 
 	/** @returns {void} */
-	_setInitialValue() {
-		let controlNode = /** @type {HTMLFieldSetElement} */ (this._controlNode)
+	#setInitialValue() {
+		let controlNode = /** @type {HTMLFieldSetElement} */ (this.#controlNode)
 
 		let inputNodes = /** @type {NodeListOf<HTMLInputElement>} */ (
-			controlNode.querySelectorAll(`input[name="${this._name}"]`)
+			controlNode.querySelectorAll(`input[name="${this.#name}"]`)
 		)
 
 		for (let it of inputNodes) {
-			let isChecked = it.value === this._defaultValue
+			let isChecked = it.value === this.#defaultValue
 
 			if (isChecked) {
 				it.checked = isChecked
@@ -58,17 +61,28 @@ class Control {
 	}
 
 	/**
+	 * @param {Event} event_
+	 * @returns {void}
+	 */
+	#switchChangeHandler({ target }) {
+		this.#onChange(
+			this.#name,
+			/** @type {HTMLInputElement} */ (target).value,
+		)
+	}
+
+	/**
 	 * @param {string} selector
 	 * @returns {void}
 	 */
 	init(selector) {
-		this._controlNode = /** @type {HTMLFieldSetElement} */ (
+		this.#controlNode = /** @type {HTMLFieldSetElement} */ (
 			document.querySelector(selector)
 		)
 
-		this._setInitialValue()
+		this.#setInitialValue()
 
-		this._initListeners()
+		this.#initListeners()
 	}
 }
 

@@ -49,7 +49,7 @@ class Http {
 	 * }} options
 	 * @returns {Headers}
 	 */
-	_getHeaders({ contentType }) {
+	#getHeaders({ contentType }) {
 		let headers = new Headers()
 
 		if (contentType) {
@@ -71,7 +71,7 @@ class Http {
 	 */
 	load(url, options = {}) {
 		let { contentType, method = HttpMethod.GET, payload } = options
-		let headers = this._getHeaders({
+		let headers = this.#getHeaders({
 			contentType,
 		})
 		let isJSON = checkIsOneOf(contentType, ContentType.JSON)

@@ -1,6 +1,26 @@
 /** @typedef {typeof import('~/pages/home/libs/enums/enums').SettingName} SettingName */
 
 class Switch {
+	/** @type {(event_: Event) => void} */
+	#handleSwitchClick
+
+	/** @type {boolean} */
+	#isDefaultChecked
+
+	/** @type {SettingName[keyof SettingName]} */
+	#name
+
+	/**
+	 * @type {(
+	 * 	name: SettingName[keyof SettingName],
+	 * 	isChecked: boolean,
+	 * ) => void}
+	 */
+	#onClick
+
+	/** @type {HTMLButtonElement | undefined} */
+	#switchNode
+
 	/**
 	 * @param {{
 	 * 	isDefaultChecked: boolean
@@ -12,41 +32,41 @@ class Switch {
 	 * }} constructor
 	 */
 	constructor({ isDefaultChecked, name, onClick }) {
-		this._name = name
-		this._isDefaultChecked = isDefaultChecked
-		this._onClick = onClick
+		this.#name = name
+		this.#isDefaultChecked = isDefaultChecked
+		this.#onClick = onClick
 
-		this._switchNode = undefined
+		this.#switchNode = undefined
 
-		this._handleSwitchClick = this._handleSwitchClick.bind(this)
+		this.#handleSwitchClick = this.#clickSwitchHandler.bind(this)
 	}
 
 	/**
 	 * @param {Event} event_
 	 * @returns {void}
 	 */
-	_handleSwitchClick({ target }) {
+	#clickSwitchHandler({ target }) {
 		let isChecked =
 			/** @type {HTMLElement} */ (target).ariaChecked === `true`
 
-		this._isChecked = !isChecked
+		this.#isChecked = !isChecked
 
-		this._onClick(this._name, !isChecked)
+		this.#onClick(this.#name, !isChecked)
 	}
 
 	/** @returns {void} */
-	_initListeners() {
-		let switchNode = /** @type {HTMLElement} */ (this._switchNode)
+	#initListeners() {
+		let switchNode = /** @type {HTMLElement} */ (this.#switchNode)
 
-		switchNode.addEventListener(`click`, this._handleSwitchClick)
+		switchNode.addEventListener(`click`, this.#handleSwitchClick)
 	}
 
 	/**
 	 * @param {boolean} isChecked
 	 * @returns {void}
 	 */
-	set _isChecked(isChecked) {
-		let switchNode = /** @type {HTMLElement} */ (this._switchNode)
+	set #isChecked(isChecked) {
+		let switchNode = /** @type {HTMLElement} */ (this.#switchNode)
 
 		switchNode.ariaChecked = isChecked.toString()
 	}
@@ -56,17 +76,17 @@ class Switch {
 	 * @returns {HTMLButtonElement}
 	 */
 	init(selector) {
-		this._switchNode = /** @type {HTMLButtonElement} */ (
+		this.#switchNode = /** @type {HTMLButtonElement} */ (
 			document.querySelector(selector)
 		)
 
-		this._isChecked = this._isDefaultChecked
+		this.#isChecked = this.#isDefaultChecked
 
-		this._initListeners()
+		this.#initListeners()
 
-		this._onClick(this._name, this._isDefaultChecked)
+		this.#onClick(this.#name, this.#isDefaultChecked)
 
-		return this._switchNode
+		return this.#switchNode
 	}
 }
 
