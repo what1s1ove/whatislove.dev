@@ -97,7 +97,13 @@ let init = (config) => {
 
 			return async () => {
 				let { code, map } = await lightningcss.bundleAsync({
+					drafts: {
+						customMedia: true,
+					},
 					filename: url,
+					include:
+						lightningcss.Features.MediaQueries |
+						lightningcss.Features.Nesting,
 					minify: true,
 					sourceMap: isDevelopment,
 					targets: lightningcss.browserslistToTargets(
