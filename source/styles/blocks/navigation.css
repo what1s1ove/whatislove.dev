@@ -12,15 +12,17 @@
 	list-style: none;
 }
 
-.navigation__item a {
-	color: var(--color--secondary);
-	font-size: var(--font-size--large);
-	text-transform: lowercase;
-	text-decoration: none;
-	transition: letter-spacing 0.15s;
-}
+.navigation__item {
+	& a {
+		color: var(--color--secondary);
+		font-size: var(--font-size--large);
+		text-transform: lowercase;
+		text-decoration: none;
+		transition: letter-spacing 0.15s;
 
-.navigation__item a:hover {
-	letter-spacing: 3px;
-	text-decoration: underline;
+		&:hover {
+			letter-spacing: 3px;
+			text-decoration: underline;
+		}
+	}
 }

@@ -11,6 +11,21 @@
 	justify-content: space-between;
 	min-height: 60px;
 	padding: 5px 8px;
+
+	@media (width >= 350px) {
+		padding: 5px 28px 5px 23px;
+	}
+
+	@media (width >= 620px) {
+		align-items: center;
+		padding: 10px 8px;
+	}
+
+	@media (--width-desktop) {
+		max-width: 940px;
+		margin: 0 auto;
+		padding: 17px 8px;
+	}
 }
 
 .exp-filter__skills-type {
@@ -18,17 +33,6 @@
 	margin: 0;
 	padding: 0;
 	border: 0;
-}
-
-.exp-filter__skill-types {
-	margin: 0;
-	padding: 0;
-	border: 0;
-}
-
-.exp-filter__skill-title {
-	padding: 0 0 0 7px;
-	color: var(--color--secondary);
 }
 
 .exp-filter__list {
@@ -39,51 +43,42 @@
 	list-style: none;
 }
 
-.exp-filter__skill-types .exp-filter__list {
-	flex-flow: row wrap;
-	align-items: center;
-}
-
 .exp-filter__item {
 	padding: 0 5px 0 0;
 }
 
-.exp-filter__skill-types .exp-filter__item {
-	width: 50%;
-}
+.exp-filter__skill-types {
+	margin: 0;
+	padding: 0;
+	border: 0;
 
-@media (width >= 350px) {
-	.exp-filter__wrapper {
-		padding: 5px 28px 5px 23px;
-	}
-}
-
-@media (width >= 500px) {
-	.exp-filter__skills-type {
-		width: unset;
-	}
-
-	.exp-filter__list {
+	& .exp-filter__list {
 		flex-flow: row wrap;
 		align-items: center;
 	}
-}
 
-@media (width >= 620px) {
-	.exp-filter__wrapper {
-		align-items: center;
-		padding: 10px 8px;
+	& .exp-filter__item {
+		width: 50%;
 	}
 
-	.exp-filter__skill-types {
-		max-width: unset;
-	}
-
-	.exp-filter__skill-types .exp-filter__item {
+	@media (width >= 500px) {
 		width: unset;
 	}
 
-	.exp-filter__skill-title {
+	@media (width >= 620px) {
+		max-width: unset;
+
+		& .exp-filter__item {
+			width: unset;
+		}
+	}
+}
+
+.exp-filter__skill-title {
+	padding: 0 0 0 7px;
+	color: var(--color--secondary);
+
+	@media (width >= 620px) {
 		position: absolute;
 		width: 1px;
 		height: 1px;
@@ -94,13 +89,5 @@
 		border: 0;
 		clip: rect(0 0 0 0);
 		clip-path: inset(100%);
-	}
-}
-
-@media (width >= 940px) {
-	.exp-filter__wrapper {
-		max-width: 940px;
-		margin: 0 auto;
-		padding: 17px 8px;
 	}
 }
