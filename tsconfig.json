@@ -6,6 +6,7 @@
 		"paths": {
 			"~/*": ["source/scripts/*"]
 		},
+		"skipLibCheck": true,
 		"lib": ["DOM", "DOM.Iterable", "ESNext"],
 		"types": ["./source/scripts/globals.d.ts"],
 		"esModuleInterop": true,
