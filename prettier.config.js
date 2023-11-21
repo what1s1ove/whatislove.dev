@@ -10,9 +10,9 @@ let config = {
 			},
 		},
 		{
-			files: '*.njk',
+			files: `*.njk`,
 			options: {
-				'parser': 'html',
+				'parser': `html`,
 			},
 		},
 	],
