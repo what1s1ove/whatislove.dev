@@ -29,7 +29,7 @@ lint_html:
 lint_css:
 	npx stylelint "source/styles/**/*.css"
 lint_js:
-	npx eslint --ext .js "**/*.{js,cjs}"
+	npx eslint "**/*.{js,cjs}"
 lint_type:
 	npx tsc --noEmit
 lint: lint_fs lint_editor lint_prettify lint_html lint_css lint_js lint_type

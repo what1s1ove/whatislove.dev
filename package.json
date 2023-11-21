@@ -17,6 +17,7 @@
 		"@commitlint/cli": "17.8.1",
 		"@commitlint/config-conventional": "18.4.0",
 		"@ls-lint/ls-lint": "2.2.2",
+		"@types/eslint": "8.44.7",
 		"@types/lint-staged": "13.2.2",
 		"browserslist": "4.22.1",
 		"concurrently": "8.2.2",
