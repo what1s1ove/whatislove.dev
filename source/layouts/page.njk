@@ -1,0 +1,52 @@
+<!doctype html>
+<html class="page" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>{{ global.title }}</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="view-transition" content="same-origin" />
+
+		<link rel="stylesheet" href="/styles/index.css" />
+
+		<link
+			rel="preload"
+			href="/fonts/roboto-400.woff2"
+			crossorigin
+			as="font"
+			type="font/woff2"
+		/>
+		<link
+			rel="preload"
+			href="/fonts/roboto-700.woff2"
+			crossorigin
+			as="font"
+			type="font/woff2"
+		/>
+
+		<link rel="icon" href="/favicon.ico" sizes="any" />
+		<link rel="icon" href="/images/icons/icon.svg" type="image/svg+xml" />
+		<link rel="manifest" href="/manifest.json" />
+
+		<meta name="description" content="{{ global.description }}" />
+		<meta name="generator" content="{{ eleventy.generator }}" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="{{ global.title }}" />
+		<meta property="og:description" content="{{ global.description }}" />
+		<meta property="og:url" content="{{ global.domain + page.url }}" />
+
+		<meta
+			property="og:image"
+			content="{{ global.domain }}/images/logo-social.og.png"
+		/>
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@what1s1oveee" />
+	</head>
+	<body class="page__body">
+		{{ content | safe }}
+	</body>
+</html>

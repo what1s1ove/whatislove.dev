@@ -14,7 +14,7 @@ build: clean
 # Prettify
 
 prettify:
-	npx prettier --write "**/*.{json,yml,css,js,cjs,d.ts}"
+	npx prettier --write "**/*.{json,yml,njk,css,js,cjs,d.ts}"
 
 # Lint
 
@@ -23,7 +23,7 @@ lint_fs:
 lint_editor:
 	npx editorconfig-checker
 lint_prettify:
-	npx prettier --check "**/*.{json,yml,css,js,cjs,d.ts}"
+	npx prettier --check "**/*.{json,yml,njk,css,js,cjs,d.ts}"
 lint_html:
 	npx node-w3c-validator -i build/*.html -f lint -evH
 lint_css:

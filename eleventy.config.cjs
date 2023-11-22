@@ -20,6 +20,7 @@ let Path = {
 		`./source/sounds`,
 		`./source/manifest.webmanifest`,
 		`./source/favicon.ico`,
+		`./source/robots.txt`,
 	],
 	CSS: `./source/styles/index.css`,
 	DB: `./source/database.json`,
@@ -225,7 +226,10 @@ let init = (config) => {
 	return {
 		dataTemplateEngine: `njk`,
 		dir: {
+			data: `data`,
+			includes: `includes`,
 			input: `source`,
+			layouts: `layouts`,
 			output: `build`,
 		},
 		htmlTemplateEngine: `njk`,

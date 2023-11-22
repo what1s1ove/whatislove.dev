@@ -9,6 +9,12 @@ let config = {
 				singleQuote: false,
 			},
 		},
+		{
+			files: `*.njk`,
+			options: {
+				'parser': `html`,
+			},
+		},
 	],
 	plugins: [`prettier-plugin-jsdoc`],
 	printWidth: 80,
