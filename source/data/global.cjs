@@ -1,5 +1,5 @@
 module.exports = {
-	title: 'Vladyslav Zubko',
-	description: 'Interface Developer',
-	domain: 'https://whatislove.dev',
+	description: `Interface Developer`,
+	domain: `https://whatislove.dev`,
+	title: `Vladyslav Zubko`,
 }

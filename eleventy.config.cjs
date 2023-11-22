@@ -226,11 +226,11 @@ let init = (config) => {
 	return {
 		dataTemplateEngine: `njk`,
 		dir: {
+			data: `data`,
 			includes: `includes`,
 			input: `source`,
 			layouts: `layouts`,
 			output: `build`,
-			data: 'data',
 		},
 		htmlTemplateEngine: `njk`,
 		markdownTemplateEngine: `njk`,
