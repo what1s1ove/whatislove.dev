@@ -1,0 +1,8 @@
+.live-logo__logo-icon--letter {
+	fill: var(--color--primary);
+}
+
+.live-logo__logo-icon--heart {
+	transform: scale(0.83) translate(42px, 8px);
+	animation: heartbeat 1s infinite;
+}

@@ -122,11 +122,12 @@ class Navigation {
 			: /** @type {() => undefined} */ (this.#cleanFocusTrap)()
 	}
 
-	/** @returns {void} */
-	init() {
-		this.#headerNode = /** @type {HTMLElement} */ (
-			document.querySelector(`.header`)
-		)
+	/**
+	 * @param {HTMLElement} headerNode
+	 * @returns {void}
+	 */
+	init(headerNode) {
+		this.#headerNode = headerNode
 		this.#headerOverlayNode = /** @type {HTMLElement} */ (
 			this.#headerNode.querySelector(`.header__navigation-wrapper`)
 		)

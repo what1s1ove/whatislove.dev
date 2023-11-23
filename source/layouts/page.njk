@@ -1,8 +1,11 @@
+{% set title = global.title if page.url == '/' else title + ' – ' + global.title
+%} {% set desc = desc if desc else global.desc %}
+
 <!doctype html>
 <html class="page" lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>{{ global.title }}</title>
+		<title>{{ title }}</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="view-transition" content="same-origin" />
@@ -28,12 +31,12 @@
 		<link rel="icon" href="/images/icons/icon.svg" type="image/svg+xml" />
 		<link rel="manifest" href="/manifest.json" />
 
-		<meta name="description" content="{{ global.description }}" />
+		<meta name="description" content="{{ desc }}" />
 		<meta name="generator" content="{{ eleventy.generator }}" />
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="{{ global.title }}" />
-		<meta property="og:description" content="{{ global.description }}" />
+		<meta property="og:title" content="{{ title }}" />
+		<meta property="og:description" content="{{ desc }}" />
 		<meta property="og:url" content="{{ global.domain + page.url }}" />
 
 		<meta
@@ -48,5 +51,12 @@
 	</head>
 	<body class="page__body">
 		{{ content | safe }}
+		<p class="not-easter-egg">
+			<button class="not-easter-egg__button" type="button">
+				🥚 <span class="visually-hidden">(easter egg)</span>
+			</button>
+		</p>
+		<p class="toast" role="alert" aria-live="polite"></p>
+		<script src="/scripts/index.js" defer></script>
 	</body>
 </html>

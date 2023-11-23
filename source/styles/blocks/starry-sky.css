@@ -1,0 +1,16 @@
+.starry-sky {
+	&::before {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		content: "";
+		width: 300vw;
+		height: 300vh;
+		margin: -150vh 0 0 -150vw;
+		background-image: url("../images/stars.bg.svg");
+		background-size: 250px;
+		filter: var(--invert-icon--secondary);
+		animation: rotate 200s linear infinite;
+		pointer-events: none;
+	}
+}

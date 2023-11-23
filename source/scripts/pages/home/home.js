@@ -16,14 +16,23 @@ class Home {
 	/** @type {EasterEgg} */
 	#easterEggComponent
 
+	/** @type {HTMLElement | undefined} */
+	#easterEggNode
+
 	/** @type {(message: ToastMessagePayload) => void} */
 	#handleNotificationAdd
 
 	/** @type {(settings: SettingButtonPayload) => HTMLButtonElement} */
 	#handleSettingButtonAppend
 
+	/** @type {HTMLElement | undefined} */
+	#headerNode
+
 	/** @type {Navigation} */
 	#navigationComponent
+
+	/** @type {HTMLElement | undefined} */
+	#settingListNode
 
 	/** @type {Settings} */
 	#settingsComponent
@@ -31,8 +40,14 @@ class Home {
 	/** @type {Timeline} */
 	#timelineComponent
 
+	/** @type {HTMLElement | undefined} */
+	#timelineNode
+
 	/** @type {Toast} */
 	#toastComponent
+
+	/** @type {HTMLElement | undefined} */
+	#toastNode
 
 	/**
 	 * @param {{
@@ -57,6 +72,12 @@ class Home {
 			onSettingButtonAppend: this.#handleSettingButtonAppend,
 		})
 		this.#toastComponent = new Toast()
+
+		this.#toastNode = undefined
+		this.#settingListNode = undefined
+		this.#headerNode = undefined
+		this.#timelineNode = undefined
+		this.#easterEggNode = undefined
 	}
 
 	/**
@@ -77,11 +98,41 @@ class Home {
 
 	/** @returns {void} */
 	init() {
-		this.#toastComponent.init()
-		this.#settingsComponent.init()
-		this.#navigationComponent.init()
-		this.#timelineComponent.init()
-		this.#easterEggComponent.init()
+		this.#toastNode = /** @type {HTMLElement | undefined} */ (
+			document.querySelector(`.toast`) ?? undefined
+		)
+		this.#settingListNode = /** @type {HTMLElement} */ (
+			document.querySelector(`.settings`) ?? undefined
+		)
+		this.#headerNode = /** @type {HTMLElement} */ (
+			document.querySelector(`.header`)
+		)
+		this.#timelineNode = /** @type {HTMLElement} */ (
+			document.querySelector(`.timeline`)
+		)
+		this.#easterEggNode = /** @type {HTMLElement} */ (
+			document.querySelector(`.not-easter-egg`)
+		)
+
+		if (this.#toastNode) {
+			this.#toastComponent.init(this.#toastNode)
+		}
+
+		if (this.#settingListNode) {
+			this.#settingsComponent.init(this.#settingListNode)
+		}
+
+		if (this.#headerNode) {
+			this.#navigationComponent.init(this.#headerNode)
+		}
+
+		if (this.#timelineNode) {
+			this.#timelineComponent.init(this.#timelineNode)
+		}
+
+		if (this.#easterEggNode) {
+			this.#easterEggComponent.init(this.#easterEggNode)
+		}
 	}
 }
 
