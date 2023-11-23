@@ -65,7 +65,11 @@ class Settings {
 			defaultValue,
 			name,
 			onChange: this.#handleControlChange,
-		}).init(`.settings__item-fieldset--${name}`)
+		}).init(
+			/** @type {HTMLFieldSetElement} */ (
+				document.querySelector(`.settings__item-fieldset--${name}`)
+			),
+		)
 	}
 
 	/**
@@ -119,14 +123,19 @@ class Settings {
 			isDefaultChecked,
 			name,
 			onClick,
-		}).init(`.settings__item-switch--${name}`)
+		}).init(
+			/** @type {HTMLButtonElement} */ (
+				settingListNode.querySelector(`.settings__item-switch--${name}`)
+			),
+		)
 	}
 
-	/** @returns {void} */
-	init() {
-		this.#settingListNode = /** @type {HTMLElement} */ (
-			document.querySelector(`.settings`)
-		)
+	/**
+	 * @param {HTMLElement} settingListNode
+	 * @returns {void}
+	 */
+	init(settingListNode) {
+		this.#settingListNode = settingListNode
 
 		this.#initControl(SettingName.THEME)
 		this.#initControl(SettingName.MOTION)

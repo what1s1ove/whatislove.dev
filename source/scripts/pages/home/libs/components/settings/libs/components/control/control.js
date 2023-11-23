@@ -72,13 +72,11 @@ class Control {
 	}
 
 	/**
-	 * @param {string} selector
+	 * @param {HTMLFieldSetElement} controlNode
 	 * @returns {void}
 	 */
-	init(selector) {
-		this.#controlNode = /** @type {HTMLFieldSetElement} */ (
-			document.querySelector(selector)
-		)
+	init(controlNode) {
+		this.#controlNode = controlNode
 
 		this.#setInitialValue()
 

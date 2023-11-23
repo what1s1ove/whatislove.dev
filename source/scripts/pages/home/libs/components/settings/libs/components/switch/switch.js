@@ -72,13 +72,11 @@ class Switch {
 	}
 
 	/**
-	 * @param {string} selector
+	 * @param {HTMLButtonElement} switchNode
 	 * @returns {HTMLButtonElement}
 	 */
-	init(selector) {
-		this.#switchNode = /** @type {HTMLButtonElement} */ (
-			document.querySelector(selector)
-		)
+	init(switchNode) {
+		this.#switchNode = switchNode
 
 		this.#isChecked = this.#isDefaultChecked
 

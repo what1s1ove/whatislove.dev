@@ -9,9 +9,6 @@ import { getSuitTimelines } from './libs/helpers/helpers.js'
 /** @typedef {import('~/packages/timeline/timeline').TimelineApi} TimelineApi */
 
 class Timeline {
-	/** @type {HTMLElement | undefined} */
-	#containerNode
-
 	/** @type {(formValues: TimelineFilter) => void} */
 	#handleFormChange
 
@@ -33,6 +30,9 @@ class Timeline {
 	/** @type {TimelineList} */
 	#timelineListComponent
 
+	/** @type {HTMLElement | undefined} */
+	#timelineNode
+
 	/** @type {TTimeline[]} */
 	#timelines
 
@@ -44,7 +44,7 @@ class Timeline {
 	constructor({ timelineApi }) {
 		this.#timelineApi = timelineApi
 
-		this.#containerNode = undefined
+		this.#timelineNode = undefined
 		this.#timelines = []
 		this.#isLoading = false
 
@@ -93,7 +93,7 @@ class Timeline {
 	/** @returns {Promise<void>} */
 	async #showTimelineHandler() {
 		let shouldLoadTimelines = checkIsBeforeElement(
-			/** @type {HTMLElement} */ (this.#containerNode).offsetTop,
+			/** @type {HTMLElement} */ (this.#timelineNode).offsetTop,
 		)
 
 		if (shouldLoadTimelines && !this.#isLoading) {
@@ -109,11 +109,12 @@ class Timeline {
 		}
 	}
 
-	/** @returns {void} */
-	init() {
-		this.#containerNode = /** @type {HTMLElement} */ (
-			document.querySelector(`.timeline`)
-		)
+	/**
+	 * @param {HTMLElement} timelineNode
+	 * @returns {void}
+	 */
+	init(timelineNode) {
+		this.#timelineNode = timelineNode
 
 		this.#loaderComponent.init()
 		this.#timelineFormComponent.init()

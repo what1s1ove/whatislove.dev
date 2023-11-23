@@ -1,0 +1,30 @@
+.not-found {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	overflow: hidden;
+
+	& .section-header__title {
+		font-size: 35px;
+	}
+
+	& .section-header__desc {
+		& a {
+			color: var(--color--red);
+		}
+	}
+}
+
+.not-found__logo-wrapper {
+	position: absolute;
+	top: 13px;
+	left: 15px;
+}
+
+.not-found__settings {
+	right: 15px;
+	bottom: 13px;
+}

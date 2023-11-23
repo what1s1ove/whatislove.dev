@@ -1,7 +1,5 @@
 .settings {
 	position: fixed;
-	right: 15px;
-	bottom: 13px;
 	z-index: var(--z-index--level-three);
 	display: grid;
 	gap: 7px 0;

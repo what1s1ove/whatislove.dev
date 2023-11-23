@@ -26,7 +26,7 @@ class EasterEgg {
 	#easterEggButtonNode
 
 	/** @type {HTMLElement | undefined} */
-	#easterEggContainerNode
+	#easterEggNode
 
 	/** @type {() => void} */
 	#handleEasterEggClick
@@ -60,7 +60,7 @@ class EasterEgg {
 		this.#onNotificationAdd = onNotificationAdd
 		this.#onSettingButtonAppend = onSettingButtonAppend
 
-		this.#easterEggContainerNode = undefined
+		this.#easterEggNode = undefined
 		this.#easterEggButtonNode = undefined
 		this.#audioNode = undefined
 
@@ -75,9 +75,7 @@ class EasterEgg {
 
 	/** @returns {void} */
 	#clickEasterEggClickHandler() {
-		let easterEggContainerNode = /** @type {HTMLElement} */ (
-			this.#easterEggContainerNode
-		)
+		let easterEggNode = /** @type {HTMLElement} */ (this.#easterEggNode)
 
 		this.#onNotificationAdd({
 			/** @returns {void} */
@@ -99,7 +97,7 @@ class EasterEgg {
 
 		this.#removeListeners()
 
-		easterEggContainerNode.remove()
+		easterEggNode.remove()
 	}
 
 	/**
@@ -153,20 +151,19 @@ class EasterEgg {
 
 	/** @returns {void} */
 	#setRandomPosition() {
-		let easterEggContainerNode = /** @type {HTMLElement} */ (
-			this.#easterEggContainerNode
-		)
-		let { x, y } = getNodeRandomCoords(easterEggContainerNode)
+		let easterEggNode = /** @type {HTMLElement} */ (this.#easterEggNode)
+		let { x, y } = getNodeRandomCoords(easterEggNode)
 
-		easterEggContainerNode.style.top = `${y}px`
-		easterEggContainerNode.style.left = `${x}px`
+		easterEggNode.style.top = `${y}px`
+		easterEggNode.style.left = `${x}px`
 	}
 
-	/** @returns {void} */
-	init() {
-		this.#easterEggContainerNode = /** @type {HTMLElement} */ (
-			document.querySelector(`.not-easter-egg`)
-		)
+	/**
+	 * @param {HTMLElement} easterEggNode
+	 * @returns {void}
+	 */
+	init(easterEggNode) {
+		this.#easterEggNode = easterEggNode
 		this.#easterEggButtonNode = /** @type {HTMLButtonElement} */ (
 			document.querySelector(`.not-easter-egg__button`)
 		)

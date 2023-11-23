@@ -67,11 +67,12 @@ class Toast {
 		this.#isShowingMessage = false
 	}
 
-	/** @returns {void} */
-	init() {
-		this.#toastNode = /** @type {HTMLElement} */ (
-			document.querySelector(`.toast`)
-		)
+	/**
+	 * @param {HTMLElement} toastNode
+	 * @returns {void}
+	 */
+	init(toastNode) {
+		this.#toastNode = toastNode
 	}
 
 	/**
