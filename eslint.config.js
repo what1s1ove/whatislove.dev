@@ -221,6 +221,9 @@ let overridesConfig = [
 		languageOptions: {
 			globals: globals.node,
 		},
+	},
+	{
+		files: [`eleventy.config.cjs`],
 		rules: {
 			'sonarjs/cognitive-complexity': [`off`],
 		},

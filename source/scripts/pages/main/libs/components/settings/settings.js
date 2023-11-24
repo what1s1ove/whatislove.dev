@@ -1,12 +1,12 @@
 import { getCustomAttributeName } from '~/libs/helpers/helpers.js'
-import { SettingName } from '~/pages/home/libs/enums/enums.js'
+import { SettingName } from '~/pages/main/libs/enums/enums.js'
 
 import { Control, Switch } from './libs/components/components.js'
 import { getSettingItemElement } from './libs/helpers/helpers.js'
 
 let RESULT_VALUE = /** @type {const} */ (`auto`)
 
-/** @typedef {import('~/pages/home/libs/types/types').SettingButtonPayload} SettingButtonPayload */
+/** @typedef {import('~/pages/main/libs/types/types').SettingButtonPayload} SettingButtonPayload */
 /** @typedef {import('~/libs/packages/storage/storage').Storage} Storage */
 
 class Settings {

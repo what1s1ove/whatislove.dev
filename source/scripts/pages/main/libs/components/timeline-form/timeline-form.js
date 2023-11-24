@@ -12,15 +12,15 @@ import { getTransformedTimeline } from './helpers/helpers.js'
 let timelineSkillTypes = Object.values(TimelineSkillType)
 let timelineTypes = Object.values(TimelineType)
 
-class Form {
-	/** @type {HTMLFormElement | undefined} */
-	#formNode
-
+class TimelineForm {
 	/** @type {(event_: SubmitEvent) => Promise<void>} */
 	#handleSubmit
 
 	/** @type {TimelineApi} */
 	#timelineApi
+
+	/** @type {HTMLFormElement | undefined} */
+	#timelineFormNode
 
 	/**
 	 * @param {{
@@ -30,31 +30,35 @@ class Form {
 	constructor({ timelineApi }) {
 		this.#timelineApi = timelineApi
 
-		this.#formNode = undefined
+		this.#timelineFormNode = undefined
 
 		this.#handleSubmit = this.#submitHandler.bind(this)
 	}
 
 	/** @type {() => void} */
 	#initListeners() {
-		let formNode = /** @type {HTMLFormElement} */ (this.#formNode)
+		let timelineFormNode = /** @type {HTMLFormElement} */ (
+			this.#timelineFormNode
+		)
 
-		formNode.addEventListener(`submit`, this.#handleSubmit)
+		timelineFormNode.addEventListener(`submit`, this.#handleSubmit)
 	}
 
 	/** @returns {void} */
 	#initSelects() {
-		let formNode = /** @type {HTMLFormElement} */ (this.#formNode)
+		let timelineFormNode = /** @type {HTMLFormElement} */ (
+			this.#timelineFormNode
+		)
 
 		fillSelectOptions(
 			/** @type {HTMLSelectElement} */ (
-				formNode.querySelector(`select[name="skillType"]`)
+				timelineFormNode.querySelector(`select[name="skillType"]`)
 			),
 			timelineSkillTypes,
 		)
 		fillSelectOptions(
 			/** @type {HTMLSelectElement} */ (
-				formNode.querySelector(`select[name="type"]`)
+				timelineFormNode.querySelector(`select[name="type"]`)
 			),
 			timelineTypes,
 		)
@@ -67,21 +71,24 @@ class Form {
 	async #submitHandler(event_) {
 		event_.preventDefault()
 
-		let formNode = /** @type {HTMLFormElement} */ (this.#formNode)
+		let timelineFormNode = /** @type {HTMLFormElement} */ (
+			this.#timelineFormNode
+		)
 		let formValues = /** @type {TimelineCreatePayload} */ (
-			getFormValues(formNode)
+			getFormValues(timelineFormNode)
 		)
 
 		await this.#timelineApi.saveTimeline(getTransformedTimeline(formValues))
 
-		formNode.reset()
+		timelineFormNode.reset()
 	}
 
-	/** @returns {void} */
-	init() {
-		this.#formNode = /** @type {HTMLFormElement} */ (
-			document.querySelector(`form[name="timeline"]`)
-		)
+	/**
+	 * @param {HTMLFormElement} timelineFormNode
+	 * @returns {void}
+	 */
+	init(timelineFormNode) {
+		this.#timelineFormNode = timelineFormNode
 
 		this.#initSelects()
 
@@ -89,4 +96,4 @@ class Form {
 	}
 }
 
-export { Form }
+export { TimelineForm }

@@ -1,4 +1,4 @@
-/** @typedef {typeof import('~/pages/home/libs/enums/enums').SettingName} SettingName */
+/** @typedef {typeof import('~/pages/main/libs/enums/enums').SettingName} SettingName */
 
 class Switch {
 	/** @type {(event_: Event) => void} */

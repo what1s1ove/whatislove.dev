@@ -1,0 +1,16 @@
+.timeline-form {
+	position: relative;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.timeline-form__logo-wrapper {
+	position: absolute;
+	top: 13px;
+	left: 15px;
+}
+
+.timeline-form__settings {
+	right: 15px;
+	bottom: 13px;
+}
