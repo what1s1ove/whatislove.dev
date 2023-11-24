@@ -1,144 +1,125 @@
 ---
-permalink: form.html
+title: Timeline Form
+desc: Timeline Form Configuration
+layout: page.njk
+permalink: '{% if global.isDevelopmentMode %}form.html{% else %}{{ false }}{% endif %}'
 ---
 
-<!doctype html>
-<html class="page" lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-			crossorigin="anonymous"
-		/>
-		<title>Timeline Form</title>
-	</head>
-	<body class="page__body">
-		<main class="container-sm p-5 w-50">
-			<h1 class="mb-5">📈 Timeline Form</h1>
-			<form name="timeline">
-				<div class="row mb-3">
-					<div class="col">
-						<label class="form-label" for="skill-type"
-							>Skill Type</label
-						>
-						<select
-							class="form-select text-capitalize"
-							name="skillType"
-							id="skill-type"
-							required
-						>
-							<option value="">Select...</option>
-						</select>
-					</div>
-					<div class="col">
-						<label class="form-label" for="type">Type</label>
-						<select
-							class="form-select text-capitalize"
-							name="type"
-							id="type"
-							required
-						>
-							<option value="">Select...</option>
-						</select>
-					</div>
-				</div>
-				<div class="mb-3">
-					<label class="form-label" for="title">Title</label>
+<script src="https://cdn.tailwindcss.com"></script>
+<main class="timeline-form starry-sky">
+	<a class="timeline-form__logo-wrapper" href="/">
+		{% set liveLogoClassName = 'timeline-form__logo' %} {% include
+		'live-logo.njk' %}
+		<span class="visually-hidden">Go to home page</span>
+	</a>
+	<div
+		class="timeline-form__wrapper flex flex-col justify-center w-1/2 h-screen m-auto p-5"
+	>
+		<h1 class="mb-5 text-4xl font-bold">Timeline Form</h1>
+		<form name="timeline">
+			<div class="flex flex-row mb-3 gap-x-4">
+				<label class="flex flex-col gap-y-2 w-1/2">
+					<span class="text-sm font-medium">Skill Type:</span>
+					<select
+						class="block p-2.5 text-gray-900 text-sm capitalize bg-gray-50 border border-gray-300 rounded-lg"
+						name="skillType"
+						required
+					>
+						<option value="">Select...</option>
+					</select>
+				</label>
+				<label class="flex flex-col gap-y-2 w-1/2">
+					<span class="text-sm font-medium">Type:</span>
+					<select
+						class="block p-2.5 text-gray-900 text-sm capitalize bg-gray-50 border border-gray-300 rounded-lg"
+						name="type"
+						required
+					>
+						<option value="">Select...</option>
+					</select>
+				</label>
+			</div>
+			<label class="flex flex-col mb-3 gap-y-2">
+				<span class="text-sm font-medium">Title:</span>
+				<input
+					class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg"
+					name="title"
+					type="text"
+					required
+				/>
+			</label>
+			<label class="flex flex-col mb-3 gap-y-2">
+				<span class="text-sm font-medium">Description:</span>
+				<textarea
+					class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg"
+					name="desc"
+				></textarea>
+			</label>
+			<div class="flex flex-row mb-3 gap-x-4">
+				<label class="flex flex-col gap-y-2 w-1/2">
+					<span class="text-sm font-medium">Origin Link:</span>
 					<input
-						class="form-control"
-						name="title"
-						id="title"
+						class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg"
+						name="origin"
+						type="url"
+					/>
+				</label>
+				<label class="flex flex-col gap-y-2 w-1/2">
+					<span class="text-sm font-medium"
+						>Origin Link Description:</span
+					>
+					<input
+						class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg"
+						name="originDesc"
 						type="text"
+					/>
+				</label>
+			</div>
+			<div class="flex flex-row mb-3 gap-x-4">
+				<label class="flex flex-col gap-y-2 w-1/2">
+					<span class="text-sm font-medium">Link:</span>
+					<input
+						class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg"
+						name="link"
+						type="url"
+					/>
+				</label>
+				<label class="flex flex-col gap-y-2 w-1/2">
+					<span class="text-sm font-medium">Link Description:</span>
+					<input
+						class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg"
+						name="linkDesc"
+						type="text"
+					/>
+				</label>
+			</div>
+			<div class="flex flex-row mb-3 gap-x-4">
+				<label class="flex flex-col gap-y-2 w-1/2">
+					<span class="text-sm font-medium">Date:</span>
+					<input
+						class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg"
+						name="date"
+						type="date"
 						required
 					/>
-				</div>
-				<div class="mb-3">
-					<label class="form-label" for="description"
-						>Description</label
-					>
-					<textarea
-						class="form-control"
-						name="desc"
-						id="description"
-					></textarea>
-				</div>
-				<div class="row mb-3">
-					<div class="col">
-						<label class="form-label" for="origin"
-							>Origin Link</label
-						>
-						<input
-							class="form-control"
-							name="origin"
-							id="origin"
-							type="url"
-						/>
-					</div>
-					<div class="col">
-						<label class="form-label" for="origin-desc"
-							>Origin Link Description</label
-						>
-						<input
-							class="form-control"
-							name="originDesc"
-							id="origin-desc"
-							type="text"
-						/>
-					</div>
-				</div>
-				<div class="row mb-3">
-					<div class="col">
-						<label class="form-label" for="link">Link</label>
-						<input
-							class="form-control"
-							name="link"
-							id="link"
-							type="url"
-						/>
-					</div>
-					<div class="col">
-						<label class="form-label" for="link-desc"
-							>Link Description</label
-						>
-						<input
-							class="form-control"
-							name="linkDesc"
-							id="link-desc"
-							type="text"
-						/>
-					</div>
-				</div>
-				<div class="row mb-3">
-					<div class="col">
-						<label class="form-label" for="date">Date</label>
-						<input
-							class="form-control"
-							name="date"
-							id="date"
-							type="date"
-							required
-						/>
-					</div>
-					<div class="col">
-						<label class="form-label" for="end-date"
-							>End Date</label
-						>
-						<input
-							class="form-control"
-							name="endDate"
-							id="end-date"
-							type="date"
-						/>
-					</div>
-				</div>
-				<button type="submit" class="btn btn-primary">Submit</button>
-			</form>
-		</main>
-		<script src="/scripts/form.js"></script>
-	</body>
-</html>
-```
+				</label>
+				<label class="flex flex-col gap-y-2 w-1/2">
+					<span class="text-sm font-medium">End Date:</span>
+					<input
+						class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg"
+						name="endDate"
+						type="date"
+					/>
+				</label>
+			</div>
+			<button
+				class="w-full px-5 py-2.5 text-white bg-blue-700 font-medium rounded-lg text-sm text-center"
+				type="submit"
+			>
+				Submit
+			</button>
+		</form>
+	</div>
+	{% set settingsClassName = 'timeline-form__settings ' %} {% include
+	'settings.njk' %}
+</main>

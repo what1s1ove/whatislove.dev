@@ -5,6 +5,7 @@ import {
 	Navigation,
 	Settings,
 	Timeline,
+	TimelineForm,
 } from './libs/components/components.js'
 
 /** @typedef {import('~/pages/home/libs/types/types').SettingButtonPayload} SettingButtonPayload */
@@ -40,6 +41,12 @@ class Home {
 	/** @type {Timeline} */
 	#timelineComponent
 
+	/** @type {TimelineForm} */
+	#timelineFormComponent
+
+	/** @type {HTMLFormElement | undefined} */
+	#timelineFormNode
+
 	/** @type {HTMLElement | undefined} */
 	#timelineNode
 
@@ -72,6 +79,9 @@ class Home {
 			onSettingButtonAppend: this.#handleSettingButtonAppend,
 		})
 		this.#toastComponent = new Toast()
+		this.#timelineFormComponent = new TimelineForm({
+			timelineApi,
+		})
 
 		this.#toastNode = undefined
 		this.#settingListNode = undefined
@@ -113,6 +123,9 @@ class Home {
 		this.#easterEggNode = /** @type {HTMLElement} */ (
 			document.querySelector(`.not-easter-egg`)
 		)
+		this.#timelineFormNode = /** @type {HTMLFormElement} */ (
+			document.querySelector(`form[name="timeline"]`)
+		)
 
 		if (this.#toastNode) {
 			this.#toastComponent.init(this.#toastNode)
@@ -132,6 +145,10 @@ class Home {
 
 		if (this.#easterEggNode) {
 			this.#easterEggComponent.init(this.#easterEggNode)
+		}
+
+		if (this.#timelineFormNode) {
+			this.#timelineFormComponent.init(this.#timelineFormNode)
 		}
 	}
 }

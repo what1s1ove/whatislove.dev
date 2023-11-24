@@ -1,4 +1,3 @@
-let fs = require(`node:fs/promises`)
 let process = require(`node:process`)
 let esbuild = require(`esbuild`)
 let lightningcss = require(`lightningcss`)
@@ -13,7 +12,7 @@ let path = require(`node:path`)
 
 let isDevelopment = process.env.NODE_ENV === `development`
 
-let Path = {
+let Path = /** @type {const} */ ({
 	COPY: [
 		`./source/fonts`,
 		`./source/files`,
@@ -24,22 +23,14 @@ let Path = {
 	],
 	CSS: `./source/styles/index.css`,
 	DB: `./source/database.json`,
-	JS: {
-		FORM: `./source/scripts/form.js`,
-		MAIN: `./source/scripts/index.js`,
-	},
-}
+	JS: `./source/scripts/index.js`,
+})
 
 /**
  * @param {import('@11ty/eleventy').UserConfig} config
  * @returns {ReturnType<typeof import('@11ty/eleventy/src/defaultConfig')>}
  */
 let init = (config) => {
-	// ignores
-	if (!isDevelopment) {
-		config.ignores.add(`source/pages/form.njk`)
-	}
-
 	// copy
 	for (let url of Path.COPY) {
 		config.addPassthroughCopy(url)
@@ -129,29 +120,8 @@ let init = (config) => {
 	config.addExtension(`js`, {
 		/** @type {import('@11ty/eleventy/src/Engines/TemplateEngine')['compile']} */
 		compile: async (_content, url) => {
-			if (url !== Path.JS.MAIN) {
+			if (url !== Path.JS) {
 				return
-			}
-
-			if (isDevelopment) {
-				let {
-					outputFiles: [formOutputFile],
-				} = await esbuild.build({
-					bundle: true,
-					entryPoints: [Path.JS.FORM],
-					minify: true,
-					sourcemap: isDevelopment,
-					target: `es2020`,
-					write: false,
-				})
-
-				let isFolderExists = existsSync(`build/scripts`)
-
-				if (!isFolderExists) {
-					await mkdir(`build/scripts`)
-				}
-
-				await fs.writeFile(`build/scripts/form.js`, formOutputFile.text)
 			}
 
 			return async () => {
