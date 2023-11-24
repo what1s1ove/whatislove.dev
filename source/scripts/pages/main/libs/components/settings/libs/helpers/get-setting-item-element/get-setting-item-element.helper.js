@@ -1,7 +1,7 @@
 import { createElement } from '~/libs/helpers/helpers.js'
 
-/** @typedef {typeof import('~/pages/home/libs/enums/enums').SettingName} SettingName */
-/** @typedef {typeof import('~/pages/home/libs/enums/enums').SettingButtonLabel} SettingButtonLabel */
+/** @typedef {typeof import('~/pages/main/libs/enums/enums').SettingName} SettingName */
+/** @typedef {typeof import('~/pages/main/libs/enums/enums').SettingButtonLabel} SettingButtonLabel */
 
 /**
  * @param {{

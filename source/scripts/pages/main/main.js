@@ -8,12 +8,12 @@ import {
 	TimelineForm,
 } from './libs/components/components.js'
 
-/** @typedef {import('~/pages/home/libs/types/types').SettingButtonPayload} SettingButtonPayload */
+/** @typedef {import('~/pages/main/libs/types/types').SettingButtonPayload} SettingButtonPayload */
 /** @typedef {import('~/libs/types/types').ToastMessagePayload} ToastMessagePayload */
 /** @typedef {import('~/libs/packages/storage/storage').Storage} Storage */
 /** @typedef {import('~/packages/timeline/timeline').TimelineApi} TimelineApi */
 
-class Home {
+class Main {
 	/** @type {EasterEgg} */
 	#easterEggComponent
 
@@ -153,4 +153,4 @@ class Home {
 	}
 }
 
-export { Home }
+export { Main }

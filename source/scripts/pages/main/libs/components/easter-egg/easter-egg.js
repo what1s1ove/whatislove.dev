@@ -3,7 +3,7 @@ import { initDebounce } from '~/libs/helpers/helpers.js'
 import {
 	SettingButtonLabel,
 	SettingName,
-} from '~/pages/home/libs/enums/enums.js'
+} from '~/pages/main/libs/enums/enums.js'
 
 import {
 	NOTIFICATION_DELAY,
@@ -16,7 +16,7 @@ import {
 } from './libs/helpers/helpers.js'
 
 /** @typedef {import('~/libs/types/types').ToastMessagePayload} ToastMessagePayload */
-/** @typedef {import('~/pages/home/libs/types/types').SettingButtonPayload} SettingButtonPayload */
+/** @typedef {import('~/pages/main/libs/types/types').SettingButtonPayload} SettingButtonPayload */
 
 class EasterEgg {
 	/** @type {HTMLAudioElement | undefined} */
