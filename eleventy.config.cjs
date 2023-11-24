@@ -24,6 +24,9 @@ let Path = /** @type {const} */ ({
 	CSS: `./source/styles/index.css`,
 	DB: `./source/database.json`,
 	JS: `./source/scripts/index.js`,
+	PAGE: {
+		FORM: `./source/pages/form.njk`,
+	},
 })
 
 /**
@@ -31,6 +34,11 @@ let Path = /** @type {const} */ ({
  * @returns {ReturnType<typeof import('@11ty/eleventy/src/defaultConfig')>}
  */
 let init = (config) => {
+	// ignores
+	if (!isDevelopment) {
+		config.ignores.add(Path.PAGE.FORM)
+	}
+
 	// copy
 	for (let url of Path.COPY) {
 		config.addPassthroughCopy(url)
