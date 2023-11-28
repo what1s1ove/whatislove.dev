@@ -12,13 +12,14 @@ let config = {
 		{
 			files: `*.njk`,
 			options: {
-				'parser': `html`,
+				parser: `jinja-template`,
+				printWidth: 120,
 			},
 		},
 	],
-	plugins: [`prettier-plugin-jsdoc`],
+	plugins: [`prettier-plugin-jsdoc`, `prettier-plugin-jinja-template`],
 	printWidth: 80,
-	quoteProps: `preserve`,
+	quoteProps: `consistent`,
 	semi: false,
 	singleQuote: true,
 	trailingComma: `all`,

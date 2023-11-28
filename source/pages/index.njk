@@ -3,21 +3,16 @@ layout: page.njk
 permalink: 'index.html'
 ---
 
+{% from 'social-list.njk' import socialList %}
+{% from 'live-logo.njk' import liveLogo %}
+{% from 'settings.njk' import settings %}
 {% set MAIN_IMAGE_FORMATS = ['avif', 'webp'] %}
 
 <h1 class="visually-hidden">Vladyslav Zubko - interface developer</h1>
 <header class="header starry-sky">
-	<span class="header__live-logo-wrapper">
-		{% set liveLogoClassName = 'header__live-logo' %} {% include
-		'live-logo.njk' %}
-	</span>
+	<span class="header__live-logo-wrapper"> {{ liveLogo('header__live-logo') }} </span>
 	<div class="header__navigation-wrapper">
-		<button
-			class="header__toggle-button"
-			type="button"
-			aria-expanded="false"
-			aria-controls="navigation-menu"
-		>
+		<button class="header__toggle-button" type="button" aria-expanded="false" aria-controls="navigation-menu">
 			<span class="visually-hidden">Toggle navigation menu</span>
 			<span class="header__toggle-object"></span>
 		</button>
@@ -37,8 +32,7 @@ permalink: 'index.html'
 	</div>
 	<p class="header__name">Vladyslav Zubko</p>
 	<p class="header__name-intro">Interface developer</p>
-	{% set settingsClassName = 'header__settings ' %} {% include 'settings.njk'
-	%}
+	{{ settings('header__settings') }}
 </header>
 <main>
 	<section class="intro" id="intro">
@@ -51,10 +45,13 @@ permalink: 'index.html'
 				<figure class="intro__image-wrapper">
 					<picture>
 						{% for format in MAIN_IMAGE_FORMATS %}
-						<source
-							srcset="/images/whatislove-zubko.photo.{{ format }} 1x, /images/whatislove-zubko@2x.photo.{{ format }} 2x"
-							type="image/{{ format }}"
-						/>
+							<source
+								srcset="
+									/images/whatislove-zubko.photo.{{ format }}    1x,
+									/images/whatislove-zubko@2x.photo.{{ format }} 2x
+								"
+								type="image/{{ format }}"
+							/>
 						{% endfor %}
 						<img
 							src="/images/whatislove-zubko.photo.png"
@@ -76,23 +73,15 @@ permalink: 'index.html'
 						<div class="intro__item intro__item--email">
 							<dt class="intro__item-title">Email</dt>
 							<dd class="intro__item-desc">
-								<a href="mailto:hello@whatislove.dev"
-									>hello@whatislove.dev</a
-								>
+								<a href="mailto:hello@whatislove.dev">hello@whatislove.dev</a>
 							</dd>
 						</div>
 						<div class="intro__item intro__item--socials">
 							<dt class="intro__item-title">Socials</dt>
-							<dd class="intro__item-desc">
-								{% set socialListClassName =
-								'intro__social-list' %} {% include
-								'social-list.njk' %}
-							</dd>
+							<dd class="intro__item-desc">{{ socialList('intro__social-list') }}</dd>
 						</div>
 					</dl>
-					<h3 class="intro__myself-title">
-						A little bit about myself
-					</h3>
+					<h3 class="intro__myself-title">A little bit about myself</h3>
 					<p class="intro__myself-desc">
 						With semantics, a11y and love
 						<span aria-hidden="true">&lt;3</span>
@@ -109,9 +98,7 @@ permalink: 'index.html'
 		<form class="timeline__filter exp-filter">
 			<div class="exp-filter__wrapper">
 				<fieldset class="exp-filter__skills-type" name="skillTypes">
-					<legend class="exp-filter__skill-title">
-						Skills type:
-					</legend>
+					<legend class="exp-filter__skill-title">Skills type:</legend>
 					<ul class="exp-filter__list">
 						<li class="exp-filter__item">
 							<label class="exp-filter__label form-control">
@@ -137,9 +124,7 @@ permalink: 'index.html'
 					</ul>
 				</fieldset>
 				<fieldset class="exp-filter__skill-types" name="types">
-					<legend class="exp-filter__skill-title">
-						Experience type:
-					</legend>
+					<legend class="exp-filter__skill-title">Experience type:</legend>
 					<ul class="exp-filter__list">
 						<li class="exp-filter__item">
 							<label class="exp-filter__label form-control">
@@ -188,16 +173,9 @@ permalink: 'index.html'
 		</form>
 		<div class="timeline__list-wrapper">
 			<ul class="timeline__list"></ul>
-			<p class="timeline__desc-empty">
-				Nothing here yet. Try to select more options in the filter.
-			</p>
+			<p class="timeline__desc-empty">Nothing here yet. Try to select more options in the filter.</p>
 		</div>
-		<a
-			class="timeline__resume-link"
-			href="/files/vladyslav-zubko-cv.pdf"
-			target="_blank"
-			rel="noreferrer"
-		>
+		<a class="timeline__resume-link" href="/files/vladyslav-zubko-cv.pdf" target="_blank" rel="noreferrer">
 			<span class="timeline__resume-icon" aria-hidden="true"></span>
 			<span class="timeline__resume-text">View my resume</span>
 		</a>
@@ -210,27 +188,20 @@ permalink: 'index.html'
 		<div class="favorites__wrapper">
 			<ul class="favorites__list">
 				<li class="favorites__item">
-					<p class="favorites__item-text favorites__item-text--html">
-						HTML
-					</p>
+					<p class="favorites__item-text favorites__item-text--html">HTML</p>
 				</li>
 				<li class="favorites__item">
-					<p class="favorites__item-text favorites__item-text--css">
-						CSS
-					</p>
+					<p class="favorites__item-text favorites__item-text--css">CSS</p>
 				</li>
 				<li class="favorites__item">
-					<p class="favorites__item-text favorites__item-text--js">
-						JS
-					</p>
+					<p class="favorites__item-text favorites__item-text--js">JS</p>
 				</li>
 			</ul>
 		</div>
 	</section>
 </main>
 <footer class="footer">
-	{% set socialListClassName = 'footer__social-list' %} {% include
-	'social-list.njk' %}
+	{{ socialList('footer__social-list') }}
 	<span class="footer__routine-wrapper" aria-hidden="true">
 		<span class="footer__routine"></span>
 	</span>
