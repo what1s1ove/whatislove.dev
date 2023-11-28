@@ -1,20 +1,19 @@
 ---
 title: Timeline Form
-desc: Timeline Form Configuration
+description: Timeline Form Configuration
 layout: page.njk
 permalink: form.html
 ---
 
-<script src="https://cdn.tailwindcss.com"></script>
+{% from 'live-logo.njk' import liveLogo %}
+{% from 'settings.njk' import settings %}
+
 <main class="timeline-form starry-sky">
 	<a class="timeline-form__logo-wrapper" href="/">
-		{% set liveLogoClassName = 'timeline-form__logo' %} {% include
-		'live-logo.njk' %}
+		{{ liveLogo('timeline-form__logo') }}
 		<span class="visually-hidden">Go to home page</span>
 	</a>
-	<div
-		class="timeline-form__wrapper flex flex-col justify-center w-1/2 h-screen m-auto p-5"
-	>
+	<div class="timeline-form__wrapper flex flex-col justify-center w-1/2 h-screen m-auto p-5">
 		<h1 class="mb-5 text-4xl font-bold">Timeline Form</h1>
 		<form name="timeline">
 			<div class="flex flex-row mb-3 gap-x-4">
@@ -65,9 +64,7 @@ permalink: form.html
 					/>
 				</label>
 				<label class="flex flex-col gap-y-2 w-1/2">
-					<span class="text-sm font-medium"
-						>Origin Link Description:</span
-					>
+					<span class="text-sm font-medium"> Origin Link Description: </span>
 					<input
 						class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg"
 						name="originDesc"
@@ -120,6 +117,7 @@ permalink: form.html
 			</button>
 		</form>
 	</div>
-	{% set settingsClassName = 'timeline-form__settings ' %} {% include
-	'settings.njk' %}
+	{{ settings('timeline-form__settings') }}
 </main>
+
+<script src="https://cdn.tailwindcss.com"></script>

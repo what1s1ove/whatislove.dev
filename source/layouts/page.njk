@@ -1,5 +1,5 @@
-{% set title = global.title if page.url == '/' else title + ' – ' + global.title
-%} {% set desc = desc if desc else global.desc %}
+{% set title = global.title if page.url == '/' else title + ' | ' + global.title %}
+{% set description = description if description else global.description %}
 
 <!doctype html>
 <html class="page" lang="en">
@@ -12,37 +12,22 @@
 
 		<link rel="stylesheet" href="/styles/index.css" />
 
-		<link
-			rel="preload"
-			href="/fonts/roboto-400.woff2"
-			crossorigin
-			as="font"
-			type="font/woff2"
-		/>
-		<link
-			rel="preload"
-			href="/fonts/roboto-700.woff2"
-			crossorigin
-			as="font"
-			type="font/woff2"
-		/>
+		<link rel="preload" href="/fonts/roboto-400.woff2" crossorigin as="font" type="font/woff2" />
+		<link rel="preload" href="/fonts/roboto-700.woff2" crossorigin as="font" type="font/woff2" />
 
 		<link rel="icon" href="/favicon.ico" sizes="any" />
 		<link rel="icon" href="/images/icons/icon.svg" type="image/svg+xml" />
 		<link rel="manifest" href="/manifest.json" />
 
-		<meta name="description" content="{{ desc }}" />
+		<meta name="description" content="{{ description }}" />
 		<meta name="generator" content="{{ eleventy.generator }}" />
 
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="{{ title }}" />
-		<meta property="og:description" content="{{ desc }}" />
+		<meta property="og:description" content="{{ description }}" />
 		<meta property="og:url" content="{{ global.domain + page.url }}" />
 
-		<meta
-			property="og:image"
-			content="{{ global.domain }}/images/logo-social.og.png"
-		/>
+		<meta property="og:image" content="{{ global.domain }}/images/logo-social.og.png" />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
 

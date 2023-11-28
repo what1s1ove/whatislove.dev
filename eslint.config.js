@@ -86,7 +86,7 @@ let perfectionistConfig = {
 		'perfectionist/sort-named-imports': [
 			`error`,
 			{
-				'type': `alphabetical`,
+				type: `alphabetical`,
 			},
 		],
 	},
