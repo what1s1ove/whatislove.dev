@@ -25,11 +25,13 @@ lint_editor:
 lint_prettify:
 	npx prettier --check "**/*.{json,yml,njk,css,js,cjs,d.ts}"
 lint_html:
-	npx node-w3c-validator -i build/*.html -f lint -evH
+	npx node-w3c-validator -i "build/*.html" -f lint -evH
+lint_bem:
+	npx bemlint "source/**/*.njk" --errors
 lint_css:
 	npx stylelint "source/styles/**/*.css"
 lint_js:
 	npx eslint "**/*.{js,cjs}"
 lint_type:
 	npx tsc --noEmit
-lint: lint_fs lint_editor lint_prettify lint_html lint_css lint_js lint_type
+lint: lint_fs lint_editor lint_prettify lint_html lint_bem lint_css lint_js lint_type
