@@ -12,8 +12,8 @@
 
 		<link rel="stylesheet" href="/styles/index.css" />
 
-		<link rel="preload" href="/fonts/roboto-400.woff2" crossorigin as="font" type="font/woff2" />
-		<link rel="preload" href="/fonts/roboto-700.woff2" crossorigin as="font" type="font/woff2" />
+		<link rel="preload" href="/fonts/roboto-400.woff2" crossorigin="anonymous" as="font" type="font/woff2" />
+		<link rel="preload" href="/fonts/roboto-700.woff2" crossorigin="anonymous" as="font" type="font/woff2" />
 
 		<link rel="icon" href="/favicon.ico" sizes="any" />
 		<link rel="icon" href="/images/icons/icon.svg" type="image/svg+xml" />
@@ -37,9 +37,7 @@
 	<body class="page__body">
 		{{ content | safe }}
 		<p class="not-easter-egg">
-			<button class="not-easter-egg__button" type="button">
-				🥚 <span class="visually-hidden">(easter egg)</span>
-			</button>
+			<button class="not-easter-egg__button" type="button">🥚 <span class="visually-hidden">(easter egg)</span></button>
 		</p>
 		<p class="toast" role="alert" aria-live="polite"></p>
 		<script src="/scripts/index.js" defer></script>

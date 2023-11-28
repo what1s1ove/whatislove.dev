@@ -13,7 +13,7 @@ let config = {
 			files: `*.njk`,
 			options: {
 				parser: `jinja-template`,
-				printWidth: 120,
+				printWidth: 9999,
 			},
 		},
 	],
