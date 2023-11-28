@@ -10,7 +10,7 @@ permalink: 'index.html'
 
 <h1 class="visually-hidden">Vladyslav Zubko - interface developer</h1>
 <header class="header starry-sky">
-	<span class="header__live-logo-wrapper"> {{ liveLogo('header__live-logo') }} </span>
+	<span class="header__live-logo-wrapper">{{ liveLogo('header__live-logo') }}</span>
 	<div class="header__navigation-wrapper">
 		<button class="header__toggle-button" type="button" aria-expanded="false" aria-controls="navigation-menu">
 			<span class="visually-hidden">Toggle navigation menu</span>
@@ -42,27 +42,14 @@ permalink: 'index.html'
 				<p class="section-header__desc">Let's get acquainted closer</p>
 			</header>
 			<div class="intro__content">
-				<figure class="intro__image-wrapper">
+				<p class="intro__image-wrapper">
 					<picture>
 						{% for format in MAIN_IMAGE_FORMATS %}
-							<source
-								srcset="
-									/images/whatislove-zubko.photo.{{ format }}    1x,
-									/images/whatislove-zubko@2x.photo.{{ format }} 2x
-								"
-								type="image/{{ format }}"
-							/>
+							<source srcset="/images/whatislove-zubko.photo.{{ format }} 1x, /images/whatislove-zubko@2x.photo.{{ format }} 2x" type="image/{{ format }}" />
 						{% endfor %}
-						<img
-							src="/images/whatislove-zubko.photo.png"
-							srcset="/images/whatislove-zubko@2x.photo.png 2x"
-							loading="lazy"
-							width="202"
-							height="303"
-							alt="Vladyslav Zubko"
-						/>
+						<img src="/images/whatislove-zubko.photo.png" srcset="/images/whatislove-zubko@2x.photo.png 2x" loading="lazy" width="202" height="303" alt="Vladyslav Zubko" />
 					</picture>
-				</figure>
+				</p>
 				<div class="intro__personal-wrapper">
 					<h3 class="intro__personal-title">Personal information</h3>
 					<dl class="intro__list">
@@ -95,29 +82,20 @@ permalink: 'index.html'
 			<h2 class="section-header__title">Experience</h2>
 			<p class="section-header__desc">My path</p>
 		</header>
-		<form class="timeline__filter exp-filter">
+		<form class="timeline__filter exp-filter" action="/timeline">
 			<div class="exp-filter__wrapper">
 				<fieldset class="exp-filter__skills-type" name="skillTypes">
 					<legend class="exp-filter__skill-title">Skills type:</legend>
 					<ul class="exp-filter__list">
 						<li class="exp-filter__item">
 							<label class="exp-filter__label form-control">
-								<input
-									class="form-control__input form-control__input--checkbox"
-									name="hardSkill"
-									type="checkbox"
-									checked
-								/>
+								<input class="form-control__input form-control__input--checkbox" name="hardSkill" type="checkbox" checked />
 								Hard Skills
 							</label>
 						</li>
 						<li class="exp-filter__item">
 							<label class="exp-filter__label form-control">
-								<input
-									class="form-control__input form-control__input--checkbox"
-									name="softSkill"
-									type="checkbox"
-								/>
+								<input class="form-control__input form-control__input--checkbox" name="softSkill" type="checkbox" />
 								Soft Skills
 							</label>
 						</li>
@@ -128,42 +106,25 @@ permalink: 'index.html'
 					<ul class="exp-filter__list">
 						<li class="exp-filter__item">
 							<label class="exp-filter__label form-control">
-								<input
-									class="form-control__input form-control__input--checkbox"
-									name="position"
-									type="checkbox"
-									checked
-								/>
+								<input class="form-control__input form-control__input--checkbox" name="position" type="checkbox" checked />
 								Positions
 							</label>
 						</li>
 						<li class="exp-filter__item">
 							<label class="exp-filter__label form-control">
-								<input
-									class="form-control__input form-control__input--checkbox"
-									name="course"
-									type="checkbox"
-								/>
+								<input class="form-control__input form-control__input--checkbox" name="course" type="checkbox" />
 								Courses
 							</label>
 						</li>
 						<li class="exp-filter__item">
 							<label class="exp-filter__label form-control">
-								<input
-									class="form-control__input form-control__input--checkbox"
-									name="meetup"
-									type="checkbox"
-								/>
+								<input class="form-control__input form-control__input--checkbox" name="meetup" type="checkbox" />
 								Meetups
 							</label>
 						</li>
 						<li class="exp-filter__item">
 							<label class="exp-filter__label form-control">
-								<input
-									class="form-control__input form-control__input--checkbox"
-									name="book"
-									type="checkbox"
-								/>
+								<input class="form-control__input form-control__input--checkbox" name="book" type="checkbox" />
 								Books
 							</label>
 						</li>
@@ -175,7 +136,7 @@ permalink: 'index.html'
 			<ul class="timeline__list"></ul>
 			<p class="timeline__desc-empty">Nothing here yet. Try to select more options in the filter.</p>
 		</div>
-		<a class="timeline__resume-link" href="/files/vladyslav-zubko-cv.pdf" target="_blank" rel="noreferrer">
+		<a class="timeline__resume-link" href="/files/vladyslav-zubko-cv.pdf" target="_blank" rel="noreferrer noopener">
 			<span class="timeline__resume-icon" aria-hidden="true"></span>
 			<span class="timeline__resume-text">View my resume</span>
 		</a>

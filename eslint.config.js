@@ -217,7 +217,11 @@ let overridesConfig = [
 		},
 	},
 	{
-		files: [`eleventy.config.cjs`, `stylelint.config.cjs`],
+		files: [
+			`eleventy.config.cjs`,
+			`stylelint.config.cjs`,
+			`.linthtmlrc.cjs`,
+		],
 		languageOptions: {
 			globals: globals.node,
 		},
