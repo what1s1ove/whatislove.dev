@@ -111,12 +111,13 @@ let init = (config) => {
 					),
 				})
 
-				return isDevelopment
-					? code +
-							`\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,${map.toString(
-								`base64`,
-							)}*/`
-					: code
+				if (isDevelopment) {
+					code += `\n/*# sourceMappingURL=data:application/json;base64,${map.toString(
+						`base64`,
+					)}*/`
+				}
+
+				return code
 			}
 		},
 		outputFileExtension: `css`,
