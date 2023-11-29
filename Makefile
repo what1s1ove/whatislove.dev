@@ -7,7 +7,7 @@ start:
 start_client:
 	NODE_ENV=development npx eleventy --serve --quiet
 start_server:
-	npx json-server source/database.json
+	npx json-server --watch source/database.json --port 3001
 build: clean
 	npx eleventy
 
