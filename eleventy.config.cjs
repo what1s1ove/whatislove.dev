@@ -190,12 +190,8 @@ let init = (config) => {
 
 	config.addExtension(`svg`, {
 		/** @type {import('@11ty/eleventy/src/Engines/TemplateEngine')['compile']} */
-		compile: (content, url) => {
+		compile: (content) => {
 			return () => {
-				if (url === `./source/images/icons/icon.svg`) {
-					return content
-				}
-
 				return svgo.optimize(content).data
 			}
 		},
