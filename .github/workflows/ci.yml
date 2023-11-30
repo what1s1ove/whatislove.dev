@@ -58,7 +58,8 @@ jobs:
       - name: Cache Dependencies
         uses: actions/cache@v3
         with:
-          path: '**/node_modules'
+          path: |
+            '**/node_modules'
           key: ci-${{ hashFiles('**/package-lock.json') }}
 
       - name: Install Dependencies
@@ -87,9 +88,11 @@ jobs:
       - name: Restore Dependencies
         uses: actions/cache@v2
         with:
-          path: '**/node_modules'
+          path: |
+            '**/node_modules'
           key: ci-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: ci-
+          restore-keys: |
+            ci-
 
       - name: Code Building
         run: |
