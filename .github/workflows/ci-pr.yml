@@ -37,15 +37,15 @@ jobs:
           path: '**/node_modules'
           key: ci-pr-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ci-pr
+            ci-pr-
 
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
           npm install
 
-  ci-pr:
-    name: Continuous Integration Pull Request
+  lint:
+    name: Lent Pull Linting
     needs: dependencies
     runs-on: ubuntu-latest
 
@@ -72,7 +72,7 @@ jobs:
 
   labeler:
     name: Labeler
-    needs: ci-pr
+    needs: lint
     permissions:
       contents: read
       pull-requests: write
