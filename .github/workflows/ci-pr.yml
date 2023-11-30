@@ -47,7 +47,6 @@ jobs:
   ci-pr:
     name: Continuous Integration Pull Request
     needs: dependencies
-    permissions:
     runs-on: ubuntu-latest
 
     steps:
