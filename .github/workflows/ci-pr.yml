@@ -45,7 +45,7 @@ jobs:
           npm install
 
   lint:
-    name: Lent Pull Linting
+    name: PR Linting
     needs: dependencies
     runs-on: ubuntu-latest
 
