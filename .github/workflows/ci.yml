@@ -14,9 +14,38 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  ci:
-    runs-on: ubuntu-latest
+  # ci:
+  #   runs-on: ubuntu-latest
 
+  #   steps:
+  # - name: Code Checkout
+  #   uses: actions/checkout@v4
+
+  # - name: Install NodeJS
+  #   uses: actions/setup-node@v4
+  #   with:
+  #     node-version-file: .nvmrc
+
+  # - name: Install Java v${{ env.JAVA_VERSION }}
+  #   uses: actions/setup-java@v1
+  #   with:
+  #     java-version: ${{ env.JAVA_VERSION }}
+  #     architecture: x64
+
+  # - name: Install Dependencies
+  #   run: |
+  #     npm install
+
+  # - name: Code Building
+  #   run: |
+  #     make build
+
+  # - name: Code Linting
+  #   run: |
+  #     make lint
+  dependencies:
+    name: Install Dependencies
+    runs-on: ubuntu-latest
     steps:
       - name: Code Checkout
         uses: actions/checkout@v4
@@ -26,20 +55,47 @@ jobs:
         with:
           node-version-file: .nvmrc
 
-      - name: Install Java v${{ env.JAVA_VERSION }}
-        uses: actions/setup-java@v1
+      - name: Cache Dependencies
+        uses: actions/cache@v3
         with:
-          java-version: ${{ env.JAVA_VERSION }}
-          architecture: x64
+          path: '**/node_modules'
+          key: ci-${{ hashFiles('**/package-lock.json') }}
 
       - name: Install Dependencies
         run: |
           npm install
 
-      - name: Code Building
-        run: |
-          make build
+  lint:
+    name: Code Linting
+    needs: dependencies
+    runs-on: ubuntu-latest
 
-      - name: Code Linting
-        run: |
-          make lint
+  steps:
+    - name: Code Checkout
+      uses: actions/checkout@v4
+
+    - name: Install NodeJS
+      uses: actions/setup-node@v4
+      with:
+        node-version-file: .nvmrc
+
+    - name: Install Java v${{ env.JAVA_VERSION }}
+      uses: actions/setup-java@v1
+      with:
+        java-version: ${{ env.JAVA_VERSION }}
+        architecture: x64
+
+    - name: Restore Dependencies
+      uses: actions/cache@v2
+      with:
+        path: '**/node_modules'
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: ci-
+
+    - name: Code Building
+      run: |
+        make build
+
+    - name: Code Linting
+      run: |
+        make lint
