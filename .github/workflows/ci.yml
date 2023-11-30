@@ -30,7 +30,7 @@ jobs:
         id: cache
         uses: actions/cache@v3
         with:
-          path: ~/.npm
+          path: '**/node_modules'
           key: ci-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ci-
@@ -62,7 +62,7 @@ jobs:
       - name: Restore Dependencies
         uses: actions/cache@v3
         with:
-          path: ~/.npm
+          path: '**/node_modules'
           key: ci-${{ hashFiles('**/package-lock.json') }}
 
       - name: Code Building
