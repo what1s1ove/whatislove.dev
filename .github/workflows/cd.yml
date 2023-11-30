@@ -10,8 +10,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    name: Build
+  dependencies:
+    name: Install Dependencies
     runs-on: ubuntu-latest
     steps:
       - name: Code Checkout
@@ -22,9 +22,38 @@ jobs:
         with:
           node-version-file: .nvmrc
 
+      - name: Cache Dependencies
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: '**/node_modules'
+          key: cd-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            cd-
+
       - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
         run: |
-          npm ci
+          npm install
+
+  build:
+    name: Build
+    needs: dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+
+      - name: Restore Dependencies
+        uses: actions/cache@v3
+        with:
+          path: '**/node_modules'
+          key: cd-${{ hashFiles('**/package-lock.json') }}
 
       - name: Code Building
         run: |
