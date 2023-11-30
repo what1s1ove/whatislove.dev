@@ -16,8 +16,3 @@ let init = () => {
 }
 
 init()
-
-// todo
-//   cache-name: cache-node-modules
-//   https://github.com/BinaryStudioAcademy/bsa-winter-2021-2022-bws/blob/development/.github/workflows/lint.yml
-//   add constants (ex. CI)
