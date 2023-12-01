@@ -67,8 +67,7 @@ jobs:
           key: ci-pr-${{ hashFiles('**/package-lock.json') }}
 
       - name: Lint Commits
-        run: |
-          npx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
+        uses: wagoid/commitlint-github-action@v5
 
   labeler:
     name: Labeler
