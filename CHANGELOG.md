@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/what1s1ove/whatislove.dev/compare/1.2.0...1.3.0) (2023-12-01)
+
+
+### Features
+
+* add main branch to cd action wd-243 ([#244](https://github.com/what1s1ove/whatislove.dev/issues/244)) ([3e2a2c4](https://github.com/what1s1ove/whatislove.dev/commit/3e2a2c44c360cb2c5387f3a63b3fc768004017a0))
+
 ## [1.2.0](https://github.com/what1s1ove/whatislove.dev/compare/whatislove.dev-v1.1.1...whatislove.dev-1.2.0) (2023-12-01)
 
 
