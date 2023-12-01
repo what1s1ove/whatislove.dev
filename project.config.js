@@ -1,5 +1,5 @@
 let ProjectPrefix = /** @type {const} */ ({
-	APPS: [`wd`],
+	APPS: [`wd`, `release`],
 	ENVIRONMENTS: [`production`, `development`],
 })
 

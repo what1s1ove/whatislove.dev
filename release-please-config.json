@@ -2,7 +2,7 @@
 	"packages": {
 		".": {
 			"release-type": "node",
-			"pull-request-title-pattern": "chore: release ${version}",
+			"pull-request-title-pattern": "chore: release-${version}",
 			"include-v-in-tag": false
 		}
 	}
