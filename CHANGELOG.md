@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/what1s1ove/whatislove.dev/compare/whatislove.dev-1.1.0...whatislove.dev-1.1.1) (2023-12-01)
+
+
+### Bug Fixes
+
+* add release prefix wd-237 ([#238](https://github.com/what1s1ove/whatislove.dev/issues/238)) ([45af951](https://github.com/what1s1ove/whatislove.dev/commit/45af951ccc0b177badd4c4234d6f0b6efc10c326))
+
 ## [1.1.0](https://github.com/what1s1ove/whatislove.dev/compare/whatislove.dev-v1.0.0...whatislove.dev-1.1.0) (2023-12-01)
 
 ### Features
