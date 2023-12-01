@@ -1,9 +1,7 @@
 name: Continuous Delivery
 
 on:
-  push:
-    branches:
-      - production
+  workflow_dispatch:
 
 concurrency:
   group: cd-${{ github.ref }}

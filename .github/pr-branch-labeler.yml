@@ -1,5 +1,2 @@
-development:
-  base: development
-
-production:
-  base: production
+main:
+  base: main
