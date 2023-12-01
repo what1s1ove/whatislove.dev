@@ -1,3 +1,5 @@
+import { RuleConfigSeverity } from '@commitlint/types'
+
 import { ProjectPrefix } from './project.config.js'
 
 /** @type {import('@commitlint/types').UserConfig} */
@@ -9,7 +11,7 @@ let configuration = {
 		},
 	},
 	rules: {
-		'references-empty': [2, `never`],
+		'references-empty': [RuleConfigSeverity.Error, `never`],
 	},
 }
 

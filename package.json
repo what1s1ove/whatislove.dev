@@ -1,4 +1,6 @@
 {
+	"version": "1.0.0",
+	"name": "whatislove.dev",
 	"private": true,
 	"type": "module",
 	"engines": {
