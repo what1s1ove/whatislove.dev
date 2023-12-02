@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/what1s1ove/whatislove.dev/compare/1.4.0...1.4.1) (2023-12-02)
+
+
+### Bug Fixes
+
+* remove cname wd-251 ([#252](https://github.com/what1s1ove/whatislove.dev/issues/252)) ([c370148](https://github.com/what1s1ove/whatislove.dev/commit/c3701482d2d5a03d875a9ea26cf3254c83bd4d12))
+
 ## [1.4.0](https://github.com/what1s1ove/whatislove.dev/compare/1.3.0...1.4.0) (2023-12-02)
 
 
