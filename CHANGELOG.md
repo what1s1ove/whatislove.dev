@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/what1s1ove/whatislove.dev/compare/1.3.0...1.4.0) (2023-12-02)
+
+
+### Features
+
+* deploy only after release approach wd-246 ([#249](https://github.com/what1s1ove/whatislove.dev/issues/249)) ([c7589da](https://github.com/what1s1ove/whatislove.dev/commit/c7589dadae727a7ceb6dc3fef63e02d6c3fc0e41))
+
 ## [1.3.0](https://github.com/what1s1ove/whatislove.dev/compare/1.2.0...1.3.0) (2023-12-01)
 
 
