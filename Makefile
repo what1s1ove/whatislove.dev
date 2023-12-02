@@ -4,6 +4,7 @@ clean:
 	rm -rf build
 
 # Start
+
 start:
 	npx concurrently -k -p "{name}: {time}" -n "CLIENT,SERVER" -c "green,blue" "make start_client" "make start_server"
 start_client:
