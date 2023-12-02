@@ -111,20 +111,20 @@ class Main {
 		this.#toastNode = /** @type {HTMLElement | undefined} */ (
 			document.querySelector(`.toast`) ?? undefined
 		)
-		this.#settingListNode = /** @type {HTMLElement} */ (
+		this.#settingListNode = /** @type {HTMLElement | undefined} */ (
 			document.querySelector(`.settings`) ?? undefined
 		)
-		this.#headerNode = /** @type {HTMLElement} */ (
-			document.querySelector(`.header`)
+		this.#headerNode = /** @type {HTMLElement | undefined} */ (
+			document.querySelector(`.header`) ?? undefined
 		)
-		this.#timelineNode = /** @type {HTMLElement} */ (
-			document.querySelector(`.timeline`)
+		this.#timelineNode = /** @type {HTMLElement | undefined} */ (
+			document.querySelector(`.timeline`) ?? undefined
 		)
-		this.#easterEggNode = /** @type {HTMLElement} */ (
-			document.querySelector(`.not-easter-egg`)
+		this.#easterEggNode = /** @type {HTMLElement | undefined} */ (
+			document.querySelector(`.not-easter-egg`) ?? undefined
 		)
-		this.#timelineFormNode = /** @type {HTMLFormElement} */ (
-			document.querySelector(`form[name="timeline"]`)
+		this.#timelineFormNode = /** @type {HTMLFormElement | undefined} */ (
+			document.querySelector(`form[name="timeline"]`) ?? undefined
 		)
 
 		if (this.#toastNode) {
