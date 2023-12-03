@@ -33,6 +33,10 @@
 	margin: 0;
 	padding: 0;
 	border: 0;
+
+	@media (width >= 500px) {
+		width: unset;
+	}
 }
 
 .exp-filter__list {
@@ -41,6 +45,11 @@
 	margin: 0;
 	padding: 0;
 	list-style: none;
+
+	@media (width >= 500px) {
+		flex-flow: row wrap;
+		align-items: center;
+	}
 }
 
 .exp-filter__item {
@@ -59,10 +68,6 @@
 
 	& .exp-filter__item {
 		width: 50%;
-	}
-
-	@media (width >= 500px) {
-		width: unset;
 	}
 
 	@media (width >= 620px) {
