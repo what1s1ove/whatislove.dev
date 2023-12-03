@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.2](https://github.com/what1s1ove/whatislove.dev/compare/1.4.1...1.4.2) (2023-12-03)
+
+
+### Bug Fixes
+
+* edit timeline filter wraps wd-254 ([#255](https://github.com/what1s1ove/whatislove.dev/issues/255)) ([e429dc6](https://github.com/what1s1ove/whatislove.dev/commit/e429dc6d66bc73a1f223631cdc14d8c8f6543181))
+
 ## [1.4.1](https://github.com/what1s1ove/whatislove.dev/compare/1.4.0...1.4.1) (2023-12-02)
 
 
