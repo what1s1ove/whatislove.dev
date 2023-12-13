@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.3](https://github.com/what1s1ove/whatislove.dev/compare/1.4.2...1.4.3) (2023-12-13)
+
+
+### Bug Fixes
+
+* update svgo & remove favicon iseless classes wd-247 ([#263](https://github.com/what1s1ove/whatislove.dev/issues/263)) ([15e481a](https://github.com/what1s1ove/whatislove.dev/commit/15e481aa2c59f54c0ff05be2775770d0889319b7))
+
 ## [1.4.2](https://github.com/what1s1ove/whatislove.dev/compare/1.4.1...1.4.2) (2023-12-03)
 
 
