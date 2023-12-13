@@ -15,7 +15,7 @@ import globals from 'globals'
 
 /** @type {import('eslint').Linter.FlatConfig} */
 let ignoresConfig = {
-	ignores: [`build/**/*.js`],
+	ignores: [`build`],
 }
 
 /** @type {import('eslint').Linter.FlatConfig} */
@@ -81,15 +81,7 @@ let perfectionistConfig = {
 	plugins: {
 		perfectionist,
 	},
-	rules: {
-		...perfectionist.configs[`recommended-natural`].rules,
-		'perfectionist/sort-named-imports': [
-			`error`,
-			{
-				type: `alphabetical`,
-			},
-		],
-	},
+	rules: perfectionist.configs[`recommended-natural`].rules,
 }
 
 /** @type {import('eslint').Linter.FlatConfig} */
@@ -204,24 +196,21 @@ let mainRulesConfig = {
 }
 
 /** @type {import('eslint').Linter.FlatConfig[]} */
-let overridesConfig = [
+let overridesConfigs = [
 	{
 		files: [
 			`commitlint.config.js`,
 			`prettier.config.js`,
 			`lint-staged.config.js`,
 			`eslint.config.js`,
+			`stylelint.config.js`,
 		],
 		rules: {
 			'import/no-default-export': [`off`],
 		},
 	},
 	{
-		files: [
-			`eleventy.config.cjs`,
-			`stylelint.config.cjs`,
-			`.linthtmlrc.cjs`,
-		],
+		files: [`stylelint.config.cjs`, `.linthtmlrc.cjs`],
 		languageOptions: {
 			globals: globals.node,
 		},
@@ -245,7 +234,7 @@ let config = [
 	jsdocConfig,
 	simpleImportSortConfig,
 	mainRulesConfig,
-	...overridesConfig,
+	...overridesConfigs,
 ]
 
 export default config
