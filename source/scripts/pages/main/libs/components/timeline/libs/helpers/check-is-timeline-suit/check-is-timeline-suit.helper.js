@@ -1,5 +1,5 @@
-/** @typedef {import('~/packages/timeline/timeline').Timeline} Timeline */
-/** @typedef {import('~/packages/timeline/timeline').TimelineFilter} TimelineFilter */
+/** @typedef {import('~/packages/timeline/timeline.js').Timeline} Timeline */
+/** @typedef {import('~/packages/timeline/timeline.js').TimelineFilter} TimelineFilter */
 
 /**
  * @param {Timeline} timelineItem

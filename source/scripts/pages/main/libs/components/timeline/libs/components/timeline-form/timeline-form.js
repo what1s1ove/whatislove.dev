@@ -2,7 +2,7 @@ import { getFormValues, initDebounce } from '~/libs/helpers/helpers.js'
 
 import { DEBOUNCE_DELAY } from './libs/constants/constants.js'
 
-/** @typedef {import('~/packages/timeline/timeline').TimelineFilter} TimelineFilter */
+/** @typedef {import('~/packages/timeline/timeline.js').TimelineFilter} TimelineFilter */
 
 class TimelineForm {
 	/** @type {HTMLFormElement | undefined} */

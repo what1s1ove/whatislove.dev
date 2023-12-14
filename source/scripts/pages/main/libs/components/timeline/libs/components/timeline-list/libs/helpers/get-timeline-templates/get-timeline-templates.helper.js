@@ -1,6 +1,6 @@
 import { getTimelineTemplate } from '../get-timeline-template/get-timeline-template.helper.js'
 
-/** @typedef {import('~/packages/timeline/timeline').Timeline} Timeline */
+/** @typedef {import('~/packages/timeline/timeline.js').Timeline} Timeline */
 
 /**
  * @param {Timeline[]} timelines

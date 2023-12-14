@@ -6,8 +6,8 @@ import { getSettingItemElement } from './libs/helpers/helpers.js'
 
 let RESULT_VALUE = /** @type {const} */ (`auto`)
 
-/** @typedef {import('~/pages/main/libs/types/types').SettingButtonPayload} SettingButtonPayload */
-/** @typedef {import('~/libs/packages/storage/storage').Storage} Storage */
+/** @typedef {import('~/pages/main/libs/types/types.js').SettingsButtonPayload} SettingsButtonPayload */
+/** @typedef {import('~/libs/packages/storage/storage.js').Storage} Storage */
 
 class Settings {
 	/**
@@ -108,7 +108,7 @@ class Settings {
 	}
 
 	/**
-	 * @param {SettingButtonPayload} settings
+	 * @param {SettingsButtonPayload} settings
 	 * @returns {HTMLButtonElement}
 	 */
 	appendNewButton(settings) {

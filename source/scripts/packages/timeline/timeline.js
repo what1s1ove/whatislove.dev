@@ -4,9 +4,9 @@ import { http } from '~/libs/packages/http/http.js'
 
 import { TimelineApi } from './timeline-api.js'
 
-/** @typedef {import('./libs/types/types').Timeline} Timeline */
-/** @typedef {import('./libs/types/types').TimelineCreatePayload} TimelineCreatePayload */
-/** @typedef {import('./libs/types/types').TimelineFilter} TimelineFilter */
+/** @typedef {import('./libs/types/types.js').Timeline} Timeline */
+/** @typedef {import('./libs/types/types.js').TimelineCreatePayload} TimelineCreatePayload */
+/** @typedef {import('./libs/types/types.js').TimelineFilter} TimelineFilter */
 
 let timelineApi = new TimelineApi({
 	baseUrl: getServerApiUrl({

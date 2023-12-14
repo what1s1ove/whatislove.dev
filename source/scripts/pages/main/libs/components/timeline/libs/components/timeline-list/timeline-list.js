@@ -1,6 +1,6 @@
 import { getTimelineTemplates } from './libs/helpers/helpers.js'
 
-/** @typedef {import('~/packages/timeline/timeline').Timeline} Timeline */
+/** @typedef {import('~/packages/timeline/timeline.js').Timeline} Timeline */
 
 class TimelineList {
 	/** @type {HTMLElement | undefined} */

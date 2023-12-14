@@ -8,10 +8,10 @@ import {
 	TimelineForm,
 } from './libs/components/components.js'
 
-/** @typedef {import('~/pages/main/libs/types/types').SettingButtonPayload} SettingButtonPayload */
-/** @typedef {import('~/libs/types/types').ToastMessagePayload} ToastMessagePayload */
-/** @typedef {import('~/libs/packages/storage/storage').Storage} Storage */
-/** @typedef {import('~/packages/timeline/timeline').TimelineApi} TimelineApi */
+/** @typedef {import('~/pages/main/libs/types/types.js').SettingsButtonPayload} SettingsButtonPayload */
+/** @typedef {import('~/libs/types/types.js').ToastMessagePayload} ToastMessagePayload */
+/** @typedef {import('~/libs/packages/storage/storage.js').Storage} Storage */
+/** @typedef {import('~/packages/timeline/timeline.js').TimelineApi} TimelineApi */
 
 class Main {
 	/** @type {EasterEgg} */
@@ -23,7 +23,7 @@ class Main {
 	/** @type {(message: ToastMessagePayload) => void} */
 	#handleNotificationAdd
 
-	/** @type {(settings: SettingButtonPayload) => HTMLButtonElement} */
+	/** @type {(settings: SettingsButtonPayload) => HTMLButtonElement} */
 	#handleSettingButtonAppend
 
 	/** @type {HTMLElement | undefined} */
@@ -99,7 +99,7 @@ class Main {
 	}
 
 	/**
-	 * @param {SettingButtonPayload} settings
+	 * @param {SettingsButtonPayload} settings
 	 * @returns {HTMLButtonElement}
 	 */
 	#appendSettingButtonHandler(settings) {
