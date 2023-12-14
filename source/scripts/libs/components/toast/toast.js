@@ -6,7 +6,7 @@ import {
 	TOAST_SHOW_CLASS_NAME,
 } from './libs/constants/constants.js'
 
-/** @typedef {import('~/libs/types/types').ToastMessagePayload} ToastMessagePayload */
+/** @typedef {import('~/libs/types/types.js').ToastMessagePayload} ToastMessagePayload */
 
 class Toast {
 	/** @type {boolean} */

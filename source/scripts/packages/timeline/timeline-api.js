@@ -3,9 +3,9 @@ import { HttpMethod } from '~/libs/packages/http/http.js'
 
 import { TimelineApiPath } from './libs/enums/enums.js'
 
-/** @typedef {import('~/libs/packages/http/http').Http} Http */
-/** @typedef {import('./libs/types/types').Timeline} Timeline */
-/** @typedef {import('./libs/types/types')} TimelineCreatePayload */
+/** @typedef {import('~/libs/packages/http/http.js').Http} Http */
+/** @typedef {import('./libs/types/types.js').Timeline} Timeline */
+/** @typedef {import('./libs/types/types.js').TimelineCreatePayload} TimelineCreatePayload */
 
 class TimelineApi {
 	/** @type {(typeof ApiPath)[keyof typeof ApiPath]} */

@@ -4,9 +4,9 @@ import { checkIsBeforeElement } from '~/libs/helpers/helpers.js'
 import { TimelineForm, TimelineList } from './libs/components/components.js'
 import { getSuitTimelines } from './libs/helpers/helpers.js'
 
-/** @typedef {import('~/packages/timeline/timeline').Timeline} TTimeline */
-/** @typedef {import('~/packages/timeline/timeline').TimelineFilter} TimelineFilter */
-/** @typedef {import('~/packages/timeline/timeline').TimelineApi} TimelineApi */
+/** @typedef {import('~/packages/timeline/timeline.js').Timeline} TTimeline */
+/** @typedef {import('~/packages/timeline/timeline.js').TimelineFilter} TimelineFilter */
+/** @typedef {import('~/packages/timeline/timeline.js').TimelineApi} TimelineApi */
 
 class Timeline {
 	/** @type {(formValues: TimelineFilter) => void} */

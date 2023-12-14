@@ -6,8 +6,8 @@ import {
 
 import { getTransformedTimeline } from './helpers/helpers.js'
 
-/** @typedef {import('~/packages/timeline/timeline').TimelineApi} TimelineApi */
-/** @typedef {import('~/packages/timeline/timeline').TimelineCreatePayload} TimelineCreatePayload */
+/** @typedef {import('~/packages/timeline/timeline.js').TimelineApi} TimelineApi */
+/** @typedef {import('~/packages/timeline/timeline.js').TimelineCreatePayload} TimelineCreatePayload */
 
 let timelineSkillTypes = Object.values(TimelineSkillType)
 let timelineTypes = Object.values(TimelineType)

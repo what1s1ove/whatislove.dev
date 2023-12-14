@@ -15,8 +15,8 @@ import {
 	getPlayerElement,
 } from './libs/helpers/helpers.js'
 
-/** @typedef {import('~/libs/types/types').ToastMessagePayload} ToastMessagePayload */
-/** @typedef {import('~/pages/main/libs/types/types').SettingButtonPayload} SettingButtonPayload */
+/** @typedef {import('~/libs/types/types.js').ToastMessagePayload} ToastMessagePayload */
+/** @typedef {import('~/pages/main/libs/types/types.js').SettingsButtonPayload} SettingsButtonPayload */
 
 class EasterEgg {
 	/** @type {HTMLAudioElement | undefined} */
@@ -45,14 +45,14 @@ class EasterEgg {
 	/** @type {(payload: ToastMessagePayload) => void} */
 	#onNotificationAdd
 
-	/** @type {(payload: SettingButtonPayload) => HTMLButtonElement} */
+	/** @type {(payload: SettingsButtonPayload) => HTMLButtonElement} */
 	#onSettingButtonAppend
 
 	/**
 	 * @param {{
 	 * 	onNotificationAdd: (payload: ToastMessagePayload) => void
 	 * 	onSettingButtonAppend: (
-	 * 		payload: SettingButtonPayload,
+	 * 		payload: SettingsButtonPayload,
 	 * 	) => HTMLButtonElement
 	 * }} constructor
 	 */
