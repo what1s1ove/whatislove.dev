@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/what1s1ove/whatislove.dev/compare/1.4.3...1.5.0) (2023-12-15)
+
+
+### Features
+
+* add Procrastination: Why You Do It  book wd-267 ([#271](https://github.com/what1s1ove/whatislove.dev/issues/271)) ([1c7a005](https://github.com/what1s1ove/whatislove.dev/commit/1c7a00506c247569fb80bacd177ebbf9f226fa90))
+
 ## [1.4.3](https://github.com/what1s1ove/whatislove.dev/compare/1.4.2...1.4.3) (2023-12-13)
 
 
