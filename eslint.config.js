@@ -1,24 +1,23 @@
-// @ts-expect-error: no declaration file
 import js from '@eslint/js'
-// @ts-expect-error: no declaration file
+import typescript from '@typescript-eslint/eslint-plugin'
+import typescriptParser from '@typescript-eslint/parser'
 import importPlugin from 'eslint-plugin-import'
-// @ts-expect-error: no declaration file
 import jsdoc from 'eslint-plugin-jsdoc'
-// @ts-expect-error: no declaration file
 import perfectionist from 'eslint-plugin-perfectionist'
-// @ts-expect-error: no declaration file
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
 import sonarjs from 'eslint-plugin-sonarjs'
-// @ts-expect-error: no declaration file
 import unicorn from 'eslint-plugin-unicorn'
 import globals from 'globals'
 
-/** @type {import('eslint').Linter.FlatConfig} */
+/** @typedef {import('eslint').Linter.FlatConfig} FlatConfig */
+/** @typedef {import('eslint').Linter.ParserModule} TypeScriptParser */
+
+/** @type {FlatConfig} */
 let ignoresConfig = {
 	ignores: [`build`],
 }
 
-/** @type {import('eslint').Linter.FlatConfig} */
+/** @type {FlatConfig} */
 let globalConfig = {
 	languageOptions: {
 		globals: globals.browser,
@@ -27,12 +26,10 @@ let globalConfig = {
 			sourceType: `module`,
 		},
 	},
-	rules: {
-		...js.configs.recommended.rules,
-	},
+	rules: js.configs.recommended.rules,
 }
 
-/** @type {import('eslint').Linter.FlatConfig} */
+/** @type {FlatConfig} */
 let importConfig = {
 	plugins: {
 		import: importPlugin,
@@ -60,7 +57,7 @@ let importConfig = {
 	},
 }
 
-/** @type {import('eslint').Linter.FlatConfig} */
+/** @type {FlatConfig} */
 let sonarConfig = {
 	plugins: {
 		sonarjs,
@@ -68,7 +65,7 @@ let sonarConfig = {
 	rules: sonarjs.configs.recommended.rules,
 }
 
-/** @type {import('eslint').Linter.FlatConfig} */
+/** @type {FlatConfig} */
 let unicornConfig = {
 	plugins: {
 		unicorn,
@@ -76,7 +73,7 @@ let unicornConfig = {
 	rules: unicorn.configs.recommended.rules,
 }
 
-/** @type {import('eslint').Linter.FlatConfig} */
+/** @type {FlatConfig} */
 let perfectionistConfig = {
 	plugins: {
 		perfectionist,
@@ -84,7 +81,7 @@ let perfectionistConfig = {
 	rules: perfectionist.configs[`recommended-natural`].rules,
 }
 
-/** @type {import('eslint').Linter.FlatConfig} */
+/** @type {FlatConfig} */
 let jsdocConfig = {
 	plugins: {
 		jsdoc,
@@ -118,7 +115,7 @@ let jsdocConfig = {
 	},
 }
 
-/** @type {import('eslint').Linter.FlatConfig} */
+/** @type {FlatConfig} */
 let simpleImportSortConfig = {
 	plugins: {
 		'simple-import-sort': simpleImportSort,
@@ -129,7 +126,37 @@ let simpleImportSortConfig = {
 	},
 }
 
-/** @type {import('eslint').Linter.FlatConfig} */
+/** @type {FlatConfig} */
+let typescriptPlugin = {
+	languageOptions: {
+		parser: /** @type {TypeScriptParser} */ (typescriptParser),
+		parserOptions: {
+			project: `./tsconfig.json`,
+		},
+	},
+	plugins: {
+		'@typescript-eslint': typescript,
+	},
+	rules: {
+		...typescript.configs[`strict-type-checked`].rules,
+		'@typescript-eslint/no-extraneous-class': [
+			`error`,
+			{
+				allowStaticOnly: true,
+			},
+		],
+		'@typescript-eslint/no-misused-promises': [
+			`error`,
+			{
+				checksVoidReturn: {
+					arguments: false,
+				},
+			},
+		],
+	},
+}
+
+/** @type {FlatConfig} */
 let mainRulesConfig = {
 	rules: {
 		'arrow-parens': [`error`, `always`],
@@ -195,7 +222,7 @@ let mainRulesConfig = {
 	},
 }
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
+/** @type {FlatConfig[]} */
 let overridesConfigs = [
 	{
 		files: [
@@ -221,9 +248,17 @@ let overridesConfigs = [
 			'sonarjs/cognitive-complexity': [`off`],
 		},
 	},
+	{
+		files: [
+			`source/scripts/libs/packages/whatislove-math/whatislove-math.package.js`,
+		],
+		rules: {
+			'unicorn/no-static-only-class': [`off`],
+		},
+	},
 ]
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
+/** @type {FlatConfig[]} */
 let config = [
 	ignoresConfig,
 	globalConfig,
@@ -233,6 +268,7 @@ let config = [
 	perfectionistConfig,
 	jsdocConfig,
 	simpleImportSortConfig,
+	typescriptPlugin,
 	mainRulesConfig,
 	...overridesConfigs,
 ]

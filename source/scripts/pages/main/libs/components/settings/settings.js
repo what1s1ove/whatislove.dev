@@ -46,7 +46,8 @@ class Settings {
 		if (value === RESULT_VALUE) {
 			this.#removeSettingAttr(name)
 
-			return this.#storage.removeItem(name)
+			this.#storage.removeItem(name)
+			return
 		}
 
 		this.#setSettingAttr(name, value)

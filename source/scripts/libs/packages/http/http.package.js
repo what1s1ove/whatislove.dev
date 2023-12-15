@@ -1,8 +1,11 @@
-import { ContentType, ErrorMessage } from '~/libs/enums/enums.js'
+import { ContentType } from '~/libs/enums/enums.js'
 import { checkIsOneOf } from '~/libs/helpers/helpers.js'
 
 import { HttpHeader, HttpMethod } from './libs/enums/enums.js'
 import { HttpError } from './libs/exceptions/exceptions.js'
+
+/** @typedef {typeof import('~/libs/enums/enums.js').ErrorMessage} ErrorMessage */
+/** @typedef {typeof import('./libs/enums/enums.js').HttpCode} HttpCode */
 
 class Http {
 	/**
@@ -13,10 +16,12 @@ class Http {
 	static checkStatus(response) {
 		if (!response.ok) {
 			throw new HttpError({
-				message:
-					/** @type {(typeof ErrorMessage)[keyof typeof ErrorMessage]} */ (
-						response.statusText ?? ErrorMessage.NETWORK_ERROR
-					),
+				message: /** @type {ErrorMessage[keyof ErrorMessage]} */ (
+					response.statusText
+				),
+				status: /** @type {HttpCode[keyof HttpCode]} */ (
+					response.status
+				),
 			})
 		}
 
@@ -29,7 +34,7 @@ class Http {
 	 * @returns {Promise<T>}
 	 */
 	static parseJSON(response) {
-		return response.json()
+		return /** @type {() => Promise<T>} */ (response.json)()
 	}
 
 	/**
@@ -84,8 +89,14 @@ class Http {
 			method,
 		})
 			.then((response) => Http.checkStatus(response))
-			.then((response) => Http.parseJSON(response))
-			.catch((error) => Http.throwError(error))
+			.then((response) => /** @type {T} */ (Http.parseJSON(response)))
+			.catch(
+				/**
+				 * @param {Error} error
+				 * @returns {ReturnType<typeof Http.throwError>}
+				 */
+				(error) => Http.throwError(error),
+			)
 	}
 }
 

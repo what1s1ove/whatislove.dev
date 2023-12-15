@@ -1,4 +1,6 @@
-/** @type {import('lint-staged').Config} */
+/** @typedef {import('lint-staged').Config} Config */
+
+/** @type {Config} */
 let config = {
 	'*': `make lint_editor lint_fs`,
 	'*.{json,md,yml,njk,css,js,cjs,d.ts}': `prettier --write`,

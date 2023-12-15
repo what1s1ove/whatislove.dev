@@ -117,9 +117,15 @@ class Navigation {
 			...this.headerLinkNodes,
 		])
 
-		this.#cleanFocusTrap = isActive
-			? subscribeFocusTrap(...focusTrapElements)
-			: /** @type {() => undefined} */ (this.#cleanFocusTrap)()
+		if (isActive) {
+			this.#cleanFocusTrap = subscribeFocusTrap(...focusTrapElements)
+		} else {
+			let cleanFocusTrap = /** @type {() => void} */ (
+				this.#cleanFocusTrap
+			)
+
+			cleanFocusTrap()
+		}
 	}
 
 	/**

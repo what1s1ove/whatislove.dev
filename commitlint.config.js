@@ -2,7 +2,9 @@ import { RuleConfigSeverity } from '@commitlint/types'
 
 import { ProjectPrefix } from './project.config.js'
 
-/** @type {import('@commitlint/types').UserConfig} */
+/** @typedef {import('@commitlint/types').UserConfig} UserConfig */
+
+/** @type {UserConfig} */
 let configuration = {
 	extends: [`@commitlint/config-conventional`],
 	parserPreset: {

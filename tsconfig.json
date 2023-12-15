@@ -8,7 +8,10 @@
 		},
 		"skipLibCheck": true,
 		"lib": ["DOM", "DOM.Iterable", "ESNext"],
-		"types": ["./source/scripts/globals.d.ts"],
+		"types": [
+			"./source/scripts/globals.d.ts",
+			"./source/scripts/packages.d.ts"
+		],
 		"esModuleInterop": true,
 		"moduleResolution": "Bundler",
 		"target": "ESNext",

@@ -13,11 +13,9 @@ class WhatisloveMath {
 		[WhatisloveMath.BoostEntity.MENTEE]: 10,
 	})
 
-	constructor() {}
-
 	/**
 	 * @param {number} initialValue
-	 * @param {(typeof WhatisloveMath.BoostEntity)[keyof typeof WhatisloveMath.BoostEntity][]} boostEntities
+	 * @param {WhatisloveMath.BoostEntity[keyof WhatisloveMath.BoostEntity][]} boostEntities
 	 * @returns {number}
 	 * @throws {SyntaxError}
 	 */
@@ -54,12 +52,12 @@ class WhatisloveMath {
 	}
 
 	/**
-	 * @param {(typeof WhatisloveMath.BoostEntity)[keyof typeof WhatisloveMath.BoostEntity]} boostEntity
+	 * @param {WhatisloveMath.BoostEntity[keyof WhatisloveMath.BoostEntity]} boostEntity
 	 * @param {number} count
-	 * @returns {WhatisloveMath.BoostEntity[]}
+	 * @returns {WhatisloveMath.BoostEntity[keyof WhatisloveMath.BoostEntity][]}
 	 */
 	static multiplyBoostEntities(boostEntity, count = 0) {
-		return Array.from({ length: count }).fill(boostEntity)
+		return Array.from({ length: count }, () => boostEntity)
 	}
 }
 

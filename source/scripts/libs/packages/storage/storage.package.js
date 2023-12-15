@@ -13,7 +13,7 @@ class Storage {
 
 	/** @returns {void} */
 	clear() {
-		return this.#storage.clear()
+		this.#storage.clear()
 	}
 
 	/**
@@ -29,7 +29,7 @@ class Storage {
 	 * @returns {void}
 	 */
 	removeItem(key) {
-		return this.#storage.removeItem(key)
+		this.#storage.removeItem(key)
 	}
 
 	/**
@@ -38,7 +38,7 @@ class Storage {
 	 * @returns {void}
 	 */
 	setItem(key, value) {
-		return this.#storage.setItem(key, value)
+		this.#storage.setItem(key, value)
 	}
 }
 

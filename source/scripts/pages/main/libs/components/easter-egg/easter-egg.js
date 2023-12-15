@@ -108,7 +108,11 @@ class EasterEgg {
 	#clickSettingButtonHandler(_name, isChecked) {
 		let audioNode = /** @type {HTMLAudioElement} */ (this.#audioNode)
 
-		isChecked ? audioNode.play() : audioNode.pause()
+		if (isChecked) {
+			void audioNode.play()
+		} else {
+			audioNode.pause()
+		}
 	}
 
 	/** @returns {void} */

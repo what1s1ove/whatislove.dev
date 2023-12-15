@@ -59,7 +59,7 @@ class Toast {
 		let hasMessages = this.#messages.length > 0
 
 		if (hasMessages) {
-			this.#initShowingMessages()
+			void this.#initShowingMessages()
 
 			return
 		}
@@ -83,7 +83,7 @@ class Toast {
 		this.#messages.push(message)
 
 		if (!this.#isShowingMessage) {
-			this.#initShowingMessages()
+			void this.#initShowingMessages()
 		}
 	}
 }
