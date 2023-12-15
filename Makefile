@@ -39,7 +39,9 @@ lint_bem:
 lint_css:
 	npx stylelint "source/styles/**/*.css"
 lint_js:
-	npx eslint "**/*.{js,cjs}"
+	npx eslint "**/*.js"
+lint_js_fix:
+	npx eslint "**/*.js" --fix
 lint_type:
 	npx tsc --noEmit
 lint: lint_fs lint_editor lint_format lint_markup lint_html lint_bem lint_css lint_js lint_type

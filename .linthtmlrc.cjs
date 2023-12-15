@@ -1,4 +1,6 @@
-/** @type {import('@linthtml/linthtml').LinterConfig} */
+/** @typedef {import('@linthtml/linthtml').LinterConfig} LinterConfig */
+
+/** @type {LinterConfig} */
 let config = {
 	'attr-name-ignore-regex': false,
 	'extends': `linthtml-config-htmlacademy`,

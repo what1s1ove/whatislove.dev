@@ -35,7 +35,7 @@ class TimelineForm {
 		this.#handleSubmit = this.#submitHandler.bind(this)
 	}
 
-	/** @type {() => void} */
+	/** @returns {void} */
 	#initListeners() {
 		let timelineFormNode = /** @type {HTMLFormElement} */ (
 			this.#timelineFormNode

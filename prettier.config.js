@@ -1,4 +1,6 @@
-/** @type {import('prettier').Config} */
+/** @typedef {import('prettier').Config} Config */
+
+/** @type {Config} */
 let config = {
 	arrowParens: `always`,
 	bracketSpacing: true,
