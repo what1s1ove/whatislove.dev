@@ -9,7 +9,7 @@ start-server:
 
 # Build
 
-build: clean
+build: build-clean
 	npx eleventy
 build-clean:
 	rm -rf build
