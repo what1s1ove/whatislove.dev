@@ -1585,6 +1585,19 @@
 			"linkDesc": "",
 			"date": "2023-11-11T00:00:00.000Z",
 			"endDate": ""
+		},
+		{
+			"id": "hcxhH0T",
+			"skillType": "softSkill",
+			"type": "book",
+			"title": "Procrastination: Why You Do It, What to Do About It Now (Jane B. Burka, Lenora M. Yuen)",
+			"desc": "",
+			"origin": "https://www.amazon.com/Procrastination-Why-You-What-About/dp/0738211702",
+			"originDesc": "Amazon",
+			"link": "",
+			"linkDesc": "",
+			"date": "2023-12-15T00:00:00.000Z",
+			"endDate": ""
 		}
 	]
 }
