@@ -14,8 +14,8 @@ This repository is responsible for the Vladyslav Zubko's website.
 
 -   Install dependencies: **`npm install`**
 -   Start client and server locally: **`make start`**
--   Start client locally: **`make start_client`**
--   Start server locally: **`make start_server`**
+-   Start client locally: **`make start-client`**
+-   Start server locally: **`make start-server`**
 -   Build for production: **`make build`**
 -   Lint code: **`make lint`**
 

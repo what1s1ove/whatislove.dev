@@ -1,47 +1,41 @@
-# Base
-
-clean:
-	rm -rf build
-
 # Start
 
 start:
-	npx concurrently -k -p "{name}: {time}" -n "CLIENT,SERVER" -c "green,blue" "make start_client" "make start_server"
-start_client:
+	npx concurrently -k -p "{name}: {time}" -n "CLIENT,SERVER" -c "green,blue" "make start-client" "make start-server"
+start-client:
 	NODE_ENV=development npx eleventy --serve --quiet
-start_server:
+start-server:
 	npx json-server --watch source/database.json --port 3001
 
 # Build
 
 build: clean
 	npx eleventy
+build-clean:
+	rm -rf build
 
-# Format
+# CI
 
-format:
+ci-format:
 	npx prettier --write "**/*.{json,md,yml,njk,css,js,cjs,d.ts}"
-
-# Lint
-
-lint_fs:
+ci-lint-fs:
 	npx ls-lint
-lint_editor:
+ci-lint-editor:
 	npx editorconfig-checker
-lint_format:
+ci-lint-format:
 	npx prettier --check "**/*.{json,md,yml,njk,css,js,cjs,d.ts}"
-lint_markup:
+ci-lint-markup:
 	npx w3c-html-validator "build"
-lint_html:
+ci-lint-html:
 	npx linthtml "source/**/*.njk"
-lint_bem:
+ci-lint-bem:
 	npx bemlint "source/**/*.njk" --errors
-lint_css:
+ci-lint-css:
 	npx stylelint "source/styles/**/*.css"
-lint_js:
+ci-lint-js:
 	npx eslint "**/*.js"
-lint_js_fix:
+ci-lint-js-fix:
 	npx eslint "**/*.js" --fix
-lint_type:
+ci-lint-type:
 	npx tsc --noEmit
-lint: lint_fs lint_editor lint_format lint_markup lint_html lint_bem lint_css lint_js lint_type
+ci-lint: ci-lint-fs ci-lint-editor ci-lint-format ci-lint-markup ci-lint-html ci-lint-bem ci-lint-css ci-lint-js ci-lint-type
