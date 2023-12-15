@@ -53,8 +53,7 @@ jobs:
 
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
-        run: |
-          npm install
+        run: npm install
 
   build:
     name: Build
@@ -76,8 +75,7 @@ jobs:
           key: cd-${{ hashFiles('**/package-lock.json') }}
 
       - name: Code Building
-        run: |
-          make build
+        run: make build
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v2
