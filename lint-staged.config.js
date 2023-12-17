@@ -2,11 +2,15 @@
 
 /** @type {Config} */
 let config = {
-	'*': `make ci-lint-editor ci-lint-fs`,
-	'*.{json,md,yml,njk,css,js,cjs,d.ts}': `prettier --write`,
-	'*.css': `make ci-lint-css`,
-	'*.js': `make ci-lint-js ci-lint-type`,
-	'*.njk': `make ci-lint-html ci-lint-bem`,
+	'*': [
+		`npm run ci:lint:editor`,
+		`npm run ci:lint:fs`,
+		`bash -c 'npm run ci:lint:trash'`,
+	],
+	'*.{json,md,yml,njk,css,js,cjs,d.ts}': [`npm run ci:lint:format`],
+	'*.css': [`npm run ci:lint:css`],
+	'*.js': [`npm run ci:lint:js`, `bash -c 'npm run ci:lint:type'`],
+	'*.njk': [`npm run ci:lint:html`, `npm run ci:lint:bem`],
 }
 
 export default config

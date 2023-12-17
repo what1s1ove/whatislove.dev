@@ -1,6 +1,7 @@
 import js from '@eslint/js'
-import typescript from '@typescript-eslint/eslint-plugin'
-import typescriptParser from '@typescript-eslint/parser'
+import ts from '@typescript-eslint/eslint-plugin'
+import tsParser from '@typescript-eslint/parser'
+import { resolve as tsResolver } from 'eslint-import-resolver-typescript'
 import importPlugin from 'eslint-plugin-import'
 import jsdoc from 'eslint-plugin-jsdoc'
 import perfectionist from 'eslint-plugin-perfectionist'
@@ -10,7 +11,7 @@ import unicorn from 'eslint-plugin-unicorn'
 import globals from 'globals'
 
 /** @typedef {import('eslint').Linter.FlatConfig} FlatConfig */
-/** @typedef {import('eslint').Linter.ParserModule} TypeScriptParser */
+/** @typedef {import('eslint').Linter.ParserModule} ParserModule */
 
 /** @type {FlatConfig} */
 let ignoresConfig = {
@@ -49,10 +50,7 @@ let importConfig = {
 			espree: [`.js`, `.cjs`],
 		},
 		'import/resolver': {
-			alias: {
-				extensions: [`.js`],
-				map: [[`~`, `./source/scripts`]],
-			},
+			typescript: tsResolver,
 		},
 	},
 }
@@ -129,16 +127,16 @@ let simpleImportSortConfig = {
 /** @type {FlatConfig} */
 let typescriptPlugin = {
 	languageOptions: {
-		parser: /** @type {TypeScriptParser} */ (typescriptParser),
+		parser: /** @type {ParserModule} */ (tsParser),
 		parserOptions: {
 			project: `./tsconfig.json`,
 		},
 	},
 	plugins: {
-		'@typescript-eslint': typescript,
+		'@typescript-eslint': ts,
 	},
 	rules: {
-		...typescript.configs[`strict-type-checked`].rules,
+		...ts.configs[`strict-type-checked`].rules,
 		'@typescript-eslint/no-extraneous-class': [
 			`error`,
 			{
@@ -231,15 +229,10 @@ let overridesConfigs = [
 			`lint-staged.config.js`,
 			`eslint.config.js`,
 			`stylelint.config.js`,
+			`knip.config.js`,
 		],
 		rules: {
 			'import/no-default-export': [`off`],
-		},
-	},
-	{
-		files: [`stylelint.config.cjs`, `.linthtmlrc.cjs`],
-		languageOptions: {
-			globals: globals.node,
 		},
 	},
 	{
