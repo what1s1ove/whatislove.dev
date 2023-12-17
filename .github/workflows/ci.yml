@@ -55,7 +55,7 @@ jobs:
           key: ci-${{ hashFiles('**/package-lock.json') }}
 
       - name: Code Building
-        run: make build
+        run: npm run build
 
       - name: Code Linting
-        run: make ci-lint
+        run: npm run ci:lint

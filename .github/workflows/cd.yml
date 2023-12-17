@@ -75,7 +75,7 @@ jobs:
           key: cd-${{ hashFiles('**/package-lock.json') }}
 
       - name: Code Building
-        run: make build
+        run: npm run build
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v2
