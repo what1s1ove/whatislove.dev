@@ -1,5 +1,5 @@
 declare module 'eslint-plugin-simple-import-sort' {
-	import { type ESLint, type Linter } from 'eslint'
+	import { type ESLint } from 'eslint'
 
 	const plugin: ESLint.Plugin
 
@@ -7,7 +7,7 @@ declare module 'eslint-plugin-simple-import-sort' {
 }
 
 declare module 'eslint-plugin-perfectionist' {
-	import { type ESLint, type Linter } from 'eslint'
+	import { type Linter } from 'eslint'
 
 	const configs: Record<'recommended-natural', Required<Linter.FlatConfig>>
 
@@ -17,7 +17,7 @@ declare module 'eslint-plugin-perfectionist' {
 }
 
 declare module 'eslint-plugin-unicorn' {
-	import { type ESLint, type Linter } from 'eslint'
+	import { type Linter } from 'eslint'
 
 	const configs: Record<'recommended', Required<Linter.FlatConfig>>
 
@@ -27,7 +27,7 @@ declare module 'eslint-plugin-unicorn' {
 }
 
 declare module 'eslint-plugin-import' {
-	import { type ESLint, type Linter } from 'eslint'
+	import { type Linter } from 'eslint'
 
 	const configs: Record<'recommended', Required<Linter.FlatConfig>>
 
@@ -37,7 +37,7 @@ declare module 'eslint-plugin-import' {
 }
 
 declare module 'eslint-plugin-jsdoc' {
-	import { type ESLint, type Linter } from 'eslint'
+	import { type Linter } from 'eslint'
 
 	const configs: Record<
 		'recommended-typescript-flavor-error',
@@ -50,7 +50,7 @@ declare module 'eslint-plugin-jsdoc' {
 }
 
 declare module '@eslint/js' {
-	import { type ESLint, type Linter } from 'eslint'
+	import { type Linter } from 'eslint'
 
 	const configs: Record<'recommended', Required<Linter.FlatConfig>>
 
@@ -60,7 +60,7 @@ declare module '@eslint/js' {
 }
 
 declare module '@typescript-eslint/eslint-plugin' {
-	import { type ESLint, type Linter } from 'eslint'
+	import { type Linter } from 'eslint'
 
 	const configs: Record<'strict-type-checked', Required<Linter.FlatConfig>>
 
@@ -70,11 +70,49 @@ declare module '@typescript-eslint/eslint-plugin' {
 }
 
 declare module 'eslint-plugin-sonarjs' {
-	import { type ESLint, type Rule, type Linter } from 'eslint'
+	import { type Linter } from 'eslint'
 
 	const configs: Record<'recommended', Required<Linter.FlatConfig>>
 
 	export default {
 		configs,
 	}
+}
+
+declare module '@11ty/eleventy' {
+	class UserConfig {
+		ignores: Set<string>
+
+		addPassthroughCopy(
+			fileOrDir: string,
+			copyOptions?: Record<string, unknown>,
+		): void
+
+		addTemplateFormats(templateFormats: string): void
+
+		addExtension(
+			fileExtension: string,
+			options: Record<string, unknown>,
+		): void
+
+		addTransform(name: string, transform: Function): void
+	}
+
+	export { UserConfig }
+}
+
+declare module '@11ty/eleventy-img' {
+	function queueImage(
+		src: string,
+		opts: Record<string, unknown>,
+	): Promise<
+		Record<
+			string,
+			{
+				buffer: string
+			}[]
+		>
+	>
+
+	export default queueImage
 }

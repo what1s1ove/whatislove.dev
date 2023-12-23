@@ -224,20 +224,23 @@ let mainRulesConfig = {
 let overridesConfigs = [
 	{
 		files: [
+			`source/data/**/*.js`,
 			`commitlint.config.js`,
 			`prettier.config.js`,
 			`lint-staged.config.js`,
 			`eslint.config.js`,
 			`stylelint.config.js`,
 			`knip.config.js`,
+			`eleventy.config.js`,
 		],
 		rules: {
 			'import/no-default-export': [`off`],
 		},
 	},
 	{
-		files: [`eleventy.config.cjs`],
+		files: [`eleventy.config.js`],
 		rules: {
+			'perfectionist/sort-imports': [`off`],
 			'sonarjs/cognitive-complexity': [`off`],
 		},
 	},
