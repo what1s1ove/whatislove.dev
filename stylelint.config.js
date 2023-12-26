@@ -1,6 +1,4 @@
-/** @typedef {import('stylelint').Config} Config */
-
-/** @type {Config} */
+/** @type {import('stylelint').Config} */
 let config = {
 	extends: [`stylelint-config-standard`],
 	plugins: [`stylelint-order`],

@@ -1,12 +1,14 @@
 import { createElement } from '~/libs/helpers/helpers.js'
-
-/** @typedef {typeof import('~/pages/main/libs/enums/enums').SettingName} SettingName */
-/** @typedef {typeof import('~/pages/main/libs/enums/enums').SettingButtonLabel} SettingButtonLabel */
+import { ValuesOf } from '~/libs/types/types.js'
+import {
+	SettingButtonLabel,
+	SettingName,
+} from '~/pages/main/libs/enums/enums.js'
 
 /**
  * @param {{
- * 	label: SettingButtonLabel[keyof SettingButtonLabel]
- * 	name: SettingName[keyof SettingName]
+ * 	label: ValuesOf<typeof SettingButtonLabel>
+ * 	name: ValuesOf<typeof SettingName>
  * }} params
  * @returns {HTMLElement}
  */

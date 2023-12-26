@@ -1,13 +1,15 @@
-/** @typedef {typeof import('../enums/enums.js').SettingButtonLabel} SettingButtonLabel */
-/** @typedef {typeof import('../enums/enums.js').SettingName} SettingName */
+import { ValuesOf } from '~/libs/types/types.js'
+
+import { SettingButtonLabel, SettingName } from '../enums/enums.js'
 
 /**
  * @typedef {{
  * 	isDefaultChecked: boolean
- * 	label: SettingButtonLabel[keyof SettingButtonLabel]
- * 	name: SettingName[keyof SettingName]
- * 	onClick: (name: SettingName[keyof SettingName], isCheck: boolean) => void
- * }} SettingsButtonPayload
+ * 	label: ValuesOf<typeof SettingButtonLabel>
+ * 	name: ValuesOf<typeof SettingName>
+ * 	onClick: (name: ValuesOf<typeof SettingName>, isCheck: boolean) => void
+ * }}
  */
+let SettingsButtonPayload
 
-export {}
+export { SettingsButtonPayload }

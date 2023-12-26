@@ -10,9 +10,10 @@ import htmlMin from 'html-minifier-terser'
 import * as lightningcss from 'lightningcss'
 import svgo from 'svgo'
 
-/** @typedef {import('@11ty/eleventy').UserConfig} UserConfig */
-/** @typedef {import('./package.json')} PackageJson */
-/** @typedef {import('./source/database.json')} Database */
+/** @typedef {import('./package.json')} */
+let PackageJson
+/** @typedef {import('./source/database.json')} */
+let Database
 
 let Path = /** @type {const} */ ({
 	COPY: [
@@ -38,7 +39,7 @@ let packageJson = /** @type {(text: string) => PackageJson} */ (JSON.parse)(
 )
 
 /**
- * @param {UserConfig} config
+ * @param {import('@11ty/eleventy').UserConfig} config
  * @returns {Record<string, unknown>}
  */
 let init = (config) => {

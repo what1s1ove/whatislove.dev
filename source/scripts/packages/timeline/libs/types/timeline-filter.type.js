@@ -1,11 +1,13 @@
-/** @typedef {typeof import('../enums/enums.js').TimelineSkillType} TimelineSkillType */
-/** @typedef {typeof import('../enums/enums.js').TimelineType} TimelineType */
+import { ValuesOf } from '~/libs/types/types.js'
+
+import { TimelineSkillType, TimelineType } from '../enums/enums.js'
 
 /**
  * @typedef {{
- * 	skillTypes: Record<TimelineSkillType[keyof TimelineSkillType], boolean>
- * 	types: Record<TimelineType[keyof TimelineType], boolean>
- * }} TimelineFilter
+ * 	skillTypes: Record<ValuesOf<typeof TimelineSkillType>, boolean>
+ * 	types: Record<ValuesOf<typeof TimelineType>, boolean>
+ * }}
  */
+let TimelineFilter
 
-export {}
+export { TimelineFilter }

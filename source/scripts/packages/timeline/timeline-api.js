@@ -1,14 +1,12 @@
 import { ApiPath, ContentType } from '~/libs/enums/enums.js'
-import { HttpMethod } from '~/libs/packages/http/http.js'
+import { Http, HttpMethod } from '~/libs/packages/http/http.js'
+import { ValuesOf } from '~/libs/types/types.js'
 
 import { TimelineApiPath } from './libs/enums/enums.js'
-
-/** @typedef {import('~/libs/packages/http/http.js').Http} Http */
-/** @typedef {import('./libs/types/types.js').Timeline} Timeline */
-/** @typedef {import('./libs/types/types.js').TimelineCreatePayload} TimelineCreatePayload */
+import { Timeline, TimelineCreatePayload } from './libs/types/types.js'
 
 class TimelineApi {
-	/** @type {(typeof ApiPath)[keyof typeof ApiPath]} */
+	/** @type {ValuesOf<typeof ApiPath>} */
 	#apiPath
 
 	/** @type {string} */

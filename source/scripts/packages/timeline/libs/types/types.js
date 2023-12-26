@@ -1,5 +1,3 @@
-/** @typedef {import('./timeline-create-payload.type.js').TimelineCreatePayload} TimelineCreatePayload */
-/** @typedef {import('./timeline-filter.type.js').TimelineFilter} TimelineFilter */
-/** @typedef {import('./timeline.type.js').Timeline} Timeline */
-
-export {}
+export { Timeline } from './timeline.type.js'
+export { TimelineCreatePayload } from './timeline-create-payload.type.js'
+export { TimelineFilter } from './timeline-filter.type.js'

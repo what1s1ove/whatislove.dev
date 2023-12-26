@@ -1,3 +1,1 @@
-/** @typedef {import('./settings-button-payload.type.js').SettingsButtonPayload} SettingsButtonPayload */
-
-export {}
+export { SettingsButtonPayload } from './settings-button-payload.type.js'

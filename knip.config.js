@@ -1,6 +1,4 @@
-/** @typedef {import('knip/dist').KnipConfig} KnipConfig */
-
-/** @type {KnipConfig} */
+/** @type {import('knip').KnipConfig} */
 let config = {
 	entry: [`source/scripts/index.js`, `eleventy.config.js`, `.linthtmlrc.cjs`],
 	ignore: [`source/data/**/*.js`],

@@ -1,4 +1,8 @@
 import { Toast } from '~/libs/components/components.js'
+import { Storage } from '~/libs/packages/storage/storage.js'
+import { ToastMessagePayload } from '~/libs/types/types.js'
+import { TimelineApi } from '~/packages/timeline/timeline.js'
+import { SettingsButtonPayload } from '~/pages/main/libs/types/types.js'
 
 import {
 	EasterEgg,
@@ -7,11 +11,6 @@ import {
 	Timeline,
 	TimelineForm,
 } from './libs/components/components.js'
-
-/** @typedef {import('~/pages/main/libs/types/types.js').SettingsButtonPayload} SettingsButtonPayload */
-/** @typedef {import('~/libs/types/types.js').ToastMessagePayload} ToastMessagePayload */
-/** @typedef {import('~/libs/packages/storage/storage.js').Storage} Storage */
-/** @typedef {import('~/packages/timeline/timeline.js').TimelineApi} TimelineApi */
 
 class Main {
 	/** @type {EasterEgg} */

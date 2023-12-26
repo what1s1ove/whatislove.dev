@@ -1,12 +1,13 @@
 import { Loader } from '~/libs/components/components.js'
 import { checkIsBeforeElement } from '~/libs/helpers/helpers.js'
+import {
+	Timeline as TTimeline,
+	TimelineApi,
+	TimelineFilter,
+} from '~/packages/timeline/timeline.js'
 
 import { TimelineForm, TimelineList } from './libs/components/components.js'
 import { getSuitTimelines } from './libs/helpers/helpers.js'
-
-/** @typedef {import('~/packages/timeline/timeline.js').Timeline} TTimeline */
-/** @typedef {import('~/packages/timeline/timeline.js').TimelineFilter} TimelineFilter */
-/** @typedef {import('~/packages/timeline/timeline.js').TimelineApi} TimelineApi */
 
 class Timeline {
 	/** @type {(formValues: TimelineFilter) => void} */
