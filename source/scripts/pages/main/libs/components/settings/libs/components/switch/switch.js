@@ -1,4 +1,5 @@
-/** @typedef {typeof import('~/pages/main/libs/enums/enums').SettingName} SettingName */
+import { ValuesOf } from '~/libs/types/types.js'
+import { SettingName } from '~/pages/main/libs/enums/enums.js'
 
 class Switch {
 	/** @type {(event_: Event) => void} */
@@ -7,12 +8,12 @@ class Switch {
 	/** @type {boolean} */
 	#isDefaultChecked
 
-	/** @type {SettingName[keyof SettingName]} */
+	/** @type {ValuesOf<typeof SettingName>} */
 	#name
 
 	/**
 	 * @type {(
-	 * 	name: SettingName[keyof SettingName],
+	 * 	name: ValuesOf<typeof SettingName>,
 	 * 	isChecked: boolean,
 	 * ) => void}
 	 */
@@ -24,9 +25,9 @@ class Switch {
 	/**
 	 * @param {{
 	 * 	isDefaultChecked: boolean
-	 * 	name: SettingName[keyof SettingName]
+	 * 	name: ValuesOf<typeof SettingName>
 	 * 	onClick: (
-	 * 		name: SettingName[keyof SettingName],
+	 * 		name: ValuesOf<typeof SettingName>,
 	 * 		isChecked: boolean,
 	 * 	) => void
 	 * }} constructor

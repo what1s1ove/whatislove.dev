@@ -1,11 +1,9 @@
-import { ContentType } from '~/libs/enums/enums.js'
+import { ContentType, ErrorMessage } from '~/libs/enums/enums.js'
 import { checkIsOneOf } from '~/libs/helpers/helpers.js'
+import { ValuesOf } from '~/libs/types/types.js'
 
-import { HttpHeader, HttpMethod } from './libs/enums/enums.js'
+import { HttpCode, HttpHeader, HttpMethod } from './libs/enums/enums.js'
 import { HttpError } from './libs/exceptions/exceptions.js'
-
-/** @typedef {typeof import('~/libs/enums/enums.js').ErrorMessage} ErrorMessage */
-/** @typedef {typeof import('./libs/enums/enums.js').HttpCode} HttpCode */
 
 class Http {
 	/**
@@ -16,10 +14,10 @@ class Http {
 	static checkStatus(response) {
 		if (!response.ok) {
 			throw new HttpError({
-				message: /** @type {ErrorMessage[keyof ErrorMessage]} */ (
+				message: /** @type {ValuesOf<typeof ErrorMessage>} */ (
 					response.statusText
 				),
-				status: /** @type {HttpCode[keyof HttpCode]} */ (
+				status: /** @type {ValuesOf<typeof HttpCode>} */ (
 					response.status
 				),
 			})
@@ -48,9 +46,7 @@ class Http {
 
 	/**
 	 * @param {{
-	 * 	contentType?:
-	 * 		| (typeof ContentType)[keyof typeof ContentType]
-	 * 		| undefined
+	 * 	contentType?: ValuesOf<typeof ContentType> | undefined
 	 * }} options
 	 * @returns {Headers}
 	 */
@@ -68,8 +64,8 @@ class Http {
 	 * @template T
 	 * @param {string} url
 	 * @param {{
-	 * 	contentType?: (typeof ContentType)[keyof typeof ContentType]
-	 * 	method?: (typeof HttpMethod)[keyof typeof HttpMethod]
+	 * 	contentType?: ValuesOf<typeof ContentType>
+	 * 	method?: ValuesOf<typeof HttpMethod>
 	 * 	payload?: unknown
 	 * }} [options]
 	 * @returns {Promise<T>}

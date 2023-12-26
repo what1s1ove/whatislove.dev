@@ -1,6 +1,4 @@
-/** @typedef {import('lint-staged').Config} Config */
-
-/** @type {Config} */
+/** @type {import('lint-staged').Config} */
 let config = {
 	'*': [
 		`npm run ci:lint:editor`,

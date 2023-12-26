@@ -1,5 +1,6 @@
-/** @typedef {typeof import('../enums/enums.js').TimelineSkillType} TimelineSkillType */
-/** @typedef {typeof import('../enums/enums.js').TimelineType} TimelineType */
+import { ValuesOf } from '~/libs/types/types.js'
+
+import { TimelineSkillType, TimelineType } from '../enums/enums.js'
 
 /**
  * @typedef {{
@@ -12,9 +13,10 @@
  * 	origin: string
  * 	originDesc: string
  * 	title: string
- * 	skillType: TimelineSkillType[keyof TimelineSkillType]
- * 	type: TimelineType[keyof TimelineType]
- * }} Timeline
+ * 	skillType: ValuesOf<typeof TimelineSkillType>
+ * 	type: ValuesOf<typeof TimelineType>
+ * }}
  */
+let Timeline
 
-export {}
+export { Timeline }

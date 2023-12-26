@@ -10,9 +10,6 @@ let Image = require(`@11ty/eleventy-img`)
 let svgo = require(`svgo`)
 let path = require(`node:path`)
 
-/** @typedef {import('@11ty/eleventy').UserConfig} UserConfig */
-/** @typedef {ReturnType<typeof import('@11ty/eleventy/src/defaultConfig')>} DefaultConfig */
-
 let isDevelopment = process.env.NODE_ENV === `development`
 
 let Path = /** @type {const} */ ({
@@ -33,8 +30,8 @@ let Path = /** @type {const} */ ({
 })
 
 /**
- * @param {UserConfig} config
- * @returns {DefaultConfig}
+ * @param {import('@11ty/eleventy').UserConfig} config
+ * @returns {ReturnType<typeof import('@11ty/eleventy/src/defaultConfig')>}
  */
 let init = (config) => {
 	// ignores
