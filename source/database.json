@@ -1598,6 +1598,19 @@
 			"linkDesc": "",
 			"date": "2023-12-15T00:00:00.000Z",
 			"endDate": ""
+		},
+		{
+			"id": "Ub5dxSf",
+			"skillType": "softSkill",
+			"type": "book",
+			"title": "Born to Run: A Hidden Tribe, Superathletes, and the Greatest Race the World Has Never Seen (Christopher McDougall)",
+			"desc": "",
+			"origin": "https://www.amazon.com/Born-Run-Hidden-Superathletes-Greatest/dp/0307279189",
+			"originDesc": "Amazon",
+			"link": "",
+			"linkDesc": "",
+			"date": "2023-12-26T00:00:00.000Z",
+			"endDate": ""
 		}
 	]
 }
