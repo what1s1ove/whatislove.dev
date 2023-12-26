@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/what1s1ove/whatislove.dev/compare/1.5.0...1.6.0) (2023-12-26)
+
+
+### Features
+
+* add Born to Run book wd-282 ([#284](https://github.com/what1s1ove/whatislove.dev/issues/284)) ([0ae515d](https://github.com/what1s1ove/whatislove.dev/commit/0ae515dffff4d185a689ae479350c56f1f852d9f))
+
 ## [1.5.0](https://github.com/what1s1ove/whatislove.dev/compare/1.4.3...1.5.0) (2023-12-15)
 
 
