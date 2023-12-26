@@ -1,21 +1,16 @@
 import { getCustomAttributeName } from '~/libs/helpers/helpers.js'
+import { Storage } from '~/libs/packages/storage/storage.js'
+import { ValuesOf } from '~/libs/types/types.js'
 import { SettingName } from '~/pages/main/libs/enums/enums.js'
+import { SettingsButtonPayload } from '~/pages/main/libs/types/types.js'
 
 import { Control, Switch } from './libs/components/components.js'
 import { getSettingItemElement } from './libs/helpers/helpers.js'
 
 let RESULT_VALUE = /** @type {const} */ (`auto`)
 
-/** @typedef {import('~/pages/main/libs/types/types.js').SettingsButtonPayload} SettingsButtonPayload */
-/** @typedef {import('~/libs/packages/storage/storage.js').Storage} Storage */
-
 class Settings {
-	/**
-	 * @type {(
-	 * 	name: (typeof SettingName)[keyof typeof SettingName],
-	 * 	value: string,
-	 * ) => void}
-	 */
+	/** @type {(name: ValuesOf<typeof SettingName>, value: string) => void} */
 	#handleControlChange
 
 	/** @type {HTMLElement | undefined} */
@@ -38,7 +33,7 @@ class Settings {
 	}
 
 	/**
-	 * @param {(typeof SettingName)[keyof typeof SettingName]} name
+	 * @param {ValuesOf<typeof SettingName>} name
 	 * @param {string} value
 	 * @returns {void}
 	 */
@@ -56,7 +51,7 @@ class Settings {
 	}
 
 	/**
-	 * @param {(typeof SettingName)[keyof typeof SettingName]} name
+	 * @param {ValuesOf<typeof SettingName>} name
 	 * @returns {void}
 	 */
 	#initControl(name) {
@@ -74,7 +69,7 @@ class Settings {
 	}
 
 	/**
-	 * @param {(typeof SettingName)[keyof typeof SettingName]} name
+	 * @param {ValuesOf<typeof SettingName>} name
 	 * @returns {void}
 	 */
 	#removeSettingAttr(name) {
@@ -82,7 +77,7 @@ class Settings {
 	}
 
 	/**
-	 * @param {(typeof SettingName)[keyof typeof SettingName]} name
+	 * @param {ValuesOf<typeof SettingName>} name
 	 * @returns {string | null}
 	 */
 	#setInitialSettingAttr(name) {
@@ -97,7 +92,7 @@ class Settings {
 	}
 
 	/**
-	 * @param {(typeof SettingName)[keyof typeof SettingName]} name
+	 * @param {ValuesOf<typeof SettingName>} name
 	 * @param {string} value
 	 * @returns {void}
 	 */

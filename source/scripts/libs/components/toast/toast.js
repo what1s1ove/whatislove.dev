@@ -1,12 +1,11 @@
 import { setAsyncTimeout } from '~/libs/helpers/helpers.js'
+import { ToastMessagePayload } from '~/libs/types/types.js'
 
 import {
 	CLEAN_MESSAGE_DELAY,
 	TOAST_DEFAULT_DURATION,
 	TOAST_SHOW_CLASS_NAME,
 } from './libs/constants/constants.js'
-
-/** @typedef {import('~/libs/types/types.js').ToastMessagePayload} ToastMessagePayload */
 
 class Toast {
 	/** @type {boolean} */

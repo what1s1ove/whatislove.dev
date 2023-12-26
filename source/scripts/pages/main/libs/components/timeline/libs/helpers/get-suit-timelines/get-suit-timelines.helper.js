@@ -1,7 +1,6 @@
-import { checkIsTimelineSuit } from '../check-is-timeline-suit/check-is-timeline-suit.helper.js'
+import { Timeline, TimelineFilter } from '~/packages/timeline/timeline.js'
 
-/** @typedef {import('~/packages/timeline/timeline.js').Timeline} Timeline */
-/** @typedef {import('~/packages/timeline/timeline.js').TimelineFilter} TimelineFilter */
+import { checkIsTimelineSuit } from '../check-is-timeline-suit/check-is-timeline-suit.helper.js'
 
 /**
  * @param {Timeline[]} timelines

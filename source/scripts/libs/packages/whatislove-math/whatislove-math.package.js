@@ -1,3 +1,5 @@
+import { ValuesOf } from '~/libs/types/types.js'
+
 class WhatisloveMath {
 	static BoostEntity = /** @type {const} */ ({
 		BOOK: `book`,
@@ -15,7 +17,7 @@ class WhatisloveMath {
 
 	/**
 	 * @param {number} initialValue
-	 * @param {WhatisloveMath.BoostEntity[keyof WhatisloveMath.BoostEntity][]} boostEntities
+	 * @param {ValuesOf<WhatisloveMath.BoostEntity>[]} boostEntities
 	 * @returns {number}
 	 * @throws {SyntaxError}
 	 */
@@ -52,9 +54,9 @@ class WhatisloveMath {
 	}
 
 	/**
-	 * @param {WhatisloveMath.BoostEntity[keyof WhatisloveMath.BoostEntity]} boostEntity
+	 * @param {ValuesOf<WhatisloveMath.BoostEntity>} boostEntity
 	 * @param {number} count
-	 * @returns {WhatisloveMath.BoostEntity[keyof WhatisloveMath.BoostEntity][]}
+	 * @returns {ValuesOf<WhatisloveMath.BoostEntity>[]}
 	 */
 	static multiplyBoostEntities(boostEntity, count = 0) {
 		return Array.from({ length: count }, () => boostEntity)

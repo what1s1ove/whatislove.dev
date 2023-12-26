@@ -3,7 +3,8 @@
  * 	cb?: () => void
  * 	duration?: number
  * 	message: string
- * }} ToastMessagePayload
+ * }}
  */
+let ToastMessagePayload
 
-export {}
+export { ToastMessagePayload }

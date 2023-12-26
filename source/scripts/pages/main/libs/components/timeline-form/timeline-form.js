@@ -1,13 +1,12 @@
 import { fillSelectOptions, getFormValues } from '~/libs/helpers/helpers.js'
 import {
+	TimelineApi,
+	TimelineCreatePayload,
 	TimelineSkillType,
 	TimelineType,
 } from '~/packages/timeline/timeline.js'
 
 import { getTransformedTimeline } from './helpers/helpers.js'
-
-/** @typedef {import('~/packages/timeline/timeline.js').TimelineApi} TimelineApi */
-/** @typedef {import('~/packages/timeline/timeline.js').TimelineCreatePayload} TimelineCreatePayload */
 
 let timelineSkillTypes = Object.values(TimelineSkillType)
 let timelineTypes = Object.values(TimelineType)

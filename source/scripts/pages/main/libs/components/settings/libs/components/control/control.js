@@ -1,4 +1,5 @@
-/** @typedef {typeof import('~/pages/main/libs/enums/enums').SettingName} SettingName */
+import { ValuesOf } from '~/libs/types/types.js'
+import { SettingName } from '~/pages/main/libs/enums/enums.js'
 
 class Control {
 	/** @type {HTMLFieldSetElement | undefined} */
@@ -10,20 +11,17 @@ class Control {
 	/** @type {(event_: Event) => void} */
 	#handleSwitchChange
 
-	/** @type {SettingName[keyof SettingName]} */
+	/** @type {ValuesOf<typeof SettingName>} */
 	#name
 
-	/** @type {(name: SettingName[keyof SettingName], value: string) => void} */
+	/** @type {(name: ValuesOf<typeof SettingName>, value: string) => void} */
 	#onChange
 
 	/**
 	 * @param {{
 	 * 	defaultValue: string | null
-	 * 	name: SettingName[keyof SettingName]
-	 * 	onChange: (
-	 * 		name: SettingName[keyof SettingName],
-	 * 		value: string,
-	 * 	) => void
+	 * 	name: ValuesOf<typeof SettingName>
+	 * 	onChange: (name: ValuesOf<typeof SettingName>, value: string) => void
 	 * }} constructor
 	 */
 	constructor({ defaultValue, name, onChange }) {

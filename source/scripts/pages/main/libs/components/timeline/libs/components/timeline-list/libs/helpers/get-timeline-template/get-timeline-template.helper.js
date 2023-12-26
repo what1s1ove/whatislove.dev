@@ -1,6 +1,5 @@
 import { getFormattedDate, getStringWitCheck } from '~/libs/helpers/helpers.js'
-
-/** @typedef {import('~/packages/timeline/timeline.js').Timeline} Timeline */
+import { Timeline } from '~/packages/timeline/timeline.js'
 
 /**
  * @param {Timeline} timeline

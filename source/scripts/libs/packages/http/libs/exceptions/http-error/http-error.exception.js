@@ -1,12 +1,13 @@
 import { CustomExceptionName, ErrorMessage } from '~/libs/enums/enums.js'
+import { ValuesOf } from '~/libs/types/types.js'
 
 import { HttpCode } from '../../enums/enums.js'
 
 class HttpError extends Error {
 	/**
 	 * @param {{
-	 * 	message?: (typeof ErrorMessage)[keyof typeof ErrorMessage]
-	 * 	status?: (typeof HttpCode)[keyof typeof HttpCode]
+	 * 	message?: ValuesOf<typeof ErrorMessage>
+	 * 	status?: ValuesOf<typeof HttpCode>
 	 * }} [properties]
 	 */
 	constructor({

@@ -1,9 +1,11 @@
 import { NotificationMessage } from '~/libs/enums/enums.js'
 import { initDebounce } from '~/libs/helpers/helpers.js'
+import { ToastMessagePayload, ValuesOf } from '~/libs/types/types.js'
 import {
 	SettingButtonLabel,
 	SettingName,
 } from '~/pages/main/libs/enums/enums.js'
+import { SettingsButtonPayload } from '~/pages/main/libs/types/types.js'
 
 import {
 	NOTIFICATION_DELAY,
@@ -14,9 +16,6 @@ import {
 	getNodeRandomCoords,
 	getPlayerElement,
 } from './libs/helpers/helpers.js'
-
-/** @typedef {import('~/libs/types/types.js').ToastMessagePayload} ToastMessagePayload */
-/** @typedef {import('~/pages/main/libs/types/types.js').SettingsButtonPayload} SettingsButtonPayload */
 
 class EasterEgg {
 	/** @type {HTMLAudioElement | undefined} */
@@ -33,7 +32,7 @@ class EasterEgg {
 
 	/**
 	 * @type {(
-	 * 	name: (typeof SettingName)[keyof typeof SettingName],
+	 * 	name: ValuesOf<typeof SettingName>,
 	 * 	isChecked: boolean,
 	 * ) => void}
 	 */
@@ -101,7 +100,7 @@ class EasterEgg {
 	}
 
 	/**
-	 * @param {(typeof SettingName)[keyof typeof SettingName]} _name
+	 * @param {ValuesOf<typeof SettingName>} _name
 	 * @param {boolean} isChecked
 	 * @returns {void}
 	 */

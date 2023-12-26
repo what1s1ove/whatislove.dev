@@ -1,4 +1,4 @@
-/** @typedef {import('~/packages/timeline/timeline.js').TimelineCreatePayload} TimelineCreatePayload */
+import { TimelineCreatePayload } from '~/packages/timeline/timeline.js'
 
 /**
  * @param {TimelineCreatePayload} timeline
