@@ -1,8 +1,10 @@
 /** @type {import('knip').KnipConfig} */
 let config = {
-	entry: [`source/scripts/index.js`, `eleventy.config.js`, `.linthtmlrc.cjs`],
-	ignore: [`source/data/**/*.js`],
-	ignoreDependencies: [`linthtml-config-htmlacademy`],
+	eleventy: {
+		config: `eleventy.config.js`,
+		entry: [`source/data/**/*.js`],
+	},
+	entry: [`source/scripts/index.js`],
 }
 
 export default config
