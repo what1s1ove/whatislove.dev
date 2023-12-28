@@ -1,16 +1,19 @@
-let process = require(`node:process`)
-let esbuild = require(`esbuild`)
-let lightningcss = require(`lightningcss`)
-let htmlMin = require(`html-minifier-terser`)
-let { existsSync } = require(`fs`)
-let { mkdir, readFile, writeFile } = require(`fs/promises`)
-let browserslist = require(`browserslist`)
-let packageJson = require(`./package.json`)
-let Image = require(`@11ty/eleventy-img`)
-let svgo = require(`svgo`)
-let path = require(`node:path`)
+import { existsSync } from 'node:fs'
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import path from 'node:path'
+import process from 'node:process'
 
-let isDevelopment = process.env.NODE_ENV === `development`
+import Image from '@11ty/eleventy-img'
+import browserslist from 'browserslist'
+import esbuild from 'esbuild'
+import htmlMin from 'html-minifier-terser'
+import * as lightningcss from 'lightningcss'
+import svgo from 'svgo'
+
+/** @typedef {import('./package.json')} */
+let PackageJson
+/** @typedef {import('./source/database.json')} */
+let Database
 
 let Path = /** @type {const} */ ({
 	COPY: [
@@ -29,9 +32,15 @@ let Path = /** @type {const} */ ({
 	},
 })
 
+let isDevelopment = process.env[`NODE_ENV`] === `development`
+let rawPackageJson = await readFile(new URL(`package.json`, import.meta.url))
+let packageJson = /** @type {(text: string) => PackageJson} */ (JSON.parse)(
+	rawPackageJson.toString(),
+)
+
 /**
  * @param {import('@11ty/eleventy').UserConfig} config
- * @returns {ReturnType<typeof import('@11ty/eleventy/src/defaultConfig')>}
+ * @returns {Record<string, unknown>}
  */
 let init = (config) => {
 	// ignores
@@ -48,12 +57,20 @@ let init = (config) => {
 	config.addTemplateFormats(`json`)
 
 	config.addExtension(`json`, {
+		/**
+		 * @param {string} _content
+		 * @param {string} url
+		 */
 		compile: async (_content, url) => {
 			if (url !== Path.DB) {
 				return
 			}
 
-			let database = JSON.parse(await readFile(Path.DB))
+			let rawDatabase = await readFile(Path.DB)
+			let database = /** @type {(text: string) => Database} */ (
+				JSON.parse
+			)(rawDatabase.toString())
+
 			let isFolderExists = existsSync(`build/api`)
 
 			if (!isFolderExists) {
@@ -62,7 +79,9 @@ let init = (config) => {
 
 			await Promise.all(
 				Object.keys(database).map((databaseKey) => {
-					let payload = JSON.stringify(database[databaseKey])
+					let payload = JSON.stringify(
+						database[/** @type {keyof Database} */ (databaseKey)],
+					)
 
 					return writeFile(`build/api/${databaseKey}.json`, payload)
 				}),
@@ -72,23 +91,36 @@ let init = (config) => {
 	})
 
 	// html
-	config.addTransform(`html-minify`, async (content, path) => {
-		if (path.endsWith(`.html`)) {
-			return await htmlMin.minify(content, {
-				collapseBooleanAttributes: true,
-				collapseWhitespace: true,
-				removeComments: true,
-			})
-		}
+	config.addTransform(
+		`html-minify`,
+		/**
+		 * @param {string} content
+		 * @param {string} path
+		 * @returns {Promise<string>}
+		 */
+		async (content, path) => {
+			if (path.endsWith(`.html`)) {
+				return await htmlMin.minify(content, {
+					collapseBooleanAttributes: true,
+					collapseWhitespace: true,
+					removeComments: true,
+				})
+			}
 
-		return content
-	})
+			return content
+		},
+	)
 
 	// css
 	config.addTemplateFormats(`css`)
 
 	config.addExtension(`css`, {
-		compile: async (_content, url) => {
+		/**
+		 * @param {string} _content
+		 * @param {string} url
+		 * @returns {void | (() => Promise<string>)}
+		 */
+		compile: (_content, url) => {
 			if (url !== Path.CSS) {
 				return
 			}
@@ -109,13 +141,13 @@ let init = (config) => {
 					),
 				})
 
-				if (isDevelopment) {
-					code += `\n/*# sourceMappingURL=data:application/json;base64,${map.toString(
-						`base64`,
+				if (map) {
+					return `${code.toString()}\n/*# sourceMappingURL=data:application/json;base64,${btoa(
+						map.toString(),
 					)}*/`
 				}
 
-				return code
+				return code.toString()
 			}
 		},
 		outputFileExtension: `css`,
@@ -125,7 +157,12 @@ let init = (config) => {
 	config.addTemplateFormats(`js`)
 
 	config.addExtension(`js`, {
-		compile: async (_content, url) => {
+		/**
+		 * @param {string} _content
+		 * @param {string} url
+		 * @returns {void | (() => Promise<string>)}
+		 */
+		compile: (_content, url) => {
 			if (url !== Path.JS) {
 				return
 			}
@@ -142,7 +179,7 @@ let init = (config) => {
 					write: false,
 				})
 
-				return mainOutputFile.text
+				return /** @type {esbuild.OutputFile} */ (mainOutputFile).text
 			}
 		},
 		outputFileExtension: `js`,
@@ -152,17 +189,27 @@ let init = (config) => {
 	config.addTemplateFormats(`png`)
 
 	config.addExtension(`png`, {
-		compile: async (_content, url) => {
+		/**
+		 * @param {string} content
+		 * @param {string} url
+		 * @returns {() => Promise<string>}
+		 */
+		compile: (content, url) => {
 			return async () => {
-				let {
-					png: [originalImg],
-				} = await Image(url, {
+				let { png: [originalImg] = [] } = await Image(url, {
 					dryRun: true,
 					formats: [`png`],
 				})
 
 				if (url.includes(`.photo.`)) {
 					await Image(url, {
+						/**
+						 * @param {string} _id
+						 * @param {string} source
+						 * @param {string} _width
+						 * @param {string} format
+						 * @returns {string}
+						 */
 						filenameFormat: (_id, source, _width, format) => {
 							let extension = path.extname(source)
 							let name = path.basename(source, extension)
@@ -174,7 +221,7 @@ let init = (config) => {
 					})
 				}
 
-				return originalImg.buffer
+				return originalImg ? originalImg.buffer : content
 			}
 		},
 		outputFileExtension: `png`,
@@ -184,6 +231,10 @@ let init = (config) => {
 	config.addTemplateFormats(`svg`)
 
 	config.addExtension(`svg`, {
+		/**
+		 * @param {string} content
+		 * @returns {() => string}
+		 */
 		compile: (content) => {
 			return () => {
 				return svgo.optimize(content).data
@@ -193,7 +244,6 @@ let init = (config) => {
 	})
 
 	return {
-		dataTemplateEngine: `njk`,
 		dir: {
 			data: `data`,
 			includes: `includes`,
@@ -203,9 +253,7 @@ let init = (config) => {
 		},
 		htmlTemplateEngine: `njk`,
 		markdownTemplateEngine: `njk`,
-		passthroughFileCopy: true,
-		templateFormats: [`md`, `njk`],
 	}
 }
 
-module.exports = init
+export default init

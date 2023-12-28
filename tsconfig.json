@@ -1,5 +1,9 @@
 {
-	"include": ["**/*.js"],
+	"include": [
+		"**/*.js",
+		"./source/scripts/globals.d.ts",
+		"./source/scripts/packages.d.ts"
+	],
 	"exclude": ["node_modules", "build"],
 	"compilerOptions": {
 		"baseUrl": ".",
@@ -8,10 +12,6 @@
 		},
 		"skipLibCheck": true,
 		"lib": ["DOM", "DOM.Iterable", "ESNext"],
-		"types": [
-			"./source/scripts/globals.d.ts",
-			"./source/scripts/packages.d.ts"
-		],
 		"esModuleInterop": true,
 		"moduleResolution": "Bundler",
 		"target": "ESNext",
