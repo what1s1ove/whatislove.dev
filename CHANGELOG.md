@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/what1s1ove/whatislove.dev/compare/1.6.0...1.7.0) (2023-12-28)
+
+
+### Features
+
+* replace cjs with js in 11ty wd-182 ([#279](https://github.com/what1s1ove/whatislove.dev/issues/279)) ([3f60d30](https://github.com/what1s1ove/whatislove.dev/commit/3f60d30aeb353a687d4df22d9f0bb82313446f76))
+
 ## [1.6.0](https://github.com/what1s1ove/whatislove.dev/compare/1.5.0...1.6.0) (2023-12-26)
 
 
