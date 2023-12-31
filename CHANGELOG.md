@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/what1s1ove/whatislove.dev/compare/1.7.0...1.8.0) (2023-12-31)
+
+
+### Features
+
+* replace -webkit-text-fill-color with color property wd-294 ([#296](https://github.com/what1s1ove/whatislove.dev/issues/296)) ([7ff3bcc](https://github.com/what1s1ove/whatislove.dev/commit/7ff3bcc831174b41df16f51b2ce677f79001c194))
+
 ## [1.7.0](https://github.com/what1s1ove/whatislove.dev/compare/1.6.0...1.7.0) (2023-12-28)
 
 
