@@ -8,6 +8,7 @@
 		"npm": "10.x.x"
 	},
 	"scripts": {
+		"_prettier": "prettier \"**/*.{json,md,yml,njk,css,js,cjs,d.ts}\"",
 		"postinstall": "simple-git-hooks",
 		"start": "concurrently -k -p \"{name}: {time}\" -n \"CLIENT,SERVER\" -c \"green,blue\" \"npm:start:client\" \"npm:start:server\"",
 		"start:client": "NODE_ENV=development npx @11ty/eleventy --serve --quiet",
@@ -17,7 +18,7 @@
 		"ci:lint:commit": "npx @commitlint/cli --edit",
 		"ci:lint:fs": "ls-lint",
 		"ci:lint:editor": "editorconfig-checker",
-		"ci:lint:format": "npm run ci:format -- --check",
+		"ci:lint:format": "npm run _prettier -- --check",
 		"ci:lint:trash": "knip --config knip.config.js",
 		"ci:lint:markup": "w3c-html-validator \"build\"",
 		"ci:lint:html": "npx @linthtml/linthtml \"source/**/*.njk\"",
@@ -26,7 +27,7 @@
 		"ci:lint:js": "eslint \"**/*.js\"",
 		"ci:lint:type": "tsc --noEmit",
 		"ci:lint": "concurrently \"npm:ci:lint:*(!commit)\"",
-		"ci:format": "prettier --write \"**/*.{json,md,yml,njk,css,js,cjs,d.ts}\""
+		"ci:format": "npm run _prettier -- --write"
 	},
 	"dependencies": {
 		"form-payload": "0.0.8"
@@ -41,6 +42,7 @@
 		"@linthtml/linthtml": "0.9.5",
 		"@ls-lint/ls-lint": "2.2.2",
 		"@types/eslint": "8.44.7",
+		"@types/eslint__js": "8.42.3",
 		"@types/html-minifier-terser": "7.0.2",
 		"@types/lint-staged": "13.2.2",
 		"@typescript-eslint/eslint-plugin": "6.14.0",
