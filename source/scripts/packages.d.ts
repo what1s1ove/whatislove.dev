@@ -36,19 +36,6 @@ declare module 'eslint-plugin-import' {
 	}
 }
 
-declare module 'eslint-plugin-jsdoc' {
-	import { type Linter } from 'eslint'
-
-	const configs: Record<
-		'recommended-typescript-flavor-error',
-		Required<Linter.FlatConfig>
-	>
-
-	export default {
-		configs,
-	}
-}
-
 declare module '@typescript-eslint/eslint-plugin' {
 	import { type Linter } from 'eslint'
 
