@@ -41,6 +41,7 @@
 		"@eslint/js": "8.55.0",
 		"@linthtml/linthtml": "0.9.5",
 		"@ls-lint/ls-lint": "2.2.2",
+		"@types/11ty__eleventy-img": "2.0.5",
 		"@types/eslint": "8.44.7",
 		"@types/eslint__js": "8.42.3",
 		"@types/html-minifier-terser": "7.0.2",

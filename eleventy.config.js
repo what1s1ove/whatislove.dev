@@ -10,6 +10,8 @@ import htmlMin from 'html-minifier-terser'
 import * as lightningcss from 'lightningcss'
 import svgo from 'svgo'
 
+/** @typedef {import('11ty__eleventy-img').ImageFormatWithAliases} */
+let ImageFormatWithAliases
 /** @typedef {import('./package.json')} */
 let PackageJson
 /** @typedef {import('./source/database.json')} */
@@ -190,39 +192,35 @@ let init = (config) => {
 
 	config.addExtension(`png`, {
 		/**
-		 * @param {string} content
+		 * @param {string} _content
 		 * @param {string} url
-		 * @returns {() => Promise<string>}
+		 * @returns {Promise<void>}
 		 */
-		compile: (content, url) => {
-			return async () => {
-				let { png: [originalImg] = [] } = await Image(url, {
-					dryRun: true,
-					formats: [`png`],
-				})
+		compile: async (_content, url) => {
+			let isPhoto = url.includes(`.photo.`)
+			let formats = /** @type {ImageFormatWithAliases[]} */ ([`png`])
 
-				if (url.includes(`.photo.`)) {
-					await Image(url, {
-						/**
-						 * @param {string} _id
-						 * @param {string} source
-						 * @param {string} _width
-						 * @param {string} format
-						 * @returns {string}
-						 */
-						filenameFormat: (_id, source, _width, format) => {
-							let extension = path.extname(source)
-							let name = path.basename(source, extension)
-
-							return `${name}.${format}`
-						},
-						formats: [`webp`, `avif`],
-						outputDir: `build/images`,
-					})
-				}
-
-				return originalImg ? originalImg.buffer : content
+			if (isPhoto) {
+				formats.push(`webp`, `avif`)
 			}
+
+			await Image(url, {
+				/**
+				 * @param {string} _id
+				 * @param {string} source
+				 * @param {number} _width
+				 * @param {string} format
+				 * @returns {string}
+				 */
+				filenameFormat: (_id, source, _width, format) => {
+					let extension = path.extname(source)
+					let name = path.basename(source, extension)
+
+					return `${name}.${format}`
+				},
+				formats,
+				outputDir: `build/images`,
+			})
 		},
 		outputFileExtension: `png`,
 	})
