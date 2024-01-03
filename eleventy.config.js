@@ -1,13 +1,12 @@
-import { existsSync } from 'node:fs'
-import { mkdir, readFile, writeFile } from 'node:fs/promises'
-import path from 'node:path'
-import process from 'node:process'
-
 import Image from '@11ty/eleventy-img'
 import browserslist from 'browserslist'
 import esbuild from 'esbuild'
 import htmlMin from 'html-minifier-terser'
 import * as lightningcss from 'lightningcss'
+import { existsSync } from 'node:fs'
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import path from 'node:path'
+import process from 'node:process'
 import svgo from 'svgo'
 
 /** @typedef {import('11ty__eleventy-img').ImageFormatWithAliases} */
