@@ -77,19 +77,3 @@ declare module '@11ty/eleventy' {
 
 	export { UserConfig }
 }
-
-declare module '@11ty/eleventy-img' {
-	function queueImage(
-		src: string,
-		opts: Record<string, unknown>,
-	): Promise<
-		Record<
-			string,
-			{
-				buffer: string
-			}[]
-		>
-	>
-
-	export default queueImage
-}
