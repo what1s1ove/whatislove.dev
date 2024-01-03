@@ -20,7 +20,7 @@ let ignoresConfig = {
 }
 
 /** @type {FlatConfig} */
-let globalConfig = {
+let jsConfig = {
 	languageOptions: {
 		globals: globals.browser,
 		parserOptions: {
@@ -28,7 +28,69 @@ let globalConfig = {
 			sourceType: `module`,
 		},
 	},
-	rules: js.configs.recommended.rules,
+	rules: {
+		...js.configs.recommended.rules,
+		'arrow-parens': [`error`, `always`],
+		'comma-dangle': [`error`, `always-multiline`],
+		'curly': [`error`, `all`],
+		'function-paren-newline': [`error`, `consistent`],
+		'implicit-arrow-linebreak': [`error`, `beside`],
+		'no-confusing-arrow': [
+			`error`,
+			{
+				allowParens: true,
+			},
+		],
+		'no-console': [
+			`error`,
+			{
+				allow: [`warn`, `error`, `info`],
+			},
+		],
+		'no-multiple-empty-lines': [
+			`error`,
+			{
+				max: 1,
+			},
+		],
+		'no-restricted-syntax': [
+			`error`,
+			{
+				message: `Only let can be used for the variable declaration.`,
+				selector: `VariableDeclaration[kind!=let]`,
+			},
+			{
+				message: `Switch cases without blocks are forbidden.`,
+				selector: `SwitchCase > *.consequent[type!="BlockStatement"]`,
+			},
+			{
+				message: `Export/Import all (*) is forbidden.`,
+				selector: `ExportAllDeclaration,ImportAllDeclaration`,
+			},
+			{
+				message: `Exports should be at the end of the file.`,
+				selector: `ExportNamedDeclaration[declaration!=null]`,
+			},
+		],
+		'no-unused-expressions': [
+			`error`,
+			{
+				allowTernary: true,
+			},
+		],
+		'object-curly-newline': [
+			`error`,
+			{
+				consistent: true,
+				multiline: true,
+			},
+		],
+		'object-curly-spacing': [`error`, `always`],
+		'quote-props': [`error`, `consistent`],
+		'quotes': [`error`, `backtick`],
+		'require-atomic-updates': [`error`],
+		'semi': [`error`, `never`],
+	},
 }
 
 /** @type {FlatConfig} */
@@ -145,72 +207,6 @@ let typescriptPlugin = {
 	},
 }
 
-/** @type {FlatConfig} */
-let mainRulesConfig = {
-	rules: {
-		'arrow-parens': [`error`, `always`],
-		'comma-dangle': [`error`, `always-multiline`],
-		'curly': [`error`, `all`],
-		'function-paren-newline': [`error`, `consistent`],
-		'implicit-arrow-linebreak': [`error`, `beside`],
-		'no-confusing-arrow': [
-			`error`,
-			{
-				allowParens: true,
-			},
-		],
-		'no-console': [
-			`error`,
-			{
-				allow: [`warn`, `error`, `info`],
-			},
-		],
-		'no-multiple-empty-lines': [
-			`error`,
-			{
-				max: 1,
-			},
-		],
-		'no-restricted-syntax': [
-			`error`,
-			{
-				message: `Only let can be used for the variable declaration.`,
-				selector: `VariableDeclaration[kind!=let]`,
-			},
-			{
-				message: `Switch cases without blocks are forbidden.`,
-				selector: `SwitchCase > *.consequent[type!="BlockStatement"]`,
-			},
-			{
-				message: `Export/Import all (*) is forbidden.`,
-				selector: `ExportAllDeclaration,ImportAllDeclaration`,
-			},
-			{
-				message: `Exports should be at the end of the file.`,
-				selector: `ExportNamedDeclaration[declaration!=null]`,
-			},
-		],
-		'no-unused-expressions': [
-			`error`,
-			{
-				allowTernary: true,
-			},
-		],
-		'object-curly-newline': [
-			`error`,
-			{
-				consistent: true,
-				multiline: true,
-			},
-		],
-		'object-curly-spacing': [`error`, `always`],
-		'quote-props': [`error`, `consistent`],
-		'quotes': [`error`, `backtick`],
-		'require-atomic-updates': [`error`],
-		'semi': [`error`, `never`],
-	},
-}
-
 /** @type {FlatConfig[]} */
 let overridesConfigs = [
 	{
@@ -247,14 +243,13 @@ let overridesConfigs = [
 /** @type {FlatConfig[]} */
 let config = [
 	ignoresConfig,
-	globalConfig,
+	jsConfig,
 	importConfig,
 	sonarConfig,
 	unicornConfig,
 	perfectionistConfig,
 	jsdocConfig,
 	typescriptPlugin,
-	mainRulesConfig,
 	...overridesConfigs,
 ]
 
