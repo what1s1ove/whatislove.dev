@@ -170,11 +170,6 @@ let jsdocConfig = {
 		'jsdoc/require-returns-description': [`off`],
 		'jsdoc/valid-types': [`off`],
 	},
-	settings: {
-		jsdoc: {
-			mode: `typescript`,
-		},
-	},
 }
 
 /** @type {FlatConfig} */
@@ -211,31 +206,15 @@ let typescriptPlugin = {
 let overridesConfigs = [
 	{
 		files: [
-			`source/data/**/*.js`,
 			`commitlint.config.js`,
 			`prettier.config.js`,
 			`lint-staged.config.js`,
 			`eslint.config.js`,
 			`stylelint.config.js`,
 			`knip.config.js`,
-			`eleventy.config.js`,
 		],
 		rules: {
 			'import/no-default-export': [`off`],
-		},
-	},
-	{
-		files: [`eleventy.config.js`],
-		rules: {
-			'sonarjs/cognitive-complexity': [`off`],
-		},
-	},
-	{
-		files: [
-			`source/scripts/libs/packages/whatislove-math/whatislove-math.package.js`,
-		],
-		rules: {
-			'unicorn/no-static-only-class': [`off`],
 		},
 	},
 ]
