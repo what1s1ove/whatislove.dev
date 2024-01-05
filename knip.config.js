@@ -1,10 +1,14 @@
 /** @type {import('knip').KnipConfig} */
 let config = {
-	eleventy: {
-		config: `eleventy.config.js`,
-		entry: [`source/data/**/*.js`],
+	workspaces: {
+		'packages/whatislove.dev': {
+			eleventy: {
+				config: `eleventy.config.js`,
+				entry: [`src/data/**/*.js`],
+			},
+			entry: [`src/scripts/index.js`],
+		},
 	},
-	entry: [`source/scripts/index.js`],
 }
 
 export default config
