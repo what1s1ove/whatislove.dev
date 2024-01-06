@@ -55,8 +55,8 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm install
 
-  deploy:
-    name: Deploy
+  build:
+    name: Build
     needs: dependencies
     runs-on: ubuntu-latest
     strategy:
@@ -90,8 +90,28 @@ jobs:
           name: ${{ matrix.project }}
           path: ${{ env.PACKAGE_DIR }}/build
 
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project:
+          - whatislove-dev
+    environment:
+      name: ${{ matrix.project }}
+      url: ${{ fromJson(steps.deployment.outputs.NETLIFY_OUTPUT).url }}
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ matrix.project }}
+          path: build
+
       - name: Deploy
-        working-directory: ${{ env.PACKAGE_DIR }}
-        run: npx netlify deploy --site ${{ matrix.project }} --dir build --prod
+        id: deployment
+        uses: South-Paw/action-netlify-cli@v2
+        with:
+          args: 'deploy --json --prod --site ${{ matrix.project }} --dir build'
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
