@@ -55,10 +55,16 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm install
 
-  build:
-    name: Build
+  deploy:
+    name: Deploy
     needs: dependencies
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project:
+          - whatislove-dev
+    env:
+      PACKAGE_DIR: packages/${{ matrix.project }}
     steps:
       - name: Code Checkout
         uses: actions/checkout@v4
@@ -75,24 +81,17 @@ jobs:
           key: cd-${{ hashFiles('**/package-lock.json') }}
 
       - name: Code Building
+        working-directory: ${{ env.PACKAGE_DIR }}
         run: npm run build
 
       - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
-          path: build
+          name: ${{ matrix.project }}
+          path: ${{ env.PACKAGE_DIR }}/build
 
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+      - name: Deploy
+        working-directory: ${{ env.PACKAGE_DIR }}
+        run: npx netlify deploy --site ${{ matrix.project }} --dir build --prod
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
