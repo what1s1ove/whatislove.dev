@@ -24,7 +24,7 @@ let overridesConfigs = [
 	},
 	{
 		files: [
-			`src/scripts/libs/packages/whatislove-math/whatislove-math.package.js`,
+			`src/scripts/libs/modules/whatislove-math/whatislove-math.package.js`,
 		],
 		rules: {
 			'unicorn/no-static-only-class': [`off`],

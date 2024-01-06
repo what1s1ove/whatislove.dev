@@ -1,7 +1,7 @@
 import { Toast } from '~/libs/components/components.js'
-import { Storage } from '~/libs/packages/storage/storage.js'
+import { Storage } from '~/libs/modules/storage/storage.js'
 import { ToastMessagePayload } from '~/libs/types/types.js'
-import { TimelineApi } from '~/packages/timeline/timeline.js'
+import { TimelineApi } from '~/modules/timeline/timeline.js'
 import { SettingsButtonPayload } from '~/pages/main/libs/types/types.js'
 
 import {

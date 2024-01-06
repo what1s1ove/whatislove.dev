@@ -1,5 +1,5 @@
 import { getCustomAttributeName } from '~/libs/helpers/helpers.js'
-import { Storage } from '~/libs/packages/storage/storage.js'
+import { Storage } from '~/libs/modules/storage/storage.js'
 import { ValuesOf } from '~/libs/types/types.js'
 import { SettingName } from '~/pages/main/libs/enums/enums.js'
 import { SettingsButtonPayload } from '~/pages/main/libs/types/types.js'

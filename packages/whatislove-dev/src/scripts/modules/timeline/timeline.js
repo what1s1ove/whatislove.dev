@@ -1,6 +1,6 @@
 import { AppConfig } from '~/libs/enums/enums.js'
 import { getServerApiUrl } from '~/libs/helpers/helpers.js'
-import { http } from '~/libs/packages/http/http.js'
+import { http } from '~/libs/modules/http/http.js'
 
 import { TimelineApi } from './timeline-api.js'
 
