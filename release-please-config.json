@@ -3,8 +3,10 @@
 		".": {
 			"release-type": "node",
 			"pull-request-title-pattern": "chore: release-${version}",
-			"include-component-in-tag": false,
-			"include-v-in-tag": false
+			"include-component-in-tag": false
+		},
+		"packages/whatislove-dev": {
+			"release-type": "node"
 		}
 	}
 }

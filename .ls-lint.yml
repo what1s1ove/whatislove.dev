@@ -5,6 +5,7 @@ ls:
   .js: regex:([.a-z]*)([-.][a-z]+)*
 
 ignore:
-  - node_modules
-  - build
   - .git
+  - node_modules
+  - packages/whatislove-dev/node_modules
+  - packages/whatislove-dev/build

@@ -1,0 +1,11 @@
+{
+	"extends": "../../tsconfig.json",
+	"exclude": ["build"],
+	"include": ["**/*.js", "packages.d.ts", "src/scripts/globals.d.ts"],
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"~/*": ["src/scripts/*"]
+		}
+	}
+}

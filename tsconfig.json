@@ -1,23 +1,16 @@
 {
-	"include": [
-		"**/*.js",
-		"./source/scripts/globals.d.ts",
-		"./source/scripts/packages.d.ts"
-	],
-	"exclude": ["node_modules", "build"],
+	"include": ["**/*.js"],
+	"exclude": ["node_modules", "packages"],
+	"files": ["packages.d.ts"],
 	"compilerOptions": {
-		"baseUrl": ".",
-		"paths": {
-			"~/*": ["source/scripts/*"]
-		},
-		"skipLibCheck": true,
 		"lib": ["DOM", "DOM.Iterable", "ESNext"],
-		"esModuleInterop": true,
-		"moduleResolution": "Bundler",
-		"target": "ESNext",
-		"module": "ESNext",
 		"allowJs": true,
 		"checkJs": true,
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"skipLibCheck": true,
+		"esModuleInterop": true,
 		"strict": true,
 		"noUncheckedIndexedAccess": true,
 		"exactOptionalPropertyTypes": true,

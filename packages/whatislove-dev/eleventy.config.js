@@ -13,23 +13,23 @@ import svgo from 'svgo'
 let ImageFormatWithAliases
 /** @typedef {import('./package.json')} */
 let PackageJson
-/** @typedef {import('./source/database.json')} */
+/** @typedef {import('./src/database.json')} */
 let Database
 
 let Path = /** @type {const} */ ({
 	COPY: [
-		`./source/fonts`,
-		`./source/files`,
-		`./source/sounds`,
-		`./source/manifest.webmanifest`,
-		`./source/favicon.ico`,
-		`./source/robots.txt`,
+		`./src/fonts`,
+		`./src/files`,
+		`./src/sounds`,
+		`./src/manifest.webmanifest`,
+		`./src/favicon.ico`,
+		`./src/robots.txt`,
 	],
-	CSS: `./source/styles/index.css`,
-	DB: `./source/database.json`,
-	JS: `./source/scripts/index.js`,
+	CSS: `./src/styles/index.css`,
+	DB: `./src/database.json`,
+	JS: `./src/scripts/index.js`,
 	PAGE: {
-		FORM: `./source/pages/form.njk`,
+		FORM: `./src/pages/form.njk`,
 	},
 })
 
@@ -244,7 +244,7 @@ let init = (config) => {
 		dir: {
 			data: `data`,
 			includes: `includes`,
-			input: `source`,
+			input: `src`,
 			layouts: `layouts`,
 			output: `build`,
 		},

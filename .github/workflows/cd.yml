@@ -59,6 +59,12 @@ jobs:
     name: Build
     needs: dependencies
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project:
+          - whatislove-dev
+    env:
+      PACKAGE_DIR: packages/${{ matrix.project }}
     steps:
       - name: Code Checkout
         uses: actions/checkout@v4
@@ -75,24 +81,37 @@ jobs:
           key: cd-${{ hashFiles('**/package-lock.json') }}
 
       - name: Code Building
+        working-directory: ${{ env.PACKAGE_DIR }}
         run: npm run build
 
       - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
-          path: build
+          name: ${{ matrix.project }}
+          path: ${{ env.PACKAGE_DIR }}/build
 
   deploy:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
+    strategy:
+      matrix:
+        project:
+          - whatislove-dev
     environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      name: ${{ matrix.project }}
+      url: ${{ fromJson(steps.deployment.outputs.NETLIFY_OUTPUT).url }}
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ matrix.project }}
+          path: build
+
+      - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: South-Paw/action-netlify-cli@v2
+        with:
+          args: 'deploy --json --prod --site ${{ matrix.project }} --dir build'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}

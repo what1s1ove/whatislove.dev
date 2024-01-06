@@ -1,5 +1,6 @@
 let ProjectPrefix = /** @type {const} */ ({
-	APPS: [`wd`, `release`],
+	ISSUE_PREFIXES: [`wd`, `release`],
+	SCOPES: [`whatislove-dev`],
 })
 
 export { ProjectPrefix }
