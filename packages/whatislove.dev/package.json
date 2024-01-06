@@ -1,0 +1,47 @@
+{
+	"version": "1.8.0",
+	"name": "@whatislove.dev/whatislove.dev",
+	"private": true,
+	"type": "module",
+	"engines": {
+		"node": "20.x.x",
+		"npm": "10.x.x"
+	},
+	"scripts": {
+		"start": "concurrently -k -p \"{name}: {time}\" -n \"CLIENT,SERVER\" -c \"green,blue\" \"npm:start:client\" \"npm:start:server\"",
+		"start:client": "NODE_ENV=development npx @11ty/eleventy --serve --quiet",
+		"start:server": "json-server --watch src/database.json --port 3001",
+		"build:clean": "rm -rf build",
+		"build": "npm run build:clean && npx @11ty/eleventy",
+		"ci:lint:markup": "w3c-html-validator \"build\"",
+		"ci:lint:html": "npx @linthtml/linthtml \"src/**/*.njk\"",
+		"ci:lint:bem": "bemlint \"src/**/*.njk\" --errors",
+		"ci:lint:css": "stylelint \"src/styles/**/*.css\"",
+		"ci:lint:js": "eslint \"./**/*.js\"",
+		"ci:lint:type": "tsc --noEmit",
+		"ci:lint": "concurrently \"npm:ci:lint:*\""
+	},
+	"dependencies": {
+		"form-payload": "0.0.8"
+	},
+	"devDependencies": {
+		"@11ty/eleventy": "3.0.0-alpha.3",
+		"@11ty/eleventy-img": "3.1.8",
+		"@linthtml/linthtml": "0.9.5",
+		"linthtml-config-htmlacademy": "1.0.12",
+		"@types/11ty__eleventy-img": "2.0.5",
+		"@types/html-minifier-terser": "7.0.2",
+		"bemlint": "1.7.0",
+		"browserslist": "4.22.1",
+		"esbuild": "0.19.5",
+		"html-minifier-terser": "7.2.0",
+		"json-server": "0.17.4",
+		"lightningcss": "1.22.1",
+		"svgo": "3.1.0",
+		"w3c-html-validator": "1.6.1"
+	},
+	"browserslist": [
+		"last 2 version",
+		"not dead"
+	]
+}
