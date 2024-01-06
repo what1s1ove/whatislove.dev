@@ -1,6 +1,6 @@
 {
 	"version": "1.8.0",
-	"name": "@whatislove.dev/whatislove.dev",
+	"name": "@whatislove.dev/whatislove-dev",
 	"private": true,
 	"type": "module",
 	"engines": {

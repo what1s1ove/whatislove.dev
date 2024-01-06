@@ -7,11 +7,18 @@ let configuration = {
 	extends: [`@commitlint/config-conventional`],
 	parserPreset: {
 		parserOpts: {
-			issuePrefixes: ProjectPrefix.APPS.map((prefix) => `${prefix}-`),
+			issuePrefixes: ProjectPrefix.ISSUE_PREFIXES.map(
+				(prefix) => `${prefix}-`,
+			),
 		},
 	},
 	rules: {
 		'references-empty': [RuleConfigSeverity.Error, `never`],
+		'scope-enum': [
+			RuleConfigSeverity.Error,
+			`always`,
+			[...ProjectPrefix.SCOPES],
+		],
 	},
 }
 
