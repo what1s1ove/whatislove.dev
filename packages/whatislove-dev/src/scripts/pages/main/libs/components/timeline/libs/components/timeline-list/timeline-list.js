@@ -1,4 +1,4 @@
-import { Timeline } from '~/packages/timeline/timeline.js'
+import { Timeline } from '~/modules/timeline/timeline.js'
 
 import { getTimelineTemplates } from './libs/helpers/helpers.js'
 

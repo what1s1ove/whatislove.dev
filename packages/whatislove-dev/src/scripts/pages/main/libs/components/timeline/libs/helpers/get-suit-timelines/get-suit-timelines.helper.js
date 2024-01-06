@@ -1,4 +1,4 @@
-import { Timeline, TimelineFilter } from '~/packages/timeline/timeline.js'
+import { Timeline, TimelineFilter } from '~/modules/timeline/timeline.js'
 
 import { checkIsTimelineSuit } from '../check-is-timeline-suit/check-is-timeline-suit.helper.js'
 

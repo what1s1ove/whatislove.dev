@@ -1,4 +1,4 @@
-import { TimelineCreatePayload } from '~/packages/timeline/timeline.js'
+import { TimelineCreatePayload } from '~/modules/timeline/timeline.js'
 
 /**
  * @param {TimelineCreatePayload} timeline

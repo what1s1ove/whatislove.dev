@@ -1,5 +1,5 @@
 import { getFormValues, initDebounce } from '~/libs/helpers/helpers.js'
-import { TimelineFilter } from '~/packages/timeline/timeline.js'
+import { TimelineFilter } from '~/modules/timeline/timeline.js'
 
 import { DEBOUNCE_DELAY } from './libs/constants/constants.js'
 

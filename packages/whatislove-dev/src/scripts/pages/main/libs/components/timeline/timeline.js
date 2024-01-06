@@ -4,7 +4,7 @@ import {
 	Timeline as TTimeline,
 	TimelineApi,
 	TimelineFilter,
-} from '~/packages/timeline/timeline.js'
+} from '~/modules/timeline/timeline.js'
 
 import { TimelineForm, TimelineList } from './libs/components/components.js'
 import { getSuitTimelines } from './libs/helpers/helpers.js'

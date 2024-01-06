@@ -1,5 +1,5 @@
 import { ApiPath, ContentType } from '~/libs/enums/enums.js'
-import { Http, HttpMethod } from '~/libs/packages/http/http.js'
+import { Http, HttpMethod } from '~/libs/modules/http/http.js'
 import { ValuesOf } from '~/libs/types/types.js'
 
 import { TimelineApiPath } from './libs/enums/enums.js'

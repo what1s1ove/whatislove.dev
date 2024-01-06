@@ -4,7 +4,7 @@ import {
 	TimelineCreatePayload,
 	TimelineSkillType,
 	TimelineType,
-} from '~/packages/timeline/timeline.js'
+} from '~/modules/timeline/timeline.js'
 
 import { getTransformedTimeline } from './helpers/helpers.js'
 
