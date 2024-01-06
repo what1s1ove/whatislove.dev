@@ -3,14 +3,15 @@ import baseConfig from '../../eslint.config.js'
 /** @typedef {import('eslint').Linter.FlatConfig} */
 let FlatConfig
 
+/** @type {FlatConfig} */
+let ignoresConfig = {
+	ignores: [`build`],
+}
+
 /** @type {FlatConfig[]} */
 let overridesConfigs = [
 	{
-		files: [
-			`src/data/**/*.js`,
-			`eslint.config.js`,
-			`eleventy.config.js`,
-		],
+		files: [`src/data/**/*.js`, `eleventy.config.js`],
 		rules: {
 			'import/no-default-export': [`off`],
 		},
@@ -32,9 +33,6 @@ let overridesConfigs = [
 ]
 
 /** @type {FlatConfig[]} */
-let config = [
-	...baseConfig,
-	...overridesConfigs,
-]
+let config = [ignoresConfig, ...baseConfig, ...overridesConfigs]
 
 export default config
