@@ -1,14 +1,11 @@
 /** @type {import('lint-staged').Config} */
 let config = {
 	'*': [
-		`npm run ci:lint:editor`,
-		`npm run ci:lint:fs`,
-		`bash -c 'npm run ci:lint:trash'`,
+		() => `npm run ci:lint:editor`,
+		() => `npm run ci:lint:fs`,
+		() => `npm run ci:lint:trash`,
 	],
-	'*.{json,md,yml,njk,css,js,cjs,d.ts}': [`npm run ci:lint:format`],
-	'*.css': [`npm run ci:lint:css`],
-	'*.js': [`npm run ci:lint:js`, `bash -c 'npm run ci:lint:type'`],
-	'*.njk': [`npm run ci:lint:html`, `npm run ci:lint:bem`],
+	'*.{json,md,yml,njk,css,js,cjs,d.ts}': [() => `npm run ci:lint:format`],
 }
 
 export default config
