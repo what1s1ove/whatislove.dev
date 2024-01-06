@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.8.0...@whatislove.dev/whatislove-dev-v1.9.0) (2024-01-06)
+
+
+### Features
+
+* migrate to monorep repository whatislovedev wd-291 ([#305](https://github.com/what1s1ove/whatislove.dev/issues/305)) ([cb82dc8](https://github.com/what1s1ove/whatislove.dev/commit/cb82dc8a319c7daddb8016a1a888823c0a5609ba))
+
 ## [1.8.0](https://github.com/what1s1ove/whatislove.dev/compare/1.7.0...1.8.0) (2023-12-31)
 
 
