@@ -100,20 +100,25 @@ jobs:
         project:
           - certifications-whatislove-dev
           - whatislove-dev
+    env:
+      PACKAGE_DIR: packages/${{ matrix.project }}
     environment:
       name: ${{ matrix.project }}
       url: ${{ fromJson(steps.deployment.outputs.NETLIFY_OUTPUT).url }}
     steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: ${{ matrix.project }}
-          path: build
+          path: ${{ env.PACKAGE_DIR }}/build
 
       - name: Deploy
         id: deployment
         uses: South-Paw/action-netlify-cli@v2
         with:
-          args: 'deploy --json --prod --site ${{ matrix.project }} --dir build'
+          args: 'deploy --json --prod --site ${{ matrix.project }} --filter ${{ env.PACKAGE_DIR }} --dir ${{ env.PACKAGE_DIR }}/build'
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
