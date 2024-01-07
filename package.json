@@ -11,7 +11,7 @@
 		"packages/*"
 	],
 	"scripts": {
-		"_prettier": "prettier \"**/*.{json,md,yml,njk,css,js,cjs,d.ts}\"",
+		"_prettier": "prettier \"**/*.{md,json,yml,html,njk,css,js,jsx,cjs,d.ts}\"",
 		"postinstall": "simple-git-hooks",
 		"git:hook:commit": "npx @commitlint/cli --edit",
 		"git:hook:precommit": "lint-staged --cwd $PWD",
@@ -20,7 +20,7 @@
 		"ci:lint:editor": "editorconfig-checker",
 		"ci:lint:format": "npm run _prettier -- --check",
 		"ci:lint:trash": "knip --config knip.config.js",
-		"ci:lint:js": "eslint \"**/*.js\"",
+		"ci:lint:js": "eslint \"**/*\"",
 		"ci:lint:type": "tsc --noEmit",
 		"ci:lint": "concurrently \"npm:ci:lint:*\" && npm run ci:lint --workspaces",
 		"ci:format": "npm run _prettier -- --write"
@@ -38,7 +38,7 @@
 		"@typescript-eslint/parser": "6.14.0",
 		"concurrently": "8.2.2",
 		"editorconfig-checker": "5.1.1",
-		"eslint": "8.53.0",
+		"eslint": "8.56.0",
 		"eslint-import-resolver-typescript": "3.6.1",
 		"eslint-plugin-import": "2.29.0",
 		"eslint-plugin-jsdoc": "47.0.2",

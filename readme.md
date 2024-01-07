@@ -1,11 +1,12 @@
-# whatislove.dev websites
+# whatislove.dev's websites
 
 [![Continuous Integration](https://github.com/what1s1ove/whatislove.dev/actions/workflows/ci.yml/badge.svg)](https://github.com/what1s1ove/whatislove.dev/actions/workflows/ci.yml)
 [![Continuous Delivery](https://github.com/what1s1ove/whatislove.dev/actions/workflows/cd.yml/badge.svg)](https://github.com/what1s1ove/whatislove.dev/actions/workflows/cd.yml)
 
-This repository is responsible for the whatislove.dev websites.
+This repository is responsible for the whatislove.dev's websites.
 
 -   [whatislove.dev](./packages/whatislove-dev) – Vladyslav Zubko's website. If you want to get to know me better.
+-   [certifications.whatislove.dev](./packages/certifications-whatislove-dev) – Certificates Manager. If you want to move on.
 
 ## Requirements
 

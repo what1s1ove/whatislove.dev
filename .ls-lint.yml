@@ -1,11 +1,28 @@
 ls:
-  .dir: regex:([.a-z]*)([-.][a-z]+)*
-  .css: regex:([.a-z]*)([-.][a-z]+)*
-  .html: regex:([.a-z]*)([-.][a-z]+)*
-  .js: regex:([.a-z]*)([-.][a-z]+)*
+  .dir: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
+  .md: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
+  .json: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
+  .yml: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
+  .html: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
+  .njk: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
+  .css: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
+  .js: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
+  .jsx: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
+  .cjs: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
+  .d.ts: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
+  .png: regex:([.a-z0-9@]*)([-.][a-z0-9@]+)*
+  .jpg: regex:([.a-z0-9@]*)([-.][a-z0-9@]+)*
+  .jpeg: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
+  .svg: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
+  .ttf: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
+  packages/**:
+    CHANGELOG.md: SCREAMING_SNAKE_CASE
 
 ignore:
   - .git
   - node_modules
+  - CHANGELOG.md
+  - packages/certifications-whatislove-dev/node_modules
+  - packages/certifications-whatislove-dev/build
   - packages/whatislove-dev/node_modules
   - packages/whatislove-dev/build

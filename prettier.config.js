@@ -1,7 +1,8 @@
-/** @type {import('prettier').Config} */
+/** @type {import('prettier').Config & Record<string, unknown>} */
 let config = {
 	arrowParens: `always`,
 	bracketSpacing: true,
+	jsdocAddDefaultToDescription: false,
 	overrides: [
 		{
 			files: `*.css`,
