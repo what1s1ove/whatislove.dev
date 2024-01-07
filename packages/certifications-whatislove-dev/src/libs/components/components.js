@@ -9,5 +9,4 @@ export {
 	Text,
 	View,
 } from '@react-pdf/renderer'
-
 export { Route, Routes } from 'react-router-dom'
