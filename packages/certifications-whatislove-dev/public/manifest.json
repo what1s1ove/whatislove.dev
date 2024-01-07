@@ -1,0 +1,10 @@
+{
+	"name": "Whatislove Academy",
+	"description": "Whatislove Academy",
+	"lang": "en",
+	"start_url": ".",
+	"display": "standalone",
+	"orientation": "any",
+	"background_color": "#000000",
+	"theme_color": "#000000"
+}

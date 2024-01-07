@@ -5,7 +5,7 @@ let FlatConfig
 
 /** @type {FlatConfig} */
 let ignoresConfig = {
-	ignores: [`build`],
+	ignores: [`build`, `.linthtmlrc.cjs`],
 }
 
 /** @type {FlatConfig[]} */

@@ -1,0 +1,70 @@
+{
+	"nodejs-2022": [
+		{
+			"id": "1",
+			"firstName": "Sasha",
+			"lastName": "Spyc",
+			"completeDate": "2022-07-10"
+		}
+	],
+	"webcomponents-2022": [
+		{
+			"id": "1",
+			"firstName": "Yna",
+			"lastName": "Finx",
+			"completeDate": "2022-07-13"
+		}
+	],
+	"bsa-2022": [
+		{
+			"id": "1",
+			"firstName": "Farid",
+			"lastName": "Shabanov",
+			"completeDate": "2022-09-24"
+		},
+		{
+			"id": "2",
+			"firstName": "Nazar",
+			"lastName": "Kovtun",
+			"completeDate": "2022-09-24"
+		}
+	],
+	"decorators": [
+		{
+			"id": "1",
+			"firstName": "Yelyzaveta",
+			"lastName": "Veis",
+			"completeDate": "2022-12-04"
+		},
+		{
+			"id": "2",
+			"firstName": "Farid",
+			"lastName": "Shabanov",
+			"completeDate": "2022-12-04"
+		},
+		{
+			"id": "3",
+			"firstName": "Andrii",
+			"lastName": "Fedorchenko",
+			"completeDate": "2022-12-04"
+		},
+		{
+			"id": "4",
+			"firstName": "Vova",
+			"lastName": "Minchenko",
+			"completeDate": "2022-12-04"
+		},
+		{
+			"id": "5",
+			"firstName": "Oleksiy",
+			"lastName": "Polyanovskiy",
+			"completeDate": "2022-12-16"
+		},
+		{
+			"id": "6",
+			"firstName": "Nazar",
+			"lastName": "Kovtun",
+			"completeDate": "2023-02-22"
+		}
+	]
+}

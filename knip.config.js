@@ -1,6 +1,9 @@
 /** @type {import('knip').KnipConfig} */
 let config = {
 	workspaces: {
+		'packages/certifications-whatislove-dev': {
+			entry: [`src/index.jsx`],
+		},
 		'packages/whatislove-dev': {
 			eleventy: {
 				config: `eleventy.config.js`,

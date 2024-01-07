@@ -62,6 +62,7 @@ jobs:
     strategy:
       matrix:
         project:
+          - certifications-whatislove-dev
           - whatislove-dev
     env:
       PACKAGE_DIR: packages/${{ matrix.project }}
@@ -97,6 +98,7 @@ jobs:
     strategy:
       matrix:
         project:
+          - certifications-whatislove-dev
           - whatislove-dev
     environment:
       name: ${{ matrix.project }}
