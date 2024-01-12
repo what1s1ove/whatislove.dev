@@ -12,7 +12,6 @@
 	],
 	"scripts": {
 		"_prettier": "prettier \"**/*.{md,json,yml,html,njk,css,js,jsx,cjs,d.ts}\"",
-		"postinstall": "simple-git-hooks",
 		"git:hook:commit": "npx @commitlint/cli --edit",
 		"git:hook:precommit": "lint-staged --cwd $PWD",
 		"build": "npm run build --workspaces",
@@ -23,7 +22,8 @@
 		"ci:lint:js": "eslint \"**/*\"",
 		"ci:lint:type": "tsc --noEmit",
 		"ci:lint": "concurrently \"npm:ci:lint:*\" && npm run ci:lint --workspaces",
-		"ci:format": "npm run _prettier -- --write"
+		"ci:format": "npm run _prettier -- --write",
+		"ci:prepare": "simple-git-hooks"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "17.8.1",
