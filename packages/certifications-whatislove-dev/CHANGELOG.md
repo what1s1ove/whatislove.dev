@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/certifications-whatislove-dev-v1.1.0...@whatislove.dev/certifications-whatislove-dev-v1.1.1) (2024-01-13)
+
+
+### Bug Fixes
+
+* remove disables from stylelint wd-309 ([#322](https://github.com/what1s1ove/whatislove.dev/issues/322)) ([4f85ee0](https://github.com/what1s1ove/whatislove.dev/commit/4f85ee0f25fcedcef7514b4dd4826f1e8fcf8bbd))
+
 ## [1.1.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/certifications-whatislove-dev-v1.0.0...@whatislove.dev/certifications-whatislove-dev-v1.1.0) (2024-01-07)
 
 
