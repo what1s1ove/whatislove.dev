@@ -16,7 +16,7 @@ This repository is responsible for the whatislove.dev's websites.
 ## Base Scripts
 
 -   Install dependencies: **`npm install`**
--   Apply hooks: **`npm run ci:prepare`**
+-   Apply git hooks: **`npm run ci:prepare`**
 -   Lint code: **`npm run ci:lint`**
 -   Format code: **`npm run ci:format`**
 
