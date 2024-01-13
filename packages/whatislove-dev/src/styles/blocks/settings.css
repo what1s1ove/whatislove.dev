@@ -3,15 +3,15 @@
 	z-index: var(--z-index-level-three);
 	display: grid;
 	gap: 7px 0;
-	margin: 0;
 	padding: 0;
+	margin: 0;
 	list-style: none;
 }
 
 .settings__item-fieldset {
 	display: flex;
-	margin: 0;
 	padding: 1px 2px;
+	margin: 0;
 	background-color: var(--color-secondary);
 	border: 1px solid var(--color-primary);
 	border-radius: 20px;
@@ -26,24 +26,24 @@
 	width: 22px;
 	height: 22px;
 	margin: 0;
-	cursor: pointer;
 	appearance: none;
+	cursor: pointer;
 
 	&::before,
 	&::after {
-		content: "";
 		position: absolute;
+		content: "";
 	}
 
 	&::before {
 		inset: 0;
 		z-index: var(--z-index-level-two);
+		filter: var(--invert-icon-primary);
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: 16px;
-		will-change: filter;
-		filter: var(--invert-icon-primary);
 		transition-duration: unset;
+		will-change: filter;
 	}
 
 	&::after {
@@ -106,21 +106,21 @@
 	width: 72px;
 	height: 26px;
 	padding: 0;
+	cursor: pointer;
 	background-color: var(--color-secondary);
 	background-repeat: no-repeat;
 	background-position: right 8px top 50%;
 	background-size: 20px;
 	border: 1px solid var(--color-primary);
 	border-radius: 20px;
-	cursor: pointer;
 
 	&::before {
 		position: absolute;
 		top: 50%;
 		left: 0;
-		content: "";
 		width: 50%;
 		height: 21px;
+		content: "";
 		background-color: var(--color-primary);
 		border-radius: 20px;
 		transform: translate(2px, -50%);

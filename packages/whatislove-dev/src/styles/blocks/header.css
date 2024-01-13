@@ -2,9 +2,9 @@
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 	gap: 30px;
+	align-items: center;
+	justify-content: center;
 	height: 100vh;
 	overflow: hidden;
 	background-color: var(--color-secondary);
@@ -41,15 +41,15 @@
 	&::after {
 		position: absolute;
 		left: 0;
-		content: "";
 		width: 100%;
 		height: 3px;
+		content: "";
 		background-color: var(--color-secondary);
-		transform-origin: 50% 50%;
 		transition:
 			top 0.3s 0.3s,
 			transform 0.3s,
 			background-color 500ms;
+		transform-origin: 50% 50%;
 	}
 
 	&::before {
@@ -108,8 +108,8 @@
 
 .header__name {
 	width: calc(100% / 1.45);
-	margin: 0 15px;
 	padding: 5px 10px;
+	margin: 0 15px;
 	font-size: 35px;
 	text-align: center;
 	text-transform: uppercase;
@@ -119,8 +119,8 @@
 .header__name-intro {
 	margin: 0;
 	color: transparent;
-	letter-spacing: 4px;
 	text-transform: uppercase;
+	letter-spacing: 4px;
 	background-image: linear-gradient(
 		45deg,
 		#13a12f 0%,
@@ -130,8 +130,8 @@
 		#02e853 80%,
 		#00d4ff 100%
 	);
-	background-size: 1000% 1000%;
 	background-clip: text;
+	background-size: 1000% 1000%;
 	animation: rainbow-text 12s ease infinite;
 }
 
@@ -144,9 +144,9 @@
 	width: 45px;
 	height: 45px;
 	padding: 0;
+	cursor: pointer;
 	background-color: var(--color-primary);
 	border: 0;
-	cursor: pointer;
 }
 
 .header__settings {

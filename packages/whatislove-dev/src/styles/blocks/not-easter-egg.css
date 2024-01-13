@@ -1,8 +1,8 @@
 .not-easter-egg {
 	position: absolute;
 	z-index: var(--z-index-level-four);
-	margin: 0;
 	padding: 15px;
+	margin: 0;
 	overflow: hidden;
 	border-radius: 50%;
 
@@ -12,13 +12,13 @@
 		left: -75%;
 		z-index: 2;
 		display: block;
-		content: "";
 		width: 50%;
 		height: 100%;
+		pointer-events: none;
+		content: "";
 		background-color: rgb(255 215 0 / 20%);
 		transform: skewX(-25deg) translateY(-50%);
 		animation: shine 5s infinite;
-		pointer-events: none;
 	}
 
 	@media print {
@@ -30,9 +30,9 @@
 	padding: 0;
 	font-size: 50px;
 	line-height: 1;
+	cursor: pointer;
 	background-color: transparent;
 	border: 0;
-	cursor: pointer;
 	opacity: 0;
 	transition: opacity 0.7s ease-in-out;
 

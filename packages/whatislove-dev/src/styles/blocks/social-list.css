@@ -1,8 +1,8 @@
 .social-list {
 	display: flex;
 	gap: 0 15px;
-	margin: 0;
 	padding: 0;
+	margin: 0;
 	list-style: none;
 
 	@media print {
@@ -35,9 +35,9 @@
 	display: block;
 	min-width: 35px;
 	min-height: 35px;
+	filter: var(--invert-icon-primary);
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
-	filter: var(--invert-icon-primary);
 	transition: opacity 200ms ease-out;
 
 	&:hover {

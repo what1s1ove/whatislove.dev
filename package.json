@@ -53,8 +53,8 @@
 		"prettier-plugin-jsdoc": "1.1.1",
 		"simple-git-hooks": "2.9.0",
 		"stylelint": "16.0.2",
+		"stylelint-config-recess-order": "4.4.0",
 		"stylelint-config-standard": "35.0.0",
-		"stylelint-order": "6.0.4",
 		"typescript": "5.2.2"
 	},
 	"simple-git-hooks": {

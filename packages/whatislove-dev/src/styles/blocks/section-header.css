@@ -13,18 +13,18 @@
 
 .section-header__desc {
 	position: relative;
-	margin: 0;
 	padding: 0 0 5px;
-	letter-spacing: 2px;
+	margin: 0;
 	text-align: center;
+	letter-spacing: 2px;
 
 	&::before {
 		position: absolute;
 		bottom: 0;
 		left: 50%;
-		content: "";
 		width: calc(100% / 1.2);
 		height: 1px;
+		content: "";
 		background-color: var(--color-primary);
 		transform: translateX(-50%);
 	}

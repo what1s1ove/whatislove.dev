@@ -23,15 +23,15 @@
 
 	@media (--width-desktop) {
 		max-width: 940px;
-		margin: 0 auto;
 		padding: 17px 8px;
+		margin: 0 auto;
 	}
 }
 
 .exp-filter__skills-type {
 	width: 75%;
-	margin: 0;
 	padding: 0;
+	margin: 0;
 	border: 0;
 
 	@media (width >= 500px) {
@@ -42,8 +42,8 @@
 .exp-filter__list {
 	display: flex;
 	flex-direction: column;
-	margin: 0;
 	padding: 0;
+	margin: 0;
 	list-style: none;
 
 	@media (width >= 500px) {
@@ -57,8 +57,8 @@
 }
 
 .exp-filter__skill-types {
-	margin: 0;
 	padding: 0;
+	margin: 0;
 	border: 0;
 
 	& .exp-filter__list {
@@ -87,12 +87,12 @@
 		position: absolute;
 		width: 1px;
 		height: 1px;
-		margin: -1px;
 		padding: 0;
+		margin: -1px;
 		overflow: hidden;
-		white-space: nowrap;
-		border: 0;
 		clip: rect(0 0 0 0);
 		clip-path: inset(100%);
+		white-space: nowrap;
+		border: 0;
 	}
 }
