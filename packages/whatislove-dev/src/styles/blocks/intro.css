@@ -1,5 +1,5 @@
 .intro {
-	background-color: var(--color--secondary);
+	background-color: var(--color-secondary);
 
 	@media print {
 		* {
@@ -17,8 +17,8 @@
 
 	@media (--width-desktop) {
 		max-width: 940px;
-		margin: 0 auto;
 		padding: 30px 15px 80px;
+		margin: 0 auto;
 	}
 }
 
@@ -40,43 +40,43 @@
 
 	@media (--width-tablet) {
 		grid-auto-flow: column;
-		justify-content: center;
 		gap: 0 60px;
+		justify-content: center;
 	}
 }
 
 .intro__image-wrapper {
 	position: relative;
 	display: flex;
-	justify-content: center;
 	align-items: flex-end;
+	justify-content: center;
 	width: 305px;
 	margin: 0 auto;
 	overflow: hidden;
 
 	&::before,
 	&::after {
-		content: "";
 		position: absolute;
 		left: 50%;
 		width: 100%;
+		content: "";
 		mask-repeat: no-repeat;
-		mask-size: contain;
 		mask-position: 50% 50%;
+		mask-size: contain;
 		transform: translateX(-50%);
 	}
 
 	&::before {
 		bottom: 0;
 		height: 275px;
-		background-color: var(--color--primary);
+		background-color: var(--color-primary);
 		mask-image: url("../images/intro-photo.mask.svg");
 	}
 
 	&::after {
 		bottom: -0.5px;
 		height: 145px;
-		background-color: var(--color--secondary);
+		background-color: var(--color-secondary);
 		mask-image: url("../images/intro-photo-border.mask.svg");
 	}
 
@@ -84,14 +84,14 @@
 		display: block;
 		max-width: 100%;
 		margin: 0 auto;
-		will-change: filter;
+		filter: drop-shadow(-8px 7px 0.3px var(--color-secondary));
 		transform: translateX(15px);
-		filter: drop-shadow(-8px 7px 0.3px var(--color--secondary));
+		will-change: filter;
 	}
 
 	@media print {
-		margin: 0 auto;
 		padding: 0;
+		margin: 0 auto;
 
 		&::before,
 		&::after {
@@ -121,8 +121,8 @@
 .intro__list {
 	display: grid;
 	gap: 15px 0;
-	margin: 0 0 25px;
 	padding: 0;
+	margin: 0 0 25px;
 }
 
 .intro__item {

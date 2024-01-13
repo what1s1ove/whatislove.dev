@@ -14,13 +14,13 @@
 
 @keyframes fade-up {
 	from {
-		transform: translateY(70px);
 		opacity: 0;
+		transform: translateY(70px);
 	}
 
 	to {
-		transform: translateY(0);
 		opacity: 1;
+		transform: translateY(0);
 	}
 }
 

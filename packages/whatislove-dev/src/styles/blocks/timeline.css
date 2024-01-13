@@ -1,6 +1,6 @@
 .timeline {
 	padding: 30px 0 0;
-	background-color: var(--color--secondary);
+	background-color: var(--color-secondary);
 
 	@media print {
 		display: none;
@@ -35,18 +35,18 @@
 	position: relative;
 	display: grid;
 	gap: 15px 0;
-	margin: 0;
 	padding: 20px 0 80px 30px;
+	margin: 0;
 	list-style: none;
 
 	&:not(:empty)::before {
 		position: absolute;
 		top: 0;
 		left: 0;
-		content: "";
 		width: 2px;
 		height: 100%;
-		background-color: var(--color--primary);
+		content: "";
+		background-color: var(--color-primary);
 	}
 
 	&:not(:empty)::after {
@@ -54,8 +54,8 @@
 		bottom: 0;
 		left: -6px;
 		content: "";
-		border: 7px solid var(--color--secondary);
-		border-top: 14px solid var(--color--primary);
+		border: 7px solid var(--color-secondary);
+		border-top: 14px solid var(--color-primary);
 	}
 
 	@media (--width-tablet) {
@@ -89,7 +89,7 @@
 					right: 99%;
 					left: unset;
 					border-color: transparent;
-					border-right-color: var(--color--primary);
+					border-right-color: var(--color-primary);
 				}
 			}
 
@@ -104,9 +104,9 @@
 .timeline__item-wrapper {
 	min-height: 175px;
 	padding: 20px;
-	background-color: var(--color--primary);
+	background-color: var(--color-primary);
 	border-radius: 4px;
-	box-shadow: 0 1px 10px 0 var(--color--primary--opacity);
+	box-shadow: 0 1px 10px 0 var(--color-primary-opacity);
 	animation: fade-up 1s;
 
 	@media (--width-tablet) {
@@ -119,9 +119,9 @@
 			top: 30px;
 			left: 99%;
 			content: "";
+			filter: drop-shadow(0 0 10px var(--color-primary));
 			border: 15px solid transparent;
-			border-left-color: var(--color--primary);
-			filter: drop-shadow(0 0 10px var(--color--primary));
+			border-left-color: var(--color-primary);
 		}
 	}
 
@@ -132,24 +132,24 @@
 
 .timeline__item-title {
 	margin: 0 0 10px;
-	color: var(--color--secondary);
+	color: var(--color-secondary);
 }
 
 .timeline__item-origin {
 	display: block;
 	margin: 0 0 10px;
-	color: var(--color--red);
+	color: var(--color-red);
 }
 
 .timeline__item-desc {
 	margin: 0 0 10px;
-	color: var(--color--secondary);
+	color: var(--color-secondary);
 }
 
 .timeline__item-link {
 	display: block;
 	margin: 0 0 10px;
-	color: var(--color--red);
+	color: var(--color-red);
 
 	@media (--width-tablet) {
 		margin: 0;
@@ -158,15 +158,15 @@
 
 .timeline__dates {
 	margin: 0;
-	color: var(--color--secondary);
-	white-space: nowrap;
+	color: var(--color-secondary);
 	text-align: right;
+	white-space: nowrap;
 
 	@media (--width-tablet) {
 		position: absolute;
 		top: 33px;
 		left: calc(100% + 85px);
-		color: var(--color--primary);
+		color: var(--color-primary);
 	}
 }
 
@@ -180,7 +180,7 @@
 	left: -52px;
 	width: 46px;
 	height: 46px;
-	background-color: var(--color--primary);
+	background-color: var(--color-primary);
 	border-radius: 50%;
 	animation: icon-fade-up 1s;
 
@@ -191,16 +191,16 @@
 }
 
 .timeline__item:hover .timeline__icon-wrapper {
-	background-color: var(--color--red);
+	background-color: var(--color-red);
 }
 
 .timeline__icon {
 	position: absolute;
 	inset: 0;
+	filter: var(--invert-icon-secondary);
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	background-size: 28px 28px;
-	filter: var(--invert-icon--secondary);
 }
 
 .timeline__icon--book {
@@ -229,8 +229,8 @@
 	left: 50%;
 	display: none;
 	width: 100%;
-	margin: 0;
 	padding: 0 15px;
+	margin: 0;
 	text-align: center;
 	transform: translate(-50%, -50%);
 }
@@ -249,11 +249,11 @@
 	min-height: 60px;
 	margin: 30px 0 0;
 	overflow: hidden;
-	color: var(--color--secondary);
-	text-transform: uppercase;
+	color: var(--color-secondary);
 	text-decoration: none;
-	background-color: var(--color--primary);
-	box-shadow: 0 1px 10px 0 var(--color--primary--opacity);
+	text-transform: uppercase;
+	background-color: var(--color-primary);
+	box-shadow: 0 1px 10px 0 var(--color-primary-opacity);
 }
 
 .timeline__resume-link:focus {
@@ -265,22 +265,22 @@
 	width: 40px;
 	height: 40px;
 	margin: 10px auto;
-	background-image: url("../images/download.bg.svg");
-	background-size: cover;
 	visibility: hidden;
-	transform: translateY(-60px) scale(0);
+	background-image: url("../images/download.bg.svg");
+	filter: var(--invert-icon-secondary);
+	background-size: cover;
 	opacity: 0;
-	filter: var(--invert-icon--secondary);
 	transition:
 		transform 0.4s ease-out,
 		opacity 0.4s linear;
+	transform: translateY(-60px) scale(0);
 }
 
 .timeline__resume-link:hover .timeline__resume-icon,
 .timeline__resume-link:focus .timeline__resume-icon {
 	visibility: visible;
-	transform: translateY(0) scale(1);
 	opacity: 1;
+	transform: translateY(0) scale(1);
 }
 
 .timeline__resume-text {
@@ -291,16 +291,16 @@
 	margin: 18px 0;
 	text-align: center;
 	visibility: visible;
-	transform: scale(1);
 	opacity: 1;
 	transition:
 		transform 0.4s ease-out,
 		opacity 0.1s linear;
+	transform: scale(1);
 }
 
 .timeline__resume-link:hover .timeline__resume-text,
 .timeline__resume-link:focus .timeline__resume-text {
 	visibility: hidden;
-	transform: translateY(60px) scale(0);
 	opacity: 0;
+	transform: translateY(60px) scale(0);
 }

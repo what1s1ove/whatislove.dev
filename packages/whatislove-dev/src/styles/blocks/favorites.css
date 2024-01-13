@@ -1,6 +1,6 @@
 .favorites {
 	padding: 30px 0 0;
-	background-color: var(--color--secondary);
+	background-color: var(--color-secondary);
 
 	@media print {
 		display: none;
@@ -9,18 +9,18 @@
 
 .favorites__wrapper {
 	position: relative;
-	background-color: var(--color--primary);
+	background-color: var(--color-primary);
 
 	&::before {
 		position: absolute;
-		content: "";
 		inset: 0;
+		content: "";
 		background: repeating-conic-gradient(
-				var(--color--secondary) 0% 25%,
-				var(--color--primary) 0% 50%
+				var(--color-secondary) 0% 25%,
+				var(--color-primary) 0% 50%
 			)
 			50%/ 50px 50px;
-		filter: var(--invert-icon--primary);
+		filter: var(--invert-icon-primary);
 	}
 }
 
@@ -35,10 +35,10 @@
 .favorites__list {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
 	gap: 20px;
-	margin: 0;
+	justify-content: center;
 	padding: 45px 15px;
+	margin: 0;
 	list-style: none;
 
 	@media (width >= 550px) {
@@ -52,34 +52,34 @@
 
 .favorites__item {
 	position: relative;
-	z-index: var(--z-index--level-one);
+	z-index: var(--z-index-level-one);
 	display: grid;
 	place-content: center;
 	width: 240px;
 	height: 240px;
-	background-color: var(--color--secondary);
-	border: 2px solid var(--color--primary);
+	background-color: var(--color-secondary);
+	border: 2px solid var(--color-primary);
 	border-radius: 50%;
-	box-shadow: 0 1px 10px 0 var(--color--primary);
+	box-shadow: 0 1px 10px 0 var(--color-primary);
 }
 
 .favorites__item-text {
 	min-width: 120px;
-	margin: 0;
 	padding: 45px 10px;
-	color: #ffffff;
-	font-weight: bold;
+	margin: 0;
 	font-size: 28px;
-	letter-spacing: 2px;
+	font-weight: bold;
+	color: #ffffff;
 	text-align: center;
+	letter-spacing: 2px;
 	background-image: url("../images/favorites-shadow.bg.svg");
 	background-repeat: no-repeat;
 	background-position: right 10px top 50%;
 	background-size: 50px;
 	mask-image: url("../images/favorites.mask.svg");
 	mask-repeat: no-repeat;
-	mask-size: contain;
 	mask-position: 50% 0;
+	mask-size: contain;
 }
 
 .favorites__item-text--html {

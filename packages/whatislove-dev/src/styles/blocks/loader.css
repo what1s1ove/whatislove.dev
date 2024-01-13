@@ -6,13 +6,13 @@
 
 	& circle {
 		display: block;
-		transform-origin: 50% 50%;
-		animation: 800ms ease-in-out infinite both loader-circle-animation;
 		fill: transparent;
-		stroke: var(--color--primary);
-		stroke-linecap: round;
+		stroke: var(--color-primary);
 		stroke-dasharray: 283;
 		stroke-dashoffset: 280;
+		stroke-linecap: round;
 		stroke-width: 6px;
+		transform-origin: 50% 50%;
+		animation: 800ms ease-in-out infinite both loader-circle-animation;
 	}
 }
