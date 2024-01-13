@@ -2,8 +2,8 @@
 	display: flex;
 	align-items: center;
 	padding: 2px 2px 2px 7px;
-	color: var(--color--secondary);
-	font-size: var(--font-size--small);
+	color: var(--color-secondary);
+	font-size: var(--font-size-small);
 	white-space: nowrap;
 	border-radius: 10px;
 	cursor: pointer;
@@ -22,7 +22,7 @@
 	width: 20px;
 	height: 20px;
 	margin: 0 10px 0 0;
-	background-color: var(--color--secondary);
+	background-color: var(--color-secondary);
 	border: 0;
 	border-radius: 0;
 
@@ -33,7 +33,7 @@
 		content: "";
 		width: 14px;
 		height: 6px;
-		border: 2px solid var(--color--primary);
+		border: 2px solid var(--color-primary);
 		border-top: 0;
 		border-right: 0;
 		transform: scale(0) rotate(-45deg);

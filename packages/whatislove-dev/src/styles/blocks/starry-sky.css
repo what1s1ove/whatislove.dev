@@ -9,7 +9,7 @@
 		margin: -150vh 0 0 -150vw;
 		background-image: url("../images/stars.bg.svg");
 		background-size: 250px;
-		filter: var(--invert-icon--secondary);
+		filter: var(--invert-icon-secondary);
 		animation: rotate 200s linear infinite;
 		pointer-events: none;
 	}

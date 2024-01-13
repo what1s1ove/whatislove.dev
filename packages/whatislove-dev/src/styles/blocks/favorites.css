@@ -1,6 +1,6 @@
 .favorites {
 	padding: 30px 0 0;
-	background-color: var(--color--secondary);
+	background-color: var(--color-secondary);
 
 	@media print {
 		display: none;
@@ -9,18 +9,18 @@
 
 .favorites__wrapper {
 	position: relative;
-	background-color: var(--color--primary);
+	background-color: var(--color-primary);
 
 	&::before {
 		position: absolute;
 		content: "";
 		inset: 0;
 		background: repeating-conic-gradient(
-				var(--color--secondary) 0% 25%,
-				var(--color--primary) 0% 50%
+				var(--color-secondary) 0% 25%,
+				var(--color-primary) 0% 50%
 			)
 			50%/ 50px 50px;
-		filter: var(--invert-icon--primary);
+		filter: var(--invert-icon-primary);
 	}
 }
 
@@ -52,15 +52,15 @@
 
 .favorites__item {
 	position: relative;
-	z-index: var(--z-index--level-one);
+	z-index: var(--z-index-level-one);
 	display: grid;
 	place-content: center;
 	width: 240px;
 	height: 240px;
-	background-color: var(--color--secondary);
-	border: 2px solid var(--color--primary);
+	background-color: var(--color-secondary);
+	border: 2px solid var(--color-primary);
 	border-radius: 50%;
-	box-shadow: 0 1px 10px 0 var(--color--primary);
+	box-shadow: 0 1px 10px 0 var(--color-primary);
 }
 
 .favorites__item-text {

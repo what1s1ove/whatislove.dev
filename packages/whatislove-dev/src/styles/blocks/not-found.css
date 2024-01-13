@@ -13,7 +13,7 @@
 
 	& .section-header__desc {
 		& a {
-			color: var(--color--red);
+			color: var(--color-red);
 		}
 	}
 }

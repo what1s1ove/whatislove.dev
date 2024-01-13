@@ -1,6 +1,6 @@
 .timeline {
 	padding: 30px 0 0;
-	background-color: var(--color--secondary);
+	background-color: var(--color-secondary);
 
 	@media print {
 		display: none;
@@ -46,7 +46,7 @@
 		content: "";
 		width: 2px;
 		height: 100%;
-		background-color: var(--color--primary);
+		background-color: var(--color-primary);
 	}
 
 	&:not(:empty)::after {
@@ -54,8 +54,8 @@
 		bottom: 0;
 		left: -6px;
 		content: "";
-		border: 7px solid var(--color--secondary);
-		border-top: 14px solid var(--color--primary);
+		border: 7px solid var(--color-secondary);
+		border-top: 14px solid var(--color-primary);
 	}
 
 	@media (--width-tablet) {
@@ -89,7 +89,7 @@
 					right: 99%;
 					left: unset;
 					border-color: transparent;
-					border-right-color: var(--color--primary);
+					border-right-color: var(--color-primary);
 				}
 			}
 
@@ -104,9 +104,9 @@
 .timeline__item-wrapper {
 	min-height: 175px;
 	padding: 20px;
-	background-color: var(--color--primary);
+	background-color: var(--color-primary);
 	border-radius: 4px;
-	box-shadow: 0 1px 10px 0 var(--color--primary--opacity);
+	box-shadow: 0 1px 10px 0 var(--color-primary-opacity);
 	animation: fade-up 1s;
 
 	@media (--width-tablet) {
@@ -120,8 +120,8 @@
 			left: 99%;
 			content: "";
 			border: 15px solid transparent;
-			border-left-color: var(--color--primary);
-			filter: drop-shadow(0 0 10px var(--color--primary));
+			border-left-color: var(--color-primary);
+			filter: drop-shadow(0 0 10px var(--color-primary));
 		}
 	}
 
@@ -132,24 +132,24 @@
 
 .timeline__item-title {
 	margin: 0 0 10px;
-	color: var(--color--secondary);
+	color: var(--color-secondary);
 }
 
 .timeline__item-origin {
 	display: block;
 	margin: 0 0 10px;
-	color: var(--color--red);
+	color: var(--color-red);
 }
 
 .timeline__item-desc {
 	margin: 0 0 10px;
-	color: var(--color--secondary);
+	color: var(--color-secondary);
 }
 
 .timeline__item-link {
 	display: block;
 	margin: 0 0 10px;
-	color: var(--color--red);
+	color: var(--color-red);
 
 	@media (--width-tablet) {
 		margin: 0;
@@ -158,7 +158,7 @@
 
 .timeline__dates {
 	margin: 0;
-	color: var(--color--secondary);
+	color: var(--color-secondary);
 	white-space: nowrap;
 	text-align: right;
 
@@ -166,7 +166,7 @@
 		position: absolute;
 		top: 33px;
 		left: calc(100% + 85px);
-		color: var(--color--primary);
+		color: var(--color-primary);
 	}
 }
 
@@ -180,7 +180,7 @@
 	left: -52px;
 	width: 46px;
 	height: 46px;
-	background-color: var(--color--primary);
+	background-color: var(--color-primary);
 	border-radius: 50%;
 	animation: icon-fade-up 1s;
 
@@ -191,7 +191,7 @@
 }
 
 .timeline__item:hover .timeline__icon-wrapper {
-	background-color: var(--color--red);
+	background-color: var(--color-red);
 }
 
 .timeline__icon {
@@ -200,7 +200,7 @@
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	background-size: 28px 28px;
-	filter: var(--invert-icon--secondary);
+	filter: var(--invert-icon-secondary);
 }
 
 .timeline__icon--book {
@@ -249,11 +249,11 @@
 	min-height: 60px;
 	margin: 30px 0 0;
 	overflow: hidden;
-	color: var(--color--secondary);
+	color: var(--color-secondary);
 	text-transform: uppercase;
 	text-decoration: none;
-	background-color: var(--color--primary);
-	box-shadow: 0 1px 10px 0 var(--color--primary--opacity);
+	background-color: var(--color-primary);
+	box-shadow: 0 1px 10px 0 var(--color-primary-opacity);
 }
 
 .timeline__resume-link:focus {
@@ -270,7 +270,7 @@
 	visibility: hidden;
 	transform: translateY(-60px) scale(0);
 	opacity: 0;
-	filter: var(--invert-icon--secondary);
+	filter: var(--invert-icon-secondary);
 	transition:
 		transform 0.4s ease-out,
 		opacity 0.4s linear;

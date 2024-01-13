@@ -9,7 +9,7 @@
 		transform-origin: 50% 50%;
 		animation: 800ms ease-in-out infinite both loader-circle-animation;
 		fill: transparent;
-		stroke: var(--color--primary);
+		stroke: var(--color-primary);
 		stroke-linecap: round;
 		stroke-dasharray: 283;
 		stroke-dashoffset: 280;

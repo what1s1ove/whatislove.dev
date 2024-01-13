@@ -1,6 +1,6 @@
 .not-easter-egg {
 	position: absolute;
-	z-index: var(--z-index--level-four);
+	z-index: var(--z-index-level-four);
 	margin: 0;
 	padding: 15px;
 	overflow: hidden;

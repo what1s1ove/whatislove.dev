@@ -1,9 +1,9 @@
 .exp-filter {
 	position: sticky;
 	top: -1px;
-	z-index: var(--z-index--level-three);
-	background-color: var(--color--primary);
-	box-shadow: 0 1px 10px 0 var(--color--primary--opacity);
+	z-index: var(--z-index-level-three);
+	background-color: var(--color-primary);
+	box-shadow: 0 1px 10px 0 var(--color-primary-opacity);
 }
 
 .exp-filter__wrapper {
@@ -81,7 +81,7 @@
 
 .exp-filter__skill-title {
 	padding: 0 0 0 7px;
-	color: var(--color--secondary);
+	color: var(--color-secondary);
 
 	@media (width >= 620px) {
 		position: absolute;

@@ -7,12 +7,12 @@
 	min-height: 100vh;
 	margin: 0;
 	padding: 0;
-	color: var(--color--primary);
+	color: var(--color-primary);
 	font-weight: 400;
-	font-size: var(--font-size--default);
+	font-size: var(--font-size-default);
 	font-family: Roboto, Arial, sans-serif;
 	font-style: normal;
 	line-height: 1.5;
-	background-color: var(--color--secondary);
+	background-color: var(--color-secondary);
 	text-rendering: optimizespeed;
 }

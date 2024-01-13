@@ -1,5 +1,5 @@
 .intro {
-	background-color: var(--color--secondary);
+	background-color: var(--color-secondary);
 
 	@media print {
 		* {
@@ -69,14 +69,14 @@
 	&::before {
 		bottom: 0;
 		height: 275px;
-		background-color: var(--color--primary);
+		background-color: var(--color-primary);
 		mask-image: url("../images/intro-photo.mask.svg");
 	}
 
 	&::after {
 		bottom: -0.5px;
 		height: 145px;
-		background-color: var(--color--secondary);
+		background-color: var(--color-secondary);
 		mask-image: url("../images/intro-photo-border.mask.svg");
 	}
 
@@ -86,7 +86,7 @@
 		margin: 0 auto;
 		will-change: filter;
 		transform: translateX(15px);
-		filter: drop-shadow(-8px 7px 0.3px var(--color--secondary));
+		filter: drop-shadow(-8px 7px 0.3px var(--color-secondary));
 	}
 
 	@media print {

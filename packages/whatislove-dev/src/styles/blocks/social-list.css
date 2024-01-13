@@ -37,7 +37,7 @@
 	min-height: 35px;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
-	filter: var(--invert-icon--primary);
+	filter: var(--invert-icon-primary);
 	transition: opacity 200ms ease-out;
 
 	&:hover {
