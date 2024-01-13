@@ -8,12 +8,6 @@ let config = {
 	'raw-ignore-regex': false,
 	'rules': {
 		'doctype-first': false,
-		'htmlacademy/attr-req-value': [
-			true,
-			{
-				ignore: [`value`],
-			},
-		],
 	},
 	'text-ignore-regex': false,
 }
