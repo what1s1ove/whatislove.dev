@@ -1,8 +1,8 @@
 {
+	"group-pull-request-title-pattern": "chore: release-${version}",
 	"packages": {
 		".": {
 			"release-type": "node",
-			"pull-request-title-pattern": "chore: release-${version}",
 			"include-component-in-tag": false
 		},
 		"apps/certifications-whatislove-dev": {
