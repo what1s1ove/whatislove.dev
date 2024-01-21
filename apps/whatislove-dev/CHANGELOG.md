@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.11.1...@whatislove.dev/whatislove-dev-v1.12.0) (2024-01-21)
+
+
+### Features
+
+* separate packages and apps workspaces wd-326 ([#327](https://github.com/what1s1ove/whatislove.dev/issues/327)) ([66ccba8](https://github.com/what1s1ove/whatislove.dev/commit/66ccba894042075d15198a24c61b654f1c50172f))
+
 ## [1.11.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.11.0...@whatislove.dev/whatislove-dev-v1.11.1) (2024-01-13)
 
 
