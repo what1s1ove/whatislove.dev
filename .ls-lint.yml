@@ -24,9 +24,9 @@ ignore:
   - .git
   - node_modules
   - CHANGELOG.md
-  - packages/shared/node_modules
-  - packages/shared/build
   - apps/certifications-whatislove-dev/node_modules
   - apps/certifications-whatislove-dev/build
   - apps/whatislove-dev/node_modules
   - apps/whatislove-dev/build
+  - packages/shared/node_modules
+  - packages/shared/build
