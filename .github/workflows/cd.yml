@@ -65,7 +65,7 @@ jobs:
           - certifications-whatislove-dev
           - whatislove-dev
     env:
-      PACKAGE_DIR: packages/${{ matrix.project }}
+      PACKAGE_DIR: apps/${{ matrix.project }}
     steps:
       - name: Code Checkout
         uses: actions/checkout@v4
@@ -101,7 +101,7 @@ jobs:
           - certifications-whatislove-dev
           - whatislove-dev
     env:
-      PACKAGE_DIR: packages/${{ matrix.project }}
+      PACKAGE_DIR: apps/${{ matrix.project }}
     environment:
       name: ${{ matrix.project }}
       url: ${{ fromJson(steps.deployment.outputs.NETLIFY_OUTPUT).url }}

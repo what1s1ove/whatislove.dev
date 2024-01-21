@@ -15,14 +15,14 @@ ls:
   .jpeg: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
   .svg: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
   .ttf: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
-  packages/**:
+  apps/**:
     CHANGELOG.md: SCREAMING_SNAKE_CASE
 
 ignore:
   - .git
   - node_modules
   - CHANGELOG.md
-  - packages/certifications-whatislove-dev/node_modules
-  - packages/certifications-whatislove-dev/build
-  - packages/whatislove-dev/node_modules
-  - packages/whatislove-dev/build
+  - apps/certifications-whatislove-dev/node_modules
+  - apps/certifications-whatislove-dev/build
+  - apps/whatislove-dev/node_modules
+  - apps/whatislove-dev/build
