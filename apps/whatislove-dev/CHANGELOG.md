@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.12.0...@whatislove.dev/whatislove-dev-v1.13.0) (2024-01-21)
+
+
+### Features
+
+* **whatislove-dev:** add 80/20 principle book wd-325 ([#330](https://github.com/what1s1ove/whatislove.dev/issues/330)) ([5be226e](https://github.com/what1s1ove/whatislove.dev/commit/5be226eecb5ccd8bb030985b6bec559c6b021fa1))
+
 ## [1.12.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.11.1...@whatislove.dev/whatislove-dev-v1.12.0) (2024-01-21)
 
 
