@@ -46,7 +46,9 @@ jobs:
         id: cache
         uses: actions/cache@v3
         with:
-          path: '**/node_modules'
+          path: |
+            **/node_modules
+            packages/**/build
           key: cd-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             cd-
@@ -78,7 +80,9 @@ jobs:
       - name: Restore Dependencies
         uses: actions/cache@v3
         with:
-          path: '**/node_modules'
+          path: |
+            **/node_modules
+            packages/**/build
           key: cd-${{ hashFiles('**/package-lock.json') }}
 
       - name: Code Building
