@@ -8,6 +8,7 @@
 		"npm": "10.x.x"
 	},
 	"workspaces": [
+		"apps/*",
 		"packages/*"
 	],
 	"scripts": {

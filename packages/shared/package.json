@@ -1,0 +1,16 @@
+{
+	"version": "1.0.0",
+	"name": "@whatislove.dev/shared",
+	"private": true,
+	"type": "module",
+	"main": "build/index.js",
+	"types": "build/index.d.ts",
+	"scripts": {
+		"postinstall": "npm run build",
+		"build:clean": "rm -rf build",
+		"build": "npm run build:clean && tsc -p tsconfig.build.json",
+		"ci:lint:js": "eslint \"./**/*\"",
+		"ci:lint:type": "tsc --noEmit",
+		"ci:lint": "concurrently \"npm:ci:lint:*\""
+	}
+}

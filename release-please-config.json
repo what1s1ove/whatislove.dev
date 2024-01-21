@@ -5,10 +5,13 @@
 			"pull-request-title-pattern": "chore: release-${version}",
 			"include-component-in-tag": false
 		},
-		"packages/certifications-whatislove-dev": {
+		"apps/certifications-whatislove-dev": {
 			"release-type": "node"
 		},
-		"packages/whatislove-dev": {
+		"apps/whatislove-dev": {
+			"release-type": "node"
+		},
+		"packages/shared": {
 			"release-type": "node"
 		}
 	}

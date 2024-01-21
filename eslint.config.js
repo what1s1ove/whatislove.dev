@@ -16,7 +16,7 @@ let ParserModule
 
 /** @type {FlatConfig} */
 let ignoresConfig = {
-	ignores: [`packages`],
+	ignores: [`apps`, `packages`],
 }
 
 /** @type {FlatConfig} */
