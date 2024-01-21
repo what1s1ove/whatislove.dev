@@ -1611,6 +1611,19 @@
 			"linkDesc": "",
 			"date": "2023-12-26T00:00:00.000Z",
 			"endDate": ""
+		},
+		{
+			"id": "J_-hEpm",
+			"skillType": "softSkill",
+			"type": "book",
+			"title": "The 80/20 Principle: The Secret to Achieving More with Less (Richard Koch)",
+			"desc": "",
+			"origin": "https://www.amazon.com/80-20-Principle-Secret-Achieving/dp/0385491743/",
+			"originDesc": "Amazon",
+			"link": "",
+			"linkDesc": "",
+			"date": "2024-01-19T00:00:00.000Z",
+			"endDate": ""
 		}
 	]
 }
