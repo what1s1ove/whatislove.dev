@@ -8,7 +8,8 @@
 		"npm": "10.x.x"
 	},
 	"workspaces": [
-		"apps/*"
+		"apps/*",
+		"packages/*"
 	],
 	"scripts": {
 		"_prettier": "prettier \"**/*.{md,json,yml,html,njk,css,js,jsx,cjs,d.ts}\"",

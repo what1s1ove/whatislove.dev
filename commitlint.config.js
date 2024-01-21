@@ -17,7 +17,7 @@ let configuration = {
 		'scope-enum': [
 			RuleConfigSeverity.Error,
 			`always`,
-			[...ProjectPrefix.SCOPES],
+			[...ProjectPrefix.SCOPES.APPS, ...ProjectPrefix.SCOPES.PACKAGES],
 		],
 	},
 }

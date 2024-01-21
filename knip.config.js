@@ -11,6 +11,9 @@ let config = {
 			},
 			entry: [`src/scripts/index.js`],
 		},
+		'packages/shared': {
+			entry: [`src/index.js`],
+		},
 	},
 }
 

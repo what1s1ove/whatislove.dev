@@ -17,11 +17,15 @@ ls:
   .ttf: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
   apps/**:
     CHANGELOG.md: SCREAMING_SNAKE_CASE
+  packages/**:
+    CHANGELOG.md: SCREAMING_SNAKE_CASE
 
 ignore:
   - .git
   - node_modules
   - CHANGELOG.md
+  - packages/shared/node_modules
+  - packages/shared/build
   - apps/certifications-whatislove-dev/node_modules
   - apps/certifications-whatislove-dev/build
   - apps/whatislove-dev/node_modules

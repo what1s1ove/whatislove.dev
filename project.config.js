@@ -1,6 +1,9 @@
 let ProjectPrefix = /** @type {const} */ ({
 	ISSUE_PREFIXES: [`wd`, `release`],
-	SCOPES: [`certifications-whatislove-dev`, `whatislove-dev`],
+	SCOPES: {
+		APPS: [`certifications-whatislove-dev`, `whatislove-dev`],
+		PACKAGES: [`shared`],
+	},
 })
 
 export { ProjectPrefix }
