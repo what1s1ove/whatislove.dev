@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.15.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.14.0...v1.15.0) (2024-03-05)
+
+
+### Features
+
+* **whatislove-dev:** add new Unfuck Yourself book wd-335 ([#344](https://github.com/what1s1ove/whatislove.dev/issues/344)) ([9efdd86](https://github.com/what1s1ove/whatislove.dev/commit/9efdd864e84651788728f2adb07fc5ccb5735bf6))
+
 ## [1.14.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.13.0...v1.14.0) (2024-03-05)
 
 
