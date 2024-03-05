@@ -5,13 +5,13 @@ let FlatConfig
 
 /** @type {FlatConfig} */
 let ignoresConfig = {
-	ignores: [`build`, `.linthtmlrc.cjs`],
+	ignores: [`build`],
 }
 
 /** @type {FlatConfig[]} */
 let overridesConfigs = [
 	{
-		files: [`src/data/**/*.js`, `eleventy.config.js`],
+		files: [`src/data/**/*.js`, `eleventy.config.js`, `linthtml.config.js`],
 		rules: {
 			'import/no-default-export': [`off`],
 		},
