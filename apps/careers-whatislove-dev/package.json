@@ -1,0 +1,26 @@
+{
+	"version": "1.0.0",
+	"name": "@whatislove.dev/careers-whatislove-dev",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"start": "vite",
+		"build:clean": "rm -rf build",
+		"build": "npm run build:clean && vite build",
+		"ci:lint:css": "stylelint \"src/**/*.css\"",
+		"ci:lint:js": "eslint \"./**/*\"",
+		"ci:lint:type": "tsc --noEmit",
+		"ci:lint": "concurrently \"npm:ci:lint:*\""
+	},
+	"dependencies": {
+		"@whatislove.dev/shared": "file:../../packages/shared",
+		"lit": "3.1.1"
+	},
+	"devDependencies": {
+		"@babel/plugin-proposal-decorators": "7.24.0",
+		"@babel/plugin-syntax-import-attributes": "7.23.3",
+		"eslint-plugin-lit": "1.11.0",
+		"eslint-plugin-wc": "2.0.4",
+		"vite-plugin-babel": "1.2.0"
+	}
+}
