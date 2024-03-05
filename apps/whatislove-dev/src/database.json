@@ -1637,6 +1637,19 @@
 			"linkDesc": "",
 			"date": "2024-02-04T00:00:00.000Z",
 			"endDate": ""
+		},
+		{
+			"id": "Z12wHSc",
+			"skillType": "softSkill",
+			"type": "book",
+			"title": "Unfu*k Yourself: Get Out of Your Head and into Your Life (Gary John Bishop)",
+			"desc": "",
+			"origin": "https://www.amazon.com/Unfu-Yourself-Your-Head-into/dp/0062803832",
+			"originDesc": "Amazon",
+			"link": "",
+			"linkDesc": "",
+			"date": "2024-02-17T00:00:00.000Z",
+			"endDate": ""
 		}
 	]
 }
