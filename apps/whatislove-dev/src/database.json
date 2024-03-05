@@ -1624,6 +1624,19 @@
 			"linkDesc": "",
 			"date": "2024-01-19T00:00:00.000Z",
 			"endDate": ""
+		},
+		{
+			"id": "lz8VRJf",
+			"skillType": "softSkill",
+			"type": "book",
+			"title": "The 5 Second Rule: Transform your Life, Work, and Confidence with Everyday Courage (Mel Robbins)",
+			"desc": "",
+			"origin": "https://www.amazon.com/Second-Rule-Transform-Confidence-Everyday/dp/1682612384",
+			"originDesc": "Amazon",
+			"link": "",
+			"linkDesc": "",
+			"date": "2024-02-04T00:00:00.000Z",
+			"endDate": ""
 		}
 	]
 }
