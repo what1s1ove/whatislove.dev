@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.15.0...v1.16.0) (2024-03-05)
+
+
+### Features
+
+* **whatislove-dev:** add new Outliers book wd-340 ([#346](https://github.com/what1s1ove/whatislove.dev/issues/346)) ([6e22116](https://github.com/what1s1ove/whatislove.dev/commit/6e221161413c28c7e3b1ba48c8590b09673df340))
+
 ## [1.15.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.14.0...v1.15.0) (2024-03-05)
 
 
