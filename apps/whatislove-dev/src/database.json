@@ -1639,7 +1639,6 @@
 			"endDate": ""
 		},
 		{
-			"id": "Z12wHSc",
 			"skillType": "softSkill",
 			"type": "book",
 			"title": "Unfu*k Yourself: Get Out of Your Head and into Your Life (Gary John Bishop)",
@@ -1649,6 +1648,20 @@
 			"link": "",
 			"linkDesc": "",
 			"date": "2024-02-17T00:00:00.000Z",
+			"endDate": "",
+			"id": "Z12wHSc"
+		},
+		{
+			"id": "ag0l-8U",
+			"skillType": "softSkill",
+			"type": "book",
+			"title": "Outliers: The Story of Success (Malcolm Gladwell)",
+			"desc": "",
+			"origin": "https://www.amazon.com/Outliers-Story-Success-Malcolm-Gladwell/dp/0316017930",
+			"originDesc": "Amazon",
+			"link": "",
+			"linkDesc": "",
+			"date": "2024-03-04T00:00:00.000Z",
 			"endDate": ""
 		}
 	]
