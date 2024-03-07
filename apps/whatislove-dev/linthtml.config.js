@@ -1,4 +1,4 @@
-/** @type {import('@linthtml/core').LinterConfig} */
+/** @type {import('@linthtml/linthtml').Config} */
 let config = {
 	extends: `linthtml-config-htmlacademy`,
 	rules: {
