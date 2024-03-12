@@ -1,7 +1,7 @@
 let KeyboardKey = /** @type {const} */ ({
 	ESCAPE: `Escape`,
-	TAB: `Tab`,
 	SPACE: ` `,
+	TAB: `Tab`,
 })
 
 export { KeyboardKey }

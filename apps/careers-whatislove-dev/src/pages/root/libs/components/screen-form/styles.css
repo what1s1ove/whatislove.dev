@@ -1,0 +1,46 @@
+:host {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	max-width: 300px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.form {
+	display: grid;
+	gap: 20px 0;
+}
+
+.label {
+	display: grid;
+	gap: 3px 0;
+}
+
+.input {
+	padding: 8px 10px;
+	resize: none;
+	border: 2px solid var(--color-primary);
+	border-radius: 3px;
+
+	&:focus {
+		border-color: var(--color-red);
+		outline: none;
+	}
+}
+
+.submit-btn {
+	padding: 5px 15px;
+	color: var(--color-primary);
+	cursor: pointer;
+	background-color: var(--color-secondary);
+	border: 2px solid var(--color-primary);
+	border-radius: 3px;
+
+	&:focus {
+		color: var(--color-red);
+		border-color: var(--color-red);
+		outline: none;
+	}
+}

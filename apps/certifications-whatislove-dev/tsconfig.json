@@ -1,13 +1,12 @@
 {
 	"extends": "../../tsconfig.json",
 	"exclude": ["build"],
-	"include": ["**/*.js", "**/*.jsx", "packages.d.ts"],
+	"include": ["**/*.js", "**/*.jsx", "packages.d.ts", "vite-env.d.ts"],
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
 			"~/*": ["src/*"]
 		},
-		"jsx": "react-jsx",
-		"types": ["vite/client"]
+		"jsx": "react-jsx"
 	}
 }

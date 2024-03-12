@@ -12,6 +12,18 @@ let ignoresConfig = {
 }
 
 /** @type {FlatConfig} */
+let typescriptPlugin = {
+	rules: {
+		'@typescript-eslint/no-unused-vars': [
+			`error`,
+			{
+				varsIgnorePattern: `^_`,
+			},
+		],
+	},
+}
+
+/** @type {FlatConfig} */
 let litConfig = {
 	plugins: {
 		lit,
@@ -24,7 +36,10 @@ let wcConfig = {
 	plugins: {
 		wc,
 	},
-	rules: wc.configs[`best-practice`].rules,
+	rules: {
+		...wc.configs[`best-practice`].rules,
+		'wc/guard-super-call': [`off`],
+	},
 }
 
 /** @type {FlatConfig[]} */
@@ -41,6 +56,7 @@ let overridesConfigs = [
 let config = [
 	ignoresConfig,
 	...baseConfig,
+	typescriptPlugin,
 	litConfig,
 	wcConfig,
 	...overridesConfigs,

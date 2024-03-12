@@ -1,0 +1,17 @@
+@import url("~/assets/styles/animations.css");
+
+:host {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.play-btn {
+	font-size: 45px;
+	color: var(--color-primary);
+	cursor: pointer;
+	background-color: transparent;
+	border: 0;
+	animation: glitch var(--timing-function-glitch) 6ms infinite;
+}

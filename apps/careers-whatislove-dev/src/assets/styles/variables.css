@@ -1,0 +1,17 @@
+:root {
+	--timing-function-glitch: cubic-bezier(0.5, -0.25, 0.75, 1);
+	--color-primary: #000000;
+	--color-secondary: #ffffff;
+	--color-red: #ff0000;
+	--invert-icon-primary: 0;
+	--invert-icon-secondary: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-primary: #ffffff;
+		--color-secondary: #000000;
+		--invert-icon-primary: 0;
+		--invert-icon-secondary: 1;
+	}
+}
