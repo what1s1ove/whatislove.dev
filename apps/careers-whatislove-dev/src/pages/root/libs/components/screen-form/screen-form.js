@@ -12,7 +12,7 @@ import styles from './styles.css?inline'
 class _ScreenForm extends LitElement {
 	static styles = parseRawStyleSheet(styles)
 
-	/** @type {(event: SubmitEvent) => void} */
+	/** @type {(event_: SubmitEvent) => void} */
 	#handleSubmit
 
 	constructor() {

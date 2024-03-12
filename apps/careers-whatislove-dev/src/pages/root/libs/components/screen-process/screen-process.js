@@ -1,5 +1,5 @@
 import { LitElement, html, nothing } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, eventOptions, property } from 'lit/decorators.js'
 import { createRef, ref } from 'lit/directives/ref.js'
 
 import { ComponentPrefix, KeyboardKey } from '~/libs/enums/enums.js'
@@ -24,10 +24,10 @@ class _ScreenProcess extends LitElement {
 	#handleEnded
 
 	/** @type {() => void} */
-	#handleFullscreen
+	#handleFullscreenClick
 
-	/** @type {(event: KeyboardEvent) => void} */
-	#handlePause
+	/** @type {(event_: KeyboardEvent) => void} */
+	#handleEscPress
 
 	/** @type {() => void} */
 	#handleTimeUpdate
@@ -38,12 +38,16 @@ class _ScreenProcess extends LitElement {
 	/** @type {NodeReference<HTMLVideoElement>} */
 	#videoPlayerNodeRef = createRef()
 
+	/** @type {(event_: MouseEvent) => void} */
+	#handleClickPlay
+
 	constructor() {
 		super()
-		this.#handleTimeUpdate = this.#timeUpdateHandler.bind(this)
+		this.#handleTimeUpdate = this.#updateTimeHandler.bind(this)
 		this.#handleEnded = this.#endedHandler.bind(this)
-		this.#handleFullscreen = this.#fullscreenHandler.bind(this)
-		this.#handlePause = this.#pauseHandler.bind(this)
+		this.#handleFullscreenClick = this.#clickFullscreenHandler.bind(this)
+		this.#handleEscPress = this.#pressEscHandler.bind(this)
+		this.#handleClickPlay = this.#clickPlayHandler.bind(this)
 	}
 
 	/** @returns {void} */
@@ -56,23 +60,39 @@ class _ScreenProcess extends LitElement {
 	}
 
 	/** @returns {void} */
-	#fullscreenHandler() {
+	#clickFullscreenHandler() {
 		document.fullscreenElement
 			? void document.exitFullscreen()
 			: void document.documentElement.requestFullscreen()
 	}
 
 	/**
-	 * @param {KeyboardEvent} event
+	 * @param {KeyboardEvent} _event
 	 * @returns {void}
 	 */
-	#pauseHandler(event) {
-		let isSpacePressed = event.key === KeyboardKey.SPACE
-
-		if (!isSpacePressed) {
+	#pressEscHandler(_event) {
+		if (document.activeElement !== document.body) {
 			return
 		}
 
+		if (_event.key === KeyboardKey.SPACE) {
+			this.#togglePlayHandler()
+		}
+	}
+
+	/**
+	 * @param {MouseEvent} _event
+	 * @returns {void}
+	 */
+	#clickPlayHandler(_event) {
+		this.#togglePlayHandler()
+	}
+
+	/**
+	 * @param {boolean} [isPlay]
+	 * @returns {void}
+	 */
+	#togglePlayHandler(isPlay) {
 		let audioPlayerNode = /** @type {HTMLAudioElement} */ (
 			this.#audioPlayerNodeRef.value
 		)
@@ -81,9 +101,9 @@ class _ScreenProcess extends LitElement {
 			this.#videoPlayerNodeRef.value
 		)
 
-		let isPaused = audioPlayerNode.paused
+		this.#isPlaying = isPlay !== undefined ? isPlay : !this.#isPlaying
 
-		if (isPaused) {
+		if (this.#isPlaying) {
 			void audioPlayerNode.play()
 			void videoPlayerNode.play()
 		} else {
@@ -93,7 +113,7 @@ class _ScreenProcess extends LitElement {
 	}
 
 	/** @returns {void} */
-	#timeUpdateHandler() {
+	#updateTimeHandler() {
 		let audioPlayerNode = /** @type {HTMLAudioElement} */ (
 			this.#audioPlayerNodeRef.value
 		)
@@ -127,7 +147,7 @@ class _ScreenProcess extends LitElement {
 	connectedCallback() {
 		super.connectedCallback()
 
-		window.addEventListener(`keydown`, this.#handlePause)
+		window.addEventListener(`keydown`, this.#handleEscPress)
 	}
 
 	/** @returns {void} */
@@ -138,7 +158,7 @@ class _ScreenProcess extends LitElement {
 			void document.exitFullscreen()
 		}
 
-		window.removeEventListener(`keydown`, this.#handlePause)
+		window.removeEventListener(`keydown`, this.#handleEscPress)
 	}
 
 	/** @returns {ReturnType<html>} */
@@ -148,7 +168,7 @@ class _ScreenProcess extends LitElement {
 		return html`
 			<audio
 				class="audio"
-				src="/process.mp3"
+				src="/sounds/process.mp3"
 				autoplay
 				${ref(this.#audioPlayerNodeRef)}
 				@timeupdate=${this.#handleTimeUpdate}
@@ -156,13 +176,26 @@ class _ScreenProcess extends LitElement {
 			></audio>
 			<video
 				class="video"
-				src="/process.mp4"
+				src="/videos/process.mp4"
 				autoplay
 				${ref(this.#videoPlayerNodeRef)}
 			></video>
 			<progress class="progress" ${ref(this.#progressNodeRef)}></progress>
-			<button class="fullscreen-btn" @click=${this.#handleFullscreen}>
-				<cwd-visually-hidden> Toggle Fullscreen </cwd-visually-hidden>
+			<button
+				class="icon-btn play-btn"
+				type="button"
+				role="switch"
+				aria-checked=${this.#isPlaying}
+				@click=${this.#handleClickPlay}
+			>
+				<cwd-visually-hidden>Play</cwd-visually-hidden>
+			</button>
+			<button
+				class="icon-btn fullscreen-btn"
+				type="button"
+				@click=${this.#handleFullscreenClick}
+			>
+				<cwd-visually-hidden>Toggle Fullscreen</cwd-visually-hidden>
 			</button>
 			${hasPhrase
 				? html`<div class="phrase">I'll Call U Mine</div>`
@@ -173,4 +206,8 @@ class _ScreenProcess extends LitElement {
 	/** @type {ReturnType<typeof setTimeout> | undefined} */
 	@property()
 	accessor #phraseTimeoutId = undefined
+
+	/** @type {boolean} */
+	@property()
+	accessor #isPlaying = true
 }

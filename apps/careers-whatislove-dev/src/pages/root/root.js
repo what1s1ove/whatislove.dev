@@ -14,7 +14,7 @@ import styles from './styles.css?inline'
 class _Root extends LitElement {
 	static styles = parseRawStyleSheet(styles)
 
-	/** @type {(event: CustomEvent<ValuesOf<typeof Scene>>) => void} */
+	/** @type {(event_: CustomEvent<ValuesOf<typeof Scene>>) => void} */
 	#handleChangeScene
 
 	/**
