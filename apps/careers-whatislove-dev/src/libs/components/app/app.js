@@ -12,6 +12,11 @@ class _App extends LitElement {
 
 	/** @returns {ReturnType<html>} */
 	render() {
-		return html`<cwd-root></cwd-root>`
+		return html`
+			<cwd-visually-hidden>
+				<h1>Join the whatislove.dev community</h1>
+			</cwd-visually-hidden>
+			<cwd-root></cwd-root>
+		`
 	}
 }
