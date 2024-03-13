@@ -3,7 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { ComponentPrefix } from '~/libs/enums/enums.js'
 import { parseRawStyleSheet } from '~/libs/helpers/helpers.js'
-import { TableNames, appDatabase } from '~/libs/modules/database/database.js'
 import { ValuesOf } from '~/libs/types/types.js'
 
 import './libs/components/components.js'
@@ -17,13 +16,6 @@ class _Root extends LitElement {
 	/** @type {(event_: CustomEvent<ValuesOf<typeof Scene>>) => void} */
 	#handleChangeScene
 
-	/**
-	 * @type {(
-	 * 	event: CustomEvent<Record<string, unknown>>,
-	 * ) => Promise<void>}
-	 */
-	#handleMemberFormSubmit
-
 	/** @type {(scene: ValuesOf<typeof Scene>) => ReturnType<html>} */
 	#handleSceneRender
 
@@ -32,7 +24,6 @@ class _Root extends LitElement {
 
 		this.#handleChangeScene = this.#changeSceneHandler.bind(this)
 		this.#handleSceneRender = this.#renderSceneHandler.bind(this)
-		this.#handleMemberFormSubmit = this.#submitMemberFormHandler.bind(this)
 	}
 
 	/**
@@ -64,23 +55,9 @@ class _Root extends LitElement {
 				`
 			}
 			case Scene.FORM: {
-				return html`
-					<cwd-screen-form
-						@submitMember=${this.#handleMemberFormSubmit}
-					></cwd-screen-form>
-				`
+				return html` <cwd-screen-form></cwd-screen-form> `
 			}
 		}
-	}
-
-	/**
-	 * @param {CustomEvent<Record<string, unknown>>} _event
-	 * @returns {Promise<void>}
-	 */
-	async #submitMemberFormHandler(_event) {
-		let { set } = appDatabase.getTableReference(TableNames.MEMBERS)
-
-		await set(_event.detail)
 	}
 
 	/** @returns {ReturnType<html>} */
@@ -90,5 +67,5 @@ class _Root extends LitElement {
 
 	/** @type {ValuesOf<typeof Scene>} */
 	@property()
-	accessor #scene = Scene.INITIAL
+	accessor #scene = Scene.FORM
 }

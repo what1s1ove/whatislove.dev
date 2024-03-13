@@ -1,6 +1,6 @@
-import { AppConfig } from './app-config.js'
+import { Config } from './config.module.js'
 
-let appConfig = new AppConfig()
+let config = new Config()
 
-export { appConfig }
-export { AppConfig } from './app-config.js'
+export { config }
+export { Config } from './config.module.js'

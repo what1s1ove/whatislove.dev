@@ -1,16 +1,16 @@
 import { initializeApp } from 'firebase/app'
 import { set as databaseSet, getDatabase, ref } from 'firebase/database'
 
-import { AppConfig } from '~/libs/modules/config/config.js'
+import { Config } from '~/libs/modules/config/config.js'
 import { ValuesOf } from '~/libs/types/types.js'
 
 import { TableNames } from './libs/enums/enums.js'
 
-class AppDatabase {
+class Database {
 	/** @type {ReturnType<typeof getDatabase>} */
 	#instance
 
-	/** @param {AppConfig} config */
+	/** @param {Config} config */
 	constructor(config) {
 		this.#instance = getDatabase(
 			initializeApp({
@@ -47,4 +47,4 @@ class AppDatabase {
 	}
 }
 
-export { AppDatabase }
+export { Database }

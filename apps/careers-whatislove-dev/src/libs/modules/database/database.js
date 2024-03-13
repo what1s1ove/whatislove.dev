@@ -1,8 +1,8 @@
-import { appConfig } from '~/libs/modules/config/config.js'
+import { config } from '~/libs/modules/config/config.js'
 
-import { AppDatabase } from './app-database.js'
+import { Database } from './database.module.js'
 
-let appDatabase = new AppDatabase(appConfig)
+let database = new Database(config)
 
-export { appDatabase }
+export { database }
 export { TableNames } from './libs/enums/enums.js'

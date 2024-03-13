@@ -1,4 +1,4 @@
-class AppConfig {
+class Config {
 	ENV = {
 		DB: {
 			API_KEY: import.meta.env.VITE_DB_API_KEY,
@@ -12,4 +12,4 @@ class AppConfig {
 	}
 }
 
-export { AppConfig }
+export { Config }
