@@ -8,6 +8,7 @@
 }
 
 .video {
+	position: absolute;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -81,9 +82,10 @@
 
 .phrase {
 	padding: 0 15px;
+	font-family: inherit;
 	font-size: 45px;
 	color: var(--color-primary);
-	-webkit-text-stroke: 1px var(--color-secondary);
+	-webkit-text-stroke: 2px var(--color-secondary);
 	text-align: center;
 	animation: glitch var(--timing-function-glitch) 6ms infinite;
 }

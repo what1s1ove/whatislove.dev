@@ -1,5 +1,6 @@
 :root {
 	--timing-function-glitch: cubic-bezier(0.5, -0.25, 0.75, 1);
+	--font-family: "Helvetica", "Arial", sans-serif;
 	--color-primary: #000000;
 	--color-secondary: #ffffff;
 	--color-red: #ff0000;

@@ -3,9 +3,29 @@
 	flex-direction: column;
 	justify-content: center;
 	width: 100%;
-	max-width: 300px;
+	max-width: 530px;
 	height: 100%;
+	padding: 15px;
 	margin: 0 auto;
+}
+
+.header {
+	display: grid;
+	gap: 5px 0;
+	margin: 0 0 20px;
+}
+
+.title {
+	margin: 0;
+	font-family: inherit;
+	font-size: 25px;
+	color: var(--color-primary);
+}
+
+.description {
+	margin: 0;
+	font-family: inherit;
+	color: var(--color-primary);
 }
 
 .form {
@@ -16,10 +36,13 @@
 .label {
 	display: grid;
 	gap: 3px 0;
+	font-family: inherit;
+	color: var(--color-primary);
 }
 
 .input {
 	padding: 8px 10px;
+	font-family: inherit;
 	resize: none;
 	border: 2px solid var(--color-primary);
 	border-radius: 3px;
@@ -32,6 +55,7 @@
 
 .submit-btn {
 	padding: 5px 15px;
+	font-family: inherit;
 	color: var(--color-primary);
 	cursor: pointer;
 	background-color: var(--color-secondary);

@@ -8,6 +8,7 @@
 }
 
 .play-btn {
+	font-family: inherit;
 	font-size: 45px;
 	color: var(--color-primary);
 	cursor: pointer;

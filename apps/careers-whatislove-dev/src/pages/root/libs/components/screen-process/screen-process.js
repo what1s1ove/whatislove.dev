@@ -1,5 +1,5 @@
 import { LitElement, html, nothing } from 'lit'
-import { customElement, eventOptions, property } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
 import { createRef, ref } from 'lit/directives/ref.js'
 
 import { ComponentPrefix, KeyboardKey } from '~/libs/enums/enums.js'
@@ -21,13 +21,16 @@ class _ScreenProcess extends LitElement {
 	#audioPlayerNodeRef = createRef()
 
 	/** @type {() => void} */
-	#handleEnded
+	#handleClickPlay
 
 	/** @type {() => void} */
-	#handleFullscreenClick
+	#handleEnded
 
 	/** @type {(event_: KeyboardEvent) => void} */
 	#handleEscPress
+
+	/** @type {() => void} */
+	#handleFullscreenClick
 
 	/** @type {() => void} */
 	#handleTimeUpdate
@@ -37,9 +40,6 @@ class _ScreenProcess extends LitElement {
 
 	/** @type {NodeReference<HTMLVideoElement>} */
 	#videoPlayerNodeRef = createRef()
-
-	/** @type {(event_: MouseEvent) => void} */
-	#handleClickPlay
 
 	constructor() {
 		super()
@@ -51,19 +51,24 @@ class _ScreenProcess extends LitElement {
 	}
 
 	/** @returns {void} */
+	#clickFullscreenHandler() {
+		document.fullscreenElement
+			? void document.exitFullscreen()
+			: void document.documentElement.requestFullscreen()
+	}
+
+	/** @returns {void} */
+	#clickPlayHandler() {
+		this.#togglePlayHandler()
+	}
+
+	/** @returns {void} */
 	#endedHandler() {
 		this.dispatchEvent(
 			new CustomEvent(`changeScene`, {
 				detail: Scene.FORM,
 			}),
 		)
-	}
-
-	/** @returns {void} */
-	#clickFullscreenHandler() {
-		document.fullscreenElement
-			? void document.exitFullscreen()
-			: void document.documentElement.requestFullscreen()
 	}
 
 	/**
@@ -80,19 +85,8 @@ class _ScreenProcess extends LitElement {
 		}
 	}
 
-	/**
-	 * @param {MouseEvent} _event
-	 * @returns {void}
-	 */
-	#clickPlayHandler(_event) {
-		this.#togglePlayHandler()
-	}
-
-	/**
-	 * @param {boolean} [isPlay]
-	 * @returns {void}
-	 */
-	#togglePlayHandler(isPlay) {
+	/** @returns {void} */
+	#togglePlayHandler() {
 		let audioPlayerNode = /** @type {HTMLAudioElement} */ (
 			this.#audioPlayerNodeRef.value
 		)
@@ -101,7 +95,7 @@ class _ScreenProcess extends LitElement {
 			this.#videoPlayerNodeRef.value
 		)
 
-		this.#isPlaying = isPlay !== undefined ? isPlay : !this.#isPlaying
+		this.#isPlaying = !this.#isPlaying
 
 		if (this.#isPlaying) {
 			void audioPlayerNode.play()
@@ -140,6 +134,8 @@ class _ScreenProcess extends LitElement {
 
 				this.#phraseTimeoutId = undefined
 			}, PROCESS_PHRASE_DURATION_MS)
+
+			this.requestUpdate()
 		}
 	}
 
@@ -203,11 +199,11 @@ class _ScreenProcess extends LitElement {
 		`
 	}
 
-	/** @type {ReturnType<typeof setTimeout> | undefined} */
-	@property()
-	accessor #phraseTimeoutId = undefined
-
 	/** @type {boolean} */
 	@property()
 	accessor #isPlaying = true
+
+	/** @type {ReturnType<typeof setTimeout> | undefined} */
+	@property()
+	accessor #phraseTimeoutId = undefined
 }

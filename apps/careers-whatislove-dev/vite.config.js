@@ -11,7 +11,6 @@ let config = defineConfig({
 		babel({
 			babelConfig: {
 				plugins: [
-					`@babel/plugin-syntax-import-attributes`,
 					[
 						`@babel/plugin-proposal-decorators`,
 						{
