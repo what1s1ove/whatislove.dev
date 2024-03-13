@@ -67,10 +67,10 @@
 .play-btn {
 	top: 20px;
 	right: 20px;
-	mask-image: url("/images/icons/play.svg");
+	mask-image: url("/images/icons/pause.svg");
 
 	&[aria-checked="false"] {
-		mask-image: url("/images/icons/pause.svg");
+		mask-image: url("/images/icons/play.svg");
 	}
 }
 

@@ -67,5 +67,5 @@ class _Root extends LitElement {
 
 	/** @type {ValuesOf<typeof Scene>} */
 	@property()
-	accessor #scene = Scene.FORM
+	accessor #scene = Scene.INITIAL
 }
