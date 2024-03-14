@@ -10,14 +10,14 @@
 .play-btn {
 	font-family: inherit;
 	font-size: 45px;
-	color: var(--color-primary);
+	color: var(--color-dark);
 	cursor: pointer;
 	background-color: transparent;
 	border: 0;
 	animation: glitch var(--timing-function-glitch) 6ms infinite;
 
 	&:focus {
-		color: var(--color-red);
+		color: var(--color-focus);
 		outline: none;
 	}
 }

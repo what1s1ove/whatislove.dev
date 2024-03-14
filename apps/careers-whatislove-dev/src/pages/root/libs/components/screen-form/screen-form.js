@@ -2,10 +2,10 @@ import { ControlType, getFormValues } from 'form-payload'
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import { TableNames, database } from '~/libs/modules/database/database.js'
-import { notify } from '~/libs/modules/notify/notify.js'
 import { ComponentPrefix } from '~/libs/enums/enums.js'
 import { parseRawStyleSheet } from '~/libs/helpers/helpers.js'
+import { TableNames, database } from '~/libs/modules/database/database.js'
+import { notify } from '~/libs/modules/notify/notify.js'
 
 import { MemberFormKey } from './libs/enums/enums.js'
 import styles from './styles.css?inline'
@@ -34,12 +34,14 @@ class _ScreenForm extends LitElement {
 		let { set } = database.getTableReference(TableNames.MEMBERS)
 
 		set(getFormValues(formNode))
-			.then(() => notify.success('See u.'))
-			.catch(() =>
+			.then(() => {
+				notify.success(`See u.`)
+			})
+			.catch(() => {
 				notify.error(
-					'Failed to submit your form! Reach me another way.',
-				),
-			)
+					`Failed to submit your form! Reach me another way.`,
+				)
+			})
 
 		formNode.reset()
 	}

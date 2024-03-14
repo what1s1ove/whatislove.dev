@@ -2,3 +2,60 @@
 	display: block;
 	height: 100%;
 }
+
+.info {
+	position: absolute;
+	top: var(--position-top);
+	left: var(--position-left);
+	z-index: var(--z-index-tooltip);
+
+	--position-top: 20px;
+	--position-left: 20px;
+}
+
+.info-btn {
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	cursor: pointer;
+	background-color: var(--color-dark);
+	border: 0;
+	mask-image: url("/images/icons/info.svg");
+	mask-repeat: no-repeat;
+	mask-size: contain;
+
+	&:focus {
+		background-color: var(--color-focus);
+		outline: none;
+	}
+
+	@media (hover: hover) {
+		opacity: 0.5;
+		transition: all 200ms ease-in-out;
+
+		&:hover,
+		&:focus {
+			opacity: 1;
+			scale: 1.1;
+		}
+	}
+}
+
+.info-btn--process {
+	z-index: var(--z-index-tooltip);
+	background-color: var(--color-white-100);
+}
+
+.info-content:popover-open {
+	position: absolute;
+	inset: unset;
+	top: calc(var(--position-top) + 45px);
+	left: calc(var(--position-left));
+	color: var(--color-dark);
+	background-color: var(--color-light);
+	border-color: var(--color-dark);
+}
+
+.info-content a {
+	color: var(--color-red-100);
+}

@@ -7,6 +7,7 @@ import { ValuesOf } from '~/libs/types/types.js'
 
 import './libs/components/components.js'
 import { Scene } from './libs/enums/enums.js'
+import { getInfoTemplate } from './libs/templates/templates.js'
 import styles from './styles.css?inline'
 
 @customElement(`${ComponentPrefix.CWD}-root`)
@@ -62,7 +63,12 @@ class _Root extends LitElement {
 
 	/** @returns {ReturnType<html>} */
 	render() {
-		return this.#handleSceneRender(this.#scene)
+		return html`
+			${getInfoTemplate({
+				scene: this.#scene,
+			})}
+			${this.#handleSceneRender(this.#scene)}
+		`
 	}
 
 	/** @type {ValuesOf<typeof Scene>} */

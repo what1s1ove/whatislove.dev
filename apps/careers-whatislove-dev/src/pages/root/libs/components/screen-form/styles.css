@@ -19,13 +19,13 @@
 	margin: 0;
 	font-family: inherit;
 	font-size: 25px;
-	color: var(--color-primary);
+	color: var(--color-dark);
 }
 
 .description {
 	margin: 0;
 	font-family: inherit;
-	color: var(--color-primary);
+	color: var(--color-dark);
 }
 
 .form {
@@ -37,18 +37,18 @@
 	display: grid;
 	gap: 3px 0;
 	font-family: inherit;
-	color: var(--color-primary);
+	color: var(--color-dark);
 }
 
 .input {
 	padding: 8px 10px;
 	font-family: inherit;
 	resize: none;
-	border: 2px solid var(--color-primary);
+	border: 2px solid var(--color-dark);
 	border-radius: 3px;
 
 	&:focus {
-		border-color: var(--color-red);
+		border-color: var(--color-focus);
 		outline: none;
 	}
 }
@@ -56,15 +56,15 @@
 .submit-btn {
 	padding: 5px 15px;
 	font-family: inherit;
-	color: var(--color-primary);
+	color: var(--color-dark);
 	cursor: pointer;
-	background-color: var(--color-secondary);
-	border: 2px solid var(--color-primary);
+	background-color: var(--color-light);
+	border: 2px solid var(--color-dark);
 	border-radius: 3px;
 
 	&:focus {
-		color: var(--color-red);
-		border-color: var(--color-red);
+		color: var(--color-focus);
+		border-color: var(--color-focus);
 		outline: none;
 	}
 }

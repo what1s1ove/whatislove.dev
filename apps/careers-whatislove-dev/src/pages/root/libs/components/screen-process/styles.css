@@ -28,7 +28,7 @@
 	}
 
 	&::-webkit-progress-value {
-		background-color: var(--color-red);
+		background-color: var(--color-focus);
 	}
 
 	&::-moz-progress-bar {
@@ -42,13 +42,13 @@
 	height: 30px;
 	padding: 0;
 	cursor: pointer;
-	background-color: #ffffff;
+	background-color: var(--color-white-100);
 	border: 0;
 	mask-repeat: no-repeat;
 	mask-size: contain;
 
 	&:focus {
-		background-color: var(--color-red);
+		background-color: var(--color-focus);
 		outline: none;
 	}
 
@@ -84,8 +84,8 @@
 	padding: 0 15px;
 	font-family: inherit;
 	font-size: 45px;
-	color: var(--color-primary);
-	-webkit-text-stroke: 2px var(--color-secondary);
+	color: var(--color-dark);
+	-webkit-text-stroke: 2px var(--color-light);
 	text-align: center;
 	animation: glitch var(--timing-function-glitch) 6ms infinite;
 }
