@@ -5,7 +5,11 @@ import babel from 'vite-plugin-babel'
 /** @type {import('vite').UserConfig} */
 let config = defineConfig({
 	build: {
+		cssMinify: `lightningcss`,
 		outDir: `build`,
+	},
+	css: {
+		transformer: `lightningcss`,
 	},
 	plugins: [
 		babel({
