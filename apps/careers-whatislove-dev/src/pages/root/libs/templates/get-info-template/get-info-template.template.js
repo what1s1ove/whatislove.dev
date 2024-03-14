@@ -30,7 +30,7 @@ let getInfoTemplate = ({ scene }) => {
 					</dd>
 					<dt>Video</dt>
 					<dd>
-						Randoms from ones
+						Random ones from
 						<a
 							href="https://coub.com/random"
 							target="_blank"

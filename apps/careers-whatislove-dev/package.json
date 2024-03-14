@@ -4,9 +4,10 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"start": "vite",
+		"generate": "node ./scripts/create-process-video/create-process-video.script.js",
+		"start": "npm run generate && vite",
 		"build:clean": "rm -rf build",
-		"build": "npm run build:clean && vite build",
+		"build": "npm run build:clean && npm run generate && vite build",
 		"ci:lint:css": "stylelint \"src/**/*.css\"",
 		"ci:lint:js": "eslint \"./**/*\"",
 		"ci:lint:type": "tsc --noEmit",
@@ -20,8 +21,12 @@
 	},
 	"devDependencies": {
 		"@babel/plugin-proposal-decorators": "7.24.0",
+		"@ffmpeg-installer/ffmpeg": "1.1.0",
+		"@ffprobe-installer/ffprobe": "2.1.2",
+		"@types/fluent-ffmpeg": "2.1.24",
 		"eslint-plugin-lit": "1.11.0",
 		"eslint-plugin-wc": "2.0.4",
+		"fluent-ffmpeg": "2.1.2",
 		"vite-plugin-babel": "1.2.0"
 	}
 }
