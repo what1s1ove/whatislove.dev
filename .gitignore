@@ -3,6 +3,7 @@ node_modules
 
 # production
 build
+process.mp4
 
 # misc
 .DS_Store
