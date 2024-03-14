@@ -13,7 +13,11 @@ import { Scene } from '../../../libs/enums/enums.js'
 let getInfoTemplate = ({ scene }) => {
 	return html`
 		<div class="info">
-			<button class="info-btn info-btn--${scene}" popovertarget="info">
+			<button
+				class="info-btn info-btn--${scene}"
+				type="button"
+				popovertarget="info"
+			>
 				<cwd-visually-hidden>Info</cwd-visually-hidden>
 			</button>
 			<div class="info-content" id="info" popover>

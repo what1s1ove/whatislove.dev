@@ -32,7 +32,9 @@ class _ScreenInitial extends LitElement {
 	/** @returns {ReturnType<html>} */
 	render() {
 		return html`
-			<button class="play-btn" @click=${this.#handlePlay}>Join</button>
+			<button class="play-btn" type="button" @click=${this.#handlePlay}>
+				Join
+			</button>
 		`
 	}
 }

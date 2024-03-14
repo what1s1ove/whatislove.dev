@@ -1,6 +1,7 @@
 body {
+	display: flex;
+	flex-direction: column;
 	min-width: 320px;
-	height: 1px;
 	min-height: 100vh;
 	padding: 0;
 	margin: 0;

@@ -1,12 +1,20 @@
 :host {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	flex-grow: 1;
+	gap: 20px 0;
 	width: 100%;
 	max-width: 530px;
 	height: 100%;
 	padding: 15px;
 	margin: 0 auto;
+}
+
+.form-wrapper {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	justify-content: center;
 }
 
 .header {
@@ -43,6 +51,7 @@
 .input {
 	padding: 8px 10px;
 	font-family: inherit;
+	font-size: inherit;
 	resize: none;
 	border: 2px solid var(--color-dark);
 	border-radius: 3px;
@@ -56,6 +65,7 @@
 .submit-btn {
 	padding: 5px 15px;
 	font-family: inherit;
+	font-size: inherit;
 	color: var(--color-dark);
 	cursor: pointer;
 	background-color: var(--color-light);
@@ -65,6 +75,22 @@
 	&:focus {
 		color: var(--color-focus);
 		border-color: var(--color-focus);
+		outline: none;
+	}
+}
+
+.repeat-btn {
+	margin: auto 0 0;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: 700;
+	color: var(--color-red-100);
+	cursor: pointer;
+	background-color: transparent;
+	border: 0;
+
+	&:focus {
+		text-decoration: underline;
 		outline: none;
 	}
 }

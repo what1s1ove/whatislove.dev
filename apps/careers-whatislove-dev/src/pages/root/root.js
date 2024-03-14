@@ -56,7 +56,11 @@ class _Root extends LitElement {
 				`
 			}
 			case Scene.FORM: {
-				return html` <cwd-screen-form></cwd-screen-form> `
+				return html`
+					<cwd-screen-form
+						@changeScene=${this.#handleChangeScene}
+					></cwd-screen-form>
+				`
 			}
 		}
 	}
