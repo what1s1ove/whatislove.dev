@@ -1,13 +1,13 @@
 import { LitElement, html } from 'lit'
-import { customElement } from 'lit/decorators.js'
 
-import { ComponentPrefix } from '~/libs/enums/enums.js'
-import { parseRawStyleSheet } from '~/libs/helpers/helpers.js'
+import {
+	defineCustomElement,
+	parseRawStyleSheet,
+} from '~/libs/helpers/helpers.js'
 
 import styles from './styles.css?inline'
 
-@customElement(`${ComponentPrefix.CWD}-visually-hidden`)
-class _VisuallyHidden extends LitElement {
+class VisuallyHidden extends LitElement {
 	static styles = parseRawStyleSheet(styles)
 
 	/** @returns {ReturnType<html>} */
@@ -15,3 +15,5 @@ class _VisuallyHidden extends LitElement {
 		return html`<slot></slot>`
 	}
 }
+
+defineCustomElement(`cwd-visually-hidden`, VisuallyHidden)

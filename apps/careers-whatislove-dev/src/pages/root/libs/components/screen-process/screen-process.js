@@ -1,9 +1,12 @@
 import { LitElement, html, nothing } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { property } from 'lit/decorators.js'
 import { createRef, ref } from 'lit/directives/ref.js'
 
-import { ComponentPrefix, KeyboardKey } from '~/libs/enums/enums.js'
-import { parseRawStyleSheet } from '~/libs/helpers/helpers.js'
+import { KeyboardKey } from '~/libs/enums/enums.js'
+import {
+	defineCustomElement,
+	parseRawStyleSheet,
+} from '~/libs/helpers/helpers.js'
 import { NodeReference } from '~/libs/types/types.js'
 
 import { Scene } from '../../enums/enums.js'
@@ -13,8 +16,7 @@ import {
 } from './libs/constants/constants.js'
 import styles from './styles.css?inline'
 
-@customElement(`${ComponentPrefix.CWD}-screen-process`)
-class _ScreenProcess extends LitElement {
+class ScreenProcess extends LitElement {
 	static styles = parseRawStyleSheet(styles)
 
 	/** @type {NodeReference<HTMLAudioElement>} */
@@ -207,3 +209,5 @@ class _ScreenProcess extends LitElement {
 	@property()
 	accessor #phraseTimeoutId = undefined
 }
+
+defineCustomElement(`cwd-screen-process`, ScreenProcess)

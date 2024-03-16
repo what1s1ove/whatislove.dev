@@ -12,18 +12,6 @@ let ignoresConfig = {
 }
 
 /** @type {FlatConfig} */
-let typescriptPlugin = {
-	rules: {
-		'@typescript-eslint/no-unused-vars': [
-			`error`,
-			{
-				varsIgnorePattern: `^_`,
-			},
-		],
-	},
-}
-
-/** @type {FlatConfig} */
 let litConfig = {
 	plugins: {
 		lit,
@@ -56,7 +44,6 @@ let overridesConfigs = [
 let config = [
 	ignoresConfig,
 	...baseConfig,
-	typescriptPlugin,
 	litConfig,
 	wcConfig,
 	...overridesConfigs,

@@ -1,9 +1,10 @@
 import { ControlType, getFormValues } from 'form-payload'
 import { LitElement, html } from 'lit'
-import { customElement } from 'lit/decorators.js'
 
-import { ComponentPrefix } from '~/libs/enums/enums.js'
-import { parseRawStyleSheet } from '~/libs/helpers/helpers.js'
+import {
+	defineCustomElement,
+	parseRawStyleSheet,
+} from '~/libs/helpers/helpers.js'
 import { TableNames, database } from '~/libs/modules/database/database.js'
 import { notify } from '~/libs/modules/notify/notify.js'
 
@@ -11,8 +12,7 @@ import { Scene } from '../../enums/enums.js'
 import { MemberFormKey } from './libs/enums/enums.js'
 import styles from './styles.css?inline'
 
-@customElement(`${ComponentPrefix.CWD}-screen-form`)
-class _ScreenForm extends LitElement {
+class ScreenForm extends LitElement {
 	static styles = parseRawStyleSheet(styles)
 
 	/** @type {() => void} */
@@ -105,3 +105,5 @@ class _ScreenForm extends LitElement {
 		`
 	}
 }
+
+defineCustomElement(`cwd-screen-form`, ScreenForm)

@@ -1,14 +1,14 @@
 import { LitElement, html } from 'lit'
-import { customElement } from 'lit/decorators.js'
 
-import { ComponentPrefix } from '~/libs/enums/enums.js'
-import { parseRawStyleSheet } from '~/libs/helpers/helpers.js'
+import {
+	defineCustomElement,
+	parseRawStyleSheet,
+} from '~/libs/helpers/helpers.js'
 
 import { Scene } from '../../enums/enums.js'
 import styles from './styles.css?inline'
 
-@customElement(`${ComponentPrefix.CWD}-screen-initial`)
-class _ScreenInitial extends LitElement {
+class ScreenInitial extends LitElement {
 	static styles = parseRawStyleSheet(styles)
 
 	/** @type {() => void} */
@@ -38,3 +38,5 @@ class _ScreenInitial extends LitElement {
 		`
 	}
 }
+
+defineCustomElement(`cwd-screen-initial`, ScreenInitial)

@@ -1,8 +1,10 @@
 import { LitElement, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { property } from 'lit/decorators.js'
 
-import { ComponentPrefix } from '~/libs/enums/enums.js'
-import { parseRawStyleSheet } from '~/libs/helpers/helpers.js'
+import {
+	defineCustomElement,
+	parseRawStyleSheet,
+} from '~/libs/helpers/helpers.js'
 import { ValuesOf } from '~/libs/types/types.js'
 
 import './libs/components/components.js'
@@ -10,8 +12,7 @@ import { Scene } from './libs/enums/enums.js'
 import { getInfoTemplate } from './libs/templates/templates.js'
 import styles from './styles.css?inline'
 
-@customElement(`${ComponentPrefix.CWD}-root`)
-class _Root extends LitElement {
+class Root extends LitElement {
 	static styles = parseRawStyleSheet(styles)
 
 	/** @type {(event_: CustomEvent<ValuesOf<typeof Scene>>) => void} */
@@ -79,3 +80,5 @@ class _Root extends LitElement {
 	@property()
 	accessor #scene = Scene.INITIAL
 }
+
+defineCustomElement(`cwd-root`, Root)
