@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.16.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.15.0...v1.16.0) (2024-03-05)
+
+
+### Features
+
+* **whatislove-dev:** add new Outliers book wd-340 ([#346](https://github.com/what1s1ove/whatislove.dev/issues/346)) ([6e22116](https://github.com/what1s1ove/whatislove.dev/commit/6e221161413c28c7e3b1ba48c8590b09673df340))
+
+## [1.15.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.14.0...v1.15.0) (2024-03-05)
+
+
+### Features
+
+* **whatislove-dev:** add new Unfuck Yourself book wd-335 ([#344](https://github.com/what1s1ove/whatislove.dev/issues/344)) ([9efdd86](https://github.com/what1s1ove/whatislove.dev/commit/9efdd864e84651788728f2adb07fc5ccb5735bf6))
+
+## [1.14.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.13.0...v1.14.0) (2024-03-05)
+
+
+### Features
+
+* **whatislove-dev:** add new The 5 Second Rule book wd-335 ([#341](https://github.com/what1s1ove/whatislove.dev/issues/341)) ([3161b6a](https://github.com/what1s1ove/whatislove.dev/commit/3161b6afeae7edfb00af073f81f65ba88e9522dd))
+
 ## [1.13.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.12.0...v1.13.0) (2024-01-21)
 
 
