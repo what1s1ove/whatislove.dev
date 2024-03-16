@@ -56,7 +56,7 @@
 	border: 2px solid var(--color-dark);
 	border-radius: 3px;
 
-	&:focus {
+	&:focus-visible {
 		border-color: var(--color-focus);
 		outline: none;
 	}
@@ -72,7 +72,7 @@
 	border: 2px solid var(--color-dark);
 	border-radius: 3px;
 
-	&:focus {
+	&:focus-visible {
 		color: var(--color-focus);
 		border-color: var(--color-focus);
 		outline: none;
@@ -89,7 +89,7 @@
 	background-color: transparent;
 	border: 0;
 
-	&:focus {
+	&:focus-visible {
 		text-decoration: underline;
 		outline: none;
 	}

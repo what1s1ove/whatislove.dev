@@ -15,18 +15,19 @@
 }
 
 .info-btn {
+	--icon-color: var(--color-dark);
+
 	width: 30px;
 	height: 30px;
 	padding: 0;
+	color: var(--color-dark);
 	cursor: pointer;
-	background-color: var(--color-dark);
+	background-color: transparent;
 	border: 0;
-	mask-image: url("/images/icons/info.svg");
-	mask-repeat: no-repeat;
-	mask-size: contain;
 
-	&:focus {
-		background-color: var(--color-focus);
+	&:focus-visible {
+		--icon-color: var(--color-focus);
+
 		outline: none;
 	}
 
@@ -35,7 +36,7 @@
 		transition: all 200ms ease-in-out;
 
 		&:hover,
-		&:focus {
+		&:focus-visible {
 			opacity: 1;
 			scale: 1.1;
 		}
@@ -43,8 +44,9 @@
 }
 
 .info-btn--process {
+	--icon-color: var(--color-white-100);
+
 	z-index: var(--z-index-tooltip);
-	background-color: var(--color-white-100);
 }
 
 .info-content:popover-open {

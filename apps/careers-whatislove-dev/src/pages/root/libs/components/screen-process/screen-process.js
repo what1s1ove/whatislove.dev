@@ -180,20 +180,24 @@ class ScreenProcess extends LitElement {
 			></video>
 			<progress class="progress" ${ref(this.#progressNodeRef)}></progress>
 			<button
-				class="icon-btn play-btn"
+				class="play-btn"
 				type="button"
 				role="switch"
 				aria-checked=${this.#isPlaying}
 				@click=${this.#handleClickPlay}
 			>
-				<cwd-visually-hidden>Play</cwd-visually-hidden>
+				<cwd-icon name="${this.#isPlaying ? 'pause' : 'play'}">
+					<cwd-visually-hidden>Play</cwd-visually-hidden>
+				</cwd-icon>
 			</button>
 			<button
-				class="icon-btn fullscreen-btn"
+				class="fullscreen-btn"
 				type="button"
 				@click=${this.#handleFullscreenClick}
 			>
-				<cwd-visually-hidden>Toggle Fullscreen</cwd-visually-hidden>
+				<cwd-icon name="fullscreen">
+					<cwd-visually-hidden>Toggle Fullscreen</cwd-visually-hidden>
+				</cwd-icon>
 			</button>
 			${hasPhrase
 				? html`<div class="phrase">I'll Call U Mine</div>`

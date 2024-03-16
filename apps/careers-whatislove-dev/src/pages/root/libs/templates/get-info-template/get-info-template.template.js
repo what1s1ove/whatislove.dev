@@ -18,7 +18,9 @@ let getInfoTemplate = ({ scene }) => {
 				type="button"
 				popovertarget="info"
 			>
-				<cwd-visually-hidden>Info</cwd-visually-hidden>
+				<cwd-icon name="info">
+					<cwd-visually-hidden>Info</cwd-visually-hidden>
+				</cwd-icon>
 			</button>
 			<div class="info-content" id="info" popover>
 				<dl>

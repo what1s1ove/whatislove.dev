@@ -37,19 +37,33 @@
 	}
 }
 
-.icon-btn {
+.play-btn {
+	top: 20px;
+	right: 20px;
+}
+
+.fullscreen-btn {
+	right: 20px;
+	bottom: 20px;
+}
+
+.play-btn,
+.fullscreen-btn {
+	--icon-color: var(--color-white-100);
+
 	position: absolute;
 	width: 30px;
 	height: 30px;
 	padding: 0;
 	cursor: pointer;
-	background-color: var(--color-white-100);
+	background-color: transparent;
 	border: 0;
 	mask-repeat: no-repeat;
 	mask-size: contain;
 
-	&:focus {
-		background-color: var(--color-focus);
+	&:focus-visible {
+		--icon-color: var(--color-focus);
+
 		outline: none;
 	}
 
@@ -58,27 +72,11 @@
 		transition: all 200ms ease-in-out;
 
 		&:hover,
-		&:focus {
+		&:focus-visible {
 			opacity: 1;
 			scale: 1.1;
 		}
 	}
-}
-
-.play-btn {
-	top: 20px;
-	right: 20px;
-	mask-image: url("/images/icons/pause.svg");
-
-	&[aria-checked="false"] {
-		mask-image: url("/images/icons/play.svg");
-	}
-}
-
-.fullscreen-btn {
-	right: 20px;
-	bottom: 20px;
-	mask-image: url("/images/icons/fullscreen.svg");
 }
 
 .phrase {

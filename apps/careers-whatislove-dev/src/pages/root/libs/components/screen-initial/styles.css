@@ -16,7 +16,7 @@
 	border: 0;
 	animation: glitch var(--timing-function-glitch) 6ms infinite;
 
-	&:focus {
+	&:focus-visible {
 		color: var(--color-focus);
 		outline: none;
 	}
