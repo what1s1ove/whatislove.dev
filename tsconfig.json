@@ -1,6 +1,6 @@
 {
 	"include": ["**/*.js"],
-	"exclude": ["node_modules", "apps"],
+	"exclude": ["node_modules", "apps", "packages"],
 	"files": ["packages.d.ts"],
 	"compilerOptions": {
 		"lib": ["DOM", "DOM.Iterable", "ESNext"],

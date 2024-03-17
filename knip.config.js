@@ -1,6 +1,10 @@
 /** @type {import('knip').KnipConfig} */
 let config = {
 	workspaces: {
+		'apps/careers-whatislove-dev': {
+			entry: [`src/index.js`],
+			ignoreDependencies: [`@babel/plugin-proposal-decorators`],
+		},
 		'apps/certifications-whatislove-dev': {
 			entry: [`src/index.jsx`],
 		},

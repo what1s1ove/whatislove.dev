@@ -1,0 +1,22 @@
+{
+	"name": "Whatislove Careers",
+	"description": "Whatislove Careers",
+	"lang": "en",
+	"start_url": ".",
+	"display": "standalone",
+	"orientation": "any",
+	"background_color": "#ffffff",
+	"theme_color": "#ffffff",
+	"icons": [
+		{
+			"src": "/images/icon/icon-192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "/images/icon/icon-512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	]
+}

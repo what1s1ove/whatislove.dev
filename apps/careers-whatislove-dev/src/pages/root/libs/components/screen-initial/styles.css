@@ -1,0 +1,23 @@
+@import url("~/assets/styles/animations.css");
+
+:host {
+	display: flex;
+	flex-grow: 1;
+	align-items: center;
+	justify-content: center;
+}
+
+.play-btn {
+	font-family: inherit;
+	font-size: 45px;
+	color: var(--color-dark);
+	cursor: pointer;
+	background-color: transparent;
+	border: 0;
+	animation: glitch var(--timing-function-glitch) 6ms infinite;
+
+	&:focus-visible {
+		color: var(--color-focus);
+		outline: none;
+	}
+}

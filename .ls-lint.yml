@@ -24,6 +24,8 @@ ignore:
   - .git
   - node_modules
   - CHANGELOG.md
+  - apps/careers-whatislove-dev/node_modules
+  - apps/careers-whatislove-dev/build
   - apps/certifications-whatislove-dev/node_modules
   - apps/certifications-whatislove-dev/build
   - apps/whatislove-dev/node_modules

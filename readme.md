@@ -10,6 +10,7 @@ This repository is responsible for the whatislove.dev's websites.
 ### [apps](./apps)
 
 -   [whatislove.dev](./apps/whatislove-dev) – Vladyslav Zubko's website. If you want to get to know me better.
+-   [careers.whatislove.dev](./apps/careers-whatislove-dev) – Future. If you want to be mine.
 -   [certifications.whatislove.dev](./apps/certifications-whatislove-dev) – Certificates Manager. If you want to move on.
 
 ### [packages](./packages)

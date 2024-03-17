@@ -5,6 +5,9 @@
 			"release-type": "node",
 			"include-component-in-tag": false
 		},
+		"apps/careers-whatislove-dev": {
+			"release-type": "node"
+		},
 		"apps/certifications-whatislove-dev": {
 			"release-type": "node"
 		},

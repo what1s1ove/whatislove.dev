@@ -64,6 +64,7 @@ jobs:
     strategy:
       matrix:
         project:
+          - careers-whatislove-dev
           - certifications-whatislove-dev
           - whatislove-dev
     env:
@@ -88,6 +89,8 @@ jobs:
       - name: Code Building
         working-directory: ${{ env.PACKAGE_DIR }}
         run: npm run build
+        env:
+          VITE_DB_API_KEY: ${{ secrets.DB_API_KEY }}
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
@@ -102,6 +105,7 @@ jobs:
     strategy:
       matrix:
         project:
+          - careers-whatislove-dev
           - certifications-whatislove-dev
           - whatislove-dev
     env:
