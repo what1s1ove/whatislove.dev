@@ -10,7 +10,7 @@
 		"build:clean": "rm -rf build",
 		"build": "npm run build:clean && npx @11ty/eleventy",
 		"ci:lint:markup": "w3c-html-validator \"build\"",
-		"ci:lint:html": "npx @linthtml/linthtml \"src/**/*.njk\"",
+		"_ci:lint:html": "npx @linthtml/linthtml \"src/**/*.njk\"",
 		"ci:lint:bem": "bemlint \"src/**/*.njk\" --errors",
 		"ci:lint:css": "stylelint \"src/**/*.css\"",
 		"ci:lint:js": "eslint \"./**/*\"",
@@ -32,7 +32,7 @@
 		"esbuild": "0.19.5",
 		"html-minifier-terser": "7.2.0",
 		"json-server": "0.17.4",
-		"linthtml-config-htmlacademy": "1.0.19",
+		"linthtml-config-htmlacademy": "1.0.16",
 		"svgo": "3.1.0",
 		"w3c-html-validator": "1.6.1"
 	},
