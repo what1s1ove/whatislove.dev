@@ -186,7 +186,7 @@ class ScreenProcess extends LitElement {
 				aria-checked=${this.#isPlaying}
 				@click=${this.#handleClickPlay}
 			>
-				<cwd-icon name="${this.#isPlaying ? 'pause' : 'play'}">
+				<cwd-icon name=${this.#isPlaying ? `pause` : `play`}>
 					<cwd-visually-hidden>Play</cwd-visually-hidden>
 				</cwd-icon>
 			</button>
