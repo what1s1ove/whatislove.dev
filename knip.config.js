@@ -3,10 +3,12 @@ let config = {
 	workspaces: {
 		'apps/careers-whatislove-dev': {
 			entry: [`src/index.js`],
+			ignore: [`build/**/*`],
 			ignoreDependencies: [`@babel/plugin-proposal-decorators`],
 		},
 		'apps/certifications-whatislove-dev': {
 			entry: [`src/index.jsx`],
+			ignore: [`build/**/*`],
 		},
 		'apps/whatislove-dev': {
 			eleventy: {
@@ -14,12 +16,15 @@ let config = {
 				entry: [`src/data/**/*.js`],
 			},
 			entry: [`src/scripts/index.js`],
+			ignore: [`build/**/*`],
 			linthtml: {
 				config: `linthtml.config.js`,
 			},
 		},
 		'packages/shared': {
-			entry: [`src/index.js`],
+			entry: [`build/index.d.ts`],
+			ignore: [`src/**/*`],
+			includeEntryExports: true,
 		},
 	},
 }

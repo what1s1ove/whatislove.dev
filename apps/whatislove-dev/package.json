@@ -18,7 +18,7 @@
 		"ci:lint": "concurrently \"npm:ci:lint:*\""
 	},
 	"dependencies": {
-		"@whatislove.dev/shared": "file:../../packages/shared",
+		"@whatislove.dev/shared": "*",
 		"form-payload": "0.0.8"
 	},
 	"devDependencies": {

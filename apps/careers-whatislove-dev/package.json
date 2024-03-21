@@ -14,7 +14,7 @@
 		"ci:lint": "concurrently \"npm:ci:lint:*\""
 	},
 	"dependencies": {
-		"@whatislove.dev/shared": "file:../../packages/shared",
+		"@whatislove.dev/shared": "*",
 		"firebase": "10.8.1",
 		"form-payload": "0.0.8",
 		"lit": "3.1.1"
