@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.19.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.18.0...v1.19.0) (2024-03-28)
+
+
+### Features
+
+* **whatislove-dev:** add steal like artist book wd-369 ([#374](https://github.com/what1s1ove/whatislove.dev/issues/374)) ([3e06004](https://github.com/what1s1ove/whatislove.dev/commit/3e06004117fb750c9a694d7b07e877dfed4277e5))
+
 ## [1.18.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.17.0...v1.18.0) (2024-03-28)
 
 
