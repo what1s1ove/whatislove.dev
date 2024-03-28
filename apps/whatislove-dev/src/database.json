@@ -1663,6 +1663,19 @@
 			"linkDesc": "",
 			"date": "2024-03-04T00:00:00.000Z",
 			"endDate": ""
+		},
+		{
+			"id": "fi7RHHC",
+			"skillType": "softSkill",
+			"type": "book",
+			"title": "The Pomodoro Technique: The Acclaimed Time-Management System That Has Transformed How We Work (Francesco Cirillo)",
+			"desc": "",
+			"origin": "https://www.amazon.com/Pomodoro-Technique-Acclaimed-Time-Management-Transformed/dp/1524760706",
+			"originDesc": "Amazon",
+			"link": "",
+			"linkDesc": "",
+			"date": "2024-03-13T00:00:00.000Z",
+			"endDate": ""
 		}
 	]
 }
