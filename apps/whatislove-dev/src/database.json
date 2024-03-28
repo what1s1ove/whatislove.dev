@@ -1676,6 +1676,19 @@
 			"linkDesc": "",
 			"date": "2024-03-13T00:00:00.000Z",
 			"endDate": ""
+		},
+		{
+			"id": "aJuU-0d",
+			"skillType": "softSkill",
+			"type": "book",
+			"title": "Steal Like an Artist: 10 Things Nobody Told You About Being Creative (Austin Kleon)",
+			"desc": "",
+			"origin": "https://www.amazon.com/Steal-Like-Artist-Things-Creative/dp/0761169253",
+			"originDesc": "Amazon",
+			"link": "",
+			"linkDesc": "",
+			"date": "2024-03-25T00:00:00.000Z",
+			"endDate": ""
 		}
 	]
 }
