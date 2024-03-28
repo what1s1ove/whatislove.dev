@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.20.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.19.0...v1.20.0) (2024-03-28)
+
+
+### Features
+
+* update release action to latest version wd-376 ([#377](https://github.com/what1s1ove/whatislove.dev/issues/377)) ([22afce1](https://github.com/what1s1ove/whatislove.dev/commit/22afce14222d06c932b76707b1745c80ebc867f1))
+
 ## [1.19.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.18.0...v1.19.0) (2024-03-28)
 
 
