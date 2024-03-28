@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.18.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.17.0...v1.18.0) (2024-03-28)
+
+
+### Features
+
+* **whatislove-dev:** add pomodoro book wd-351 ([#371](https://github.com/what1s1ove/whatislove.dev/issues/371)) ([ec412f4](https://github.com/what1s1ove/whatislove.dev/commit/ec412f413db79978b7d89d9857be4fd9a634d258))
+
 ## [1.17.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.16.0...v1.17.0) (2024-03-17)
 
 
