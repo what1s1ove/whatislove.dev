@@ -5,10 +5,6 @@ on:
     branches:
       - main
 
-concurrency:
-  group: cd-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
   release:
     name: Release
@@ -24,9 +20,10 @@ jobs:
 
       - name: Release
         id: release
-        uses: google-github-actions/release-please-action@v3
+        uses: google-github-actions/release-please-action@v4
         with:
-          command: manifest
+          manifest-file: .release-please-manifest.json
+          config-file: release-please-config.json
 
   dependencies:
     name: Install Dependencies
