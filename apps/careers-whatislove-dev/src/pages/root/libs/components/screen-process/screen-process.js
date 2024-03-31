@@ -152,7 +152,10 @@ class ScreenProcess extends LitElement {
 	disconnectedCallback() {
 		super.disconnectedCallback()
 
-		if (document.fullscreenElement) {
+		const hasFullscreen =
+			document.fullscreenEnabled && document.fullscreenElement
+
+		if (hasFullscreen) {
 			void document.exitFullscreen()
 		}
 
@@ -176,6 +179,9 @@ class ScreenProcess extends LitElement {
 				class="video"
 				src="/videos/process.mp4"
 				autoplay
+				loop
+				muted
+				playsinline
 				${ref(this.#videoPlayerNodeRef)}
 			></video>
 			<progress class="progress" ${ref(this.#progressNodeRef)}></progress>
@@ -190,15 +196,19 @@ class ScreenProcess extends LitElement {
 					<cwd-visually-hidden>Play</cwd-visually-hidden>
 				</cwd-icon>
 			</button>
-			<button
-				class="fullscreen-btn"
-				type="button"
-				@click=${this.#handleFullscreenClick}
-			>
-				<cwd-icon name="fullscreen">
-					<cwd-visually-hidden>Toggle Fullscreen</cwd-visually-hidden>
-				</cwd-icon>
-			</button>
+			${document.fullscreenEnabled
+				? html`<button
+						class="fullscreen-btn"
+						type="button"
+						@click=${this.#handleFullscreenClick}
+					>
+						<cwd-icon name="fullscreen">
+							<cwd-visually-hidden
+								>Toggle Fullscreen</cwd-visually-hidden
+							>
+						</cwd-icon>
+					</button> `
+				: nothing}
 			${hasPhrase
 				? html`<div class="phrase">I'll Call U Mine</div>`
 				: nothing}
