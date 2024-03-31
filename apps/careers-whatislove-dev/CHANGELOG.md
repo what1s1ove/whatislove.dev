@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.6.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/careers-whatislove-dev-v1.5.1...@whatislove.dev/careers-whatislove-dev-v1.6.0) (2024-03-31)
+
+
+### Features
+
+* **careers-whatislove-dev:** move process pieces from public folder wd-364 ([#381](https://github.com/what1s1ove/whatislove.dev/issues/381)) ([3d009a8](https://github.com/what1s1ove/whatislove.dev/commit/3d009a8b63a636ea222d769a029e07107f154120))
+
+## [1.5.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/careers-whatislove-dev-v1.5.0...@whatislove.dev/careers-whatislove-dev-v1.5.1) (2024-03-31)
+
+
+### Bug Fixes
+
+* **careers-whatislove-dev:** improve cross browser styles wd-334 ([#379](https://github.com/what1s1ove/whatislove.dev/issues/379)) ([c08276e](https://github.com/what1s1ove/whatislove.dev/commit/c08276e7ce1af436e1f3e8d812f27699bc6978fe))
+
 ## [1.5.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/careers-whatislove-dev-v1.4.0...@whatislove.dev/careers-whatislove-dev-v1.5.0) (2024-03-28)
 
 
