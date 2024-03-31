@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.21.1](https://github.com/what1s1ove/whatislove.dev/compare/v1.21.0...v1.21.1) (2024-03-31)
+
+
+### Bug Fixes
+
+* **careers-whatislove-dev:** improve cross browser styles wd-334 ([#383](https://github.com/what1s1ove/whatislove.dev/issues/383)) ([6410151](https://github.com/what1s1ove/whatislove.dev/commit/641015106fadebc6c92a9194efd7ceb3887c50da))
+
 ## [1.21.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.20.1...v1.21.0) (2024-03-31)
 
 
