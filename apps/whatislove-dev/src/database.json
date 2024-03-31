@@ -1663,6 +1663,32 @@
 			"linkDesc": "",
 			"date": "2024-03-04T00:00:00.000Z",
 			"endDate": ""
+		},
+		{
+			"id": "fi7RHHC",
+			"skillType": "softSkill",
+			"type": "book",
+			"title": "The Pomodoro Technique: The Acclaimed Time-Management System That Has Transformed How We Work (Francesco Cirillo)",
+			"desc": "",
+			"origin": "https://www.amazon.com/Pomodoro-Technique-Acclaimed-Time-Management-Transformed/dp/1524760706",
+			"originDesc": "Amazon",
+			"link": "",
+			"linkDesc": "",
+			"date": "2024-03-13T00:00:00.000Z",
+			"endDate": ""
+		},
+		{
+			"id": "aJuU-0d",
+			"skillType": "softSkill",
+			"type": "book",
+			"title": "Steal Like an Artist: 10 Things Nobody Told You About Being Creative (Austin Kleon)",
+			"desc": "",
+			"origin": "https://www.amazon.com/Steal-Like-Artist-Things-Creative/dp/0761169253",
+			"originDesc": "Amazon",
+			"link": "",
+			"linkDesc": "",
+			"date": "2024-03-25T00:00:00.000Z",
+			"endDate": ""
 		}
 	]
 }

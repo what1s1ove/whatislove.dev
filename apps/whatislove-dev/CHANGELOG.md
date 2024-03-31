@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.19.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.18.0...@whatislove.dev/whatislove-dev-v1.19.0) (2024-03-28)
+
+
+### Features
+
+* **whatislove-dev:** add steal like artist book wd-369 ([#374](https://github.com/what1s1ove/whatislove.dev/issues/374)) ([3e06004](https://github.com/what1s1ove/whatislove.dev/commit/3e06004117fb750c9a694d7b07e877dfed4277e5))
+
+## [1.18.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.17.0...@whatislove.dev/whatislove-dev-v1.18.0) (2024-03-28)
+
+
+### Features
+
+* **whatislove-dev:** add pomodoro book wd-351 ([#371](https://github.com/what1s1ove/whatislove.dev/issues/371)) ([ec412f4](https://github.com/what1s1ove/whatislove.dev/commit/ec412f413db79978b7d89d9857be4fd9a634d258))
+
+## [1.17.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.16.0...@whatislove.dev/whatislove-dev-v1.17.0) (2024-03-17)
+
+
+### Features
+
+* **careers-whatislove-dev/certifications-whatislove-dev/whatislove-dev/shared:** move careerwhatislovedev to the rep wd-334 ([#353](https://github.com/what1s1ove/whatislove.dev/issues/353)) ([c96f72c](https://github.com/what1s1ove/whatislove.dev/commit/c96f72c53916cea9fc761771427dee468c42e440))
+
 ## [1.16.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.15.0...@whatislove.dev/whatislove-dev-v1.16.0) (2024-03-05)
 
 

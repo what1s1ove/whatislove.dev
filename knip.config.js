@@ -20,6 +20,7 @@ let config = {
 		},
 		'packages/shared': {
 			entry: [`src/index.js`],
+			includeEntryExports: true,
 		},
 	},
 }

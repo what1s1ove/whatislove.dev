@@ -1,9 +1,9 @@
 {
-	"version": "1.1.0",
+	"version": "1.6.0",
 	"name": "@whatislove.dev/shared",
 	"private": true,
 	"type": "module",
-	"main": "build/index.js",
+	"main": "src/index.js",
 	"types": "build/index.d.ts",
 	"scripts": {
 		"postinstall": "npm run build",

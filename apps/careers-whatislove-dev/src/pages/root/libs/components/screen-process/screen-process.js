@@ -152,7 +152,7 @@ class ScreenProcess extends LitElement {
 	disconnectedCallback() {
 		super.disconnectedCallback()
 
-		const hasFullscreen =
+		let hasFullscreen =
 			document.fullscreenEnabled && document.fullscreenElement
 
 		if (hasFullscreen) {
@@ -197,17 +197,19 @@ class ScreenProcess extends LitElement {
 				</cwd-icon>
 			</button>
 			${document.fullscreenEnabled
-				? html`<button
-						class="fullscreen-btn"
-						type="button"
-						@click=${this.#handleFullscreenClick}
-					>
-						<cwd-icon name="fullscreen">
-							<cwd-visually-hidden
-								>Toggle Fullscreen</cwd-visually-hidden
-							>
-						</cwd-icon>
-					</button> `
+				? html`
+						<button
+							class="fullscreen-btn"
+							type="button"
+							@click=${this.#handleFullscreenClick}
+						>
+							<cwd-icon name="fullscreen">
+								<cwd-visually-hidden
+									>Toggle Fullscreen</cwd-visually-hidden
+								>
+							</cwd-icon>
+						</button>
+					`
 				: nothing}
 			${hasPhrase
 				? html`<div class="phrase">I'll Call U Mine</div>`

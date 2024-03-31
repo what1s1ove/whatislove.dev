@@ -131,7 +131,15 @@ let unicornConfig = {
 	plugins: {
 		unicorn,
 	},
-	rules: unicorn.configs.recommended.rules,
+	rules: {
+		...unicorn.configs.recommended.rules,
+		'unicorn/template-indent': [
+			`error`,
+			{
+				tags: [],
+			},
+		],
+	},
 }
 
 /** @type {FlatConfig} */
