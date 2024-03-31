@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.21.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.20.1...v1.21.0) (2024-03-31)
+
+
+### Features
+
+* **careers-whatislove-dev:** move process pieces from public folder wd-364 ([#381](https://github.com/what1s1ove/whatislove.dev/issues/381)) ([3d009a8](https://github.com/what1s1ove/whatislove.dev/commit/3d009a8b63a636ea222d769a029e07107f154120))
+
 ## [1.20.1](https://github.com/what1s1ove/whatislove.dev/compare/v1.20.0...v1.20.1) (2024-03-31)
 
 
