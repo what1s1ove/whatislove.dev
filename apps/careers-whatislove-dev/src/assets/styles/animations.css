@@ -1,5 +1,8 @@
 @keyframes glitch {
 	50% {
+		text-shadow:
+			5px 0 currentcolor,
+			-5px 0 var(--color-red-100);
 		transform: skew(180deg);
 	}
 }
