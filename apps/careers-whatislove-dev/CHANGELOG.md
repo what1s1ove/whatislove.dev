@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/careers-whatislove-dev-v1.5.0...@whatislove.dev/careers-whatislove-dev-v1.5.1) (2024-03-31)
+
+
+### Bug Fixes
+
+* **careers-whatislove-dev:** improve cross browser styles wd-334 ([#379](https://github.com/what1s1ove/whatislove.dev/issues/379)) ([c08276e](https://github.com/what1s1ove/whatislove.dev/commit/c08276e7ce1af436e1f3e8d812f27699bc6978fe))
+
 ## [1.5.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/careers-whatislove-dev-v1.4.0...@whatislove.dev/careers-whatislove-dev-v1.5.0) (2024-03-28)
 
 
