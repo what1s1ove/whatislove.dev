@@ -2,17 +2,15 @@
 	scroll-behavior: smooth;
 }
 
+.page--no-scroll {
+	overflow: hidden;
+}
+
 .page__body {
-	min-width: 320px;
-	min-height: 100vh;
-	padding: 0;
 	margin: 0;
-	font-family: Roboto, Arial, sans-serif;
-	font-size: var(--font-size-default);
-	font-style: normal;
-	font-weight: 400;
+	font-family: var(--font-family-text);
+	font-size: var(--font-size-text-base);
 	line-height: 1.5;
-	color: var(--color-primary);
-	background-color: var(--color-secondary);
-	text-rendering: optimizespeed;
+	color: var(--color-text);
+	background: var(--page-background);
 }

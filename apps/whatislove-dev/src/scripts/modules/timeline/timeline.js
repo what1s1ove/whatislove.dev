@@ -14,7 +14,7 @@ let timelineApi = new TimelineApi({
 })
 
 export { timelineApi }
-export { TimelineSkillType, TimelineType } from './libs/enums/enums.js'
+export { TimelineType } from './libs/enums/enums.js'
 export {
 	Timeline,
 	TimelineCreatePayload,

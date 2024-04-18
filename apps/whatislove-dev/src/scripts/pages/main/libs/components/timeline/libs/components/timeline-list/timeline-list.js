@@ -13,7 +13,7 @@ class TimelineList {
 	/** @returns {void} */
 	init() {
 		this.#listNode = /** @type {HTMLElement} */ (
-			document.querySelector(`.timeline__list`)
+			document.querySelector(`.experience__timeline`)
 		)
 	}
 

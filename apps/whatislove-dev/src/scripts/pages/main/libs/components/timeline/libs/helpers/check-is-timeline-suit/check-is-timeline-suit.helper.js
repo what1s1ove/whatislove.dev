@@ -6,10 +6,7 @@ import { Timeline, TimelineFilter } from '~/modules/timeline/timeline.js'
  * @returns {boolean}
  */
 let checkIsTimelineSuit = (timelineItem, filterValues) => {
-	let hasSkillType = filterValues.skillTypes[timelineItem.skillType]
-	let hasType = filterValues.types[timelineItem.type]
-
-	return hasSkillType && hasType
+	return timelineItem.type === filterValues.type
 }
 
 export { checkIsTimelineSuit }

@@ -1,52 +1,96 @@
 :root {
-	--font-size-small: 14px;
-	--font-size-default: 16px;
-	--font-size-large: 24px;
-	--color-red: #ff0000;
-	--z-index-level-one: 100;
-	--z-index-level-two: 200;
-	--z-index-level-three: 300;
-	--z-index-level-four: 400;
-	--z-index-level-five: 500;
-	--z-index-level-six: 600;
-	--transition-duration-theme: 0.5s;
-	--outline-color: #5793f9;
-
 	color-scheme: light;
-}
 
-:root,
-html[data-theme="light"] {
-	--color-primary: #000000;
-	--color-primary-opacity: rgb(0 0 0 / 90%);
-	--color-secondary: #ffffff;
-	--color-secondary-opacity: rgb(255 255 255 / 90%);
-	--invert-icon-primary: invert(0);
-	--invert-icon-secondary: invert(1);
+	--font-family-text: "Red Hat Display", sans-serif;
+	--font-family-highlight: "Saira Extra Condensed", sans-serif;
+	--page-background: var(--color-page-background) url("/images/noise.svg")
+		repeat 0 / contain;
+	--color-pink-100: #deaba3;
+	--color-red-100: #f64242;
+	--color-red-200: #ce3939;
+	--color-white-100: 0 0% 100%;
+	--color-white-200: #f7f7f7;
+	--color-blue-100: #22a1df;
+	--color-yellow-100: 51 100% 50%;
+	--color-gray-100: #707070;
+	--color-black-100: 0 0% 0%;
+	--color-black-200: 0 0% 1%;
+	--color-focus: var(--color-red-100);
+	--radius-focus: 2px;
+	--offset-focus: 2px;
+	--outline-focus: 2px solid var(--color-focus);
 
-	color-scheme: light;
-}
+	/* fonts */
 
-html[data-theme="dark"] {
-	--color-primary: #ffffff;
-	--color-primary-opacity: rgb(255 255 255 / 90%);
-	--color-secondary: #000000;
-	--color-secondary-opacity: rgb(0 0 0 / 90%);
-	--invert-icon-primary: invert(1);
-	--invert-icon-secondary: invert(0);
+	--font-size-text-small: 1rem;
+	--font-size-text-base: 1rem;
+	--font-size-heading-3: 1.5rem;
+	--font-size-heading-2: 2rem;
+	--font-size-highlight: 2.5rem;
 
-	color-scheme: dark;
-}
+	@media (1024px <= width) {
+		:root {
+			--font-size-text-small: 1rem;
+			--font-size-text-base: 1.25rem;
+			--font-size-heading-3: 2rem;
+			--font-size-heading-2: 3.5rem;
+			--font-size-highlight: 4rem;
+		}
+	}
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--color-primary: #ffffff;
-		--color-primary-opacity: rgb(255 255 255 / 90%);
-		--color-secondary: #000000;
-		--color-secondary-opacity: rgb(0 0 0 / 90%);
-		--invert-icon-primary: invert(1);
-		--invert-icon-secondary: invert(0);
+	@media (1760px <= width) {
+		:root {
+			--font-size-text-small: 1rem;
+			--font-size-text-base: 1.25rem;
+			--font-size-heading-2: 2rem;
+			--font-size-heading-3: 3.5rem;
+			--font-size-highlight: 4rem;
+		}
+	}
 
+	@supports (font-variation-settings: normal) {
+		--font-family-text: "Red Hat Display Variable", sans-serif;
+	}
+
+	/* theme */
+
+	--color-page-background: hsl(var(--color-white-100));
+	--color-page-background-highlight: hsl(var(--color-black-100) / 5%);
+	--color-intro-background: hsl(var(--color-white-100) / 40%);
+	--color-intro-image-mask: var(--color-white-100);
+	--color-technology-background: var(--color-black-100);
+	--color-icon: hsl(var(--color-black-200));
+	--color-icon-inverted: hsl(var(--color-white-100));
+	--color-text: hsl(var(--color-black-200));
+	--filter-sticker: url("#sticker-opacity");
+
+	&:has(.settings--theme .settings__theme-control[value="dark"]:checked) {
 		color-scheme: dark;
+
+		--color-page-background: hsl(var(--color-black-200));
+		--color-page-background-highlight: hsl(var(--color-white-100) / 5%);
+		--color-intro-background: hsl(var(--color-black-100) / 15%);
+		--color-intro-image-mask: var(--color-black-100);
+		--color-technology-background: var(--color-white-100);
+		--color-icon: hsl(var(--color-white-100));
+		--color-icon-inverted: hsl(var(--color-black-200));
+		--color-text: var(--color-white-100);
+		--filter-sticker: url("#sticker-regular");
+	}
+
+	@media (prefers-color-scheme: dark) {
+		&:has(.settings--theme .settings__theme-control[value="auto"]:checked) {
+			color-scheme: dark;
+
+			--color-page-background: hsl(var(--color-black-200));
+			--color-page-background-highlight: hsl(var(--color-white-100) / 5%);
+			--color-intro-background: hsl(var(--color-black-100) / 15%);
+			--color-intro-image-mask: var(--color-black-100);
+			--color-technology-background: var(--color-white-100);
+			--color-icon: hsl(var(--color-white-100));
+			--color-icon-inverted: hsl(var(--color-black-200));
+			--color-text: var(--color-white-100);
+			--filter-sticker: url("#sticker-regular");
+		}
 	}
 }

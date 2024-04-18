@@ -4,166 +4,205 @@ permalink: 'index.html'
 ---
 
 {% from 'social-list.njk' import socialList %}
-{% from 'live-logo.njk' import liveLogo %}
-{% from 'settings.njk' import settings %}
-{% set MAIN_IMAGE_FORMATS = ['avif', 'webp'] %}
+{% set introSocials = global.socials.concat([{ name: global.email, key: 'email', url: 'mailto:' + global.email }]) %}
+{% set IMAGE_FORMATS = ['avif', 'webp'] %}
+{% set LAPKA_PHRASE = 'Hive Four!' %}
 
-<h1 class="visually-hidden">Vladyslav Zubko - interface developer</h1>
-<header class="header starry-sky">
-	<span class="header__live-logo-wrapper">{{ liveLogo('header__live-logo') }}</span>
-	<div class="header__navigation-wrapper">
-		<button class="header__toggle-button" type="button" aria-expanded="false" aria-controls="navigation-menu">
-			<span class="visually-hidden">Toggle navigation menu</span>
-			<span class="header__toggle-object"></span>
-		</button>
-		<nav class="header__navigation navigation">
-			<ul class="navigation__list" id="navigation-menu">
-				<li class="navigation__item">
-					<a href="#intro">About</a>
-				</li>
-				<li class="navigation__item">
-					<a href="#timeline">Experience</a>
-				</li>
-				<li class="navigation__item">
-					<a href="#favorites">Favorites</a>
-				</li>
-			</ul>
-		</nav>
-	</div>
-	<p class="header__name">Vladyslav Zubko</p>
-	<p class="header__name-intro">Interface developer</p>
-	{{ settings('header__settings') }}
-</header>
-<main>
-	<section class="intro" id="intro">
+<main class="main">
+	<div class="intro column">
 		<div class="intro__wrapper">
-			<header class="intro__header section-header">
-				<h2 class="section-header__title">About</h2>
-				<p class="section-header__desc">Let's get acquainted closer</p>
-			</header>
-			<div class="intro__content">
-				<p class="intro__image-wrapper">
-					<picture>
-						{% for format in MAIN_IMAGE_FORMATS %}
-							<source srcset="/images/whatislove-zubko.photo.{{ format }} 1x, /images/whatislove-zubko@2x.photo.{{ format }} 2x" type="image/{{ format }}" />
-						{% endfor %}
-						<img src="/images/whatislove-zubko.photo.png" srcset="/images/whatislove-zubko@2x.photo.png 2x" loading="lazy" width="202" height="303" alt="Vladyslav Zubko" />
-					</picture>
-				</p>
-				<div class="intro__personal-wrapper">
-					<h3 class="intro__personal-title">Personal information</h3>
-					<dl class="intro__list">
-						<div class="intro__item intro__item--name">
-							<dt class="intro__item-title">Full name</dt>
-							<dd class="intro__item-desc">Vladyslav Zubko</dd>
-						</div>
-						<div class="intro__item intro__item--email">
-							<dt class="intro__item-title">Email</dt>
-							<dd class="intro__item-desc">
-								<a href="mailto:hello@whatislove.dev">hello@whatislove.dev</a>
-							</dd>
-						</div>
-						<div class="intro__item intro__item--socials">
-							<dt class="intro__item-title">Socials</dt>
-							<dd class="intro__item-desc">{{ socialList('intro__social-list') }}</dd>
-						</div>
-					</dl>
-					<h3 class="intro__myself-title">A little bit about myself</h3>
-					<p class="intro__myself-desc">
-						With semantics, a11y and love
-						<span aria-hidden="true">&lt;3</span>
-					</p>
-				</div>
-			</div>
+			<button class="intro__paw action" type="button" aria-label="{{ LAPKA_PHRASE }}">
+				<svg
+					class="intro__paw-object"
+					width="96"
+					height="52"
+					xmlns="http://www.w3.org/2000/svg"
+					aria-hidden="true"
+				>
+					<text x="10">
+						<textPath class="intro__paw-text" xlink:href="#text-curved">{{ LAPKA_PHRASE }}</textPath>
+					</text>
+				</svg>
+			</button>
+			<picture class="intro__picture">
+				{% for format in IMAGE_FORMATS %}
+					<source
+						srcset="
+							/images/vladyslav-zubko.photo.{{ format }}    1x,
+							/images/vladyslav-zubko@2x.photo.{{ format }} 2x
+						"
+						type="image/{{ format }}"
+					/>
+				{% endfor %}
+				<img
+					class="intro__photo"
+					src="/images/vladyslav-zubko.photo.png"
+					srcset="/images/vladyslav-zubko@2x.photo.png 2x"
+					width="226"
+					height="300"
+					fetchpriority="high"
+					alt="Vladyslav Zubko Portrait."
+				/>
+			</picture>
+			<p class="intro__welcome">Hi, my name is</p>
+			<h1 class="intro__name">Vladyslav Zubko</h1>
 		</div>
-	</section>
-	<section class="timeline" id="timeline">
-		<header class="timeline__header section-header">
-			<h2 class="section-header__title">Experience</h2>
-			<p class="section-header__desc">My path</p>
-		</header>
-		<form class="timeline__filter exp-filter" action="/timeline">
-			<div class="exp-filter__wrapper">
-				<fieldset class="exp-filter__skills-type" name="skillTypes">
-					<legend class="exp-filter__skill-title">Skills type:</legend>
-					<ul class="exp-filter__list">
-						<li class="exp-filter__item">
-							<label class="exp-filter__label form-control">
-								<input class="form-control__input form-control__input--checkbox" name="hardSkill" type="checkbox" checked />
-								Hard Skills
-							</label>
-						</li>
-						<li class="exp-filter__item">
-							<label class="exp-filter__label form-control">
-								<input class="form-control__input form-control__input--checkbox" name="softSkill" type="checkbox" />
-								Soft Skills
-							</label>
-						</li>
-					</ul>
-				</fieldset>
-				<fieldset class="exp-filter__skill-types" name="types">
-					<legend class="exp-filter__skill-title">Experience type:</legend>
-					<ul class="exp-filter__list">
-						<li class="exp-filter__item">
-							<label class="exp-filter__label form-control">
-								<input class="form-control__input form-control__input--checkbox" name="position" type="checkbox" checked />
-								Positions
-							</label>
-						</li>
-						<li class="exp-filter__item">
-							<label class="exp-filter__label form-control">
-								<input class="form-control__input form-control__input--checkbox" name="course" type="checkbox" />
-								Courses
-							</label>
-						</li>
-						<li class="exp-filter__item">
-							<label class="exp-filter__label form-control">
-								<input class="form-control__input form-control__input--checkbox" name="meetup" type="checkbox" />
-								Meetups
-							</label>
-						</li>
-						<li class="exp-filter__item">
-							<label class="exp-filter__label form-control">
-								<input class="form-control__input form-control__input--checkbox" name="book" type="checkbox" />
-								Books
-							</label>
-						</li>
-					</ul>
-				</fieldset>
-			</div>
+		<p class="intro__description">
+			I’m a full-stack remote web developer with 5+ years of experience, and I'll help you become a web developer
+			with bite-sized dev tips.
+		</p>
+		<p class="intro__promo">With semantics, a11y and love</p>
+		{{ socialList(introSocials, 'intro__social-list') }}
+	</div>
+	<section class="experience column">
+		<h2 class="experience__title">Experience</h2>
+		<form class="experience__form">
+			<label class="experience__form-label">
+				<input class="experience__form-control" type="radio" name="type" value="position" checked />
+				Positions
+			</label>
+			<label class="experience__form-label">
+				<input class="experience__form-control" type="radio" name="type" value="certificate" />
+				Certificates
+			</label>
+			<label class="experience__form-label">
+				<input class="experience__form-control" type="radio" name="type" value="meetup" />
+				Meetups
+			</label>
+			<label class="experience__form-label">
+				<input class="experience__form-control" type="radio" name="type" value="book" />
+				Book
+			</label>
 		</form>
-		<div class="timeline__list-wrapper">
-			<ul class="timeline__list"></ul>
-			<p class="timeline__desc-empty">Nothing here yet. Try to select more options in the filter.</p>
+		<div class="experience__timeline-wrapper">
+			<ul class="experience__timeline timeline"></ul>
 		</div>
-		<a class="timeline__resume-link" href="/files/vladyslav-zubko-cv.pdf" target="_blank" rel="noreferrer noopener">
-			<span class="timeline__resume-icon" aria-hidden="true"></span>
-			<span class="timeline__resume-text">View my resume</span>
-		</a>
 	</section>
-	<section class="favorites" id="favorites">
-		<header class="favorites__header section-header">
-			<h2 class="section-header__title">Favorites</h2>
-			<p class="section-header__desc">What I Love</p>
-		</header>
-		<div class="favorites__wrapper">
-			<ul class="favorites__list">
-				<li class="favorites__item">
-					<p class="favorites__item-text favorites__item-text--html">HTML</p>
-				</li>
-				<li class="favorites__item">
-					<p class="favorites__item-text favorites__item-text--css">CSS</p>
-				</li>
-				<li class="favorites__item">
-					<p class="favorites__item-text favorites__item-text--js">JS</p>
-				</li>
-			</ul>
+	<section class="stickers column">
+		<h2 class="stickers__title visually-hidden">Stickers</h2>
+		<ul class="stickers__list">
+			<li class="stickers__item stickers__item--full stickers__item--nodejs">
+				<span class="visually-hidden">Node.js</span>
+			</li>
+			<li class="stickers__item stickers__item--beerjs">
+				<span class="visually-hidden">BeerJS</span>
+			</li>
+			<li class="stickers__item stickers__item--react">
+				<span class="visually-hidden">React</span>
+			</li>
+			<li class="stickers__item stickers__item--aws">
+				<span class="visually-hidden">AWS</span>
+			</li>
+			<li class="stickers__item stickers__item--acidtwo">
+				<span class="visually-hidden">Acid2</span>
+			</li>
+			<li class="stickers__item stickers__item--dom">
+				<span class="visually-hidden">DOM API</span>
+			</li>
+			<li class="stickers__item stickers__item--webcomponents">
+				<span class="visually-hidden">WebComponents</span>
+			</li>
+			<li class="stickers__item stickers__item--vans">
+				<span class="visually-hidden">Vans</span>
+			</li>
+			<li class="stickers__item stickers__item--xl">
+				<span class="visually-hidden">Gloomy Forest</span>
+			</li>
+			<li class="stickers__item stickers__item--berserk">
+				<span class="visually-hidden">Berserk</span>
+			</li>
+			<li class="stickers__item stickers__item--pair stickers__item--love">
+				<span class="visually-hidden">Love</span>
+			</li>
+			<li class="stickers__item stickers__item--jagermeister">
+				<span class="visually-hidden">Jagermeister</span>
+			</li>
+		</ul>
+	</section>
+	<section class="channel column">
+		<h2 class="channel__title visually-hidden">My telegram channel</h2>
+		<ul class="channel__content-list channel__content-list--top" aria-hidden="true">
+			<li class="channel__content-item channel__content-item--shift-back channel__content-item--reaction">
+				<span class="channel__content-emoji">👍</span> 3
+			</li>
+			<li class="channel__content-item channel__content-item--shift-back channel__content-item--technology">
+				TypeScript
+			</li>
+			<li class="channel__content-item channel__content-item--technology">Accessibility</li>
+			<li class="channel__content-item channel__content-item--icon channel__content-item--icon--lapka">3</li>
+			<li class="channel__content-item channel__content-item--shift-forward channel__content-item--reaction">
+				<span class="channel__content-emoji">👀</span> 15
+			</li>
+			<li class="channel__content-item channel__content-item--technology">Eleventy</li>
+		</ul>
+		<div class="channel__content">
+			<div class="channel__picture-wrapper">
+				<picture class="channel__picture">
+					{% for format in IMAGE_FORMATS %}
+						<source
+							srcset="
+								/images/telegram-avatar.photo.{{ format }}    1x,
+								/images/telegram-avatar@2x.photo.{{ format }} 2x
+							"
+							type="image/{{ format }}"
+						/>
+					{% endfor %}
+					<img
+						class="channel__image"
+						src="/images/telegram-avatar.photo.jpg"
+						srcset="/images/telegram-avatar@2x.photo.jpg 2x"
+						width="66"
+						height="66"
+						loading="lazy"
+						alt="Telegram channel avatar."
+					/>
+				</picture>
+				<svg class="channel__picture-object" width="22" height="22" aria-hidden="true">
+					<use href="/images/icons.svg#telegram"></use>
+				</svg>
+			</div>
+			<a class="channel__link" href="t.me/whatislove_dev" rel="me">t.me/whatislove_dev</a>
+			<p class="channel__description">
+				I run a telegram channel where I share dev publications and materials. Thx, peace, love ✌️
+			</p>
 		</div>
+		<ul class="channel__content-list channel__content-list--bottom" aria-hidden="true">
+			<li
+				class="channel__content-item channel__content-item--shift-back channel__content-item--full channel__content-item--reaction"
+			>
+				<span class="channel__content-emoji">🦄</span> 15
+			</li>
+			<li class="channel__content-item channel__content-item--shift-back channel__content-item--reaction">
+				<span class="channel__content-emoji">❤️</span> 12
+			</li>
+			<li
+				class="channel__content-item channel__content-item--shift-back channel__content-item--technology channel__content-item--technology--left"
+			>
+				Frameworks
+			</li>
+			<li
+				class="channel__content-item channel__content-item--shift-forward channel__content-item--technology channel__content-item--technology--left"
+			>
+				AWS
+			</li>
+			<li class="channel__content-item channel__content-item--shift-forward channel__content-item--reaction">
+				<span class="channel__content-emoji">🔥</span> 9
+			</li>
+		</ul>
 	</section>
 </main>
-<footer class="footer">
-	{{ socialList('footer__social-list') }}
-	<span class="footer__routine-wrapper" aria-hidden="true">
-		<span class="footer__routine"></span>
+<aside class="call column">
+	<span class="call__border call__border--top">
+		<svg class="call__border-object" width="40" height="12" aria-hidden="true">
+			<use href="/images/icons.svg#infinity"></use>
+		</svg>
 	</span>
-</footer>
+	<b class="call__title">Let's change the world together!</b>
+	<a class="call__email" href="mailto:{{ global.email }}">{{ global.email }}</a>
+	{{ socialList(global.socials, 'call__social-list', true) }}
+	<span class="call__border call__border--bottom">
+		<svg class="call__border-object" width="40" height="12" aria-hidden="true">
+			<use href="/images/icons.svg#infinity"></use>
+		</svg>
+	</span>
+</aside>

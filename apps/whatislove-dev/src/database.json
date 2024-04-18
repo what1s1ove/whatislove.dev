@@ -2,8 +2,7 @@
 	"timeline": [
 		{
 			"id": "G4pmjDv5yh",
-			"skillType": "softSkill",
-			"type": "course",
+			"type": "certificate",
 			"title": "SpeakUp: Beginner 2",
 			"desc": "",
 			"origin": "https://www.speak-up.com.ua/",
@@ -15,8 +14,7 @@
 		},
 		{
 			"id": "NN291Uj3Qn",
-			"skillType": "softSkill",
-			"type": "course",
+			"type": "certificate",
 			"title": "SpeakUp: Elementary 1",
 			"desc": "",
 			"origin": "https://www.speak-up.com.ua/",
@@ -28,7 +26,6 @@
 		},
 		{
 			"id": "z59R3g-Onc",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "21 true answer. How to change your attitude to life (Andrey Kurpatov)",
 			"desc": "",
@@ -41,8 +38,7 @@
 		},
 		{
 			"id": "G6IqIHD9L-",
-			"skillType": "softSkill",
-			"type": "course",
+			"type": "certificate",
 			"title": "SpeakUp: Elementary 1",
 			"desc": "",
 			"origin": "https://www.speak-up.com.ua/",
@@ -54,7 +50,6 @@
 		},
 		{
 			"id": "TRuh4qSvx4",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Hold Me Tight (Sue Johnson)",
 			"desc": "",
@@ -67,7 +62,6 @@
 		},
 		{
 			"id": "3doP9ySeoK",
-			"skillType": "hardSkill",
 			"type": "meetup",
 			"title": "Kyiv JS Meetup",
 			"desc": "❤️☘️",
@@ -80,7 +74,6 @@
 		},
 		{
 			"id": "fsFqCai9Tu",
-			"skillType": "softSkill",
 			"type": "meetup",
 			"title": "Zlit",
 			"desc": "",
@@ -93,7 +86,6 @@
 		},
 		{
 			"id": "0XPnWPlZyq",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "The Miracle Morning (Hal Elrod)",
 			"desc": "",
@@ -106,7 +98,6 @@
 		},
 		{
 			"id": "OxcTRm3zIT",
-			"skillType": "hardSkill",
 			"type": "position",
 			"title": "HTML Developer (KIES)",
 			"desc": "Rewrote the frontend part of the project. Completely removed jQuery and Bootstrap from the project. Made Lighthouse indicators 100% in all sections.",
@@ -119,7 +110,6 @@
 		},
 		{
 			"id": "8prlVgyLgw",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Sleep Smarter: 21 Essential Strategies to Sleep Your Way to A Better Body, Better Health, and Bigger Success (Shawn Stevenson)",
 			"desc": "",
@@ -132,7 +122,6 @@
 		},
 		{
 			"id": "NYP9ZxwLDJ",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "The Tipping Point: How Little Things Can Make a Big Difference (Malcolm Gladwell)",
 			"desc": "",
@@ -145,7 +134,6 @@
 		},
 		{
 			"id": "O1G50vE4Xg",
-			"skillType": "hardSkill",
 			"type": "book",
 			"title": "JavaScript for Kids: A Playful Introduction to Programming (Nick Morgan)",
 			"desc": "",
@@ -158,7 +146,6 @@
 		},
 		{
 			"id": "-_4iHhxuLy",
-			"skillType": "hardSkill",
 			"type": "book",
 			"title": "JavaScript: The Good Parts (Douglas Crockford)",
 			"desc": "",
@@ -171,8 +158,7 @@
 		},
 		{
 			"id": "Q-ysIGN3eD",
-			"skillType": "softSkill",
-			"type": "course",
+			"type": "certificate",
 			"title": "SpeakUp: Elementary 2",
 			"desc": "",
 			"origin": "https://www.speak-up.com.ua/",
@@ -184,7 +170,6 @@
 		},
 		{
 			"id": "JAvKc_mlod",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Reality Transurfing 1: The Space of Variations (Vadim Zeland)",
 			"desc": "",
@@ -197,7 +182,6 @@
 		},
 		{
 			"id": "yooYuSbN6i",
-			"skillType": "hardSkill",
 			"type": "meetup",
 			"title": "Kyiv JS Meetup",
 			"desc": "❤️☘️",
@@ -210,7 +194,6 @@
 		},
 		{
 			"id": "nlTgBmXs9x",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Reality Transurfing 2: A Rustle of Morning Stars (Vadim Zeland)",
 			"desc": "",
@@ -223,7 +206,6 @@
 		},
 		{
 			"id": "7Olkh484bT",
-			"skillType": "hardSkill",
 			"type": "meetup",
 			"title": "Zlit Tech: GraphQL",
 			"desc": "",
@@ -236,7 +218,6 @@
 		},
 		{
 			"id": "Ex1LJJgcD9",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Джедайские техники (Maxim Dorofeev)",
 			"desc": "",
@@ -249,7 +230,6 @@
 		},
 		{
 			"id": "FvNLYOciNq",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Gift from the Sea (Anne Morrow Lindbergh)",
 			"desc": "",
@@ -262,7 +242,6 @@
 		},
 		{
 			"id": "XHACf_btc4",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "The 5 Love Languages: The Secret to Love that Lasts (Gary Chapman)",
 			"desc": "",
@@ -275,8 +254,7 @@
 		},
 		{
 			"id": "IOAhiQzlRg",
-			"skillType": "softSkill",
-			"type": "course",
+			"type": "certificate",
 			"title": "SpeakUp: Intermediate 1",
 			"desc": "",
 			"origin": "https://www.speak-up.com.ua/",
@@ -288,7 +266,6 @@
 		},
 		{
 			"id": "yciOkkJpEn",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Reality Transurfing 3: Forward to the Past (Vadim Zeland)",
 			"desc": "",
@@ -301,7 +278,6 @@
 		},
 		{
 			"id": "PLTAVVeyiM",
-			"skillType": "hardSkill",
 			"type": "book",
 			"title": "Grokking Algorithms: An illustrated guide for programmers and other curious people (Aditya Bhargava)",
 			"desc": "",
@@ -314,7 +290,6 @@
 		},
 		{
 			"id": "F9Oc-np_-F",
-			"skillType": "hardSkill",
 			"type": "book",
 			"title": "You Don't Know Js: Up & Going (Kyle Simpson)",
 			"desc": "",
@@ -327,7 +302,6 @@
 		},
 		{
 			"id": "G6vghIptjT",
-			"skillType": "hardSkill",
 			"type": "meetup",
 			"title": "RN Talks #4 - Intro to Flutter & Declarative UI Development in Android",
 			"desc": "",
@@ -340,7 +314,6 @@
 		},
 		{
 			"id": "UFx-Nb5WZw",
-			"skillType": "hardSkill",
 			"type": "book",
 			"title": "You Don't Know JS: Scope & Closures (Kyle Simpson)",
 			"desc": "",
@@ -353,7 +326,6 @@
 		},
 		{
 			"id": "1vPlCFb8ej",
-			"skillType": "softSkill",
 			"type": "meetup",
 			"title": "Zlit",
 			"desc": "",
@@ -366,7 +338,6 @@
 		},
 		{
 			"id": "TK5gVbXURo",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Reality Transurfing 4: Ruling Reality (Vadim Zeland)",
 			"desc": "",
@@ -379,7 +350,6 @@
 		},
 		{
 			"id": "TBzKiJBHuj",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "To Have or To Be? (Erich Fromm)",
 			"desc": "",
@@ -392,8 +362,7 @@
 		},
 		{
 			"id": "IhDC0GhKeS",
-			"skillType": "softSkill",
-			"type": "course",
+			"type": "certificate",
 			"title": "SpeakUp: Intermediate 2",
 			"desc": "",
 			"origin": "https://www.speak-up.com.ua/",
@@ -405,7 +374,6 @@
 		},
 		{
 			"id": "J2SwVdDIGI",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "The Art of Loving (Erich Fromm)",
 			"desc": "",
@@ -418,7 +386,6 @@
 		},
 		{
 			"id": "irIRSqiUB7",
-			"skillType": "hardSkill",
 			"type": "meetup",
 			"title": "Wix Talks #3. Front-end",
 			"desc": "",
@@ -431,7 +398,6 @@
 		},
 		{
 			"id": "3rPiWNicjX",
-			"skillType": "hardSkill",
 			"type": "book",
 			"title": "The JavaScript language. Part 1 (Ilya Kantor)",
 			"desc": "P.S. My love ❤️",
@@ -444,7 +410,6 @@
 		},
 		{
 			"id": "laB4NAc9ss",
-			"skillType": "hardSkill",
 			"type": "meetup",
 			"title": "React Kyiv September Meetup",
 			"desc": "💜⚛️",
@@ -457,7 +422,6 @@
 		},
 		{
 			"id": "JY8-AZbCaK",
-			"skillType": "hardSkill",
 			"type": "position",
 			"title": "HTML Developer (SGroup)",
 			"desc": "Completely removed jQuery, Bootstrap, UIkit from the projects where they are not needed. Optimized the average project bundle size from 8 MB to <1.5 MB.",
@@ -470,7 +434,6 @@
 		},
 		{
 			"id": "SBQpbedo6T",
-			"skillType": "hardSkill",
 			"type": "meetup",
 			"title": "React Native Ukraine #5",
 			"desc": "",
@@ -483,7 +446,6 @@
 		},
 		{
 			"id": "ME0p_s5x3u",
-			"skillType": "hardSkill",
 			"type": "book",
 			"title": "You Don't Know Js: this & Object Prototypes (Kyle Simpson)",
 			"desc": "",
@@ -496,7 +458,6 @@
 		},
 		{
 			"id": "I-q1NF3U5C",
-			"skillType": "hardSkill",
 			"type": "book",
 			"title": "You Don't Know Js: Types & Grammar (Kyle Simpson)",
 			"desc": "",
@@ -509,7 +470,6 @@
 		},
 		{
 			"id": "hKnLGfoUiC",
-			"skillType": "hardSkill",
 			"type": "book",
 			"title": "You Don't Know Js: Async & Performance (Kyle Simpson)",
 			"desc": "",
@@ -522,7 +482,6 @@
 		},
 		{
 			"id": "XOzQglUZNB",
-			"skillType": "hardSkill",
 			"type": "book",
 			"title": "The JavaScript language. Part 2 - Browser: Document, Events, Interfaces (Ilya Kantor)",
 			"desc": "",
@@ -535,7 +494,6 @@
 		},
 		{
 			"id": "9GHqEeJRrB",
-			"skillType": "hardSkill",
 			"type": "book",
 			"title": "You Don't Know JS: ES6 & Beyond (Kyle Simpson)",
 			"desc": "",
@@ -548,7 +506,6 @@
 		},
 		{
 			"id": "G0aR_ueZ8v",
-			"skillType": "hardSkill",
 			"type": "book",
 			"title": "The JavaScript language. Part 3 - Additional articles (Ilya Kantor)",
 			"desc": "",
@@ -561,8 +518,7 @@
 		},
 		{
 			"id": "QVBwfPd2kR",
-			"skillType": "softSkill",
-			"type": "course",
+			"type": "certificate",
 			"title": "SpeakUp: Upper Intermediate 1",
 			"desc": "",
 			"origin": "https://www.speak-up.com.ua/",
@@ -574,7 +530,6 @@
 		},
 		{
 			"id": "Hhym_qGpsA",
-			"skillType": "hardSkill",
 			"type": "meetup",
 			"title": "React Kyiv December Meetup",
 			"desc": "💜⚛️",
@@ -587,8 +542,7 @@
 		},
 		{
 			"id": "L55wOK0hkF",
-			"skillType": "hardSkill",
-			"type": "course",
+			"type": "certificate",
 			"title": "Ciklum University: JS Band Internship",
 			"desc": "",
 			"origin": "https://ciklum-digital.github.io/internship/#/",
@@ -600,7 +554,6 @@
 		},
 		{
 			"id": "4tfgOamTJl",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Tajna - The Secret (Rhonda Byrne)",
 			"desc": "",
@@ -613,7 +566,6 @@
 		},
 		{
 			"id": "oCbENztp9f",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Reality Transurfing 4: Ruling Reality (Vadim Zeland)",
 			"desc": "",
@@ -625,21 +577,7 @@
 			"endDate": ""
 		},
 		{
-			"id": "iFI6X1tekP",
-			"skillType": "hardSkill",
-			"type": "position",
-			"title": "Full Stack Engineer",
-			"desc": "Just love ❤️",
-			"origin": "https://binary-studio.com/",
-			"originDesc": "Binary Studio",
-			"link": "",
-			"linkDesc": "",
-			"date": "2020-01-22T00:00:00+03:00",
-			"endDate": ""
-		},
-		{
 			"id": "ycczoYLZaZ",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Think and Grow Rich (Napoleon Hill)",
 			"desc": "",
@@ -652,7 +590,6 @@
 		},
 		{
 			"id": "0TyW9ODCDd",
-			"skillType": "hardSkill",
 			"type": "meetup",
 			"title": "React Native Ukraine #6",
 			"desc": "",
@@ -665,7 +602,6 @@
 		},
 		{
 			"id": "DsNS4sn1ug",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Emotional Agility: Get Unstuck, Embrace Change, and Thrive in Work and Life (Susan David)",
 			"desc": "",
@@ -678,7 +614,6 @@
 		},
 		{
 			"id": "VcOi74lBRh",
-			"skillType": "hardSkill",
 			"type": "meetup",
 			"title": "React Kyiv February Meetup",
 			"desc": "💜⚛️",
@@ -691,7 +626,6 @@
 		},
 		{
 			"id": "QnWJrtxZ2z",
-			"skillType": "hardSkill",
 			"type": "book",
 			"title": "React in Action (Mark Tielens Thomas)",
 			"desc": "",
@@ -704,8 +638,7 @@
 		},
 		{
 			"id": "8oedP6ginJ",
-			"skillType": "hardSkill",
-			"type": "course",
+			"type": "certificate",
 			"title": "HTML and CSS. Professional Website Coding",
 			"desc": "Work with the git version control system. Work with the graphic layout in the Figma editor. Create expressive and accessible markup. Build page layout on CSS grids, work with custom properties, optimize the code and prepare the completed project for publication. At each stage, the work is checked and commented by a personal mentor.",
 			"origin": "https://htmlacademy.ru/intensive/htmlcss",
@@ -717,7 +650,6 @@
 		},
 		{
 			"id": "tmy5t1DQBv",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "The Life-Changing Magic of Tidying Up (Marie Kondo)",
 			"desc": "",
@@ -730,8 +662,7 @@
 		},
 		{
 			"id": "-sSzH-p9vX",
-			"skillType": "softSkill",
-			"type": "course",
+			"type": "certificate",
 			"title": "SpeakUp: Upper Intermediate 2",
 			"desc": "",
 			"origin": "https://www.speak-up.com.ua/",
@@ -743,7 +674,6 @@
 		},
 		{
 			"id": "hAFYczg5y8",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Games People Play: The Basic Handbook of Transactional Analysis (Eric Berne)",
 			"desc": "",
@@ -756,8 +686,7 @@
 		},
 		{
 			"id": "6cal3YZvDb",
-			"skillType": "hardSkill",
-			"type": "course",
+			"type": "certificate",
 			"title": "HTML and CSS. Adaptive Website Coding and Automation",
 			"desc": "Create markup according to the BEM methodology. CSS-code on preprocessors. Make an adaptive grid, work with layout and retin graphics. Prepare project assembly automation for publication. At each stage, the work is checked and commented by a personal mentor.",
 			"origin": "https://htmlacademy.ru/intensive/adaptive",
@@ -769,7 +698,6 @@
 		},
 		{
 			"id": "EuJgZhAcco",
-			"skillType": "hardSkill",
 			"type": "book",
 			"title": "HTML5 Pocket Reference: Quick, Comprehensive, Indispensable (Jennifer Robbins)",
 			"desc": "",
@@ -782,7 +710,6 @@
 		},
 		{
 			"id": "TWeMZfTvYg",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "How to Have Rewarding Relationships (Dale Carnegie)",
 			"desc": "",
@@ -795,8 +722,7 @@
 		},
 		{
 			"id": "uYnCd7DtEN",
-			"skillType": "softSkill",
-			"type": "course",
+			"type": "certificate",
 			"title": "SpeakUp: Advanced 1",
 			"desc": "",
 			"origin": "https://www.speak-up.com.ua/",
@@ -808,8 +734,7 @@
 		},
 		{
 			"id": "V8CNG7OiVM",
-			"skillType": "hardSkill",
-			"type": "course",
+			"type": "certificate",
 			"title": "JavaScript. Professional Development of Web Interfaces",
 			"desc": "Code and Magick",
 			"origin": "https://htmlacademy.ru/intensive/javascript",
@@ -821,7 +746,6 @@
 		},
 		{
 			"id": "nwHf6htpkb",
-			"skillType": "hardSkill",
 			"type": "book",
 			"title": "Eloquent JavaScript (Marijn Haverbeke)",
 			"desc": "",
@@ -834,7 +758,6 @@
 		},
 		{
 			"id": "pM-qb8T3ki",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Skin in the Game (Nassim Nicholas Taleb)",
 			"desc": "",
@@ -847,7 +770,6 @@
 		},
 		{
 			"id": "owl55Vw6vL",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "The Master Key System (Charles F. Haanel)",
 			"desc": "",
@@ -860,8 +782,7 @@
 		},
 		{
 			"id": "MxOAx0kMXc",
-			"skillType": "softSkill",
-			"type": "course",
+			"type": "certificate",
 			"title": "SpeakUp: Advanced 2",
 			"desc": "",
 			"origin": "https://www.speak-up.com.ua/",
@@ -873,7 +794,6 @@
 		},
 		{
 			"id": "EyOW-B6l0s",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Rip it up (Richard Wiseman)",
 			"desc": "",
@@ -886,7 +806,6 @@
 		},
 		{
 			"id": "hYOyGf84Fg",
-			"skillType": "hardSkill",
 			"type": "book",
 			"title": "CSS Pocket Reference. 5th edition (Eric A. Meyer)",
 			"desc": "",
@@ -899,7 +818,6 @@
 		},
 		{
 			"id": "A0knVmIp8q",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "The Outward Mindset: Seeing Beyond Ourselves (the Arbinger Institute)",
 			"desc": "",
@@ -912,7 +830,6 @@
 		},
 		{
 			"id": "-AOi70VKgS",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Reality Transurfing 5: Apples Fall to the Sky (Vadim Zeland)",
 			"desc": "",
@@ -925,7 +842,6 @@
 		},
 		{
 			"id": "RCF11hqTnQ",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "A Return to Love: Reflections on the Principles of \"A Course in Miracles\" (Marianne Williamson)",
 			"desc": "",
@@ -938,8 +854,7 @@
 		},
 		{
 			"id": "07shLj-gUD",
-			"skillType": "hardSkill",
-			"type": "course",
+			"type": "certificate",
 			"title": "JavaScript. Architecture of Front-end Applications",
 			"desc": "\"Bad programmers worry about the code. Good programmers worry about data structures and their relationships.\" © Linus Torvalds",
 			"origin": "https://htmlacademy.ru/intensive/ecmascript",
@@ -951,7 +866,6 @@
 		},
 		{
 			"id": "YH8raXDm2f",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "The Power of Now (Eckhart Tolle)",
 			"desc": "",
@@ -964,7 +878,6 @@
 		},
 		{
 			"id": "BDzxCgixaN",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Stillness Speaks (Eckhart Tolle)",
 			"desc": "",
@@ -977,8 +890,7 @@
 		},
 		{
 			"id": "o4Pq1mHgN7",
-			"skillType": "hardSkill",
-			"type": "course",
+			"type": "certificate",
 			"title": "React. Development of Complex Front-end Applications",
 			"desc": "\"Does my code work correctly? Depends on what \"correctly\" means.\"",
 			"origin": "https://htmlacademy.ru/intensive/react",
@@ -990,7 +902,6 @@
 		},
 		{
 			"id": "aJkGLtygAU",
-			"skillType": "hardSkill",
 			"type": "position",
 			"title": "Head Mentor / Author (HTML Academy)",
 			"desc": "Students mentorship (from 1 to 40 people in parallel). Manage interviews of new mentors. New mentors onboarding. Improvements to learning materials. One of the authors of the \"Mentoring for beginners\" course.",
@@ -1003,8 +914,7 @@
 		},
 		{
 			"id": "DHewosYUQx",
-			"skillType": "hardSkill",
-			"type": "course",
+			"type": "certificate",
 			"title": "Profession. React Developer",
 			"desc": "⚛️",
 			"origin": "https://htmlacademy.ru/profession/react",
@@ -1016,8 +926,7 @@
 		},
 		{
 			"id": "jt7y5qcsIJ",
-			"skillType": "softSkill",
-			"type": "course",
+			"type": "certificate",
 			"title": "SpeakUp: Master 1",
 			"desc": "",
 			"origin": "https://www.speak-up.com.ua/",
@@ -1029,7 +938,6 @@
 		},
 		{
 			"id": "4yroIJFCDB",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Breaking The Habit of Being Yourself: How to Lose Your Mind and Create a New One (Joe Dr. Dispenza)",
 			"desc": "",
@@ -1042,7 +950,6 @@
 		},
 		{
 			"id": "nA5Gog9uDl",
-			"skillType": "hardSkill",
 			"type": "book",
 			"title": "CSS Secrets: Better Solutions to Everyday Web Design Problems (Lea Verou)",
 			"desc": "",
@@ -1055,7 +962,6 @@
 		},
 		{
 			"id": "teaQKwxisB",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Emotional Intelligence (Daniel Goleman)",
 			"desc": "",
@@ -1068,7 +974,6 @@
 		},
 		{
 			"id": "gfqUcsZ9Q6",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Man's Search For Meaning (Victor Frankl)",
 			"desc": "",
@@ -1081,8 +986,7 @@
 		},
 		{
 			"id": "y_58UT-y9R",
-			"skillType": "hardSkill",
-			"type": "course",
+			"type": "certificate",
 			"title": "NodeJS. Development of App Servers and API",
 			"desc": "with async 💚",
 			"origin": "https://htmlacademy.ru/intensive/nodejs",
@@ -1094,7 +998,6 @@
 		},
 		{
 			"id": "nZhZXylLWV",
-			"skillType": "hardSkill",
 			"type": "book",
 			"title": "Clean Code (Robert C. Martin)",
 			"desc": "",
@@ -1107,7 +1010,6 @@
 		},
 		{
 			"id": "fJBJIB1N5C",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Evolve Your Brain: The Science of Changing Your Mind (Joe Dr. Dispenza)",
 			"desc": "",
@@ -1120,7 +1022,6 @@
 		},
 		{
 			"id": "kRHMrpc",
-			"skillType": "hardSkill",
 			"type": "position",
 			"title": "Head Mentor (Лига А)",
 			"desc": "\"Bridge\" between technologies that business needs and learning materials. Mentor for mentors.",
@@ -1132,9 +1033,20 @@
 			"endDate": "2022-04-15T00:00:00.000Z"
 		},
 		{
+			"id": "iFI6X1tekP",
+			"type": "position",
+			"title": "Full Stack Engineer",
+			"desc": "Just love ❤️",
+			"origin": "https://binary-studio.com/",
+			"originDesc": "Binary Studio",
+			"link": "",
+			"linkDesc": "",
+			"date": "2020-01-22T00:00:00+03:00",
+			"endDate": ""
+		},
+		{
 			"id": "oGcUsYw",
-			"skillType": "hardSkill",
-			"type": "course",
+			"type": "certificate",
 			"title": "AWS Certified Cloud Practitioner",
 			"desc": "",
 			"origin": "https://www.credly.com/badges/b62359a0-0525-4b3e-aeb2-208c40a3e21b/public_url",
@@ -1146,7 +1058,6 @@
 		},
 		{
 			"id": "sk1p3IZ",
-			"skillType": "hardSkill",
 			"type": "meetup",
 			"title": "LvivJS Event",
 			"desc": "",
@@ -1158,7 +1069,6 @@
 			"endDate": ""
 		},
 		{
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Flow: The Psychology of Optimal Experience (Mihaly Csikszentmihalyi)",
 			"desc": "",
@@ -1172,7 +1082,6 @@
 		},
 		{
 			"id": "rQWMKnU",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "6-Minute (Dominik Spenst)",
 			"desc": "",
@@ -1185,7 +1094,6 @@
 		},
 		{
 			"id": "u_AyBPF",
-			"skillType": "hardSkill",
 			"type": "book",
 			"title": "Clean Coder (Robert C. Martin)",
 			"desc": "",
@@ -1198,7 +1106,6 @@
 		},
 		{
 			"id": "b6KhG0R",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Crucial Conversations: Tools for Talking When Stakes Are High (Joseph Grenny)",
 			"desc": "",
@@ -1211,7 +1118,6 @@
 		},
 		{
 			"id": "6lpW2RU",
-			"skillType": "hardSkill",
 			"type": "book",
 			"title": "Clean Architecture (Robert C. Martin)",
 			"desc": "",
@@ -1224,7 +1130,6 @@
 		},
 		{
 			"id": "w8FGmzN",
-			"skillType": "hardSkill",
 			"type": "book",
 			"title": "Clean Agile (Robert C. Martin)",
 			"desc": "",
@@ -1237,7 +1142,6 @@
 		},
 		{
 			"id": "euJJ3Ts",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Путь Джедая (Maxim Dorofeev)",
 			"desc": "",
@@ -1250,7 +1154,6 @@
 		},
 		{
 			"id": "ibroasL",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Sapiens: A Brief History of Humankind (Yuval Noah Harari)",
 			"desc": "",
@@ -1263,7 +1166,6 @@
 		},
 		{
 			"id": "yxpSSw7",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Диалоги о медитации (Дада Садананда)",
 			"desc": "",
@@ -1276,7 +1178,6 @@
 		},
 		{
 			"id": "dtkITDh",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Жизнь в удовольствие (Александр Палиенко)",
 			"desc": "",
@@ -1288,7 +1189,6 @@
 			"endDate": ""
 		},
 		{
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Thinking, Fast and Slow (Daniel Kahneman)",
 			"desc": "",
@@ -1301,7 +1201,6 @@
 			"id": "NUpnTqe"
 		},
 		{
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Steve Jobs (Walter Isaacson)",
 			"desc": "",
@@ -1315,7 +1214,6 @@
 		},
 		{
 			"id": "2rfidUy",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "What I Talk About When I Talk About Running (Haruki Murakami)",
 			"desc": "",
@@ -1328,7 +1226,6 @@
 		},
 		{
 			"id": "KMBv_JI",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "The Willpower Instinct: How Self-Control Works, Why It Matters, and What You Can Do to Get More of It (Kelly McGonigal)",
 			"desc": "",
@@ -1341,7 +1238,6 @@
 		},
 		{
 			"id": "r0BWWT_",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "The 4-Hour Workweek (Timothy Ferriss)",
 			"desc": "",
@@ -1354,7 +1250,6 @@
 		},
 		{
 			"id": "8KSMPye",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Tim Cook: The Genius Who Took Apple to the Next Level (Leander Kahney)",
 			"desc": "",
@@ -1367,7 +1262,6 @@
 		},
 		{
 			"id": "vnOnxOg",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "The 7 Habits of Highly Effective People: Powerful Lessons in Personal Change (Stephen Covey)",
 			"desc": "",
@@ -1380,7 +1274,6 @@
 		},
 		{
 			"id": "lV4Dd_8",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "My Life And Work (Henry Ford)",
 			"desc": "",
@@ -1393,7 +1286,6 @@
 		},
 		{
 			"id": "7rkKTLI",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Tools of Titans (Timothy Ferriss)",
 			"desc": "",
@@ -1406,7 +1298,6 @@
 		},
 		{
 			"id": "ipcLGsz",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Getting Things Done (David Allen)",
 			"desc": "",
@@ -1419,7 +1310,6 @@
 		},
 		{
 			"id": "nP2NX7K",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Convict Conditioning (Paul Wade)",
 			"desc": "",
@@ -1432,7 +1322,6 @@
 		},
 		{
 			"id": "VJNupUe",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "The Diamond Cutter: The Buddha on Managing Your Business and Your Life (Geshe Michael Roach)",
 			"desc": "",
@@ -1445,8 +1334,7 @@
 		},
 		{
 			"id": "V3fqbae",
-			"skillType": "hardSkill",
-			"type": "course",
+			"type": "certificate",
 			"title": "AWS Certified Solutions Architect – Associate",
 			"desc": "",
 			"origin": "https://www.credly.com/badges/91491f61-4cb4-4cd2-9dee-c1d19f70cf70/public_url",
@@ -1458,7 +1346,6 @@
 		},
 		{
 			"id": "1l0sxYM",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Antifragile: Things That Gain from Disorder (Incerto) (Nassim Nicholas Nicholas Taleb)",
 			"desc": "",
@@ -1471,7 +1358,6 @@
 		},
 		{
 			"id": "yjkZDK7",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Changing on the Job: Developing Leaders for a Complex World (Jennifer Garvey Berger)",
 			"desc": "",
@@ -1484,7 +1370,6 @@
 		},
 		{
 			"id": "09XKfhX",
-			"skillType": "hardSkill",
 			"type": "book",
 			"title": "Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems (Martin Kleppmann)",
 			"desc": "",
@@ -1497,7 +1382,6 @@
 		},
 		{
 			"id": "aWVqFSR",
-			"skillType": "hardSkill",
 			"type": "book",
 			"title": "PostgreSQL Inside (Oleg Bartunov)",
 			"desc": "",
@@ -1510,7 +1394,6 @@
 		},
 		{
 			"id": "y7gwe05",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "A Woman Makes a Plan: Advice for a Lifetime of Adventure, Beauty, and Success (Maye Musk)",
 			"desc": "",
@@ -1523,7 +1406,6 @@
 		},
 		{
 			"id": "kdRAXj0",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Daily Rituals: How Artists Work (Mason Currey)",
 			"desc": "",
@@ -1536,7 +1418,6 @@
 		},
 		{
 			"id": "7rGd32S",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Eat That Frog!: 21 Great Ways to Stop Procrastinating and Get More Done in Less Time (Brian Tracy)",
 			"desc": "🐸",
@@ -1549,7 +1430,6 @@
 		},
 		{
 			"id": "abPXxG3",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Staff Engineer: Leadership beyond the management track (Will Larson)",
 			"desc": "",
@@ -1562,7 +1442,6 @@
 		},
 		{
 			"id": "6z1Yk2N",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "An Elegant Puzzle: Systems of Engineering Management (Will Larson)",
 			"desc": "",
@@ -1575,7 +1454,6 @@
 		},
 		{
 			"id": "pseQKgq",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Influence: Science and Practice (Robert Cialdini)",
 			"desc": "",
@@ -1588,7 +1466,6 @@
 		},
 		{
 			"id": "hcxhH0T",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Procrastination: Why You Do It, What to Do About It Now (Jane B. Burka, Lenora M. Yuen)",
 			"desc": "",
@@ -1601,7 +1478,6 @@
 		},
 		{
 			"id": "Ub5dxSf",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Born to Run: A Hidden Tribe, Superathletes, and the Greatest Race the World Has Never Seen (Christopher McDougall)",
 			"desc": "",
@@ -1614,7 +1490,6 @@
 		},
 		{
 			"id": "J_-hEpm",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "The 80/20 Principle: The Secret to Achieving More with Less (Richard Koch)",
 			"desc": "",
@@ -1627,7 +1502,6 @@
 		},
 		{
 			"id": "lz8VRJf",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "The 5 Second Rule: Transform your Life, Work, and Confidence with Everyday Courage (Mel Robbins)",
 			"desc": "",
@@ -1639,7 +1513,7 @@
 			"endDate": ""
 		},
 		{
-			"skillType": "softSkill",
+			"id": "Z12wHSc",
 			"type": "book",
 			"title": "Unfu*k Yourself: Get Out of Your Head and into Your Life (Gary John Bishop)",
 			"desc": "",
@@ -1648,12 +1522,10 @@
 			"link": "",
 			"linkDesc": "",
 			"date": "2024-02-17T00:00:00.000Z",
-			"endDate": "",
-			"id": "Z12wHSc"
+			"endDate": ""
 		},
 		{
 			"id": "ag0l-8U",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Outliers: The Story of Success (Malcolm Gladwell)",
 			"desc": "",
@@ -1666,7 +1538,6 @@
 		},
 		{
 			"id": "fi7RHHC",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "The Pomodoro Technique: The Acclaimed Time-Management System That Has Transformed How We Work (Francesco Cirillo)",
 			"desc": "",
@@ -1679,7 +1550,6 @@
 		},
 		{
 			"id": "aJuU-0d",
-			"skillType": "softSkill",
 			"type": "book",
 			"title": "Steal Like an Artist: 10 Things Nobody Told You About Being Creative (Austin Kleon)",
 			"desc": "",

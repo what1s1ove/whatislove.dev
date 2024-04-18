@@ -1,3 +1,32 @@
+@keyframes loader-animation {
+	0% {
+		transform: rotateZ(0deg);
+	}
+
+	100% {
+		transform: rotateZ(360deg);
+	}
+}
+
+@keyframes loader-circle-animation {
+	0%,
+	25% {
+		stroke-dashoffset: 280;
+		transform: rotate(0);
+	}
+
+	50%,
+	75% {
+		stroke-dashoffset: 75;
+		transform: rotate(45deg);
+	}
+
+	100% {
+		stroke-dashoffset: 280;
+		transform: rotate(360deg);
+	}
+}
+
 .loader {
 	display: block;
 	max-width: 75px;
@@ -7,7 +36,7 @@
 	& circle {
 		display: block;
 		fill: transparent;
-		stroke: var(--color-primary);
+		stroke: var(--color-icon);
 		stroke-dasharray: 283;
 		stroke-dashoffset: 280;
 		stroke-linecap: round;

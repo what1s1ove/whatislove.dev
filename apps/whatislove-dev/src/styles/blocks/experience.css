@@ -1,0 +1,41 @@
+.experience {
+	padding-block: 25px;
+}
+
+.experience__title {
+	margin-block: 0 25px;
+	font-size: var(--font-size-heading-2);
+}
+
+.experience__form {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-block: 0 40px;
+}
+
+.experience__form-label {
+	padding-block: 5px;
+	padding-inline: 14px;
+	font-weight: 600;
+	border-radius: 5px;
+
+	&:has(:checked) {
+		background-color: var(--color-page-background-highlight);
+	}
+
+	&:focus-within {
+		border-radius: var(--radius-focus);
+		outline: var(--outline-focus);
+		outline-offset: var(--offset-focus);
+	}
+}
+
+.experience__form-control {
+	margin: 0;
+	appearance: none;
+
+	&:focus {
+		outline: 0;
+	}
+}

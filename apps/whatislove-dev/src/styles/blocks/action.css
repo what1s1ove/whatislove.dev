@@ -1,0 +1,12 @@
+.action {
+	display: inline-flex;
+	align-items: center;
+	padding: 0;
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: 1;
+	cursor: pointer;
+	background-color: transparent;
+	border: 0;
+}

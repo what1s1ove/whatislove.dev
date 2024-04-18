@@ -57,7 +57,7 @@ class Timeline {
 		})
 		this.#loaderComponent = new Loader({
 			containerNode: /** @type {HTMLElement} */ (
-				document.querySelector(`.timeline__list-wrapper`)
+				document.querySelector(`.experience__timeline-wrapper`)
 			),
 		})
 		this.#timelineListComponent = new TimelineList()
@@ -73,7 +73,9 @@ class Timeline {
 
 	/** @returns {Promise<void>} */
 	async #fetchTimelines() {
-		this.#timelines = await this.#timelineApi.getTimelines()
+		let timelines = await this.#timelineApi.getTimelines()
+
+		this.#timelines = timelines.toReversed()
 	}
 
 	/** @returns {void} */

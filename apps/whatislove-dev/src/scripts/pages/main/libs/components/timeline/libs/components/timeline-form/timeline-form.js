@@ -1,4 +1,4 @@
-import { getFormValues, initDebounce } from '~/libs/helpers/helpers.js'
+import { getFormPayload, initDebounce } from '~/libs/helpers/helpers.js'
 import { TimelineFilter } from '~/modules/timeline/timeline.js'
 
 import { DEBOUNCE_DELAY } from './libs/constants/constants.js'
@@ -44,7 +44,7 @@ class TimelineForm {
 	/** @returns {void} */
 	init() {
 		this.#formNode = /** @type {HTMLFormElement} */ (
-			document.querySelector(`.timeline__filter`)
+			document.querySelector(`.experience__form`)
 		)
 
 		this.#initListeners()
@@ -52,7 +52,7 @@ class TimelineForm {
 
 	/** @returns {TimelineFilter} */
 	get formValues() {
-		return getFormValues(/** @type {HTMLFormElement} */ (this.#formNode))
+		return getFormPayload(/** @type {HTMLFormElement} */ (this.#formNode))
 	}
 }
 

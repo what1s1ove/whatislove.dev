@@ -5,12 +5,8 @@ layout: page.njk
 permalink: form.html
 ---
 
-{% from 'live-logo.njk' import liveLogo %}
-{% from 'settings.njk' import settings %}
-
 <main class="timeline-form starry-sky">
 	<a class="timeline-form__logo-wrapper" href="/">
-		{{ liveLogo('timeline-form__logo') }}
 		<span class="visually-hidden">Go to home page</span>
 	</a>
 	<div class="timeline-form__wrapper flex flex-col justify-center w-1/2 h-screen m-auto p-5">
@@ -19,59 +15,107 @@ permalink: form.html
 			<div class="flex flex-row mb-3 gap-x-4">
 				<span class="flex flex-col gap-y-2 w-1/2">
 					<label class="text-sm font-medium" for="skill-type">Skill Type:</label>
-					<select class="block p-2.5 text-gray-900 text-sm capitalize bg-gray-50 border border-gray-300 rounded-lg" id="skill-type" name="skillType" required>
+					<select
+						class="block p-2.5 text-gray-900 text-sm capitalize bg-gray-50 border border-gray-300 rounded-lg"
+						id="skill-type"
+						name="skillType"
+						required
+					>
 						<option value="">Select...</option>
 					</select>
 				</span>
 				<span class="flex flex-col gap-y-2 w-1/2">
 					<label class="text-sm font-medium" for="type">Type:</label>
-					<select class="block p-2.5 text-gray-900 text-sm capitalize bg-gray-50 border border-gray-300 rounded-lg" id="type" name="type" required>
+					<select
+						class="block p-2.5 text-gray-900 text-sm capitalize bg-gray-50 border border-gray-300 rounded-lg"
+						id="type"
+						name="type"
+						required
+					>
 						<option value="">Select...</option>
 					</select>
 				</span>
 			</div>
 			<label class="flex flex-col mb-3 gap-y-2">
 				<span class="text-sm font-medium">Title:</span>
-				<input class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg" name="title" type="text" required />
+				<input
+					class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg"
+					name="title"
+					type="text"
+					required
+				/>
 			</label>
 			<label class="flex flex-col mb-3 gap-y-2">
 				<span class="text-sm font-medium">Description:</span>
-				<input class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg" name="desc" type="text" />
+				<input
+					class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg"
+					name="desc"
+					type="text"
+				/>
 			</label>
 			<div class="flex flex-row mb-3 gap-x-4">
 				<label class="flex flex-col gap-y-2 w-1/2">
 					<span class="text-sm font-medium">Origin Link:</span>
-					<input class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg" name="origin" type="url" />
+					<input
+						class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg"
+						name="origin"
+						type="url"
+					/>
 				</label>
 				<label class="flex flex-col gap-y-2 w-1/2">
 					<span class="text-sm font-medium">Origin Link Description:</span>
-					<input class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg" name="originDesc" type="text" />
+					<input
+						class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg"
+						name="originDesc"
+						type="text"
+					/>
 				</label>
 			</div>
 			<div class="flex flex-row mb-3 gap-x-4">
 				<label class="flex flex-col gap-y-2 w-1/2">
 					<span class="text-sm font-medium">Link:</span>
-					<input class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg" name="link" type="url" />
+					<input
+						class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg"
+						name="link"
+						type="url"
+					/>
 				</label>
 				<label class="flex flex-col gap-y-2 w-1/2">
 					<span class="text-sm font-medium">Link Description:</span>
-					<input class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg" name="linkDesc" type="text" />
+					<input
+						class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg"
+						name="linkDesc"
+						type="text"
+					/>
 				</label>
 			</div>
 			<div class="flex flex-row mb-3 gap-x-4">
 				<label class="flex flex-col gap-y-2 w-1/2">
 					<span class="text-sm font-medium">Date:</span>
-					<input class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg" name="date" type="date" required />
+					<input
+						class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg"
+						name="date"
+						type="date"
+						required
+					/>
 				</label>
 				<label class="flex flex-col gap-y-2 w-1/2">
 					<span class="text-sm font-medium">End Date:</span>
-					<input class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg" name="endDate" type="date" />
+					<input
+						class="block p-2.5 text-gray-900 text-sm bg-gray-50 border border-gray-300 rounded-lg"
+						name="endDate"
+						type="date"
+					/>
 				</label>
 			</div>
-			<button class="w-full px-5 py-2.5 text-white bg-blue-700 font-medium rounded-lg text-sm text-center" type="submit">Submit</button>
+			<button
+				class="w-full px-5 py-2.5 text-white bg-blue-700 font-medium rounded-lg text-sm text-center"
+				type="submit"
+			>
+				Submit
+			</button>
 		</form>
 	</div>
-	{{ settings('timeline-form__settings') }}
 </main>
 
 <script src="https://cdn.tailwindcss.com" defer></script>

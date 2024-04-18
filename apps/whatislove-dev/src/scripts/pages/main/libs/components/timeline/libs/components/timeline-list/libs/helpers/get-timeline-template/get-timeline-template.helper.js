@@ -6,17 +6,8 @@ import { Timeline } from '~/modules/timeline/timeline.js'
  * @returns {string}
  */
 let getTimelineTemplate = (timeline) => {
-	let {
-		date,
-		desc,
-		endDate,
-		link,
-		linkDesc,
-		origin,
-		originDesc,
-		title,
-		type,
-	} = timeline
+	let { date, desc, endDate, link, linkDesc, origin, originDesc, title } =
+		timeline
 
 	let titleStringNode = getStringWitCheck(
 		title,
@@ -28,7 +19,7 @@ let getTimelineTemplate = (timeline) => {
 	)
 	let descStringNode = getStringWitCheck(
 		desc,
-		`<p class="timeline__item-desc">${desc}</p>`,
+		`<p class="timeline__item-description">${desc}</p>`,
 	)
 	let linkStringNode = getStringWitCheck(
 		link,
@@ -36,13 +27,13 @@ let getTimelineTemplate = (timeline) => {
 	)
 	let endDateStringNode = getStringWitCheck(
 		endDate,
-		`<time datetime="${endDate}"> — ${getFormattedDate(endDate)}</time>`,
+		`<time class="timeline__item-date" datetime="${endDate}"> — ${getFormattedDate(endDate)}</time>`,
 	)
 	let dateStringNode = getStringWitCheck(
 		date,
 		`
-	<p class="timeline__dates">
-		<time datetime="${date}">${getFormattedDate(date)}</time>
+	<p class="timeline__item-dates">
+		<time class="timeline__item-date" datetime="${date}">${getFormattedDate(date)}</time>
 		${endDateStringNode}
 	</p>
 	`,
@@ -50,16 +41,11 @@ let getTimelineTemplate = (timeline) => {
 
 	return `
 		<li class="timeline__item">
-			<div class="timeline__item-wrapper">
+				${dateStringNode}
 				${titleStringNode}
 				${originStringNode}
 				${descStringNode}
 				${linkStringNode}
-				${dateStringNode}
-			</div>
-			<span class="timeline__icon-wrapper" aria-hidden="true">
-				<span class="timeline__icon timeline__icon--${type}"></span>
-			</span>
 		</li>
 	`
 }

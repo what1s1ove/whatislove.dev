@@ -1,11 +1,7 @@
 import { NotificationMessage } from '~/libs/enums/enums.js'
 import { initDebounce } from '~/libs/helpers/helpers.js'
 import { ToastMessagePayload, ValuesOf } from '~/libs/types/types.js'
-import {
-	SettingButtonLabel,
-	SettingName,
-} from '~/pages/main/libs/enums/enums.js'
-import { SettingsButtonPayload } from '~/pages/main/libs/types/types.js'
+import { SettingName } from '~/pages/main/libs/enums/enums.js'
 
 import {
 	NOTIFICATION_DELAY,
@@ -30,42 +26,25 @@ class EasterEgg {
 	/** @type {() => void} */
 	#handleEasterEggClick
 
-	/**
-	 * @type {(
-	 * 	name: ValuesOf<typeof SettingName>,
-	 * 	isChecked: boolean,
-	 * ) => void}
-	 */
-	#handleSettingButtonClick
-
 	/** @type {() => void} */
 	#handleWindowResize
 
 	/** @type {(payload: ToastMessagePayload) => void} */
 	#onNotificationAdd
 
-	/** @type {(payload: SettingsButtonPayload) => HTMLButtonElement} */
-	#onSettingButtonAppend
-
 	/**
 	 * @param {{
 	 * 	onNotificationAdd: (payload: ToastMessagePayload) => void
-	 * 	onSettingButtonAppend: (
-	 * 		payload: SettingsButtonPayload,
-	 * 	) => HTMLButtonElement
 	 * }} constructor
 	 */
-	constructor({ onNotificationAdd, onSettingButtonAppend }) {
+	constructor({ onNotificationAdd }) {
 		this.#onNotificationAdd = onNotificationAdd
-		this.#onSettingButtonAppend = onSettingButtonAppend
 
 		this.#easterEggNode = undefined
 		this.#easterEggButtonNode = undefined
 		this.#audioNode = undefined
 
 		this.#handleEasterEggClick = this.#clickEasterEggClickHandler.bind(this)
-		this.#handleSettingButtonClick =
-			this.#clickSettingButtonHandler.bind(this)
 		this.#handleWindowResize = initDebounce(
 			this.#resizeWindowHandler.bind(this),
 			RESIZE_DELAY,
@@ -77,17 +56,6 @@ class EasterEgg {
 		let easterEggNode = /** @type {HTMLElement} */ (this.#easterEggNode)
 
 		this.#onNotificationAdd({
-			/** @returns {void} */
-			cb: () => {
-				let buttonNode = this.#onSettingButtonAppend({
-					isDefaultChecked: true,
-					label: SettingButtonLabel.SWITCH_LOVE,
-					name: SettingName.WHATISLOVE,
-					onClick: this.#handleSettingButtonClick,
-				})
-
-				buttonNode.focus()
-			},
 			duration: NOTIFICATION_DELAY,
 			message: NotificationMessage.LOVE,
 		})

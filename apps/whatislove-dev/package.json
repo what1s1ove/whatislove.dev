@@ -11,7 +11,7 @@
 		"build": "npm run build:clean && npx @11ty/eleventy",
 		"ci:lint:markup": "w3c-html-validator \"build\"",
 		"_ci:lint:html": "npx @linthtml/linthtml \"src/**/*.njk\"",
-		"ci:lint:bem": "bemlint \"src/**/*.njk\" --errors",
+		"ci:lint:bem": "bemlint \"build/**/*.html\" --errors",
 		"ci:lint:css": "stylelint \"src/**/*.css\"",
 		"ci:lint:js": "eslint \"./**/*\"",
 		"ci:lint:type": "tsc --noEmit",
@@ -19,7 +19,8 @@
 	},
 	"dependencies": {
 		"@whatislove.dev/shared": "*",
-		"form-payload": "0.0.8"
+		"focus-trap": "7.5.4",
+		"form-payload": "1.7.2"
 	},
 	"devDependencies": {
 		"@11ty/eleventy": "3.0.0-alpha.3",

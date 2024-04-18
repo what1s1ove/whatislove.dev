@@ -1,11 +1,9 @@
 import { KeyboardKey } from '~/libs/enums/enums.js'
 import { checkIsOneOf, subscribeFocusTrap } from '~/libs/helpers/helpers.js'
 
-import { HEADER_ACTIVE_CLASS } from './libs/constants/constants.js'
-
 class Navigation {
-	/** @type {(() => void) | undefined} */
-	#cleanFocusTrap
+	/** @type {ReturnType<typeof subscribeFocusTrap> | undefined} */
+	#focusTrap
 
 	/** @type {(event_: KeyboardEvent) => void} */
 	#handleEscapePress
@@ -20,16 +18,15 @@ class Navigation {
 	#headerButtonNode
 
 	/** @type {HTMLElement | undefined} */
-	#headerNode
+	#headerMenuNode
 
 	/** @type {HTMLElement | undefined} */
-	#headerOverlayNode
+	#headerNode
 
 	constructor() {
-		this.#headerNode = undefined
-		this.#headerOverlayNode = undefined
+		this.#headerMenuNode = undefined
 		this.#headerButtonNode = undefined
-		this.#cleanFocusTrap = undefined
+		this.#focusTrap = undefined
 
 		this.#handleNavButtonClick = this.#clickNavButtonHandler.bind(this)
 		this.#handleOverlayClick = this.#clickOverlayHandler.bind(this)
@@ -43,11 +40,11 @@ class Navigation {
 	#clickNavButtonHandler(event_) {
 		event_.stopPropagation()
 
-		let hasClass = /** @type {HTMLElement} */ (
-			this.#headerNode
-		).classList.contains(HEADER_ACTIVE_CLASS)
+		let isOpen =
+			/** @type {HTMLElement} */ (this.#headerButtonNode).ariaExpanded ===
+			`true`
 
-		this.#toggleOverlay(!hasClass)
+		this.#toggleOverlay(!isOpen)
 	}
 
 	/** @returns {void} */
@@ -57,20 +54,18 @@ class Navigation {
 
 	/** @returns {void} */
 	#initListeners() {
+		let headerNode = /** @type {HTMLElement} */ (this.#headerNode)
 		let headerButtonNode = /** @type {HTMLButtonElement} */ (
 			this.#headerButtonNode
 		)
 
 		headerButtonNode.addEventListener(`click`, this.#handleNavButtonClick)
+
+		this.#focusTrap = subscribeFocusTrap(headerNode)
 	}
 
 	/** @returns {void} */
 	#initOverlayListeners() {
-		let headerOverlayNode = /** @type {HTMLElement} */ (
-			this.#headerOverlayNode
-		)
-
-		headerOverlayNode.addEventListener(`click`, this.#handleOverlayClick)
 		globalThis.addEventListener(`keydown`, this.#handleEscapePress)
 	}
 
@@ -86,45 +81,61 @@ class Navigation {
 
 	/** @returns {void} */
 	#removeOverlayListeners() {
-		let headerOverlayNode = /** @type {HTMLElement} */ (
-			this.#headerOverlayNode
-		)
-
-		headerOverlayNode.removeEventListener(`click`, this.#handleOverlayClick)
 		globalThis.removeEventListener(`keydown`, this.#handleEscapePress)
 	}
 
 	/**
-	 * @param {boolean} isActive
+	 * @param {boolean} isOpen
 	 * @returns {void}
 	 */
-	#toggleOverlay(isActive) {
-		let headerNode = /** @type {HTMLElement} */ (this.#headerNode)
+	#toggleOverlay(isOpen) {
+		let headerMenuNode = /** @type {HTMLElement} */ (this.#headerMenuNode)
 		let headerButtonNode = /** @type {HTMLButtonElement} */ (
 			this.#headerButtonNode
 		)
+		let focusTrap = /** @type {ReturnType<typeof subscribeFocusTrap>} */ (
+			this.#focusTrap
+		)
 
-		document.body.style.overflowY = isActive ? `hidden` : ``
+		document.documentElement.classList.toggle(`page--no-scroll`, isOpen)
 
-		headerNode.classList.toggle(HEADER_ACTIVE_CLASS)
+		headerButtonNode.ariaExpanded = isOpen.toString()
 
-		headerButtonNode.ariaExpanded = isActive.toString()
+		if (isOpen) {
+			headerMenuNode.classList.remove(`header__menu--closed`)
 
-		isActive ? this.#initOverlayListeners() : this.#removeOverlayListeners()
+			setTimeout(() => {
+				headerMenuNode.classList.add(`header__menu--opened`)
+			}, 50)
 
-		let focusTrapElements = /** @type {HTMLElement[]} */ ([
-			headerButtonNode,
-			...this.headerLinkNodes,
-		])
+			this.#initOverlayListeners()
 
-		if (isActive) {
-			this.#cleanFocusTrap = subscribeFocusTrap(...focusTrapElements)
+			focusTrap.activate()
 		} else {
-			let cleanFocusTrap = /** @type {() => void} */ (
-				this.#cleanFocusTrap
+			headerMenuNode.addEventListener(
+				`transitionend`,
+				() => {
+					let hasOpenClass =
+						headerMenuNode.classList.contains(
+							`header__menu--opened`,
+						)
+
+					if (hasOpenClass) {
+						return
+					}
+
+					headerMenuNode.classList.add(`header__menu--closed`)
+				},
+				{
+					once: true,
+				},
 			)
 
-			cleanFocusTrap()
+			headerMenuNode.classList.remove(`header__menu--opened`)
+
+			focusTrap.deactivate()
+
+			this.#removeOverlayListeners()
 		}
 	}
 
@@ -134,11 +145,12 @@ class Navigation {
 	 */
 	init(headerNode) {
 		this.#headerNode = headerNode
-		this.#headerOverlayNode = /** @type {HTMLElement} */ (
-			this.#headerNode.querySelector(`.header__navigation-wrapper`)
+
+		this.#headerMenuNode = /** @type {HTMLElement} */ (
+			headerNode.querySelector(`.header__menu`)
 		)
 		this.#headerButtonNode = /** @type {HTMLButtonElement} */ (
-			this.#headerNode.querySelector(`.header__toggle-button`)
+			headerNode.querySelector(`.header__button`)
 		)
 
 		this.#initListeners()

@@ -5,7 +5,7 @@ let config = {
 	...baseConfig,
 	'**/*.css': [() => `npm run ci:lint:css`],
 	'**/*.js': [() => `npm run ci:lint:js`, () => `npm run ci:lint:type`],
-	'**/*.njk': [() => `npm run ci:lint:html`, () => `npm run ci:lint:bem`],
+	'**/*.njk': [() => `npm run ci:lint:bem`],
 }
 
 export default config

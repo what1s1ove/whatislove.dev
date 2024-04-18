@@ -1,188 +1,88 @@
 .intro {
-	background-color: var(--color-secondary);
-
-	@media print {
-		* {
-			color: #000000;
-		}
-	}
+	display: grid;
+	padding-block: 25px;
 }
 
 .intro__wrapper {
-	padding: 30px 0;
-
-	@media (--width-tablet) {
-		padding: 30px 15px 50px;
-	}
-
-	@media (--width-desktop) {
-		max-width: 940px;
-		padding: 30px 15px 80px;
-		margin: 0 auto;
-	}
-}
-
-.intro__header {
-	margin: 0 0 35px;
-
-	@media (--width-desktop) {
-		margin: 0 0 50px;
-	}
-
-	@media print {
-		display: none;
-	}
-}
-
-.intro__content {
 	display: grid;
-	gap: 25px 0;
-
-	@media (--width-tablet) {
-		grid-auto-flow: column;
-		gap: 0 60px;
-		justify-content: center;
-	}
+	padding: 25px;
+	margin-block: 0 25px;
+	background-color: var(--color-intro-background);
+	border-radius: 8px;
 }
 
-.intro__image-wrapper {
-	position: relative;
-	display: flex;
-	align-items: flex-end;
-	justify-content: center;
-	width: 305px;
-	margin: 0 auto;
-	overflow: hidden;
+.intro__paw {
+	--paw-size: 48px;
+	--rotate: 20deg;
 
-	&::before,
-	&::after {
-		position: absolute;
-		left: 50%;
-		width: 100%;
-		content: "";
-		mask-repeat: no-repeat;
-		mask-position: 50% 50%;
-		mask-size: contain;
-		transform: translateX(-50%);
-	}
+	flex-direction: column;
+	place-self: end;
+	margin-block: 0 -50px;
+	color: var(--color-pink-100);
+	rotate: var(--rotate);
 
 	&::before {
-		bottom: 0;
-		height: 275px;
-		background-color: var(--color-primary);
-		mask-image: url("../images/intro-photo.mask.svg");
+		width: var(--paw-size);
+		height: var(--paw-size);
+		content: "";
+		background-image: url("/images/lapka.svg");
+		filter: var(--filter-sticker);
+		background-position: 50% 50%;
+		background-size: contain;
+		border-radius: 50%;
+		rotate: calc(0deg - var(--rotate));
+		translate: 5px 5px;
 	}
 
-	&::after {
-		bottom: -0.5px;
-		height: 145px;
-		background-color: var(--color-secondary);
-		mask-image: url("../images/intro-photo-border.mask.svg");
-	}
-
-	& img {
-		display: block;
-		max-width: 100%;
-		margin: 0 auto;
-		filter: drop-shadow(-8px 7px 0.3px var(--color-secondary));
-		transform: translateX(15px);
-		will-change: filter;
-	}
-
-	@media print {
-		padding: 0;
-		margin: 0 auto;
-
-		&::before,
-		&::after {
-			display: none;
-		}
+	@media (hover: hover) {
+		cursor: url("/images/lapka.svg"), pointer;
 	}
 }
 
-.intro__personal-wrapper {
-	padding: 0 30px;
-
-	@media (--width-tablet) {
-		padding: 0;
-	}
+.intro__paw-text {
+	font-size: 24px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	fill: currentcolor;
 }
 
-.intro__personal-title {
-	margin: 0 0 15px;
-	text-align: center;
-	text-transform: uppercase;
-
-	@media (--width-tablet) {
-		text-align: left;
-	}
+.intro__picture {
+	place-self: center;
+	margin-block: 0 55px;
 }
 
-.intro__list {
-	display: grid;
-	gap: 15px 0;
-	padding: 0;
-	margin: 0 0 25px;
+.intro__photo {
+	display: block;
+	padding-inline: 6px;
+	filter: drop-shadow(-6px 4px 0 var(--color-red-200));
+	mask-image: linear-gradient(
+		to bottom,
+		hsl(var(--color-intro-image-mask) / 80%) 40%,
+		hsla(var(--color-intro-image-mask) / 0%) 95%
+	);
 }
 
-.intro__item {
-	display: grid;
-	gap: 3px 0;
-}
-
-.intro__item--socials {
-	@media print {
-		& .intro__item-title {
-			position: unset;
-			width: unset;
-			height: unset;
-			clip-path: unset;
-		}
-	}
-}
-
-.intro__item-title {
-	font-weight: 700;
-
-	@media print {
-		content: ":";
-	}
-}
-
-.intro__item-desc {
+.intro__welcome {
 	margin: 0;
-	line-height: 1;
-
-	& a {
-		color: inherit;
-		text-decoration: none;
-
-		&[href]:hover {
-			text-decoration: underline;
-		}
-	}
-
-	@media print {
-		padding: 0 0 0 7px;
-	}
+	font-size: var(--font-size-heading-3);
 }
 
-.intro__myself-title {
-	margin: 0 0 5px;
-	text-align: center;
-	text-transform: uppercase;
-
-	@media (--width-tablet) {
-		margin: 0 0 15px;
-		text-align: left;
-	}
-}
-
-.intro__myself-desc {
+.intro__name {
 	margin: 0;
-	text-align: center;
+	font-size: var(--font-size-heading-2);
+	font-weight: 500;
+	text-transform: uppercase;
+}
 
-	@media (--width-tablet) {
-		text-align: left;
-	}
+.intro__description {
+	margin-block: 0 25px;
+	font-size: var(--font-size-heading-3);
+}
+
+.intro__promo {
+	margin-block: 0 25px;
+	font-family: var(--font-family-highlight);
+	font-size: var(--font-size-highlight);
+	color: var(--color-red-100);
+	text-transform: uppercase;
 }
