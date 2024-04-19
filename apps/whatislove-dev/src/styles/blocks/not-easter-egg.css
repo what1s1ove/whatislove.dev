@@ -8,7 +8,7 @@
 	}
 }
 
-.not-easter-egg {
+.not-easter-egg__button-wrapper {
 	position: absolute;
 	padding: 15px;
 	margin: 0;
@@ -45,4 +45,25 @@
 	&:focus-within {
 		opacity: 1;
 	}
+}
+
+@keyframes append {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.not-easter-egg__audio-control {
+	--shift: 15px;
+	--icon-url: url("/images/icons.svg#brocken-heart");
+	--icon-url-active: url("/images/icons.svg#heart");
+
+	position: fixed;
+	inset-block-end: var(--shift);
+	inset-inline-end: var(--shift);
+	animation: append 1s ease-out;
 }

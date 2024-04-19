@@ -43,9 +43,12 @@
 		{{ content | safe }}
 		{% include 'footer.njk' %}
 
-		<p class="not-easter-egg">
-			<button class="not-easter-egg__button action" type="button" aria-label="Easter egg">🥚</button>
-		</p>
+		<section class="not-easter-egg">
+			<h2 class="not-easter-egg__title visually-hidden">Not an Easter Egg (but actually it is, yes 😁)</h2>
+			<div class="not-easter-egg__button-wrapper">
+				<button class="not-easter-egg__button action" type="button" aria-label="Easter egg">🥚</button>
+			</div>
+		</section>
 
 		<p class="toast" role="alert" aria-live="polite"></p>
 

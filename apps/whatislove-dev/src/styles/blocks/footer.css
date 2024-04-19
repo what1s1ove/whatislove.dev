@@ -44,7 +44,11 @@
 	text-underline-offset: 5px;
 }
 
-.footer__designer {
+.footer__credits-icon {
+	font-style: normal;
+}
+
+.footer__credits-designer {
 	color: inherit;
 }
 
