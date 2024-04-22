@@ -44,81 +44,87 @@ permalink: 'index.html'
 					alt="Vladyslav Zubko Portrait."
 				/>
 			</picture>
-			<p class="intro__welcome">Hi, my name is</p>
-			<h1 class="intro__name">Vladyslav Zubko</h1>
+			<header class="intro__header">
+				<p class="intro__welcome">Hi, my name is</p>
+				<h1 class="intro__name">Vladyslav Zubko</h1>
+			</header>
 		</div>
-		<p class="intro__description">
-			I’m a full-stack remote web developer with 5+ years of experience, and I'll help you become a web developer
-			with bite-sized dev tips.
-		</p>
-		<p class="intro__promo">With semantics, a11y and love</p>
+		<div class="intro__description-wrapper">
+			<p class="intro__description">
+				I’m a full-stack remote web developer with 5+ years of experience, and I'll help you become a web
+				developer with bite-sized dev tips.
+			</p>
+			<p class="intro__promo">With semantics, a11y and love</p>
+		</div>
 		{{ socialList(introSocials, 'intro__social-list') }}
 	</div>
-	<section class="experience column">
-		<h2 class="experience__title">Experience</h2>
-		<form class="experience__form">
-			<label class="experience__form-label">
-				<input class="experience__form-control" type="radio" name="type" value="position" checked />
-				Positions
-			</label>
-			<label class="experience__form-label">
-				<input class="experience__form-control" type="radio" name="type" value="certificate" />
-				Certificates
-			</label>
-			<label class="experience__form-label">
-				<input class="experience__form-control" type="radio" name="type" value="meetup" />
-				Meetups
-			</label>
-			<label class="experience__form-label">
-				<input class="experience__form-control" type="radio" name="type" value="book" />
-				Book
-			</label>
-		</form>
-		<div class="experience__timeline-wrapper">
-			<ul class="experience__timeline timeline"></ul>
-		</div>
-	</section>
-	<section class="stickers column">
-		<h2 class="stickers__title visually-hidden">Stickers</h2>
-		<ul class="stickers__list">
-			<li class="stickers__item stickers__item--full stickers__item--nodejs">
-				<span class="visually-hidden">Node.js</span>
-			</li>
-			<li class="stickers__item stickers__item--beerjs">
-				<span class="visually-hidden">BeerJS</span>
-			</li>
-			<li class="stickers__item stickers__item--react">
-				<span class="visually-hidden">React</span>
-			</li>
-			<li class="stickers__item stickers__item--aws">
-				<span class="visually-hidden">AWS</span>
-			</li>
-			<li class="stickers__item stickers__item--acidtwo">
-				<span class="visually-hidden">Acid2</span>
-			</li>
-			<li class="stickers__item stickers__item--dom">
-				<span class="visually-hidden">DOM API</span>
-			</li>
-			<li class="stickers__item stickers__item--webcomponents">
-				<span class="visually-hidden">WebComponents</span>
-			</li>
-			<li class="stickers__item stickers__item--vans">
-				<span class="visually-hidden">Vans</span>
-			</li>
-			<li class="stickers__item stickers__item--xl">
-				<span class="visually-hidden">Gloomy Forest</span>
-			</li>
-			<li class="stickers__item stickers__item--berserk">
-				<span class="visually-hidden">Berserk</span>
-			</li>
-			<li class="stickers__item stickers__item--pair stickers__item--love">
-				<span class="visually-hidden">Love</span>
-			</li>
-			<li class="stickers__item stickers__item--jagermeister">
-				<span class="visually-hidden">Jagermeister</span>
-			</li>
-		</ul>
-	</section>
+	<div class="main__row column">
+		<section class="experience">
+			<h2 class="experience__title">Experience</h2>
+			<form class="experience__form">
+				<label class="experience__form-label">
+					<input class="experience__form-control" type="radio" name="type" value="position" checked />
+					Positions
+				</label>
+				<label class="experience__form-label">
+					<input class="experience__form-control" type="radio" name="type" value="certificate" />
+					Certificates
+				</label>
+				<label class="experience__form-label">
+					<input class="experience__form-control" type="radio" name="type" value="meetup" />
+					Meetups
+				</label>
+				<label class="experience__form-label">
+					<input class="experience__form-control" type="radio" name="type" value="book" />
+					Book
+				</label>
+			</form>
+			<div class="experience__timeline-wrapper">
+				<ul class="experience__timeline-list timeline"></ul>
+			</div>
+		</section>
+		<section class="stickers">
+			<h2 class="stickers__title visually-hidden">Stickers</h2>
+			<ul class="stickers__list">
+				<li class="stickers__item stickers__item--full stickers__item--nodejs">
+					<span class="visually-hidden">Node.js</span>
+				</li>
+				<li class="stickers__item stickers__item--beerjs">
+					<span class="visually-hidden">BeerJS</span>
+				</li>
+				<li class="stickers__item stickers__item--react">
+					<span class="visually-hidden">React</span>
+				</li>
+				<li class="stickers__item stickers__item--aws">
+					<span class="visually-hidden">AWS</span>
+				</li>
+				<li class="stickers__item stickers__item--acidtwo">
+					<span class="visually-hidden">Acid2</span>
+				</li>
+				<li class="stickers__item stickers__item--dom">
+					<span class="visually-hidden">DOM API</span>
+				</li>
+				<li class="stickers__item stickers__item--webcomponents">
+					<span class="visually-hidden">WebComponents</span>
+				</li>
+				<li class="stickers__item stickers__item--vans">
+					<span class="visually-hidden">Vans</span>
+				</li>
+				<li class="stickers__item stickers__item--xl">
+					<span class="visually-hidden">Gloomy Forest</span>
+				</li>
+				<li class="stickers__item stickers__item--berserk">
+					<span class="visually-hidden">Berserk</span>
+				</li>
+				<li class="stickers__item stickers__item--pair stickers__item--love">
+					<span class="visually-hidden">Love</span>
+				</li>
+				<li class="stickers__item stickers__item--jagermeister">
+					<span class="visually-hidden">Jagermeister</span>
+				</li>
+			</ul>
+		</section>
+	</div>
 	<section class="channel column">
 		<h2 class="channel__title visually-hidden">My telegram channel</h2>
 		<ul class="channel__content-list channel__content-list--top" aria-hidden="true">

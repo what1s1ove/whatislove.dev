@@ -2,6 +2,10 @@
 	display: grid;
 	gap: 20px;
 	padding-block: 25px;
+
+	@media (--width-tablet) {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 
 .footer__webring {
@@ -12,6 +16,10 @@
 	place-self: center;
 	align-items: center;
 	margin-block: 0 30px;
+
+	@media (--width-tablet) {
+		grid-column-start: span 2;
+	}
 }
 
 .footer__webring-main {
@@ -53,6 +61,11 @@
 }
 
 .footer__copyrigng {
+	order: calc(infinity);
 	margin: 0;
 	color: var(--color-gray-100);
+
+	@media (--width-tablet) {
+		order: initial;
+	}
 }

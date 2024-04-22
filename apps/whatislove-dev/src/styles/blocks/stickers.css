@@ -1,6 +1,9 @@
 .stickers {
 	padding-block: 25px;
-	overflow: hidden;
+
+	@media (--width-tablet) {
+		align-self: center;
+	}
 }
 
 .stickers__list {

@@ -94,3 +94,5 @@
 		}
 	}
 }
+
+@custom-media --width-tablet (width >= 768px);

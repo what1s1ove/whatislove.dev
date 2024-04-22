@@ -1,10 +1,16 @@
 .experience {
-	padding-block: 25px;
+	--padding-section: 25px;
+
+	padding-block: var(--padding-section);
 }
 
 .experience__title {
 	margin-block: 0 25px;
 	font-size: var(--font-size-heading-2);
+
+	@media (--width-tablet) {
+		padding-inline: var(--padding-section);
+	}
 }
 
 .experience__form {
@@ -12,6 +18,10 @@
 	flex-wrap: wrap;
 	gap: 10px;
 	margin-block: 0 40px;
+
+	@media (--width-tablet) {
+		padding-inline: var(--padding-section);
+	}
 }
 
 .experience__form-label {
@@ -37,5 +47,14 @@
 
 	&:focus {
 		outline: 0;
+	}
+}
+
+.experience__timeline-list {
+	max-height: 75vh;
+	overflow-y: auto;
+
+	@media (--width-tablet) {
+		max-height: 900px;
 	}
 }

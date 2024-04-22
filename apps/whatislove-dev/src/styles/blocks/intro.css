@@ -1,14 +1,22 @@
 .intro {
+	--gap-section: 25px;
+	--padding-section: 25px;
+
 	display: grid;
-	padding-block: 25px;
+	gap: var(--gap-section);
+	padding-block: var(--padding-section);
 }
 
 .intro__wrapper {
 	display: grid;
 	padding: 25px;
-	margin-block: 0 25px;
 	background-color: var(--color-intro-background);
 	border-radius: 8px;
+
+	@media (--width-tablet) {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;
+	}
 }
 
 .intro__paw {
@@ -37,6 +45,12 @@
 	@media (hover: hover) {
 		cursor: url("/images/lapka.svg"), pointer;
 	}
+
+	@media (--width-tablet) {
+		place-self: start end;
+		order: calc(infinity);
+		margin: 0;
+	}
 }
 
 .intro__paw-text {
@@ -49,6 +63,10 @@
 .intro__picture {
 	place-self: center;
 	margin-block: 0 55px;
+
+	@media (--width-tablet) {
+		margin: 0;
+	}
 }
 
 .intro__photo {
@@ -60,6 +78,13 @@
 		hsl(var(--color-intro-image-mask) / 80%) 40%,
 		hsla(var(--color-intro-image-mask) / 0%) 95%
 	);
+}
+
+.intro__header {
+	@media (--width-tablet) {
+		place-self: end start;
+		order: -1;
+	}
 }
 
 .intro__welcome {
@@ -74,15 +99,38 @@
 	text-transform: uppercase;
 }
 
+.intro__description-wrapper {
+	display: grid;
+	gap: var(--gap-section);
+
+	@media (--width-tablet) {
+		grid-template-columns: repeat(2, 1fr);
+		grid-auto-flow: column;
+		padding-inline: var(--padding-section);
+	}
+}
+
 .intro__description {
-	margin-block: 0 25px;
+	margin: 0;
 	font-size: var(--font-size-heading-3);
 }
 
 .intro__promo {
-	margin-block: 0 25px;
+	margin: 0;
 	font-family: var(--font-family-highlight);
 	font-size: var(--font-size-highlight);
 	color: var(--color-red-100);
 	text-transform: uppercase;
+
+	@media (--width-tablet) {
+		place-self: center;
+		max-width: 250px;
+		text-align: center;
+	}
+}
+
+.intro__social-list {
+	@media (--width-tablet) {
+		padding-inline: var(--padding-section);
+	}
 }
