@@ -30,6 +30,7 @@
 	--color: var(--color-red-100);
 
 	margin: 0;
+	font-size: var(--font-size-text-small);
 	color: var(--color);
 
 	&::before {
@@ -47,6 +48,7 @@
 .timeline__item-title {
 	margin: 0;
 	font-size: var(--font-size-heading-3);
+	font-weight: 500;
 }
 
 .timeline__item-origin,
@@ -56,6 +58,7 @@
 	display: inline-flex;
 	gap: 6px;
 	align-items: center;
+	font-size: var(--font-size-text-small);
 	color: inherit;
 	text-underline-offset: 3px;
 

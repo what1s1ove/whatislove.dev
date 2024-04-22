@@ -1,4 +1,4 @@
-.call {
+.aside {
 	position: relative;
 	display: grid;
 	gap: 20px;
@@ -6,7 +6,7 @@
 	padding-block: 100px;
 }
 
-.call__border {
+.aside__border {
 	--offset: 30px;
 	--color: var(--color-page-background-highlight);
 
@@ -29,21 +29,21 @@
 	}
 }
 
-.call__border--top {
+.aside__border--top {
 	inset-block-start: var(--offset);
 }
 
-.call__border--bottom {
+.aside__border--bottom {
 	inset-block-end: var(--offset);
 }
 
-.call__title {
+.aside__title {
 	font-family: var(--font-family-highlight);
 	font-size: var(--font-size-highlight);
 	text-align: center;
 }
 
-.call__email {
+.aside__email {
 	font-size: var(--font-size-heading-3);
 	color: var(--color-red-100);
 	text-underline-offset: 7px;

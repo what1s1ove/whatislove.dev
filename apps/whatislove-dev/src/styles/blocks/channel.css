@@ -152,6 +152,6 @@
 .channel__description {
 	margin: 0;
 	font-family: var(--font-family-highlight);
-	font-size: var(--font-size-heading-3);
+	font-size: var(--font-size-heading-2);
 	text-align: center;
 }

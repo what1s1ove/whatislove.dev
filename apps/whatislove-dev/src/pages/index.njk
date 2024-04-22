@@ -197,18 +197,5 @@ permalink: 'index.html'
 		</ul>
 	</section>
 </main>
-<aside class="call column">
-	<span class="call__border call__border--top">
-		<svg class="call__border-object" width="40" height="12" aria-hidden="true">
-			<use href="/images/icons.svg#infinity"></use>
-		</svg>
-	</span>
-	<b class="call__title">Let's change the world together!</b>
-	<a class="call__email" href="mailto:{{ global.email }}">{{ global.email }}</a>
-	{{ socialList(global.socials, 'call__social-list', true) }}
-	<span class="call__border call__border--bottom">
-		<svg class="call__border-object" width="40" height="12" aria-hidden="true">
-			<use href="/images/icons.svg#infinity"></use>
-		</svg>
-	</span>
-</aside>
+
+{% include 'aside.njk' %}
