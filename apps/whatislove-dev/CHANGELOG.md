@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.22.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.21.0...@whatislove.dev/whatislove-dev-v1.22.0) (2024-04-23)
+
+
+### Features
+
+* add sticker to logo wd-390 ([#394](https://github.com/what1s1ove/whatislove.dev/issues/394)) ([43ccd92](https://github.com/what1s1ove/whatislove.dev/commit/43ccd92adbbe0c30fb2722d89d409ac0a3dcf22c))
+
 ## [1.21.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.20.0...@whatislove.dev/whatislove-dev-v1.21.0) (2024-04-23)
 
 
