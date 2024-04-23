@@ -11,8 +11,13 @@
 
 		<link rel="stylesheet" href="/styles/index.css" />
 
-		<link rel="preload" href="/fonts/roboto-400.woff2" crossorigin="anonymous" as="font" type="font/woff2" />
-		<link rel="preload" href="/fonts/roboto-700.woff2" crossorigin="anonymous" as="font" type="font/woff2" />
+		<link
+			rel="preload"
+			href="/fonts/red-hat-display-variable.woff2"
+			crossorigin="anonymous"
+			as="font"
+			type="font/woff2"
+		/>
 
 		<link rel="icon" href="/images/icons/icon.svg" type="image/svg+xml" />
 		<link rel="manifest" href="/manifest.json" />
@@ -33,11 +38,22 @@
 		<meta name="twitter:site" content="@what1s1oveee" />
 	</head>
 	<body class="page__body">
+		{% include 'header.njk' %}
+
 		{{ content | safe }}
-		<p class="not-easter-egg">
-			<button class="not-easter-egg__button" type="button">🥚 <span class="visually-hidden">(easter egg)</span></button>
-		</p>
+		{% include 'footer.njk' %}
+
+		<section class="not-easter-egg">
+			<h2 class="not-easter-egg__title visually-hidden">Not an Easter Egg (but actually it is, yes 😁)</h2>
+			<div class="not-easter-egg__button-wrapper">
+				<button class="not-easter-egg__button action" type="button" aria-label="Easter egg">🥚</button>
+			</div>
+		</section>
+
 		<p class="toast" role="alert" aria-live="polite"></p>
+
+		{% include 'shapes.njk' %}
+
 		<script src="/scripts/index.js" defer></script>
 	</body>
 </html>

@@ -1,6 +1,15 @@
-.not-easter-egg {
+@keyframes shine {
+	15% {
+		left: 125%;
+	}
+
+	100% {
+		left: 125%;
+	}
+}
+
+.not-easter-egg__button-wrapper {
 	position: absolute;
-	z-index: var(--z-index-level-four);
 	padding: 15px;
 	margin: 0;
 	overflow: hidden;
@@ -8,15 +17,15 @@
 
 	&::before {
 		position: absolute;
-		top: 50%;
-		left: -75%;
+		inset-block-start: 50%;
+		inset-inline-start: -75%;
 		z-index: 2;
 		display: block;
 		width: 50%;
 		height: 100%;
 		pointer-events: none;
 		content: "";
-		background-color: rgb(255 215 0 / 20%);
+		background-color: hsl(var(--color-yellow-100) / 20%);
 		transform: skewX(-25deg) translateY(-50%);
 		animation: shine 5s infinite;
 	}
@@ -27,12 +36,8 @@
 }
 
 .not-easter-egg__button {
-	padding: 0;
-	font-size: 50px;
+	font-size: var(--font-size-highlight);
 	line-height: 1;
-	cursor: pointer;
-	background-color: transparent;
-	border: 0;
 	opacity: 0;
 	transition: opacity 0.7s ease-in-out;
 
@@ -40,4 +45,26 @@
 	&:focus-within {
 		opacity: 1;
 	}
+}
+
+@keyframes append {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.not-easter-egg__audio-control {
+	--shift: 15px;
+	--icon-color: var(--color-red-100);
+	--icon-url: url("/images/icons.svg#brocken-heart");
+	--icon-url-active: url("/images/icons.svg#heart");
+
+	position: fixed;
+	inset-block-end: var(--shift);
+	inset-inline-end: var(--shift);
+	animation: append 1s ease-out;
 }

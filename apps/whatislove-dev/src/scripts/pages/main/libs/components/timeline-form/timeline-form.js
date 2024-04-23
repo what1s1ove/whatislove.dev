@@ -1,14 +1,12 @@
-import { fillSelectOptions, getFormValues } from '~/libs/helpers/helpers.js'
+import { fillSelectOptions, getFormPayload } from '~/libs/helpers/helpers.js'
 import {
 	TimelineApi,
 	TimelineCreatePayload,
-	TimelineSkillType,
 	TimelineType,
 } from '~/modules/timeline/timeline.js'
 
 import { getTransformedTimeline } from './helpers/helpers.js'
 
-let timelineSkillTypes = Object.values(TimelineSkillType)
 let timelineTypes = Object.values(TimelineType)
 
 class TimelineForm {
@@ -51,12 +49,6 @@ class TimelineForm {
 
 		fillSelectOptions(
 			/** @type {HTMLSelectElement} */ (
-				timelineFormNode.querySelector(`select[name="skillType"]`)
-			),
-			timelineSkillTypes,
-		)
-		fillSelectOptions(
-			/** @type {HTMLSelectElement} */ (
 				timelineFormNode.querySelector(`select[name="type"]`)
 			),
 			timelineTypes,
@@ -74,7 +66,7 @@ class TimelineForm {
 			this.#timelineFormNode
 		)
 		let formValues = /** @type {TimelineCreatePayload} */ (
-			getFormValues(timelineFormNode)
+			getFormPayload(timelineFormNode)
 		)
 
 		await this.#timelineApi.saveTimeline(getTransformedTimeline(formValues))

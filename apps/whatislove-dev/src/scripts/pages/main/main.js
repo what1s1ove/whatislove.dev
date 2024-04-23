@@ -2,7 +2,6 @@ import { Toast } from '~/libs/components/components.js'
 import { Storage } from '~/libs/modules/storage/storage.js'
 import { ToastMessagePayload } from '~/libs/types/types.js'
 import { TimelineApi } from '~/modules/timeline/timeline.js'
-import { SettingsButtonPayload } from '~/pages/main/libs/types/types.js'
 
 import {
 	EasterEgg,
@@ -21,9 +20,6 @@ class Main {
 
 	/** @type {(message: ToastMessagePayload) => void} */
 	#handleNotificationAdd
-
-	/** @type {(settings: SettingsButtonPayload) => HTMLButtonElement} */
-	#handleSettingButtonAppend
 
 	/** @type {HTMLElement | undefined} */
 	#headerNode
@@ -62,8 +58,6 @@ class Main {
 	 * }} constructor
 	 */
 	constructor({ storage, timelineApi }) {
-		this.#handleSettingButtonAppend =
-			this.#appendSettingButtonHandler.bind(this)
 		this.#handleNotificationAdd = this.#addSettingButtonHandler.bind(this)
 
 		this.#settingsComponent = new Settings({
@@ -75,7 +69,6 @@ class Main {
 		})
 		this.#easterEggComponent = new EasterEgg({
 			onNotificationAdd: this.#handleNotificationAdd,
-			onSettingButtonAppend: this.#handleSettingButtonAppend,
 		})
 		this.#toastComponent = new Toast()
 		this.#timelineFormComponent = new TimelineForm({
@@ -97,14 +90,6 @@ class Main {
 		this.#toastComponent.pushMessage(message)
 	}
 
-	/**
-	 * @param {SettingsButtonPayload} settings
-	 * @returns {HTMLButtonElement}
-	 */
-	#appendSettingButtonHandler(settings) {
-		return this.#settingsComponent.appendNewButton(settings)
-	}
-
 	/** @returns {void} */
 	init() {
 		this.#toastNode = /** @type {HTMLElement | undefined} */ (
@@ -117,7 +102,7 @@ class Main {
 			document.querySelector(`.header`) ?? undefined
 		)
 		this.#timelineNode = /** @type {HTMLElement | undefined} */ (
-			document.querySelector(`.timeline`) ?? undefined
+			document.querySelector(`.experience`) ?? undefined
 		)
 		this.#easterEggNode = /** @type {HTMLElement | undefined} */ (
 			document.querySelector(`.not-easter-egg`) ?? undefined
@@ -131,7 +116,7 @@ class Main {
 		}
 
 		if (this.#settingListNode) {
-			this.#settingsComponent.init(this.#settingListNode)
+			this.#settingsComponent.init()
 		}
 
 		if (this.#headerNode) {

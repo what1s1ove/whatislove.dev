@@ -1,0 +1,116 @@
+.stickers {
+	padding-block: 25px;
+
+	@media (--width-tablet) {
+		place-self: center;
+	}
+}
+
+.stickers__list {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px 0;
+	place-items: center;
+	max-width: 375px;
+	padding: 0;
+	margin: 0;
+	margin-inline: auto;
+	list-style: none;
+}
+
+.stickers__item {
+	aspect-ratio: 1 / 1;
+	filter: var(--filter-sticker);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: contain;
+}
+
+.stickers__item--full {
+	grid-column: 1 / -1;
+}
+
+.stickers__item--pair {
+	grid-column: span 2;
+}
+
+.stickers__item--nodejs {
+	width: 110px;
+	background-image: url("/images/stickers.svg#nodejs");
+	rotate: 10deg;
+}
+
+.stickers__item--beerjs {
+	width: 130px;
+	background-image: url("/images/stickers.svg#beerjs");
+	rotate: -10deg;
+}
+
+.stickers__item--react {
+	width: 85px;
+	background-image: url("/images/stickers.svg#react");
+	rotate: 10deg;
+	translate: -10px -5px;
+}
+
+.stickers__item--aws {
+	width: 120px;
+	background-image: url("/images/stickers.svg#aws");
+	rotate: -7deg;
+	translate: -5px -30px;
+}
+
+.stickers__item--acidtwo {
+	width: 125px;
+	background-image: url("/images/stickers.svg#acid2");
+	rotate: -2deg;
+	translate: -35px 15px;
+}
+
+.stickers__item--dom {
+	width: 100px;
+	background-image: url("/images/stickers.svg#dom-api");
+	translate: -15px -10px;
+}
+
+.stickers__item--webcomponents {
+	width: 100px;
+	background-image: url("/images/stickers.svg#webcomponents");
+	rotate: -10deg;
+	translate: -5px -45px;
+}
+
+.stickers__item--vans {
+	width: 120px;
+	background-image: url("/images/stickers.svg#vans");
+	rotate: 40deg;
+	translate: -15px 30px;
+}
+
+.stickers__item--xl {
+	width: 120px;
+	background-image: url("/images/stickers.svg#xl");
+	rotate: -3deg;
+	translate: -20px -15px;
+}
+
+.stickers__item--berserk {
+	width: 110px;
+	background-image: url("/images/stickers.svg#berserk");
+	rotate: -5deg;
+	translate: -25px -45px;
+}
+
+.stickers__item--love {
+	width: 140px;
+	background-image: url("/images/stickers.svg#love");
+	rotate: 40deg;
+	translate: 35px 10px;
+}
+
+.stickers__item--jagermeister {
+	width: 110px;
+	background-image: url("/images/stickers.svg#jagermeister");
+	rotate: -5deg;
+	translate: -10px -60px;
+}

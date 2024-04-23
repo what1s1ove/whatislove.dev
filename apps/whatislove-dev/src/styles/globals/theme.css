@@ -1,6 +1,0 @@
-*,
-*::before,
-*::after {
-	transition-duration: var(--transition-duration-theme);
-	transition-property: border-color, background-color, filter, fill;
-}

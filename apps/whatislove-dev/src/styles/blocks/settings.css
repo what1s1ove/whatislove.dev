@@ -1,149 +1,60 @@
 .settings {
-	position: fixed;
-	z-index: var(--z-index-level-three);
-	display: grid;
-	gap: 7px 0;
-	padding: 0;
-	margin: 0;
-	list-style: none;
+	display: inline-flex;
+	gap: 10px;
+	align-items: center;
+	justify-self: center;
+	padding-block: 8px;
+	padding-inline: 10px;
+	background-color: var(--color-page-background-highlight);
+	border-radius: 5px;
 }
 
-.settings__item-fieldset {
-	display: flex;
-	padding: 1px 2px;
-	margin: 0;
-	background-color: var(--color-secondary);
-	border: 1px solid var(--color-primary);
-	border-radius: 20px;
+.settings__theme-label {
+	font-family: var(--font-family-highlight);
+	font-size: var(--font-size-heading-2);
+	line-height: 0.75;
+	text-transform: uppercase;
+	cursor: pointer;
+	opacity: 0.5;
+
+	&:has(:checked) {
+		opacity: 1;
+	}
+
+	&:has(:focus-visible) {
+		border-radius: var(--radius-focus);
+		outline: var(--outline-focus);
+		outline-offset: var(--offset-focus);
+	}
 }
 
-.settings__item-wrapper {
-	position: relative;
-}
+.settings__theme-control {
+	--icon-size: 22px;
 
-.settings__item-control {
 	display: block;
-	width: 22px;
-	height: 22px;
 	margin: 0;
 	appearance: none;
 	cursor: pointer;
 
-	&::before,
-	&::after {
-		position: absolute;
-		content: "";
+	&:focus-visible {
+		outline: none;
 	}
 
-	&::before {
-		inset: 0;
-		z-index: var(--z-index-level-two);
-		filter: var(--invert-icon-primary);
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: 16px;
-		transition-duration: unset;
-		will-change: filter;
+	&[value="light"],
+	&[value="dark"] {
+		width: var(--icon-size);
+		height: var(--icon-size);
+		background-color: var(--color-icon);
+		mask-repeat: no-repeat;
+		mask-position: 50%;
+		mask-size: contain;
 	}
 
-	&::after {
-		top: 50%;
-		left: 50%;
-		z-index: var(--z-index-level-one);
-		display: none;
-		width: 21px;
-		height: 21px;
-		background-color: var(--color-primary);
-		border-radius: 50%;
-		transform: translate(-50%, -50%);
+	&[value="light"] {
+		mask-image: url("/images/icons.svg#light");
 	}
 
-	&:checked {
-		&::before {
-			filter: var(--invert-icon-secondary);
-			transition-duration: unset;
-		}
-
-		&::after {
-			display: block;
-		}
-	}
-}
-
-.settings__item-control--auto {
-	&::before {
-		background-image: url("../images/auto.bg.svg");
-	}
-}
-
-.settings__item-control--light {
-	&::before {
-		background-image: url("../images/theme-light.bg.svg");
-	}
-}
-
-.settings__item-control--dark {
-	&::before {
-		background-image: url("../images/theme-dark.bg.svg");
-	}
-}
-
-.settings__item-control--nopreference {
-	&::before {
-		background-image: url("../images/notion-no-preference.bg.svg");
-	}
-}
-
-.settings__item-control--reduce {
-	&::before {
-		background-image: url("../images/notion-reduce.bg.svg");
-	}
-}
-
-.settings__item-switch {
-	position: relative;
-	display: block;
-	width: 72px;
-	height: 26px;
-	padding: 0;
-	cursor: pointer;
-	background-color: var(--color-secondary);
-	background-repeat: no-repeat;
-	background-position: right 8px top 50%;
-	background-size: 20px;
-	border: 1px solid var(--color-primary);
-	border-radius: 20px;
-
-	&::before {
-		position: absolute;
-		top: 50%;
-		left: 0;
-		width: 50%;
-		height: 21px;
-		content: "";
-		background-color: var(--color-primary);
-		border-radius: 20px;
-		transform: translate(2px, -50%);
-	}
-
-	&[aria-checked="true"] {
-		background-position: left 8px top 50%;
-
-		&::before {
-			right: 0;
-			left: unset;
-			transform: translate(-2px, -50%);
-		}
-	}
-}
-
-.settings__item-switch--whatislove {
-	background-image: url("../images/heart-broken.bg.svg");
-	animation-name: append;
-	animation-duration: 1s;
-	animation-timing-function: ease-out;
-
-	&[aria-checked="true"] {
-		background-image: url("../images/heart.bg.svg");
+	&[value="dark"] {
+		mask-image: url("/images/icons.svg#dark");
 	}
 }

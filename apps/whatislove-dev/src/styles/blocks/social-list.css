@@ -1,66 +1,76 @@
 .social-list {
 	display: flex;
-	gap: 0 15px;
+	flex-wrap: wrap;
+	gap: 20px 50px;
 	padding: 0;
 	margin: 0;
 	list-style: none;
+}
 
-	@media print {
-		flex-direction: column;
-	}
+.social-list--icons {
+	gap: 20px;
 }
 
 .social-list__item {
-	@media print {
-		display: flex;
-		align-items: center;
-	}
-}
-
-.social-list__item-title {
-	@media print {
-		position: unset;
-		width: unset;
-		height: unset;
-		margin: 0 5px 0 0;
-		clip-path: unset;
-
-		&::after {
-			content: ":";
-		}
-	}
+	line-height: 0;
 }
 
 .social-list__item-link {
-	display: block;
-	min-width: 35px;
-	min-height: 35px;
-	filter: var(--invert-icon-primary);
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	transition: opacity 200ms ease-out;
+	--icon-size: 22px;
 
-	&:hover {
-		opacity: 0.7;
+	display: inline-flex;
+	gap: 12px;
+	align-items: center;
+	font-weight: 600;
+	color: inherit;
+	text-underline-offset: 5px;
+
+	&::before {
+		display: block;
+		width: var(--icon-size);
+		height: var(--icon-size);
+		content: "";
+		background-color: var(--color-icon);
+		mask-repeat: no-repeat;
+		mask-position: 50%;
+		mask-size: contain;
 	}
+}
 
-	@media print {
-		filter: none;
+.social-list--icons .social-list__item-link {
+	--icon-size: 28px;
 
-		&::after {
-			content: attr(href);
-		}
+	&::before {
+		background-color: var(--color-gray-100);
 	}
 }
 
 .social-list__item-link--github {
-	background-image: url("../images/social-github.bg.svg");
+	&::before {
+		mask-image: url("/images/icons.svg#github");
+	}
 }
 
 .social-list__item-link--linkedin {
-	background-image: url("../images/social-linkedin.bg.svg");
+	&::before {
+		mask-image: url("/images/icons.svg#linkedin");
+	}
 }
 
 .social-list__item-link--telegram {
-	background-image: url("../images/social-telegram.bg.svg");
+	&::before {
+		mask-image: url("/images/icons.svg#telegram");
+	}
+}
+
+.social-list__item-link--twitter {
+	&::before {
+		mask-image: url("/images/icons.svg#twitter");
+	}
+}
+
+.social-list__item-link--email {
+	&::before {
+		mask-image: url("/images/icons.svg#mail");
+	}
 }

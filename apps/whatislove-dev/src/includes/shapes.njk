@@ -1,0 +1,21 @@
+<svg class="shapes visually-hidden">
+	<path id="text-curved" d="M0,0 a1,1 0 0,0 100,0" />
+	<filter id="sticker-regular">
+		<feMorphology in="SourceAlpha" result="Dilated" operator="dilate" radius="4"></feMorphology>
+		<feFlood flood-color="#ffffff" result="OutlineColor"></feFlood>
+		<feComposite in="OutlineColor" in2="Dilated" operator="in" result="Outline"></feComposite>
+		<feMerge>
+			<feMergeNode in="Outline"></feMergeNode>
+			<feMergeNode in="SourceGraphic"></feMergeNode>
+		</feMerge>
+	</filter>
+	<filter id="sticker-opacity">
+		<feMorphology in="SourceAlpha" result="Dilated" operator="dilate" radius="4"></feMorphology>
+		<feFlood flood-color="#000000" flood-opacity="0.1" result="OutlineColor"></feFlood>
+		<feComposite in="OutlineColor" in2="Dilated" operator="in" result="Outline"></feComposite>
+		<feMerge>
+			<feMergeNode in="Outline"></feMergeNode>
+			<feMergeNode in="SourceGraphic"></feMergeNode>
+		</feMerge>
+	</filter>
+</svg>

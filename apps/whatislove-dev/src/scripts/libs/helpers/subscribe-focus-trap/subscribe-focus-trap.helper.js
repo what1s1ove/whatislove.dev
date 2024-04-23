@@ -1,47 +1,21 @@
-import { KeyboardKey } from '~/libs/enums/enums.js'
+import { createFocusTrap } from 'focus-trap'
 
 /**
- * @param {HTMLElement[]} elements
- * @returns {() => void}
+ * @param {HTMLElement} element
+ * @returns {{ activate: () => void; deactivate: () => void }}
  */
-let subscribeFocusTrap = (...elements) => {
-	let firstNode = /** @type {HTMLElement} */ (elements.at(0))
-	let lastNode = /** @type {HTMLElement} */ (elements.at(-1))
+let subscribeFocusTrap = (element) => {
+	let focusTrap = createFocusTrap(element)
 
-	/**
-	 * @param {KeyboardEvent} event_
-	 * @returns {void}
-	 */
-	let onFirstElementFocus = (event_) => {
-		if (event_.key === KeyboardKey.TAB && event_.shiftKey) {
-			event_.preventDefault()
-
-			lastNode.focus()
-		}
-	}
-
-	/**
-	 * @param {KeyboardEvent} event_
-	 * @returns {void}
-	 */
-	let onLastElementFocus = (event_) => {
-		if (event_.key === KeyboardKey.TAB && !event_.shiftKey) {
-			event_.preventDefault()
-
-			firstNode.focus()
-		}
-	}
-
-	firstNode.focus()
-
-	firstNode.addEventListener(`keydown`, onFirstElementFocus)
-
-	lastNode.addEventListener(`keydown`, onLastElementFocus)
-
-	return () => {
-		firstNode.removeEventListener(`keydown`, onFirstElementFocus)
-
-		lastNode.removeEventListener(`keydown`, onLastElementFocus)
+	return {
+		/** @returns {void} */
+		activate: () => {
+			focusTrap.activate()
+		},
+		/** @returns {void} */
+		deactivate: () => {
+			focusTrap.deactivate()
+		},
 	}
 }
 
