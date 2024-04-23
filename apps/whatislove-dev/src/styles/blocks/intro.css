@@ -1,10 +1,21 @@
 .intro {
 	--gap-section: 25px;
-	--padding-section: 25px;
+	--padding-inline-section: 25px;
+	--padding-block-section: var(--padding-inline-section);
 
 	display: grid;
 	gap: var(--gap-section);
-	padding-block: var(--padding-section);
+	padding-block: var(--padding-block-section);
+
+	@media (--width-desktop) {
+		--gap-section: 50px;
+		--padding-block-section: 50px;
+
+		box-sizing: border-box;
+		max-width: 1000px;
+		margin-block-start: -170px;
+		margin-inline: auto;
+	}
 }
 
 .intro__wrapper {
@@ -105,8 +116,7 @@
 
 	@media (--width-tablet) {
 		grid-template-columns: repeat(2, 1fr);
-		grid-auto-flow: column;
-		padding-inline: var(--padding-section);
+		padding-inline: var(--padding-inline-section);
 	}
 }
 
@@ -123,14 +133,15 @@
 	text-transform: uppercase;
 
 	@media (--width-tablet) {
-		place-self: center;
+		place-self: start center;
 		max-width: 250px;
+		line-height: 1.1;
 		text-align: center;
 	}
 }
 
 .intro__social-list {
 	@media (--width-tablet) {
-		padding-inline: var(--padding-section);
+		padding-inline: var(--padding-inline-section);
 	}
 }

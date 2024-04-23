@@ -1,13 +1,23 @@
 .aside {
+	--border-offset: 30px;
+
 	position: relative;
 	display: grid;
 	gap: 20px;
 	justify-items: center;
 	padding-block: 100px;
+
+	@media (--width-desktop) {
+		--border-offset: 50px;
+
+		box-sizing: border-box;
+		max-width: 960px;
+		padding-block: 150px;
+		margin-inline: auto;
+	}
 }
 
 .aside__border {
-	--offset: 30px;
 	--color: var(--color-page-background-highlight);
 
 	position: absolute;
@@ -30,11 +40,11 @@
 }
 
 .aside__border--top {
-	inset-block-start: var(--offset);
+	inset-block-start: var(--border-offset);
 }
 
 .aside__border--bottom {
-	inset-block-end: var(--offset);
+	inset-block-end: var(--border-offset);
 }
 
 .aside__title {

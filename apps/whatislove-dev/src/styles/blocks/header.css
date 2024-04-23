@@ -3,10 +3,17 @@
 	place-content: start space-between;
 	align-items: flex-start;
 	padding-block: 22px;
+	overflow: hidden;
 
 	@media (--width-tablet) {
 		align-items: center;
 		padding-block: 30px;
+	}
+
+	@media (--width-desktop) {
+		box-sizing: border-box;
+		max-width: 1500px;
+		margin-inline: auto;
 	}
 }
 
@@ -151,4 +158,5 @@
 .header__menu-link {
 	font-size: var(--font-size-heading-3);
 	color: inherit;
+	text-underline-offset: 5px;
 }

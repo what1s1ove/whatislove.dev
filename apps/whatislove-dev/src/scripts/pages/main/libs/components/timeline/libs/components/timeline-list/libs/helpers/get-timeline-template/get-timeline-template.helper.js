@@ -15,7 +15,7 @@ let getTimelineTemplate = (timeline) => {
 	)
 	let originStringNode = getStringWitCheck(
 		origin,
-		`<a class="timeline__item-origin" href="${origin}" target="_blank" rel="noreferrer">${originDesc}</a>`,
+		`<a class="timeline__item-origin" href="${origin}" target="_blank">${originDesc}</a>`,
 	)
 	let descStringNode = getStringWitCheck(
 		desc,
@@ -23,17 +23,17 @@ let getTimelineTemplate = (timeline) => {
 	)
 	let linkStringNode = getStringWitCheck(
 		link,
-		`<a class="timeline__item-link" href="${link}" target="_blank" rel="noreferrer">${linkDesc}</a>`,
+		`<a class="timeline__item-link" href="${link}" target="_blank">${linkDesc}</a>`,
 	)
 	let endDateStringNode = getStringWitCheck(
 		endDate,
-		`<time class="timeline__item-date" datetime="${endDate}"> — ${getFormattedDate(endDate)}</time>`,
+		`<time class="timeline__item-date timeline__item-date--end" datetime="${endDate}">${getFormattedDate(endDate)}</time>`,
 	)
 	let dateStringNode = getStringWitCheck(
 		date,
 		`
 	<p class="timeline__item-dates">
-		<time class="timeline__item-date" datetime="${date}">${getFormattedDate(date)}</time>
+		<time class="timeline__item-date timeline__item-date--start" datetime="${date}">${getFormattedDate(date)}</time>
 		${endDateStringNode}
 	</p>
 	`,
@@ -42,10 +42,12 @@ let getTimelineTemplate = (timeline) => {
 	return `
 		<li class="timeline__item">
 				${dateStringNode}
-				${titleStringNode}
-				${originStringNode}
-				${descStringNode}
-				${linkStringNode}
+				<div class="timeline__item-wrapper">
+					${titleStringNode}
+					${originStringNode}
+					${descStringNode}
+					${linkStringNode}
+				</div>
 		</li>
 	`
 }

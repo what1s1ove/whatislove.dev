@@ -28,6 +28,7 @@
 }
 
 .loader {
+	box-sizing: border-box;
 	display: block;
 	max-width: 75px;
 	margin: 35px auto;

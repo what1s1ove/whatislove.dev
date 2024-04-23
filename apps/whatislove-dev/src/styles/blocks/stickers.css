@@ -2,7 +2,7 @@
 	padding-block: 25px;
 
 	@media (--width-tablet) {
-		align-self: center;
+		place-self: center;
 	}
 }
 

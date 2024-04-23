@@ -76,4 +76,4 @@
 }
 
 @custom-media --width-tablet (width >= 768px);
-@custom-media --width-desktop (width >= 1024px);
+@custom-media --width-desktop (width >= 1450px);

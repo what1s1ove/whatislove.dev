@@ -1,8 +1,18 @@
-.main__row {
+.main__row--experience-stickers {
+	overflow: hidden;
+
 	@media (--width-tablet) {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		grid-auto-flow: column;
 		gap: 40px;
+		overflow: unset;
+	}
+
+	@media (--width-desktop) {
+		box-sizing: border-box;
+		grid-template-columns: 70% 1fr;
+		gap: 10px;
+		max-width: 1000px;
+		margin-inline: auto;
 	}
 }
