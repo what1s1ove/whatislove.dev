@@ -9,12 +9,6 @@
 		align-items: center;
 		padding-block: 30px;
 	}
-
-	@media (--width-desktop) {
-		box-sizing: border-box;
-		max-width: 1500px;
-		margin-inline: auto;
-	}
 }
 
 .header__logo {
@@ -128,16 +122,17 @@
 }
 
 .header__menu-list {
-	display: grid;
+	display: flex;
+	flex-direction: column;
 	gap: 30px;
 	place-self: center;
-	justify-items: center;
+	align-items: center;
 	padding: 0;
 	margin: 0;
 	list-style: none;
 
 	@media (--width-tablet) {
-		grid-auto-flow: column;
+		flex-direction: row;
 		gap: 40px;
 	}
 }
