@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.22.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.21.1...v1.22.0) (2024-04-23)
+
+
+### Features
+
+* whatislovedev redesgin wd-387 ([#388](https://github.com/what1s1ove/whatislove.dev/issues/388)) ([21c8a07](https://github.com/what1s1ove/whatislove.dev/commit/21c8a078cb1fdfa22367434020d92c2c03870eff))
+
 ## [1.21.1](https://github.com/what1s1ove/whatislove.dev/compare/v1.21.0...v1.21.1) (2024-03-31)
 
 
