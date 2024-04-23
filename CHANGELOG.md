@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.23.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.22.0...v1.23.0) (2024-04-23)
+
+
+### Features
+
+* replace grid flow with flex wd-391 ([#392](https://github.com/what1s1ove/whatislove.dev/issues/392)) ([4f926cb](https://github.com/what1s1ove/whatislove.dev/commit/4f926cbd6bfd18d807c9aee8c69378ae22b82aff))
+
 ## [1.22.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.21.1...v1.22.0) (2024-04-23)
 
 
