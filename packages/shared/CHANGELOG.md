@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/shared-v1.6.0...@whatislove.dev/shared-v1.7.0) (2024-04-23)
+
+
+### Features
+
+* whatislovedev redesgin wd-387 ([#388](https://github.com/what1s1ove/whatislove.dev/issues/388)) ([21c8a07](https://github.com/what1s1ove/whatislove.dev/commit/21c8a078cb1fdfa22367434020d92c2c03870eff))
+
 ## [1.6.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/shared-v1.5.0...@whatislove.dev/shared-v1.6.0) (2024-03-28)
 
 
