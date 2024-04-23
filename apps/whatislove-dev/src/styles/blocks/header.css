@@ -23,11 +23,14 @@
 
 .header__logo-part--colorful {
 	fill: var(--color-icon);
-	stroke: var(--color-icon);
 }
 
 .header__logo-part--colorful-inverted {
 	fill: var(--color-icon-inverted);
+}
+
+.header__logo-part--sticker {
+	fill: var(--color-sticker);
 }
 
 .header__button {
