@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.25.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.24.0...v1.25.0) (2024-04-24)
+
+
+### Features
+
+* replace hex with hsl colors wd-396 ([#397](https://github.com/what1s1ove/whatislove.dev/issues/397)) ([b3e8ce3](https://github.com/what1s1ove/whatislove.dev/commit/b3e8ce3dd2b3701c55c1bc0b449ed12de9d110fa))
+
 ## [1.24.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.23.0...v1.24.0) (2024-04-23)
 
 
