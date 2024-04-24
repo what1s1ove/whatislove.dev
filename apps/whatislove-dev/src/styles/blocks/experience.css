@@ -38,7 +38,7 @@
 	border-radius: 5px;
 
 	&:has(:checked) {
-		background-color: var(--color-page-background-highlight);
+		background-color: hsl(var(--color-page-background-highlight));
 	}
 
 	&:focus-within {
@@ -58,7 +58,7 @@
 }
 
 .experience__timeline-wrapper {
-	--width-dates: 145px;
+	--size-inline-dates: 145px;
 
 	height: 75vh;
 	overflow-y: auto;
@@ -68,6 +68,6 @@
 	}
 
 	@media (--width-desktop) {
-		translate: calc(0px - var(--width-dates)) 0;
+		translate: calc(0px - var(--size-inline-dates)) 0;
 	}
 }

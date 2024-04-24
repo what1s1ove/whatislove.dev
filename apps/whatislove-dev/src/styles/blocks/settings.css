@@ -5,7 +5,7 @@
 	justify-self: center;
 	padding-block: 8px;
 	padding-inline: 10px;
-	background-color: var(--color-page-background-highlight);
+	background-color: hsl(var(--color-page-background-highlight));
 	border-radius: 5px;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .settings__theme-control {
-	--icon-size: 22px;
+	--size-icon: 22px;
 
 	display: block;
 	margin: 0;
@@ -42,9 +42,9 @@
 
 	&[value="light"],
 	&[value="dark"] {
-		width: var(--icon-size);
-		height: var(--icon-size);
-		background-color: var(--color-icon);
+		width: var(--size-icon);
+		height: var(--size-icon);
+		background-color: hsl(var(--color-icon));
 		mask-repeat: no-repeat;
 		mask-position: 50%;
 		mask-size: contain;

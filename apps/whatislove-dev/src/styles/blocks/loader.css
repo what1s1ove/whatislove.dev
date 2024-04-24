@@ -37,7 +37,7 @@
 	& circle {
 		display: block;
 		fill: transparent;
-		stroke: var(--color-icon);
+		stroke: hsl(var(--color-icon));
 		stroke-dasharray: 283;
 		stroke-dashoffset: 280;
 		stroke-linecap: round;

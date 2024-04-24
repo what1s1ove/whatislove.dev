@@ -23,7 +23,7 @@
 }
 
 .channel__content-item {
-	--shift: 50%;
+	--margin: 50%;
 
 	box-sizing: border-box;
 	line-height: 1;
@@ -31,11 +31,11 @@
 }
 
 .channel__content-item--shift-back {
-	margin-inline: calc(0px - var(--shift)) 0;
+	margin-inline: calc(0px - var(--margin)) 0;
 }
 
 .channel__content-item--shift-forward {
-	margin-inline: var(--shift) 0;
+	margin-inline: var(--margin) 0;
 }
 
 .channel__content-item--full {
@@ -53,16 +53,16 @@
 	padding-block: 5px;
 	padding-inline: 8px;
 	font-weight: 600;
-	color: var(--color-blue-100);
-	background-color: var(--color-page-background-highlight);
+	color: hsl(var(--color-blue-100));
+	background-color: hsl(var(--color-page-background-highlight));
 }
 
 .channel__content-item--icon {
-	--icon-size: 20px;
+	--size-icon: 20px;
 
 	&::before {
-		width: var(--icon-size);
-		height: var(--icon-size);
+		width: var(--size-icon);
+		height: var(--size-icon);
 		content: "";
 		background-size: contain;
 	}
@@ -75,9 +75,9 @@
 }
 
 .channel__content-item--technology {
-	--gradient-text-direction: right;
-	--gradient-border-direction: right;
-	--gradient-color: hsl(var(--color-technology-background) / 25%) 0%,
+	--direction-gradient-text: right;
+	--direction-gradient-border: right;
+	--color-gradient: hsl(var(--color-technology-background) / 25%) 0%,
 		hsl(var(--color-technology-background) / 5%) 100%;
 
 	position: relative;
@@ -89,8 +89,8 @@
 	font-weight: 500;
 	text-align: center;
 	background-image: linear-gradient(
-		to var(--gradient-text-direction),
-		var(--gradient-color)
+		to var(--direction-gradient-text),
+		var(--color-gradient)
 	);
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -100,8 +100,8 @@
 		inset: 0;
 		content: "";
 		background-image: linear-gradient(
-			to var(--gradient-border-direction),
-			var(--gradient-color)
+			to var(--direction-gradient-border),
+			var(--color-gradient)
 		);
 		mask-image: url("/images/icons.svg#speech-bubble");
 		mask-repeat: no-repeat;
@@ -110,7 +110,7 @@
 }
 
 .channel__content-item--technology--left {
-	--gradient-border-direction: left;
+	--direction-gradient-border: left;
 
 	padding-inline: 40px 25px;
 
@@ -143,15 +143,15 @@
 	width: var(--size);
 	height: var(--size);
 	padding: 5px;
-	background: var(--page-background);
+	background: var(--background-page);
 	border-radius: 50%;
-	fill: var(--color-blue-100);
+	fill: hsl(var(--color-blue-100));
 }
 
 .channel__link {
 	font-size: var(--font-size-heading-3);
 	font-weight: 600;
-	color: var(--color-blue-100);
+	color: hsl(var(--color-blue-100));
 	text-underline-offset: 7px;
 }
 

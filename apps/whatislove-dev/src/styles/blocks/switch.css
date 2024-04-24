@@ -1,46 +1,47 @@
 .switch {
-	--icon-color: var(--color-icon);
-	--icon-url: url("/");
-	--icon-url-active: url("/");
-	--icon-size: 22px;
-	--icon-shift: 27.5px;
+	--color-icon-active: hsl(var(--color-icon));
+	--url-icon: url("/");
+	--url-icon-active: url("/");
+	--size-icon: 22px;
+	--translate-icon: 27.5px;
 
 	box-sizing: border-box;
 	gap: 5px;
 	width: 60px;
 	padding-block: 3px;
 	padding-inline: 5px;
-	background-color: var(--color-icon);
+	background-color: hsl(var(--color-icon));
 	border-radius: 20px;
 
 	&::before,
 	&::after {
 		display: block;
-		width: var(--icon-size);
-		height: var(--icon-size);
+		width: var(--size-icon);
+		height: var(--size-icon);
 		content: "";
 		transition: translate 0.3s ease-in-out;
 	}
 
 	&::before {
-		mask-image: var(--icon-url);
+		background-color: var(--color-icon-active);
+		mask-image: var(--url-icon);
 		mask-repeat: no-repeat;
 		mask-size: contain;
 	}
 
 	&::after {
-		background-color: var(--color-icon-inverted);
+		background-color: hsl(var(--color-icon-inverted));
 		border-radius: 50%;
 	}
 
 	&[aria-checked="true"] {
 		&::before {
-			mask-image: var(--icon-url-active);
-			translate: var(--icon-shift) 0;
+			mask-image: var(--url-icon-active);
+			translate: var(--translate-icon) 0;
 		}
 
 		&::after {
-			translate: calc(0px - var(--icon-shift)) 0;
+			translate: calc(0px - var(--translate-icon)) 0;
 		}
 	}
 }
