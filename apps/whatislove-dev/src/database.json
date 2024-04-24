@@ -1559,6 +1559,18 @@
 			"linkDesc": "",
 			"date": "2024-03-25T00:00:00.000Z",
 			"endDate": ""
+		},
+		{
+			"id": "0daJ-uU",
+			"type": "book",
+			"title": "Big Magic: Creative Living Beyond Fear (Elizabeth Gilbert)",
+			"desc": "",
+			"origin": "https://www.amazon.com/Big-Magic-Creative-Living-Beyond/dp/1594634726",
+			"originDesc": "Amazon",
+			"link": "",
+			"linkDesc": "",
+			"date": "2024-04-15T00:00:00.000Z",
+			"endDate": ""
 		}
 	]
 }
