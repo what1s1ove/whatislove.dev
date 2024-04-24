@@ -6,6 +6,7 @@ import { TimelineApi } from '~/modules/timeline/timeline.js'
 import {
 	EasterEgg,
 	Navigation,
+	Paw,
 	Settings,
 	Timeline,
 	TimelineForm,
@@ -26,6 +27,12 @@ class Main {
 
 	/** @type {Navigation} */
 	#navigationComponent
+
+	/** @type {HTMLButtonElement | undefined} */
+	#pawButtonNode
+
+	/** @type {Paw} */
+	#pawComponent
 
 	/** @type {HTMLElement | undefined} */
 	#settingListNode
@@ -63,6 +70,9 @@ class Main {
 		this.#settingsComponent = new Settings({
 			storage,
 		})
+		this.#pawComponent = new Paw({
+			onNotificationAdd: this.#handleNotificationAdd,
+		})
 		this.#navigationComponent = new Navigation()
 		this.#timelineComponent = new Timeline({
 			timelineApi,
@@ -77,6 +87,7 @@ class Main {
 
 		this.#toastNode = undefined
 		this.#settingListNode = undefined
+		this.#pawButtonNode = undefined
 		this.#headerNode = undefined
 		this.#timelineNode = undefined
 		this.#easterEggNode = undefined
@@ -110,6 +121,9 @@ class Main {
 		this.#timelineFormNode = /** @type {HTMLFormElement | undefined} */ (
 			document.querySelector(`form[name="timeline"]`) ?? undefined
 		)
+		this.#pawButtonNode = /** @type {HTMLButtonElement | undefined} */ (
+			document.querySelector(`.intro__paw`) ?? undefined
+		)
 
 		if (this.#toastNode) {
 			this.#toastComponent.init(this.#toastNode)
@@ -117,6 +131,10 @@ class Main {
 
 		if (this.#settingListNode) {
 			this.#settingsComponent.init()
+		}
+
+		if (this.#pawButtonNode) {
+			this.#pawComponent.init(this.#pawButtonNode)
 		}
 
 		if (this.#headerNode) {

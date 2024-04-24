@@ -7,7 +7,7 @@
 }
 
 .timeline__item {
-	--icon-size: 14px;
+	--size-icon: 14px;
 	--padding-inline: 25px;
 	--padding-block: 30px;
 	--gap: 10px;
@@ -22,7 +22,7 @@
 }
 
 .timeline__item-dates {
-	--color: var(--color-red-100);
+	--color: hsl(var(--color-red-100));
 
 	position: relative;
 	padding-inline: var(--padding-inline);
@@ -35,8 +35,8 @@
 		inset-block-start: 50%;
 		inset-inline-start: 2px;
 		box-sizing: border-box;
-		width: var(--icon-size);
-		height: var(--icon-size);
+		width: var(--size-icon);
+		height: var(--size-icon);
 		content: "";
 		border: 2px solid var(--color);
 		border-radius: 50%;
@@ -46,7 +46,7 @@
 	@media (--width-desktop) {
 		box-sizing: border-box;
 		place-self: start end;
-		width: var(--width-dates, auto);
+		width: var(--size-inline-dates, auto);
 		padding-block: 5px 0;
 		padding-inline: 0 7px;
 		text-align: right;
@@ -79,7 +79,7 @@
 		inset-inline-start: 8px;
 		width: 2px;
 		content: "";
-		background-color: var(--color-page-background-highlight);
+		background-color: hsl(var(--color-page-background-highlight));
 		border-radius: 5px;
 	}
 
@@ -98,7 +98,7 @@
 
 .timeline__item-origin,
 .timeline__item-link {
-	--icon-size: 13px;
+	--size-icon: 13px;
 
 	display: inline-flex;
 	gap: 6px;
@@ -108,10 +108,10 @@
 	text-underline-offset: 3px;
 
 	&::before {
-		width: var(--icon-size);
-		height: var(--icon-size);
+		width: var(--size-icon);
+		height: var(--size-icon);
 		content: "";
-		background-color: var(--color-icon);
+		background-color: hsl(var(--color-icon));
 		mask-image: url("/images/icons.svg#link");
 		mask-repeat: no-repeat;
 		mask-position: 50%;
@@ -121,5 +121,5 @@
 
 .timeline__item-description {
 	margin: 0;
-	color: var(--color-gray-100);
+	color: hsl(var(--color-gray-100));
 }

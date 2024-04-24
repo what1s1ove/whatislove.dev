@@ -1,5 +1,5 @@
 .aside {
-	--border-offset: 30px;
+	--inset-border: 30px;
 
 	position: relative;
 	display: grid;
@@ -8,7 +8,7 @@
 	padding-block: 100px;
 
 	@media (--width-desktop) {
-		--border-offset: 50px;
+		--inset-border: 50px;
 
 		box-sizing: border-box;
 		max-width: 960px;
@@ -18,7 +18,7 @@
 }
 
 .aside__border {
-	--color: var(--color-page-background-highlight);
+	--color: hsl(var(--color-page-background-highlight));
 
 	position: absolute;
 	inset-inline-start: 50%;
@@ -40,11 +40,11 @@
 }
 
 .aside__border--top {
-	inset-block-start: var(--border-offset);
+	inset-block-start: var(--inset-border);
 }
 
 .aside__border--bottom {
-	inset-block-end: var(--border-offset);
+	inset-block-end: var(--inset-border);
 }
 
 .aside__title {
@@ -55,6 +55,6 @@
 
 .aside__email {
 	font-size: var(--font-size-heading-3);
-	color: var(--color-red-100);
+	color: hsl(var(--color-red-100));
 	text-underline-offset: 7px;
 }

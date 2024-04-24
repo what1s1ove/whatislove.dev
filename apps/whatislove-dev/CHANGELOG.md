@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.23.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.22.0...@whatislove.dev/whatislove-dev-v1.23.0) (2024-04-24)
+
+
+### Features
+
+* replace hex with hsl colors wd-396 ([#397](https://github.com/what1s1ove/whatislove.dev/issues/397)) ([b3e8ce3](https://github.com/what1s1ove/whatislove.dev/commit/b3e8ce3dd2b3701c55c1bc0b449ed12de9d110fa))
+
+## [1.22.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.21.0...@whatislove.dev/whatislove-dev-v1.22.0) (2024-04-23)
+
+
+### Features
+
+* add sticker to logo wd-390 ([#394](https://github.com/what1s1ove/whatislove.dev/issues/394)) ([43ccd92](https://github.com/what1s1ove/whatislove.dev/commit/43ccd92adbbe0c30fb2722d89d409ac0a3dcf22c))
+
+## [1.21.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.20.0...@whatislove.dev/whatislove-dev-v1.21.0) (2024-04-23)
+
+
+### Features
+
+* replace grid flow with flex wd-391 ([#392](https://github.com/what1s1ove/whatislove.dev/issues/392)) ([4f926cb](https://github.com/what1s1ove/whatislove.dev/commit/4f926cbd6bfd18d807c9aee8c69378ae22b82aff))
+
 ## [1.20.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.19.0...@whatislove.dev/whatislove-dev-v1.20.0) (2024-04-23)
 
 

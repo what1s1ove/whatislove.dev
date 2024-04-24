@@ -15,7 +15,7 @@
 }
 
 .footer__webring {
-	--color: var(--color-gray-100);
+	--color: hsl(var(--color-gray-100));
 
 	display: flex;
 	gap: 10px;
@@ -33,11 +33,11 @@
 }
 
 .footer__webring-link {
-	--icon-size: 20px;
+	--size-icon: 20px;
 
 	&::before {
-		width: var(--icon-size);
-		height: var(--icon-size);
+		width: var(--size-icon);
+		height: var(--size-icon);
 		content: "";
 		background-color: var(--color);
 		mask-image: url("/images/icons.svg#arrow");
@@ -54,7 +54,7 @@
 	margin: 0;
 	font-size: var(--font-size-text-small);
 	font-style: italic;
-	color: var(--color-gray-100);
+	color: hsl(var(--color-gray-100));
 	text-underline-offset: 5px;
 
 	@media (--width-tablet) {
@@ -74,7 +74,7 @@
 	order: calc(infinity);
 	margin: 0;
 	font-size: var(--font-size-text-small);
-	color: var(--color-gray-100);
+	color: hsl(var(--color-gray-100));
 
 	@media (--width-tablet) {
 		order: initial;
