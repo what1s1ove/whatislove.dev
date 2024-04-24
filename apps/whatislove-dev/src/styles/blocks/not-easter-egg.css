@@ -59,7 +59,7 @@
 
 .not-easter-egg__audio-control {
 	--shift: 15px;
-	--icon-color: var(--color-red-100);
+	--icon-color: hsl(var(--color-red-100));
 	--icon-url: url("/images/icons.svg#brocken-heart");
 	--icon-url-active: url("/images/icons.svg#heart");
 

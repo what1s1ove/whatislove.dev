@@ -5,7 +5,7 @@
 	justify-self: center;
 	padding-block: 8px;
 	padding-inline: 10px;
-	background-color: var(--color-page-background-highlight);
+	background-color: hsl(var(--color-page-background-highlight));
 	border-radius: 5px;
 }
 
@@ -44,7 +44,7 @@
 	&[value="dark"] {
 		width: var(--icon-size);
 		height: var(--icon-size);
-		background-color: var(--color-icon);
+		background-color: hsl(var(--color-icon));
 		mask-repeat: no-repeat;
 		mask-position: 50%;
 		mask-size: contain;

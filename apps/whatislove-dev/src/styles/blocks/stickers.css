@@ -19,7 +19,7 @@
 }
 
 .stickers__item {
-	aspect-ratio: 1 / 1;
+	aspect-ratio: 1;
 	filter: var(--filter-sticker);
 	background-repeat: no-repeat;
 	background-position: 50% 50%;

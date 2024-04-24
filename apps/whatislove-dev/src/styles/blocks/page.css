@@ -11,6 +11,6 @@
 	font-family: var(--font-family-text);
 	font-size: var(--font-size-text-base);
 	line-height: 1.5;
-	color: var(--color-text);
+	color: hsl(var(--color-text));
 	background: var(--page-background);
 }

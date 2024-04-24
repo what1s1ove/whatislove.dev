@@ -53,8 +53,8 @@
 	padding-block: 5px;
 	padding-inline: 8px;
 	font-weight: 600;
-	color: var(--color-blue-100);
-	background-color: var(--color-page-background-highlight);
+	color: hsl(var(--color-blue-100));
+	background-color: hsl(var(--color-page-background-highlight));
 }
 
 .channel__content-item--icon {
@@ -145,13 +145,13 @@
 	padding: 5px;
 	background: var(--page-background);
 	border-radius: 50%;
-	fill: var(--color-blue-100);
+	fill: hsl(var(--color-blue-100));
 }
 
 .channel__link {
 	font-size: var(--font-size-heading-3);
 	font-weight: 600;
-	color: var(--color-blue-100);
+	color: hsl(var(--color-blue-100));
 	text-underline-offset: 7px;
 }
 

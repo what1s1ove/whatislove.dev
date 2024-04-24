@@ -18,7 +18,7 @@
 }
 
 .aside__border {
-	--color: var(--color-page-background-highlight);
+	--color: hsl(var(--color-page-background-highlight));
 
 	position: absolute;
 	inset-inline-start: 50%;
@@ -55,6 +55,6 @@
 
 .aside__email {
 	font-size: var(--font-size-heading-3);
-	color: var(--color-red-100);
+	color: hsl(var(--color-red-100));
 	text-underline-offset: 7px;
 }

@@ -1,5 +1,5 @@
 .switch {
-	--icon-color: var(--color-icon);
+	--icon-color: hsl(var(--color-icon));
 	--icon-url: url("/");
 	--icon-url-active: url("/");
 	--icon-size: 22px;
@@ -10,7 +10,7 @@
 	width: 60px;
 	padding-block: 3px;
 	padding-inline: 5px;
-	background-color: var(--color-icon);
+	background-color: hsl(var(--color-icon));
 	border-radius: 20px;
 
 	&::before,
@@ -23,13 +23,14 @@
 	}
 
 	&::before {
+		background-color: var(--icon-color);
 		mask-image: var(--icon-url);
 		mask-repeat: no-repeat;
 		mask-size: contain;
 	}
 
 	&::after {
-		background-color: var(--color-icon-inverted);
+		background-color: hsl(var(--color-icon-inverted));
 		border-radius: 50%;
 	}
 

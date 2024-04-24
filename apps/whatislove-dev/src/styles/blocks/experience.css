@@ -38,7 +38,7 @@
 	border-radius: 5px;
 
 	&:has(:checked) {
-		background-color: var(--color-page-background-highlight);
+		background-color: hsl(var(--color-page-background-highlight));
 	}
 
 	&:focus-within {

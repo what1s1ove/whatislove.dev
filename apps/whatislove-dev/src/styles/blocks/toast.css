@@ -11,7 +11,7 @@
 	text-align: center;
 	background: var(--page-background);
 	border-radius: 5px;
-	box-shadow: 0 0 10px var(--color-red-100);
+	box-shadow: 0 0 10px hsl(var(--color-red-100));
 	opacity: 0;
 	transition-timing-function: ease-out;
 	transition-duration: 0.3s;

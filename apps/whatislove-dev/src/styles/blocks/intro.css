@@ -21,7 +21,7 @@
 .intro__wrapper {
 	display: grid;
 	padding: 25px;
-	background-color: var(--color-intro-background);
+	background-color: hsl(var(--color-intro-background));
 	border-radius: 8px;
 
 	@media (--width-tablet) {
@@ -37,7 +37,7 @@
 	flex-direction: column;
 	place-self: end;
 	margin-block: 0 -50px;
-	color: var(--color-pink-100);
+	color: hsl(var(--color-pink-100));
 	rotate: var(--rotate);
 
 	&::before {
@@ -83,7 +83,7 @@
 .intro__photo {
 	display: block;
 	padding-inline: 6px;
-	filter: drop-shadow(-6px 4px 0 var(--color-red-200));
+	filter: drop-shadow(-6px 4px 0 hsl(var(--color-red-200)));
 	mask-image: linear-gradient(
 		to bottom,
 		hsl(var(--color-intro-image-mask) / 80%) 40%,
@@ -129,7 +129,7 @@
 	margin: 0;
 	font-family: var(--font-family-highlight);
 	font-size: var(--font-size-highlight);
-	color: var(--color-red-100);
+	color: hsl(var(--color-red-100));
 	text-transform: uppercase;
 
 	@media (--width-tablet) {
