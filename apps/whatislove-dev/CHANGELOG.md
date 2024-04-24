@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.25.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.24.0...@whatislove.dev/whatislove-dev-v1.25.0) (2024-04-24)
+
+
+### Features
+
+* **whatislove-dev:** add new Big Magic book wd-386 ([#405](https://github.com/what1s1ove/whatislove.dev/issues/405)) ([a1261c9](https://github.com/what1s1ove/whatislove.dev/commit/a1261c911c7646c1fa13faf0f25df4eaa9bb20a3))
+
 ## [1.24.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.23.0...@whatislove.dev/whatislove-dev-v1.24.0) (2024-04-24)
 
 
