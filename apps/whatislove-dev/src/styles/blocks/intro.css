@@ -31,7 +31,7 @@
 }
 
 .intro__paw {
-	--paw-size: 48px;
+	--size-paw: 48px;
 	--rotate: 20deg;
 
 	flex-direction: column;
@@ -41,8 +41,8 @@
 	rotate: var(--rotate);
 
 	&::before {
-		width: var(--paw-size);
-		height: var(--paw-size);
+		width: var(--size-paw);
+		height: var(--size-paw);
 		content: "";
 		background-image: url("/images/lapka.svg");
 		filter: var(--filter-sticker);

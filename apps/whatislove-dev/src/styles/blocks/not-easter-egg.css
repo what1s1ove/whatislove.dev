@@ -58,13 +58,13 @@
 }
 
 .not-easter-egg__audio-control {
-	--shift: 15px;
-	--icon-color: hsl(var(--color-red-100));
-	--icon-url: url("/images/icons.svg#brocken-heart");
-	--icon-url-active: url("/images/icons.svg#heart");
+	--inset: 15px;
+	--color-icon-active: hsl(var(--color-red-100));
+	--url-icon: url("/images/icons.svg#brocken-heart");
+	--url-icon-active: url("/images/icons.svg#heart");
 
 	position: fixed;
-	inset-block-end: var(--shift);
-	inset-inline-end: var(--shift);
+	inset-block-end: var(--inset);
+	inset-inline-end: var(--inset);
 	animation: append 1s ease-out;
 }

@@ -33,11 +33,11 @@
 }
 
 .footer__webring-link {
-	--icon-size: 20px;
+	--size-icon: 20px;
 
 	&::before {
-		width: var(--icon-size);
-		height: var(--icon-size);
+		width: var(--size-icon);
+		height: var(--size-icon);
 		content: "";
 		background-color: var(--color);
 		mask-image: url("/images/icons.svg#arrow");

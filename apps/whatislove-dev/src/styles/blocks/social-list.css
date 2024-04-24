@@ -16,7 +16,7 @@
 }
 
 .social-list__item-link {
-	--icon-size: 22px;
+	--size-icon: 22px;
 
 	display: inline-flex;
 	gap: 12px;
@@ -27,8 +27,8 @@
 
 	&::before {
 		display: block;
-		width: var(--icon-size);
-		height: var(--icon-size);
+		width: var(--size-icon);
+		height: var(--size-icon);
 		content: "";
 		background-color: hsl(var(--color-icon));
 		mask-repeat: no-repeat;
@@ -38,7 +38,7 @@
 }
 
 .social-list--icons .social-list__item-link {
-	--icon-size: 28px;
+	--size-icon: 28px;
 
 	&::before {
 		background-color: hsl(var(--color-gray-100));
