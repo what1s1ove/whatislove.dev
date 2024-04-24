@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.24.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.23.0...@whatislove.dev/whatislove-dev-v1.24.0) (2024-04-24)
+
+
+### Features
+
+* add action to paw wd-402 ([#403](https://github.com/what1s1ove/whatislove.dev/issues/403)) ([9317767](https://github.com/what1s1ove/whatislove.dev/commit/9317767166c8a0a0dffcf14e5907c4b33b234a4a))
+* **careers-whatislove-dev/certifications-whatislove-dev/whatislove-dev/shared:** move careerwhatislovedev to the rep wd-334 ([#353](https://github.com/what1s1ove/whatislove.dev/issues/353)) ([c96f72c](https://github.com/what1s1ove/whatislove.dev/commit/c96f72c53916cea9fc761771427dee468c42e440))
+* separate packages and apps workspaces wd-326 ([#327](https://github.com/what1s1ove/whatislove.dev/issues/327)) ([66ccba8](https://github.com/what1s1ove/whatislove.dev/commit/66ccba894042075d15198a24c61b654f1c50172f))
+* **whatislove-dev:** add 80/20 principle book wd-325 ([#330](https://github.com/what1s1ove/whatislove.dev/issues/330)) ([5be226e](https://github.com/what1s1ove/whatislove.dev/commit/5be226eecb5ccd8bb030985b6bec559c6b021fa1))
+* **whatislove-dev:** add new Outliers book wd-340 ([#346](https://github.com/what1s1ove/whatislove.dev/issues/346)) ([6e22116](https://github.com/what1s1ove/whatislove.dev/commit/6e221161413c28c7e3b1ba48c8590b09673df340))
+* **whatislove-dev:** add new The 5 Second Rule book wd-335 ([#341](https://github.com/what1s1ove/whatislove.dev/issues/341)) ([3161b6a](https://github.com/what1s1ove/whatislove.dev/commit/3161b6afeae7edfb00af073f81f65ba88e9522dd))
+* **whatislove-dev:** add new Unfuck Yourself book wd-335 ([#344](https://github.com/what1s1ove/whatislove.dev/issues/344)) ([9efdd86](https://github.com/what1s1ove/whatislove.dev/commit/9efdd864e84651788728f2adb07fc5ccb5735bf6))
+* **whatislove-dev:** add pomodoro book wd-351 ([#371](https://github.com/what1s1ove/whatislove.dev/issues/371)) ([ec412f4](https://github.com/what1s1ove/whatislove.dev/commit/ec412f413db79978b7d89d9857be4fd9a634d258))
+* **whatislove-dev:** add steal like artist book wd-369 ([#374](https://github.com/what1s1ove/whatislove.dev/issues/374)) ([3e06004](https://github.com/what1s1ove/whatislove.dev/commit/3e06004117fb750c9a694d7b07e877dfed4277e5))
+* whatislovedev redesgin wd-387 ([#388](https://github.com/what1s1ove/whatislove.dev/issues/388)) ([21c8a07](https://github.com/what1s1ove/whatislove.dev/commit/21c8a078cb1fdfa22367434020d92c2c03870eff))
+
 ## [1.23.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.22.0...@whatislove.dev/whatislove-dev-v1.23.0) (2024-04-24)
 
 
