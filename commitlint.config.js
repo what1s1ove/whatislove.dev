@@ -14,10 +14,15 @@ let configuration = {
 	},
 	rules: {
 		'references-empty': [RuleConfigSeverity.Error, `never`],
+		'scope-empty': [RuleConfigSeverity.Error, `never`],
 		'scope-enum': [
 			RuleConfigSeverity.Error,
 			`always`,
-			[...ProjectPrefix.SCOPES.APPS, ...ProjectPrefix.SCOPES.PACKAGES],
+			[
+				ProjectPrefix.DEFAULT_SCOPE,
+				...ProjectPrefix.SCOPES.APPS,
+				...ProjectPrefix.SCOPES.PACKAGES,
+			],
 		],
 	},
 }
