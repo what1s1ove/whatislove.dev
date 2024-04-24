@@ -1,4 +1,5 @@
 let ProjectPrefix = /** @type {const} */ ({
+	DEFAULT_SCOPE: `root`,
 	ISSUE_PREFIXES: [`wd`, `release`],
 	SCOPES: {
 		APPS: [
