@@ -53,10 +53,6 @@
 		translate: 5px 5px;
 	}
 
-	@media (hover: hover) {
-		cursor: url("/images/lapka.svg"), pointer;
-	}
-
 	@media (--width-tablet) {
 		place-self: start end;
 		order: calc(infinity);
@@ -74,6 +70,11 @@
 .intro__picture {
 	place-self: center;
 	margin-block: 0 55px;
+	mask-image: linear-gradient(
+		to bottom,
+		hsl(var(--color-intro-image-mask) / 80%) 40%,
+		hsla(var(--color-intro-image-mask) / 0%) 95%
+	);
 
 	@media (--width-tablet) {
 		margin: 0;
@@ -84,11 +85,6 @@
 	display: block;
 	padding-inline: 6px;
 	filter: drop-shadow(-6px 4px 0 hsl(var(--color-red-200)));
-	mask-image: linear-gradient(
-		to bottom,
-		hsl(var(--color-intro-image-mask) / 80%) 40%,
-		hsla(var(--color-intro-image-mask) / 0%) 95%
-	);
 }
 
 .intro__header {
