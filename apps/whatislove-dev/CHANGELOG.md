@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.25.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.25.0...@whatislove.dev/whatislove-dev-v1.25.1) (2024-04-25)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** fix timeline viewport loading wd-409 ([#410](https://github.com/what1s1ove/whatislove.dev/issues/410)) ([4687155](https://github.com/what1s1ove/whatislove.dev/commit/468715502fb4e061217ef2fba43a1bc4a0faa4a3))
+
 ## [1.25.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.24.0...@whatislove.dev/whatislove-dev-v1.25.0) (2024-04-24)
 
 
