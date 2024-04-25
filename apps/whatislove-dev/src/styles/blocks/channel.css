@@ -131,6 +131,7 @@
 
 .channel__image {
 	display: block;
+	border-radius: 50%;
 }
 
 .channel__picture-object {

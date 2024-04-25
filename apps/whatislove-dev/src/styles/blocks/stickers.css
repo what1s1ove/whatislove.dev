@@ -50,14 +50,14 @@
 	width: 85px;
 	background-image: url("/images/stickers.svg#react");
 	rotate: 10deg;
-	translate: -10px -5px;
+	translate: 0 -5px;
 }
 
 .stickers__item--aws {
 	width: 120px;
 	background-image: url("/images/stickers.svg#aws");
 	rotate: -7deg;
-	translate: -5px -30px;
+	translate: 10px -30px;
 }
 
 .stickers__item--acidtwo {

@@ -48,15 +48,6 @@
 	}
 }
 
-.experience__form-control {
-	margin: 0;
-	appearance: none;
-
-	&:focus {
-		outline: 0;
-	}
-}
-
 .experience__timeline-wrapper {
 	--size-inline-dates: 145px;
 
