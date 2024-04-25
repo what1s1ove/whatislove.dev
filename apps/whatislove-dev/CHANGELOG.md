@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.25.2](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.25.1...@whatislove.dev/whatislove-dev-v1.25.2) (2024-04-25)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** fix cross browser styles wd-412 ([#413](https://github.com/what1s1ove/whatislove.dev/issues/413)) ([6c27518](https://github.com/what1s1ove/whatislove.dev/commit/6c27518e686329cd8df929ab67ea9b9f374ee33d))
+
 ## [1.25.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.25.0...@whatislove.dev/whatislove-dev-v1.25.1) (2024-04-25)
 
 
