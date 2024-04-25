@@ -124,6 +124,8 @@ class Timeline {
 		this.#timelineListComponent.init()
 
 		this.#initListeners()
+
+		void this.#showTimelineHandler()
 	}
 }
 
