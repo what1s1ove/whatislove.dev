@@ -1,0 +1,33 @@
+.scroll-shadows {
+	--color: var(--color-scroll-shadow) / 20%;
+	--size: 20px;
+
+	display: grid;
+	grid-template-rows: var(--size) 1fr var(--size);
+	background-image: radial-gradient(
+			farthest-side at 50% 0,
+			hsl(var(--color)),
+			transparent
+		),
+		radial-gradient(
+			farthest-side at 50% 100%,
+			hsl(var(--color)),
+			transparent
+		);
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position:
+		center top,
+		center bottom;
+	background-size: 100% var(--size);
+
+	&::before,
+	&::after {
+		display: block;
+		width: 100%;
+		height: var(--size);
+		pointer-events: none;
+		content: "";
+		background: var(--background-page);
+	}
+}
