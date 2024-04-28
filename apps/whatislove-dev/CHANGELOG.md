@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.26.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.25.2...@whatislove.dev/whatislove-dev-v1.26.0) (2024-04-28)
+
+
+### Features
+
+* **whatislove-dev:** add scroll shadow for scroll blocks ([#416](https://github.com/what1s1ove/whatislove.dev/issues/416)) ([69f5c0a](https://github.com/what1s1ove/whatislove.dev/commit/69f5c0aea2007b5119e3b1a484add5444f01c43d))
+
 ## [1.25.2](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.25.1...@whatislove.dev/whatislove-dev-v1.25.2) (2024-04-25)
 
 
