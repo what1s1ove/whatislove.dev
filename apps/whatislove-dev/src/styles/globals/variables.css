@@ -36,6 +36,7 @@
 
 	--color-page-background: var(--color-white-100);
 	--color-page-background-highlight: var(--color-black-100) / 5%;
+	--color-scroll-shadow: var(--color-black-100);
 	--color-intro-background: var(--color-white-200);
 	--color-intro-image-mask: var(--color-white-100);
 	--color-technology-background: var(--color-black-100);
@@ -49,6 +50,7 @@
 
 		--color-page-background: var(--color-black-200);
 		--color-page-background-highlight: var(--color-white-100) / 5%;
+		--color-scroll-shadow: var(--color-white-100);
 		--color-intro-background: var(--color-black-100) / 15%;
 		--color-intro-image-mask: var(--color-black-100);
 		--color-technology-background: var(--color-white-100);
@@ -64,6 +66,7 @@
 
 			--color-page-background: var(--color-black-200);
 			--color-page-background-highlight: var(--color-white-100) / 5%;
+			--color-scroll-shadow: var(--color-white-100);
 			--color-intro-background: var(--color-black-100) / 15%;
 			--color-intro-image-mask: var(--color-black-100);
 			--color-technology-background: var(--color-white-100);
