@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.29.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.28.2...v1.29.0) (2024-04-29)
+
+
+### Features
+
+* **whatislove-dev:** add reduce motion to all animations wd-423 ([#430](https://github.com/what1s1ove/whatislove.dev/issues/430)) ([41a22ff](https://github.com/what1s1ove/whatislove.dev/commit/41a22fff0809d4e2f7b5a83e47dfbf57d10edf8b))
+
 ## [1.28.2](https://github.com/what1s1ove/whatislove.dev/compare/v1.28.1...v1.28.2) (2024-04-29)
 
 
