@@ -6,6 +6,16 @@
 	list-style: none;
 }
 
+@keyframes render {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
 .timeline__item {
 	--size-icon: 14px;
 	--padding-inline: 25px;
@@ -14,10 +24,15 @@
 
 	display: grid;
 	gap: var(--gap);
+	animation: render 1.5s ease-out;
 
 	@media (--width-desktop) {
 		grid-template-columns: max-content 1fr;
 		gap: 0;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
 	}
 }
 
