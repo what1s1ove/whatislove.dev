@@ -29,10 +29,6 @@
 		transform: skewX(-25deg) translateY(-50%);
 		animation: shine 5s infinite;
 	}
-
-	@media print {
-		display: none;
-	}
 }
 
 .not-easter-egg__button {
