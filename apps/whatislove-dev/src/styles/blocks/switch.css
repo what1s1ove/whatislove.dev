@@ -44,4 +44,11 @@
 			translate: calc(0px - var(--translate-icon)) 0;
 		}
 	}
+
+	@media (prefers-reduced-motion: reduce) {
+		&::before,
+		&::after {
+			transition: none;
+		}
+	}
 }

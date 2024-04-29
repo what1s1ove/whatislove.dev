@@ -70,6 +70,15 @@
 		inset-block-start: 10px;
 		width: 75%;
 	}
+
+	@media (prefers-reduced-motion: reduce) {
+		transition: none;
+
+		&::before,
+		&::after {
+			transition: none;
+		}
+	}
 }
 
 .header__button[aria-expanded="true"] .header__button-object {
@@ -114,6 +123,10 @@
 		transition: initial;
 		transform: initial;
 	}
+
+	@media (prefers-reduced-motion: reduce) {
+		transition: none;
+	}
 }
 
 .header__menu--closed {
@@ -151,6 +164,10 @@
 
 .header__menu-item--careers {
 	animation: glitch cubic-bezier(0.5, -0.25, 0.75, 1) 6ms infinite;
+
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
+	}
 }
 
 .header__menu-link {
