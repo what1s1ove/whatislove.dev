@@ -37,6 +37,10 @@
 		content: "";
 		background-color: var(--color);
 	}
+
+	@media (--width-tablet) {
+		width: 95%;
+	}
 }
 
 .aside__border--top {
