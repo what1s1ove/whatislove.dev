@@ -17,6 +17,10 @@
 	transition-duration: 0.3s;
 	transition-property: transform, opacity;
 	transform: translate(-50%, 100%);
+
+	@media (prefers-reduced-motion: reduce) {
+		transition: none;
+	}
 }
 
 .toast--show {

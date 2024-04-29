@@ -45,4 +45,8 @@
 		transform-origin: 50% 50%;
 		animation: 800ms ease-in-out infinite both loader-circle-animation;
 	}
+
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
+	}
 }

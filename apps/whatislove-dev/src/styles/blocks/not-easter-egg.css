@@ -29,6 +29,12 @@
 		transform: skewX(-25deg) translateY(-50%);
 		animation: shine 5s infinite;
 	}
+
+	@media (prefers-reduced-motion: reduce) {
+		&::before {
+			display: none;
+		}
+	}
 }
 
 .not-easter-egg__button {
@@ -39,6 +45,10 @@
 
 	&:hover,
 	&:focus-within {
+		opacity: 1;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
 		opacity: 1;
 	}
 }
@@ -63,4 +73,8 @@
 	inset-block-end: var(--inset);
 	inset-inline-end: var(--inset);
 	animation: append 1s ease-out;
+
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
+	}
 }
