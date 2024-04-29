@@ -1,17 +1,14 @@
+{% from 'icon.njk' import icon %}
 {% from 'social-list.njk' import socialList %}
 
 <aside class="aside column">
 	<span class="aside__border aside__border--top">
-		<svg class="aside__border-object" width="40" height="12" aria-hidden="true">
-			<use href="/images/icons.svg#infinity"></use>
-		</svg>
+		{{ icon(className='aside__border-object', name='infinity', width=40, height=12) }}
 	</span>
 	<b class="aside__title">Let's change the world together!</b>
 	<a class="aside__email" href="mailto:{{ global.email }}">{{ global.email }}</a>
-	{{ socialList(global.socials, 'aside__social-list', true) }}
+	{{ socialList(items=global.socials, className='aside__social-list', hasIconsOnly=true) }}
 	<span class="aside__border aside__border--bottom">
-		<svg class="aside__border-object" width="40" height="12" aria-hidden="true">
-			<use href="/images/icons.svg#infinity"></use>
-		</svg>
+		{{ icon(className='aside__border-object', name='infinity', width=40, height=12) }}
 	</span>
 </aside>

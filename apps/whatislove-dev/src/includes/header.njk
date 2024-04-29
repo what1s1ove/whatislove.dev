@@ -95,7 +95,7 @@
 	>
 		<span class="header__button-object"></span>
 	</button>
-	<nav class="header__menu header__menu--closed" id="menu" aria-label="Main">
+	<nav class="header__menu header__menu--closed" id="menu">
 		<ul class="header__menu-list">
 			<li class="header__menu-item">
 				<a class="header__menu-link" href="/files/vladyslav-zubko-cv.pdf">CV</a>
@@ -104,6 +104,6 @@
 				<a class="header__menu-link" href="https://careers.whatislove.dev/" target="_blank">Careers</a>
 			</li>
 		</ul>
-		{{ settings('header__settings') }}
+		{{ settings(className='header__settings') }}
 	</nav>
 </header>
