@@ -19,9 +19,10 @@ let configuration = {
 			RuleConfigSeverity.Error,
 			`always`,
 			[
-				ProjectPrefix.DEFAULT_SCOPE,
-				...ProjectPrefix.SCOPES.APPS,
-				...ProjectPrefix.SCOPES.PACKAGES,
+				ProjectPrefix.SCOPE.DEFAULT,
+				ProjectPrefix.SCOPE.RELEASE,
+				...ProjectPrefix.SCOPE.APPS,
+				...ProjectPrefix.SCOPE.PACKAGES,
 			],
 		],
 	},
