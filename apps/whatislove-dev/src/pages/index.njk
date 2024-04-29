@@ -3,10 +3,11 @@ layout: page.njk
 permalink: 'index.html'
 ---
 
+{% from 'icon.njk' import icon %}
 {% from 'social-list.njk' import socialList %}
-{% set introSocials = global.socials.concat([{ name: global.email, key: 'email', url: 'mailto:' + global.email }]) %}
-{% set IMAGE_FORMATS = ['avif', 'webp'] %}
 {% set LAPKA_PHRASE = 'Hive Four!' %}
+{% set IMAGE_FORMATS = ['avif', 'webp'] %}
+{% set introSocials = global.socials.concat([{ name: global.email, key: 'email', url: 'mailto:' + global.email }]) %}
 
 <main class="main">
 	<div class="intro column">
@@ -28,7 +29,7 @@ permalink: 'index.html'
 				{% for format in IMAGE_FORMATS %}
 					<source
 						srcset="
-							/images/vladyslav-zubko.photo.{{ format }}    1x,
+							/images/vladyslav-zubko.photo.{{ format }}     1x,
 							/images/vladyslav-zubko@2x.photo.{{ format }} 2x
 						"
 						type="image/{{ format }}"
@@ -56,7 +57,7 @@ permalink: 'index.html'
 			</p>
 			<p class="intro__promo">With semantics, a11y and love</p>
 		</div>
-		{{ socialList(introSocials, 'intro__social-list') }}
+		{{ socialList(items=introSocials, className='intro__social-list') }}
 	</div>
 	<div class="main__row main__row--experience-stickers column">
 		<section class="experience">
@@ -174,9 +175,7 @@ permalink: 'index.html'
 						alt="Telegram channel avatar."
 					/>
 				</picture>
-				<svg class="channel__picture-object" width="22" height="22" aria-hidden="true">
-					<use href="/images/icons.svg#telegram"></use>
-				</svg>
+				{{ icon(className='channel__picture-object', name='telegram', width=22, height=22) }}
 			</div>
 			<a class="channel__link" href="https://t.me/whatislove_dev" target="_blank">t.me/whatislove_dev</a>
 			<p class="channel__description">
