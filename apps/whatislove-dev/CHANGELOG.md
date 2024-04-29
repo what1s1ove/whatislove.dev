@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.26.2](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.26.1...@whatislove.dev/whatislove-dev-v1.26.2) (2024-04-29)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** remove media print from all places wd-414 ([#425](https://github.com/what1s1ove/whatislove.dev/issues/425)) ([db35194](https://github.com/what1s1ove/whatislove.dev/commit/db351948dbef2b585abe91ec720178aa3f05579e))
+
 ## [1.26.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.26.0...@whatislove.dev/whatislove-dev-v1.26.1) (2024-04-29)
 
 
