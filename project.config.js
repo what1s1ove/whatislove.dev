@@ -1,13 +1,14 @@
 let ProjectPrefix = /** @type {const} */ ({
-	DEFAULT_SCOPE: `root`,
 	ISSUE_PREFIXES: [`wd`, `release`],
-	SCOPES: {
+	SCOPE: {
 		APPS: [
 			`careers-whatislove-dev`,
 			`certifications-whatislove-dev`,
 			`whatislove-dev`,
 		],
+		DEFAULT: `root`,
 		PACKAGES: [`shared`],
+		RELEASE: `release`,
 	},
 })
 
