@@ -13,7 +13,7 @@
 	],
 	"scripts": {
 		"_prettier": "prettier \"**/*.{md,json,yml,html,njk,css,js,jsx,cjs,d.ts}\"",
-		"git:hook:precommit": "lint-staged --cwd $PWD",
+		"git:hook:precommit": "lint-staged --cwd .",
 		"git:hook:commit": "npx @commitlint/cli --edit",
 		"build": "npm run build --workspaces",
 		"ci:lint:fs": "ls-lint",
