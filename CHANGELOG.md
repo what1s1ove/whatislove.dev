@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.30.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.29.0...v1.30.0) (2024-04-29)
+
+
+### Features
+
+* **whatislove-dev:** add animation to paw wd-432 ([#433](https://github.com/what1s1ove/whatislove.dev/issues/433)) ([0aedd3f](https://github.com/what1s1ove/whatislove.dev/commit/0aedd3f8435465d3dba144213a84dbc351b24180))
+
 ## [1.29.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.28.2...v1.29.0) (2024-04-29)
 
 
