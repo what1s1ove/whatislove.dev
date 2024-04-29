@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.26.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.26.0...@whatislove.dev/whatislove-dev-v1.26.1) (2024-04-29)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** remove useless aria attrs wd-418 ([#419](https://github.com/what1s1ove/whatislove.dev/issues/419)) ([fab7af6](https://github.com/what1s1ove/whatislove.dev/commit/fab7af61fbdde6b76eade481a1b9bbb6f44ee3ca))
+
 ## [1.26.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.25.2...@whatislove.dev/whatislove-dev-v1.26.0) (2024-04-28)
 
 
