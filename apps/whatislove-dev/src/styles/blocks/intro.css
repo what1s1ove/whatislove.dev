@@ -30,6 +30,28 @@
 	}
 }
 
+@keyframes paw {
+	0% {
+		scale: 1;
+	}
+
+	5% {
+		scale: 1.1;
+	}
+
+	10% {
+		scale: 1;
+	}
+
+	15% {
+		scale: 1.1;
+	}
+
+	20% {
+		scale: 1;
+	}
+}
+
 .intro__paw {
 	--size-paw: 48px;
 	--rotate: 20deg;
@@ -51,12 +73,19 @@
 		border-radius: 50%;
 		rotate: calc(0deg - var(--rotate));
 		translate: 5px 5px;
+		animation: paw 8s infinite;
 	}
 
 	@media (--width-tablet) {
 		place-self: start end;
 		order: calc(infinity);
 		margin: 0;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		&::before {
+			animation: none;
+		}
 	}
 }
 
