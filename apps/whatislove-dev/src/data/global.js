@@ -3,6 +3,7 @@ let data = {
 	description: `Interface Developer`,
 	domain: `https://whatislove.dev`,
 	email: `hello@whatislove.dev`,
+	repo: `https://github.com/what1s1ove/whatislove.dev`,
 	socials: [
 		{
 			key: `github`,
