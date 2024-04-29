@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.30.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.29.0...@whatislove.dev/whatislove-dev-v1.30.0) (2024-04-29)
+
+
+### Features
+
+* **whatislove-dev:** add animation for timeline render wd-438 ([#439](https://github.com/what1s1ove/whatislove.dev/issues/439)) ([9e053e1](https://github.com/what1s1ove/whatislove.dev/commit/9e053e11250ecac300048552436d4c8a8506adaa))
+
 ## [1.29.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.28.0...@whatislove.dev/whatislove-dev-v1.29.0) (2024-04-29)
 
 
