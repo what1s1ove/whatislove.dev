@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.31.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.30.0...v1.31.0) (2024-04-29)
+
+
+### Features
+
+* **whatislove-dev:** add report issue link to footer wd-435 ([#436](https://github.com/what1s1ove/whatislove.dev/issues/436)) ([6f8254d](https://github.com/what1s1ove/whatislove.dev/commit/6f8254ddd19e2bc3ab9d4e22ae25daf4626ed58f))
+
 ## [1.30.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.29.0...v1.30.0) (2024-04-29)
 
 
