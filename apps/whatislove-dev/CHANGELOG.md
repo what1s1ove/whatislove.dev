@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.31.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.30.0...@whatislove.dev/whatislove-dev-v1.31.0) (2024-04-30)
+
+
+### Features
+
+* **whatislove-dev:** add font preload wd-442 ([#443](https://github.com/what1s1ove/whatislove.dev/issues/443)) ([4fefc30](https://github.com/what1s1ove/whatislove.dev/commit/4fefc309cdd90c4640b3cc4b428c3622d7c3ec2c))
+
 ## [1.30.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.29.0...@whatislove.dev/whatislove-dev-v1.30.0) (2024-04-29)
 
 
