@@ -10,9 +10,6 @@
 }
 
 .settings__theme-label {
-	font-family: var(--font-family-highlight);
-	font-size: var(--font-size-heading-2);
-	line-height: 0.75;
 	text-transform: uppercase;
 	cursor: pointer;
 	opacity: 0.5;
@@ -32,22 +29,19 @@
 	--size-icon: 22px;
 
 	display: block;
+	width: var(--size-icon);
+	height: var(--size-icon);
 	margin: 0;
 	appearance: none;
 	cursor: pointer;
+	background-color: hsl(var(--color-icon));
+	border-radius: 0;
+	mask-repeat: no-repeat;
+	mask-position: 50%;
+	mask-size: contain;
 
 	&:focus-visible {
 		outline: none;
-	}
-
-	&[value="light"],
-	&[value="dark"] {
-		width: var(--size-icon);
-		height: var(--size-icon);
-		background-color: hsl(var(--color-icon));
-		mask-repeat: no-repeat;
-		mask-position: 50%;
-		mask-size: contain;
 	}
 
 	&[value="light"] {
@@ -56,5 +50,11 @@
 
 	&[value="dark"] {
 		mask-image: url("/images/icons.svg#dark");
+	}
+
+	&[value="auto"] {
+		width: 37px;
+		height: 18px;
+		mask-image: url("/images/icons.svg#auto");
 	}
 }
