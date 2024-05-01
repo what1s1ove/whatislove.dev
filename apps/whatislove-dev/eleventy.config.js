@@ -22,7 +22,7 @@ let Path = /** @type {const} */ ({
 		`./src/files`,
 		`./src/sounds`,
 		`./src/manifest.webmanifest`,
-		`./src/favicon.ico`,
+		`./src/images/favicons`,
 		`./src/robots.txt`,
 	],
 	CSS: `./src/styles/index.css`,
