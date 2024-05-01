@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.32.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.32.0...@whatislove.dev/whatislove-dev-v1.32.1) (2024-05-01)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** edit cover image path wd-448 ([#449](https://github.com/what1s1ove/whatislove.dev/issues/449)) ([7da2c95](https://github.com/what1s1ove/whatislove.dev/commit/7da2c9574b4c0ebe7c91a2570565891aa174d23d))
+
 ## [1.32.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.31.0...@whatislove.dev/whatislove-dev-v1.32.0) (2024-05-01)
 
 
