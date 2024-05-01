@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.35.2](https://github.com/what1s1ove/whatislove.dev/compare/v1.35.1...v1.35.2) (2024-05-01)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** fix paw position to match the design wd-457 ([#458](https://github.com/what1s1ove/whatislove.dev/issues/458)) ([bec3d7c](https://github.com/what1s1ove/whatislove.dev/commit/bec3d7ca723921d6bb04fed968de6001c321c7cf))
+
 ## [1.35.1](https://github.com/what1s1ove/whatislove.dev/compare/v1.35.0...v1.35.1) (2024-05-01)
 
 
