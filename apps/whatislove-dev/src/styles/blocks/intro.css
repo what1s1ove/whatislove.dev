@@ -20,7 +20,7 @@
 
 .intro__wrapper {
 	display: grid;
-	padding: 25px;
+	padding: 22px;
 	background-color: hsl(var(--color-intro-background));
 	border-radius: 8px;
 
@@ -58,7 +58,7 @@
 
 	flex-direction: column;
 	place-self: end;
-	margin-block: 0 -50px;
+	margin-block: 0 -25px;
 	color: hsl(var(--color-pink-100));
 	rotate: var(--rotate);
 
