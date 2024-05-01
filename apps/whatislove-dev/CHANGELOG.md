@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.33.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.32.1...@whatislove.dev/whatislove-dev-v1.33.0) (2024-05-01)
+
+
+### Features
+
+* **whatislove-dev:** replave favicon with new design wd-451 ([#452](https://github.com/what1s1ove/whatislove.dev/issues/452)) ([b799e30](https://github.com/what1s1ove/whatislove.dev/commit/b799e30e2e53b6833d631d47914d695d3ba11585))
+
 ## [1.32.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.32.0...@whatislove.dev/whatislove-dev-v1.32.1) (2024-05-01)
 
 
