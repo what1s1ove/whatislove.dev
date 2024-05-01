@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.35.1](https://github.com/what1s1ove/whatislove.dev/compare/v1.35.0...v1.35.1) (2024-05-01)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** fix paw circled text to match the design wd-454 ([#455](https://github.com/what1s1ove/whatislove.dev/issues/455)) ([1a538f8](https://github.com/what1s1ove/whatislove.dev/commit/1a538f87a9d5dfab8f759e9d5d1531dc2ec74313))
+
 ## [1.35.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.34.1...v1.35.0) (2024-05-01)
 
 
