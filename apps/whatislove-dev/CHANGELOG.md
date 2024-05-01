@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.32.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.31.0...@whatislove.dev/whatislove-dev-v1.32.0) (2024-05-01)
+
+
+### Features
+
+* **whatislove-dev:** replace og imaga with new design wd-445 ([#446](https://github.com/what1s1ove/whatislove.dev/issues/446)) ([bc46f78](https://github.com/what1s1ove/whatislove.dev/commit/bc46f789ae9938a09f77f41f11cfc06697a8c9ac))
+
 ## [1.31.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.30.0...@whatislove.dev/whatislove-dev-v1.31.0) (2024-04-30)
 
 
