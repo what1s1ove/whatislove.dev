@@ -1,13 +1,14 @@
 .toast {
 	position: fixed;
 	inset-block-end: 0;
-	inset-inline-start: 50%;
+	inset-inline: 0;
 	box-sizing: border-box;
-	width: 92%;
-	max-width: 400px;
+	inline-size: 90%;
+	max-inline-size: 400px;
 	padding-block: 12px;
 	padding-inline: 15px;
 	margin: 0;
+	margin-inline: auto;
 	text-align: center;
 	background: var(--background-page);
 	border-radius: 5px;
@@ -15,8 +16,8 @@
 	opacity: 0;
 	transition-timing-function: ease-out;
 	transition-duration: 0.3s;
-	transition-property: transform, opacity;
-	transform: translate(-50%, 100%);
+	transition-property: translate, opacity;
+	translate: 0 100%;
 
 	@media (prefers-reduced-motion: reduce) {
 		transition: none;
@@ -26,5 +27,5 @@
 .toast--show {
 	inset-block-end: 13px;
 	opacity: 1;
-	transform: translate(-50%, 0%);
+	translate: 0 0%;
 }

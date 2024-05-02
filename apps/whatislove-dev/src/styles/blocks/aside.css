@@ -11,7 +11,7 @@
 		--inset-border: 50px;
 
 		box-sizing: border-box;
-		max-width: 960px;
+		max-inline-size: 960px;
 		padding-block: 150px;
 		margin-inline: auto;
 	}
@@ -21,25 +21,25 @@
 	--color: hsl(var(--color-page-background-highlight));
 
 	position: absolute;
-	inset-inline-start: 50%;
+	inset-inline: 0;
 	display: inline-flex;
 	gap: 25px;
 	align-items: center;
-	width: 90%;
+	inline-size: 90%;
+	margin-inline: auto;
 	fill: var(--color);
-	translate: -50% 0;
 
 	&::before,
 	&::after {
 		flex-grow: 1;
 		flex-shrink: 0;
-		height: 1px;
+		block-size: 1px;
 		content: "";
 		background-color: var(--color);
 	}
 
 	@media (--width-tablet) {
-		width: 95%;
+		inline-size: 95%;
 	}
 }
 

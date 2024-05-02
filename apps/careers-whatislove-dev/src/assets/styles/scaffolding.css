@@ -1,8 +1,8 @@
 body {
 	display: flex;
 	flex-direction: column;
-	min-width: 320px;
-	min-height: 100vh;
+	min-inline-size: 320px;
+	min-block-size: 100vh;
 	padding: 0;
 	margin: 0;
 	overflow: hidden;

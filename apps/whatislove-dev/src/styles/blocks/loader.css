@@ -1,10 +1,10 @@
 @keyframes loader-animation {
 	0% {
-		transform: rotateZ(0deg);
+		rotate: 0deg;
 	}
 
 	100% {
-		transform: rotateZ(360deg);
+		rotate: 360deg;
 	}
 }
 
@@ -12,26 +12,27 @@
 	0%,
 	25% {
 		stroke-dashoffset: 280;
-		transform: rotate(0);
+		rotate: 0;
 	}
 
 	50%,
 	75% {
 		stroke-dashoffset: 75;
-		transform: rotate(45deg);
+		rotate: 45deg;
 	}
 
 	100% {
 		stroke-dashoffset: 280;
-		transform: rotate(360deg);
+		rotate: 360deg;
 	}
 }
 
 .loader {
 	box-sizing: border-box;
 	display: block;
-	max-width: 75px;
-	margin: 35px auto;
+	max-inline-size: 75px;
+	margin-block: 35px;
+	margin-inline: auto;
 	animation: 3s linear infinite loader-animation;
 
 	& circle {

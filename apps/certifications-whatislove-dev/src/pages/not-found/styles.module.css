@@ -1,11 +1,14 @@
 .wrapper {
-	padding: 0 120px;
-	margin-top: 90px;
+	padding-block: 0;
+	padding-inline: 120px;
+	margin-block-start: 90px;
 }
 
 .placeholder {
-	padding: 0 15px;
-	margin: 40px 0 0;
+	padding-block: 0;
+	padding-inline: 15px;
+	margin-block: 40px 0;
+	margin-inline: 0;
 	font-size: 20px;
 	text-align: center;
 }

@@ -3,11 +3,12 @@
 	flex-direction: column;
 	flex-grow: 1;
 	gap: 20px 0;
-	width: 100%;
-	max-width: 530px;
-	height: 100%;
+	inline-size: 100%;
+	max-inline-size: 530px;
+	block-size: 100%;
 	padding: 15px;
-	margin: 0 auto;
+	margin-block: 0;
+	margin-inline: auto;
 }
 
 .form-wrapper {
@@ -20,7 +21,8 @@
 .header {
 	display: grid;
 	gap: 5px 0;
-	margin: 0 0 20px;
+	margin-block: 0 20px;
+	margin-inline: 0;
 }
 
 .title {
@@ -49,7 +51,8 @@
 }
 
 .input {
-	padding: 8px 10px;
+	padding-block: 8px;
+	padding-inline: 10px;
 	font-family: inherit;
 	font-size: inherit;
 	resize: none;
@@ -63,7 +66,8 @@
 }
 
 .submit-btn {
-	padding: 5px 15px;
+	padding-block: 5px;
+	padding-inline: 15px;
 	font-family: inherit;
 	font-size: inherit;
 	color: var(--color-dark);
@@ -80,7 +84,8 @@
 }
 
 .repeat-btn {
-	margin: auto 0 0;
+	margin-block: auto 0;
+	margin-inline: 0;
 	font-family: inherit;
 	font-size: inherit;
 	font-weight: 700;

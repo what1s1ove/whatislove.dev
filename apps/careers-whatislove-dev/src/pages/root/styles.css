@@ -6,8 +6,8 @@
 
 .info {
 	position: absolute;
-	top: var(--position-top);
-	left: var(--position-left);
+	inset-block-start: var(--position-top);
+	inset-inline-start: var(--position-left);
 	z-index: var(--z-index-tooltip);
 
 	--position-top: 20px;
@@ -17,8 +17,8 @@
 .info-btn {
 	--icon-color: var(--color-dark);
 
-	width: 30px;
-	height: 30px;
+	inline-size: 30px;
+	block-size: 30px;
 	padding: 0;
 	color: var(--color-dark);
 	cursor: pointer;
@@ -52,8 +52,8 @@
 .info-content:popover-open {
 	position: absolute;
 	inset: unset;
-	top: calc(var(--position-top) + 45px);
-	left: calc(var(--position-left));
+	inset-block-start: calc(var(--position-top) + 45px);
+	inset-inline-start: calc(var(--position-left));
 	color: var(--color-dark);
 	background-color: var(--color-light);
 	border: 2px solid var(--color-dark);

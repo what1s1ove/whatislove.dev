@@ -29,8 +29,8 @@
 	--size-icon: 22px;
 
 	display: block;
-	width: var(--size-icon);
-	height: var(--size-icon);
+	inline-size: var(--size-icon);
+	block-size: var(--size-icon);
 	margin: 0;
 	appearance: none;
 	cursor: pointer;
@@ -53,8 +53,8 @@
 	}
 
 	&[value="auto"] {
-		width: 37px;
-		height: 18px;
+		inline-size: 37px;
+		block-size: 18px;
 		mask-image: url("/images/icons.svg#auto");
 	}
 }
