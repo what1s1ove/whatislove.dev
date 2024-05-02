@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.34.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.33.2...@whatislove.dev/whatislove-dev-v1.34.0) (2024-05-02)
+
+
+### Features
+
+* prefer css logical properties for all apps wd-460 ([#461](https://github.com/what1s1ove/whatislove.dev/issues/461)) ([e1dc50c](https://github.com/what1s1ove/whatislove.dev/commit/e1dc50c434e57ce5aabb07cd023434f50afa64a0))
+
 ## [1.33.2](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.33.1...@whatislove.dev/whatislove-dev-v1.33.2) (2024-05-01)
 
 

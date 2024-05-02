@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/careers-whatislove-dev-v1.6.1...@whatislove.dev/careers-whatislove-dev-v1.7.0) (2024-05-02)
+
+
+### Features
+
+* prefer css logical properties for all apps wd-460 ([#461](https://github.com/what1s1ove/whatislove.dev/issues/461)) ([e1dc50c](https://github.com/what1s1ove/whatislove.dev/commit/e1dc50c434e57ce5aabb07cd023434f50afa64a0))
+
 ## [1.6.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/careers-whatislove-dev-v1.6.0...@whatislove.dev/careers-whatislove-dev-v1.6.1) (2024-03-31)
 
 
