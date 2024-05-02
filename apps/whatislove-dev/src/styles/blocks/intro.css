@@ -142,6 +142,7 @@
 
 	@media (--width-tablet) {
 		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
 		padding-inline: var(--padding-inline-section);
 	}
 }
@@ -151,7 +152,7 @@
 	font-size: var(--font-size-heading-3);
 }
 
-.intro__promo {
+.intro__slogan {
 	margin: 0;
 	font-family: var(--font-family-highlight);
 	font-size: var(--font-size-highlight);
@@ -160,7 +161,7 @@
 
 	@media (--width-tablet) {
 		place-self: start center;
-		max-inline-size: 250px;
+		max-inline-size: 300px;
 		line-height: 1.1;
 		text-align: center;
 	}

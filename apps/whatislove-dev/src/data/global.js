@@ -1,6 +1,6 @@
 let data = {
 	currentYear: new Date().getFullYear(),
-	description: `Interface Developer`,
+	description: `Avid explorer of the World, enamored with digital tech, especially the Web, passionate about learning, mentoring, and connecting with others`,
 	domain: `https://whatislove.dev`,
 	email: `hello@whatislove.dev`,
 	repo: `https://github.com/what1s1ove/whatislove.dev`,
