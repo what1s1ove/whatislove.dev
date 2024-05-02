@@ -11,7 +11,7 @@
 	@media (--width-desktop) {
 		box-sizing: border-box;
 		grid-template-columns: 70% 1fr;
-		gap: 10px;
+		gap: 20px;
 		max-inline-size: 1000px;
 		margin-inline: auto;
 	}

@@ -26,7 +26,8 @@
 		pointer-events: none;
 		content: "";
 		background-color: hsl(var(--color-yellow-100) / 20%);
-		transform: skewX(-25deg) translateY(-50%);
+		transform: skewX(-25deg);
+		translate: 0 -50%;
 		animation: shine 5s infinite;
 	}
 

@@ -50,6 +50,9 @@
 
 .experience__timeline-wrapper {
 	--size-inline-dates: 145px;
+	--margin-shift: calc(
+		var(--padding-inline-section) - var(--size-inline-dates)
+	);
 
 	block-size: 75vh;
 	overflow-y: auto;
@@ -59,6 +62,6 @@
 	}
 
 	@media (--width-desktop) {
-		translate: calc(0px - var(--size-inline-dates)) 0;
+		margin-inline-start: var(--margin-shift);
 	}
 }

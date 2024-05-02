@@ -82,15 +82,17 @@
 }
 
 .header__button[aria-expanded="true"] .header__button-object {
-	transform: rotateZ(-45deg);
+	rotate: -45deg;
 
 	&::before {
-		transform: rotateZ(90deg) translate(3px, 7px);
+		rotate: 90deg;
+		translate: -7px 3px;
 	}
 
 	&::after {
 		inline-size: 50%;
-		transform: rotateZ(90deg) translate(-3px, 7px);
+		rotate: 90deg;
+		translate: -7px -3px;
 	}
 }
 
@@ -108,8 +110,8 @@
 	inline-size: 100%;
 	padding: 20px;
 	background: var(--background-page);
-	transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
-	transform: translateX(-100%) scaleX(0.1);
+	transition: translate 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+	translate: -100% 0;
 
 	@media (--width-tablet) {
 		--display-mobile: var(--display);
@@ -121,7 +123,7 @@
 		padding: initial;
 		background: initial;
 		transition: initial;
-		transform: initial;
+		translate: initial;
 	}
 
 	@media (prefers-reduced-motion: reduce) {
@@ -134,7 +136,7 @@
 }
 
 .header__menu--opened {
-	transform: var(--transform-mobile);
+	translate: none;
 }
 
 .header__menu-list {

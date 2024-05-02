@@ -115,7 +115,7 @@
 	padding-inline: 40px 25px;
 
 	&::before {
-		transform: scaleX(-1);
+		scale: -1 1;
 	}
 }
 

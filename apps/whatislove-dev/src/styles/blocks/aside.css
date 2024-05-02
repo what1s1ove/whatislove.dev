@@ -21,13 +21,13 @@
 	--color: hsl(var(--color-page-background-highlight));
 
 	position: absolute;
-	inset-inline-start: 50%;
+	inset-inline: 0;
 	display: inline-flex;
 	gap: 25px;
 	align-items: center;
 	inline-size: 90%;
+	margin-inline: auto;
 	fill: var(--color);
-	translate: -50% 0;
 
 	&::before,
 	&::after {

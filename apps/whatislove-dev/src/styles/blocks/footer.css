@@ -64,7 +64,7 @@
 }
 
 .footer__webring-link--previous {
-	transform: scaleX(-1);
+	scale: -1 1;
 }
 
 .footer__credits {
