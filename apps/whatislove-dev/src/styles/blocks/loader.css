@@ -30,8 +30,9 @@
 .loader {
 	box-sizing: border-box;
 	display: block;
-	max-width: 75px;
-	margin: 35px auto;
+	max-inline-size: 75px;
+	margin-block: 35px;
+	margin-inline: auto;
 	animation: 3s linear infinite loader-animation;
 
 	& circle {

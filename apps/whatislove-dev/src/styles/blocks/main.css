@@ -12,7 +12,7 @@
 		box-sizing: border-box;
 		grid-template-columns: 70% 1fr;
 		gap: 10px;
-		max-width: 1000px;
+		max-inline-size: 1000px;
 		margin-inline: auto;
 	}
 }

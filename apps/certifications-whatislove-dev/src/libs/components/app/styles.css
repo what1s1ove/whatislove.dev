@@ -11,8 +11,8 @@ html {
 body {
 	display: flex;
 	flex-direction: column;
-	min-width: 320px;
-	min-height: 100vh;
+	min-inline-size: 320px;
+	min-block-size: 100vh;
 	padding: 0;
 	margin: 0;
 	font-family: Arial, sans-serif;
@@ -24,7 +24,7 @@ body {
 
 img {
 	display: block;
-	max-width: 100%;
+	max-inline-size: 100%;
 }
 
 #root {
@@ -35,8 +35,8 @@ img {
 
 .sr-only {
 	position: absolute;
-	width: 1px;
-	height: 1px;
+	inline-size: 1px;
+	block-size: 1px;
 	padding: 0;
 	margin: -1px;
 	overflow: hidden;

@@ -10,7 +10,7 @@
 
 	@media (--width-desktop) {
 		box-sizing: border-box;
-		max-width: 960px;
+		max-inline-size: 960px;
 		margin-inline: auto;
 	}
 }
@@ -19,7 +19,6 @@
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 15px 50px;
-	padding: 15px 50px;
 	padding: 0;
 	margin: 0;
 	list-style: none;
@@ -33,6 +32,7 @@
 .footer__webring {
 	display: flex;
 	gap: 10px;
+	place-self: center;
 	align-items: center;
 	margin-block: 0 50px;
 
@@ -53,8 +53,8 @@
 	color: inherit;
 
 	&::before {
-		width: var(--size-icon);
-		height: var(--size-icon);
+		inline-size: var(--size-icon);
+		block-size: var(--size-icon);
 		content: "";
 		background-color: currentcolor;
 		mask-image: url("/images/icons.svg#arrow");

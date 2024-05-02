@@ -27,8 +27,8 @@
 
 	&::before {
 		display: block;
-		width: var(--size-icon);
-		height: var(--size-icon);
+		inline-size: var(--size-icon);
+		block-size: var(--size-icon);
 		content: "";
 		background-color: hsl(var(--color-icon));
 		mask-repeat: no-repeat;

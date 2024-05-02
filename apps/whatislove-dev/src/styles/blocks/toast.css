@@ -3,8 +3,8 @@
 	inset-block-end: 0;
 	inset-inline-start: 50%;
 	box-sizing: border-box;
-	width: 92%;
-	max-width: 400px;
+	inline-size: 90%;
+	max-inline-size: 400px;
 	padding-block: 12px;
 	padding-inline: 15px;
 	margin: 0;

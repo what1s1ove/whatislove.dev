@@ -50,8 +50,8 @@
 		inset-block-start: 50%;
 		inset-inline-start: 2px;
 		box-sizing: border-box;
-		width: var(--size-icon);
-		height: var(--size-icon);
+		inline-size: var(--size-icon);
+		block-size: var(--size-icon);
 		content: "";
 		border: 2px solid var(--color);
 		border-radius: 50%;
@@ -61,10 +61,10 @@
 	@media (--width-desktop) {
 		box-sizing: border-box;
 		place-self: start end;
-		width: var(--size-inline-dates, auto);
+		inline-size: var(--size-inline-dates, auto);
 		padding-block: 5px 0;
 		padding-inline: 0 7px;
-		text-align: right;
+		text-align: end;
 		text-wrap: nowrap;
 
 		&::before {
@@ -92,7 +92,7 @@
 		position: absolute;
 		inset-block: 0;
 		inset-inline-start: 8px;
-		width: 2px;
+		inline-size: 2px;
 		content: "";
 		background-color: hsl(var(--color-page-background-highlight));
 		border-radius: 5px;
@@ -123,8 +123,8 @@
 	text-underline-offset: 3px;
 
 	&::before {
-		width: var(--size-icon);
-		height: var(--size-icon);
+		inline-size: var(--size-icon);
+		block-size: var(--size-icon);
 		content: "";
 		background-color: hsl(var(--color-icon));
 		mask-image: url("/images/icons.svg#link");

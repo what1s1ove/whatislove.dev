@@ -24,8 +24,8 @@
 	&::before,
 	&::after {
 		display: block;
-		width: 100%;
-		height: var(--size);
+		inline-size: 100%;
+		block-size: var(--size);
 		pointer-events: none;
 		content: "";
 		background: var(--background-page);

@@ -51,11 +51,11 @@
 .experience__timeline-wrapper {
 	--size-inline-dates: 145px;
 
-	height: 75vh;
+	block-size: 75vh;
 	overflow-y: auto;
 
 	@media (--width-tablet) {
-		height: 900px;
+		block-size: 900px;
 	}
 
 	@media (--width-desktop) {

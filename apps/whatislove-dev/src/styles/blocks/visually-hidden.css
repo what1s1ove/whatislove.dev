@@ -1,7 +1,9 @@
 .visually-hidden {
+	--size: 1px;
+
 	position: absolute;
-	width: 1px;
-	height: 1px;
+	inline-size: var(--size);
+	block-size: var(--size);
 	padding: 0;
 	margin: -1px;
 	overflow: hidden;

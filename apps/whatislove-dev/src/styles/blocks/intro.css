@@ -12,7 +12,7 @@
 		--padding-block-section: 50px;
 
 		box-sizing: border-box;
-		max-width: 1000px;
+		max-inline-size: 1000px;
 		margin-block-start: -170px;
 		margin-inline: auto;
 	}
@@ -63,8 +63,8 @@
 	rotate: var(--rotate);
 
 	&::before {
-		width: var(--size-paw);
-		height: var(--size-paw);
+		inline-size: var(--size-paw);
+		block-size: var(--size-paw);
 		margin-block: 0 -20px;
 		content: "";
 		background-image: url("/images/lapka.svg");
@@ -160,7 +160,7 @@
 
 	@media (--width-tablet) {
 		place-self: start center;
-		max-width: 250px;
+		max-inline-size: 250px;
 		line-height: 1.1;
 		text-align: center;
 	}
