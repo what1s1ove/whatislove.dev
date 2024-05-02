@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.37.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.36.0...v1.37.0) (2024-05-02)
+
+
+### Features
+
+* **whatislove-dev:** improve slogan wd-464 ([#465](https://github.com/what1s1ove/whatislove.dev/issues/465)) ([bf5e1a1](https://github.com/what1s1ove/whatislove.dev/commit/bf5e1a125544dd5efad58db26282a510348ac7ee))
+
 ## [1.36.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.35.2...v1.36.0) (2024-05-02)
 
 
