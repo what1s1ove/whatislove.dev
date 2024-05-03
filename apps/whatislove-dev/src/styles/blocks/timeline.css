@@ -121,7 +121,7 @@
 	inline-size: fit-content;
 	font-size: var(--font-size-text-small);
 	color: inherit;
-	text-underline-offset: 3px;
+	text-decoration: none;
 
 	&::before {
 		inline-size: var(--size-icon);
