@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.35.2](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.35.1...@whatislove.dev/whatislove-dev-v1.35.2) (2024-05-03)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** remove underline fron icon links wd-471 ([#472](https://github.com/what1s1ove/whatislove.dev/issues/472)) ([7e0861f](https://github.com/what1s1ove/whatislove.dev/commit/7e0861fd36c4df1b617366eafa3723ffc6a442c7))
+
 ## [1.35.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.35.0...@whatislove.dev/whatislove-dev-v1.35.1) (2024-05-03)
 
 
