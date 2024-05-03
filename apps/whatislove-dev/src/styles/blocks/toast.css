@@ -14,13 +14,12 @@
 	border-radius: 5px;
 	box-shadow: 0 0 10px hsl(var(--color-red-100));
 	opacity: 0;
-	transition-timing-function: ease-out;
-	transition-duration: 0.3s;
-	transition-property: translate, opacity;
 	translate: 0 100%;
 
-	@media (prefers-reduced-motion: reduce) {
-		transition: none;
+	@media (prefers-reduced-motion: no-preference) {
+		transition-timing-function: ease-out;
+		transition-duration: 0.3s;
+		transition-property: translate, opacity;
 	}
 }
 

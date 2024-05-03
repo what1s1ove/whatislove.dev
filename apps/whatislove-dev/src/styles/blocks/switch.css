@@ -19,7 +19,6 @@
 		inline-size: var(--size-icon);
 		block-size: var(--size-icon);
 		content: "";
-		transition: translate 0.3s ease-in-out;
 	}
 
 	&::before {
@@ -45,10 +44,10 @@
 		}
 	}
 
-	@media (prefers-reduced-motion: reduce) {
+	@media (prefers-reduced-motion: no-preference) {
 		&::before,
 		&::after {
-			transition: none;
+			transition: translate 0.3s ease-in-out;
 		}
 	}
 }

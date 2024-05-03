@@ -48,7 +48,6 @@
 	block-size: 2px;
 	background-color: hsl(var(--color-icon));
 	border-radius: 10px;
-	transition: 400ms ease-in;
 
 	&::before,
 	&::after {
@@ -58,7 +57,6 @@
 		content: "";
 		background-color: hsl(var(--color-icon));
 		border-radius: 10px;
-		transition: 400ms ease-in;
 	}
 
 	&::before {
@@ -71,12 +69,14 @@
 		inline-size: 75%;
 	}
 
-	@media (prefers-reduced-motion: reduce) {
-		transition: none;
+	@media (prefers-reduced-motion: no-preference) {
+		--transition: 400ms ease-in;
+
+		transition: var(--transition);
 
 		&::before,
 		&::after {
-			transition: none;
+			transition: var(--transition);
 		}
 	}
 }
@@ -110,7 +110,6 @@
 	inline-size: 100%;
 	padding: 20px;
 	background: var(--background-page);
-	transition: translate 0.4s cubic-bezier(0.65, 0, 0.35, 1);
 	translate: -100% 0;
 
 	@media (--width-tablet) {
@@ -126,8 +125,8 @@
 		translate: initial;
 	}
 
-	@media (prefers-reduced-motion: reduce) {
-		transition: none;
+	@media (prefers-reduced-motion: no-preference) {
+		transition: translate 0.4s cubic-bezier(0.65, 0, 0.35, 1);
 	}
 }
 
@@ -165,10 +164,8 @@
 }
 
 .header__menu-item--careers {
-	animation: glitch cubic-bezier(0.5, -0.25, 0.75, 1) 6ms infinite;
-
-	@media (prefers-reduced-motion: reduce) {
-		animation: none;
+	@media (prefers-reduced-motion: no-preference) {
+		animation: glitch cubic-bezier(0.5, -0.25, 0.75, 1) 6ms infinite;
 	}
 }
 
