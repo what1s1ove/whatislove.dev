@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.37.1](https://github.com/what1s1ove/whatislove.dev/compare/v1.37.0...v1.37.1) (2024-05-03)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** edit focus ring size in timeline wd-468 ([#469](https://github.com/what1s1ove/whatislove.dev/issues/469)) ([7a573ab](https://github.com/what1s1ove/whatislove.dev/commit/7a573ab2f08f47a6d0e95bf9c8cc1da77ef04ab8))
+
 ## [1.37.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.36.0...v1.37.0) (2024-05-02)
 
 
