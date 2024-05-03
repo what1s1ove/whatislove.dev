@@ -9,199 +9,190 @@ permalink: 'index.html'
 {% set IMAGE_FORMATS = ['avif', 'webp'] %}
 {% set introSocials = global.socials.concat([{ name: global.email, key: 'email', url: 'mailto:' + global.email }]) %}
 
-<main class="main" id="main">
-	<div class="intro column">
-		<div class="intro__wrapper">
-			<button class="intro__paw action" type="button" aria-label="{{ LAPKA_PHRASE }}">
-				<svg
-					class="intro__paw-object"
-					width="115"
-					height="60"
-					xmlns="http://www.w3.org/2000/svg"
-					aria-hidden="true"
-				>
-					<text x="30">
-						<textPath class="intro__paw-text" xlink:href="#text-curved">{{ LAPKA_PHRASE }}</textPath>
-					</text>
-				</svg>
-			</button>
-			<picture class="intro__picture">
+<div class="intro column">
+	<div class="intro__wrapper">
+		<button class="intro__paw action" type="button" aria-label="{{ LAPKA_PHRASE }}">
+			<svg
+				class="intro__paw-object"
+				width="115"
+				height="60"
+				xmlns="http://www.w3.org/2000/svg"
+				aria-hidden="true"
+			>
+				<text x="30">
+					<textPath class="intro__paw-text" xlink:href="#text-curved">{{ LAPKA_PHRASE }}</textPath>
+				</text>
+			</svg>
+		</button>
+		<picture class="intro__picture">
+			{% for format in IMAGE_FORMATS %}
+				<source
+					srcset="
+						/images/vladyslav-zubko.photo.{{ format }}     1x,
+						/images/vladyslav-zubko@2x.photo.{{ format }} 2x
+					"
+					type="image/{{ format }}"
+				/>
+			{% endfor %}
+			<img
+				class="intro__photo"
+				src="/images/vladyslav-zubko.photo.png"
+				srcset="/images/vladyslav-zubko@2x.photo.png 2x"
+				width="226"
+				height="300"
+				fetchpriority="high"
+				alt="Vladyslav Zubko Portrait."
+			/>
+		</picture>
+		<header class="intro__header">
+			<p class="intro__welcome">Hi, my name is</p>
+			<h1 class="intro__name">Vladyslav Zubko</h1>
+		</header>
+	</div>
+	<div class="intro__description-wrapper">
+		<p class="intro__description">
+			I'm an avid explorer of the World, enamored with digital tech, especially the Web, passionate about
+			learning, mentoring, and connecting with others
+		</p>
+		<p class="intro__slogan">Experts stand for high standards</p>
+	</div>
+	{{ socialList(items=introSocials, className='intro__social-list') }}
+</div>
+<div class="main__row main__row--experience-stickers column">
+	<section class="experience">
+		<h2 class="experience__title">Experience</h2>
+		<form class="experience__form">
+			<label class="experience__form-label">
+				<input
+					class="experience__form-control visually-hidden"
+					type="radio"
+					name="type"
+					value="position"
+					checked
+				/>
+				Positions
+			</label>
+			<label class="experience__form-label">
+				<input class="experience__form-control visually-hidden" type="radio" name="type" value="certificate" />
+				Certificates
+			</label>
+			<label class="experience__form-label">
+				<input class="experience__form-control visually-hidden" type="radio" name="type" value="meetup" />
+				Meetups
+			</label>
+			<label class="experience__form-label">
+				<input class="experience__form-control visually-hidden" type="radio" name="type" value="book" />
+				Book
+			</label>
+		</form>
+		<div class="experience__timeline-wrapper scroll-shadows">
+			<ul class="experience__timeline-list timeline"></ul>
+		</div>
+	</section>
+	<section class="stickers">
+		<h2 class="stickers__title visually-hidden">Stickers</h2>
+		<ul class="stickers__list">
+			<li class="stickers__item stickers__item--full stickers__item--nodejs">
+				<span class="visually-hidden">Node.js</span>
+			</li>
+			<li class="stickers__item stickers__item--beerjs">
+				<span class="visually-hidden">BeerJS</span>
+			</li>
+			<li class="stickers__item stickers__item--react">
+				<span class="visually-hidden">React</span>
+			</li>
+			<li class="stickers__item stickers__item--aws">
+				<span class="visually-hidden">AWS</span>
+			</li>
+			<li class="stickers__item stickers__item--acidtwo">
+				<span class="visually-hidden">Acid2</span>
+			</li>
+			<li class="stickers__item stickers__item--dom">
+				<span class="visually-hidden">DOM API</span>
+			</li>
+			<li class="stickers__item stickers__item--webcomponents">
+				<span class="visually-hidden">WebComponents</span>
+			</li>
+			<li class="stickers__item stickers__item--vans">
+				<span class="visually-hidden">Vans</span>
+			</li>
+			<li class="stickers__item stickers__item--xl">
+				<span class="visually-hidden">Gloomy Forest</span>
+			</li>
+			<li class="stickers__item stickers__item--berserk">
+				<span class="visually-hidden">Berserk</span>
+			</li>
+			<li class="stickers__item stickers__item--pair stickers__item--love">
+				<span class="visually-hidden">Love</span>
+			</li>
+			<li class="stickers__item stickers__item--jagermeister">
+				<span class="visually-hidden">Jagermeister</span>
+			</li>
+		</ul>
+	</section>
+</div>
+<section class="channel column">
+	<h2 class="channel__title visually-hidden">My telegram channel</h2>
+	<ul class="channel__content-list" aria-hidden="true">
+		<li class="channel__content-item channel__content-item--shift-back channel__content-item--reaction">
+			<span class="channel__content-emoji">👍</span> 3
+		</li>
+		<li class="channel__content-item channel__content-item--shift-back channel__content-item--technology">
+			TypeScript
+		</li>
+		<li class="channel__content-item channel__content-item--technology">Accessibility</li>
+		<li class="channel__content-item channel__content-item--icon channel__content-item--icon--lapka">3</li>
+		<li class="channel__content-item channel__content-item--shift-forward channel__content-item--reaction">
+			<span class="channel__content-emoji">👀</span> 15
+		</li>
+		<li class="channel__content-item channel__content-item--technology">Eleventy</li>
+	</ul>
+	<div class="channel__content">
+		<div class="channel__picture-wrapper">
+			<picture class="channel__picture">
 				{% for format in IMAGE_FORMATS %}
 					<source
 						srcset="
-							/images/vladyslav-zubko.photo.{{ format }}     1x,
-							/images/vladyslav-zubko@2x.photo.{{ format }} 2x
+							/images/telegram-avatar.photo.{{ format }}    1x,
+							/images/telegram-avatar@2x.photo.{{ format }} 2x
 						"
 						type="image/{{ format }}"
 					/>
 				{% endfor %}
 				<img
-					class="intro__photo"
-					src="/images/vladyslav-zubko.photo.png"
-					srcset="/images/vladyslav-zubko@2x.photo.png 2x"
-					width="226"
-					height="300"
-					fetchpriority="high"
-					alt="Vladyslav Zubko Portrait."
+					class="channel__image"
+					src="/images/telegram-avatar.photo.jpg"
+					srcset="/images/telegram-avatar@2x.photo.jpg 2x"
+					width="66"
+					height="66"
+					loading="lazy"
+					alt="Telegram channel avatar."
 				/>
 			</picture>
-			<header class="intro__header">
-				<p class="intro__welcome">Hi, my name is</p>
-				<h1 class="intro__name">Vladyslav Zubko</h1>
-			</header>
+			{{ icon(className='channel__picture-object', name='telegram', width=22, height=22) }}
 		</div>
-		<div class="intro__description-wrapper">
-			<p class="intro__description">
-				I'm an avid explorer of the World, enamored with digital tech, especially the Web, passionate about
-				learning, mentoring, and connecting with others
-			</p>
-			<p class="intro__slogan">Experts stand for high standards</p>
-		</div>
-		{{ socialList(items=introSocials, className='intro__social-list') }}
+		<a class="channel__link" href="https://t.me/whatislove_dev" target="_blank">t.me/whatislove_dev</a>
+		<p class="channel__description">
+			I run a Telegram channel, sharing insightful dev publications and resources. Thx, peace, frogs, love ✌️
+		</p>
 	</div>
-	<div class="main__row main__row--experience-stickers column">
-		<section class="experience">
-			<h2 class="experience__title">Experience</h2>
-			<form class="experience__form">
-				<label class="experience__form-label">
-					<input
-						class="experience__form-control visually-hidden"
-						type="radio"
-						name="type"
-						value="position"
-						checked
-					/>
-					Positions
-				</label>
-				<label class="experience__form-label">
-					<input
-						class="experience__form-control visually-hidden"
-						type="radio"
-						name="type"
-						value="certificate"
-					/>
-					Certificates
-				</label>
-				<label class="experience__form-label">
-					<input class="experience__form-control visually-hidden" type="radio" name="type" value="meetup" />
-					Meetups
-				</label>
-				<label class="experience__form-label">
-					<input class="experience__form-control visually-hidden" type="radio" name="type" value="book" />
-					Book
-				</label>
-			</form>
-			<div class="experience__timeline-wrapper scroll-shadows">
-				<ul class="experience__timeline-list timeline"></ul>
-			</div>
-		</section>
-		<section class="stickers">
-			<h2 class="stickers__title visually-hidden">Stickers</h2>
-			<ul class="stickers__list">
-				<li class="stickers__item stickers__item--full stickers__item--nodejs">
-					<span class="visually-hidden">Node.js</span>
-				</li>
-				<li class="stickers__item stickers__item--beerjs">
-					<span class="visually-hidden">BeerJS</span>
-				</li>
-				<li class="stickers__item stickers__item--react">
-					<span class="visually-hidden">React</span>
-				</li>
-				<li class="stickers__item stickers__item--aws">
-					<span class="visually-hidden">AWS</span>
-				</li>
-				<li class="stickers__item stickers__item--acidtwo">
-					<span class="visually-hidden">Acid2</span>
-				</li>
-				<li class="stickers__item stickers__item--dom">
-					<span class="visually-hidden">DOM API</span>
-				</li>
-				<li class="stickers__item stickers__item--webcomponents">
-					<span class="visually-hidden">WebComponents</span>
-				</li>
-				<li class="stickers__item stickers__item--vans">
-					<span class="visually-hidden">Vans</span>
-				</li>
-				<li class="stickers__item stickers__item--xl">
-					<span class="visually-hidden">Gloomy Forest</span>
-				</li>
-				<li class="stickers__item stickers__item--berserk">
-					<span class="visually-hidden">Berserk</span>
-				</li>
-				<li class="stickers__item stickers__item--pair stickers__item--love">
-					<span class="visually-hidden">Love</span>
-				</li>
-				<li class="stickers__item stickers__item--jagermeister">
-					<span class="visually-hidden">Jagermeister</span>
-				</li>
-			</ul>
-		</section>
-	</div>
-	<section class="channel column">
-		<h2 class="channel__title visually-hidden">My telegram channel</h2>
-		<ul class="channel__content-list" aria-hidden="true">
-			<li class="channel__content-item channel__content-item--shift-back channel__content-item--reaction">
-				<span class="channel__content-emoji">👍</span> 3
-			</li>
-			<li class="channel__content-item channel__content-item--shift-back channel__content-item--technology">
-				TypeScript
-			</li>
-			<li class="channel__content-item channel__content-item--technology">Accessibility</li>
-			<li class="channel__content-item channel__content-item--icon channel__content-item--icon--lapka">3</li>
-			<li class="channel__content-item channel__content-item--shift-forward channel__content-item--reaction">
-				<span class="channel__content-emoji">👀</span> 15
-			</li>
-			<li class="channel__content-item channel__content-item--technology">Eleventy</li>
-		</ul>
-		<div class="channel__content">
-			<div class="channel__picture-wrapper">
-				<picture class="channel__picture">
-					{% for format in IMAGE_FORMATS %}
-						<source
-							srcset="
-								/images/telegram-avatar.photo.{{ format }}    1x,
-								/images/telegram-avatar@2x.photo.{{ format }} 2x
-							"
-							type="image/{{ format }}"
-						/>
-					{% endfor %}
-					<img
-						class="channel__image"
-						src="/images/telegram-avatar.photo.jpg"
-						srcset="/images/telegram-avatar@2x.photo.jpg 2x"
-						width="66"
-						height="66"
-						loading="lazy"
-						alt="Telegram channel avatar."
-					/>
-				</picture>
-				{{ icon(className='channel__picture-object', name='telegram', width=22, height=22) }}
-			</div>
-			<a class="channel__link" href="https://t.me/whatislove_dev" target="_blank">t.me/whatislove_dev</a>
-			<p class="channel__description">
-				I run a Telegram channel, sharing insightful dev publications and resources. Thx, peace, frogs, love ✌️
-			</p>
-		</div>
-		<ul class="channel__content-list" aria-hidden="true">
-			<li class="channel__content-item channel__content-item--full channel__content-item--reaction">
-				<span class="channel__content-emoji">🦄</span> 15
-			</li>
-			<li class="channel__content-item channel__content-item--shift-back channel__content-item--reaction">
-				<span class="channel__content-emoji">❤️</span> 12
-			</li>
-			<li
-				class="channel__content-item channel__content-item--shift-back channel__content-item--technology channel__content-item--technology--left"
-			>
-				Frameworks
-			</li>
-			<li class="channel__content-item channel__content-item--technology channel__content-item--technology--left">
-				AWS
-			</li>
-			<li class="channel__content-item channel__content-item--shift-forward channel__content-item--reaction">
-				<span class="channel__content-emoji">🔥</span> 9
-			</li>
-		</ul>
-	</section>
-</main>
-
-{% include 'aside.njk' %}
+	<ul class="channel__content-list" aria-hidden="true">
+		<li class="channel__content-item channel__content-item--full channel__content-item--reaction">
+			<span class="channel__content-emoji">🦄</span> 15
+		</li>
+		<li class="channel__content-item channel__content-item--shift-back channel__content-item--reaction">
+			<span class="channel__content-emoji">❤️</span> 12
+		</li>
+		<li
+			class="channel__content-item channel__content-item--shift-back channel__content-item--technology channel__content-item--technology--left"
+		>
+			Frameworks
+		</li>
+		<li class="channel__content-item channel__content-item--technology channel__content-item--technology--left">
+			AWS
+		</li>
+		<li class="channel__content-item channel__content-item--shift-forward channel__content-item--reaction">
+			<span class="channel__content-emoji">🔥</span> 9
+		</li>
+	</ul>
+</section>

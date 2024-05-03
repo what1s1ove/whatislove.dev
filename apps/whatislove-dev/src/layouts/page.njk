@@ -1,4 +1,5 @@
-{% set title = global.title if page.url == '/' else title + ' | ' + global.title %}
+{% set isRoot = page.url == '/' %}
+{% set title = global.title if isRoot else title + ' | ' + global.title %}
 {% set description = description if description else global.description %}
 
 <!doctype html>
@@ -47,20 +48,17 @@
 		<meta name="twitter:site" content="@what1s1oveee" />
 	</head>
 	<body class="page__body">
+		{% include 'skip-link.njk' %}
 		{% include 'header.njk' %}
 
-		{{ content | safe }}
+		<main class="main" id="main">{{ content | safe }}</main>
+
+		{% if isRoot %}
+			{% include 'aside.njk' %}
+		{% endif %}
 		{% include 'footer.njk' %}
-
-		<section class="not-easter-egg">
-			<h2 class="not-easter-egg__title visually-hidden">Not an Easter Egg (but actually it is, yes 😁)</h2>
-			<div class="not-easter-egg__button-wrapper">
-				<button class="not-easter-egg__button action" type="button" aria-label="Easter egg">🥚</button>
-			</div>
-		</section>
-
-		<p class="toast" role="alert" aria-live="polite"></p>
-
+		{% include 'easter-egg.njk' %}
+		{% include 'toast.njk' %}
 		{% include 'shapes.njk' %}
 
 		<script src="/scripts/index.js" defer></script>
