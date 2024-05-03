@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.36.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.35.3...@whatislove.dev/whatislove-dev-v1.36.0) (2024-05-03)
+
+
+### Features
+
+* **whatislove-dev:** add skip link wd-477 ([#478](https://github.com/what1s1ove/whatislove.dev/issues/478)) ([91a62ba](https://github.com/what1s1ove/whatislove.dev/commit/91a62ba2ad58e58b626cbf0ec20dcc479c31308b))
+
 ## [1.35.3](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.35.2...@whatislove.dev/whatislove-dev-v1.35.3) (2024-05-03)
 
 
