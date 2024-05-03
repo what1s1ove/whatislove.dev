@@ -1,0 +1,20 @@
+.skip-link {
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	background-color: hsl(var(--color-red-100));
+}
+
+.skip-link__link {
+	display: block;
+	margin: 8px;
+	color: inherit;
+	outline: none;
+	opacity: 1;
+
+	&:not(:focus-visible) {
+		position: absolute;
+		pointer-events: none;
+		opacity: 0;
+	}
+}

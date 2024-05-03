@@ -1,5 +1,10 @@
 .page {
-	scroll-behavior: smooth;
+	color: hsl(var(--color-text));
+	background: var(--background-page);
+
+	@media (prefers-reduced-motion: no-preference) {
+		scroll-behavior: smooth;
+	}
 }
 
 .page--no-scroll {
@@ -11,6 +16,4 @@
 	font-family: var(--font-family-text);
 	font-size: var(--font-size-text-base);
 	line-height: 1.5;
-	color: hsl(var(--color-text));
-	background: var(--background-page);
 }
