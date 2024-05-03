@@ -118,6 +118,7 @@
 	display: inline-flex;
 	gap: 6px;
 	align-items: center;
+	inline-size: fit-content;
 	font-size: var(--font-size-text-small);
 	color: inherit;
 	text-underline-offset: 3px;
