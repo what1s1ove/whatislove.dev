@@ -33,7 +33,6 @@
 	max-inline-size: 75px;
 	margin-block: 35px;
 	margin-inline: auto;
-	animation: 3s linear infinite loader-animation;
 
 	& circle {
 		display: block;
@@ -47,7 +46,7 @@
 		animation: 800ms ease-in-out infinite both loader-circle-animation;
 	}
 
-	@media (prefers-reduced-motion: reduce) {
-		animation: none;
+	@media (prefers-reduced-motion: no-preference) {
+		animation: 3s linear infinite loader-animation;
 	}
 }

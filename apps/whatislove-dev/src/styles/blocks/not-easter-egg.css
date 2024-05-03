@@ -20,7 +20,6 @@
 		inset-block-start: 50%;
 		inset-inline-start: -75%;
 		z-index: 2;
-		display: block;
 		inline-size: 50%;
 		block-size: 100%;
 		pointer-events: none;
@@ -31,9 +30,9 @@
 		animation: shine 5s infinite;
 	}
 
-	@media (prefers-reduced-motion: reduce) {
+	@media (prefers-reduced-motion: no-preference) {
 		&::before {
-			display: none;
+			display: block;
 		}
 	}
 }
@@ -41,7 +40,6 @@
 .not-easter-egg__button {
 	font-size: var(--font-size-highlight);
 	line-height: 1;
-	opacity: 0;
 	transition: opacity 0.7s ease-in-out;
 
 	&:hover,
@@ -49,8 +47,8 @@
 		opacity: 1;
 	}
 
-	@media (prefers-reduced-motion: reduce) {
-		opacity: 1;
+	@media (prefers-reduced-motion: no-preference) {
+		opacity: 0;
 	}
 }
 
@@ -73,9 +71,8 @@
 	position: fixed;
 	inset-block-end: var(--inset);
 	inset-inline-end: var(--inset);
-	animation: append 1s ease-out;
 
-	@media (prefers-reduced-motion: reduce) {
-		animation: none;
+	@media (prefers-reduced-motion: no-preference) {
+		animation: append 1s ease-out;
 	}
 }

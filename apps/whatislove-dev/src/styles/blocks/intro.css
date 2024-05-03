@@ -74,7 +74,6 @@
 		border-radius: 50%;
 		rotate: calc(0deg - var(--rotate));
 		translate: 5px 0;
-		animation: paw 8s infinite;
 	}
 
 	@media (--width-tablet) {
@@ -83,9 +82,9 @@
 		margin: 0;
 	}
 
-	@media (prefers-reduced-motion: reduce) {
+	@media (prefers-reduced-motion: no-preference) {
 		&::before {
-			animation: none;
+			animation: paw 8s infinite;
 		}
 	}
 }
