@@ -23,7 +23,7 @@
 	align-items: center;
 	font-weight: 600;
 	color: inherit;
-	text-underline-offset: 5px;
+	text-decoration: none;
 
 	&::before {
 		display: block;
