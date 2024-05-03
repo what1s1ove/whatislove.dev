@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.35.3](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.35.2...@whatislove.dev/whatislove-dev-v1.35.3) (2024-05-03)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** add view box for noise to fix bg in Firefox wd-474 ([#475](https://github.com/what1s1ove/whatislove.dev/issues/475)) ([0f66eba](https://github.com/what1s1ove/whatislove.dev/commit/0f66eba88311b12bbfdba0fa066e74156d24ee2e))
+
 ## [1.35.2](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.35.1...@whatislove.dev/whatislove-dev-v1.35.2) (2024-05-03)
 
 
