@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.37.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.37.0...@whatislove.dev/whatislove-dev-v1.37.1) (2024-05-05)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** remove easter egg animation in motion mode wd-481 ([#484](https://github.com/what1s1ove/whatislove.dev/issues/484)) ([9f5d503](https://github.com/what1s1ove/whatislove.dev/commit/9f5d5035db36871b224111d340ab1c47e4018923))
+
 ## [1.37.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.36.0...@whatislove.dev/whatislove-dev-v1.37.0) (2024-05-05)
 
 
