@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.40.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.39.1...v1.40.0) (2024-05-05)
+
+
+### Features
+
+* **whatislove-dev:** add authorization_endpoint to head wd-486 ([#487](https://github.com/what1s1ove/whatislove.dev/issues/487)) ([85d901f](https://github.com/what1s1ove/whatislove.dev/commit/85d901f788af60d33963461b830cdfde60cf20b5))
+
 ## [1.39.1](https://github.com/what1s1ove/whatislove.dev/compare/v1.39.0...v1.39.1) (2024-05-05)
 
 
