@@ -1,3 +1,20 @@
 .not-found {
 	display: grid;
+	gap: 20px;
+	padding-block: 100px;
+
+	@media (--width-tablet) {
+		max-inline-size: 1000px;
+		margin-inline: auto;
+	}
+}
+
+.not-found__title {
+	margin: 0;
+	font-size: var(--font-size-highlight);
+	text-transform: uppercase;
+}
+
+.not-found__desc {
+	margin: 0;
 }

@@ -1,0 +1,6 @@
+.content {
+	a {
+		color: hsl(var(--color-red-100));
+		text-underline-offset: 3px;
+	}
+}
