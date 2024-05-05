@@ -20,6 +20,7 @@
 		inset-block-start: 50%;
 		inset-inline-start: -75%;
 		z-index: 2;
+		display: none;
 		inline-size: 50%;
 		block-size: 100%;
 		pointer-events: none;
