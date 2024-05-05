@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.39.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.38.0...v1.39.0) (2024-05-05)
+
+
+### Features
+
+* **whatislove-dev:** 404 page redesign wd-480 ([#482](https://github.com/what1s1ove/whatislove.dev/issues/482)) ([1b146ce](https://github.com/what1s1ove/whatislove.dev/commit/1b146ce4b75ac8890e189ec3740c49d95811ad6a))
+
 ## [1.38.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.37.3...v1.38.0) (2024-05-03)
 
 
