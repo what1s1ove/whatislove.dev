@@ -33,6 +33,10 @@ let Path = /** @type {const} */ ({
 	},
 })
 
+let Collection = /** @type {const} */ ({
+	ARTICLES: `src/articles/*/index.md`,
+})
+
 let isDevelopment = process.env[`NODE_ENV`] === `development`
 let rawPackageJson = await readFile(new URL(`package.json`, import.meta.url))
 let packageJson = /** @type {(text: string) => PackageJson} */ (JSON.parse)(
@@ -48,6 +52,19 @@ let init = (config) => {
 	if (!isDevelopment) {
 		config.ignores.add(Path.PAGE.FORM)
 	}
+
+	config.addCollection(
+		`articles`,
+		/**
+		 * @param {{
+		 * 	getFilteredByGlob: (glob: string) => unknown[]
+		 * }} collections
+		 * @returns {unknown[]}
+		 */
+		(collections) => {
+			return collections.getFilteredByGlob(Collection.ARTICLES)
+		},
+	)
 
 	// copy
 	for (let url of Path.COPY) {

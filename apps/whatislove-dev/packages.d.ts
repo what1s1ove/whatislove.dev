@@ -15,6 +15,8 @@ declare module '@11ty/eleventy' {
 		): void
 
 		addTransform(name: string, transform: Function): void
+
+		addCollection(name: string, addCollection: Function): void
 	}
 
 	export { UserConfig }
