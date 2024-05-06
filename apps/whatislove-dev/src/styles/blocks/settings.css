@@ -2,7 +2,6 @@
 	display: inline-flex;
 	gap: 10px;
 	align-items: center;
-	justify-self: center;
 	padding-block: 8px;
 	padding-inline: 10px;
 	background-color: hsl(var(--color-page-background-highlight));
