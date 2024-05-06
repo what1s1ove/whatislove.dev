@@ -24,6 +24,7 @@ let Path = /** @type {const} */ ({
 		`./src/manifest.webmanifest`,
 		`./src/images/favicons`,
 		`./src/robots.txt`,
+		`src/articles/**/*.!(md)`,
 	],
 	CSS: `./src/styles/index.css`,
 	DB: `./src/database.json`,

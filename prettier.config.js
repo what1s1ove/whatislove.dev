@@ -15,6 +15,7 @@ let config = {
 			options: {
 				parser: `jinja-template`,
 				printWidth: 120,
+				useTabs: true,
 			},
 		},
 	],
