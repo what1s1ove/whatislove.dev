@@ -2,6 +2,8 @@
 title: 'Lint your project with Github Actions'
 description: In this comprehensive guide, we explore the powerful combination of code linting and automation using GitHub Actions. We introduce ESLint, Stylelint, and other linters, ensuring code quality and consistency. As a result, you'll master GitHub Actions, code linting, and automation, empowering your software development workflow.
 date: 2021-12-20
+tags:
+  - CI
 changelogs: []
 layout: article.njk
 ---

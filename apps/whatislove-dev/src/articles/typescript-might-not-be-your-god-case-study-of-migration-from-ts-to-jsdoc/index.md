@@ -2,6 +2,9 @@
 title: 'TypeScript Might Not Be Your God: Case Study of Migration from TS to JSDoc'
 description: Explore new horizons of JavaScript typing. Learn how JSDoc and TypeScript work closely together, providing developers with a powerful tool for enhancing projects. Don't limit yourself – consider TypeScript as a part, not the sole solution. Use JSDoc flexibly to add robust typing to projects, preserving the freedom of choice and maintaining harmony in approaches.
 date: 2024-01-10
+tags:
+  - TS
+  - JS
 changelogs: []
 layout: article.njk
 ---

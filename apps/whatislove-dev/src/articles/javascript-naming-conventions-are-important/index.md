@@ -2,6 +2,9 @@
 title: JavaScript Naming Conventions are Important
 description: JavaScript demands attention to detail, and naming conventions play a crucial role in this aspect. The article offers an extensive overview of naming principles, emphasizing the significance of this aspect in the development process. The goal of the article is to provide guidance while underscoring the flexibility and necessity of adapting conventions to the specific requirements of each individual project.
 date: 2023-11-10
+tags:
+  - JS
+  - TS
 changelogs: []
 layout: article.njk
 ---

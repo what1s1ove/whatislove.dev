@@ -2,6 +2,8 @@
 title: Why it is Important to Update Linters and How to Do it Right
 description: In the dynamic realm of development, linter updates are essential. Explore a gradual, enhanced config approach to seamlessly introduce rule updates, ensuring high coding standards without disrupting existing projects. Enhance your team's workflow with flexibility and efficiency.
 date: 2024-02-05
+tags:
+  - CI
 changelogs: []
 layout: article.njk
 ---

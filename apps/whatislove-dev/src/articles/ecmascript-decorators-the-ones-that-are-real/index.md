@@ -2,6 +2,8 @@
 title: ECMAScript Decorators. The Ones That are Real.
 description: History of ECMAScript decorators, their implementation, and real-life examples of the decorator pattern in action.
 date: 2023-10-19
+tags:
+  - JS
 changelogs: []
 layout: article.njk
 ---

@@ -2,6 +2,8 @@
 title: JS and everyday data structures
 description: Explore the role of data structures in JavaScript, optimizing code, enhancing readability, and simplifying problem-solving. Discover the vital connection between algorithms and data structures, ensuring efficient and maintainable coding for developers of all levels.
 date: 2021-08-04
+tags:
+  - JS
 changelogs: []
 layout: article.njk
 ---

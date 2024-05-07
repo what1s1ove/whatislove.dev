@@ -2,6 +2,8 @@
 title: The Strictest TypeScript Config
 description: The Strictest TypeScript Config.
 date: 2023-12-10
+tags:
+  - TS
 changelogs: []
 layout: article.njk
 ---

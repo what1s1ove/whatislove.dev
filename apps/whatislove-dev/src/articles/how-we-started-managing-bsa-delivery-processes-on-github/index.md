@@ -2,6 +2,8 @@
 title: How We Started Managing BSA Delivery Processes on GitHub
 description: Vladyslav, as Delivery Head of Binary Studio Academy, shares the success story of adopting GitHub for streamlined delivery processes. GitHub's versatility, featuring version control and efficient task management, significantly enhances workflow at the Academy. The narrative concludes with satisfaction over the positive outcomes of GitHub adoption, showcasing its impact on participant experiences at Binary Studio Academy.
 date: 2023-11-20
+tags:
+  - GitHub
 changelogs: []
 layout: article.njk
 ---

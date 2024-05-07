@@ -2,6 +2,8 @@
 title: Block or inline?
 description: Many people believe HTML tags are just block or inline, but that's a misconception. HTML tags come in seven types, each with unique rules. In this article, we explore these types and how to use them correctly to build well-structured web pages.
 date: 2022-04-27
+tags:
+  - HTML
 changelogs: []
 layout: article.njk
 ---
