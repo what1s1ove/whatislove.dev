@@ -1,4 +1,5 @@
 import Image from '@11ty/eleventy-img'
+import { getISODate } from '@whatislove.dev/shared'
 import browserslist from 'browserslist'
 import esbuild from 'esbuild'
 import htmlMin from 'html-minifier-terser'
@@ -54,18 +55,9 @@ let init = (config) => {
 		config.ignores.add(Path.PAGE.FORM)
 	}
 
-	config.addCollection(
-		`articles`,
-		/**
-		 * @param {{
-		 * 	getFilteredByGlob: (glob: string) => unknown[]
-		 * }} collections
-		 * @returns {unknown[]}
-		 */
-		(collections) => {
-			return collections.getFilteredByGlob(Collection.ARTICLES)
-		},
-	)
+	config.addCollection(`articles`, (collections) => {
+		return collections.getFilteredByGlob(Collection.ARTICLES)
+	})
 
 	// copy
 	for (let url of Path.COPY) {
@@ -110,25 +102,17 @@ let init = (config) => {
 	})
 
 	// html
-	config.addTransform(
-		`html-minify`,
-		/**
-		 * @param {string} content
-		 * @param {string} path
-		 * @returns {Promise<string>}
-		 */
-		async (content, path) => {
-			if (path.endsWith(`.html`)) {
-				return await htmlMin.minify(content, {
-					collapseBooleanAttributes: true,
-					collapseWhitespace: true,
-					removeComments: true,
-				})
-			}
+	config.addTransform(`html-minify`, async (content, path) => {
+		if (path.endsWith(`.html`)) {
+			return await htmlMin.minify(content, {
+				collapseBooleanAttributes: true,
+				collapseWhitespace: true,
+				removeComments: true,
+			})
+		}
 
-			return content
-		},
-	)
+		return content
+	})
 
 	// css
 	config.addTemplateFormats(`css`)
@@ -294,6 +278,20 @@ let init = (config) => {
 			}
 		},
 		outputFileExtension: `svg`,
+	})
+
+	// filters
+
+	config.addFilter(`dateISO`, (value) => {
+		return getISODate(/** @type {Date} */ (value))
+	})
+
+	config.addFilter(`dateFormatted`, (value) => {
+		return /** @type {Date} */ (value).toLocaleString(`en-US`, {
+			day: `numeric`,
+			month: `short`,
+			year: `numeric`,
+		})
 	})
 
 	return {
