@@ -1,0 +1,30 @@
+.articles {
+	display: grid;
+	gap: 30px;
+	padding-block: 25px;
+
+	@media (--width-desktop) {
+		box-sizing: border-box;
+		max-inline-size: 1175px;
+		padding-block: 50px;
+		margin-inline: auto;
+	}
+}
+
+.articles__title {
+	margin: 0;
+	font-size: var(--font-size-heading-2);
+	font-weight: 600;
+	text-align: center;
+}
+
+.articles__all {
+	place-self: center;
+	padding-block: 10px;
+	padding-inline: 40px;
+	font-weight: 600;
+	color: hsl(var(--color-red-100));
+	text-decoration: none;
+	background-color: hsl(var(--color-red-100) / 6%);
+	border-radius: 5px;
+}

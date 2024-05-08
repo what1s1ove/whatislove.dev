@@ -5,8 +5,10 @@ permalink: 'index.html'
 
 {% from 'icon.njk' import icon %}
 {% from 'social-list.njk' import socialList %}
+{% from 'article-list.njk' import articleList %}
 {% set LAPKA_PHRASE = 'Hive Four!' %}
 {% set IMAGE_FORMATS = ['avif', 'webp'] %}
+{% set ARTICLES_COUNT = 3 %}
 {% set introSocials = global.socials.concat([{ name: global.email, key: 'email', url: 'mailto:' + global.email }]) %}
 
 <div class="intro column">
@@ -28,7 +30,7 @@ permalink: 'index.html'
 			{% for format in IMAGE_FORMATS %}
 				<source
 					srcset="
-						/images/vladyslav-zubko.photo.{{ format }}     1x,
+						/images/vladyslav-zubko.photo.{{ format }}    1x,
 						/images/vladyslav-zubko@2x.photo.{{ format }} 2x
 					"
 					type="image/{{ format }}"
@@ -131,5 +133,10 @@ permalink: 'index.html'
 		</ul>
 	</section>
 </div>
+<section class="articles column">
+	<h2 class="articles__title">Lastest Article</h2>
+	{{ articleList(items=collections.articles | reverse, className="articles__article-list", maxCount=ARTICLES_COUNT) }}
+	<a class="articles__all action" href="/articles">View all articles</a>
+</section>
 
 {% include 'channel.njk' %}

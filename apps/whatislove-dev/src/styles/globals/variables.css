@@ -4,7 +4,7 @@
 	--font-family-text: "Red Hat Display", sans-serif;
 	--font-family-highlight: "Saira Extra Condensed", sans-serif;
 	--background-page: hsl(var(--color-page-background))
-		url("/images/noise.svg") repeat 0 / contain;
+		var(--background-image-noise) repeat 0 / contain;
 	--color-pink-100: 8 47% 75%;
 	--color-red-100: 0 90.91% 61.18%;
 	--color-red-200: 0 60.32% 51.57%;
@@ -19,6 +19,7 @@
 	--offset-focus: 2px;
 	--outline-focus: 2px solid hsl(var(--color-red-100));
 	--filter-sticker: url("#sticker");
+	--background-image-noise: url("/images/noise.svg");
 
 	/* fonts */
 
@@ -49,7 +50,7 @@
 		color-scheme: dark;
 
 		--color-page-background: var(--color-black-200);
-		--color-page-background-highlight: var(--color-white-100) / 5%;
+		--color-page-background-highlight: var(--color-white-100) / 10%;
 		--color-scroll-shadow: var(--color-white-100);
 		--color-intro-background: var(--color-black-100) / 15%;
 		--color-intro-image-mask: var(--color-black-100);
@@ -65,7 +66,7 @@
 			color-scheme: dark;
 
 			--color-page-background: var(--color-black-200);
-			--color-page-background-highlight: var(--color-white-100) / 5%;
+			--color-page-background-highlight: var(--color-white-100) / 10%;
 			--color-scroll-shadow: var(--color-white-100);
 			--color-intro-background: var(--color-black-100) / 15%;
 			--color-intro-image-mask: var(--color-black-100);

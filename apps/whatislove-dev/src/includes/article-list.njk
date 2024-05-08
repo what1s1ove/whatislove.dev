@@ -1,0 +1,42 @@
+{% macro articleList(items, className, maxCount = Infinity, headingLevel = "h3") %}
+	<ul class="{{ className }} article-list">
+		{% for article in items.slice(0, maxCount) %}
+			{% set isSamePage = article.url != page.url %}
+
+			{% if isSamePage %}
+				{% set lastChangelogItem = article.data.changelogs | last %}
+
+				<li class="article-list__item">
+					<article class="article-list__item-wrapper">
+						<!-- prettier-ignore-start -->
+						<{{ headingLevel }} class="article-list__item-title">
+							<a class="article-list__item-link" href="{{ article.url }}">{{ article.data.title | safe }}</a>
+						</{{ headingLevel }}>
+						<!-- prettier-ignore-end -->
+						{% if article.data.tags.length %}
+							<ul class="article-list__item-tags">
+								{% for tag in article.data.tags %}
+									<li class="article-list__item-tag article-list__item-tag--{{ tag | lower }}">
+										{{ tag }}
+									</li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+						<p class="article-list__item-dates">
+							<time class="article-list__item-date" datetime="{{ article.date | dateISO }}"
+								>{{ article.date | dateFormatted }}</time
+							>
+							{% if lastChangelogItem %}
+								<time
+									class="article-list__item-updated"
+									datetime="{{ lastChangelogItem.date | dateISO }}"
+									>Updated: {{ lastChangelogItem.date | dateFormatted }}</time
+								>
+							{% endif %}
+						</p>
+					</article>
+				</li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+{% endmacro %}
