@@ -65,9 +65,9 @@
 	padding-inline: 6px;
 	font-size: var(--font-size-text-small);
 	font-weight: 600;
-	background-color: hsl(var(--background-color) / 100%);
-	background-image: var(--background-image-noise);
-	background-size: 3000%;
+	background-color: hsl(var(--background-color) / 30%);
+	background-image: var(--background-image-page);
+	background-size: var(--background-size-page);
 	border-radius: 3px;
 }
 
