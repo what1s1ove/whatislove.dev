@@ -6,20 +6,26 @@
 	@media (--width-desktop) {
 		box-sizing: border-box;
 		grid-template-columns: max-content 1fr max-content;
-		gap: 5px;
-		max-inline-size: 1275px;
+		gap: 15px;
+		max-inline-size: 1175px;
 		padding-block: 50px;
 		margin-inline: auto;
 	}
 }
 
 .channel__content-list {
+	--gap-y: 20px;
+
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 40px 20px;
 	padding: 0;
 	margin: 0;
 	list-style: none;
+
+	@media (--width-desktop) {
+		--gap-y: 0;
+	}
 }
 
 .channel__content-item {
