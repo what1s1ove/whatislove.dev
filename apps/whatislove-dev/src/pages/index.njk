@@ -6,6 +6,7 @@ permalink: 'index.html'
 {% from 'icon.njk' import icon %}
 {% from 'social-list.njk' import socialList %}
 {% from 'article-list.njk' import articleList %}
+{% from 'channel.njk' import channel %}
 {% set LAPKA_PHRASE = 'Hive Four!' %}
 {% set IMAGE_FORMATS = ['avif', 'webp'] %}
 {% set ARTICLES_COUNT = 3 %}
@@ -139,4 +140,4 @@ permalink: 'index.html'
 	<a class="articles__all action" href="/articles">View all articles</a>
 </section>
 
-{% include 'channel.njk' %}
+{{ channel() }}

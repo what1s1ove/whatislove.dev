@@ -10,7 +10,9 @@
 					<article class="article-list__item-wrapper">
 						<!-- prettier-ignore-start -->
 						<{{ headingLevel }} class="article-list__item-title">
+						<!-- prettier-ignore-end -->
 							<a class="article-list__item-link" href="{{ article.url }}">{{ article.data.title | safe }}</a>
+						<!-- prettier-ignore-start -->
 						</{{ headingLevel }}>
 						<!-- prettier-ignore-end -->
 						{% if article.data.tags.length %}
