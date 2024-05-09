@@ -14,12 +14,6 @@
 	background-color: hsl(var(--color-page-background));
 	border: 1px solid hsl(var(--color-page-background-highlight));
 	border-radius: 8px;
-
-	&:focus-within {
-		border-radius: var(--radius-focus);
-		outline: var(--outline-focus);
-		outline-offset: var(--offset-focus);
-	}
 }
 
 .article-list__item-wrapper {
@@ -39,14 +33,20 @@
 	color: inherit;
 	text-decoration: none;
 
-	&:focus {
-		outline: 0;
-	}
-
 	&::before {
 		position: absolute;
 		inset: 0;
 		content: "";
+	}
+
+	&:focus-visible {
+		outline: none;
+	}
+
+	&:focus-visible::before {
+		border-radius: var(--radius-focus);
+		outline: var(--outline-focus);
+		outline-offset: var(--offset-focus);
 	}
 }
 
@@ -69,6 +69,26 @@
 	background-image: var(--background-image-page);
 	background-size: var(--background-size-page);
 	border-radius: 3px;
+}
+
+.article-list__item-tag--html {
+	--background-color: var(--color-green-100);
+}
+
+.article-list__item-tag--github {
+	--background-color: var(--color-gray-100);
+}
+
+.article-list__item-tag--ci {
+	--background-color: var(--color-red-100);
+}
+
+.article-list__item-tag--ts {
+	--background-color: var(--color-blue-200);
+}
+
+.article-list__item-tag--js {
+	--background-color: var(--color-yellow-200);
 }
 
 .article-list__item-dates {
