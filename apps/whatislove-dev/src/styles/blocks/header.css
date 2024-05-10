@@ -173,6 +173,10 @@
 	font-size: var(--font-size-heading-3);
 	color: inherit;
 	text-underline-offset: 5px;
+
+	&[aria-current="page"] {
+		color: hsl(var(--color-red-100));
+	}
 }
 
 .header__settings {
