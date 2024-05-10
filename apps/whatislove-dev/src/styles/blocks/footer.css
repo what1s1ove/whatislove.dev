@@ -60,14 +60,17 @@
 		block-size: var(--size-icon);
 		content: "";
 		background-color: currentcolor;
-		mask-image: url("/images/icons.svg#arrow");
 		mask-repeat: no-repeat;
 		mask-size: contain;
 	}
 }
 
 .footer__webring-link--previous {
-	scale: -1 1;
+	mask-image: url("/images/icons.svg#arrow-left");
+}
+
+.footer__webring-link--next {
+	mask-image: url("/images/icons.svg#arrow-right");
 }
 
 .footer__credits {
