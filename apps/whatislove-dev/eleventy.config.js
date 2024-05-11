@@ -4,11 +4,14 @@ import browserslist from 'browserslist'
 import esbuild from 'esbuild'
 import htmlMin from 'html-minifier-terser'
 import * as lightningcss from 'lightningcss'
+import { parseHTML } from 'linkedom'
 import { existsSync } from 'node:fs'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import process from 'node:process'
 import svgo from 'svgo'
+
+import { addToc } from './src/transforms/transforms.js'
 
 /** @typedef {import('11ty__eleventy-img').ImageFormatWithAliases} */
 let ImageFormatWithAliases
@@ -16,6 +19,8 @@ let ImageFormatWithAliases
 let PackageJson
 /** @typedef {import('./src/database.json')} */
 let Database
+
+let TRANSFORMS = /** @type {const} */ ([addToc])
 
 let Path = /** @type {const} */ ({
 	COPY: [
@@ -109,6 +114,20 @@ let init = (config) => {
 				collapseWhitespace: true,
 				removeComments: true,
 			})
+		}
+
+		return content
+	})
+
+	config.addTransform(`html-transform`, (content, path) => {
+		if (path.endsWith(`.html`)) {
+			let window = parseHTML(content)
+
+			for (let transform of TRANSFORMS) {
+				transform(window)
+			}
+
+			return String(window.document)
 		}
 
 		return content

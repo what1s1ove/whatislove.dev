@@ -327,7 +327,7 @@ Describing how optimizations work in JavaScript engines would require a separate
 
 It is also important to remember that there are many JavaScript engines, and they all perform optimizations differently. However, if you assist the engine by using native syntax, your _application_ code will generally run faster in most cases.
 
-### **Possible Extensions**
+### Possible Extensions
 
 The new syntax in the specification also opens the door for additional features in the future. As an analogy, consider constructor functions and classes. When private fields were introduced in the specification, they were introduced as a feature for classes. For those who staunchly denied the usefulness of classes and claimed that constructor functions were equivalent, private fields became another reason to move away from constructor functions in favor of classes. Such features are likely to continue evolving.
 

@@ -19,13 +19,13 @@ Below is a screenshot from a real project I had the opportunity to work on. Take
 
 In this article, we will explore most of them, learning or reminding ourselves which principles are best to follow when choosing names for the constructs you write. This will help both you and anyone who works with your code in the future – whether it is your team or _yourself_ after some time – avoid _guesswork_ and enhance the readability of your code.
 
-## **JavaScript Naming Conventions**
+## JavaScript Naming Conventions
 
 This article will consist of a set of naming recommendations. I would not want you to perceive them as the sole truth. Firstly, it is not entirely the case, as most recommendations come with a disclaimer that there are numerous exceptions, hinting that the conventions themselves do not cover all cases. Secondly, while most recommendations are accepted in the JavaScript community, not everyone follows them for various reasons, and some recommendations are either partially or significantly modified to suit specific teams.
 
 The main message of the article is that each project should establish its naming conventions, whether they align with widely adopted ones or are unique to your team. The crucial aspect is to have conventions and adhere to them.
 
-### **General Rules**
+### General Rules
 
 On the internet, there is a considerable number of articles written about best naming practices. Well-known conventions emphasize that a name should be short and, more importantly, **understandable**. The name should be specific, correspond to the context in which it is used, and convey the meaning of the code at a glance. In reality, these conventions can and should be applied not only when working with JavaScript but also with any programming language. In these general rules, I would like to focus on some specific details in conventions that are widely known but often forgotten or not fully adhered to.
 
@@ -130,7 +130,7 @@ On the internet, there is a considerable number of articles written about best n
 
   For each language construct, whether built-in or custom data structures, there exists a conventional way to indicate the intended data type of the value. This is reflected in the name of the construct, which should align with both the established community conventions and those within your team. It is advisable to prioritize community conventions, as explaining something widely accepted is generally easier than introducing something entirely unique. In the case of community conventions, you can refer someone to an internet article, while for team-specific conventions, you might need to write that article yourself.
 
-### **Specific Rules**
+### Specific Rules
 
 In this section, we will discuss specific naming conventions for data types and data structures. While JavaScript may appear limited in its built-in data types and structures, it offers extensive capabilities. These encompass a variety of methods, which in other programming languages are often segregated into distinct built-in types or data structures.
 
@@ -442,7 +442,7 @@ It is in this context that the importance of naming conventions becomes clear. T
 
 It is important to realize that despite the extensive overview of JavaScript naming conventions in this article, it cannot cover all possible scenarios. Even within the presented points, numerous exceptions should be considered. The naming process, although fundamental, implies flexibility in application, taking into account the unique features and requirements of each project.
 
-## **Conclusion**
+## Conclusion
 
 During development, we often delve into complex technical details, forgetting that the power often lies in the details. Years of development experience only affirm the truth that attention to details, such as naming, plays a crucial role in creating efficient and readable code. Simplicity and the absence of the need to ponder over how to name a value and how quickly to understand what it contains bring incredible relief in the daily work of a developer.
 

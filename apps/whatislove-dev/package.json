@@ -26,6 +26,7 @@
 		"@11ty/eleventy": "3.0.0-alpha.6",
 		"@11ty/eleventy-img": "3.1.8",
 		"@linthtml/linthtml": "0.10.0-beta.5",
+		"@sindresorhus/slugify": "2.2.1",
 		"@types/11ty__eleventy-img": "2.0.5",
 		"@types/html-minifier-terser": "7.0.2",
 		"bemlint": "1.7.0",
@@ -33,6 +34,7 @@
 		"esbuild": "0.19.5",
 		"html-minifier-terser": "7.2.0",
 		"json-server": "0.17.4",
+		"linkedom": "0.16.11",
 		"linthtml-config-htmlacademy": "1.0.16",
 		"svgo": "3.1.0",
 		"w3c-html-validator": "1.6.1"
