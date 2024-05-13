@@ -18,3 +18,8 @@
 .not-found__desc {
 	margin: 0;
 }
+
+.not-found__desc-link {
+	color: hsl(var(--color-red-100));
+	text-underline-offset: 3px;
+}
