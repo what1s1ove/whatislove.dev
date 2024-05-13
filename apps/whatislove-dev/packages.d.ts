@@ -30,7 +30,15 @@ declare module '@11ty/eleventy' {
 		): void
 
 		addFilter(name: string, newFilterCb: (value: unknown) => unknown): void
+
+		addPlugin(newPluginCb: (value: unknown) => unknown): void
 	}
 
 	export { UserConfig }
+}
+
+declare module '@11ty/eleventy-plugin-syntaxhighlight' {
+	function plugin(value: unknown): unknown
+
+	export default plugin
 }

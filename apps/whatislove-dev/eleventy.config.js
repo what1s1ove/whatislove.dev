@@ -1,4 +1,5 @@
 import Image from '@11ty/eleventy-img'
+import syntaxhighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import { getISODate } from '@whatislove.dev/shared'
 import browserslist from 'browserslist'
 import esbuild from 'esbuild'
@@ -312,6 +313,10 @@ let init = (config) => {
 			year: `numeric`,
 		})
 	})
+
+	// plugins
+
+	config.addPlugin(syntaxhighlight)
 
 	return {
 		dir: {
