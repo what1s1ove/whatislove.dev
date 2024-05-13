@@ -1,0 +1,7 @@
+{% macro tagList(items, className) %}
+	<ul class="{{ className }} tag-list">
+		{% for tag in items %}
+			<li class="tag-list__tag tag-list__tag--{{ tag | lower }}">{{ tag }}</li>
+		{% endfor %}
+	</ul>
+{% endmacro %}

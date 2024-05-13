@@ -1,3 +1,5 @@
+{% from 'tag-list.njk' import tagList %}
+
 {% macro articleList(items, className, maxCount = Infinity, headingLevel = "h3") %}
 	<ul class="{{ className }} article-list">
 		{% for article in items.slice(0, maxCount) %}
@@ -16,13 +18,7 @@
 						</{{ headingLevel }}>
 						<!-- prettier-ignore-end -->
 						{% if article.data.tags.length %}
-							<ul class="article-list__item-tags">
-								{% for tag in article.data.tags %}
-									<li class="article-list__item-tag article-list__item-tag--{{ tag | lower }}">
-										{{ tag }}
-									</li>
-								{% endfor %}
-							</ul>
+							{{ tagList(items=article.data.tags, className="article-list__item-tags") }}
 						{% endif %}
 						<p class="article-list__item-dates">
 							<time class="article-list__item-date" datetime="{{ article.date | dateISO }}"
