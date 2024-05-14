@@ -1,0 +1,31 @@
+.toc__list {
+	--gap: 8px;
+
+	display: grid;
+	gap: var(--gap);
+	padding: 0;
+	padding-inline: 25px 0;
+	margin: 0;
+}
+
+.toc__list .toc__list {
+	font-size: var(--font-size-text-small);
+}
+
+.toc__item {
+	display: grid;
+	gap: var(--gap);
+
+	&::before {
+		position: absolute;
+		margin-inline: -17px 0;
+		font-size: 150%;
+		line-height: 1;
+		content: "\2022";
+	}
+}
+
+.toc__link {
+	color: inherit;
+	text-underline-offset: 3px;
+}
