@@ -120,7 +120,7 @@ HTML Element content types:
 
 _When you try to nest one tag in another incorrectly, browser starts fixing errors **at its discretion without asking**._
 
-## Let's play. Can `<x>` be nested in `<y>`?
+## Let's play. Can `x` be nested in `y`?
 
 Open the [documentation](https://html.spec.whatwg.org/multipage/semantics.html#semantics) and try to find the answer yourself 😉
 

@@ -173,7 +173,7 @@ It is in this context that the importance of naming conventions becomes clear. T
 
   JavaScript was created a long time ago, and at the time of its inception, the authors decided not to use affirmative prefixes for boolean names. Now, they do their best by [continuing to follow](https://github.com/tc39/proposal-decorators/issues/417) their convention, even if it goes against the community's opinion. Even if the authors wanted to introduce new naming conventions in the specification, they could not do it, at least not coherently. Old code cannot be renamed because JavaScript must remain backward-compatible. And starting to write new code using new approaches is not a great idea either, as there would be two ways to do the same thing, which is also undesirable.
 
-  Exceptions are normal. Nothing in this world is perfect. Even the specification itself has exceptions – `[node.isContentEditable](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/isContentEditable)` or `[evt.isTrusted](https://developer.mozilla.org/en-US/docs/Web/API/Event/isTrusted)`. The key is to try to minimize them while adhering to previously established conventions.
+  Exceptions are normal. Nothing in this world is perfect. Even the specification itself has exceptions – [`node.isContentEditable`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/isContentEditable) or [`evt.isTrusted`](https://developer.mozilla.org/en-US/docs/Web/API/Event/isTrusted). The key is to try to minimize them while adhering to previously established conventions.
 
 - **Functions & Methods**. The name of a function/method should be a verb and correspond to the action it performs.
 
@@ -208,7 +208,9 @@ It is in this context that the importance of naming conventions becomes clear. T
   Although the naming convention for functions/methods may seem simple at first glance, their naming is the one that has the most exceptions and other conventions.
 
   - Following the JavaScript writing style (`Number.isNaN()`, `Array.isArray()`, `salary.toFixed()`, [constructor functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new), etc.).
+
   - Naming conventions for event handler functions (`onBtnClick`, `onImgMouseOver`, etc.).
+
   - Library functions, for example, a reducer function in the [Redux](https://redux.js.org/) library (`const users = (state, action) => { /* some logic */ }`), functional components in [React](https://react.dev/) (`const UserDashboard = () => { /* component */ }`), and many other exceptions and conventions proposed by libraries and frameworks.
 
   You can learn about all of them by working directly with them. However, for most functions and methods, the main convention that the name should be a verb and correspond to the action they perform remains unchanged.
@@ -248,7 +250,9 @@ It is in this context that the importance of naming conventions becomes clear. T
 - **Classes**. When working with classes, it is important to follow several conventions. Here is the list:
 
   - Use `PascalCase` for the class name, following the same case style that JavaScript uses for classes and constructor functions.
+
   - The class name should be a singular noun.
+
   - Names of all class members should not include the class name.
 
   ```jsx
@@ -318,7 +322,9 @@ It is in this context that the importance of naming conventions becomes clear. T
   Unlike many other programming languages that have a separate data type for enumerations, JavaScript does not have such a data type (at least, as of now). Instead, to simulate an enumeration in JavaScript, a plain object can be used, but with specific naming conventions. Here is a list of these naming conventions:
 
   - The name of the enumeration should start with a capital letter.
+
   - The name of the enumeration should be in the singular noun.
+
   - The keys of the enumeration should be in uppercase.
 
   ```jsx
@@ -402,7 +408,9 @@ It is in this context that the importance of naming conventions becomes clear. T
 - **Types & Interfaces**. As mentioned earlier, TypeScript has become an integral part of JavaScript development today. In general, _in most cases_, types and interfaces are interchangeable. However, since there are already enough discussions about which one to choose, in this article, we will focus specifically on naming. For types and interfaces, the following naming conventions exist:
 
   - Names of types and interfaces should be written in `PascalCase` notation.
+
   - The name should describe what the type or interface will be used for, often as straightforwardly as possible: `const user: User = getUserById(id)` / `const users: User[] = getUsers()`.
+
   - If a development team has decided to _actively_ use both types and interfaces in one codebase, it is recommended to add a prefix to interfaces to distinguish them. The most popular prefixes are `I` and `Contract`.
 
   ```tsx

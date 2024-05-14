@@ -93,9 +93,13 @@ Now, let's discuss the core functionality of GitHub that we use for managing del
   Here is a list of our main linters:
 
   - [**remark**](https://remark.js.org/). Primarily, this is a linter for Markdown. Additionally, thanks to its numerous plugins, it allows us to perform additional checks for grammatical mistakes within the content itself. Before using this linter, our content was not scrutinized to this extent.
+
   - [**prettier**](https://prettier.io/). A code formatter and linter for code formatting. It ensures that all our files have a consistent appearance.
+
   - [**ls-lint**](https://ls-lint.org/). A linter for file and folder names. Again, we aim for uniformity in this aspect as well.
+
   - [**editorconfigchecker**](https://github.com/editorconfig-checker/editorconfig-checker.javascript). A linter that checks files for compliance with [editorconfig](https://editorconfig.org/) rules. Another linter that helps maintain consistency in the format of all files.
+
   - [**commitlint**](https://commitlint.js.org/) & [**dangerjs**](https://danger.systems/js/). Linters that help maintain consistency in all user-provided information related to Git and GitHub (commits, branch names, PR titles, etc.).
 
   ![GitHub pull request action status.](images/github-pr-actions.png)

@@ -82,60 +82,59 @@ Constants are a very important and popular approach to organize program code. An
 <details>
   <summary>Examples</summary>
 
-    ```jsx
-    // bad
+```jsx
+// bad
 
-    // src/common/constants/earth/index.js
+// src/common/constants/earth/index.js
 
-    const earthRadius = 6371
+const earthRadius = 6371
 
-    // src/components/common/user-item/user-item.jsx
+// src/components/common/user-item/user-item.jsx
 
-    const UserItem = ({ user }) => {
-      const USER_ROLE = getUserRole(user)
+const UserItem = ({ user }) => {
+  const USER_ROLE = getUserRole(user)
 
-      return (
-        <li>
-          {user.name}, {USER_ROLE}
-        </li>
-      )
-    }
+  return (
+    <li>
+      {user.name}, {USER_ROLE}
+    </li>
+  )
+}
 
-    // src/components/dashboard/dashboard.jsx
+// src/components/dashboard/dashboard.jsx
 
-    let USER_TYPE = 'user'
+let USER_TYPE = 'user'
 
-    if (checkIsAdmin(user)) {
-      USER_TYPE = 'admin'
-    }
+if (checkIsAdmin(user)) {
+  USER_TYPE = 'admin'
+}
 
-    // good
+// good
 
-    // src/common/constants/earth/index.js
+// src/common/constants/earth/index.js
 
-    const EARTH_RADIUS = 6371
+const EARTH_RADIUS = 6371
 
-    // src/components/common/user-item/user-item.jsx
+// src/components/common/user-item/user-item.jsx
 
-    const UserItem = ({ user }) => {
-      const userRole = getUserRole(user)
+const UserItem = ({ user }) => {
+  const userRole = getUserRole(user)
 
-      return (
-        <li>
-          {user.name}, {userRole}
-        </li>
-      )
-    }
+  return (
+    <li>
+      {user.name}, {userRole}
+    </li>
+  )
+}
 
-    // src/components/dashboard/dashboard.jsx
+// src/components/dashboard/dashboard.jsx
 
-    let userType = 'user'
+let userType = 'user'
 
-    if (checkIsAdmin(user)) {
-      userType = 'admin'
-    }
-
-    ```
+if (checkIsAdmin(user)) {
+  userType = 'admin'
+}
+```
 
 </details>
 
@@ -183,44 +182,44 @@ For this structure, JavaScript also has conventions among developers:
 <details>
   <summary>Examples</summary>
 
-    ```jsx
-    // bad
+```jsx
+// bad
 
-    // src/common/enum/user/user-role-enum.enum.js
+// src/common/enum/user/user-role-enum.enum.js
 
-    const userRoleEnum = {
-      user: 1,
-      viewer: 2,
-    }
+const userRoleEnum = {
+  user: 1,
+  viewer: 2,
+}
 
-    // or
+// or
 
-    const userRoles = {
-      user: 1,
-      viewer: 2,
-    }
+const userRoles = {
+  user: 1,
+  viewer: 2,
+}
 
-    // or
+// or
 
-    const UserRoles = {
-      user: 1,
-      viewer: 2,
-    }
+const UserRoles = {
+  user: 1,
+  viewer: 2,
+}
 
-    if (checkHasAdminRole()) {
-      UserRoles.admin = 3
-    }
+if (checkHasAdminRole()) {
+  UserRoles.admin = 3
+}
 
-    // good
+// good
 
-    // src/common/enum/user/user-role.enum.js
+// src/common/enum/user/user-role.enum.js
 
-    const UserRole = {
-      USER: 1,
-      VIEWER: 2,
-      ADMIN: 3,
-    }
-    ```
+const UserRole = {
+  USER: 1,
+  VIEWER: 2,
+  ADMIN: 3,
+}
+```
 
 </details>
 
@@ -297,35 +296,35 @@ There are some conventions how to configure this structure:
 <details>
   <summary>Examples</summary>
 
-    ```jsx
-    // bad
+```jsx
+// bad
 
-    // src/common/maps/user/user-roles.map.js
+// src/common/maps/user/user-roles.map.js
 
-    const userRoles = {
-      user: 'Default User',
-      viewer: 'Checker',
-      admin: 'Administrator',
-    }
+const userRoles = {
+  user: 'Default User',
+  viewer: 'Checker',
+  admin: 'Administrator',
+}
 
-    // good
+// good
 
-    // src/common/maps/user/user-role-to-readable.map.js
+// src/common/maps/user/user-role-to-readable.map.js
 
-    const userRoleToReadable = {
-      user: 'Default User',
-      viewer: 'Checker',
-      admin: 'Administrator',
-    }
+const userRoleToReadable = {
+  user: 'Default User',
+  viewer: 'Checker',
+  admin: 'Administrator',
+}
 
-    // src/common/maps/user/user-role-map.map.js
+// src/common/maps/user/user-role-map.map.js
 
-    const userRoleMap = {
-      user: 'Default User',
-      viewer: 'Checker',
-      admin: 'Administrator',
-    }
-    ```
+const userRoleMap = {
+  user: 'Default User',
+  viewer: 'Checker',
+  admin: 'Administrator',
+}
+```
 
 </details>
 
@@ -487,18 +486,18 @@ Here is an example of the `getOptions` helper:
 <details>
   <summary>Example</summary>
 
-    ```jsx
-    // src/helpers/options/get-default-option/get-default-option.helper.js
+```jsx
+// src/helpers/options/get-default-option/get-default-option.helper.js
 
-    const getDefaultOption = (value) => ({
-      value,
-      label: value,
-    })
+const getDefaultOption = (value) => ({
+  value,
+  label: value,
+})
 
-    // src/helpers/options/get-options/get-options.helper.js
+// src/helpers/options/get-options/get-options.helper.js
 
-    const getOptions = (values, cb = getDefaultOption) => values.map(cb)
-    ```
+const getOptions = (values, cb = getDefaultOption) => values.map(cb)
+```
 
 </details>
 
