@@ -31,6 +31,7 @@
 	--font-size-text-base: 1rem;
 	--font-size-heading-3: 1.25rem;
 	--font-size-heading-2: 1.75rem;
+	--font-size-heading-1: 2rem;
 	--font-size-highlight: 2.75rem;
 
 	@supports (font-variation-settings: normal) {
