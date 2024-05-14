@@ -50,50 +50,9 @@
 	}
 }
 
-.article-list__item-tags {
-	display: flex;
-	gap: 4px;
-	padding: 0;
-	margin: 0;
-	list-style: none;
-}
-
-.article-list__item-tag {
-	--background-color: var(--color-red-200);
-
-	padding-block: 2px;
-	padding-inline: 6px;
-	font-size: var(--font-size-text-small);
-	font-weight: 600;
-	background-color: hsl(var(--background-color) / 30%);
-	background-image: var(--background-image-page);
-	background-size: var(--background-size-page);
-	border-radius: 3px;
-}
-
-.article-list__item-tag--html {
-	--background-color: var(--color-green-100);
-}
-
-.article-list__item-tag--github {
-	--background-color: var(--color-gray-100);
-}
-
-.article-list__item-tag--ci {
-	--background-color: var(--color-red-100);
-}
-
-.article-list__item-tag--ts {
-	--background-color: var(--color-blue-200);
-}
-
-.article-list__item-tag--js {
-	--background-color: var(--color-yellow-200);
-}
-
 .article-list__item-dates {
 	display: flex;
-	justify-content: space-between;
+	place-content: space-between;
 	margin: 0;
 	color: hsl(var(--color-gray-100));
 }

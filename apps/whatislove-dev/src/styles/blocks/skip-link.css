@@ -1,6 +1,6 @@
 .skip-link {
 	display: flex;
-	justify-content: center;
+	place-content: center;
 	margin: 0;
 	background-color: hsl(var(--color-red-100));
 }
