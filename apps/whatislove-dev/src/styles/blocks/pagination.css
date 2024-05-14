@@ -5,7 +5,7 @@
 
 	display: flex;
 	gap: var(--gap);
-	justify-content: center;
+	place-content: center;
 }
 
 .pagination__link {
@@ -50,7 +50,7 @@
 
 .pagination__number-link {
 	display: flex;
-	justify-content: center;
+	place-content: center;
 	inline-size: 43px;
 	block-size: var(--block-size);
 	font-weight: bold;

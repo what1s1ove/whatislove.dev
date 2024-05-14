@@ -1,143 +1,153 @@
 ---
-layout: page.njk
 permalink: 'index.html'
 ---
 
+{% extends '../layouts/page.njk' %}
 {% from 'icon.njk' import icon %}
+{% from 'channel.njk' import channel %}
 {% from 'social-list.njk' import socialList %}
 {% from 'article-list.njk' import articleList %}
-{% from 'channel.njk' import channel %}
 {% set LAPKA_PHRASE = 'Hive Four!' %}
 {% set IMAGE_FORMATS = ['avif', 'webp'] %}
 {% set ARTICLES_COUNT = 3 %}
 {% set introSocials = global.socials.concat([{ name: global.email, key: 'email', url: 'mailto:' + global.email }]) %}
 
-<div class="intro column">
-	<div class="intro__wrapper">
-		<button class="intro__paw action" type="button" aria-label="{{ LAPKA_PHRASE }}">
-			<svg
-				class="intro__paw-object"
-				width="115"
-				height="60"
-				xmlns="http://www.w3.org/2000/svg"
-				aria-hidden="true"
-			>
-				<text x="30">
-					<textPath class="intro__paw-text" xlink:href="#text-curved">{{ LAPKA_PHRASE }}</textPath>
-				</text>
-			</svg>
-		</button>
-		<picture class="intro__picture">
-			{% for format in IMAGE_FORMATS %}
-				<source
-					srcset="
-						/images/vladyslav-zubko.photo.{{ format }}    1x,
-						/images/vladyslav-zubko@2x.photo.{{ format }} 2x
-					"
-					type="image/{{ format }}"
+{% block content %}
+	<div class="intro column">
+		<div class="intro__wrapper">
+			<button class="intro__paw action" type="button" aria-label="{{ LAPKA_PHRASE }}">
+				<svg
+					class="intro__paw-object"
+					width="115"
+					height="60"
+					xmlns="http://www.w3.org/2000/svg"
+					aria-hidden="true"
+				>
+					<text x="30">
+						<textPath class="intro__paw-text" xlink:href="#text-curved">{{ LAPKA_PHRASE }}</textPath>
+					</text>
+				</svg>
+			</button>
+			<picture class="intro__picture">
+				{% for format in IMAGE_FORMATS %}
+					<source
+						srcset="
+							/images/vladyslav-zubko.photo.{{ format }}    1x,
+							/images/vladyslav-zubko@2x.photo.{{ format }} 2x
+						"
+						type="image/{{ format }}"
+					/>
+				{% endfor %}
+				<img
+					class="intro__photo"
+					src="/images/vladyslav-zubko.photo.png"
+					srcset="/images/vladyslav-zubko@2x.photo.png 2x"
+					width="226"
+					height="300"
+					fetchpriority="high"
+					alt="Vladyslav Zubko Portrait."
 				/>
-			{% endfor %}
-			<img
-				class="intro__photo"
-				src="/images/vladyslav-zubko.photo.png"
-				srcset="/images/vladyslav-zubko@2x.photo.png 2x"
-				width="226"
-				height="300"
-				fetchpriority="high"
-				alt="Vladyslav Zubko Portrait."
-			/>
-		</picture>
-		<header class="intro__header">
-			<p class="intro__welcome">Hi, my name is</p>
-			<h1 class="intro__name">Vladyslav Zubko</h1>
-		</header>
-	</div>
-	<div class="intro__description-wrapper">
-		<p class="intro__description">
-			I'm an avid explorer of the World, enamored with digital tech, especially the Web, passionate about
-			learning, mentoring, and connecting with others
-		</p>
-		<p class="intro__slogan">Experts stand for high standards</p>
-	</div>
-	{{ socialList(items=introSocials, className='intro__social-list') }}
-</div>
-<div class="main__row main__row--experience-stickers column">
-	<section class="experience">
-		<h2 class="experience__title">Experience</h2>
-		<form class="experience__form">
-			<label class="experience__form-label">
-				<input
-					class="experience__form-control visually-hidden"
-					type="radio"
-					name="type"
-					value="position"
-					checked
-				/>
-				Positions
-			</label>
-			<label class="experience__form-label">
-				<input class="experience__form-control visually-hidden" type="radio" name="type" value="certificate" />
-				Certificates
-			</label>
-			<label class="experience__form-label">
-				<input class="experience__form-control visually-hidden" type="radio" name="type" value="meetup" />
-				Meetups
-			</label>
-			<label class="experience__form-label">
-				<input class="experience__form-control visually-hidden" type="radio" name="type" value="book" />
-				Book
-			</label>
-		</form>
-		<div class="experience__timeline-wrapper scroll-shadows">
-			<ul class="experience__timeline-list timeline"></ul>
+			</picture>
+			<header class="intro__header">
+				<p class="intro__welcome">Hi, my name is</p>
+				<h1 class="intro__name">Vladyslav Zubko</h1>
+			</header>
 		</div>
+		<div class="intro__description-wrapper">
+			<p class="intro__description">
+				I'm an avid explorer of the World, enamored with digital tech, especially the Web, passionate about
+				learning, mentoring, and connecting with others
+			</p>
+			<p class="intro__slogan">Experts stand for high standards</p>
+		</div>
+		{{ socialList(items=introSocials, className='intro__social-list') }}
+	</div>
+	<div class="main__row main__row--experience-stickers column">
+		<section class="experience">
+			<h2 class="experience__title">Experience</h2>
+			<form class="experience__form">
+				<label class="experience__form-label">
+					<input
+						class="experience__form-control visually-hidden"
+						type="radio"
+						name="type"
+						value="position"
+						checked
+					/>
+					Positions
+				</label>
+				<label class="experience__form-label">
+					<input
+						class="experience__form-control visually-hidden"
+						type="radio"
+						name="type"
+						value="certificate"
+					/>
+					Certificates
+				</label>
+				<label class="experience__form-label">
+					<input class="experience__form-control visually-hidden" type="radio" name="type" value="meetup" />
+					Meetups
+				</label>
+				<label class="experience__form-label">
+					<input class="experience__form-control visually-hidden" type="radio" name="type" value="book" />
+					Book
+				</label>
+			</form>
+			<div class="experience__timeline-wrapper scroll-shadows">
+				<ul class="experience__timeline-list timeline timeline--loading"></ul>
+			</div>
+		</section>
+		<section class="stickers">
+			<h2 class="stickers__title visually-hidden">Stickers</h2>
+			<ul class="stickers__list">
+				<li class="stickers__item stickers__item--full stickers__item--nodejs">
+					<span class="visually-hidden">Node.js</span>
+				</li>
+				<li class="stickers__item stickers__item--beerjs">
+					<span class="visually-hidden">BeerJS</span>
+				</li>
+				<li class="stickers__item stickers__item--react">
+					<span class="visually-hidden">React</span>
+				</li>
+				<li class="stickers__item stickers__item--aws">
+					<span class="visually-hidden">AWS</span>
+				</li>
+				<li class="stickers__item stickers__item--acidtwo">
+					<span class="visually-hidden">Acid2</span>
+				</li>
+				<li class="stickers__item stickers__item--dom">
+					<span class="visually-hidden">DOM API</span>
+				</li>
+				<li class="stickers__item stickers__item--webcomponents">
+					<span class="visually-hidden">WebComponents</span>
+				</li>
+				<li class="stickers__item stickers__item--vans">
+					<span class="visually-hidden">Vans</span>
+				</li>
+				<li class="stickers__item stickers__item--xl">
+					<span class="visually-hidden">Gloomy Forest</span>
+				</li>
+				<li class="stickers__item stickers__item--berserk">
+					<span class="visually-hidden">Berserk</span>
+				</li>
+				<li class="stickers__item stickers__item--pair stickers__item--love">
+					<span class="visually-hidden">Love</span>
+				</li>
+				<li class="stickers__item stickers__item--jagermeister">
+					<span class="visually-hidden">Jagermeister</span>
+				</li>
+			</ul>
+		</section>
+	</div>
+	<section class="articles column">
+		<h2 class="articles__title">Lastest Article</h2>
+		{{ articleList(items=collections.articles | reverse, className="articles__article-list", maxCount=ARTICLES_COUNT) }}
+		<a class="articles__all action" href="/articles">View all articles</a>
 	</section>
-	<section class="stickers">
-		<h2 class="stickers__title visually-hidden">Stickers</h2>
-		<ul class="stickers__list">
-			<li class="stickers__item stickers__item--full stickers__item--nodejs">
-				<span class="visually-hidden">Node.js</span>
-			</li>
-			<li class="stickers__item stickers__item--beerjs">
-				<span class="visually-hidden">BeerJS</span>
-			</li>
-			<li class="stickers__item stickers__item--react">
-				<span class="visually-hidden">React</span>
-			</li>
-			<li class="stickers__item stickers__item--aws">
-				<span class="visually-hidden">AWS</span>
-			</li>
-			<li class="stickers__item stickers__item--acidtwo">
-				<span class="visually-hidden">Acid2</span>
-			</li>
-			<li class="stickers__item stickers__item--dom">
-				<span class="visually-hidden">DOM API</span>
-			</li>
-			<li class="stickers__item stickers__item--webcomponents">
-				<span class="visually-hidden">WebComponents</span>
-			</li>
-			<li class="stickers__item stickers__item--vans">
-				<span class="visually-hidden">Vans</span>
-			</li>
-			<li class="stickers__item stickers__item--xl">
-				<span class="visually-hidden">Gloomy Forest</span>
-			</li>
-			<li class="stickers__item stickers__item--berserk">
-				<span class="visually-hidden">Berserk</span>
-			</li>
-			<li class="stickers__item stickers__item--pair stickers__item--love">
-				<span class="visually-hidden">Love</span>
-			</li>
-			<li class="stickers__item stickers__item--jagermeister">
-				<span class="visually-hidden">Jagermeister</span>
-			</li>
-		</ul>
-	</section>
-</div>
-<section class="articles column">
-	<h2 class="articles__title">Lastest Article</h2>
-	{{ articleList(items=collections.articles | reverse, className="articles__article-list", maxCount=ARTICLES_COUNT) }}
-	<a class="articles__all action" href="/articles">View all articles</a>
-</section>
+	{{ channel() }}
+{% endblock %}
 
-{{ channel() }}
+{% block aside %}
+	{% include 'aside.njk' %}
+{% endblock %}

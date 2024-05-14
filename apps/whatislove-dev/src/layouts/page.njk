@@ -54,11 +54,9 @@
 		{% include 'skip-link.njk' %}
 		{% include 'header.njk' %}
 
-		<main class="main" id="main">{{ content | safe }}</main>
+		<main class="main" id="main">{% block content %}{% endblock %}</main>
 
-		{% if isRoot %}
-			{% include 'aside.njk' %}
-		{% endif %}
+		{% block aside %}{% endblock %}
 		{% include 'footer.njk' %}
 		{% include 'easter-egg.njk' %}
 		{% include 'toast.njk' %}
