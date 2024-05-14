@@ -22,9 +22,12 @@
 @import url("./blocks/header.css");
 @import url("./blocks/footer.css");
 @import url("./blocks/aside.css");
+@import url("./blocks/toc.css");
+@import url("./blocks/tag-list.css");
 @import url("./blocks/intro.css");
 @import url("./blocks/experience.css");
 @import url("./blocks/timeline.css");
 @import url("./blocks/channel.css");
 @import url("./blocks/not-found.css");
 @import url("./blocks/articles.css");
+@import url("./blocks/article.css");
