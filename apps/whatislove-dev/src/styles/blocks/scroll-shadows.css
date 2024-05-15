@@ -1,11 +1,11 @@
 .scroll-shadows {
-	--size: 20px;
+	--size-shadows: 20px;
 	--color: var(--color-scroll-shadow) / 20%;
 	--farthest-side-start: 50% 0;
 	--farthest-side-end: 50% 100%;
 
 	display: grid;
-	grid-template: var(--size) 1fr var(--size) / auto;
+	grid-template: var(--size) 1fr var(--size-shadows) / auto;
 	background-image: radial-gradient(
 			farthest-side at var(--farthest-side-start),
 			hsl(var(--color)),
@@ -21,13 +21,13 @@
 	background-position:
 		center top,
 		center bottom;
-	background-size: 100% var(--size);
+	background-size: 100% var(--size-shadows);
 
 	&::before,
 	&::after {
 		display: block;
 		inline-size: 100%;
-		block-size: var(--size);
+		block-size: var(--size-shadows);
 		pointer-events: none;
 		content: "";
 		background: var(--background-page);
@@ -38,15 +38,15 @@
 	--farthest-side-start: 0 50%;
 	--farthest-side-end: 100% 50%;
 
-	grid-template: auto / var(--size) 1fr var(--size);
+	grid-template: auto / var(--size-shadows) 1fr var(--size-shadows);
 	background-position:
 		left center,
 		right center;
-	background-size: var(--size) 100%;
+	background-size: var(--size-shadows) 100%;
 
 	&::before,
 	&::after {
-		inline-size: var(--size);
+		inline-size: var(--size-shadows);
 		block-size: 100%;
 	}
 }
