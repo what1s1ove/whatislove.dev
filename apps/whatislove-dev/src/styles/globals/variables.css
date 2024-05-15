@@ -3,6 +3,7 @@
 
 	--font-family-text: "Red Hat Display", sans-serif;
 	--font-family-highlight: "Saira Extra Condensed", sans-serif;
+	--font-family-code: "Monaspace Neon", monospace;
 	--background-page: hsl(var(--color-page-background))
 		var(--background-image-page) repeat 0 / var(--background-size-page);
 	--color-pink-100: 8 47% 75%;

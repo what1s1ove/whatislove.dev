@@ -25,7 +25,15 @@
 @font-face {
 	font-family: "Saira Extra Condensed";
 	font-style: normal;
-	font-weight: 400;
+	font-weight: normal;
 	src: url("/fonts/saira-extra-condensed-400.woff2") format("woff2");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Monaspace Neon";
+	font-style: normal;
+	font-weight: normal;
+	src: url("/fonts/monaspace-neon.woff2") format("woff2");
 	font-display: swap;
 }

@@ -4,6 +4,10 @@
 {% set ARTICLES_COUNT = 3 %}
 {% set lastChangelogItem = changelogs | last %}
 
+{% block font %}
+	<link rel="preload" href="/fonts/monaspace-neon.woff2" crossorigin as="font" type="font/woff2" />
+{% endblock %}
+
 {% block content %}
 	<div class="article column">
 		<header class="article__header">

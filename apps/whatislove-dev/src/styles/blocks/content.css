@@ -96,6 +96,7 @@
 	code {
 		padding-block: 2px;
 		padding-inline: 6px;
+		font-family: var(--font-family-code);
 		background-color: hsl(var(--color-page-background-highlight));
 		border-radius: 4px;
 	}
@@ -105,6 +106,7 @@
 
 		margin: 0;
 		overflow-y: auto;
+		font-family: var(--font-family-code);
 		tab-size: 2;
 		background-color: hsl(var(--color-page-background-highlight));
 		border-radius: 5px;
