@@ -12,7 +12,7 @@ import path from 'node:path'
 import process from 'node:process'
 import svgo from 'svgo'
 
-import { addToc } from './src/transforms/transforms.js'
+import { addPreShadows, addToc } from './src/transforms/transforms.js'
 
 /** @typedef {import('11ty__eleventy-img').ImageFormatWithAliases} */
 let ImageFormatWithAliases
@@ -21,7 +21,7 @@ let PackageJson
 /** @typedef {import('./src/database.json')} */
 let Database
 
-let TRANSFORMS = /** @type {const} */ ([addToc])
+let TRANSFORMS = /** @type {const} */ ([addToc, addPreShadows])
 
 let Path = /** @type {const} */ ({
 	COPY: [

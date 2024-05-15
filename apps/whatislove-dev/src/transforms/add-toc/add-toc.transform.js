@@ -6,11 +6,9 @@ import { TocItem } from './libs/types/types.js'
 
 /** @param {globalThis} window */
 let addToc = (window) => {
-	let tocWrapperNode = window.document.querySelector(
-		`.${BlockName.TOC_BLOCK}`,
-	)
+	let tocWrapperNode = window.document.querySelector(`.${BlockName.TOC}`)
 	let contentNode = window.document.querySelector(
-		`.${BlockName.ARTICLE_CONTENT_BLOCK}`,
+		`.${BlockName.ARTICLE_CONTENT}`,
 	)
 
 	if (!tocWrapperNode || !contentNode) {

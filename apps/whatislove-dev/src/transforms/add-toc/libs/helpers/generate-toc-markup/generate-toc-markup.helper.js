@@ -11,8 +11,8 @@ let generateTocMarkup = (item) => {
 
 	if (hasLiNode) {
 		markup += `
-			<li class="${BlockName.TOC_BLOCK}__item">
-				<a class="${BlockName.TOC_BLOCK}__link" href="#${item.slug}">
+			<li class="${BlockName.TOC}__item">
+				<a class="${BlockName.TOC}__link" href="#${item.slug}">
 					${item.text}
 				</a>
 		`
@@ -24,7 +24,7 @@ let generateTocMarkup = (item) => {
 			.join(``)
 
 		markup += `
-			<ol class="${BlockName.TOC_BLOCK}__list">${childrenMarkup}</ol>
+			<ol class="${BlockName.TOC}__list">${childrenMarkup}</ol>
 		`
 	}
 
