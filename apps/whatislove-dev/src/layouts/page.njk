@@ -1,12 +1,12 @@
 {% set isRoot = page.url == '/' %}
-{% set title = global.title if isRoot else title + ' | ' + global.title %}
-{% set description = description if description else global.description %}
+{% set pageTitle = global.title if isRoot else title + ' | ' + global.title %}
+{% set pageDescription = description if description else global.description %}
 
 <!doctype html>
 <html class="page" lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>{{ title }}</title>
+		<title>{{ pageTitle }}</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -35,12 +35,12 @@
 		<link rel="canonical" href="{{ global.domain }}" />
 		<link rel="authorization_endpoint" href="https://indieauth.com/auth" />
 
-		<meta name="description" content="{{ description }}" />
+		<meta name="description" content="{{ pageDescription }}" />
 		<meta name="generator" content="{{ eleventy.generator }}" />
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="{{ title }}" />
-		<meta property="og:description" content="{{ description }}" />
+		<meta property="og:title" content="{{ pageTitle }}" />
+		<meta property="og:description" content="{{ pageDescription }}" />
 		<meta property="og:url" content="{{ global.domain + page.url }}" />
 
 		<meta property="og:image" content="{{ global.domain }}/images/cover.png" />
