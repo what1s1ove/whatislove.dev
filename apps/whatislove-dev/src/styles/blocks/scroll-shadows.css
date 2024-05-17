@@ -6,7 +6,7 @@
 	--farthest-side-end: 50% 100%;
 
 	display: grid;
-	grid-template: var(--size) 1fr var(--shadows-size) / auto;
+	grid-template: var(--shadows-size) 1fr var(--shadows-size) / auto;
 	background-image: radial-gradient(
 			farthest-side at var(--farthest-side-start),
 			hsl(var(--color)),
