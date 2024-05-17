@@ -30,7 +30,7 @@ Code examples will illustrate a kind of [graceful degradation](https://developer
 
 [JSDoc](https://jsdoc.app/) is a specification for the comment format in JavaScript. This specification allows developers to describe the structure of their code, data types, function parameters, and much more using special comments. These comments can then be transformed into documentation using appropriate tools.
 
-```js
+```js jsdoc
 /**
  * Adds two numbers.
  *
@@ -103,7 +103,7 @@ Again, for some, this may seem like a drawback, but for others, it could be cons
 
 Overall, the use of these constructs is generally considered an anti-pattern. On most of my projects where I use TypeScript to its full extent (with all my code residing in `.ts` files), I always use a custom ESLint rule:
 
-```js
+```js jsdoc
 // eslint.config.js
 
 /** @type {import('eslint').Linter.FlatConfig} */

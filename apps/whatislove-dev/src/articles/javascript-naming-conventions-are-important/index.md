@@ -37,7 +37,7 @@ On the internet, there is a considerable number of articles written about best n
 
   It is not our place to judge whether using different naming cases is good or bad, as various reasons may drive such choices. However, explicit mixing of two or more naming cases can pose challenges. For new developers joining the project, understanding what is happening and deciding which naming case to use can become quite challenging.
 
-  ```jsx
+  ```js
   // Bad
   const hasAccess =
     checkHasUserAccess(session.current_user) &&
@@ -62,7 +62,7 @@ On the internet, there is a considerable number of articles written about best n
 
   When emphasizing the use of only English, people often think only about keyboard layout. However, one should not forget about abbreviations and the general use of short forms for names. They should only be used with commonly accepted words, such as `idx`, `err`, `evt`, `xhr`, `src`, and other historically accepted words in the community. In other cases, the use of abbreviations and short forms of words is strongly discouraged, as they often lead to confusion, and deciphering them can take a lot of time.
 
-  ```jsx
+  ```js
   // Bad
   const 新規ユーザーのウェルカムメッセージ = 'こんにちは'
 
@@ -82,7 +82,7 @@ On the internet, there is a considerable number of articles written about best n
 
 - **Not only `camelCase`**. Many resources emphasize using `camelCase` notation _exclusively_ when writing in JavaScript. However, this is not entirely accurate. The recommendation is more about **adhering to the notation used by the language itself**. While a _significant_ portion of the JavaScript language is written in `camelCase`, it is not universally so. Here are a few examples:
 
-  ```jsx
+  ```js
   parseInt('18') // camelCase
 
   new RegExp('[A-Z]', 'i') // PascalCase
@@ -96,7 +96,7 @@ On the internet, there is a considerable number of articles written about best n
 
 - **Follow `readme.md`**. Suppose you are working with a network request library like [axios](https://www.npmjs.com/package/axios), and the library's README recommends using the standard name `axios` for imports.
 
-  ```tsx
+  ```js
   import httpRequester from 'npm:axios'
 
   // Somewhere very far at the bottom of the file
@@ -112,7 +112,7 @@ On the internet, there is a considerable number of articles written about best n
 
 - **No data types**. It can be tempting to include data types in variable names, but succumbing to this temptation often adds unnecessary semantic load to the name. For instance, using the name `arr` for a variable containing an array can lead to conflicts if a variable with the same name is used elsewhere. Moreover, the name `arr` does not convey meaningful information. Making the name more specific, like `userArr`, is an improvement, but it does not address all the issues.
 
-  ```jsx
+  ```js
   // Bad
   const userNameMinLengthConst = 3
 
@@ -142,7 +142,7 @@ It is in this context that the importance of naming conventions becomes clear. T
 
   An important addition to this convention, often overlooked, is that the affirmative prefix should not include a negation. The reason behind this is that the negation operator (`!`) is most commonly used with boolean values. Therefore, a value named something like `isNotAllowed` with the negation applied to it `!isNotAllowed` can be quite misleading. Do not believe so? Then try quickly figuring out what `!!isNotAllowed` (double negation) equals. Even if you manage to do it quickly, imagine working with real code where all these negation inversions are scattered throughout the file. Keeping track of such logic, especially when there is a lot of it, can be quite challenging. In such cases, it is better to alter the logic of evaluating the boolean variable using a positive affirmative in its name.
 
-  ```jsx
+  ```js
   // Bad
   const userLogin = user !== null
 
@@ -177,7 +177,7 @@ It is in this context that the importance of naming conventions becomes clear. T
 
 - **Functions & Methods**. The name of a function/method should be a verb and correspond to the action it performs.
 
-  ```jsx
+  ```js
   // Bad
   const userNaming = (name) => name.charAt(0).toUpperCase() + name.slice(1)
 
@@ -219,7 +219,7 @@ It is in this context that the importance of naming conventions becomes clear. T
 
   An important addition is that this convention should also be applied to user-created indexed or keyed collections using [Iteration protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols).
 
-  ```jsx
+  ```js
   // Bad
   const userRoleArr = Object.values(UserRole)
 
@@ -255,7 +255,7 @@ It is in this context that the importance of naming conventions becomes clear. T
 
   - Names of all class members should not include the class name.
 
-  ```jsx
+  ```js
   // Bad
   class userService {
     /* class members */
@@ -297,7 +297,7 @@ It is in this context that the importance of naming conventions becomes clear. T
 
   Constants are a crucial and widely adopted approach to organizing a program's code. Regarding naming conventions, there is an important agreement among developers: the name of a constant should be written using the `UPPER_SNAKE_CASE` notation.
 
-  ```jsx
+  ```js
   // Bad
   const userFailingLoginAttempts = 3
 
@@ -327,7 +327,7 @@ It is in this context that the importance of naming conventions becomes clear. T
 
   - The keys of the enumeration should be in uppercase.
 
-  ```jsx
+  ```js
   // Bad
   const userRole = {
     admin: 'admin',
@@ -369,7 +369,7 @@ It is in this context that the importance of naming conventions becomes clear. T
 
   A map is a very useful and frequently used data structure in any programming language. For maps in the JavaScript world, there is a specific naming convention. The name should follow the pattern `aToB`, where `a` serves as the key for retrieving values from the map, followed by the preposition `To`, implying the mapping of two things, and then `B`, which is the mapped value for `a`.
 
-  ```jsx
+  ```js
   // Bad
   const userRolesReadable = {
     [UserRole.ADMIN]: 'Administrator',
@@ -413,7 +413,7 @@ It is in this context that the importance of naming conventions becomes clear. T
 
   - If a development team has decided to _actively_ use both types and interfaces in one codebase, it is recommended to add a prefix to interfaces to distinguish them. The most popular prefixes are `I` and `Contract`.
 
-  ```tsx
+  ```ts
   // Bad
   type TUser = {
     firstName: string

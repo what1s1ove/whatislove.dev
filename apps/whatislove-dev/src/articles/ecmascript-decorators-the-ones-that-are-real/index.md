@@ -31,7 +31,7 @@ The _higher-order function_ `debounce` delays the invocation of another function
 
 On most resources for learning JavaScript language in the section about timeouts, you will find exercises that involve writing this function. The simplest implementation looks like this:
 
-```tsx
+```js
 const debounce = (fn, delay) => {
   let lastTimeout = null
 
@@ -45,7 +45,7 @@ const debounce = (fn, delay) => {
 
 Using this function may look like the following:
 
-```tsx
+```js
 class SearchForm {
   constructor() {
     this.handleUserInput = debounce(this.handleUserInput, 300)
@@ -59,7 +59,7 @@ class SearchForm {
 
 When using a special syntax for decorators which we will discuss in the next section, the implementation of the same behavior will look like this:
 
-```tsx
+```js
 class SearchForm {
   @debounce(300)
   handleUserInput(evt) {
@@ -76,7 +76,7 @@ The next example will come from the [React](https://react.dev/)-world. Although 
 
 Let's take a look at an example of the `withModal` HOC:
 
-```tsx
+```jsx
 const withModal = (Component) => {
   return (props) => {
     const [isOpen, setIsOpen] = useState(false)
@@ -96,7 +96,7 @@ const withModal = (Component) => {
 
 And now, let's see how it can be used:
 
-```tsx
+```js
 const AuthPopup = ({ onModalVisibilityToggle }) => {
   // Component
 }
@@ -109,7 +109,7 @@ export { WrappedAuthPopup as AuthPopup }
 Here is what using the HOC with the special decorator syntax would look like:
 
 <!-- prettier-ignore -->
-```tsx
+```js
 @withModal()
 const AuthPopup = ({ onModalVisibilityToggle }) => {
   // Component
@@ -124,7 +124,7 @@ Once again, all the boilerplate code is gone, leaving only what truly matters.
 
 Perhaps some of the readers did not see anything special in this. In the example above, only one decorator was used. Let's take a look at such an example:
 
-```tsx
+```js
 const AuthPopup = ({ onSubmit, onFocusTrapInit, onModalVisibilityToggle }) => {
   // Component
 }
@@ -139,7 +139,7 @@ export { WrappedAuthPopup as AuthPopup }
 See that hard-to-read nesting? How much time did it take you to understand what is happening in the code? Now, let's take a look at the same example but with the use of decorator syntax:
 
 <!-- prettier-ignore -->
-```tsx
+```js
 @withForm({ mode: 'submit' })
 @withFocusTrap()
 @withModal()
@@ -176,7 +176,7 @@ To delve deeper into the history of this proposal, let's review a list of key ev
 
 - **[2014-04 – Stage 0](https://github.com/tc39/notes/blob/main/meetings/2014-04/apr-10.md#decorators-for-es7)**. Decorators were proposed by Yehuda Katz and they were initially intended to become a part of the ECMAScript 7.
 
-  ```tsx
+  ```ts
   type Decorator = (
     target: DecoratedClass,
     propertyKey: string,
@@ -207,7 +207,7 @@ To delve deeper into the history of this proposal, let's review a list of key ev
 
 - **[2016-07 – Stage 2](https://github.com/tc39/notes/blob/main/meetings/2016-07/jul-28.md#9iiic-decorators)**. After the decorators proposal reached stage 2, its API began to undergo significant changes. Furthermore, at one point the proposal was referred to as "ESnext class features for JavaScript." During its development, there were numerous ideas about how decorators could be structured. To get a comprehensive view of the entire history of changes, I recommend [reviewing the commits](https://github.com/tc39/proposal-decorators) in the proposal's repository. Here is an example of what the decorators API used to look like:
 
-  ```tsx
+  ```ts
   type Decorator = (args: {
     kind: 'method' | 'property' | 'field'
     key: string | symbol
@@ -224,7 +224,7 @@ To delve deeper into the history of this proposal, let's review a list of key ev
 
   By the end of stage 2, the decorator API looked as follows:
 
-  ```tsx
+  ```ts
   type Decorator = (
     value: DecoratedValue,
     context: {
@@ -271,7 +271,7 @@ To delve deeper into the history of this proposal, let's review a list of key ev
 
   In TS 4.9, only a small part of decorators specification was included – [Class Auto-Accessors](https://github.com/tc39/proposal-decorators#class-auto-accessors). This addition to the decorators specification served as a correction for the mutations that were prevalent in the first stages of implementation. The reason behind this is that often there is a desire to make properties reactive, meaning that some effects should occur when the property changes, such as UI re-rendering, for example:
 
-  ```tsx
+  ```ts
   class Dashboard extends HTMLElement {
     @reactive
     tab = DashboardTab.USERS
@@ -280,7 +280,7 @@ To delve deeper into the history of this proposal, let's review a list of key ev
 
   In the old implementation, with the `reactive` decorator, you had to mutate the `target` class by adding additional `set` and `get` accessors to achieve the desired behavior. With the use of auto-accessors, this behavior now occurs more explicitly, which in turn allows engines to optimize it better.
 
-  ```tsx
+  ```ts
   class Dashboard extends HTMLElement {
     @reactive
     accessor tab = DashboardTab.USERS
@@ -307,7 +307,7 @@ After all the explanations and examples, you might have a question: "So, are dec
 
 It is not all that simple. In addition to what was mentioned earlier regarding how JavaScript primarily focuses on end-users, it is also worth adding that JS-engines always try to use the new syntax as a reference point to at least _attempt_ to make your JavaScript faster.
 
-```tsx
+```ts
 import { groupBy } from 'npm:lodash@4.17.21'
 
 const getGroupedOffersByCity = (offers) => {

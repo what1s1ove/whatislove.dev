@@ -1,7 +1,7 @@
 ---
 title: Block or inline?
 description: Many people believe HTML tags are just block or inline, but that's a misconception. HTML tags come in seven types, each with unique rules. In this article, we explore these types and how to use them correctly to build well-structured web pages.
-date: 2022-04-27
+date: 2021-05-27
 tags:
   - HTML
 changelogs: []
@@ -101,11 +101,17 @@ Each element in HTML falls into zero or more categories that group elements with
 HTML Element content types:
 
 - [Metadata content](https://html.spec.whatwg.org/multipage/dom.html#metadata-content-2) — information for browsers, search engines and etc. (everything in the `<head>`);
+
 - [Flow content](https://html.spec.whatwg.org/multipage/dom.html#flow-content-2) — content (everything in the `<body>`);
+
 - [Phrasing content](https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2) — document text and small text elements in paragraphs;
+
 - [Sectioning content](https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2) — semantic sections of the document;
+
 - [Heading content](https://html.spec.whatwg.org/multipage/dom.html#heading-content-2) — headlines;
+
 - [Embedded content](https://html.spec.whatwg.org/multipage/dom.html#embedded-content-category) — images, video, audio and etc;
+
 - [Interactive content](https://html.spec.whatwg.org/multipage/dom.html#interactive-content-2) — what the user is interacting with.
 
 <figure>

@@ -18,7 +18,7 @@ The first option we will explore is called [noUncheckedIndexedAccess](https://ww
 
 This is where [noUncheckedIndexedAccess](https://www.typescriptlang.org/tsconfig#noUncheckedIndexedAccess) comes to the rescue. It adds `undefined` to any undeclared key of an object or index of an array, prompting additional checks to ensure that you are fully aware of what you are doing.
 
-```tsx
+```ts
 // noUncheckedIndexedAccess: false (default behavior)
 
 const ids: number[] = []
@@ -45,7 +45,7 @@ Next, we have the option [exactOptionalPropertyTypes](https://www.typescriptlang
 
 With this option enabled, TypeScript retains only one behavior with the `?` prefix. Now, it signifies only the absence of a key, not that it could be `undefined`. If you need to allow the value to be `undefined`, you must specify it explicitly (e.g., `hasFriends: string | undefined`).
 
-```tsx
+```ts
 // exactOptionalPropertyTypes: false (default behavior)
 
 type User = {
@@ -76,7 +76,7 @@ There is often a temptation to either write your own [index signature](https://w
 
 The goal of this option is to make sure you are absolutely certain about what you are doing. Since nobody likes bracket notation where it can be avoided, this option _forces_ you to avoid index signatures as much as possible. Indeed, many problems arise from them, and this option aims to mitigate those issues.
 
-```tsx
+```ts
 // noPropertyAccessFromIndexSignature: false (default behavior)
 
 type Settings = {

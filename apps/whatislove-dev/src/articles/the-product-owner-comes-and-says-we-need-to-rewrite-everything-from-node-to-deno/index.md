@@ -1,7 +1,7 @@
 ---
 title: 'The product owner comes and says: We need to rewrite everything from Node to Deno...'
 description: This article delves into a comparison of Deno and Node.js, exploring their similarities, differences, and the potential for Deno to replace Node.js. Imagine a scenario where a product owner mandates the transition from Node to Deno. Do we need a complete rewrite? Let's try to find it out.
-date: 2021-10-04
+date: 2021-04-21
 tags:
   - JS
   - TS
@@ -116,7 +116,7 @@ Let's check this with an example of a small project.
 
 - **Root file:**
 
-  ```jsx
+  ```js
   // src/server.ts
 
   import { resolve } from 'path'
@@ -247,7 +247,7 @@ Stop what? Where do we store our packages now?
 
 Do not worry, we will store the dependencies _we need_ here:
 
-```jsx
+```js
 // src/dependencies.ts
 
 import '<https://deno.land/x/dotenv/load.ts>'
@@ -290,7 +290,7 @@ error: Is a directory (os error 21)
 
 On the sixth line we have this:
 
-```jsx
+```js
 // src/server.ts
 
 import { ENV } from './common/enums'
@@ -324,7 +324,7 @@ Let's fix this and a few other errors that we will run into.
 
 1. Resole magic names
 
-   ```jsx
+   ```js
    // src/common/enums/index.ts
 
    export * from './api/index.ts'
@@ -493,7 +493,7 @@ Of course there were more changes, but these are the most interesting things tha
 
 Root file using Deno:
 
-```jsx
+```js
 // src/server.ts
 
 import { Oak } from './dependencies.ts'

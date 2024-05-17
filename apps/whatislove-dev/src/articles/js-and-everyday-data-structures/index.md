@@ -1,7 +1,7 @@
 ---
 title: JS and everyday data structures
 description: Explore the role of data structures in JavaScript, optimizing code, enhancing readability, and simplifying problem-solving. Discover the vital connection between algorithms and data structures, ensuring efficient and maintainable coding for developers of all levels.
-date: 2021-08-04
+date: 2021-04-04
 tags:
   - JS
 changelogs: []
@@ -33,7 +33,7 @@ JS has two basic data-structures that can be reused in different ways depending 
 
 We will use this user type for further examples:
 
-```tsx
+```ts
 type User = {
   name: string
   gender: string
@@ -140,7 +140,7 @@ if (checkIsAdmin(user)) {
 
 Here is an improved solution for our task:
 
-```jsx
+```js
 // src/common/constants/user/index.js
 
 const MALE_GENDER_TYPE = 'male'
@@ -182,7 +182,7 @@ For this structure, JavaScript also has conventions among developers:
 <details>
   <summary>Examples</summary>
 
-```jsx
+```js
 // bad
 
 // src/common/enum/user/user-role-enum.enum.js
@@ -225,7 +225,7 @@ const UserRole = {
 
 This is how the solution using the `Enum` might look like:
 
-```jsx
+```js
 // src/common/enums/user/gender-type.enum.js
 
 const GenderType = {
@@ -251,7 +251,7 @@ We could keep using constants but it is much better and more correct to use stru
 
 Also if we do the task with TypeScript, we can also change the type of user a little bit. This is _many times better_ than using just strings.
 
-```tsx
+```ts
 type User = {
   name: string
   gender: (typeof GenderType)[keyof typeof GenderType]
@@ -296,7 +296,7 @@ There are some conventions how to configure this structure:
 <details>
   <summary>Examples</summary>
 
-```jsx
+```js
 // bad
 
 // src/common/maps/user/user-roles.map.js
@@ -330,7 +330,7 @@ const userRoleMap = {
 
 Here is how the solution might look like using the `Map`:
 
-```jsx
+```js
 // src/common/enums/gender-type.enum.js
 
 const GenderType = {
@@ -449,7 +449,7 @@ const Dashboard = () => {
 <details>
   <summary>getFilteredOffers</summary>
 
-```jsx
+```js
 // src/components/dashboard/common/maps/user-offer-to-validation-cb.map.js
 
 const userOfferToValidationCb = {
@@ -486,7 +486,7 @@ Here is an example of the `getOptions` helper:
 <details>
   <summary>Example</summary>
 
-```jsx
+```js
 // src/helpers/options/get-default-option/get-default-option.helper.js
 
 const getDefaultOption = (value) => ({
@@ -505,7 +505,7 @@ const getOptions = (values, cb = getDefaultOption) => values.map(cb)
 
 TypeScript has a keyword for the `Enum`'s. The key difference from an object-enum is that with the TypeScript enum we can read values in two ways.
 
-```tsx
+```ts
 // src/common/enums/gender-type.enum.ts
 
 enum GenderType {
@@ -520,7 +520,7 @@ console.log(GenderType['male']) // MALE
 
 Cool! But I have almost never seen this used in production code. Therefore, I use and recommend that you use `Enum` in TypeScript in this way:
 
-```tsx
+```ts
 // src/common/enums/gender-type.enum.ts
 
 const GenderType = {
