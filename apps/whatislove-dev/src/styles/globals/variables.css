@@ -11,6 +11,7 @@
 	--color-red-200: 0 60.32% 51.57%;
 	--color-white-100: 0 0% 100%;
 	--color-white-200: 0 0% 97%;
+	--color-white-300: 30 1% 98%;
 	--color-blue-100: 199.68 74.7% 50.39%;
 	--color-blue-200: 211.41 60.32% 48.43%;
 	--color-yellow-100: 51 100% 50%;
@@ -19,6 +20,7 @@
 	--color-gray-100: 0 0% 43.92%;
 	--color-black-100: 0 0% 0%;
 	--color-black-200: 0 0% 1%;
+	--color-black-300: 30 0% 3%;
 	--radius-focus: 2px;
 	--offset-focus: 2px;
 	--outline-focus: 2px solid hsl(var(--color-red-100));
@@ -43,6 +45,7 @@
 
 	--color-page-background: var(--color-white-100);
 	--color-page-background-highlight: var(--color-black-100) / 5%;
+	--color-page-background-code: var(--color-white-300);
 	--color-scroll-shadow: var(--color-black-100);
 	--color-intro-background: var(--color-white-200);
 	--color-intro-image-mask: var(--color-white-100);
@@ -57,6 +60,7 @@
 
 		--color-page-background: var(--color-black-200);
 		--color-page-background-highlight: var(--color-white-100) / 10%;
+		--color-page-background-code: var(--color-black-300);
 		--color-scroll-shadow: var(--color-white-100);
 		--color-intro-background: var(--color-black-100) / 15%;
 		--color-intro-image-mask: var(--color-black-100);
@@ -65,6 +69,11 @@
 		--color-icon-inverted: var(--color-black-200);
 		--color-sticker: var(--color-white-100);
 		--color-text: var(--color-white-100);
+
+		.shiki,
+		.shiki span {
+			color: var(--shiki-dark) !important;
+		}
 	}
 
 	@media (prefers-color-scheme: dark) {
@@ -73,6 +82,7 @@
 
 			--color-page-background: var(--color-black-200);
 			--color-page-background-highlight: var(--color-white-100) / 10%;
+			--color-page-background-code: var(--color-black-300);
 			--color-scroll-shadow: var(--color-white-100);
 			--color-intro-background: var(--color-black-100) / 15%;
 			--color-intro-image-mask: var(--color-black-100);
@@ -81,6 +91,11 @@
 			--color-icon-inverted: var(--color-black-200);
 			--color-sticker: var(--color-white-100);
 			--color-text: var(--color-white-100);
+
+			.shiki,
+			.shiki span {
+				color: var(--shiki-dark) !important;
+			}
 		}
 	}
 }

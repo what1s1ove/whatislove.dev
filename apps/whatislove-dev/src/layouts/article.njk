@@ -24,26 +24,28 @@
 			</p>
 		</header>
 		<div class="article__wrapper">
-			{% call accordion(className="article__toc", title="Content", isDefaultOpenOnWideScreen=true) %}
-				<div class="article__toc-wrapper toc"></div>
+			{% call accordion(className="article__toc-wrapper", title="Content", isDefaultOpenOnWideScreen=true) %}
+				<div class="article__toc toc"></div>
 			{% endcall %}
 			{% if changelogs.length %}
 				{% call accordion(className="article__changelog", title="Changelog", isDefaultOpenOnWideScreen=true) %}
-					{% for changelog in changelogs %}
-						<li class="timeline__item">
-							<p class="timeline__item-dates">
-								<time
-									class="timeline__item-date timeline__item-date--start"
-									datetime="{{ changelog.date | dateISO }}"
-								>
-									{{ changelog.date | dateFormatted }}
-								</time>
-							</p>
-							<div class="timeline__item-wrapper">
-								<p class="timeline__item-description">{{ changelog.message | safe }}</p>
-							</div>
-						</li>
-					{% endfor %}
+					<ul class="article__timeline timeline">
+						{% for changelog in changelogs %}
+							<li class="timeline__item">
+								<p class="timeline__item-dates">
+									<time
+										class="timeline__item-date timeline__item-date--start"
+										datetime="{{ changelog.date | dateISO }}"
+									>
+										{{ changelog.date | dateFormatted }}
+									</time>
+								</p>
+								<div class="timeline__item-wrapper">
+									<p class="timeline__item-description">{{ changelog.message | safe }}</p>
+								</div>
+							</li>
+						{% endfor %}
+					</ul>
 				{% endcall %}
 			{% endif %}
 			<div class="article__content content">{{ content | safe }}</div>

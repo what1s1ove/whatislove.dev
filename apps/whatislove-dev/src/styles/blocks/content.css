@@ -1,7 +1,6 @@
 .content {
 	--gap: 20px;
 	--gap-list: 8px;
-	--content-shift: 20px;
 
 	display: grid;
 	gap: var(--gap);
@@ -68,7 +67,6 @@
 	figure {
 		display: grid;
 		gap: 5px;
-		padding-inline: var(--content-shift);
 		margin: 0;
 	}
 
@@ -85,11 +83,10 @@
 	}
 
 	blockquote {
-		padding-block: 10px;
-		padding-inline: var(--content-shift);
+		padding-block: 5px;
+		padding-inline: 20px 0;
 		margin: 0;
-		margin-inline: var(--content-shift) 0;
-		border-inline-start: 1px solid
+		border-inline-start: 2px solid
 			hsl(var(--color-page-background-highlight));
 	}
 
@@ -97,22 +94,33 @@
 		padding-block: 2px;
 		padding-inline: 6px;
 		font-family: var(--font-family-code);
-		background-color: hsl(var(--color-page-background-highlight));
+		background-color: hsl(var(--color-page-background-code));
+		background-image: var(--background-image-page);
+		background-size: var(--background-size-page);
 		border-radius: 4px;
 	}
 
-	pre {
-		--size-shadows: var(--content-shift);
+	summary {
+		margin-block: 0 var(--gap);
+		cursor: pointer;
+	}
 
+	pre {
+		padding: 20px;
 		margin: 0;
 		overflow-y: auto;
 		font-family: var(--font-family-code);
 		tab-size: 2;
-		background-color: hsl(var(--color-page-background-highlight));
+		background-color: hsl(var(--color-page-background-code)) !important;
+		background-image: var(--background-image-page);
+		background-size: var(--background-size-page);
+		border: 1px solid hsl(var(--color-gray-100));
 		border-radius: 5px;
 
-		code[class*="language-"] {
-			padding: var(--content-shift);
+		&:focus-within {
+			border-radius: var(--radius-focus);
+			outline: var(--outline-focus);
+			outline-offset: var(--offset-focus);
 		}
 
 		@media (--width-tablet) {
@@ -121,6 +129,11 @@
 
 		@media (--width-desktop) {
 			tab-size: 4;
+		}
+
+		code[class*="language"] {
+			padding: 0;
+			border-radius: inherit;
 		}
 	}
 }

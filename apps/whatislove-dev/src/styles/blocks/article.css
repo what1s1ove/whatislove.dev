@@ -55,7 +55,7 @@
 	color: hsl(var(--color-gray-100));
 }
 
-.article__toc {
+.article__toc-wrapper {
 	@media (--width-desktop) {
 		position: absolute;
 		inset-block-start: 0;

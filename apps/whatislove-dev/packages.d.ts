@@ -31,14 +31,10 @@ declare module '@11ty/eleventy' {
 
 		addFilter(name: string, newFilterCb: (value: unknown) => unknown): void
 
+		setLibrary(name: string, newLibraryApi: unknown): void
+
 		addPlugin(newPluginCb: (value: unknown) => unknown): void
 	}
 
 	export { UserConfig }
-}
-
-declare module '@11ty/eleventy-plugin-syntaxhighlight' {
-	function plugin(value: unknown): unknown
-
-	export default plugin
 }

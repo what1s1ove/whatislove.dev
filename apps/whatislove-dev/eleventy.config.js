@@ -1,18 +1,19 @@
 import Image from '@11ty/eleventy-img'
-import syntaxhighlight from '@11ty/eleventy-plugin-syntaxhighlight'
+import shikiHighlight from '@shikijs/markdown-it'
 import { getISODate } from '@whatislove.dev/shared'
 import browserslist from 'browserslist'
 import esbuild from 'esbuild'
 import htmlMin from 'html-minifier-terser'
 import * as lightningcss from 'lightningcss'
 import { parseHTML } from 'linkedom'
+import markdownIt from 'markdown-it'
 import { existsSync } from 'node:fs'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import process from 'node:process'
 import svgo from 'svgo'
 
-import { addPreShadows, addToc } from './src/transforms/transforms.js'
+import { addToc } from './src/transforms/transforms.js'
 
 /** @typedef {import('11ty__eleventy-img').ImageFormatWithAliases} */
 let ImageFormatWithAliases
@@ -21,7 +22,7 @@ let PackageJson
 /** @typedef {import('./src/database.json')} */
 let Database
 
-let TRANSFORMS = /** @type {const} */ ([addToc, addPreShadows])
+let TRANSFORMS = /** @type {const} */ ([addToc])
 
 let Path = /** @type {const} */ ({
 	COPY: [
@@ -50,6 +51,18 @@ let rawPackageJson = await readFile(new URL(`package.json`, import.meta.url))
 let packageJson = /** @type {(text: string) => PackageJson} */ (JSON.parse)(
 	rawPackageJson.toString(),
 )
+let md = markdownIt({
+	html: true,
+})
+
+md.use(
+	await shikiHighlight({
+		themes: {
+			dark: `github-dark`,
+			light: `github-light`,
+		},
+	}),
+)
 
 /**
  * @param {import('@11ty/eleventy').UserConfig} config
@@ -64,6 +77,10 @@ let init = (config) => {
 	config.addCollection(`articles`, (collections) => {
 		return collections.getFilteredByGlob(Collection.ARTICLES)
 	})
+
+	// libraries
+
+	config.setLibrary(`md`, md)
 
 	// copy
 	for (let url of Path.COPY) {
@@ -313,10 +330,6 @@ let init = (config) => {
 			year: `numeric`,
 		})
 	})
-
-	// plugins
-
-	config.addPlugin(syntaxhighlight)
 
 	return {
 		dir: {
