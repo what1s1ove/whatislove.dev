@@ -1,0 +1,32 @@
+.accordion {
+	summary::after {
+		display: block;
+		inline-size: 18px;
+		block-size: 10px;
+		content: "";
+		background-color: hsl(var(--color));
+		mask-image: url("/images/icons.svg#caret-down");
+		mask-repeat: no-repeat;
+		mask-size: contain;
+	}
+
+	&[open] summary::after {
+		mask-image: url("/images/icons.svg#caret-up");
+	}
+}
+
+.accordion__title {
+	--color: var(--color-gray-100);
+
+	display: flex;
+	gap: 15px;
+	font-family: var(--font-family-highlight);
+	font-size: var(--font-size-heading-2);
+	font-weight: 600;
+	color: hsl(var(--color));
+	text-transform: uppercase;
+}
+
+.accordion__content {
+	padding-block: 20px 0;
+}

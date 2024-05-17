@@ -1,0 +1,13 @@
+{% macro accordion(className, title, isDefaultOpenOnWideScreen = false) %}
+	<details class="{{ className }} accordion">
+		<summary class="accordion__title action">{{ title }}</summary>
+		<div class="accordion__content">
+			{{ caller() }}
+		</div>
+		{% if isDefaultOpenOnWideScreen %}
+			<script>
+				document.currentScript.closest('details').open = window.innerWidth > 768
+			</script>
+		{% endif %}
+	</details>
+{% endmacro %}

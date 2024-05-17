@@ -1,5 +1,6 @@
 {% extends './page.njk' %}
 {% from 'article-list.njk' import articleList %}
+{% from 'accordion.njk' import accordion %}
 {% from 'tag-list.njk' import tagList %}
 {% set ARTICLES_COUNT = 3 %}
 {% set lastChangelogItem = changelogs | last %}
@@ -23,37 +24,27 @@
 			</p>
 		</header>
 		<div class="article__wrapper">
-			<details class="article__toc">
-				<summary class="article__toc-title action">Content</summary>
+			{% call accordion(className="article__toc", title="Content", isDefaultOpenOnWideScreen=true) %}
 				<div class="article__toc-wrapper toc"></div>
-				<script>
-					document.currentScript.closest('details').open = window.innerWidth > 768
-				</script>
-			</details>
+			{% endcall %}
 			{% if changelogs.length %}
-				<details class="article__changelog">
-					<summary class="article__changelog-title action">Changelog</summary>
-					<ul class="article__changelog-list timeline">
-						{% for changelog in changelogs %}
-							<li class="timeline__item">
-								<p class="timeline__item-dates">
-									<time
-										class="timeline__item-date timeline__item-date--start"
-										datetime="{{ changelog.date | dateISO }}"
-									>
-										{{ changelog.date | dateFormatted }}
-									</time>
-								</p>
-								<div class="timeline__item-wrapper">
-									<p class="timeline__item-description">{{ changelog.message | safe }}</p>
-								</div>
-							</li>
-						{% endfor %}
-					</ul>
-					<script>
-						document.currentScript.closest('details').open = window.innerWidth > 768
-					</script>
-				</details>
+				{% call accordion(className="article__changelog", title="Changelog", isDefaultOpenOnWideScreen=true) %}
+					{% for changelog in changelogs %}
+						<li class="timeline__item">
+							<p class="timeline__item-dates">
+								<time
+									class="timeline__item-date timeline__item-date--start"
+									datetime="{{ changelog.date | dateISO }}"
+								>
+									{{ changelog.date | dateFormatted }}
+								</time>
+							</p>
+							<div class="timeline__item-wrapper">
+								<p class="timeline__item-description">{{ changelog.message | safe }}</p>
+							</div>
+						</li>
+					{% endfor %}
+				{% endcall %}
 			{% endif %}
 			<div class="article__content content">{{ content | safe }}</div>
 		</div>
