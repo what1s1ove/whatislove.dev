@@ -2,7 +2,6 @@
 	display: grid;
 	gap: 30px;
 	padding-block: 25px;
-	margin-block: auto 0;
 	color: hsl(var(--color-gray-100));
 
 	@media (--width-tablet) {

@@ -5,6 +5,8 @@ permalink: 404.html
 ---
 
 {% extends '../layouts/page.njk' %}
+{% from 'article-list.njk' import articleList %}
+{% set ARTICLES_COUNT = 3 %}
 
 {% block content %}
 	<div class="not-found column">
@@ -21,4 +23,12 @@ permalink: 404.html
 			if you truly ended up here <i>unexpectedly</i>.
 		</p>
 	</div>
+{% endblock %}
+
+{% block aside %}
+	<aside class="articles column">
+		<h2 class="articles__title">Lastest Article</h2>
+		{{ articleList(items=collections.articles | reverse, className="articles__article-list", maxCount=ARTICLES_COUNT) }}
+		<a class="articles__all action" href="/articles">View all articles</a>
+	</aside>
 {% endblock %}
