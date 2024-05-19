@@ -4,9 +4,7 @@
 	padding-block: 100px;
 
 	@media (--width-tablet) {
-		max-inline-size: 1000px;
 		padding-block: 150px;
-		margin-inline: auto;
 	}
 
 	@media (--width-desktop) {

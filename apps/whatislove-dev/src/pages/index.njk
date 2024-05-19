@@ -13,7 +13,7 @@ permalink: 'index.html'
 {% set introSocials = global.socials.concat([{ name: global.email, key: 'email', url: 'mailto:' + global.email }]) %}
 
 {% block content %}
-	<div class="intro column">
+	<div class="intro box">
 		<div class="intro__wrapper">
 			<button class="intro__paw action" type="button" aria-label="{{ LAPKA_PHRASE }}">
 				<svg
@@ -62,7 +62,7 @@ permalink: 'index.html'
 		</div>
 		{{ socialList(items=introSocials, className='intro__social-list') }}
 	</div>
-	<div class="main__row main__row--experience-stickers column">
+	<div class="main__row main__row--experience-stickers box">
 		<section class="experience">
 			<h2 class="experience__title">Experience</h2>
 			<form class="experience__form">
@@ -140,7 +140,7 @@ permalink: 'index.html'
 			</ul>
 		</section>
 	</div>
-	<section class="articles column">
+	<section class="articles box">
 		<h2 class="articles__title">Lastest Article</h2>
 		{{ articleList(items=collections.articles | reverse, className="articles__article-list", maxCount=ARTICLES_COUNT) }}
 		<a class="articles__all action" href="/articles">View all articles</a>

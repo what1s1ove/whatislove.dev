@@ -1,0 +1,17 @@
+.box {
+	--has-padding-inline-box: 0;
+
+	padding-block: var(--padding-block-box);
+	padding-inline: var(--padding-inline-box);
+
+	@media (--width-desktop) {
+		--padding-inline-box-default: calc(
+			var(--has-padding-inline-box) * var(--padding-inline-box)
+		);
+
+		padding-inline: calc(
+			50% - (var(--size-inline-box) / 2) +
+				(var(--padding-inline-box-default))
+		);
+	}
+}

@@ -1,17 +1,11 @@
 .footer {
 	display: grid;
 	gap: 30px;
-	padding-block: 25px;
+	margin-block: auto 0;
 	color: hsl(var(--color-gray-100));
 
 	@media (--width-tablet) {
 		grid-template-columns: repeat(2, 1fr);
-	}
-
-	@media (--width-desktop) {
-		box-sizing: border-box;
-		max-inline-size: 960px;
-		margin-inline: auto;
 	}
 }
 

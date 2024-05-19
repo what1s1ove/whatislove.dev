@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-	<div class="article column">
+	<div class="article box">
 		<header class="article__header">
 			{{ tagList(items=tags, className="article__tags-list") }}
 			<h1 class="article__title">{{ title | safe }}</h1>
@@ -54,7 +54,7 @@
 {% endblock %}
 
 {% block aside %}
-	<aside class="articles column">
+	<aside class="articles box">
 		<h2 class="articles__title">Lastest Article</h2>
 		{{ articleList(items=collections.articles | reverse, className="articles__article-list", maxCount=ARTICLES_COUNT) }}
 		<a class="articles__all action" href="/articles">View all articles</a>

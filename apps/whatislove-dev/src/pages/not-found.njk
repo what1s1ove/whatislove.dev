@@ -9,7 +9,7 @@ permalink: 404.html
 {% set ARTICLES_COUNT = 3 %}
 
 {% block content %}
-	<div class="not-found column">
+	<div class="not-found box">
 		<h1 class="not-found__title">Not found</h1>
 		<p class="not-found__desc">
 			Yeah, I also don't like broken links. Please,
@@ -26,7 +26,7 @@ permalink: 404.html
 {% endblock %}
 
 {% block aside %}
-	<aside class="articles column">
+	<aside class="articles box">
 		<h2 class="articles__title">Lastest Article</h2>
 		{{ articleList(items=collections.articles | reverse, className="articles__article-list", maxCount=ARTICLES_COUNT) }}
 		<a class="articles__all action" href="/articles">View all articles</a>

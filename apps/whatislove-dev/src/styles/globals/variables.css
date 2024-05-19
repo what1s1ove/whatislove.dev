@@ -1,11 +1,24 @@
 :root {
 	color-scheme: light;
 
-	--font-family-text: "Red Hat Display", sans-serif;
-	--font-family-highlight: "Saira Extra Condensed", sans-serif;
-	--font-family-code: "Monaspace Neon", monospace;
-	--background-page: hsl(var(--color-page-background))
-		var(--background-image-page) repeat 0 / var(--background-size-page);
+	/* Sizes */
+	--size-inline-box-full: calc(infinity);
+	--size-inline-box-wide: 1120px;
+	--size-inline-box-normal: 960px;
+	--size-inline-box: var(--size-inline-box-normal);
+	--padding-inline-box: 20px;
+	--padding-block-box: 25px;
+
+	@media (--width-tablet) {
+		--padding-block-box: 35px;
+	}
+
+	@media (--width-desktop) {
+		--padding-block-box: 50px;
+	}
+
+	/* Colors */
+
 	--color-pink-100: 8 47% 75%;
 	--color-red-100: 0 90.91% 61.18%;
 	--color-red-200: 0 60.32% 51.57%;
@@ -21,15 +34,29 @@
 	--color-black-100: 0 0% 0%;
 	--color-black-200: 0 0% 1%;
 	--color-black-300: 30 0% 3%;
+
+	/* Focus */
+
 	--radius-focus: 2px;
 	--offset-focus: 2px;
 	--outline-focus: 2px solid hsl(var(--color-red-100));
+
+	/* Filters */
+
 	--filter-sticker: url("#sticker");
+
+	/* Backgrounds */
+
+	--background-page: hsl(var(--color-page-background))
+		var(--background-image-page) repeat 0 / var(--background-size-page);
 	--background-image-page: url("/images/noise.svg");
 	--background-size-page: 1000px;
 
 	/* fonts */
 
+	--font-family-text: "Red Hat Display", sans-serif;
+	--font-family-highlight: "Saira Extra Condensed", sans-serif;
+	--font-family-code: "Monaspace Neon", monospace;
 	--font-size-text-small: 0.875rem;
 	--font-size-text-base: 1rem;
 	--font-size-heading-3: 1.25rem;

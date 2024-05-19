@@ -14,7 +14,7 @@ permalink: 'articles/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber 
 {% from 'pagination-list.njk' import paginationList with context %}
 
 {% block content %}
-	<div class="articles column">
+	<div class="articles box">
 		<h1 class="articles__title">Articles</h1>
 		{{ articleList(items=pagination.items,  className="articles__article-list", headingLevel="h2") }}
 		{% if pagination.hrefs.length %}

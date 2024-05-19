@@ -12,6 +12,9 @@
 }
 
 .page__body {
+	display: flex;
+	flex-direction: column;
+	min-block-size: 100vh;
 	margin: 0;
 	font-family: var(--font-family-text);
 	font-size: var(--font-size-text-base);

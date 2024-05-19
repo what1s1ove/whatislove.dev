@@ -3,29 +3,23 @@
 
 	display: grid;
 	gap: var(--gap);
-	padding-block: 25px;
 
 	@media (--width-desktop) {
 		--gap: 50px;
 
 		position: relative;
-		padding-block: 50px;
 	}
 }
 
 .article__header {
 	display: grid;
 	gap: 10px;
-	padding: 22px;
+	padding: var(--padding-inline-box);
 	background-color: hsl(var(--color-intro-background));
 
 	@media (--width-desktop) {
-		box-sizing: border-box;
-		inline-size: 100%;
-		max-inline-size: 900px;
-		padding: 30px;
-		margin-block-start: -160px;
-		margin-inline: auto;
+		padding: var(--padding-inline-box);
+		margin-block-start: -165px;
 	}
 }
 
@@ -58,8 +52,8 @@
 .article__toc-wrapper {
 	@media (--width-desktop) {
 		position: absolute;
-		inset-block-start: 0;
+		inset-block-start: 25px;
 		inset-inline-start: 0;
-		padding-inline: 20px;
+		padding-inline: var(--padding-inline-box);
 	}
 }

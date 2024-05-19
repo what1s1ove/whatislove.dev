@@ -1,14 +1,8 @@
 .articles {
+	--size-inline-box: var(--size-inline-box-wide);
+
 	display: grid;
 	gap: 30px;
-	padding-block: 25px;
-
-	@media (--width-desktop) {
-		box-sizing: border-box;
-		max-inline-size: 1175px;
-		padding-block: 50px;
-		margin-inline: auto;
-	}
 }
 
 .articles__title {
