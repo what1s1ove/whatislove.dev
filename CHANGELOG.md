@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.42.1](https://github.com/what1s1ove/whatislove.dev/compare/v1.42.0...v1.42.1) (2024-05-20)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** add dot at the end of all images alts wd-498 ([#499](https://github.com/what1s1ove/whatislove.dev/issues/499)) ([b41a4c6](https://github.com/what1s1ove/whatislove.dev/commit/b41a4c68e7d7087b9d0a0cfc88e2b02b3e3a55a3))
+
 ## [1.42.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.41.0...v1.42.0) (2024-05-20)
 
 
