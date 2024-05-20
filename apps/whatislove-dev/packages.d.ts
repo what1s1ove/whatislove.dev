@@ -38,3 +38,9 @@ declare module '@11ty/eleventy' {
 
 	export { UserConfig }
 }
+
+declare module '@11ty/eleventy-plugin-rss' {
+	function plugin(options: unknown): void
+
+	export default plugin
+}

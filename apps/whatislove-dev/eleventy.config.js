@@ -1,4 +1,5 @@
 import Image from '@11ty/eleventy-img'
+import rss from '@11ty/eleventy-plugin-rss'
 import shikiHighlight from '@shikijs/markdown-it'
 import { getISODate } from '@whatislove.dev/shared'
 import browserslist from 'browserslist'
@@ -86,8 +87,10 @@ let init = (config) => {
 	})
 
 	// libraries
-
 	config.setLibrary(`md`, md)
+
+	// plugins
+	config.addPlugin(rss)
 
 	// copy
 	for (let url of Path.COPY) {

@@ -1,5 +1,5 @@
 {% set isRoot = page.url == '/' %}
-{% set pageTitle = global.title if isRoot else title + ' | ' + global.title %}
+{% set pageTitle = global.author if isRoot else title + ' | ' + global.author %}
 {% set pageDescription = description if description else global.description %}
 
 <!doctype html>
