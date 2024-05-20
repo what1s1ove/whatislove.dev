@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.42.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.41.0...@whatislove.dev/whatislove-dev-v1.42.0) (2024-05-20)
+
+
+### Features
+
+* **whatislove-dev:** add rss feed to website wd-507 ([#508](https://github.com/what1s1ove/whatislove.dev/issues/508)) ([af13a45](https://github.com/what1s1ove/whatislove.dev/commit/af13a45d4fe5951241d725178c976f2f9a266dff))
+
 ## [1.41.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.40.2...@whatislove.dev/whatislove-dev-v1.41.0) (2024-05-20)
 
 
