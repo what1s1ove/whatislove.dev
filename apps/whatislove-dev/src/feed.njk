@@ -1,0 +1,30 @@
+---
+permalink: /feed.xml
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ global.domain }}">
+	<title>{{ global.author }}</title>
+	<subtitle>{{ global.description }}</subtitle>
+	<link href="{{ page.url | absoluteUrl(global.domain) }}" rel="self" />
+	<link href="{{ global.domain }}" />
+	<updated>{{ collections.articles | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+	<id>{{ global.domain }}/</id>
+	<author>
+		<name>{{ global.author }}</name>
+		<email>{{ global.email }}</email>
+	</author>
+	{% for article in collections.articles | reverse %}
+		{% set absoluteArticleUrl = article.url | absoluteUrl(global.domain) %}
+		{% set lastChangelogItem = article.data.changelogs | last %}
+		{% set updatedDate = lastChangelogItem.date if lastChangelogItem else article.date %}
+		<entry>
+			<title>{{ article.data.title | trim }}</title>
+			<link href="{{ absoluteArticleUrl }}" />
+			<updated>{{ updatedDate | dateToRfc3339 }}</updated>
+			<id>{{ absoluteArticleUrl }}</id>
+			<content xml:lang="{{ global.lang }}" type="html">
+				{{ article.templateContent | htmlToAbsoluteUrls(absoluteArticleUrl) | trim }}
+			</content>
+		</entry>
+	{%- endfor %}
+</feed>

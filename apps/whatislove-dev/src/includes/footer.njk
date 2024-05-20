@@ -4,6 +4,12 @@
 			<a class="footer__link" href="{{ global.repo }}/issues/new" target="_blank">Report Issue</a>
 		</li>
 		<li class="footer__links-item">
+			<a class="footer__link" href="/feed.xml">RSS</a>
+		</li>
+		<li class="footer__links-item">
+			<a class="footer__link" href="{{ global.channelUrl }}" target="_blank">Telegram Channel</a>
+		</li>
+		<li class="footer__links-item">
 			<a class="footer__link" href="/sitemap.xml">Sitemap</a>
 		</li>
 	</ul>
@@ -20,7 +26,7 @@
 			aria-label="Webring go next"
 		></a>
 	</div>
-	<p class="footer__copyright">&copy; 2020 – {{ global.currentYear }} Vladyslav Zubko. All rights reserved.</p>
+	<p class="footer__copyright">&copy; 2020 – {{ global.currentYear }} {{ global.author }}. All rights reserved.</p>
 	<p class="footer__credits">
 		Built using {{ eleventy.generator }} with <span class="footer__credits-icon">❤️</span> / Design by
 		<a class="footer__credits-designer" href="https://t.me/listiqq" target="_blank"> Dima Listiq </a>

@@ -1,8 +1,11 @@
 let data = {
+	author: `Vladyslav Zubko`,
+	channelUrl: `https://t.me/whatislove_dev`,
 	currentYear: new Date().getFullYear(),
 	description: `Avid explorer of the World, enamored with digital tech, especially the Web, passionate about learning, mentoring, and connecting with others`,
 	domain: `https://whatislove.dev`,
 	email: `hello@whatislove.dev`,
+	lang: `en`,
 	repo: `https://github.com/what1s1ove/whatislove.dev`,
 	socials: [
 		{
@@ -26,7 +29,6 @@ let data = {
 			url: `https://twitter.com/what1s1oveee`,
 		},
 	],
-	title: `Vladyslav Zubko`,
 }
 
 export default data

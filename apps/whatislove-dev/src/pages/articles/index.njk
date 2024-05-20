@@ -1,6 +1,6 @@
 ---
 title: Articles
-desc: My thoughts on various topics
+description: My thoughts on various topics
 pagination:
     data: collections.articles
     size: 9
@@ -10,7 +10,7 @@ permalink: 'articles/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber 
 
 {% extends '../../layouts/page.njk' %}
 {% from 'article-list.njk' import articleList %}
-{% from 'channel.njk' import channel %}
+{% from 'channel.njk' import channel with context %}
 {% from 'pagination-list.njk' import paginationList with context %}
 
 {% block content %}
