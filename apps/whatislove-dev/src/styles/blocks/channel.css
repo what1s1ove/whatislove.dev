@@ -11,18 +11,12 @@
 }
 
 .channel__content-list {
-	--gap-y: 20px;
-
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 40px 20px;
 	padding: 0;
 	margin: 0;
 	list-style: none;
-
-	@media (--width-desktop) {
-		--gap-y: 0;
-	}
 }
 
 .channel__content-item {

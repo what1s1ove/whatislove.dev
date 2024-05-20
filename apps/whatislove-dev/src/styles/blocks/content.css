@@ -49,9 +49,7 @@
 
 		&::before {
 			position: absolute;
-			margin-inline-start: -24px;
-			content: counter(list) ".";
-			counter-increment: list;
+			margin-inline-start: -25px;
 		}
 	}
 
