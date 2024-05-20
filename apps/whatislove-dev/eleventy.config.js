@@ -38,12 +38,13 @@ let Path = /** @type {const} */ ({
 	DB: `./src/database.json`,
 	JS: `./src/scripts/index.js`,
 	PAGE: {
-		FORM: `./src/pages/form.njk`,
+		FORM: `./src/pages/form`,
 	},
 })
 
-let Collection = /** @type {const} */ ({
+let CollectionPath = /** @type {const} */ ({
 	ARTICLES: `src/articles/*/index.md`,
+	PAGES: `src/pages/!(404)/index.njk`,
 })
 
 let isDevelopment = process.env[`NODE_ENV`] === `development`
@@ -75,7 +76,13 @@ let init = (config) => {
 	}
 
 	config.addCollection(`articles`, (collections) => {
-		return collections.getFilteredByGlob(Collection.ARTICLES)
+		return collections.getFilteredByGlob(CollectionPath.ARTICLES)
+	})
+	config.addCollection(`sitemap`, (collectionApi) => {
+		return collectionApi.getFilteredByGlob([
+			CollectionPath.ARTICLES,
+			CollectionPath.PAGES,
+		])
 	})
 
 	// libraries

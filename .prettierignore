@@ -3,3 +3,4 @@ CHANGELOG.md
 
 # whatislov-dev
 apps/whatislove-dev/src/manifest.njk
+apps/whatislove-dev/src/sitemap.njk
