@@ -52,7 +52,7 @@ Now, let's discuss the core functionality of GitHub that we use for managing del
 
 - [**Git**](https://docs.github.com/en/get-started/using-git/about-git). Since GitHub is primarily about version control, we immediately resolved the issue of any file getting lost. Additionally, we now have a clear version history for every file, easily accessible through the familiar to all GitHub interface.
 
-  ![GitHub file history](images/github-file-history.png)
+  ![GitHub file history.](images/github-file-history.png)
 
   Certainly, version history is not the only advantage of Git. In general, it provides a robust toolkit that we make use of. For instance, the ability to quickly revert to a specific version or the conflict resolution functionality when someone starts editing the same file are valuable features. GitHub, in combination with Git, has proven to be a highly convenient tool for managing textual content.
 
