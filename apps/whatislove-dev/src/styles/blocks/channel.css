@@ -100,7 +100,7 @@
 			to var(--direction-gradient-border),
 			var(--color-gradient)
 		);
-		mask-image: url("/images/icons.svg#speech-bubble");
+		mask-image: url("/images/icons.svg#speech-bubble-end");
 		mask-repeat: no-repeat;
 		mask-size: 100% 100%;
 	}
@@ -112,7 +112,7 @@
 	padding-inline: 40px 25px;
 
 	&::before {
-		scale: -1 1;
+		mask-image: url("/images/icons.svg#speech-bubble-start");
 	}
 }
 
