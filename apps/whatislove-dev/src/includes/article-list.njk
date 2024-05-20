@@ -21,15 +21,16 @@
 							{{ tagList(items=article.data.tags, className="article-list__item-tags") }}
 						{% endif %}
 						<p class="article-list__item-dates">
-							<time class="article-list__item-date" datetime="{{ article.date | dateISO }}"
-								>{{ article.date | dateFormatted }}</time
-							>
+							<time class="article-list__item-date" datetime="{{ article.date | dateISO }}">
+								{{ article.date | dateFormatted }}
+							</time>
 							{% if lastChangelogItem %}
 								<time
 									class="article-list__item-updated"
 									datetime="{{ lastChangelogItem.date | dateISO }}"
-									>Updated: {{ lastChangelogItem.date | dateFormatted }}</time
 								>
+									Updated: {{ lastChangelogItem.date | dateFormatted }}
+								</time>
 							{% endif %}
 						</p>
 					</article>
