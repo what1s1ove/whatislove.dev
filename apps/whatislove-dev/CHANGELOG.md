@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.40.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.39.0...@whatislove.dev/whatislove-dev-v1.40.0) (2024-05-20)
+
+
+### Features
+
+* **whatislove-dev:** add tombstone by the end of article wd-495 ([#496](https://github.com/what1s1ove/whatislove.dev/issues/496)) ([e06e406](https://github.com/what1s1ove/whatislove.dev/commit/e06e406eebe7c3857084cf30cc2ae5d0ec52e698))
+
 ## [1.39.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.38.0...@whatislove.dev/whatislove-dev-v1.39.0) (2024-05-20)
 
 
