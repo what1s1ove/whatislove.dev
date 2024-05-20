@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.39.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.38.0...@whatislove.dev/whatislove-dev-v1.39.0) (2024-05-20)
+
+
+### Features
+
+* **whatislove-dev:** add articles page ([#493](https://github.com/what1s1ove/whatislove.dev/issues/493)) ([044c272](https://github.com/what1s1ove/whatislove.dev/commit/044c272f075be7a89f643ea56a5d1f3ad7960f72))
+
 ## [1.38.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.37.1...@whatislove.dev/whatislove-dev-v1.38.0) (2024-05-05)
 
 

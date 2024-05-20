@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.41.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.40.0...v1.41.0) (2024-05-20)
+
+
+### Features
+
+* **whatislove-dev:** add articles page ([#493](https://github.com/what1s1ove/whatislove.dev/issues/493)) ([044c272](https://github.com/what1s1ove/whatislove.dev/commit/044c272f075be7a89f643ea56a5d1f3ad7960f72))
+
 ## [1.40.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.39.1...v1.40.0) (2024-05-05)
 
 
