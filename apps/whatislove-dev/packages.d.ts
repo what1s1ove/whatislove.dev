@@ -25,7 +25,7 @@ declare module '@11ty/eleventy' {
 		addCollection(
 			name: string,
 			addCollectionCb: (collectionsApi: {
-				getFilteredByGlob: (glob: string) => unknown[]
+				getFilteredByGlob: (path: string | string[]) => unknown[]
 			}) => unknown[],
 		): void
 
