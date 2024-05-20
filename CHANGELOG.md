@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.42.2](https://github.com/what1s1ove/whatislove.dev/compare/v1.42.1...v1.42.2) (2024-05-20)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** remove scale -1 1 for icons wd-501 ([#502](https://github.com/what1s1ove/whatislove.dev/issues/502)) ([772a69c](https://github.com/what1s1ove/whatislove.dev/commit/772a69c400dd55d42ce8d06874634e665e462352))
+
 ## [1.42.1](https://github.com/what1s1ove/whatislove.dev/compare/v1.42.0...v1.42.1) (2024-05-20)
 
 
