@@ -3,6 +3,7 @@
 {% from 'accordion.njk' import accordion %}
 {% from 'tag-list.njk' import tagList %}
 {% set ARTICLES_COUNT = 3 %}
+{% set ACCORDION_DEFAULT_OPENED_WIDTH = 768 %}
 {% set lastChangelogItem = changelogs | last %}
 
 {% block font %}
@@ -24,11 +25,11 @@
 			</p>
 		</header>
 		<div class="article__wrapper">
-			{% call accordion(className="article__toc-wrapper", title="Content", isDefaultOpenOnWideScreen=true) %}
+			{% call accordion(className="article__toc-wrapper", title="Content", defaultOpenedWidth=ACCORDION_DEFAULT_OPENED_WIDTH) %}
 				<div class="article__toc toc"></div>
 			{% endcall %}
 			{% if changelogs.length %}
-				{% call accordion(className="article__changelog", title="Changelog", isDefaultOpenOnWideScreen=true) %}
+				{% call accordion(className="article__changelog", title="Changelog", defaultOpenedWidth=ACCORDION_DEFAULT_OPENED_WIDTH) %}
 					<ul class="article__timeline timeline">
 						{% for changelog in changelogs %}
 							<li class="timeline__item">
