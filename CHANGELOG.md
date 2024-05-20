@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.43.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.42.2...v1.43.0) (2024-05-20)
+
+
+### Features
+
+* **whatislove-dev:** add sitemap to website wd-503 ([#505](https://github.com/what1s1ove/whatislove.dev/issues/505)) ([c0597cb](https://github.com/what1s1ove/whatislove.dev/commit/c0597cb0cc3920b09268ee47ab16df9349de06dc))
+
 ## [1.42.2](https://github.com/what1s1ove/whatislove.dev/compare/v1.42.1...v1.42.2) (2024-05-20)
 
 
