@@ -1,6 +1,6 @@
 {% from 'settings.njk' import settings %}
 
-<header class="header column">
+<header class="header">
 	<a class="header__logo-link" href="/" aria-label="Home">
 		<svg class="header__logo" width="191" height="80" viewBox="0 0 191 80" aria-hidden="true">
 			<rect class="header__logo-part" width="102" height="30" fill="#F64242" />
@@ -95,8 +95,21 @@
 	>
 		<span class="header__button-object"></span>
 	</button>
-	<nav class="header__menu header__menu--closed" id="menu">
+	<nav class="header__menu header__menu--closed" id="menu" aria-label="Primary">
 		<ul class="header__menu-list">
+			{% for item in menu %}
+				<li class="header__menu-item">
+					<a
+						class="header__menu-link"
+						href="{{ item.url }}"
+						{% if page.url == item.url %}
+							aria-current="page"
+						{% endif %}
+					>
+						{{ item.title }}
+					</a>
+				</li>
+			{% endfor %}
 			<li class="header__menu-item">
 				<a class="header__menu-link" href="/files/vladyslav-zubko-cv.pdf">CV</a>
 			</li>

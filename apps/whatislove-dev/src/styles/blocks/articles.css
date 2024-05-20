@@ -1,0 +1,24 @@
+.articles {
+	--size-inline-box: var(--size-inline-box-wide);
+
+	display: grid;
+	gap: 30px;
+}
+
+.articles__title {
+	margin: 0;
+	font-size: var(--font-size-heading-2);
+	font-weight: 600;
+	text-align: center;
+}
+
+.articles__all {
+	place-self: center;
+	padding-block: 10px;
+	padding-inline: 40px;
+	font-weight: 600;
+	color: hsl(var(--color-red-100));
+	text-decoration: none;
+	background-color: hsl(var(--color-red-100) / 6%);
+	border-radius: 5px;
+}

@@ -4,8 +4,11 @@
 	padding-block: 100px;
 
 	@media (--width-tablet) {
-		max-inline-size: 1000px;
-		margin-inline: auto;
+		padding-block: 150px;
+	}
+
+	@media (--width-desktop) {
+		padding-block: 200px;
 	}
 }
 
@@ -17,4 +20,9 @@
 
 .not-found__desc {
 	margin: 0;
+}
+
+.not-found__desc-link {
+	color: hsl(var(--color-red-100));
+	text-underline-offset: 3px;
 }

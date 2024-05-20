@@ -14,7 +14,26 @@ declare module '@11ty/eleventy' {
 			options: Record<string, unknown>,
 		): void
 
-		addTransform(name: string, transform: Function): void
+		addTransform(
+			name: string,
+			transform: (
+				content: string,
+				path: string,
+			) => unknown | Promise<unknown>,
+		): void
+
+		addCollection(
+			name: string,
+			addCollectionCb: (collectionsApi: {
+				getFilteredByGlob: (glob: string) => unknown[]
+			}) => unknown[],
+		): void
+
+		addFilter(name: string, newFilterCb: (value: unknown) => unknown): void
+
+		setLibrary(name: string, newLibraryApi: unknown): void
+
+		addPlugin(newPluginCb: (value: unknown) => unknown): void
 	}
 
 	export { UserConfig }

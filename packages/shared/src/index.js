@@ -2,6 +2,7 @@ export { KeyboardKey, ProcessExitCode } from './libs/enums/enums.js'
 export {
 	checkIsOneOf,
 	getFormattedDate,
+	getISODate,
 	getRandomNumber,
 	getShuffledItems,
 	initDebounce,

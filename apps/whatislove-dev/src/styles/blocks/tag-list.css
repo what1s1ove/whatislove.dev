@@ -1,0 +1,40 @@
+.tag-list {
+	display: flex;
+	gap: 4px;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.tag-list__tag {
+	--background-color: var(--color-red-200);
+
+	padding-block: 2px;
+	padding-inline: 6px;
+	font-size: var(--font-size-text-small);
+	font-weight: 600;
+	background-color: hsl(var(--background-color) / 30%);
+	background-image: var(--background-image-page);
+	background-size: var(--background-size-page);
+	border-radius: 3px;
+}
+
+.tag-list__tag--html {
+	--background-color: var(--color-green-100);
+}
+
+.tag-list__tag--github {
+	--background-color: var(--color-gray-100);
+}
+
+.tag-list__tag--ci {
+	--background-color: var(--color-red-100);
+}
+
+.tag-list__tag--ts {
+	--background-color: var(--color-blue-200);
+}
+
+.tag-list__tag--js {
+	--background-color: var(--color-yellow-200);
+}

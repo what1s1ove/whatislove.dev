@@ -1,0 +1,63 @@
+{% extends './page.njk' %}
+{% from 'article-list.njk' import articleList %}
+{% from 'accordion.njk' import accordion %}
+{% from 'tag-list.njk' import tagList %}
+{% set ARTICLES_COUNT = 3 %}
+{% set ACCORDION_DEFAULT_OPENED_WIDTH = 768 %}
+{% set lastChangelogItem = changelogs | last %}
+
+{% block font %}
+	<link rel="preload" href="/fonts/monaspace-neon.woff2" crossorigin as="font" type="font/woff2" />
+{% endblock %}
+
+{% block content %}
+	<div class="article box">
+		<header class="article__header">
+			{{ tagList(items=tags, className="article__tags-list") }}
+			<h1 class="article__title">{{ title | safe }}</h1>
+			<p class="article__item-dates">
+				<time class="article__item-date" datetime="{{ date | dateISO }}">{{ date | dateFormatted }}</time>
+				{% if lastChangelogItem %}
+					<time class="article__item-updated" datetime="{{ lastChangelogItem.date | dateISO }}">
+						Updated: {{ lastChangelogItem.date | dateFormatted }}
+					</time>
+				{% endif %}
+			</p>
+		</header>
+		<div class="article__wrapper">
+			{% call accordion(className="article__toc-wrapper", title="Content", defaultOpenedWidth=ACCORDION_DEFAULT_OPENED_WIDTH) %}
+				<div class="article__toc toc"></div>
+			{% endcall %}
+			{% if changelogs.length %}
+				{% call accordion(className="article__changelog", title="Changelog", defaultOpenedWidth=ACCORDION_DEFAULT_OPENED_WIDTH) %}
+					<ul class="article__timeline timeline">
+						{% for changelog in changelogs %}
+							<li class="timeline__item">
+								<p class="timeline__item-dates">
+									<time
+										class="timeline__item-date timeline__item-date--start"
+										datetime="{{ changelog.date | dateISO }}"
+									>
+										{{ changelog.date | dateFormatted }}
+									</time>
+								</p>
+								<div class="timeline__item-wrapper">
+									<p class="timeline__item-description">{{ changelog.message | safe }}</p>
+								</div>
+							</li>
+						{% endfor %}
+					</ul>
+				{% endcall %}
+			{% endif %}
+			<div class="article__content content">{{ content | safe }}</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block aside %}
+	<aside class="articles box">
+		<h2 class="articles__title">Lastest Article</h2>
+		{{ articleList(items=collections.articles | reverse, className="articles__article-list", maxCount=ARTICLES_COUNT) }}
+		<a class="articles__all action" href="/articles">View all articles</a>
+	</aside>
+{% endblock %}

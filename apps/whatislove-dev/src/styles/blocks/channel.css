@@ -1,15 +1,12 @@
 .channel {
+	--size-inline-box: var(--size-inline-box-wide);
+
 	display: grid;
 	gap: 30px;
-	padding-block: 25px;
 
 	@media (--width-desktop) {
-		box-sizing: border-box;
 		grid-template-columns: max-content 1fr max-content;
-		gap: 5px;
-		max-inline-size: 1275px;
-		padding-block: 50px;
-		margin-inline: auto;
+		gap: 10px;
 	}
 }
 
@@ -46,9 +43,9 @@
 .channel__content-item--icon {
 	display: inline-flex;
 	gap: 5px;
+	place-content: center;
 	place-items: center;
 	place-self: start center;
-	justify-content: center;
 	min-inline-size: 50px;
 	padding-block: 5px;
 	padding-inline: 8px;

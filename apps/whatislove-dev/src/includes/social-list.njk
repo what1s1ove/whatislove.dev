@@ -1,5 +1,5 @@
 {% macro socialList(items, className, hasIconsOnly) %}
-	<ul class="{{ className }} social-list {{ "social-list--icons" if hasIconsOnly else '' }}">
+	<ul class="{{ className }} social-list {{ "social-list--icons" if hasIconsOnly }}">
 		{% for item in items %}
 			<li class="social-list__item">
 				<a class="social-list__item-link social-list__item-link--{{ item.key }}" href="{{ item.url }}" rel="me">

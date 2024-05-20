@@ -1,16 +1,19 @@
 .scroll-shadows {
+	--shadows-size: 20px;
+	--shadows-background-color: var(--color-page-background);
 	--color: var(--color-scroll-shadow) / 20%;
-	--size: 20px;
+	--farthest-side-start: 50% 0;
+	--farthest-side-end: 50% 100%;
 
 	display: grid;
-	grid-template-rows: var(--size) 1fr var(--size);
+	grid-template: var(--shadows-size) 1fr var(--shadows-size) / auto;
 	background-image: radial-gradient(
-			farthest-side at 50% 0,
+			farthest-side at var(--farthest-side-start),
 			hsl(var(--color)),
 			transparent
 		),
 		radial-gradient(
-			farthest-side at 50% 100%,
+			farthest-side at var(--farthest-side-end),
 			hsl(var(--color)),
 			transparent
 		);
@@ -19,15 +22,32 @@
 	background-position:
 		center top,
 		center bottom;
-	background-size: 100% var(--size);
+	background-size: 100% var(--shadows-size);
 
 	&::before,
 	&::after {
 		display: block;
 		inline-size: 100%;
-		block-size: var(--size);
+		block-size: var(--shadows-size);
 		pointer-events: none;
 		content: "";
 		background: var(--background-page);
+	}
+}
+
+.scroll-shadows--horizontal {
+	--farthest-side-start: 0 50%;
+	--farthest-side-end: 100% 50%;
+
+	grid-template: auto / var(--shadows-size) 1fr var(--shadows-size);
+	background-position:
+		left center,
+		right center;
+	background-size: var(--shadows-size) 100%;
+
+	&::before,
+	&::after {
+		inline-size: var(--shadows-size);
+		block-size: 100%;
 	}
 }

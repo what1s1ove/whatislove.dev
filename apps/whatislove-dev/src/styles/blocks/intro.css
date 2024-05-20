@@ -1,26 +1,22 @@
 .intro {
 	--gap-section: 25px;
-	--padding-inline-section: 25px;
-	--padding-block-section: var(--padding-inline-section);
+	--padding-inline-section: var(--padding-inline-box);
 
 	display: grid;
 	gap: var(--gap-section);
-	padding-block: var(--padding-block-section);
+
+	@media (--width-tablet) {
+		--gap-section: 50px;
+	}
 
 	@media (--width-desktop) {
-		--gap-section: 50px;
-		--padding-block-section: 50px;
-
-		box-sizing: border-box;
-		max-inline-size: 1000px;
-		margin-block-start: -170px;
-		margin-inline: auto;
+		margin-block-start: -165px;
 	}
 }
 
 .intro__wrapper {
 	display: grid;
-	padding: 22px;
+	padding: var(--padding-inline-box);
 	background-color: hsl(var(--color-intro-background));
 	border-radius: 8px;
 

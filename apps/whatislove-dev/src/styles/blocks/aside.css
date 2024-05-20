@@ -10,10 +10,7 @@
 	@media (--width-desktop) {
 		--inset-border: 50px;
 
-		box-sizing: border-box;
-		max-inline-size: 960px;
 		padding-block: 150px;
-		margin-inline: auto;
 	}
 }
 
@@ -25,7 +22,7 @@
 	display: inline-flex;
 	gap: 25px;
 	align-items: center;
-	inline-size: 90%;
+	inline-size: calc(100% - (var(--padding-inline-box) * 2));
 	margin-inline: auto;
 	fill: var(--color);
 
@@ -38,8 +35,8 @@
 		background-color: var(--color);
 	}
 
-	@media (--width-tablet) {
-		inline-size: 95%;
+	@media (--width-desktop) {
+		max-inline-size: var(--size-inline-box);
 	}
 }
 

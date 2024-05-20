@@ -1,13 +1,19 @@
 import Image from '@11ty/eleventy-img'
+import shikiHighlight from '@shikijs/markdown-it'
+import { getISODate } from '@whatislove.dev/shared'
 import browserslist from 'browserslist'
 import esbuild from 'esbuild'
 import htmlMin from 'html-minifier-terser'
 import * as lightningcss from 'lightningcss'
+import { parseHTML } from 'linkedom'
+import markdownIt from 'markdown-it'
 import { existsSync } from 'node:fs'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import process from 'node:process'
 import svgo from 'svgo'
+
+import { addToc } from './src/transforms/transforms.js'
 
 /** @typedef {import('11ty__eleventy-img').ImageFormatWithAliases} */
 let ImageFormatWithAliases
@@ -15,6 +21,8 @@ let ImageFormatWithAliases
 let PackageJson
 /** @typedef {import('./src/database.json')} */
 let Database
+
+let TRANSFORMS = /** @type {const} */ ([addToc])
 
 let Path = /** @type {const} */ ({
 	COPY: [
@@ -24,6 +32,7 @@ let Path = /** @type {const} */ ({
 		`./src/manifest.webmanifest`,
 		`./src/images/favicons`,
 		`./src/robots.txt`,
+		`src/articles/**/*.!(md)`,
 	],
 	CSS: `./src/styles/index.css`,
 	DB: `./src/database.json`,
@@ -33,10 +42,26 @@ let Path = /** @type {const} */ ({
 	},
 })
 
+let Collection = /** @type {const} */ ({
+	ARTICLES: `src/articles/*/index.md`,
+})
+
 let isDevelopment = process.env[`NODE_ENV`] === `development`
 let rawPackageJson = await readFile(new URL(`package.json`, import.meta.url))
 let packageJson = /** @type {(text: string) => PackageJson} */ (JSON.parse)(
 	rawPackageJson.toString(),
+)
+let md = markdownIt({
+	html: true,
+})
+
+md.use(
+	await shikiHighlight({
+		themes: {
+			dark: `github-dark`,
+			light: `github-light`,
+		},
+	}),
 )
 
 /**
@@ -48,6 +73,14 @@ let init = (config) => {
 	if (!isDevelopment) {
 		config.ignores.add(Path.PAGE.FORM)
 	}
+
+	config.addCollection(`articles`, (collections) => {
+		return collections.getFilteredByGlob(Collection.ARTICLES)
+	})
+
+	// libraries
+
+	config.setLibrary(`md`, md)
 
 	// copy
 	for (let url of Path.COPY) {
@@ -92,25 +125,31 @@ let init = (config) => {
 	})
 
 	// html
-	config.addTransform(
-		`html-minify`,
-		/**
-		 * @param {string} content
-		 * @param {string} path
-		 * @returns {Promise<string>}
-		 */
-		async (content, path) => {
-			if (path.endsWith(`.html`)) {
-				return await htmlMin.minify(content, {
-					collapseBooleanAttributes: true,
-					collapseWhitespace: true,
-					removeComments: true,
-				})
+	config.addTransform(`html-minify`, async (content, path) => {
+		if (path.endsWith(`.html`)) {
+			return await htmlMin.minify(content, {
+				collapseBooleanAttributes: true,
+				collapseWhitespace: true,
+				removeComments: true,
+			})
+		}
+
+		return content
+	})
+
+	config.addTransform(`html-transform`, (content, path) => {
+		if (path.endsWith(`.html`)) {
+			let window = parseHTML(content)
+
+			for (let transform of TRANSFORMS) {
+				transform(window)
 			}
 
-			return content
-		},
-	)
+			return String(window.document)
+		}
+
+		return content
+	})
 
 	// css
 	config.addTemplateFormats(`css`)
@@ -276,6 +315,20 @@ let init = (config) => {
 			}
 		},
 		outputFileExtension: `svg`,
+	})
+
+	// filters
+
+	config.addFilter(`dateISO`, (value) => {
+		return getISODate(/** @type {Date} */ (value))
+	})
+
+	config.addFilter(`dateFormatted`, (value) => {
+		return /** @type {Date} */ (value).toLocaleString(`en-US`, {
+			day: `numeric`,
+			month: `short`,
+			year: `numeric`,
+		})
 	})
 
 	return {

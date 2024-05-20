@@ -1,6 +1,137 @@
 .content {
+	--gap: 20px;
+	--gap-list: 8px;
+
+	display: grid;
+	gap: var(--gap);
+
+	p {
+		margin: 0;
+	}
+
+	h2,
+	h3 {
+		margin: 0;
+		scroll-margin-block: 50px 0;
+		font-weight: 600;
+	}
+
+	h2 {
+		font-size: var(--font-size-heading-2);
+	}
+
+	h3 {
+		font-size: var(--font-size-heading-3);
+	}
+
 	a {
 		color: hsl(var(--color-red-100));
 		text-underline-offset: 3px;
+	}
+
+	ol,
+	ul {
+		display: grid;
+		row-gap: var(--gap-list);
+		padding: 0;
+		padding-inline: 25px 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	ol {
+		counter-reset: list;
+	}
+
+	li {
+		display: grid;
+		gap: var(--gap-list);
+
+		&::before {
+			position: absolute;
+			margin-inline-start: -25px;
+		}
+	}
+
+	ol li::before {
+		content: counter(list) ".";
+		counter-increment: list;
+	}
+
+	ul li::before {
+		content: "\2014";
+	}
+
+	figure {
+		display: grid;
+		gap: 5px;
+		margin: 0;
+	}
+
+	figcaption {
+		font-size: var(--font-size-text-small);
+		color: hsl(var(--color-gray-100));
+	}
+
+	img {
+		display: block;
+		max-inline-size: 100%;
+		margin-inline: auto;
+		border-radius: 5px;
+	}
+
+	blockquote {
+		padding-block: 5px;
+		padding-inline: 20px 0;
+		margin: 0;
+		border-inline-start: 2px solid
+			hsl(var(--color-page-background-highlight));
+	}
+
+	code {
+		padding-block: 2px;
+		padding-inline: 6px;
+		font-family: var(--font-family-code);
+		background-color: hsl(var(--color-page-background-code));
+		background-image: var(--background-image-page);
+		background-size: var(--background-size-page);
+		border-radius: 4px;
+	}
+
+	summary {
+		margin-block: 0 var(--gap);
+		cursor: pointer;
+	}
+
+	pre {
+		padding: 20px;
+		margin: 0;
+		overflow-y: auto;
+		font-family: var(--font-family-code);
+		tab-size: 2;
+		background-color: hsl(var(--color-page-background-code)) !important;
+		background-image: var(--background-image-page);
+		background-size: var(--background-size-page);
+		border: 1px solid hsl(var(--color-gray-100));
+		border-radius: 5px;
+
+		&:focus-within {
+			border-radius: var(--radius-focus);
+			outline: var(--outline-focus);
+			outline-offset: var(--offset-focus);
+		}
+
+		@media (--width-tablet) {
+			tab-size: 3;
+		}
+
+		@media (--width-desktop) {
+			tab-size: 4;
+		}
+
+		code[class*="language"] {
+			padding: 0;
+			border-radius: inherit;
+		}
 	}
 }

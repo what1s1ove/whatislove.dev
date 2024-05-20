@@ -1,0 +1,28 @@
+---
+title: Articles
+desc: My thoughts on various topics
+pagination:
+    data: collections.articles
+    size: 9
+    reverse: true
+permalink: 'articles/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html'
+---
+
+{% extends '../layouts/page.njk' %}
+{% from 'article-list.njk' import articleList %}
+{% from 'channel.njk' import channel %}
+{% from 'pagination-list.njk' import paginationList with context %}
+
+{% block content %}
+	<div class="articles box">
+		<h1 class="articles__title">Articles</h1>
+		{{ articleList(items=pagination.items,  className="articles__article-list", headingLevel="h2") }}
+		{% if pagination.hrefs.length %}
+			{{ paginationList(className="articles__pagination", name="Articles") }}
+		{% endif %}
+	</div>
+{% endblock %}
+
+{% block aside %}
+	{{ channel(tag="aside") }}
+{% endblock %}

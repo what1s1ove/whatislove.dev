@@ -1,15 +1,34 @@
 ---
 title: Not found
 description: A missed page
-layout: page.njk
 permalink: 404.html
 ---
 
-<div class="not-found column">
-	<h1 class="not-found__title">Not found</h1>
-	<p class="not-found__desc content">
-		Yeah, I also don't like broken links. Please,
-		<a href="{{ global.repo }}/issues/new" target="_blank" rel="noreferrer noopener">create an issue</a>
-		if you truly ended up here <i>unexpectedly</i>.
-	</p>
-</div>
+{% extends '../layouts/page.njk' %}
+{% from 'article-list.njk' import articleList %}
+{% set ARTICLES_COUNT = 3 %}
+
+{% block content %}
+	<div class="not-found box">
+		<h1 class="not-found__title">Not found</h1>
+		<p class="not-found__desc">
+			Yeah, I also don't like broken links. Please,
+			<a
+				class="not-found__desc-link"
+				href="{{ global.repo }}/issues/new"
+				target="_blank"
+				rel="noreferrer noopener"
+				>create an issue</a
+			>
+			if you truly ended up here <i>unexpectedly</i>.
+		</p>
+	</div>
+{% endblock %}
+
+{% block aside %}
+	<aside class="articles box">
+		<h2 class="articles__title">Lastest Article</h2>
+		{{ articleList(items=collections.articles | reverse, className="articles__article-list", maxCount=ARTICLES_COUNT) }}
+		<a class="articles__all action" href="/articles">View all articles</a>
+	</aside>
+{% endblock %}
