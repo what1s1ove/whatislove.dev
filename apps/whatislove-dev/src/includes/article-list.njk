@@ -1,21 +1,27 @@
 {% from 'tag-list.njk' import tagList %}
+{% set ARTICLES_INITIAL_COUNT = 0 %}
+{% set ARTICLES_INCREMENT_COUNT = 1 %}
+{% set infinity = 1 / 0 %}
 
-{% macro articleList(items, className, maxCount = Infinity, headingLevel = "h3") %}
+{% macro articleList(items, className, maxCount = infinity, headingLevel = 3, pageUrl) %}
 	<ul class="{{ className }} article-list">
-		{% for article in items.slice(0, maxCount) %}
-			{% set isSamePage = article.url != page.url %}
+		{% set count = ARTICLES_INITIAL_COUNT %}
+		{% for article in items %}
+			{% set isSamePage = article.url == pageUrl %}
+			{% set isLimitReached = count >= maxCount %}
 
-			{% if isSamePage %}
+			{% if not isSamePage and not isLimitReached %}
+				{% set count = count + ARTICLES_INCREMENT_COUNT %}
 				{% set lastChangelogItem = article.data.changelogs | last %}
 
 				<li class="article-list__item">
 					<article class="article-list__item-wrapper">
 						<!-- prettier-ignore-start -->
-						<{{ headingLevel }} class="article-list__item-title">
+						<h{{ headingLevel }} class="article-list__item-title">
 						<!-- prettier-ignore-end -->
 							<a class="article-list__item-link" href="{{ article.url }}">{{ article.data.title | safe }}</a>
 						<!-- prettier-ignore-start -->
-						</{{ headingLevel }}>
+						</h{{ headingLevel }}>
 						<!-- prettier-ignore-end -->
 						{% if article.data.tags.length %}
 							{{ tagList(items=article.data.tags, className="article-list__item-tags") }}

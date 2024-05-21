@@ -16,7 +16,7 @@ permalink: 'articles/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber 
 {% block content %}
 	<div class="articles box">
 		<h1 class="articles__title">Articles</h1>
-		{{ articleList(items=pagination.items,  className="articles__article-list", headingLevel="h2") }}
+		{{ articleList(items=pagination.items,  className="articles__article-list", headingLevel=2) }}
 		{% if pagination.hrefs.length %}
 			{{ paginationList(className="articles__pagination", name="Articles") }}
 		{% endif %}
