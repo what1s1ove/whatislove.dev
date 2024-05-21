@@ -57,7 +57,7 @@
 {% block aside %}
 	<aside class="articles box">
 		<h2 class="articles__title">Lastest Article</h2>
-		{{ articleList(items=collections.articles | reverse, className="articles__article-list", maxCount=ARTICLES_COUNT) }}
+		{{ articleList(items=collections.articles | reverse, className="articles__article-list", maxCount=ARTICLES_COUNT, pageUrl=page.url) }}
 		<a class="articles__all action" href="/articles">View all articles</a>
 	</aside>
 {% endblock %}
