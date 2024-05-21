@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.44.1](https://github.com/what1s1ove/whatislove.dev/compare/v1.44.0...v1.44.1) (2024-05-21)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** fix latest article render wd-510 ([#511](https://github.com/what1s1ove/whatislove.dev/issues/511)) ([306988d](https://github.com/what1s1ove/whatislove.dev/commit/306988d653b4db3db37df1d0ffe5bc241820b7a6))
+
 ## [1.44.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.43.0...v1.44.0) (2024-05-20)
 
 
