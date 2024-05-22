@@ -63,4 +63,20 @@
 	&[class*="--jagermeister"] {
 		background-image: url("/images/stickers.svg#jagermeister");
 	}
+
+	&[class*="--11ty"] {
+		background-image: url("/images/stickers.svg#11ty");
+	}
+
+	&[class*="--evangelion"] {
+		background-image: url("/images/stickers.svg#evangelion");
+	}
+
+	&[class*="--lit"] {
+		background-image: url("/images/stickers.svg#lit");
+	}
+
+	&[class*="--kyivjs"] {
+		background-image: url("/images/stickers.svg#kyivjs");
+	}
 }
