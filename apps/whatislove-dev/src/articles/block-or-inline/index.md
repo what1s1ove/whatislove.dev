@@ -5,6 +5,7 @@ date: 2021-05-27
 tags:
   - HTML
 changelogs: []
+stickersCount: 10
 layout: article.njk
 ---
 

@@ -1,3 +1,4 @@
+{% from 'sticker-list.njk' import stickerList %}
 {% set isRoot = page.url == '/' %}
 {% set pageTitle = global.author if isRoot else title + ' | ' + global.author %}
 {% set pageDescription = description if description else global.description %}
@@ -43,9 +44,24 @@
 		{% include 'skip-link.njk' %}
 		{% include 'header.njk' %}
 
+		{% if stickersCount %}
+			<!-- prettier-ignore-start -->
+			<div class="stickers-background">
+			<!-- prettier-ignore-end -->
+		{% endif %}
+
 		<main class="main" id="main">{% block content %}{% endblock %}</main>
 
 		{% block aside %}{% endblock %}
+
+		{% if stickersCount %}
+			{% set stickerItems = (stickers.names | shuffle).slice(0, stickersCount) %}
+
+			{{ stickerList(items=stickerItems, className="stickers-background__sticker-list", isDecoration=true) }}
+			<!-- prettier-ignore-start -->
+			</div>
+			<!-- prettier-ignore-end -->
+		{% endif %}
 		{% include 'footer.njk' %}
 		{% include 'easter-egg.njk' %}
 		{% include 'toast.njk' %}

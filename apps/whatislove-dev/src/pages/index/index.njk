@@ -1,5 +1,6 @@
 ---
 permalink: 'index.html'
+stickersCount: 0
 ---
 
 {% extends '../../layouts/page.njk' %}
@@ -7,9 +8,26 @@ permalink: 'index.html'
 {% from 'channel.njk' import channel with context %}
 {% from 'social-list.njk' import socialList %}
 {% from 'article-list.njk' import articleList %}
+{% from 'sticker-list.njk' import stickerList %}
 {% set LAPKA_PHRASE = 'Hive Four!' %}
 {% set IMAGE_FORMATS = ['avif', 'webp'] %}
 {% set ARTICLES_COUNT = 3 %}
+{%
+	set FAVORITE_STICKERS = [
+	stickers.Name.NODEJS,
+	stickers.Name.BEERJS,
+	stickers.Name.REACT,
+	stickers.Name.AWS,
+	stickers.Name.ACID_2,
+	stickers.Name.DOM_API,
+	stickers.Name.WEB_COMPONENTS,
+	stickers.Name.VANS,
+	stickers.Name.XL,
+	stickers.Name.BERSERK,
+	stickers.Name.LOVE,
+	stickers.Name.JAGERMEISTER
+	]
+%}
 {% set introSocials = global.socials.concat([{ name: global.email, key: 'email', url: 'mailto:' + global.email }]) %}
 
 {% block content %}
@@ -100,44 +118,7 @@ permalink: 'index.html'
 		</section>
 		<section class="stickers">
 			<h2 class="stickers__title visually-hidden">Stickers</h2>
-			<ul class="stickers__list">
-				<li class="stickers__item stickers__item--full stickers__item--nodejs">
-					<span class="visually-hidden">Node.js</span>
-				</li>
-				<li class="stickers__item stickers__item--beerjs">
-					<span class="visually-hidden">BeerJS</span>
-				</li>
-				<li class="stickers__item stickers__item--react">
-					<span class="visually-hidden">React</span>
-				</li>
-				<li class="stickers__item stickers__item--aws">
-					<span class="visually-hidden">AWS</span>
-				</li>
-				<li class="stickers__item stickers__item--acidtwo">
-					<span class="visually-hidden">Acid2</span>
-				</li>
-				<li class="stickers__item stickers__item--dom">
-					<span class="visually-hidden">DOM API</span>
-				</li>
-				<li class="stickers__item stickers__item--webcomponents">
-					<span class="visually-hidden">WebComponents</span>
-				</li>
-				<li class="stickers__item stickers__item--vans">
-					<span class="visually-hidden">Vans</span>
-				</li>
-				<li class="stickers__item stickers__item--xl">
-					<span class="visually-hidden">Gloomy Forest</span>
-				</li>
-				<li class="stickers__item stickers__item--berserk">
-					<span class="visually-hidden">Berserk</span>
-				</li>
-				<li class="stickers__item stickers__item--pair stickers__item--love">
-					<span class="visually-hidden">Love</span>
-				</li>
-				<li class="stickers__item stickers__item--jagermeister">
-					<span class="visually-hidden">Jagermeister</span>
-				</li>
-			</ul>
+			{{ stickerList(items=FAVORITE_STICKERS, className="stickers__list") }}
 		</section>
 	</div>
 	<section class="articles box">

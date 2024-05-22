@@ -1,7 +1,7 @@
 import Image from '@11ty/eleventy-img'
 import rss from '@11ty/eleventy-plugin-rss'
 import shikiHighlight from '@shikijs/markdown-it'
-import { getISODate } from '@whatislove.dev/shared'
+import { getISODate, getShuffledItems } from '@whatislove.dev/shared'
 import browserslist from 'browserslist'
 import esbuild from 'esbuild'
 import htmlMin from 'html-minifier-terser'
@@ -339,6 +339,10 @@ let init = (config) => {
 			month: `short`,
 			year: `numeric`,
 		})
+	})
+
+	config.addFilter(`shuffle`, (items) => {
+		return getShuffledItems(/** @type {unknown[]} */ (items))
 	})
 
 	return {

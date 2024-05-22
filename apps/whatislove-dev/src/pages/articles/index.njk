@@ -6,6 +6,7 @@ pagination:
     size: 9
     reverse: true
 permalink: 'articles/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html'
+stickersCount: 4
 ---
 
 {% extends '../../layouts/page.njk' %}

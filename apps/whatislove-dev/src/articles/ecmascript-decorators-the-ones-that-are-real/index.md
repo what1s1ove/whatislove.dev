@@ -5,6 +5,7 @@ date: 2023-10-19
 tags:
   - JS
 changelogs: []
+stickersCount: 10
 layout: article.njk
 ---
 

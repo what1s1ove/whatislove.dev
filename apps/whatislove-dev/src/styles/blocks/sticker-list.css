@@ -1,0 +1,82 @@
+.sticker-list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.sticker-list__item {
+	aspect-ratio: 1;
+	filter: var(--filter-sticker);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: contain;
+
+	&[class*="--decoration"] {
+		z-index: -1;
+		pointer-events: none;
+	}
+
+	&[class*="--node-js"] {
+		background-image: url("/images/stickers.svg#nodejs");
+	}
+
+	&[class*="--beerjs"] {
+		background-image: url("/images/stickers.svg#beerjs");
+	}
+
+	&[class*="--react"] {
+		background-image: url("/images/stickers.svg#react");
+	}
+
+	&[class*="--aws"] {
+		background-image: url("/images/stickers.svg#aws");
+	}
+
+	&[class*="--acid2"] {
+		background-image: url("/images/stickers.svg#acid2");
+	}
+
+	&[class*="--dom"] {
+		background-image: url("/images/stickers.svg#dom-api");
+	}
+
+	&[class*="--web-components"] {
+		background-image: url("/images/stickers.svg#webcomponents");
+	}
+
+	&[class*="--vans"] {
+		background-image: url("/images/stickers.svg#vans");
+	}
+
+	&[class*="--xl"] {
+		background-image: url("/images/stickers.svg#xl");
+	}
+
+	&[class*="--berserk"] {
+		background-image: url("/images/stickers.svg#berserk");
+	}
+
+	&[class*="--love"] {
+		background-image: url("/images/stickers.svg#love");
+	}
+
+	&[class*="--jagermeister"] {
+		background-image: url("/images/stickers.svg#jagermeister");
+	}
+
+	&[class*="--11ty"] {
+		background-image: url("/images/stickers.svg#11ty");
+	}
+
+	&[class*="--evangelion"] {
+		background-image: url("/images/stickers.svg#evangelion");
+	}
+
+	&[class*="--lit"] {
+		background-image: url("/images/stickers.svg#lit");
+	}
+
+	&[class*="--kyivjs"] {
+		background-image: url("/images/stickers.svg#kyivjs");
+	}
+}

@@ -5,6 +5,7 @@ date: 2021-05-06
 tags:
   - CI
 changelogs: []
+stickersCount: 10
 layout: article.njk
 ---
 

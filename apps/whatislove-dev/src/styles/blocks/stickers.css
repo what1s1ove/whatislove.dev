@@ -8,105 +8,78 @@
 	gap: 20px 0;
 	place-items: center;
 	max-inline-size: 375px;
-	padding: 0;
-	margin: 0;
 	margin-inline: auto;
-	list-style: none;
-}
 
-.stickers__item {
-	aspect-ratio: 1;
-	filter: var(--filter-sticker);
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	background-size: contain;
-}
+	.sticker-list__item {
+		&[class*="--node-js"] {
+			grid-column: 1 / -1;
+			inline-size: 110px;
+			rotate: 10deg;
+		}
 
-.stickers__item--full {
-	grid-column: 1 / -1;
-}
+		&[class*="--beerjs"] {
+			inline-size: 130px;
+			rotate: -10deg;
+		}
 
-.stickers__item--pair {
-	grid-column: span 2;
-}
+		&[class*="--react"] {
+			inline-size: 85px;
+			rotate: 10deg;
+			translate: 0 -5px;
+		}
 
-.stickers__item--nodejs {
-	inline-size: 110px;
-	background-image: url("/images/stickers.svg#nodejs");
-	rotate: 10deg;
-}
+		&[class*="--aws"] {
+			inline-size: 120px;
+			rotate: -7deg;
+			translate: 10px -30px;
+		}
 
-.stickers__item--beerjs {
-	inline-size: 130px;
-	background-image: url("/images/stickers.svg#beerjs");
-	rotate: -10deg;
-}
+		&[class*="--acid2"] {
+			inline-size: 125px;
+			rotate: -2deg;
+			translate: -35px 15px;
+		}
 
-.stickers__item--react {
-	inline-size: 85px;
-	background-image: url("/images/stickers.svg#react");
-	rotate: 10deg;
-	translate: 0 -5px;
-}
+		&[class*="--dom"] {
+			inline-size: 100px;
+			translate: -15px -10px;
+		}
 
-.stickers__item--aws {
-	inline-size: 120px;
-	background-image: url("/images/stickers.svg#aws");
-	rotate: -7deg;
-	translate: 10px -30px;
-}
+		&[class*="--web-components"] {
+			inline-size: 100px;
+			rotate: -10deg;
+			translate: -5px -45px;
+		}
 
-.stickers__item--acidtwo {
-	inline-size: 125px;
-	background-image: url("/images/stickers.svg#acid2");
-	rotate: -2deg;
-	translate: -35px 15px;
-}
+		&[class*="--vans"] {
+			inline-size: 120px;
+			rotate: 40deg;
+			translate: -15px 30px;
+		}
 
-.stickers__item--dom {
-	inline-size: 100px;
-	background-image: url("/images/stickers.svg#dom-api");
-	translate: -15px -10px;
-}
+		&[class*="--xl"] {
+			inline-size: 120px;
+			rotate: -3deg;
+			translate: -20px -15px;
+		}
 
-.stickers__item--webcomponents {
-	inline-size: 100px;
-	background-image: url("/images/stickers.svg#webcomponents");
-	rotate: -10deg;
-	translate: -5px -45px;
-}
+		&[class*="--berserk"] {
+			inline-size: 110px;
+			rotate: -5deg;
+			translate: -25px -45px;
+		}
 
-.stickers__item--vans {
-	inline-size: 120px;
-	background-image: url("/images/stickers.svg#vans");
-	rotate: 40deg;
-	translate: -15px 30px;
-}
+		&[class*="--love"] {
+			grid-column: span 2;
+			inline-size: 140px;
+			rotate: 40deg;
+			translate: 35px 10px;
+		}
 
-.stickers__item--xl {
-	inline-size: 120px;
-	background-image: url("/images/stickers.svg#xl");
-	rotate: -3deg;
-	translate: -20px -15px;
-}
-
-.stickers__item--berserk {
-	inline-size: 110px;
-	background-image: url("/images/stickers.svg#berserk");
-	rotate: -5deg;
-	translate: -25px -45px;
-}
-
-.stickers__item--love {
-	inline-size: 140px;
-	background-image: url("/images/stickers.svg#love");
-	rotate: 40deg;
-	translate: 35px 10px;
-}
-
-.stickers__item--jagermeister {
-	inline-size: 110px;
-	background-image: url("/images/stickers.svg#jagermeister");
-	rotate: -5deg;
-	translate: -10px -60px;
+		&[class*="--jagermeister"] {
+			inline-size: 110px;
+			rotate: -5deg;
+			translate: -10px -60px;
+		}
+	}
 }

@@ -5,6 +5,7 @@ date: 2023-12-10
 tags:
   - TS
 changelogs: []
+stickersCount: 10
 layout: article.njk
 ---
 

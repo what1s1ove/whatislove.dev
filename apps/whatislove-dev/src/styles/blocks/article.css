@@ -59,7 +59,7 @@
 }
 
 .article__content {
-	& > :last-child::after {
+	& > p:last-child::after {
 		content: " \220E";
 	}
 }

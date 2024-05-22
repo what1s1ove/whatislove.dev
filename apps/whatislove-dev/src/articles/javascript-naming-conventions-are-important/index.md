@@ -6,6 +6,7 @@ tags:
   - JS
   - TS
 changelogs: []
+stickersCount: 10
 layout: article.njk
 ---
 
