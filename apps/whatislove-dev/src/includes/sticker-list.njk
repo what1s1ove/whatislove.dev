@@ -1,0 +1,22 @@
+{% macro stickerList(items, className, isDecoration = false) %}
+	<ul
+		class="{{ className }} sticker-list"
+		{% if isDecoration %}
+			aria-hidden="true"
+		{% endif %}
+	>
+		{% for sticker in items %}
+			<li
+				class="
+					sticker-list__item
+					{{ "sticker-list__item--decoration" if isDecoration }}
+					sticker-list__item--{{ sticker | slugify }}
+				"
+			>
+				{% if not isDecoration %}
+					<span class="visually-hidden">{{ sticker }}</span>
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+{% endmacro %}

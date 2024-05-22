@@ -5,6 +5,7 @@ date: 2023-11-20
 tags:
   - GitHub
 changelogs: []
+stickersCount: 10
 layout: article.njk
 ---
 

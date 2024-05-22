@@ -5,6 +5,7 @@ date: 2024-02-05
 tags:
   - CI
 changelogs: []
+stickersCount: 10
 layout: article.njk
 ---
 

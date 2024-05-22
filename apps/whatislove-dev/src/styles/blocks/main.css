@@ -1,18 +1,20 @@
-.main__row--experience-stickers {
-	display: grid;
-	gap: 50px;
-	overflow: hidden;
+.main__row {
+	&[class*="--experience-stickers"] {
+		display: grid;
+		gap: 50px;
+		overflow: hidden;
 
-	@media (--width-tablet) {
-		grid-template-columns: repeat(2, 1fr);
-		gap: 40px;
-		overflow: unset;
-	}
+		@media (--width-tablet) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 40px;
+			overflow: unset;
+		}
 
-	@media (--width-desktop) {
-		--has-padding-inline-box: 1;
+		@media (--width-desktop) {
+			--has-padding-inline-box: 1;
 
-		grid-template-columns: 70% 1fr;
-		gap: 100px;
+			grid-template-columns: 70% 1fr;
+			gap: 100px;
+		}
 	}
 }
