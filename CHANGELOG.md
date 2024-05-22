@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.45.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.44.1...v1.45.0) (2024-05-22)
+
+
+### Features
+
+* **whatislove-dev:** add sticker to background wd-515 ([#517](https://github.com/what1s1ove/whatislove.dev/issues/517)) ([95cf20a](https://github.com/what1s1ove/whatislove.dev/commit/95cf20aa90eb992454edf4278636dd1a4f38173a))
+
 ## [1.44.1](https://github.com/what1s1ove/whatislove.dev/compare/v1.44.0...v1.44.1) (2024-05-21)
 
 
