@@ -1,5 +1,4 @@
 {% from 'icon.njk' import icon %}
-{% set IMAGE_FORMATS = ['avif', 'webp'] %}
 
 {% macro channel(tag = "section") %}
 	<!-- prettier-ignore-start -->
@@ -22,26 +21,17 @@
 		</ul>
 		<div class="channel__content">
 			<div class="channel__picture-wrapper">
-				<picture class="channel__picture">
-					{% for format in IMAGE_FORMATS %}
-						<source
-							srcset="
-								/images/telegram-avatar.photo.{{ format }}    1x,
-								/images/telegram-avatar@2x.photo.{{ format }} 2x
-							"
-							type="image/{{ format }}"
-						/>
-					{% endfor %}
-					<img
-						class="channel__image"
-						src="/images/telegram-avatar.photo.jpg"
-						srcset="/images/telegram-avatar@2x.photo.jpg 2x"
-						width="66"
-						height="66"
-						loading="lazy"
-						alt="Telegram channel avatar."
-					/>
-				</picture>
+				<img
+					class="channel__image"
+					src="/images/telegram-avatar.jpg"
+					width="66"
+					height="66"
+					sizes="66px"
+					loading="lazy"
+					alt="Telegram channel avatar."
+					eleventy:widths="66,132"
+					eleventy:formats="avif,webp,jpg"
+				/>
 				{{ icon(className='channel__picture-object', name='telegram', width=22, height=22) }}
 			</div>
 			<a class="channel__link" href="{{ global.channelUrl }}" target="_blank">t.me/whatislove_dev</a>

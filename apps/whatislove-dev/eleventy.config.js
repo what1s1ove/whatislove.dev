@@ -10,14 +10,11 @@ import { parseHTML } from 'linkedom'
 import markdownIt from 'markdown-it'
 import { existsSync } from 'node:fs'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
-import path from 'node:path'
 import process from 'node:process'
 import svgo from 'svgo'
 
 import { addToc } from './src/transforms/transforms.js'
 
-/** @typedef {import('11ty__eleventy-img').ImageFormatWithAliases} */
-let ImageFormatWithAliases
 /** @typedef {import('./package.json')} */
 let PackageJson
 /** @typedef {import('./src/database.json')} */
@@ -235,80 +232,14 @@ let init = (config) => {
 		outputFileExtension: `js`,
 	})
 
-	// png
-	config.addTemplateFormats(`png`)
-
-	config.addExtension(`png`, {
-		/**
-		 * @param {string} _content
-		 * @param {string} url
-		 * @returns {Promise<void>}
-		 */
-		compile: async (_content, url) => {
-			let isPhoto = url.includes(`.photo.`)
-			let formats = /** @type {ImageFormatWithAliases[]} */ ([`png`])
-
-			if (isPhoto) {
-				formats.push(`webp`, `avif`)
-			}
-
-			await Image(url, {
-				/**
-				 * @param {string} _id
-				 * @param {string} source
-				 * @param {number} _width
-				 * @param {string} format
-				 * @returns {string}
-				 */
-				filenameFormat: (_id, source, _width, format) => {
-					let extension = path.extname(source)
-					let name = path.basename(source, extension)
-
-					return `${name}.${format}`
-				},
-				formats,
-				outputDir: `build/images`,
-			})
+	config.addPlugin(Image.eleventyImageTransformPlugin, {
+		defaultAttributes: {
+			decoding: `async`,
+			loading: `lazy`,
 		},
-		outputFileExtension: `png`,
-	})
-
-	// jpg
-	config.addTemplateFormats(`jpg`)
-
-	config.addExtension(`jpg`, {
-		/**
-		 * @param {string} _content
-		 * @param {string} url
-		 * @returns {Promise<void>}
-		 */
-		compile: async (_content, url) => {
-			let isPhoto = url.includes(`.photo.`)
-			let formats = /** @type {ImageFormatWithAliases[]} */ ([`jpg`])
-
-			if (isPhoto) {
-				formats.push(`webp`, `avif`)
-			}
-
-			await Image(url, {
-				/**
-				 * @param {string} _id
-				 * @param {string} source
-				 * @param {number} _width
-				 * @param {string} format
-				 * @returns {string}
-				 */
-				filenameFormat: (_id, source, _width, format) => {
-					let extension = path.extname(source)
-					let name = path.basename(source, extension)
-
-					return `${name}.${format}`
-				},
-				formats,
-				outputDir: `build/images`,
-			})
-		},
-		outputFileExtension: `jpg`,
+		extensions: `html`,
+		formats: [`avif`, `webp`, `jpeg`],
+		widths: [`auto`],
 	})
 
 	// svg

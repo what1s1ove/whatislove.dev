@@ -10,7 +10,6 @@ stickersCount: 0
 {% from 'article-list.njk' import articleList %}
 {% from 'sticker-list.njk' import stickerList %}
 {% set LAPKA_PHRASE = 'Hive Four!' %}
-{% set IMAGE_FORMATS = ['avif', 'webp'] %}
 {% set ARTICLES_COUNT = 3 %}
 {%
 	set FAVORITE_STICKERS = [
@@ -46,26 +45,18 @@ stickersCount: 0
 					</text>
 				</svg>
 			</button>
-			<picture class="intro__picture">
-				{% for format in IMAGE_FORMATS %}
-					<source
-						srcset="
-							/images/vladyslav-zubko.photo.{{ format }}    1x,
-							/images/vladyslav-zubko@2x.photo.{{ format }} 2x
-						"
-						type="image/{{ format }}"
-					/>
-				{% endfor %}
-				<img
-					class="intro__photo"
-					src="/images/vladyslav-zubko.photo.png"
-					srcset="/images/vladyslav-zubko@2x.photo.png 2x"
-					width="226"
-					height="300"
-					fetchpriority="high"
-					alt="{{ global.author }} Portrait."
-				/>
-			</picture>
+			<img
+				class="intro__photo"
+				src="/images/vladyslav-zubko.png"
+				width="226"
+				height="300"
+				sizes="226px"
+				loading="eager"
+				fetchpriority="high"
+				alt="{{ global.author }} Portrait."
+				eleventy:widths="226,452"
+				eleventy:formats="avif,webp,png"
+			/>
 			<header class="intro__header">
 				<p class="intro__welcome">Hi, my name is</p>
 				<h1 class="intro__name">{{ global.author }}</h1>

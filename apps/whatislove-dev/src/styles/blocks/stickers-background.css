@@ -28,56 +28,56 @@
 		.sticker-list__item {
 			position: absolute;
 			inline-size: 110px;
-		}
 
-		.sticker-list__item:nth-child(odd) {
-			inset-inline-start: var(--inset-inline);
-			rotate: calc(0deg - var(--rotate));
-		}
+			&:nth-child(odd) {
+				inset-inline-start: var(--inset-inline);
+				rotate: calc(0deg - var(--rotate));
+			}
 
-		.sticker-list__item:nth-child(even) {
-			inset-inline-end: var(--inset-inline);
-			rotate: var(--rotate);
-		}
+			&:nth-child(even) {
+				inset-inline-end: var(--inset-inline);
+				rotate: var(--rotate);
+			}
 
-		.sticker-list__item:nth-child(1) {
-			inset-block-start: calc(1 * var(--inset-block));
-		}
+			&:nth-child(1) {
+				inset-block-start: calc(1 * var(--inset-block));
+			}
 
-		.sticker-list__item:nth-child(2) {
-			inset-block-start: calc(2 * var(--inset-block));
-		}
+			&:nth-child(2) {
+				inset-block-start: calc(2 * var(--inset-block));
+			}
 
-		.sticker-list__item:nth-child(3) {
-			inset-block-start: calc(3 * var(--inset-block));
-		}
+			&:nth-child(3) {
+				inset-block-start: calc(3 * var(--inset-block));
+			}
 
-		.sticker-list__item:nth-child(4) {
-			inset-block-start: calc(4 * var(--inset-block));
-		}
+			&:nth-child(4) {
+				inset-block-start: calc(4 * var(--inset-block));
+			}
 
-		.sticker-list__item:nth-child(5) {
-			inset-block-start: calc(5 * var(--inset-block));
-		}
+			&:nth-child(5) {
+				inset-block-start: calc(5 * var(--inset-block));
+			}
 
-		.sticker-list__item:nth-child(6) {
-			inset-block-start: calc(6 * var(--inset-block));
-		}
+			&:nth-child(6) {
+				inset-block-start: calc(6 * var(--inset-block));
+			}
 
-		.sticker-list__item:nth-child(7) {
-			inset-block-start: calc(7 * var(--inset-block));
-		}
+			&:nth-child(7) {
+				inset-block-start: calc(7 * var(--inset-block));
+			}
 
-		.sticker-list__item:nth-child(8) {
-			inset-block-start: calc(8 * var(--inset-block));
-		}
+			&:nth-child(8) {
+				inset-block-start: calc(8 * var(--inset-block));
+			}
 
-		.sticker-list__item:nth-child(9) {
-			inset-block-start: calc(9 * var(--inset-block));
-		}
+			&:nth-child(9) {
+				inset-block-start: calc(9 * var(--inset-block));
+			}
 
-		.sticker-list__item:nth-child(10) {
-			inset-block-start: calc(10 * var(--inset-block));
+			&:nth-child(10) {
+				inset-block-start: calc(10 * var(--inset-block));
+			}
 		}
 	}
 }
