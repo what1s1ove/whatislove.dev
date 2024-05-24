@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.44.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.43.0...@whatislove.dev/whatislove-dev-v1.44.0) (2024-05-24)
+
+
+### Features
+
+* **whatislove-dev:** add compress & formats image plugin wd-514 ([#520](https://github.com/what1s1ove/whatislove.dev/issues/520)) ([a073ca1](https://github.com/what1s1ove/whatislove.dev/commit/a073ca17d2ec2267f9b5aa203ee32f83ee41ecf3))
+
 ## [1.43.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.42.1...@whatislove.dev/whatislove-dev-v1.43.0) (2024-05-22)
 
 
