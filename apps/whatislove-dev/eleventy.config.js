@@ -13,14 +13,14 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import process from 'node:process'
 import svgo from 'svgo'
 
-import { addToc } from './src/transforms/transforms.js'
+import { addToc, replaceImgWrapper } from './src/transforms/transforms.js'
 
 /** @typedef {import('./package.json')} */
 let PackageJson
 /** @typedef {import('./src/database.json')} */
 let Database
 
-let TRANSFORMS = /** @type {const} */ ([addToc])
+let TRANSFORMS = /** @type {const} */ ([addToc, replaceImgWrapper])
 
 let Path = /** @type {const} */ ({
 	COPY: [
@@ -88,6 +88,23 @@ let init = (config) => {
 
 	// plugins
 	config.addPlugin(rss)
+
+	// filters
+	config.addFilter(`dateISO`, (value) => {
+		return getISODate(/** @type {Date} */ (value))
+	})
+
+	config.addFilter(`dateFormatted`, (value) => {
+		return /** @type {Date} */ (value).toLocaleString(`en-US`, {
+			day: `numeric`,
+			month: `short`,
+			year: `numeric`,
+		})
+	})
+
+	config.addFilter(`shuffle`, (items) => {
+		return getShuffledItems(/** @type {unknown[]} */ (items))
+	})
 
 	// copy
 	for (let url of Path.COPY) {
@@ -232,6 +249,7 @@ let init = (config) => {
 		outputFileExtension: `js`,
 	})
 
+	// images
 	config.addPlugin(Image.eleventyImageTransformPlugin, {
 		defaultAttributes: {
 			decoding: `async`,
@@ -257,24 +275,6 @@ let init = (config) => {
 			}
 		},
 		outputFileExtension: `svg`,
-	})
-
-	// filters
-
-	config.addFilter(`dateISO`, (value) => {
-		return getISODate(/** @type {Date} */ (value))
-	})
-
-	config.addFilter(`dateFormatted`, (value) => {
-		return /** @type {Date} */ (value).toLocaleString(`en-US`, {
-			day: `numeric`,
-			month: `short`,
-			year: `numeric`,
-		})
-	})
-
-	config.addFilter(`shuffle`, (items) => {
-		return getShuffledItems(/** @type {unknown[]} */ (items))
 	})
 
 	return {
