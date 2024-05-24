@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.47.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.46.0...v1.47.0) (2024-05-24)
+
+
+### Features
+
+* **whatislove-dev:** add losing my virginity book wd-491 ([#523](https://github.com/what1s1ove/whatislove.dev/issues/523)) ([cb4d127](https://github.com/what1s1ove/whatislove.dev/commit/cb4d127e423183f029a893a3e7b4771d39e6ddc4))
+
 ## [1.46.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.45.0...v1.46.0) (2024-05-24)
 
 
