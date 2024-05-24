@@ -203,7 +203,7 @@ Of course you don’t have to memorize all types of content but sometimes you sh
 
 By analogy with [Can I Use](https://caniuse.com/), the [Can Include](https://caninclude.glitch.me/) tool has been developed that can help us with this.
 
-![The main page of the caniuse.com website.](images/can-i-include.jpg)
+![The main page of the caniuse.com website.](images/can-i-include.png)
 
 With this tool, we can check if we can nest one element into another.
 

@@ -236,10 +236,11 @@ let init = (config) => {
 		defaultAttributes: {
 			decoding: `async`,
 			loading: `lazy`,
+			sizes: [`(min-width: 740px) 700px`, `100vw`],
 		},
 		extensions: `html`,
-		formats: [`avif`, `webp`, `jpeg`],
-		widths: [`auto`],
+		formats: [`avif`, `webp`, `png`],
+		widths: [640, 960, 1280, 1920, 2560],
 	})
 
 	// svg
