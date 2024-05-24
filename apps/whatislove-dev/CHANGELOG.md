@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.46.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.45.0...@whatislove.dev/whatislove-dev-v1.46.0) (2024-05-24)
+
+
+### Features
+
+* **whatislove-dev:** add rich dad poor dad book wd-519 ([#525](https://github.com/what1s1ove/whatislove.dev/issues/525)) ([7a7c503](https://github.com/what1s1ove/whatislove.dev/commit/7a7c5037c85d65758fbac5ee17da0a097a19d441))
+
 ## [1.45.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.44.0...@whatislove.dev/whatislove-dev-v1.45.0) (2024-05-24)
 
 
