@@ -92,7 +92,7 @@
 	fill: currentcolor;
 }
 
-.intro__picture {
+.intro picture {
 	place-self: center;
 	margin-block: 0 55px;
 	mask-image: linear-gradient(
@@ -108,6 +108,8 @@
 
 .intro__photo {
 	display: block;
+	inline-size: 226px;
+	block-size: auto;
 	padding-inline: 6px;
 	filter: drop-shadow(-6px 4px 0 hsl(var(--color-red-200)));
 }

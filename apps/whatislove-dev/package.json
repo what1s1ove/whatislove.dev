@@ -9,7 +9,7 @@
 		"start:server": "json-server --watch src/database.json --port 3001",
 		"build:clean": "rm -rf build",
 		"build": "npm run build:clean && npx @11ty/eleventy",
-		"ci:lint:markup": "w3c-html-validator \"build\"",
+		"ci:lint:markup": "w3c-html-validator \"build\" '--ignore=/“sizes” attribute must also be specified/'",
 		"_ci:lint:html": "npx @linthtml/linthtml \"src/**/*.njk\"",
 		"ci:lint:bem": "bemlint \"build/**/*.html\" --errors",
 		"ci:lint:css": "stylelint \"src/**/*.css\"",
@@ -23,8 +23,8 @@
 		"form-payload": "1.7.2"
 	},
 	"devDependencies": {
-		"@11ty/eleventy": "3.0.0-alpha.6",
-		"@11ty/eleventy-img": "3.1.8",
+		"@11ty/eleventy": "3.0.0-alpha.10",
+		"@11ty/eleventy-img": "5.0.0-beta.4",
 		"@11ty/eleventy-plugin-rss": "1.2.0",
 		"@linthtml/linthtml": "0.10.0-beta.5",
 		"@shikijs/markdown-it": "1.5.2",

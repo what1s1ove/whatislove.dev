@@ -33,7 +33,10 @@ declare module '@11ty/eleventy' {
 
 		setLibrary(name: string, newLibraryApi: unknown): void
 
-		addPlugin(newPluginCb: (value: unknown) => unknown): void
+		addPlugin(
+			newPluginCb: (value: unknown) => unknown,
+			pluginOptions?: Record<string, unknown>,
+		): void
 	}
 
 	export { UserConfig }
@@ -43,4 +46,12 @@ declare module '@11ty/eleventy-plugin-rss' {
 	function plugin(options: unknown): void
 
 	export default plugin
+}
+
+declare module '@11ty/eleventy-img' {
+	function eleventyImageTransformPlugin(options: unknown): void
+
+	export default {
+		eleventyImageTransformPlugin,
+	}
 }

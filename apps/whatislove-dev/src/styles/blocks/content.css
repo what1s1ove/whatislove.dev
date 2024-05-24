@@ -76,6 +76,7 @@
 	img {
 		display: block;
 		max-inline-size: 100%;
+		block-size: auto;
 		margin-inline: auto;
 		border-radius: 5px;
 	}

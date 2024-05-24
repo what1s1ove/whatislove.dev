@@ -6,7 +6,7 @@ let RANDOM_SEPARATOR = /** @type {const} */ (0.5)
  * @returns {T[]}
  */
 let getShuffledItems = (items) => {
-	return items.toSorted(() => Math.random() - RANDOM_SEPARATOR)
+	return [...items].sort(() => Math.random() - RANDOM_SEPARATOR)
 }
 
 export { getShuffledItems }

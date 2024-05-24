@@ -128,6 +128,8 @@
 
 .channel__image {
 	display: block;
+	inline-size: 66px;
+	block-size: auto;
 	border-radius: 50%;
 }
 
