@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.50.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.49.0...v1.50.0) (2024-05-27)
+
+
+### Features
+
+* **whatislove-dev:** add rss alternate wd-528 ([#530](https://github.com/what1s1ove/whatislove.dev/issues/530)) ([edd6527](https://github.com/what1s1ove/whatislove.dev/commit/edd652748223692ee5b25f016314fc47008431bb))
+
 ## [1.49.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.48.0...v1.49.0) (2024-05-27)
 
 
