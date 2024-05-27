@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.49.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.48.0...v1.49.0) (2024-05-27)
+
+
+### Features
+
+* **whatislove-dev:** enable webmention wd-512 ([#527](https://github.com/what1s1ove/whatislove.dev/issues/527)) ([4f981da](https://github.com/what1s1ove/whatislove.dev/commit/4f981daccd6d78f73fae50623f0d4a36f50f6075))
+
 ## [1.48.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.47.0...v1.48.0) (2024-05-24)
 
 
