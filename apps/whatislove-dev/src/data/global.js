@@ -1,10 +1,14 @@
+let domain = `https://whatislove.dev`
+let host = new URL(domain).host
+
 let data = {
 	author: `Vladyslav Zubko`,
 	channelUrl: `https://t.me/whatislove_dev`,
 	currentYear: new Date().getFullYear(),
 	description: `Avid explorer of the World, enamored with digital tech, especially the Web, passionate about learning, mentoring, and connecting with others`,
-	domain: `https://whatislove.dev`,
-	email: `hello@whatislove.dev`,
+	domain,
+	email: `hello@${host}`,
+	host,
 	lang: `en`,
 	repo: `https://github.com/what1s1ove/whatislove.dev`,
 	socials: [
