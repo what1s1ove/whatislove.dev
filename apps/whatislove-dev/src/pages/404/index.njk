@@ -30,6 +30,6 @@ stickersCount: 3
 	<aside class="articles box">
 		<h2 class="articles__title">Lastest Article</h2>
 		{{ articleList(items=collections.articles | reverse, className="articles__article-list", maxCount=ARTICLES_COUNT) }}
-		<a class="articles__all action" href="/articles">View all articles</a>
+		<a class="articles__all action button" href="/articles">View all articles</a>
 	</aside>
 {% endblock %}

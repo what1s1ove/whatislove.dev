@@ -1,0 +1,11 @@
+.button {
+	--button-color: var(--color-red-100);
+	--button-background-color: var(--color-red-100) / 6%;
+
+	padding: 10px;
+	font-weight: 700;
+	color: hsl(var(--button-color));
+	text-decoration: none;
+	background-color: hsl(var(--button-background-color));
+	border-radius: 5px;
+}
