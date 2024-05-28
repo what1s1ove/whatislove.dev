@@ -95,11 +95,14 @@ let init = (config) => {
 	})
 
 	config.addFilter(`dateFormatted`, (value) => {
-		return /** @type {Date} */ (value).toLocaleString(`en-US`, {
-			day: `numeric`,
-			month: `short`,
-			year: `numeric`,
-		})
+		return new Date(/** @type {Date | string} */ (value)).toLocaleString(
+			`en-US`,
+			{
+				day: `numeric`,
+				month: `short`,
+				year: `numeric`,
+			},
+		)
 	})
 
 	config.addFilter(`shuffle`, (items) => {
