@@ -2,7 +2,9 @@
 {% from 'article-list.njk' import articleList %}
 {% from 'accordion.njk' import accordion %}
 {% from 'tag-list.njk' import tagList %}
+{% from 'icon.njk' import icon %}
 {% set ARTICLES_COUNT = 3 %}
+{% set MENTION_AVATAR_SIZE = 40 %}
 {% set ACCORDION_DEFAULT_OPENED_WIDTH = 768 %}
 {% set mentionData = mentions[page.url] %}
 {% set lastChangelogItem = changelogs | last %}
@@ -71,26 +73,30 @@
 				</ul>
 				{% if mentionData.mentions.length %}
 					<ul class="mentions__list">
-						{% for mention in mentionData.mentions %}
+						{% for mention in mentionData.mentions | sort(false, true, 'date') %}
 							<li class="mentions__item">
 								<div class="mentions__author">
 									<div
 										class="mentions__author-picture {{ "mentions__author-picture--" + mention.fromType if mention.fromType }}"
 									>
-										<img
-											class="mentions__author-avatar"
-											src="{{ mention.author.avatarUrl }}"
-											alt="{{ mention.author.name }}"
-											width="40"
-											height="40"
-											decoding="async"
-											load="lazy"
-											eleventy:ignore
-										/>
+										{% if mention.author.avatarUrl %}
+											<img
+												class="mentions__author-avatar"
+												src="{{ mention.author.avatarUrl }}"
+												alt="{{ mention.author.name }}"
+												width="{{ MENTION_AVATAR_SIZE }}"
+												height="{{ MENTION_AVATAR_SIZE }}"
+												decoding="async"
+												loading="lazy"
+												eleventy:ignore
+											/>
+										{% else %}
+											{{ icon(name="user", className="mentions__author-avatar", width=MENTION_AVATAR_SIZE, height=MENTION_AVATAR_SIZE) }}
+										{% endif %}
 									</div>
 									<h3 class="mentions__author-name">{{ mention.author.name }}</h3>
 								</div>
-								<time class="mentions__date" datetime="{{ mention.date }}">
+								<time class="mentions__date" datetime="{{ mention.date | dateISO }}">
 									{{ mention.date | dateFormatted }}
 								</time>
 								<div class="mentions__content content">{{ mention.content | safe }}</div>

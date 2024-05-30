@@ -10,9 +10,9 @@ import { parseHTML } from 'linkedom'
 import markdownIt from 'markdown-it'
 import { existsSync } from 'node:fs'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
-import process from 'node:process'
 import svgo from 'svgo'
 
+import { default as environment } from './src/data/environment.js'
 import { addToc, replaceImgWrapper } from './src/transforms/transforms.js'
 
 /** @typedef {import('./package.json')} */
@@ -45,7 +45,7 @@ let CollectionPath = /** @type {const} */ ({
 	PAGES: `src/pages/!(404)/index.njk`,
 })
 
-let isDevelopment = process.env[`NODE_ENV`] === `development`
+let isDevelopment = environment.COMMON.ENVIRONMENT === `development`
 let rawPackageJson = await readFile(new URL(`package.json`, import.meta.url))
 let packageJson = /** @type {(text: string) => PackageJson} */ (JSON.parse)(
 	rawPackageJson.toString(),

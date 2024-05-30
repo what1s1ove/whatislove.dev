@@ -114,6 +114,7 @@
 .mentions__author-avatar {
 	display: block;
 	border-radius: 50%;
+	fill: hsl(var(--color-icon));
 }
 
 .mentions__author-name {
