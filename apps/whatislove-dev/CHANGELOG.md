@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.49.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.48.0...@whatislove.dev/whatislove-dev-v1.49.0) (2024-05-30)
+
+
+### Features
+
+* **whatislove-dev:** add webmentions to articles wd-512 ([#533](https://github.com/what1s1ove/whatislove.dev/issues/533)) ([0c3eac2](https://github.com/what1s1ove/whatislove.dev/commit/0c3eac238976c32c29320abb6c57ea5f5ea04edf))
+
 ## [1.48.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.47.0...@whatislove.dev/whatislove-dev-v1.48.0) (2024-05-27)
 
 
