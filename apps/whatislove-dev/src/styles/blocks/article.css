@@ -63,3 +63,8 @@
 		content: " \220E";
 	}
 }
+
+.article__mentions {
+	padding-block: var(--gap) 0;
+	border-block-start: 1px solid hsl(var(--color-page-background-highlight));
+}

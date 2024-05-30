@@ -2,8 +2,11 @@
 {% from 'article-list.njk' import articleList %}
 {% from 'accordion.njk' import accordion %}
 {% from 'tag-list.njk' import tagList %}
+{% from 'icon.njk' import icon %}
 {% set ARTICLES_COUNT = 3 %}
+{% set MENTION_AVATAR_SIZE = 40 %}
 {% set ACCORDION_DEFAULT_OPENED_WIDTH = 768 %}
+{% set mentionData = mentions[page.url] %}
 {% set lastChangelogItem = changelogs | last %}
 
 {% block font %}
@@ -50,6 +53,93 @@
 				{% endcall %}
 			{% endif %}
 			<div class="article__content content">{{ content | safe }}</div>
+			<section class="article__mentions mentions">
+				<header class="mentions__header">
+					<h2 class="mentions__title">Webmentions</h2>
+					<p class="mentions__description">
+						If you liked this article and think others should read it, please share it.
+					</p>
+				</header>
+				<ul class="mentions__stats-list">
+					<li class="mentions__stats-item mentions__stats-item--likes">
+						{{ mentionData.likesCount or 0 }} <span class="visually-hidden">likes</span>
+					</li>
+					<li class="mentions__stats-item mentions__stats-item--reposts">
+						{{ mentionData.repostsCount or 0 }} <span class="visually-hidden">reposts</span>
+					</li>
+					<li class="mentions__stats-item mentions__stats-item--comments">
+						{{ mentionData.mentions.length or 0 }} <span class="visually-hidden">comments</span>
+					</li>
+				</ul>
+				{% if mentionData.mentions.length %}
+					<ul class="mentions__list">
+						{% for mention in mentionData.mentions | sort(false, true, 'date') %}
+							<li class="mentions__item">
+								<div class="mentions__author">
+									<div
+										class="mentions__author-picture {{ "mentions__author-picture--" + mention.fromType if mention.fromType }}"
+									>
+										{% if mention.author.avatarUrl %}
+											<img
+												class="mentions__author-avatar"
+												src="{{ mention.author.avatarUrl }}"
+												alt="{{ mention.author.name }}"
+												width="{{ MENTION_AVATAR_SIZE }}"
+												height="{{ MENTION_AVATAR_SIZE }}"
+												decoding="async"
+												loading="lazy"
+												eleventy:ignore
+											/>
+										{% else %}
+											{{ icon(name="user", className="mentions__author-avatar", width=MENTION_AVATAR_SIZE, height=MENTION_AVATAR_SIZE) }}
+										{% endif %}
+									</div>
+									<h3 class="mentions__author-name">{{ mention.author.name }}</h3>
+								</div>
+								<time class="mentions__date" datetime="{{ mention.date | dateISO }}">
+									{{ mention.date | dateFormatted }}
+								</time>
+								<div class="mentions__content content">{{ mention.content | safe }}</div>
+								<a
+									class="mentions__origin action"
+									href="{{ mention.url }}"
+									target="_blank"
+									aria-label="View original"
+								></a>
+							</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+				<div class="mentions__form-wrapper">
+					<p class="mentions__form-description">
+						These are <a href="https://indieweb.org/webmention" target="_blank">webmentions</a> via the
+						<a href="https://indieweb.org/" target="_blank">IndieWeb</a> and
+						<a href="https://webmention.io/" target="_blank">webmention.io</a>. Mention this post from your
+						site:
+					</p>
+					<form
+						class="mentions__form"
+						method="POST"
+						action="https://webmention.io/{{ global.host }}/webmention"
+					>
+						<input
+							class="mentions__form-input"
+							type="hidden"
+							name="target"
+							value="{{ global.domain + page.url }}"
+						/>
+						<input
+							class="mentions__form-input input"
+							type="url"
+							name="source"
+							placeholder="https://example.com"
+							required
+							aria-label="Webmention source"
+						/>
+						<button class="mentions__form-button action button" type="submit">Send Webmention</button>
+					</form>
+				</div>
+			</section>
 		</div>
 	</div>
 {% endblock %}
@@ -58,6 +148,6 @@
 	<aside class="articles box">
 		<h2 class="articles__title">Lastest Article</h2>
 		{{ articleList(items=collections.articles | reverse, className="articles__article-list", maxCount=ARTICLES_COUNT, pageUrl=page.url) }}
-		<a class="articles__all action" href="/articles">View all articles</a>
+		<a class="articles__all action button" href="/articles">View all articles</a>
 	</aside>
 {% endblock %}

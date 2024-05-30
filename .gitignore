@@ -5,6 +5,9 @@ node_modules
 build
 process.mp4
 
+# cache
+.cache
+
 # misc
 .DS_Store
 .env

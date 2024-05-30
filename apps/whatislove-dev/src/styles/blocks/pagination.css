@@ -49,18 +49,16 @@
 }
 
 .pagination__number-link {
-	display: flex;
+	box-sizing: border-box;
+	display: inline-flex;
 	place-content: center;
 	inline-size: 43px;
 	block-size: var(--block-size);
-	font-weight: bold;
-	line-height: 1;
 	color: hsl(var(--color));
-	text-underline-offset: 3px;
-	border-radius: 5px;
+	background-color: unset;
 
 	&[aria-current="page"] {
-		color: hsl(var(--color-red-100));
-		background-color: hsl(var(--color-red-100) / 6%);
+		color: hsl(var(--button-color));
+		background-color: hsl(var(--button-background-color));
 	}
 }

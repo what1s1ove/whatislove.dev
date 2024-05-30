@@ -1,6 +1,8 @@
 name: Continuous Delivery
 
 on:
+  schedule:
+    - cron: '0 0 * * *'
   push:
     branches:
       - main
@@ -28,7 +30,7 @@ jobs:
   dependencies:
     name: Install Dependencies
     needs: release
-    if: ${{ needs.release.outputs.release_created }}
+    if: ${{ needs.release.outputs.release_created || github.event_name == 'schedule' }}
     runs-on: ubuntu-latest
     steps:
       - name: Code Checkout
@@ -88,6 +90,8 @@ jobs:
         run: npm run build
         env:
           VITE_DB_API_KEY: ${{ secrets.DB_API_KEY }}
+          DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
+          WEBMENTION_API_KEY: ${{ secrets.WEBMENTION_API_KEY }}
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
