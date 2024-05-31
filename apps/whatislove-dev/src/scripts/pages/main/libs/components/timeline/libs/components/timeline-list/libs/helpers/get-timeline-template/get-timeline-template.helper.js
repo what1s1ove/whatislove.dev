@@ -15,7 +15,7 @@ let getTimelineTemplate = (timeline) => {
 	)
 	let originStringNode = getStringWitCheck(
 		origin,
-		`<a class="timeline__item-origin" href="${origin}" target="_blank">${originDesc}</a>`,
+		`<a class="timeline__item-origin" href="${origin}" target="_blank" rel="noreferrer noopener">${originDesc}</a>`,
 	)
 	let descStringNode = getStringWitCheck(
 		desc,
@@ -23,7 +23,7 @@ let getTimelineTemplate = (timeline) => {
 	)
 	let linkStringNode = getStringWitCheck(
 		link,
-		`<a class="timeline__item-link" href="${link}" target="_blank">${linkDesc}</a>`,
+		`<a class="timeline__item-link" href="${link}" target="_blank" rel="noreferrer noopener">${linkDesc}</a>`,
 	)
 	let endDateStringNode = getStringWitCheck(
 		endDate,

@@ -10,7 +10,7 @@
 {% set lastChangelogItem = changelogs | last %}
 
 {% block font %}
-	<link rel="preload" href="/fonts/monaspace-neon.woff2" crossorigin as="font" type="font/woff2" />
+	<link rel="preload" href="/fonts/monaspace-neon.woff2" crossorigin="anonymous" as="font" type="font/woff2" />
 {% endblock %}
 
 {% block content %}
@@ -104,6 +104,7 @@
 									class="mentions__origin action"
 									href="{{ mention.url }}"
 									target="_blank"
+									rel="noreferrer noopener"
 									aria-label="View original"
 								></a>
 							</li>
@@ -112,10 +113,14 @@
 				{% endif %}
 				<div class="mentions__form-wrapper">
 					<p class="mentions__form-description">
-						These are <a href="https://indieweb.org/webmention" target="_blank">webmentions</a> via the
-						<a href="https://indieweb.org/" target="_blank">IndieWeb</a> and
-						<a href="https://webmention.io/" target="_blank">webmention.io</a>. Mention this post from your
-						site:
+						These are
+						<a href="https://indieweb.org/webmention" target="_blank" rel="noreferrer noopener">
+							webmentions
+						</a>
+						via the
+						<a href="https://indieweb.org/" target="_blank" rel="noreferrer noopener">IndieWeb</a> and
+						<a href="https://webmention.io/" target="_blank" rel="noreferrer noopener">webmention.io</a>.
+						Mention this post from your site:
 					</p>
 					<form
 						class="mentions__form"
