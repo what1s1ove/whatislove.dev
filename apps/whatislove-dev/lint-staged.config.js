@@ -8,7 +8,11 @@ let config = {
 		() => `npm run ci:lint:js -w apps/whatislove-dev`,
 		() => `npm run ci:lint:type -w apps/whatislove-dev`,
 	],
-	'**/*.njk': [() => `npm run ci:lint:bem -w apps/whatislove-dev`],
+	'**/*.njk': [
+		() => `npm run ci:lint:bem -w apps/whatislove-dev`,
+		() => `npm run ci:lint:html -w apps/whatislove-dev`,
+		() => `npm run ci:lint:markup -w apps/whatislove-dev`,
+	],
 }
 
 export default config

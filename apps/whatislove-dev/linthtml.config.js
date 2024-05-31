@@ -2,7 +2,8 @@
 let config = {
 	extends: `linthtml-config-htmlacademy`,
 	rules: {
-		'doctype-first': false,
+		'no-surrounding-whitespace': false,
+		'tag-close': false,
 	},
 }
 

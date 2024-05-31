@@ -1,5 +1,6 @@
 {% macro settings(className) %}
-	<section class="{{ className }} settings settings--theme" aria-label="Theme switcher">
+	<section class="{{ className }} settings settings--theme">
+		<h2 class="settings__title visually-hidden">Theme switcher</h2>
 		<label class="settings__theme-label">
 			<input class="settings__theme-control" type="radio" name="theme" value="light" aria-label="Light" />
 		</label>
