@@ -3,13 +3,15 @@ import rss from '@11ty/eleventy-plugin-rss'
 import shikiHighlight from '@shikijs/markdown-it'
 import { getISODate, getShuffledItems } from '@whatislove.dev/shared'
 import browserslist from 'browserslist'
+import ogImage from 'eleventy-plugin-og-image'
 import esbuild from 'esbuild'
 import htmlMin from 'html-minifier-terser'
 import * as lightningcss from 'lightningcss'
 import { parseHTML } from 'linkedom'
 import markdownIt from 'markdown-it'
-import { existsSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import { basename, extname } from 'node:path'
 import svgo from 'svgo'
 
 import { default as environment } from './src/data/environment.js'
@@ -29,6 +31,7 @@ let Path = /** @type {const} */ ({
 		`./src/sounds`,
 		`./src/manifest.webmanifest`,
 		`./src/images/favicons`,
+		`./src/images/covers`,
 		`./src/robots.txt`,
 		`src/articles/**/*.!(md)`,
 	],
@@ -88,6 +91,45 @@ let init = (config) => {
 
 	// plugins
 	config.addPlugin(rss)
+
+	config.addPlugin(ogImage, {
+		outputDir: `images/covers`,
+		/**
+		 * @returns {string}
+		 * @this {{
+		 * 	data: {
+		 * 		page: {
+		 * 			fileSlug: string
+		 * 		}
+		 * 	}
+		 * }}
+		 */
+		outputFileSlug: function () {
+			return this.data.page.fileSlug
+		},
+		satoriOptions: {
+			fonts: [400, 700].map((weight) => ({
+				data: readFileSync(
+					new URL(
+						`src/fonts/red-hat-display-${weight}.woff`,
+						import.meta.url,
+					),
+				),
+				name: `Red Hat Display`,
+				style: `normal`,
+				weight,
+			})),
+		},
+		/**
+		 * @returns {Promise<string>}
+		 * @this {{
+		 * 	outputUrl: () => Promise<string>
+		 * }}
+		 */
+		shortcodeOutput() {
+			return this.outputUrl()
+		},
+	})
 
 	// filters
 	config.addFilter(`dateISO`, (value) => {
@@ -260,6 +302,19 @@ let init = (config) => {
 			sizes: [`(min-width: 740px) 700px`, `100vw`],
 		},
 		extensions: `html`,
+		/**
+		 * @param {string} _id
+		 * @param {string} source
+		 * @param {number} width
+		 * @param {string} format
+		 * @returns {string}
+		 */
+		filenameFormat: (_id, source, width, format) => {
+			let extension = extname(source)
+			let name = basename(source, extension)
+
+			return `${name}-${width}w.${format}`
+		},
 		formats: [`avif`, `webp`, `png`],
 		widths: [640, 960, 1280, 1920, 2560],
 	})
