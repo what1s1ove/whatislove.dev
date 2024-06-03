@@ -55,3 +55,9 @@ declare module '@11ty/eleventy-img' {
 		eleventyImageTransformPlugin,
 	}
 }
+
+declare module 'eleventy-plugin-og-image' {
+	function plugin(options: unknown): void
+
+	export default plugin
+}
