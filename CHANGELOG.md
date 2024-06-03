@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.52.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.51.0...v1.52.0) (2024-06-03)
+
+
+### Features
+
+* **whatislove-dev:** add autogeneration for og image wd-535 ([#538](https://github.com/what1s1ove/whatislove.dev/issues/538)) ([350e013](https://github.com/what1s1ove/whatislove.dev/commit/350e01368ea8abeb563ace7f67d3155b80725735))
+
 ## [1.51.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.50.0...v1.51.0) (2024-05-30)
 
 
