@@ -80,9 +80,11 @@
 	}
 }
 
-.timeline__item-date--end {
-	&::before {
-		content: " \2014  ";
+.timeline__item-date {
+	&[class*="--end"] {
+		&::before {
+			content: " \2014  ";
+		}
 	}
 }
 

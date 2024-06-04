@@ -26,16 +26,12 @@
 		mask-position: 50% 50%;
 		mask-size: 20px;
 	}
-}
 
-.pagination__link--previous {
-	&::before {
+	&[class*="--previous"]::before {
 		mask-image: url("/images/icons.svg#arrow-left");
 	}
-}
 
-.pagination__link--next {
-	&::before {
+	&[class*="--next"]::before {
 		mask-image: url("/images/icons.svg#arrow-right");
 	}
 }

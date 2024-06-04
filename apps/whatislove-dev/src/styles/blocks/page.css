@@ -5,10 +5,10 @@
 	@media (prefers-reduced-motion: no-preference) {
 		scroll-behavior: smooth;
 	}
-}
 
-.page--no-scroll {
-	overflow: hidden;
+	&[class*="--no-scroll"] {
+		overflow: hidden;
+	}
 }
 
 .page__body {

@@ -38,14 +38,14 @@
 	@media (--width-desktop) {
 		max-inline-size: var(--size-inline-box);
 	}
-}
 
-.aside__border--top {
-	inset-block-start: var(--inset-border);
-}
+	&[class*="--top"] {
+		inset-block-start: var(--inset-border);
+	}
 
-.aside__border--bottom {
-	inset-block-end: var(--inset-border);
+	&[class*="--bottom"] {
+		inset-block-end: var(--inset-border);
+	}
 }
 
 .aside__title {
