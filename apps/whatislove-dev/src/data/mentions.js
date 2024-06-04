@@ -45,9 +45,10 @@ let load = (url, options) => {
 
 /**
  * @param {string} html
+ * @param {string} commentUrl
  * @returns {string}
  */
-let prepareMentionContent = (html) => {
+let prepareMentionContent = (html, commentUrl) => {
 	let window = parseHTML(`
 		<!DOCTYPE html>
 		<html>
@@ -63,7 +64,9 @@ let prepareMentionContent = (html) => {
 			mentionParagraphNodes.at(MENTION_LAST_PARAGRAPH_IDX)
 		)
 
-		lastComment.innerHTML = `${lastComment.innerHTML} … <a href="#">see more</a>`
+		lastComment.innerHTML = `
+			${lastComment.innerHTML} … <a href="${commentUrl}">see more</a>
+		`
 	}
 
 	window.document.body.innerHTML = ``
@@ -141,16 +144,20 @@ let getDevtoPageMention = async () => {
 
 		pageMentions[articleUrl.pathname] = {
 			likesCount: article.positive_reactions_count,
-			mentions: allComments.map((comment) => ({
-				author: {
-					avatarUrl: comment.user.profile_image_90,
-					name: `@${comment.user.username}`,
-				},
-				content: prepareMentionContent(comment.body_html),
-				date: new Date(comment.created_at),
-				fromType: `devto`,
-				url: `https://dev.to/${comment.user.username}/comment/${comment.id_code}`,
-			})),
+			mentions: allComments.map((comment) => {
+				let url = `https://dev.to/${comment.user.username}/comment/${comment.id_code}`
+
+				return {
+					author: {
+						avatarUrl: comment.user.profile_image_90,
+						name: `@${comment.user.username}`,
+					},
+					content: prepareMentionContent(comment.body_html, url),
+					date: new Date(comment.created_at),
+					fromType: `devto`,
+					url,
+				}
+			}),
 			repostsCount: 0,
 		}
 	}
@@ -241,7 +248,10 @@ let getWebMentionsPageMention = async () => {
 					avatarUrl: webMention.author?.photo ?? undefined,
 					name: webMention.author?.name ?? host,
 				},
-				content: prepareMentionContent(webMention.content.html),
+				content: prepareMentionContent(
+					webMention.content.html,
+					webMention.url,
+				),
 				date: new Date(webMention.published),
 				fromType,
 				url: webMention.url,
