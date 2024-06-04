@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.53.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.52.0...v1.53.0) (2024-06-04)
+
+
+### Features
+
+* **whatislove-dev:** add sitemap to robot.txt wd-542 ([#543](https://github.com/what1s1ove/whatislove.dev/issues/543)) ([a2aabb3](https://github.com/what1s1ove/whatislove.dev/commit/a2aabb3cc18412b2af7648a8130ac2761e2e6fd7))
+
 ## [1.52.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.51.0...v1.52.0) (2024-06-03)
 
 
