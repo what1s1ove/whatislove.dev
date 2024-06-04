@@ -33,4 +33,4 @@ _Rest of scripts can be found in the root `package.json` and in the `package.jso
 
 ## License
 
-This project is open source under the [MIT license](./LICENSE), which means you have access to the source code and can use it all, except design, to fit your own needs but don't have access to deploy.
+This project is open source under the [MIT license](./LICENSE), which means you have access to the source code and can use it all, except design, to fit your own needs but don't have access to deploy. Blog posts (and other written content) are under [CC BY-SA 4.0](./LICENSE-content).
