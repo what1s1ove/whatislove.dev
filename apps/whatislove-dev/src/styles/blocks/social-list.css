@@ -5,10 +5,10 @@
 	padding: 0;
 	margin: 0;
 	list-style: none;
-}
 
-.social-list--icons {
-	gap: 20px;
+	&[class*="--icons"] {
+		gap: 20px;
+	}
 }
 
 .social-list__item {
@@ -35,6 +35,26 @@
 		mask-position: 50%;
 		mask-size: contain;
 	}
+
+	&[class*="--github"]::before {
+		mask-image: url("/images/icons.svg#github");
+	}
+
+	&[class*="--linkedin"]::before {
+		mask-image: url("/images/icons.svg#linkedin");
+	}
+
+	&[class*="--telegram"]::before {
+		mask-image: url("/images/icons.svg#telegram");
+	}
+
+	&[class*="--twitter"]::before {
+		mask-image: url("/images/icons.svg#twitter");
+	}
+
+	&[class*="--email"]::before {
+		mask-image: url("/images/icons.svg#mail");
+	}
 }
 
 .social-list--icons .social-list__item-link {
@@ -42,35 +62,5 @@
 
 	&::before {
 		background-color: hsl(var(--color-gray-100));
-	}
-}
-
-.social-list__item-link--github {
-	&::before {
-		mask-image: url("/images/icons.svg#github");
-	}
-}
-
-.social-list__item-link--linkedin {
-	&::before {
-		mask-image: url("/images/icons.svg#linkedin");
-	}
-}
-
-.social-list__item-link--telegram {
-	&::before {
-		mask-image: url("/images/icons.svg#telegram");
-	}
-}
-
-.social-list__item-link--twitter {
-	&::before {
-		mask-image: url("/images/icons.svg#twitter");
-	}
-}
-
-.social-list__item-link--email {
-	&::before {
-		mask-image: url("/images/icons.svg#mail");
 	}
 }

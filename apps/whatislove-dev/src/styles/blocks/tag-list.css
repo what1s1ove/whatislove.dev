@@ -17,24 +17,24 @@
 	background-image: var(--background-image-page);
 	background-size: var(--background-size-page);
 	border-radius: 3px;
-}
 
-.tag-list__tag--html {
-	--background-color: var(--color-green-100);
-}
+	&[class*="--html"] {
+		--background-color: var(--color-green-100);
+	}
 
-.tag-list__tag--github {
-	--background-color: var(--color-gray-100);
-}
+	&[class*="--github"] {
+		--background-color: var(--color-gray-100);
+	}
 
-.tag-list__tag--ci {
-	--background-color: var(--color-red-100);
-}
+	&[class*="--ci"] {
+		--background-color: var(--color-red-100);
+	}
 
-.tag-list__tag--ts {
-	--background-color: var(--color-blue-200);
-}
+	&[class*="--ts"] {
+		--background-color: var(--color-blue-200);
+	}
 
-.tag-list__tag--js {
-	--background-color: var(--color-yellow-200);
+	&[class*="--js"] {
+		--background-color: var(--color-yellow-200);
+	}
 }

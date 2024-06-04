@@ -33,21 +33,21 @@
 		content: "";
 		background: var(--background-page);
 	}
-}
 
-.scroll-shadows--horizontal {
-	--farthest-side-start: 0 50%;
-	--farthest-side-end: 100% 50%;
+	&[class*="--horizontal"] {
+		--farthest-side-start: 0 50%;
+		--farthest-side-end: 100% 50%;
 
-	grid-template: auto / var(--shadows-size) 1fr var(--shadows-size);
-	background-position:
-		left center,
-		right center;
-	background-size: var(--shadows-size) 100%;
+		grid-template: auto / var(--shadows-size) 1fr var(--shadows-size);
+		background-position:
+			left center,
+			right center;
+		background-size: var(--shadows-size) 100%;
 
-	&::before,
-	&::after {
-		inline-size: var(--shadows-size);
-		block-size: 100%;
+		&::before,
+		&::after {
+			inline-size: var(--shadows-size);
+			block-size: 100%;
+		}
 	}
 }

@@ -21,10 +21,10 @@
 		transition-duration: 0.3s;
 		transition-property: translate, opacity;
 	}
-}
 
-.toast--show {
-	inset-block-end: 13px;
-	opacity: 1;
-	translate: 0 0%;
+	&[class*="--show"] {
+		inset-block-end: 13px;
+		opacity: 1;
+		translate: 0 0%;
+	}
 }
