@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.53.1](https://github.com/what1s1ove/whatislove.dev/compare/v1.53.0...v1.53.1) (2024-06-04)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** use iso date in timeline wd-545 ([#546](https://github.com/what1s1ove/whatislove.dev/issues/546)) ([f7ce4d5](https://github.com/what1s1ove/whatislove.dev/commit/f7ce4d5003a1cd191624822e62688c12937faa6d))
+
 ## [1.53.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.52.0...v1.53.0) (2024-06-04)
 
 
