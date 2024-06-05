@@ -52,7 +52,9 @@ let prepareMentionContent = (html, commentUrl) => {
 	let window = parseHTML(`
 		<!DOCTYPE html>
 		<html>
-			<body>${html}</body>
+			<body>
+				${html.replaceAll(/\sclass="[^"]*"/g, ``)}
+			</body>
 		</html>
 	`)
 

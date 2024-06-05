@@ -21,7 +21,7 @@ let changeExternalLinkTarget = (window) => {
 		if (!hasTarget && !hasRelation) {
 			externalLinkNode.target = `_blank`
 
-			externalLinkNode.setAttribute(`rel`, `noreferrer noopener`)
+			externalLinkNode.rel = `noreferrer noopener`
 		}
 	}
 }
