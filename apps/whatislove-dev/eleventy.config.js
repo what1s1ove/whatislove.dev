@@ -15,14 +15,22 @@ import { basename, extname } from 'node:path'
 import svgo from 'svgo'
 
 import { default as environment } from './src/data/environment.js'
-import { addToc, replaceImgWrapper } from './src/transforms/transforms.js'
+import {
+	addToc,
+	changeExternalLinkTarget,
+	replaceImgWrapper,
+} from './src/transforms/transforms.js'
 
 /** @typedef {import('./package.json')} */
 let PackageJson
 /** @typedef {import('./src/database.json')} */
 let Database
 
-let TRANSFORMS = /** @type {const} */ ([addToc, replaceImgWrapper])
+let TRANSFORMS = /** @type {const} */ ([
+	addToc,
+	changeExternalLinkTarget,
+	replaceImgWrapper,
+])
 
 let Path = /** @type {const} */ ({
 	COPY: [
