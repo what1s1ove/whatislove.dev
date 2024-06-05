@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.52.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.51.1...@whatislove.dev/whatislove-dev-v1.52.0) (2024-06-05)
+
+
+### Features
+
+* **whatislove-dev:** add target to external links in content wd-554 ([#555](https://github.com/what1s1ove/whatislove.dev/issues/555)) ([4d9a472](https://github.com/what1s1ove/whatislove.dev/commit/4d9a472b3ef954ea9944f0fbcf7266d4cbc050b4))
+
 ## [1.51.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.51.0...@whatislove.dev/whatislove-dev-v1.51.1) (2024-06-04)
 
 
