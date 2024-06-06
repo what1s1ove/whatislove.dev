@@ -4,7 +4,7 @@
 		<div class="accordion__content">{{ caller() }}</div>
 		{% if defaultOpenedWidth %}
 			<!-- prettier-ignore-start -->
-			<script type="module" async>
+			<script>
 				document.currentScript.closest('details').open = window.innerWidth > {{ defaultOpenedWidth }}
 			</script>
 			<!-- prettier-ignore-end -->
