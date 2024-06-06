@@ -11,7 +11,7 @@ import { parseHTML } from 'linkedom'
 import markdownIt from 'markdown-it'
 import { existsSync, readFileSync } from 'node:fs'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
-import { basename, extname } from 'node:path'
+import { basename, extname, join } from 'node:path'
 import svgo from 'svgo'
 
 import { default as environment } from './src/data/environment.js'
@@ -56,7 +56,6 @@ let CollectionPath = /** @type {const} */ ({
 	PAGES: `src/pages/!(404)/index.njk`,
 })
 
-let isDevelopment = environment.COMMON.ENVIRONMENT === `development`
 let rawPackageJson = await readFile(new URL(`package.json`, import.meta.url))
 let packageJson = /** @type {(text: string) => PackageJson} */ (JSON.parse)(
 	rawPackageJson.toString(),
@@ -80,7 +79,7 @@ md.use(
  */
 let init = (config) => {
 	// ignores
-	if (!isDevelopment) {
+	if (environment.APP.FLAGS.IS_PRODUCTION) {
 		config.ignores.add(Path.PAGE.FORM)
 	}
 
@@ -158,6 +157,25 @@ let init = (config) => {
 	config.addFilter(`shuffle`, (items) => {
 		return getShuffledItems(/** @type {unknown[]} */ (items))
 	})
+
+	config.addNunjucksAsyncShortcode(
+		`inlineImage`,
+		/**
+		 * @param {string} path
+		 * @returns {Promise<string>}
+		 */
+		async (path) => {
+			let extension = extname(path).slice(1)
+			let imgPath = join(config.dir.input, path)
+			let base64Image = await readFile(imgPath, `base64`)
+
+			if (extension === `svg`) {
+				extension = `svg+xml`
+			}
+
+			return `data:image/${extension};base64,${base64Image}`
+		},
+	)
 
 	// copy
 	for (let url of Path.COPY) {
@@ -252,7 +270,7 @@ let init = (config) => {
 						lightningcss.Features.MediaQueries |
 						lightningcss.Features.Nesting,
 					minify: true,
-					sourceMap: isDevelopment,
+					sourceMap: environment.APP.FLAGS.IS_DEVELOPMENT,
 					targets: lightningcss.browserslistToTargets(
 						browserslist(packageJson.browserslist),
 					),
@@ -291,7 +309,7 @@ let init = (config) => {
 					bundle: true,
 					entryPoints: [url],
 					minify: true,
-					sourcemap: isDevelopment,
+					sourcemap: environment.APP.FLAGS.IS_DEVELOPMENT,
 					target: `es2020`,
 					write: false,
 				})
