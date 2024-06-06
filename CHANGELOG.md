@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.55.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.54.0...v1.55.0) (2024-06-06)
+
+
+### Features
+
+* **whatislove-dev:** add styles to article og image wd-557 ([#559](https://github.com/what1s1ove/whatislove.dev/issues/559)) ([cd24c74](https://github.com/what1s1ove/whatislove.dev/commit/cd24c74798de60867281c73935b798e635df96af))
+
 ## [1.54.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.53.1...v1.54.0) (2024-06-05)
 
 
