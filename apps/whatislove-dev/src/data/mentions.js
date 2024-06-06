@@ -266,9 +266,7 @@ let getWebMentionsPageMention = async () => {
 
 /** @returns {Promise<PagesMentions>} */
 let loader = async () => {
-	let mentionLoaders = environment.APP.FLAGS.IS_PRODUCTION
-		? [getDevtoPageMention, getWebMentionsPageMention]
-		: []
+	let mentionLoaders = [getDevtoPageMention, getWebMentionsPageMention]
 	let allPagesMentions = /** @type {PagesMentions} */ ({})
 
 	for (let mentionLoader of mentionLoaders) {
@@ -298,4 +296,4 @@ let loader = async () => {
 	return allPagesMentions
 }
 
-export default loader
+export default environment.APP.FLAGS.IS_PRODUCTION ? loader : {}
