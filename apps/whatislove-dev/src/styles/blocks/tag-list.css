@@ -18,6 +18,7 @@
 	background-size: var(--background-size-page);
 	border-radius: 3px;
 
+	/* do not forget to add new colors to OG tags */
 	&[class*="--html"] {
 		--background-color: var(--color-green-100);
 	}

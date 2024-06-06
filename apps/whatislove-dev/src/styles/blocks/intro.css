@@ -98,7 +98,7 @@
 	mask-image: linear-gradient(
 		to bottom,
 		hsl(var(--color-intro-image-mask) / 80%) 40%,
-		hsla(var(--color-intro-image-mask) / 0%) 95%
+		hsl(var(--color-intro-image-mask) / 0%) 95%
 	);
 
 	@media (--width-tablet) {
@@ -108,9 +108,8 @@
 
 .intro img {
 	display: block;
-	inline-size: 226px;
+	inline-size: 238px;
 	block-size: auto;
-	padding-inline: 6px;
 	filter: drop-shadow(-6px 4px 0 hsl(var(--color-red-200)));
 }
 

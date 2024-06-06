@@ -1,5 +1,9 @@
 declare module '@11ty/eleventy' {
 	class UserConfig {
+		dir: {
+			input: string
+		}
+
 		ignores: Set<string>
 
 		addPassthroughCopy(
@@ -36,6 +40,13 @@ declare module '@11ty/eleventy' {
 		addPlugin(
 			newPluginCb: (value: unknown) => unknown,
 			pluginOptions?: Record<string, unknown>,
+		): void
+
+		addNunjucksAsyncShortcode(
+			name: string,
+			addNunjucksAsyncShortcodeCb: (
+				path: string,
+			) => Promise<unknown> | unknown,
 		): void
 	}
 

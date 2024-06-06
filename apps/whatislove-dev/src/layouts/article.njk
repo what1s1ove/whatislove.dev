@@ -9,9 +9,11 @@
 {% set mentionData = mentions[page.url] %}
 {% set lastChangelogItem = changelogs | last %}
 
-{% setAsync "ogUrl" %}
-	{% ogImage "includes/og-article-image.njk", { title: title, tags: tags } %}
-{% endsetAsync %}
+{% if environment.APP.FLAGS.IS_PRODUCTION %}
+	{% setAsync "ogUrl" %}
+		{% ogImage "includes/og-article-image.njk", { title: title, tags: tags } %}
+	{% endsetAsync %}
+{% endif %}
 
 {% block font %}
 	<link rel="preload" href="/fonts/monaspace-neon.woff2" crossorigin="anonymous" as="font" type="font/woff2" />
