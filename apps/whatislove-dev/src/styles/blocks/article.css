@@ -6,8 +6,6 @@
 
 	@media (--width-desktop) {
 		--gap: 50px;
-
-		position: relative;
 	}
 }
 
