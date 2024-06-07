@@ -15,13 +15,13 @@ In the realm of software development, upholding code quality and consistency sta
 
 Let's set up a simple project to see how it works!
 
-```bash
+```
 npm init -y
 ```
 
 Install [ESLint](https://eslint.org/). ESLint is a tool for identifying and reporting on patterns found in JavaScript code.
 
-```bash
+```
 npm install eslint -DE
 ```
 
@@ -105,8 +105,11 @@ jobs: # list of things to do
 ### Steps syntax
 
 - **`name`** — needed to be displayed in the github interface;
+
 - **`uses`** — specify the name of custom actions if we want to use it. You can find many ready-made actions in the [marketplace](https://github.com/marketplace);
+
 - **`with`** — parameters for custom actions;
+
 - **`run`** — runs commands in the `shell`. _It is forbidden to use a shell commands with custom actions._
 
 That's it, we took apart a small but useful example of the github action!
@@ -155,7 +158,7 @@ I use a simple example in which I just extend the config from the recommended. B
 
 Stylelint supports a huge number of configuration options. Be sure to check the [documentation](https://stylelint.io/user-guide/configure) to find the rules that fit your project.
 
-```bash
+```
 npm install stylelint stylelint-config-standard -DE
 ```
 
@@ -186,7 +189,7 @@ Updated `package.json`:
 
 [EditorConfig](https://editorconfig.org/) helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs.
 
-```bash
+```
 npm install editorconfig-checker -DE
 ```
 
@@ -225,7 +228,7 @@ Updated `package.json`:
 
 [Ls-lint](https://ls-lint.org/) — file and directory name linter. Bring some structure to your project directories.
 
-```bash
+```
 npm install @ls-lint/ls-lint -DE
 ```
 
@@ -281,7 +284,11 @@ Linting code is just an example. Everything can be automated.
 Some examples:
 
 - Running tests on each pull request;
+
 - Deploying on push to production branch;
+
 - [Prettify](https://prettier.io/) your code before merging;
+
 - Publishing packages;
+
 - Sending notifications on each pull request/issue, etc.
