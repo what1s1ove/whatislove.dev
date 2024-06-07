@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.56.1](https://github.com/what1s1ove/whatislove.dev/compare/v1.56.0...v1.56.1) (2024-06-07)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** prettify articles markdown wd-569 ([#573](https://github.com/what1s1ove/whatislove.dev/issues/573)) ([b1ee805](https://github.com/what1s1ove/whatislove.dev/commit/b1ee805708c037fc4a4d6c66c981fb344f14a314))
+
 ## [1.56.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.55.0...v1.56.0) (2024-06-07)
 
 
