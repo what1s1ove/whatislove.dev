@@ -4,13 +4,13 @@
 		gap: 50px;
 
 		@media (--width-tablet) {
+			--has-padding-inline-box-doubled: 1;
+
 			grid-template-columns: repeat(2, 1fr);
 			gap: 40px;
 		}
 
 		@media (--width-desktop) {
-			--has-padding-inline-box: 1;
-
 			grid-template-columns: 70% 1fr;
 			gap: 100px;
 		}
