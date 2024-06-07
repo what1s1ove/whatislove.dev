@@ -1,8 +1,10 @@
-let CONTENT_BLOCK = /** @type {const} */ (`content`)
+let CONTENT_FLOW_BLOCK = /** @type {const} */ (`content--flow`)
 
 /** @param {globalThis} window */
 let changeExternalLinkTarget = (window) => {
-	let contentNodes = window.document.querySelectorAll(`.${CONTENT_BLOCK}`)
+	let contentNodes = window.document.querySelectorAll(
+		`.${CONTENT_FLOW_BLOCK}`,
+	)
 
 	if (contentNodes.length === 0) {
 		return

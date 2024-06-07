@@ -139,11 +139,6 @@
 .mentions__form-description {
 	margin: 0;
 	color: hsl(var(--color-gray-100));
-
-	a {
-		color: hsl(var(--color-red-100));
-		text-underline-offset: 3px;
-	}
 }
 
 .mentions__origin {
