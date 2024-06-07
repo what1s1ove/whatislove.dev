@@ -2,8 +2,10 @@
 	--gap: 20px;
 	--gap-list: 8px;
 
-	display: grid;
-	gap: var(--gap);
+	&[class*="--flow"] {
+		display: grid;
+		gap: var(--gap);
+	}
 
 	p {
 		margin: 0;

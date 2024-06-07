@@ -58,12 +58,16 @@
 					</ul>
 				{% endcall %}
 			{% endif %}
-			<div class="article__content content">{{ content | safe }}</div>
+			<div class="article__content content content--flow">{{ content | safe }}</div>
 			<section class="article__mentions mentions">
 				<header class="mentions__header">
 					<h2 class="mentions__title">Webmentions</h2>
-					<p class="mentions__description">
-						If you liked this article and think others should read it, please share it.
+					<p class="mentions__description content">
+						If you liked this article and think others should read it, please share it. Leave comments on
+						platforms such as
+						<a href="https://dev.to/" target="_blank" rel="noreferrer noopener">dev.to</a>,
+						<a href="https://twitter.com" target="_blank" rel="noreferrer noopener">twitter.com</a>, etc.,
+						and they will magically appear here ✨
 					</p>
 				</header>
 				<ul class="mentions__stats-list">
@@ -105,7 +109,7 @@
 								<time class="mentions__date" datetime="{{ mention.date | dateISO }}">
 									{{ mention.date | dateFormatted }}
 								</time>
-								<div class="mentions__content content">{{ mention.content | safe }}</div>
+								<div class="mentions__content content content--flow">{{ mention.content | safe }}</div>
 								<a
 									class="mentions__origin action"
 									href="{{ mention.url }}"
@@ -118,7 +122,7 @@
 					</ul>
 				{% endif %}
 				<div class="mentions__form-wrapper">
-					<p class="mentions__form-description">
+					<p class="mentions__form-description content">
 						These are
 						<a href="https://indieweb.org/webmention" target="_blank" rel="noreferrer noopener">
 							webmentions
