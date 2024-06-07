@@ -1,6 +1,6 @@
 ---
-title: 'The product owner comes and says: We need to rewrite everything from Node to Deno...'
-description: This article delves into a comparison of Deno and Node.js, exploring their similarities, differences, and the potential for Deno to replace Node.js. Imagine a scenario where a product owner mandates the transition from Node to Deno. Do we need a complete rewrite? Let's try to find it out.
+title: 'The product owner comes and says: We need to rewrite everything from Node to Deno…'
+description: 'Assessing Deno versus Node.js: similarities, differences, and potential. Can Deno replace Node.js without a complete rewrite? Let’s find out.'
 date: 2021-04-21
 tags:
   - JS

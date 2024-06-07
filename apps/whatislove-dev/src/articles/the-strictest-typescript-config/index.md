@@ -1,6 +1,6 @@
 ---
 title: The Strictest TypeScript Config
-description: The Strictest TypeScript Config.
+description: Boost TypeScript projects with strict typing and crucial config options for reliability and correctness. Optimize coding practices for robust, error-free codebases.
 date: 2023-12-10
 tags:
   - TS
