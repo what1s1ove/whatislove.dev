@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.56.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.55.0...v1.56.0) (2024-06-07)
+
+
+### Features
+
+* **whatislove-dev:** add links to external resources for comments wd-567 ([#568](https://github.com/what1s1ove/whatislove.dev/issues/568)) ([0af9153](https://github.com/what1s1ove/whatislove.dev/commit/0af91539c23333c73365f87672c8641740c661b7))
+
+
+### Bug Fixes
+
+* **whatislove-dev:** box overlay click wd-570 ([#571](https://github.com/what1s1ove/whatislove.dev/issues/571)) ([42d3153](https://github.com/what1s1ove/whatislove.dev/commit/42d3153ad5fcdaf43405eee05ddfc4ba3137f65e))
+* **whatislove-dev:** fix accordion default opening wd-561 ([#562](https://github.com/what1s1ove/whatislove.dev/issues/562)) ([1531881](https://github.com/what1s1ove/whatislove.dev/commit/1531881dc113c1a29bf7e4c636d9d2b242db6d8d))
+* **whatislove-dev:** fix channel & stickers responsive wd-565 ([#566](https://github.com/what1s1ove/whatislove.dev/issues/566)) ([565f626](https://github.com/what1s1ove/whatislove.dev/commit/565f6260f9fcaa06d9e4b17232f08a81930800b2))
+
 ## [1.55.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.54.0...v1.55.0) (2024-06-06)
 
 
