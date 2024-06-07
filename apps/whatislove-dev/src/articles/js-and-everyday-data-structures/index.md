@@ -28,6 +28,7 @@ _When solving a problem, it should be kept in mind that choosing the right data 
 JS has two basic data-structures that can be reused in different ways depending on the requirements. Therefore, they support a large number of methods of different structures which would be separate in other program languages.
 
 - Object (Enum, Map, Graph, etc);
+
 - Array (List, Stack, Queue, etc).
 
 ### The Task
@@ -50,14 +51,16 @@ It might look like this:
 ```jsx
 // src/components/common/users-list/users-list.jsx
 
-<ul>
-  {users.map((it) => (
-    <li>
-      <h3>{it.name}</h3>
-      <p>{it.gender === 'male' ? '👨' : '👩'}</p>
-    </li>
-  ))}
-</ul>
+const UsersList = () => (
+  <ul>
+    {users.map((it) => (
+      <li>
+        <h3>{it.name}</h3>
+        <p>{it.gender === 'male' ? '👨' : '👩'}</p>
+      </li>
+    ))}
+  </ul>
+)
 ```
 
 That's it. The task is done. Buuut... we can do it _better_.
@@ -77,7 +80,9 @@ The constant can be declared with any keyword for variables (`var`, `let` or `co
 Constants are a very important and popular approach to organize program code. And there are several conventions among developers for them:
 
 - Constant must be declared at the top of the program/module (after imports, if any);
+
 - Constant must have a name in capital letters;
+
 - Constant must not be redefined anywhere in the program.
 
 <details>
@@ -141,24 +146,24 @@ if (checkIsAdmin(user)) {
 
 Here is an improved solution for our task:
 
-```js
+```jsx
 // src/common/constants/user/index.js
 
 const MALE_GENDER_TYPE = 'male'
 const FEMALE_GENDER_TYPE = 'female'
-```
 
-```jsx
 // src/components/common/users-list/users-list.jsx
 
-<ul>
-  {users.map((it) => (
-    <li>
-      <h3>{it.name}</h3>
-      <p>{it.gender === MALE_GENDER_TYPE ? '👨' : '👩'}</p>
-    </li>
-  ))}
-</ul>
+const UsersList = () => (
+  <ul>
+    {users.map((it) => (
+      <li>
+        <h3>{it.name}</h3>
+        <p>{it.gender === MALE_GENDER_TYPE ? '👨' : '👩'}</p>
+      </li>
+    ))}
+  </ul>
+)
 ```
 
 Much better, but we can improve it even more.
@@ -176,8 +181,11 @@ Other programming languages have a separate data type for Enum. But JS does not 
 For this structure, JavaScript also has conventions among developers:
 
 - Enum must start with a capital letter;
+
 - Enum must be singular;
+
 - Enum must have uppercase keys;
+
 - Enum must not be changed anywhere in the program.
 
 <details>
@@ -226,26 +234,26 @@ const UserRole = {
 
 This is how the solution using the `Enum` might look like:
 
-```js
+```jsx
 // src/common/enums/user/gender-type.enum.js
 
 const GenderType = {
   MALE: 'male',
   FEMALE: 'female',
 }
-```
 
-```jsx
 // src/components/common/users-list/users-list.jsx
 
-<ul>
-  {users.map((it) => (
-    <li>
-      <h3>{it.name}</h3>
-      <p>{it.gender === GenderType.MALE ? '👨' : '👩'}</p>
-    </li>
-  ))}
-</ul>
+const UsersList = () => (
+  <ul>
+    {users.map((it) => (
+      <li>
+        <h3>{it.name}</h3>
+        <p>{it.gender === GenderType.MALE ? '👨' : '👩'}</p>
+      </li>
+    ))}
+  </ul>
+)
 ```
 
 We could keep using constants but it is much better and more correct to use structures that are better suited for this.
@@ -264,20 +272,22 @@ Let's now imagine that a business comes to us and says that they want us to add 
 ```jsx
 // src/components/common/users-list/users-list.jsx
 
-<ul>
-  {users.map((it) => (
-    <li>
-      <h3>{it.name}</h3>
-      <p>
-        {it.gender === GenderType.MALE
-          ? '👨'
-          : it.gender === GenderType.FEMALE
-            ? '👩'
-            : '🧑'}
-      </p>
-    </li>
-  ))}
-</ul>
+const UsersList = () => (
+  <ul>
+    {users.map((it) => (
+      <li>
+        <h3>{it.name}</h3>
+        <p>
+          {it.gender === GenderType.MALE
+            ? '👨'
+            : it.gender === GenderType.FEMALE
+              ? '👩'
+              : '🧑'}
+        </p>
+      </li>
+    ))}
+  </ul>
+)
 ```
 
 But it looks very ugly. We could replace this with a `switch` statement, or a helper function that does it itself. This is a significant improvement, but we can also use special structures for this. We can use a **`Map`** data structure to make the solution more flexible and readable.
@@ -286,13 +296,11 @@ But it looks very ugly. We could replace this with a `switch` statement, or a he
 
 `Map` (dictionary, associative array, map) — a data structure that is used to map one value to another.
 
-JS has a `[new Map` constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) out of the box. The key difference from a common object is the ability to use any data type (even an object) as a key.
+JS has a [`new Map` constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) out of the box. The key difference from a common object is the ability to use any data type (even an object) as a key.
 
 Usually, using the JS Map constructor is overkill. If you need the functionality that the JS Map provides, you have to use it. But usually a common object is used to imitate this structure.
 
-There are some conventions how to configure this structure:
-
-- Maps must have a name by one of these patterns — `xToY` or `xMap` (`userToPerson` or `userMap`). The first pattern is used more often.
+There is a convention for naming map data structures. The name should follow one of these patterns: `xToY` or `xMap` (e.g., `userToPerson` or `userMap`). The `xToY` pattern is more commonly used.
 
 <details>
   <summary>Examples</summary>
@@ -331,7 +339,7 @@ const userRoleMap = {
 
 Here is how the solution might look like using the `Map`:
 
-```js
+```jsx
 // src/common/enums/gender-type.enum.js
 
 const GenderType = {
@@ -347,19 +355,19 @@ const genderTypeToEmoji = {
   [GenderType.FEMALE]: '👩',
   [GenderType.NON_BINARY]: '🧑',
 }
-```
 
-```jsx
 // src/components/common/users-list/users-list.jsx
 
-<ul>
-  {users.map((it) => (
-    <li>
-      <h3>{it.name}</h3>
-      <p>{genderTypeToEmoji[it.gender]}</p>
-    </li>
-  ))}
-</ul>
+const UsersList = () => (
+  <ul>
+    {users.map((it) => (
+      <li>
+        <h3>{it.name}</h3>
+        <p>{genderTypeToEmoji[it.gender]}</p>
+      </li>
+    ))}
+  </ul>
+)
 ```
 
 Have you noticed how we reused all the structures we have just learned about?
@@ -541,9 +549,11 @@ Also, programs that compress the JS code cannot compress TS `enum`s. The same ca
 
 As I said above, that `Enum` may appear in vanilla JavaScript someday. You can view the proposals that we have at the moment:
 
-- https://github.com/rwaldron/proposal-enum-definitions
-- https://github.com/rbuckton/proposal-enum
-- https://es.discourse.group/t/enumerations-syntactic-sugar/144
+- [proposal-enum-definitions](https://github.com/rwaldron/proposal-enum-definitions)
+
+- [proposal-enum](https://github.com/rbuckton/proposal-enum)
+
+- [Enumerations syntactic sugar](https://es.discourse.group/t/enumerations-syntactic-sugar/144)
 
 Usually, the solution that the language itself can offer is many times more effective than any third-party library can offer.
 

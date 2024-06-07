@@ -262,8 +262,11 @@ To delve deeper into the history of this proposal, let's review a list of key ev
   > © Michel Weststrate, author of MobX
 
 - [**2022-03 – Stage 3**](https://github.com/tc39/notes/blob/main/meetings/2022-03/mar-28.md#decorators-for-stage-3). After years of changes and refinements, decorators finally reached stage 3. Thanks to the extensive adjustments and refinements during the second stage, the third stage began without significant changes. A particular highlight is the creation of a new proposal called **[Decorator Metadata](https://github.com/tc39/proposal-decorator-metadata)**.
+
 - [**2022-08 – SpiderMonkey Newsletter**](https://spidermonkey.dev/blog/2022/08/29/newsletter-firefox-104-105.html). SpiderMonkey, the browser engine used by Firefox, became the first engine to begin working on the implementation of decorators. Implementations like this indicate that the proposal is generally ready to become a full-fledged part of the specification.
+
 - **[2022-09 – Babel 7.19.0. Stage 3 decorators](https://babeljs.io/blog/2022/09/05/7.19.0)**. Adding support in a compiler is a very significant update for any proposal. Most proposals have a similar item in their standardization plan and the decorators proposal [was no exception](https://github.com/tc39/proposal-decorators#standardization-plan).
+
 - **[2022-11 – Announcing TypeScript 4.9](https://devblogs.microsoft.com/typescript/announcing-typescript-4-9/)**. ECMAScript decorators were listed in [TS 4.9 Iteration Plan](https://github.com/microsoft/TypeScript/issues/50457). However, after some time, the TS team decided to move decorators to the 5.0 release. Here is the [authors' comment](https://github.com/microsoft/TypeScript/issues/50457#issuecomment-1253100246):
 
   > “_While decorators have reached stage 3, we saw some behavior in the spec that needed to be discussed with the champions. Between addressing that and reviewing the changes, we expect decorators will be implemented in the next version.”_
@@ -291,6 +294,7 @@ To delve deeper into the history of this proposal, let's review a list of key ev
   Another interesting thing is how decorators were supposed to work. Since the TS team could not remove the old implementation that worked under the `--experimentalDecorators` flag, they decided on the following approach: if the `--experimentalDecorators` flag is present in the configuration, the old implementation will be used. If this flag is not present, then the new implementation will be used.
 
 - **[2023-03 – Announcing TypeScript 5.0](https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/)**. As promised, the TS team released the full version of decorators specification in TS 5.0.
+
 - **[2023-03 – Deno 1.32](https://deno.com/blog/v1.32).** Although in version 1.32 Deno supported TS 5.0, they decided to postpone the functionality related to decorators.
 
   > “_Take note that ES decorators are not yet supported, but we will be working towards enabling them by default in a future version.”_

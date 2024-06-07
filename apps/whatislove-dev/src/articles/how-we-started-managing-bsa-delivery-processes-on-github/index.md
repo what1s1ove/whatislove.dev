@@ -9,10 +9,6 @@ stickersCount: 10
 layout: article.njk
 ---
 
-Vladyslav, as Delivery Head of Binary Studio Academy, shares the success story of adopting GitHub for streamlined delivery processes. GitHub's versatility, featuring version control and efficient task management, significantly enhances workflow at the Academy. The narrative concludes with satisfaction over the positive outcomes of GitHub adoption, showcasing its impact on participant experiences at Binary Studio Academy.
-
----
-
 Hello everyone! I am Vladyslav. At the beginning of 2022, I was offered the role of Delivery Head of BSA (Binary Studio Academy). [Binary Studio Academy](https://academy.binary-studio.com/) is a free, international course that transforms people with basic programming language knowledge into _true_ beginner engineers.
 
 From a delivery perspective, each Academy consists of several specific stages, each of which comprises a varying number of checklists that need to be completed for the stage to be considered successfully completed. Additionally, the Academy involves a substantial amount of documentation for various roles within it, as well as a wealth of content ranging from concise lecture summaries to automated tests that assess homework completion of these lectures.

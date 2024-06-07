@@ -101,9 +101,16 @@
 		border-radius: 4px;
 	}
 
+	details {
+		overflow-y: auto;
+	}
+
 	summary {
-		margin-block: 0 var(--gap);
 		cursor: pointer;
+	}
+
+	details[open] summary {
+		margin-block: 0 var(--gap);
 	}
 
 	pre {
