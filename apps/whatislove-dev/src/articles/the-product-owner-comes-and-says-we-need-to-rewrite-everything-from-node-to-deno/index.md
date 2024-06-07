@@ -160,7 +160,7 @@ What it can do:
 
 - Serve static content
 
-  ```bash
+  ```
   > curl "<http://localhost:3000>"
 
   <!DOCTYPE html>
@@ -179,7 +179,7 @@ What it can do:
 
 - Posts api (wrapper for the [jsonplaceholder](https://jsonplaceholder.typicode.com/) service).
 
-  ```bash
+  ```
   > curl "<http://localhost:3000/api/v1/posts/1>"
 
   {"userId":1,"id":1,"title":"sunt aut facere repellat provident occaecati excepturi optio reprehenderit","body":"quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto"}
@@ -187,7 +187,7 @@ What it can do:
 
 - Books CRUD api (all data is stored in the `json` format).
 
-  ```bash
+  ```
   > curl "<http://localhost:3000/api/v1/books/1>"
 
   {"id":"1","name":"DDD"}
@@ -209,13 +209,13 @@ Both definitions contain `runtime` and `JavaScript`. Does it mean that we can ru
 
 Let's try to run the code that we wrote on NodeJS base using Deno (if you don't have Deno installed yet, you can find how to do it [here](https://deno.land/#installation)):
 
-```bash
+```
 > deno run src/server.ts
 ```
 
 Aaaand we get an error:
 
-```bash
+```
 error: Cannot resolve module "file:///src/services/services" from "file:///src/server.ts".
   at file:///src/server.ts:8:0
 ```
@@ -240,7 +240,7 @@ First of all, let's install an [official extension](https://marketplace.visualst
 
 Then, let's remove the things that are completely **useless** for Deno that are in NodeJS.
 
-```bash
+```
 > rm -rf node_modules package-lock.json package.json
 ```
 
@@ -264,18 +264,31 @@ Let's start from the end. Two reasons that Ryan talked about in his [presentatio
 Why:
 
 - `package.json`:
+
   - Allow Node's `require()` to inspect package.json files for "main";
+
   - Included NPM in the Node distribution, which much made it the defacto standard;
+
   - It's unfortunate that there is centralized (privately controlled even) repository for modules;
+
   - Allowing `package.json` gave rise to the concept of a "module" as a directory of files;
+
   - This is no a strictly necessary abstraction - and one that doesn't exist on the web;
+
   - `package.json` now includes all sorts of unnecessary information. License? Repository? Description? It's boilerplate noise;
+
   - If only relative files and URLs were used when importing, the path defines the version. There is no need to list dependencies.
+
 - `node_modules`:
+
   - It massively complicates the module resolution algorithm;
+
   - vendored-by-default has good intentions, but in practice just using `$NODE_PATH` wouldn't have precluded that;
+
   - Deviates greatly from browser semantics;
+
   - It's my fault and I'm very sorry;
+
   - Unfortunately it's impossible to undo now.
 
 (The reasons are taken from Dahl's presentation). When the program is launched for the first time, modules are downloaded and cached in the system. And when reused, they will be taken from there. While reusing modules, they will be taken from the cache.
@@ -284,7 +297,7 @@ Now about `dependencies.ts`. It's just a file that I created to store all third-
 
 Let's try to run the code again. We get the following error:
 
-```bash
+```
 error: Is a directory (os error 21)
   at file:///src/server.ts:6:0
 ```
@@ -313,12 +326,19 @@ This is possible but only in NodeJS. In Deno we must always explicitly specify t
 These are two more things Dahl regrets about Node:
 
 - `index.js`:
+
   - I thought it was cute because there was `index.html`;
+
   - It needlessly complicated the module loading system;
+
   - It became especially unnecessary after `require` supported `package.json`.
+
 - modules without the extension:
+
   - Needlessly less explicit;
+
   - Not how browser JavaScript works. You cannot omit the `.js` in a script tag src attribute;
+
   - The module loader has to query the file system at multiple locations trying to guess what the user intended.
 
 Let's fix this and a few other errors that we will run into.
@@ -539,7 +559,7 @@ Finally, let's run our refactored app!
 
 We are still getting the error:
 
-```bash
+```
 error: Uncaught PermissionDenied: Requires env access to "PORT", run again with the --allow-env flag
     SERVER_PORT: Deno.env.get('PORT'),
 ```
@@ -549,14 +569,16 @@ But this time it is an error that was not received before.
 Another issue which Ryan regrets is security in NodeJS:
 
 - V8 by itself is a very good security sandbox;
+
 - Had I put more thought into how that could be maintained for certain applications, Node could have had some nice security guarantees not available in any other language;
+
 - Example: Your linter shouldn't get complete access to your computer and network.
 
 Every time we run a program on Deno, we need to specify the appropriate permissions that it will possess.
 
 To run our app we need to use these permissions:
 
-```bash
+```
 > deno run --allow-env --allow-read --allow-write --allow-net src/server.ts
 ```
 
@@ -564,7 +586,7 @@ _By this [link](https://deno.land/manual/getting_started/permissions#permissions
 
 Let's try to run it again:
 
-```bash
+```
 > deno run --allow-env --allow-read --allow-write --allow-net src/server.ts
 
 Listening to connections on port — 3000
@@ -572,13 +594,13 @@ Listening to connections on port — 3000
 
 Let's try to call the APIs:
 
-```bash
+```
 > curl "<http://localhost:3000/api/v1/posts/1>"
 
 {"userId":1,"id":1,"title":"sunt aut facere repellat provident occaecati excepturi optio reprehenderit","body":"quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto"}
 ```
 
-```bash
+```
 > curl "<http://localhost:3000/api/v1/books/1>"
 
 {"id":"1","name":"DDD"}
@@ -602,9 +624,9 @@ Let's see something:
 
 ```ts
 const checkIsSameStr = (stringA: string, stringB: string): boolean => {
-  return Array.from(stringA.toLowerCase()).every((it) => {
-    return stringB.toLowerCase().includes(it)
-  })
+  const unifyStr = (str: string) => str.toLowerCase().split('').sort().join('')
+
+  return unifyStr(stringA) === unifyStr(stringB)
 }
 
 const isEasterEgg = checkIsSameStr('Node', 'Deno') // true
