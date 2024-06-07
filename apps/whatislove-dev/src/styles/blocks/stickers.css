@@ -1,5 +1,12 @@
 .stickers {
 	place-self: center;
+	inline-size: 100%;
+	max-inline-size: 380px;
+	margin-inline: auto;
+
+	@media (--width-tablet) {
+		inline-size: 380px;
+	}
 }
 
 .stickers__list {
@@ -7,77 +14,78 @@
 	grid-template-columns: repeat(3, 1fr);
 	gap: 20px 0;
 	place-items: center;
-	max-inline-size: 375px;
-	margin-inline: auto;
 
 	.sticker-list__item {
+		inline-size: 100%;
+
 		&[class*="--node-js"] {
 			grid-column: 1 / -1;
-			inline-size: 110px;
+			max-inline-size: 110px;
 			rotate: 10deg;
 		}
 
 		&[class*="--beerjs"] {
-			inline-size: 130px;
+			max-inline-size: 130px;
 			rotate: -10deg;
 		}
 
 		&[class*="--react"] {
-			inline-size: 85px;
+			max-inline-size: 85px;
 			rotate: 10deg;
 			translate: 0 -5px;
 		}
 
 		&[class*="--aws"] {
-			inline-size: 120px;
+			max-inline-size: 120px;
 			rotate: -7deg;
 			translate: 10px -30px;
 		}
 
 		&[class*="--acid2"] {
-			inline-size: 125px;
+			max-inline-size: 115px;
 			rotate: -2deg;
-			translate: -35px 15px;
+			translate: -15px 15px;
 		}
 
 		&[class*="--dom"] {
-			inline-size: 100px;
-			translate: -15px -10px;
+			max-inline-size: 95px;
+			translate: 0 -10px;
 		}
 
 		&[class*="--web-components"] {
-			inline-size: 100px;
+			max-inline-size: 90px;
 			rotate: -10deg;
-			translate: -5px -45px;
+			translate: 0 -45px;
 		}
 
 		&[class*="--vans"] {
-			inline-size: 120px;
+			max-inline-size: 120px;
 			rotate: 40deg;
-			translate: -15px 30px;
+			translate: -10px 30px;
 		}
 
 		&[class*="--xl"] {
-			inline-size: 120px;
+			max-inline-size: 120px;
 			rotate: -3deg;
-			translate: -20px -15px;
+			translate: -15px -15px;
 		}
 
 		&[class*="--berserk"] {
-			inline-size: 110px;
+			max-inline-size: 110px;
 			rotate: -5deg;
-			translate: -25px -45px;
+			translate: -20px -45px;
 		}
 
 		&[class*="--love"] {
 			grid-column: span 2;
-			inline-size: 140px;
+			inline-size: 60%;
+			max-inline-size: 140px;
 			rotate: 40deg;
 			translate: 35px 10px;
 		}
 
 		&[class*="--jagermeister"] {
-			inline-size: 110px;
+			max-inline-size: 110px;
 			rotate: -5deg;
 			translate: -10px -60px;
 		}
