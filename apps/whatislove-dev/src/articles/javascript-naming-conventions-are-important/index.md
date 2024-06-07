@@ -404,7 +404,7 @@ It is in this context that the importance of naming conventions becomes clear. T
   }
   ```
 
-  There is a built-in `[Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)` class in JavaScript. The main difference from a regular object is the ability to use any data type (even an object) as a key. Usually, using the native `Map` class is redundant for creating a map as a data structure. However, if you need the functionality provided by the native `Map`, you can use it to create a map data structure. In most cases, a regular object will suffice.
+  There is a built-in [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) class in JavaScript. The main difference from a regular object is the ability to use any data type (even an object) as a key. Usually, using the native `Map` class is redundant for creating a map as a data structure. However, if you need the functionality provided by the native `Map`, you can use it to create a map data structure. In most cases, a regular object will suffice.
 
 - **Types & Interfaces**. As mentioned earlier, TypeScript has become an integral part of JavaScript development today. In general, _in most cases_, types and interfaces are interchangeable. However, since there are already enough discussions about which one to choose, in this article, we will focus specifically on naming. For types and interfaces, the following naming conventions exist:
 
