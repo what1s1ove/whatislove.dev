@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.57.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.56.1...v1.57.0) (2024-06-08)
+
+
+### Features
+
+* **whatislove-dev:** improve articles descriptions wd-575 ([#576](https://github.com/what1s1ove/whatislove.dev/issues/576)) ([9d7dafa](https://github.com/what1s1ove/whatislove.dev/commit/9d7dafa7171ceaa0b7ac3e06bdfe4d505bc34626))
+
 ## [1.56.1](https://github.com/what1s1ove/whatislove.dev/compare/v1.56.0...v1.56.1) (2024-06-07)
 
 
