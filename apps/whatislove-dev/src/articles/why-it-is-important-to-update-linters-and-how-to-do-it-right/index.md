@@ -145,7 +145,7 @@ Now, we need to add additional steps that include checking for updated/new rules
   uses: tj-actions/changed-files@v42
 
 - name: Lint JS with Enhanced Rules
-  run: npx eslint --config eslint.enhanced.config.js ${{ steps.changed-files.outputs.added_files }}
+  run: npx eslint --config eslint.enhanced.config.js ${ { steps.changed-files.outputs.added_files } }
 ```
 
 We need to add two additional steps. The first one is to retrieve all new files, and the second one is to run the enhanced config only on the new files. In this example the third-party GitHub Action called [changed-files](https://github.com/tj-actions/changed-files) is used to obtain the new files. In the [GitHub Marketplace for Actions](https://github.com/marketplace?type=actions), there is a considerable number of similar actions with similar functionality. You can choose the one that suits you best, as the functionality is more or less the same for all of them.
