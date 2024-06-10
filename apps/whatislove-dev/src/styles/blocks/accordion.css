@@ -25,6 +25,11 @@
 	font-weight: 600;
 	color: hsl(var(--color));
 	text-transform: uppercase;
+	list-style: none;
+
+	&::-webkit-details-marker {
+		display: none;
+	}
 }
 
 .accordion__content {
