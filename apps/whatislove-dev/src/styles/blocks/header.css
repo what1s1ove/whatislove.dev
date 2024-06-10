@@ -161,7 +161,7 @@
 
 	@media (--width-tablet) {
 		flex-flow: row wrap;
-		gap: 10px 30px;
+		gap: 10px 35px;
 		place-content: end;
 	}
 }
