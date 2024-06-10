@@ -14,9 +14,6 @@ let config = {
 				entry: [`src/data/**/*.js`],
 			},
 			entry: [`src/scripts/index.js`],
-			linthtml: {
-				config: `linthtml.config.js`,
-			},
 		},
 		'packages/shared': {
 			entry: [`src/index.js`],
