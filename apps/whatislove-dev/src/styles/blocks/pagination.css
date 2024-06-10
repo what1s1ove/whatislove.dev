@@ -27,10 +27,12 @@
 		mask-size: 20px;
 	}
 
+	&[rel="prev"]::before,
 	&[class*="--previous"]::before {
 		mask-image: url("/images/icons.svg#arrow-left");
 	}
 
+	&[rel="next"]::before,
 	&[class*="--next"]::before {
 		mask-image: url("/images/icons.svg#arrow-right");
 	}

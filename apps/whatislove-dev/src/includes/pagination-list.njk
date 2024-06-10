@@ -2,8 +2,9 @@
 	<nav class="{{ className }} pagination" aria-label="{{ name }}">
 		{% if pagination.href.previous %}
 			<a
-				class="pagination__link pagination__link--previous action"
+				class="pagination__link action"
 				href="{{ pagination.href.previous }}"
+				rel="prev"
 				aria-label="Previous page"
 			></a>
 		{% else %}
@@ -27,11 +28,7 @@
 			{% endfor %}
 		</ul>
 		{% if pagination.href.next %}
-			<a
-				class="pagination__link pagination__link--next action"
-				href="{{ pagination.href.next }}"
-				aria-label="Next page"
-			></a>
+			<a class="pagination__link action" href="{{ pagination.href.next }}" rel="next" aria-label="Next page"></a>
 		{% else %}
 			<span class="pagination__link pagination__link--next"></span>
 		{% endif %}

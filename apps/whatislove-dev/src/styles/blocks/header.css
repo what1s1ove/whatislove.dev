@@ -185,6 +185,7 @@
 
 .header__menu-link {
 	font-size: var(--font-size-heading-3);
+	font-weight: 600;
 	color: inherit;
 	text-underline-offset: 5px;
 
