@@ -8,22 +8,6 @@
 	border-radius: 5px;
 }
 
-.settings__theme-label {
-	text-transform: uppercase;
-	cursor: pointer;
-	opacity: 0.5;
-
-	&:has(:checked) {
-		opacity: 1;
-	}
-
-	&:has(:focus-visible) {
-		border-radius: var(--radius-focus);
-		outline: var(--outline-focus);
-		outline-offset: var(--offset-focus);
-	}
-}
-
 .settings__theme-control {
 	--size-icon: 22px;
 
@@ -33,27 +17,41 @@
 	margin: 0;
 	appearance: none;
 	cursor: pointer;
-	background-color: hsl(var(--color-icon));
-	border-radius: 0;
-	mask-repeat: no-repeat;
-	mask-position: 50%;
-	mask-size: contain;
+	opacity: 0.5;
 
-	&:focus-visible {
-		outline: none;
+	&:checked {
+		opacity: 1;
+	}
+
+	&::before {
+		display: block;
+		inline-size: 100%;
+		block-size: 100%;
+		content: "";
+		background-color: hsl(var(--color-icon));
+		mask-repeat: no-repeat;
+		mask-position: 50%;
+		mask-size: contain;
 	}
 
 	&[value="light"] {
-		mask-image: url("/images/icons.svg#light");
+		&::before {
+			mask-image: url("/images/icons.svg#light");
+		}
 	}
 
 	&[value="dark"] {
-		mask-image: url("/images/icons.svg#dark");
+		&::before {
+			mask-image: url("/images/icons.svg#dark");
+		}
 	}
 
 	&[value="auto"] {
 		inline-size: 37px;
 		block-size: 18px;
-		mask-image: url("/images/icons.svg#auto");
+
+		&::before {
+			mask-image: url("/images/icons.svg#auto");
+		}
 	}
 }
