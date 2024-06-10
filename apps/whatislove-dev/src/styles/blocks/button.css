@@ -1,6 +1,8 @@
 .button {
+	--button-background-color-opacity: 6%;
 	--button-color: var(--color-red-100);
-	--button-background-color: var(--color-red-100) / 6%;
+	--button-background-color: var(--color-red-100) /
+		var(--button-background-color-opacity);
 
 	padding: 10px;
 	font-weight: 700;
@@ -8,4 +10,14 @@
 	text-decoration: none;
 	background-color: hsl(var(--button-background-color));
 	border-radius: 5px;
+
+	@media (hover: hover) {
+		&:hover {
+			--button-background-color-opacity: 12%;
+		}
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		transition: background-color 0.2s ease-in;
+	}
 }
