@@ -1,8 +1,8 @@
 {% macro settings(className) %}
-	<section class="{{ className }} settings settings--theme">
-		<h2 class="settings__title visually-hidden">Theme switcher</h2>
+	<fieldset class="{{ className }} settings settings--theme">
+		<legend class="settings__title visually-hidden">Theme switcher</legend>
 		<input class="settings__theme-control" type="radio" name="theme" value="light" aria-label="Light" />
 		<input class="settings__theme-control" type="radio" name="theme" value="auto" aria-label="Auto" checked />
 		<input class="settings__theme-control" type="radio" name="theme" value="dark" aria-label="Dark" />
-	</section>
+	</fieldset>
 {% endmacro %}
