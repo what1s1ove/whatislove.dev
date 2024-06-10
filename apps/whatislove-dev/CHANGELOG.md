@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.55.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.55.0...@whatislove.dev/whatislove-dev-v1.55.1) (2024-06-10)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** edit fonts according to the design wd-582 ([#587](https://github.com/what1s1ove/whatislove.dev/issues/587)) ([6bca1a8](https://github.com/what1s1ove/whatislove.dev/commit/6bca1a818ff76855d4a0aaa48b18103ef477dc85))
+* **whatislove-dev:** fix wave accessibility issues wd-585 ([#590](https://github.com/what1s1ove/whatislove.dev/issues/590)) ([b4b010c](https://github.com/what1s1ove/whatislove.dev/commit/b4b010c74ca94f64ce7da9109c99993eb71ca288))
+* **whatislove-dev:** remove summary marker icon from all browsers wd-583 ([#589](https://github.com/what1s1ove/whatislove.dev/issues/589)) ([4c496a2](https://github.com/what1s1ove/whatislove.dev/commit/4c496a2e57cf9643fa478f1db456c8a79c145329))
+
 ## [1.55.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.54.1...@whatislove.dev/whatislove-dev-v1.55.0) (2024-06-08)
 
 
