@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.55.2](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.55.1...@whatislove.dev/whatislove-dev-v1.55.2) (2024-06-10)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** add fieldset element to theme switcher wd-586 ([#592](https://github.com/what1s1ove/whatislove.dev/issues/592)) ([e4d825d](https://github.com/what1s1ove/whatislove.dev/commit/e4d825d81f297048309bfeb54a8bff2107d75dd1))
+
 ## [1.55.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.55.0...@whatislove.dev/whatislove-dev-v1.55.1) (2024-06-10)
 
 
