@@ -4,7 +4,9 @@
 	align-items: center;
 	padding-block: 8px;
 	padding-inline: 10px;
+	margin: 0;
 	background-color: hsl(var(--color-page-background-highlight));
+	border: 0;
 	border-radius: 5px;
 }
 
