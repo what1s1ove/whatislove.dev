@@ -5,7 +5,9 @@ date: 2023-11-10
 tags:
   - JS
   - TS
-changelogs: []
+changelogs:
+  - date: 2024-06-11
+    message: Added examples of native enums from DOM API
 stickersCount: 10
 layout: article.njk
 ---
@@ -38,21 +40,16 @@ On the internet, there is a considerable number of articles written about best n
 
   It is not our place to judge whether using different naming cases is good or bad, as various reasons may drive such choices. However, explicit mixing of two or more naming cases can pose challenges. For new developers joining the project, understanding what is happening and deciding which naming case to use can become quite challenging.
 
+  <!-- prettier-ignore -->
   ```js
   // Bad
-  const hasAccess =
-    checkHasUserAccess(session.current_user) &&
-    checkIsPageVisible(session.current_page)
+  const hasAccess = checkHasUserAccess(session.current_user) && checkIsPageVisible(session.current_page)
 
   // Good
-  const hasAccess =
-    checkHasUserAccess(session.currentUser) &&
-    checkIsPageVisible(session.currentPage)
+  const hasAccess = checkHasUserAccess(session.currentUser) && checkIsPageVisible(session.currentPage)
 
   // Also good, if such a naming case is preferred
-  const has_access =
-    check_has_user_access(session.current_user) &&
-    check_is_page_visible(session.current_page)
+  const has_access = check_has_user_access(session.current_user) && check_is_page_visible(session.current_page)
   ```
 
   There are several ways to address this issue, ranging from using renaming with [destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment), [import renaming](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import), using mapping functions (e.g., [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)), and more advanced approaches like utilizing the [Adapter](https://refactoring.guru/design-patterns/adapter) design pattern.
@@ -83,15 +80,20 @@ On the internet, there is a considerable number of articles written about best n
 
 - **Not only `camelCase`**. Many resources emphasize using `camelCase` notation _exclusively_ when writing in JavaScript. However, this is not entirely accurate. The recommendation is more about **adhering to the notation used by the language itself**. While a _significant_ portion of the JavaScript language is written in `camelCase`, it is not universally so. Here are a few examples:
 
+  <!-- prettier-ignore -->
   ```js
   parseInt('18') // camelCase
 
   new RegExp('[A-Z]', 'i') // PascalCase
 
-  Number.MAX_SAFE_INTEGER // PascalCase + UPPER_SNAKE_CASE
+  Number.EPSILON // PascalCase + UPPER_SNAKE_CASE
+
+  NodeFilter.SHOW_COMMENT //
+  NodeFilter.SHOW_ENTITY  // PascalCase + set of UPPER_SNAKE_CASE
+  NodeFilter.SHOW_ELEMENT //
   ```
 
-  As we can see, JavaScript incorporates not only `camelCase` notation but also some others. All classes and constructor functions in JavaScript are written using `PascalCase` notation. When declaring custom classes and constructor functions, it is customary to follow the same naming convention as the language itself. The same applies to constants, representing fixed values. Both built-in JavaScript constants and those created by developers are conventionally named in `UPPER_SNAKE_CASE`.
+  As we can see, JavaScript incorporates not only `camelCase` notation but also some others. All classes and constructor functions in JavaScript are written using `PascalCase` notation. When declaring custom classes and constructor functions, it is customary to follow the same naming convention as the language itself. The same applies to constants, representing fixed values. Both built-in JavaScript constants and those created by developers are conventionally named in `UPPER_SNAKE_CASE`. Enums, sets of constants, are also present in JavaScript, especially in closely related JavaScript APIs such as the DOM API and others. Enums are usually named in `CamelCase`, while all their keys are written using `UPPER_SNAKE_CASE`.
 
   In contrast to some programming languages where the API is written using various cases without clear distribution, JavaScript's API does not suffer from this issue. Therefore, it is customary to adhere to the conventions present in the language itself.
 
@@ -143,6 +145,7 @@ It is in this context that the importance of naming conventions becomes clear. T
 
   An important addition to this convention, often overlooked, is that the affirmative prefix should not include a negation. The reason behind this is that the negation operator (`!`) is most commonly used with boolean values. Therefore, a value named something like `isNotAllowed` with the negation applied to it `!isNotAllowed` can be quite misleading. Do not believe so? Then try quickly figuring out what `!!isNotAllowed` (double negation) equals. Even if you manage to do it quickly, imagine working with real code where all these negation inversions are scattered throughout the file. Keeping track of such logic, especially when there is a lot of it, can be quite challenging. In such cases, it is better to alter the logic of evaluating the boolean variable using a positive affirmative in its name.
 
+  <!-- prettier-ignore -->
   ```js
   // Bad
   const userLogin = user !== null
@@ -152,9 +155,7 @@ It is in this context that the importance of naming conventions becomes clear. T
   }
 
   const isNotUserRemoved = userActionState !== ActionState.REMOVED
-  if (isNotUserRemoved) {
-    /* some logic */
-  }
+  if (isNotUserRemoved) { /* some logic */ }
 
   // Good
   const isUserAuthorized = user !== null
@@ -165,9 +166,7 @@ It is in this context that the importance of naming conventions becomes clear. T
   }
 
   const isUserRemoved = userActionState === ActionState.REMOVED
-  if (!isUserRemoved) {
-    /* some logic */
-  }
+  if (!isUserRemoved) { /* some logic */ }
   ```
 
   Along with the convention to use affirmative prefixes for boolean names, we diverge from the [W3C specification recommendations](https://w3ctag.github.io/design-principles/#naming-booleans), as it advises against using these prefixes for boolean names. This contradicts the idea mentioned earlier to prefer conventions used by the language itself. However, there are always exceptions, and this is one of them. It is normal since the way specification authors think may differ from the community's perspective.
@@ -178,6 +177,7 @@ It is in this context that the importance of naming conventions becomes clear. T
 
 - **Functions & Methods**. The name of a function/method should be a verb and correspond to the action it performs.
 
+  <!-- prettier-ignore -->
   ```js
   // Bad
   const userNaming = (name) => name.charAt(0).toUpperCase() + name.slice(1)
@@ -192,8 +192,7 @@ It is in this context that the importance of naming conventions becomes clear. T
   const userPermissions = (userId) => permissionRepository.getByUserId(userId)
 
   // Good
-  const getCapitalizedUserName = (name) =>
-    name.charAt(0).toUpperCase() + name.slice(1)
+  const getCapitalizedUserName = (name) => name.charAt(0).toUpperCase() + name.slice(1)
 
   const user = {
     name: 'John',
@@ -202,8 +201,7 @@ It is in this context that the importance of naming conventions becomes clear. T
     },
   }
 
-  const getUserPermissions = (userId) =>
-    permissionRepository.getByUserId(userId)
+  const getUserPermissions = (userId) => permissionRepository.getByUserId(userId)
   ```
 
   Although the naming convention for functions/methods may seem simple at first glance, their naming is the one that has the most exceptions and other conventions.
@@ -220,32 +218,21 @@ It is in this context that the importance of naming conventions becomes clear. T
 
   An important addition is that this convention should also be applied to user-created indexed or keyed collections using [Iteration protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols).
 
+  <!-- prettier-ignore -->
   ```js
   // Bad
   const userRoleArr = Object.values(UserRole)
 
-  const usersAccordionList = document.querySelectorAll(
-    '.users-accordion__list-item',
-  )
+  const usersAccordionList = document.querySelectorAll('.users-accordion__list-item')
 
-  const groupPermissions = new Map(
-    Object.entries(
-      Object.groupBy(permissions, (permission) => permission.group),
-    ),
-  )
+  const groupPermissions = new Map(Object.entries(Object.groupBy(permissions, (permission) => permission.group)))
 
   // Good
   const userRoles = Object.values(UserRole)
 
-  const usersAccordionItemNodes = document.querySelectorAll(
-    '.users-accordion__list-item',
-  )
+  const usersAccordionItemNodes = document.querySelectorAll('.users-accordion__list-item')
 
-  const permissionsByGroupList = new Map(
-    Object.entries(
-      Object.groupBy(permissions, (permission) => permission.group),
-    ),
-  )
+  const permissionsByGroupList = new Map(Object.entries(Object.groupBy(permissions, (permission) => permission.group)))
   ```
 
 - **Classes**. When working with classes, it is important to follow several conventions. Here is the list:

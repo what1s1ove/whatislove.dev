@@ -399,7 +399,6 @@ const UserForm = () => {
   return (
     <form>
       {/* ... */}
-
       <Select label="Gender:" options={genderOptions} />
       {/* ... */}
     </form>

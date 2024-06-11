@@ -38,6 +38,7 @@
 				<div class="article__toc toc"></div>
 			{% endcall %}
 			{% if changelogs.length %}
+				{% set changelogs = (changelogs.push({ message: 'Initial release', date: date }), changelogs) %}
 				{% call accordion(className="article__changelog", title="Changelog", defaultOpenedWidth=ACCORDION_DEFAULT_OPENED_WIDTH) %}
 					<ul class="article__timeline timeline">
 						{% for changelog in changelogs %}
