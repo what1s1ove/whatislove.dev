@@ -4,7 +4,9 @@ description: Explore the journey of decorators in JavaScript, from proposal to s
 date: 2023-10-19
 tags:
   - JS
-changelogs: []
+changelogs:
+  - date: 2023-10-14
+    message: Added info about Lit 3.0
 stickersCount: 10
 layout: article.njk
 ---
@@ -305,6 +307,8 @@ To delve deeper into the history of this proposal, let's review a list of key ev
   > © Kamil Mysliwiec, creator of NextJS
 
 - **[2023-08 – Announcing TypeScript 5.2](https://devblogs.microsoft.com/typescript/announcing-typescript-5-2/).** In TS 5.2, another standard was added that complements the decorators specification – [Decorator Metadata](https://github.com/tc39/proposal-decorator-metadata). The primary idea behind this proposal is to simplify decorators' access to class metadata in which they are used. Another reason there were so many debates regarding syntax and usage was that the authors had to create a whole separate proposal for this purpose.
+
+- **[2023-10 Lit 3.0, Hello TC39 Decorators](https://lit.dev/blog/2023-10-10-lit-3.0/).** Lit has always been a decorators-first framework, though it could have been used without decorators. The arrival of standard decorators allows them to begin the process of moving to a decorator implementation that will not require a compiler to use. For Lit, as a framework based on the most modern JavaScript and browser APIs, this is undoubtedly an important step.
 
 ## Just Syntactic Sugar or Not?
 
