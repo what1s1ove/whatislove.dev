@@ -41,10 +41,14 @@
 
 .article__item-dates {
 	display: flex;
-	gap: 50px;
-	place-content: center;
+	place-content: space-between;
 	margin: 0;
 	color: hsl(var(--color-gray-100));
+
+	@media (--width-tablet) {
+		gap: 50px;
+		place-content: center;
+	}
 }
 
 .article__toc-wrapper {
