@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.58.1](https://github.com/what1s1ove/whatislove.dev/compare/v1.58.0...v1.58.1) (2024-06-12)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** edit gap in dates on article page wd-599 ([#600](https://github.com/what1s1ove/whatislove.dev/issues/600)) ([b4fdfaf](https://github.com/what1s1ove/whatislove.dev/commit/b4fdfaf1ba39c24badd5c8ac2e0c859d07598c3f))
+
 ## [1.58.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.57.2...v1.58.0) (2024-06-12)
 
 
