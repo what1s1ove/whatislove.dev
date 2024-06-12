@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.56.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.55.2...@whatislove.dev/whatislove-dev-v1.56.0) (2024-06-12)
+
+
+### Features
+
+* **whatislove-dev:** update articles with latest notes wd-595 ([#597](https://github.com/what1s1ove/whatislove.dev/issues/597)) ([996af60](https://github.com/what1s1ove/whatislove.dev/commit/996af60ee43529afbb2b0ca966683c995136e951))
+
 ## [1.55.2](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.55.1...@whatislove.dev/whatislove-dev-v1.55.2) (2024-06-10)
 
 
