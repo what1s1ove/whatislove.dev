@@ -309,6 +309,8 @@ To delve deeper into the history of this proposal, let's review a list of key ev
 
 - [**2023-03 – Announcing TypeScript 5.0**](https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/). As promised, the TS team released the full version of decorators specification in TS 5.0.
 
+- [**2023-03 – Class Method Parameter Decorators for stage 1**](https://github.com/tc39/agendas/blob/main/2023/03.md). Even before the main decorators proposal is fully implemented, work has begun on significant additions to it, with method parameter decorators undoubtedly being one of these proposals. As we will see, for many library and framework authors, this particular proposal addresses a key functionality gap in the current ECMAScript decorators. This gap has been a major obstacle preventing their migration to the ECMAScript decorators standard.
+
 - [**2023-03 – Deno 1.32**](https://deno.com/blog/v1.32). Although in version 1.32 Deno supported TS 5.0, they decided to postpone the functionality related to decorators.
 
   > “_Take note that ES decorators are not yet supported, but we will be working towards enabling them by default in a future version.”_
