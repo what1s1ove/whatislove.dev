@@ -15,6 +15,10 @@ changelogs:
     message: Added info about Deno 1.40, support for ECMAScript Decorators
   - date: 2024-02-12
     message: Added info about the Function Decorators Stage 1 proposal
+  - date: 2024-05-09
+    message: Added info about esbuild 0.21, support for ECMAScript Decorators
+  - date: 2024-05-17
+    message: Added info about esbuild 0.21.3, support for Decorator Metadata
 stickersCount: 10
 layout: article.njk
 ---
@@ -329,6 +333,8 @@ To delve deeper into the history of this proposal, let's review a list of key ev
   No one dares to add full support yet, as there is a fear of repeating the issues encountered with the first implementation of decorators.
 
 - [**2024-02 – Function Decorators for stage 1**](https://github.com/tc39/agendas/blob/main/2024/02.md). This proposal is the first to introduce functionality that has not been present in any previous decorator implementation and does not pertain to classes, although the interface for working with all decorators is similar. Practically all further extensions of the decorator proposal add new values to `context.kind`. Let's hope that the extensive work on the main interface was not in vain, and that future proposals related to decorators, including this proposal for function decorators, will take less time to implement.
+
+- [**2024-05 – esbuild 0.21.0**](https://github.com/evanw/esbuild/releases/v0.21.0). The author of esbuild added support for the decorators proposal to the package. Notably, during the implementation, the author discovered a [bunch of issues](https://github.com/evanw/esbuild/issues/104#issuecomment-2094568393) in other packages, such as Babel, TypeScript, and others. This highlights the fact that the decorators proposal is very complex, something the author of esbuild has repeatedly noted. A few days after the release of version 0.21.0, the author also released version [0.21.3](https://github.com/evanw/esbuild/releases/tag/v0.21.3), which added support for the decorator metadata proposal.
 
 ## Just Syntactic Sugar or Not?
 
