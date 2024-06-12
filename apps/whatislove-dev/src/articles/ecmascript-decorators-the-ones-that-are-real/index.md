@@ -5,10 +5,12 @@ date: 2023-10-19
 tags:
   - JS
 changelogs:
-  - date: 2023-09-28
-    message: Added info about Babel 7.23.0, Decorator Metadata
+  - date: 2023-11-12
+    message: Added info about MobX 6.11, ECMAScript Decorators
   - date: 2023-10-14
     message: Added info about Lit 3.0, ECMAScript Decorators
+  - date: 2023-09-28
+    message: Added info about Babel 7.23.0, Decorator Metadata
 stickersCount: 10
 layout: article.njk
 ---
@@ -313,6 +315,8 @@ To delve deeper into the history of this proposal, let's review a list of key ev
 - [**2023-09 – Babel 7.23.0. Decorator Metadata**](https://babeljs.io/blog/2023/09/25/7.23.0). Over time, Babel introduced the decorator metadata proposal. What is noteworthy is that while they typically have one plugin per proposal, the decorators proposal and the decorator metadata proposal are so closely related that they opted against creating a separate plugin for the decorator metadata proposal. Instead, they incorporated it directly into the main decorators proposal plugin. This underscores the significance of decorator metadata within the overall decorators proposal.
 
 - [**2023-10 – Lit 3.0. Hello TC39 Decorators**](https://lit.dev/blog/2023-10-10-lit-3.0/). Lit has always been a decorators-first framework, though it could have been used without decorators. The arrival of standard decorators allows them to begin the process of moving to a decorator implementation that will not require a compiler to use. For Lit, as a framework based on the most modern JavaScript and browser APIs, this is undoubtedly an important step.
+
+- [**2023-11 – MobX + Standard Decorators**](https://michel.codes/blogs/mobx-decorators). [MobX 6.11](https://github.com/mobxjs/mobx/blob/main/packages/mobx/CHANGELOG.md#6110) added support for native decorators. Interestingly, according to their benchmarks, standard decorators incur 30% less runtime overhead, so they strongly recommend upgrading. Additionally, MobX has supported the old decorator implementation all this time. With this update, and the introduction of support for native decorators, they plan to completely remove the old implementation in version 7.
 
 ## Just Syntactic Sugar or Not?
 
