@@ -5,12 +5,14 @@ date: 2023-10-19
 tags:
   - JS
 changelogs:
+  - date: 2024-01-28
+    message: Added info about Deno 1.40, support for ECMAScript Decorators
   - date: 2023-11-12
-    message: Added info about MobX 6.11, ECMAScript Decorators
+    message: Added info about MobX 6.11, support for ECMAScript Decorators
   - date: 2023-10-14
-    message: Added info about Lit 3.0, ECMAScript Decorators
+    message: Added info about Lit 3.0, support for ECMAScript Decorators
   - date: 2023-09-28
-    message: Added info about Babel 7.23.0, Decorator Metadata
+    message: Added info about Babel 7.23.0, support for Decorator Metadata
 stickersCount: 10
 layout: article.njk
 ---
@@ -317,6 +319,12 @@ To delve deeper into the history of this proposal, let's review a list of key ev
 - [**2023-10 – Lit 3.0. Hello TC39 Decorators**](https://lit.dev/blog/2023-10-10-lit-3.0/). Lit has always been a decorators-first framework, though it could have been used without decorators. The arrival of standard decorators allows them to begin the process of moving to a decorator implementation that will not require a compiler to use. For Lit, as a framework based on the most modern JavaScript and browser APIs, this is undoubtedly an important step.
 
 - [**2023-11 – MobX + Standard Decorators**](https://michel.codes/blogs/mobx-decorators). [MobX 6.11](https://github.com/mobxjs/mobx/blob/main/packages/mobx/CHANGELOG.md#6110) added support for native decorators. Interestingly, according to their benchmarks, standard decorators incur 30% less runtime overhead, so they strongly recommend upgrading. Additionally, MobX has supported the old decorator implementation all this time. With this update, and the introduction of support for native decorators, they plan to completely remove the old implementation in version 7.
+
+- [**2024-01 – Deno 1.40**](https://deno.com/blog/v1.40#decorators). Deno 1.40 became the first platform to _include_ native decorators support. However, it did so with an interesting caveat:
+
+  > This feature is available in `.ts`, `.jsx`, and `.tsx` files. Support in pure JavaScript is waiting on implementation in V8.
+
+  No one dares to add full support yet, as there is a fear of repeating the issues encountered with the first implementation of decorators.
 
 ## Just Syntactic Sugar or Not?
 
