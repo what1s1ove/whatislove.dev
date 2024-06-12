@@ -4,7 +4,21 @@ description: Explore the journey of decorators in JavaScript, from proposal to s
 date: 2023-10-19
 tags:
   - JS
-changelogs: []
+changelogs:
+  - date: 2023-09-28
+    message: Added info about Babel 7.23.0, support for Decorator Metadata
+  - date: 2023-10-14
+    message: Added info about Lit 3.0, support for ECMAScript Decorators
+  - date: 2023-11-12
+    message: Added info about MobX 6.11, support for ECMAScript Decorators
+  - date: 2024-01-28
+    message: Added info about Deno 1.40, support for ECMAScript Decorators
+  - date: 2024-02-12
+    message: Added info about the Function Decorators Stage 1 proposal
+  - date: 2024-05-09
+    message: Added info about esbuild 0.21, support for ECMAScript Decorators
+  - date: 2024-05-17
+    message: Added info about esbuild 0.21.3, support for Decorator Metadata
 stickersCount: 10
 layout: article.njk
 ---
@@ -175,7 +189,7 @@ Today, JavaScript is not just a browser language. It can be run in various envir
 
 To delve deeper into the history of this proposal, let's review a list of key events.
 
-- **[2014-04 – Stage 0](https://github.com/tc39/notes/blob/main/meetings/2014-04/apr-10.md#decorators-for-es7)**. Decorators were proposed by Yehuda Katz and they were initially intended to become a part of the ECMAScript 7.
+- [**2014-04 – Stage 0**](https://github.com/tc39/notes/blob/main/meetings/2014-04/apr-10.md#decorators-for-es7). Decorators were proposed by Yehuda Katz and they were initially intended to become a part of the ECMAScript 7.
 
   ```ts
   type Decorator = (
@@ -206,7 +220,7 @@ To delve deeper into the history of this proposal, let's review a list of key ev
 
   This created additional challenges for the TC39 committee because they had to consider the expectations and requirements of the developer community as well as optimization issues in language engines.
 
-- **[2016-07 – Stage 2](https://github.com/tc39/notes/blob/main/meetings/2016-07/jul-28.md#9iiic-decorators)**. After the decorators proposal reached stage 2, its API began to undergo significant changes. Furthermore, at one point the proposal was referred to as "ESnext class features for JavaScript." During its development, there were numerous ideas about how decorators could be structured. To get a comprehensive view of the entire history of changes, I recommend [reviewing the commits](https://github.com/tc39/proposal-decorators) in the proposal's repository. Here is an example of what the decorators API used to look like:
+- [**2016-07 – Stage 2**](https://github.com/tc39/notes/blob/main/meetings/2016-07/jul-28.md#9iiic-decorators). After the decorators proposal reached stage 2, its API began to undergo significant changes. Furthermore, at one point the proposal was referred to as "ESnext class features for JavaScript." During its development, there were numerous ideas about how decorators could be structured. To get a comprehensive view of the entire history of changes, I recommend [reviewing the commits](https://github.com/tc39/proposal-decorators) in the proposal's repository. Here is an example of what the decorators API used to look like:
 
   ```ts
   type Decorator = (args: {
@@ -256,7 +270,7 @@ To delve deeper into the history of this proposal, let's review a list of key ev
 
   The entire stage 2 took 6 years, during which the decorator API underwent significant changes. However, as we can see from the code above, mutations were excluded. This made the proposal more acceptable for JS engines as well as for various platforms, frameworks, and libraries. But the development history of decorators is not over yet.
 
-- **[2020-09 – Announcing MobX 6. Bye-bye Decorators](https://michel.codes/blogs/mobx6)**. Some libraries that relied exclusively on decorators started to move away from their old implementation because they understood that the way they were working with decorators would no longer be standardized.
+- [**2020-09 – Announcing MobX 6. Bye-bye Decorators**](https://michel.codes/blogs/mobx6). Some libraries that relied exclusively on decorators started to move away from their old implementation because they understood that the way they were working with decorators would no longer be standardized.
 
   > ”_Using decorators is no longer the norm in MobX. This is good news to some of you, but others will hate it. Rightfully so, because I concur that the declarative syntax of decorators is still the best that can be offered. When MobX started, it was a TypeScript only project, so decorators were available. Still experimental, but obviously they were going to be standardized soon. That was my expectation at least (I did mostly Java and C# before). However, that moment still hasn't come yet, and two decorators proposals have been cancelled in the mean time. Although they still can be transpiled.”_
   > © Michel Weststrate, author of MobX
@@ -265,9 +279,9 @@ To delve deeper into the history of this proposal, let's review a list of key ev
 
 - [**2022-08 – SpiderMonkey Newsletter**](https://spidermonkey.dev/blog/2022/08/29/newsletter-firefox-104-105.html). SpiderMonkey, the browser engine used by Firefox, became the first engine to begin working on the implementation of decorators. Implementations like this indicate that the proposal is generally ready to become a full-fledged part of the specification.
 
-- **[2022-09 – Babel 7.19.0. Stage 3 decorators](https://babeljs.io/blog/2022/09/05/7.19.0)**. Adding support in a compiler is a very significant update for any proposal. Most proposals have a similar item in their standardization plan and the decorators proposal [was no exception](https://github.com/tc39/proposal-decorators#standardization-plan).
+- [**2022-09 – Babel 7.19.0. Stage 3 decorators**](https://babeljs.io/blog/2022/09/05/7.19.0). Adding support in a compiler is a very significant update for any proposal. Most proposals have a similar item in their standardization plan and the decorators proposal [was no exception](https://github.com/tc39/proposal-decorators#standardization-plan).
 
-- **[2022-11 – Announcing TypeScript 4.9](https://devblogs.microsoft.com/typescript/announcing-typescript-4-9/)**. ECMAScript decorators were listed in [TS 4.9 Iteration Plan](https://github.com/microsoft/TypeScript/issues/50457). However, after some time, the TS team decided to move decorators to the 5.0 release. Here is the [authors' comment](https://github.com/microsoft/TypeScript/issues/50457#issuecomment-1253100246):
+- [**2022-11 – Announcing TypeScript 4.9**](https://devblogs.microsoft.com/typescript/announcing-typescript-4-9/). ECMAScript decorators were listed in [TS 4.9 Iteration Plan](https://github.com/microsoft/TypeScript/issues/50457). However, after some time, the TS team decided to move decorators to the 5.0 release. Here is the [authors' comment](https://github.com/microsoft/TypeScript/issues/50457#issuecomment-1253100246):
 
   > “_While decorators have reached stage 3, we saw some behavior in the spec that needed to be discussed with the champions. Between addressing that and reviewing the changes, we expect decorators will be implemented in the next version.”_
 
@@ -293,18 +307,36 @@ To delve deeper into the history of this proposal, let's review a list of key ev
 
   Another interesting thing is how decorators were supposed to work. Since the TS team could not remove the old implementation that worked under the `--experimentalDecorators` flag, they decided on the following approach: if the `--experimentalDecorators` flag is present in the configuration, the old implementation will be used. If this flag is not present, then the new implementation will be used.
 
-- **[2023-03 – Announcing TypeScript 5.0](https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/)**. As promised, the TS team released the full version of decorators specification in TS 5.0.
+- [**2023-03 – Announcing TypeScript 5.0**](https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/). As promised, the TS team released the full version of decorators specification in TS 5.0.
 
-- **[2023-03 – Deno 1.32](https://deno.com/blog/v1.32).** Although in version 1.32 Deno supported TS 5.0, they decided to postpone the functionality related to decorators.
+- [**2023-03 – Class Method Parameter Decorators for stage 1**](https://github.com/tc39/agendas/blob/main/2023/03.md). Even before the main decorators proposal is fully implemented, work has begun on significant additions to it, with method parameter decorators undoubtedly being one of these proposals. As we will see, for many library and framework authors, this particular proposal addresses a key functionality gap in the current ECMAScript decorators. This gap has been a major obstacle preventing their migration to the ECMAScript decorators standard.
+
+- [**2023-03 – Deno 1.32**](https://deno.com/blog/v1.32). Although in version 1.32 Deno supported TS 5.0, they decided to postpone the functionality related to decorators.
 
   > “_Take note that ES decorators are not yet supported, but we will be working towards enabling them by default in a future version.”_
 
-- **[2023-05 – Angular v16 is here.](https://blog.angular.io/angular-v16-is-here-4d7a28ec680d)** Angular 16 also added support for ECMAScript decorators. However, some other frameworks built around decorators (and which were inspired by Angular?) have stated that they will not make changes toward ECMAScript decorators for now. For many of them, [two important aspects](https://github.com/nestjs/nest/issues/11414) are Metadata and Parameter decorators.
+- [**2023-05 – Angular v16 is here**](https://blog.angular.io/angular-v16-is-here-4d7a28ec680d). Angular 16 also added support for ECMAScript decorators. However, some other frameworks built around decorators (and which were inspired by Angular?) have stated that they will not make changes toward ECMAScript decorators for now. For many of them, [two important aspects](https://github.com/nestjs/nest/issues/11414) are Metadata and Parameter decorators.
 
   > ”_I don't think we'll support JS decorators till the metadata support & parameter decorators are implemented._”
   > © Kamil Mysliwiec, creator of NextJS
 
-- **[2023-08 – Announcing TypeScript 5.2](https://devblogs.microsoft.com/typescript/announcing-typescript-5-2/).** In TS 5.2, another standard was added that complements the decorators specification – [Decorator Metadata](https://github.com/tc39/proposal-decorator-metadata). The primary idea behind this proposal is to simplify decorators' access to class metadata in which they are used. Another reason there were so many debates regarding syntax and usage was that the authors had to create a whole separate proposal for this purpose.
+- [**2023-08 – Announcing TypeScript 5.2**](https://devblogs.microsoft.com/typescript/announcing-typescript-5-2/). In TS 5.2, another standard was added that complements the decorators specification – [Decorator Metadata](https://github.com/tc39/proposal-decorator-metadata). The primary idea behind this proposal is to simplify decorators' access to class metadata in which they are used. Another reason there were so many debates regarding syntax and usage was that the authors had to create a whole separate proposal for this purpose.
+
+- [**2023-09 – Babel 7.23.0. Decorator Metadata**](https://babeljs.io/blog/2023/09/25/7.23.0). Over time, Babel introduced the decorator metadata proposal. What is noteworthy is that while they typically have one plugin per proposal, the decorators proposal and the decorator metadata proposal are so closely related that they opted against creating a separate plugin for the decorator metadata proposal. Instead, they incorporated it directly into the main decorators proposal plugin. This underscores the significance of decorator metadata within the overall decorators proposal.
+
+- [**2023-10 – Lit 3.0. Hello TC39 Decorators**](https://lit.dev/blog/2023-10-10-lit-3.0/). Lit has always been a decorators-first framework, though it could have been used without decorators. The arrival of standard decorators allows them to begin the process of moving to a decorator implementation that will not require a compiler to use. For Lit, as a framework based on the most modern JavaScript and browser APIs, this is undoubtedly an important step.
+
+- [**2023-11 – MobX + Standard Decorators**](https://michel.codes/blogs/mobx-decorators). [MobX 6.11](https://github.com/mobxjs/mobx/blob/main/packages/mobx/CHANGELOG.md#6110) added support for native decorators. Interestingly, according to their benchmarks, standard decorators incur 30% less runtime overhead, so they strongly recommend upgrading. Additionally, MobX has supported the old decorator implementation all this time. With this update, and the introduction of support for native decorators, they plan to completely remove the old implementation in version 7.
+
+- [**2024-01 – Deno 1.40**](https://deno.com/blog/v1.40#decorators). Deno 1.40 became the first platform to _include_ native decorators support. However, it did so with an interesting caveat:
+
+  > This feature is available in `.ts`, `.jsx`, and `.tsx` files. Support in pure JavaScript is waiting on implementation in V8.
+
+  No one dares to add full support yet, as there is a fear of repeating the issues encountered with the first implementation of decorators.
+
+- [**2024-02 – Function Decorators for stage 1**](https://github.com/tc39/agendas/blob/main/2024/02.md). This proposal is the first to introduce functionality that has not been present in any previous decorator implementation and does not pertain to classes, although the interface for working with all decorators is similar. Practically all further extensions of the decorator proposal add new values to `context.kind`. Let's hope that the extensive work on the main interface was not in vain, and that future proposals related to decorators, including this proposal for function decorators, will take less time to implement.
+
+- [**2024-05 – esbuild 0.21.0**](https://github.com/evanw/esbuild/releases/v0.21.0). The author of esbuild added support for the decorators proposal to the package. Notably, during the implementation, the author discovered a [bunch of issues](https://github.com/evanw/esbuild/issues/104#issuecomment-2094568393) in other packages, such as Babel, TypeScript, and others. This highlights the fact that the decorators proposal is very complex, something the author of esbuild has repeatedly noted. A few days after the release of version 0.21.0, the author also released version [0.21.3](https://github.com/evanw/esbuild/releases/tag/v0.21.3), which added support for the decorator metadata proposal.
 
 ## Just Syntactic Sugar or Not?
 

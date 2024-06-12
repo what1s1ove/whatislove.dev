@@ -6,6 +6,7 @@
 {% set ARTICLES_COUNT = 3 %}
 {% set MENTION_AVATAR_SIZE = 40 %}
 {% set ACCORDION_DEFAULT_OPENED_WIDTH = 768 %}
+{% set TIMELINES_MAX_COUNT_FOR_ACCORDION_DEFAULT_OPENED = 5 %}
 {% set mentionData = mentions[page.url] %}
 {% set lastChangelogItem = changelogs | last %}
 
@@ -38,9 +39,11 @@
 				<div class="article__toc toc"></div>
 			{% endcall %}
 			{% if changelogs.length %}
-				{% call accordion(className="article__changelog", title="Changelog", defaultOpenedWidth=ACCORDION_DEFAULT_OPENED_WIDTH) %}
+				{% set changelogs = (changelogs.unshift({ message: 'Initial release', date: date }), changelogs) %}
+				{% set timelineDefaultOpenedWidth = null if changelogs.length > TIMELINES_MAX_COUNT_FOR_ACCORDION_DEFAULT_OPENED else ACCORDION_DEFAULT_OPENED_WIDTH %}
+				{% call accordion(className="article__changelog", title="Changelog", defaultOpenedWidth=timelineDefaultOpenedWidth) %}
 					<ul class="article__timeline timeline">
-						{% for changelog in changelogs %}
+						{% for changelog in changelogs | reverse %}
 							<li class="timeline__item">
 								<p class="timeline__item-dates">
 									<time
