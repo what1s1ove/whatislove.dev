@@ -5,14 +5,16 @@ date: 2023-10-19
 tags:
   - JS
 changelogs:
-  - date: 2024-01-28
-    message: Added info about Deno 1.40, support for ECMAScript Decorators
-  - date: 2023-11-12
-    message: Added info about MobX 6.11, support for ECMAScript Decorators
-  - date: 2023-10-14
-    message: Added info about Lit 3.0, support for ECMAScript Decorators
   - date: 2023-09-28
     message: Added info about Babel 7.23.0, support for Decorator Metadata
+  - date: 2023-10-14
+    message: Added info about Lit 3.0, support for ECMAScript Decorators
+  - date: 2023-11-12
+    message: Added info about MobX 6.11, support for ECMAScript Decorators
+  - date: 2024-01-28
+    message: Added info about Deno 1.40, support for ECMAScript Decorators
+  - date: 2024-02-12
+    message: Added info about the Function Decorators Stage 1 proposal
 stickersCount: 10
 layout: article.njk
 ---
@@ -325,6 +327,8 @@ To delve deeper into the history of this proposal, let's review a list of key ev
   > This feature is available in `.ts`, `.jsx`, and `.tsx` files. Support in pure JavaScript is waiting on implementation in V8.
 
   No one dares to add full support yet, as there is a fear of repeating the issues encountered with the first implementation of decorators.
+
+- [**2024-02 – Function Decorators for stage 1**](https://github.com/tc39/agendas/blob/main/2024/02.md). This proposal is the first to introduce functionality that has not been present in any previous decorator implementation and does not pertain to classes, although the interface for working with all decorators is similar. Practically all further extensions of the decorator proposal add new values to `context.kind`. Let's hope that the extensive work on the main interface was not in vain, and that future proposals related to decorators, including this proposal for function decorators, will take less time to implement.
 
 ## Just Syntactic Sugar or Not?
 

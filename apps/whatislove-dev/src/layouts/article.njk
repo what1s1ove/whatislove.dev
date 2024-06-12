@@ -39,11 +39,11 @@
 				<div class="article__toc toc"></div>
 			{% endcall %}
 			{% if changelogs.length %}
-				{% set changelogs = (changelogs.push({ message: 'Initial release', date: date }), changelogs) %}
+				{% set changelogs = (changelogs.unshift({ message: 'Initial release', date: date }), changelogs) %}
 				{% set timelineDefaultOpenedWidth = null if changelogs.length > TIMELINES_MAX_COUNT_FOR_ACCORDION_DEFAULT_OPENED else ACCORDION_DEFAULT_OPENED_WIDTH %}
 				{% call accordion(className="article__changelog", title="Changelog", defaultOpenedWidth=timelineDefaultOpenedWidth) %}
 					<ul class="article__timeline timeline">
-						{% for changelog in changelogs %}
+						{% for changelog in changelogs | reverse %}
 							<li class="timeline__item">
 								<p class="timeline__item-dates">
 									<time
