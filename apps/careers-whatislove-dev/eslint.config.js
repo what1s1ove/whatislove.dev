@@ -1,4 +1,5 @@
 import lit from 'eslint-plugin-lit'
+import litA11y from 'eslint-plugin-lit-a11y'
 import wc from 'eslint-plugin-wc'
 
 import baseConfig from '../../eslint.config.js'
@@ -17,6 +18,13 @@ let litConfig = {
 		lit,
 	},
 	rules: lit.configs.all.rules,
+}
+
+let litA11yConfig = {
+	plugins: {
+		'lit-a11y': litA11y,
+	},
+	rules: litA11y.configs.recommended.rules,
 }
 
 /** @type {FlatConfig} */
@@ -45,6 +53,7 @@ let config = [
 	ignoresConfig,
 	...baseConfig,
 	litConfig,
+	litA11yConfig,
 	wcConfig,
 	...overridesConfigs,
 ]
