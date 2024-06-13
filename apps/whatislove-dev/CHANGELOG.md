@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.59.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.59.0...@whatislove.dev/whatislove-dev-v1.59.1) (2024-06-13)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** remove njk parser from md files wd-614 ([#616](https://github.com/what1s1ove/whatislove.dev/issues/616)) ([4dee68b](https://github.com/what1s1ove/whatislove.dev/commit/4dee68b5a1adf26f07f4cbcda98b0da13bcc5d89))
+
 ## [1.59.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.58.0...@whatislove.dev/whatislove-dev-v1.59.0) (2024-06-13)
 
 
