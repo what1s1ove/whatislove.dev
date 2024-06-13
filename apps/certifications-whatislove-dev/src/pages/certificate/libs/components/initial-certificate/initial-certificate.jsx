@@ -34,7 +34,7 @@ let InitialCertificate = ({ payload }) => (
 					</Text>
 					<Text style={styles.bodyName}>{payload.title}</Text>
 					<Text style={styles.bodyDate}>
-						{getFormattedDate(payload.completeDate)}
+						{getFormattedDate(payload.completeDate, `M_D_YEAR`)}
 					</Text>
 				</View>
 				<View style={styles.footerWrapper}>

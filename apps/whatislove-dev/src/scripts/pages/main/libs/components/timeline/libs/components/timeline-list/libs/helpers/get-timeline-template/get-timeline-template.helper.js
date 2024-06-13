@@ -28,7 +28,7 @@ let getTimelineTemplate = (timeline) => {
 	let endDateStringNode = endDate
 		? `
 			<time class="timeline__item-date timeline__item-date--end" datetime="${getISODate(endDate)}">
-				${getFormattedDate(endDate)}
+				${getFormattedDate(endDate, `M_YEAR`)}
 			</time>
 		`
 		: ``
@@ -36,7 +36,7 @@ let getTimelineTemplate = (timeline) => {
 	let dateStringNode = date
 		? `
 			<p class="timeline__item-dates">
-				<time class="timeline__item-date timeline__item-date--start" datetime="${getISODate(date)}">${getFormattedDate(date)}</time>
+				<time class="timeline__item-date timeline__item-date--start" datetime="${getISODate(date)}">${getFormattedDate(date, `M_YEAR`)}</time>
 				${endDateStringNode}
 			</p>
 		`
