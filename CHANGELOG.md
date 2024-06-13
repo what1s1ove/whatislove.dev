@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.59.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.58.1...v1.59.0) (2024-06-13)
+
+
+### Features
+
+* **whatislove-dev:** add make your bed book wd-532 ([#602](https://github.com/what1s1ove/whatislove.dev/issues/602)) ([11fa785](https://github.com/what1s1ove/whatislove.dev/commit/11fa785bfe4d8605bff79f428b5b3a9c885ea2ff))
+* **whatislove-dev:** add what successful people do before breakfast book wd-540 ([#604](https://github.com/what1s1ove/whatislove.dev/issues/604)) ([f3fbed4](https://github.com/what1s1ove/whatislove.dev/commit/f3fbed4853dce5316a8958f348c525f8508f7f3e))
+* **whatislove-dev:** add what successful people do on weekend book wd-596 ([#605](https://github.com/what1s1ove/whatislove.dev/issues/605)) ([77f73a4](https://github.com/what1s1ove/whatislove.dev/commit/77f73a47a305315169705c47715cdd68df7f9764))
+
 ## [1.58.1](https://github.com/what1s1ove/whatislove.dev/compare/v1.58.0...v1.58.1) (2024-06-12)
 
 
