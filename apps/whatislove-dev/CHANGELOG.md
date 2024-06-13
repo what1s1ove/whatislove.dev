@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.58.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.57.0...@whatislove.dev/whatislove-dev-v1.58.0) (2024-06-13)
+
+
+### Features
+
+* **whatislove-dev:** replace toast show modifier with pseudo class wd-490 ([#606](https://github.com/what1s1ove/whatislove.dev/issues/606)) ([dd0d9c5](https://github.com/what1s1ove/whatislove.dev/commit/dd0d9c5838c75f2d6097f7842d97120d4890b0dc))
+
 ## [1.57.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.56.1...@whatislove.dev/whatislove-dev-v1.57.0) (2024-06-13)
 
 
