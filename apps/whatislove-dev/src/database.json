@@ -1619,6 +1619,18 @@
 			"linkDesc": "Amazon",
 			"date": "2024-06-03T00:00:00.000Z",
 			"endDate": ""
+		},
+		{
+			"id": "48vHHz_",
+			"type": "book",
+			"title": "What the Most Successful People Do on the Weekend: A Short Guide to Making the Most of Your Days Off (Laura Vanderkam)",
+			"desc": "",
+			"origin": "https://www.amazon.com/What-Most-Successful-People-Weekend-ebook/dp/B00AEDDPP0",
+			"originDesc": "Amazon",
+			"link": "",
+			"linkDesc": "",
+			"date": "2024-06-11T00:00:00.000Z",
+			"endDate": ""
 		}
 	]
 }
