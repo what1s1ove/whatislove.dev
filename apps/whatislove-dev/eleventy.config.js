@@ -102,18 +102,16 @@ let init = (config) => {
 	config.addPlugin(ogImage, {
 		outputDir: `images/covers`,
 		/**
-		 * @returns {string}
-		 * @this {{
+		 * @param {{
 		 * 	data: {
 		 * 		page: {
 		 * 			fileSlug: string
 		 * 		}
 		 * 	}
-		 * }}
+		 * }} ogImage
+		 * @returns {string}
 		 */
-		outputFileSlug: function () {
-			return this.data.page.fileSlug
-		},
+		outputFileSlug: (ogImage) => ogImage.data.page.fileSlug,
 		satoriOptions: {
 			fonts: [400, 700].map((weight) => ({
 				data: readFileSync(
@@ -128,14 +126,12 @@ let init = (config) => {
 			})),
 		},
 		/**
-		 * @returns {Promise<string>}
-		 * @this {{
+		 * @param {{
 		 * 	outputUrl: () => Promise<string>
-		 * }}
+		 * }} ogImage
+		 * @returns {Promise<string>}
 		 */
-		shortcodeOutput() {
-			return this.outputUrl()
-		},
+		shortcodeOutput: (ogImage) => ogImage.outputUrl(),
 	})
 
 	// filters
