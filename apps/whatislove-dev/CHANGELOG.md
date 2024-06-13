@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.59.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.58.0...@whatislove.dev/whatislove-dev-v1.59.0) (2024-06-13)
+
+
+### Features
+
+* **whatislove-dev:** use light-dark for light/dark theme wd-165 ([#610](https://github.com/what1s1ove/whatislove.dev/issues/610)) ([2457e15](https://github.com/what1s1ove/whatislove.dev/commit/2457e154410a68d9541f97d953e48e0ba200d1d0))
+
 ## [1.58.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.57.0...@whatislove.dev/whatislove-dev-v1.58.0) (2024-06-13)
 
 
