@@ -4,7 +4,6 @@ import { ToastMessagePayload } from '~/libs/types/types.js'
 import {
 	CLEAN_MESSAGE_DELAY,
 	TOAST_DEFAULT_DURATION,
-	TOAST_SHOW_CLASS_NAME,
 } from './libs/constants/constants.js'
 
 class Toast {
@@ -31,12 +30,9 @@ class Toast {
 		let toastNode = /** @type {HTMLElement} */ (this.#toastNode)
 		let { cb, duration = TOAST_DEFAULT_DURATION, message } = messagePayload
 
-		toastNode.classList.add(TOAST_SHOW_CLASS_NAME)
 		toastNode.textContent = message
 
-		await setAsyncTimeout(() => {
-			toastNode.classList.remove(TOAST_SHOW_CLASS_NAME)
-		}, duration)
+		await setAsyncTimeout(() => {}, duration)
 
 		await setAsyncTimeout(() => {
 			toastNode.textContent = ``
