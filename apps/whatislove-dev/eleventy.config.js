@@ -1,7 +1,11 @@
 import Image from '@11ty/eleventy-img'
 import rss from '@11ty/eleventy-plugin-rss'
 import shikiHighlight from '@shikijs/markdown-it'
-import { getISODate, getShuffledItems } from '@whatislove.dev/shared'
+import {
+	getFormattedDate,
+	getISODate,
+	getShuffledItems,
+} from '@whatislove.dev/shared'
 import browserslist from 'browserslist'
 import ogImage from 'eleventy-plugin-og-image'
 import esbuild from 'esbuild'
@@ -144,14 +148,7 @@ let init = (config) => {
 	})
 
 	config.addFilter(`dateFormatted`, (value) => {
-		return new Date(/** @type {Date | string} */ (value)).toLocaleString(
-			`en-US`,
-			{
-				day: `numeric`,
-				month: `short`,
-				year: `numeric`,
-			},
-		)
+		return getFormattedDate(/** @type {Date} */ (value), `M_D_YEAR`)
 	})
 
 	config.addFilter(`shuffle`, (items) => {
