@@ -363,7 +363,7 @@ let init = (config) => {
 			output: `build`,
 		},
 		htmlTemplateEngine: `njk`,
-		markdownTemplateEngine: `njk`,
+		markdownTemplateEngine: false,
 	}
 }
 
