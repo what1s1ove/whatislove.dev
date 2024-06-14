@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.61.2](https://github.com/what1s1ove/whatislove.dev/compare/v1.61.1...v1.61.2) (2024-06-14)
+
+
+### Bug Fixes
+
+* **careers-whatislove-dev:** pdf render wd-613 ([#618](https://github.com/what1s1ove/whatislove.dev/issues/618)) ([4e5a221](https://github.com/what1s1ove/whatislove.dev/commit/4e5a22158331207d2b3094502ab319a2ffb92877))
+
 ## [1.61.1](https://github.com/what1s1ove/whatislove.dev/compare/v1.61.0...v1.61.1) (2024-06-13)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/certifications-whatislove-dev-v1.8.0...@whatislove.dev/certifications-whatislove-dev-v1.8.1) (2024-06-14)
+
+
+### Bug Fixes
+
+* **careers-whatislove-dev:** pdf render wd-613 ([#618](https://github.com/what1s1ove/whatislove.dev/issues/618)) ([4e5a221](https://github.com/what1s1ove/whatislove.dev/commit/4e5a22158331207d2b3094502ab319a2ffb92877))
+
 ## [1.8.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/certifications-whatislove-dev-v1.7.0...@whatislove.dev/certifications-whatislove-dev-v1.8.0) (2024-05-02)
 
 
