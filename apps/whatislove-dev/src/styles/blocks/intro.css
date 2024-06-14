@@ -78,6 +78,10 @@
 		margin: 0;
 	}
 
+	@media (hover: hover) {
+		cursor: url("/images/lapka.svg"), pointer;
+	}
+
 	@media (prefers-reduced-motion: no-preference) {
 		&::before {
 			animation: paw 8s infinite;
