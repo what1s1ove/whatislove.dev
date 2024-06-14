@@ -1,7 +1,7 @@
 {
-	".": "1.61.2",
+	".": "1.62.0",
 	"apps/careers-whatislove-dev": "1.7.0",
 	"apps/certifications-whatislove-dev": "1.8.1",
-	"apps/whatislove-dev": "1.59.1",
+	"apps/whatislove-dev": "1.60.0",
 	"packages/shared": "1.9.0"
 }

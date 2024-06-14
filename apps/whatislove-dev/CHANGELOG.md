@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.60.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.59.1...@whatislove.dev/whatislove-dev-v1.60.0) (2024-06-14)
+
+
+### Features
+
+* **whatislove-dev:** add paw cursor to paw wd-581 ([#621](https://github.com/what1s1ove/whatislove.dev/issues/621)) ([d066b59](https://github.com/what1s1ove/whatislove.dev/commit/d066b595e3d54259a290708894d8ae4e3d5f2f70))
+
 ## [1.59.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.59.0...@whatislove.dev/whatislove-dev-v1.59.1) (2024-06-13)
 
 
