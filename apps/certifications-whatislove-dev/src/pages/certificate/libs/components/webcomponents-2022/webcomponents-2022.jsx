@@ -16,7 +16,7 @@ let Webcomponents2022 = ({ user }) => {
 		completeDate: user.completeDate,
 		manager: `Vladyslav Zubko`,
 		mentors: [`Vladyslav Zubko`],
-		title: `Webcomponents. \n Development \n of New Web \n with LitElement`,
+		title: `Webcomponents. \nDevelopment \nof New Web \nwith LitElement`,
 		userName: `${user.firstName} ${user.lastName}`,
 	}
 

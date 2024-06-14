@@ -13,7 +13,7 @@
 		"ci:lint": "concurrently \"npm:ci:lint:*\""
 	},
 	"dependencies": {
-		"@react-pdf/renderer": "3.1.14",
+		"@react-pdf/renderer": "3.4.4",
 		"@whatislove.dev/shared": "*",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",

@@ -23,7 +23,7 @@ let Bsa2022 = ({ user }) => {
 			`Volodymyr Minchenko`,
 			`Yurii Ohorodnikov`,
 		],
-		title: `BSA2022. \n Professional \n Project \n Development`,
+		title: `BSA2022. \nProfessional \nProject \nDevelopment`,
 		userName: `${user.firstName} ${user.lastName}`,
 	}
 

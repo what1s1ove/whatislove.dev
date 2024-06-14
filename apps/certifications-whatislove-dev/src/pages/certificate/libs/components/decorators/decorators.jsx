@@ -16,7 +16,7 @@ let Decorators = ({ user }) => {
 		completeDate: user.completeDate,
 		manager: `Vladyslav Zubko`,
 		mentors: [`Vladyslav Zubko`],
-		title: `ECMAScript \n Decor@tors. \n the Ones \n that are Real`,
+		title: `ECMAScript \nDecor@tors. \nthe Ones \nthat are Real`,
 		userName: `${user.firstName} ${user.lastName}`,
 	}
 
