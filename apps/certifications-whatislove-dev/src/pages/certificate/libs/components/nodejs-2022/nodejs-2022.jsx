@@ -16,7 +16,7 @@ let Nodejs2022 = ({ user }) => {
 		completeDate: user.completeDate,
 		manager: `Vladyslav Zubko`,
 		mentors: [`Vladyslav Zubko`],
-		title: `Node.js. \n Development \n of App Servers \n and API`,
+		title: `Node.js. \nDevelopment \nof App Servers \nand API`,
 		userName: `${user.firstName} ${user.lastName}`,
 	}
 
