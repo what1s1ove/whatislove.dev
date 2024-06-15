@@ -39,6 +39,8 @@ Before native CSS nesting became available, I had to describe all class modifier
 .tag-list__tag {
   --background-color: var(--color-red-200);
 
+  padding-block: 2px;
+  padding-inline: 6px;
   background-color: hsl(var(--background-color) / 30%);
 }
 
@@ -66,6 +68,10 @@ One day, as I was adding new modifiers and duplicating the entire selector, I de
 ```css
 .tag-list__tag {
   --background-color: var(--color-red-200);
+
+  padding-block: 2px;
+  padding-inline: 6px;
+  background-color: hsl(var(--background-color) / 30%);
 
   &[class*='--html'] {
     --background-color: var(--color-green-100);
