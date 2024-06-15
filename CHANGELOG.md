@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.63.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.62.0...v1.63.0) (2024-06-15)
+
+
+### Features
+
+* **whatislove-dev:** add bem modifiers article wd-623 ([#627](https://github.com/what1s1ove/whatislove.dev/issues/627)) ([d75b905](https://github.com/what1s1ove/whatislove.dev/commit/d75b9059bac9ab3500f1587a91930629ad186940))
+* **whatislove-dev:** add light-dark function to code highlight wd-624 ([#625](https://github.com/what1s1ove/whatislove.dev/issues/625)) ([6da730e](https://github.com/what1s1ove/whatislove.dev/commit/6da730e09589a13bfa3b5c59c71380295a60667d))
+
 ## [1.62.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.61.2...v1.62.0) (2024-06-14)
 
 
