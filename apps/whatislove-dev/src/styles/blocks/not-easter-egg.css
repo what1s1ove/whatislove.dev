@@ -14,6 +14,7 @@
 	margin: 0;
 	overflow: hidden;
 	border-radius: 50%;
+	will-change: inset-block-start, inset-inline-start;
 
 	&::before {
 		position: absolute;
@@ -28,6 +29,7 @@
 		background-color: hsl(var(--color-yellow-100) / 20%);
 		transform: skewX(-25deg);
 		translate: 0 -50%;
+		will-change: inset-inline-start;
 		animation: shine 5s infinite;
 	}
 

@@ -89,5 +89,6 @@
 	color: var(--color-dark);
 	-webkit-text-stroke: 2px var(--color-light);
 	text-align: center;
+	will-change: transform;
 	animation: glitch var(--timing-function-glitch) 6ms infinite;
 }

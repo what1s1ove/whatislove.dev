@@ -169,8 +169,8 @@ class EasterEgg {
 		)
 		let { x, y } = getNodeRandomCoords(easterEggButtonWrapperNode)
 
-		easterEggButtonWrapperNode.style.top = `${y}px`
-		easterEggButtonWrapperNode.style.left = `${x}px`
+		easterEggButtonWrapperNode.style.insetBlockStart = `${y}px`
+		easterEggButtonWrapperNode.style.insetInlineStart = `${x}px`
 	}
 
 	/**
