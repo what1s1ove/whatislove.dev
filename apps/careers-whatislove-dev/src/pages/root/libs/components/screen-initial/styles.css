@@ -14,6 +14,7 @@
 	cursor: pointer;
 	background-color: transparent;
 	border: 0;
+	will-change: transform;
 	animation: glitch var(--timing-function-glitch) 6ms infinite;
 
 	&:focus-visible {
