@@ -111,23 +111,20 @@
 	);
 	--color-text: light-dark(var(--color-black-200), var(--color-white-100));
 
+	/* code highlight theme */
+
+	.shiki,
+	.shiki span {
+		color: light-dark(var(--shiki-light), var(--shiki-dark));
+	}
+
 	&:has(.settings--theme .settings__theme-control[value="dark"]:checked) {
 		color-scheme: dark;
-
-		.shiki,
-		.shiki span {
-			color: var(--shiki-dark) !important;
-		}
 	}
 
 	@media (prefers-color-scheme: dark) {
 		&:has(.settings--theme .settings__theme-control[value="auto"]:checked) {
 			color-scheme: dark;
-
-			.shiki,
-			.shiki span {
-				color: var(--shiki-dark) !important;
-			}
 		}
 	}
 }
