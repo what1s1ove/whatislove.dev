@@ -38,6 +38,7 @@
 	font-size: var(--font-size-heading-3);
 	font-weight: 700;
 	line-height: 1;
+	text-wrap: nowrap;
 	background-color: hsl(var(--color-intro-background));
 	border-radius: 8px;
 
@@ -128,22 +129,18 @@
 }
 
 .mentions__content {
+	grid-column: span 2;
 	margin: 0;
-}
 
-.mentions__form-wrapper {
-	display: grid;
-	gap: 10px;
-}
-
-.mentions__form-description {
-	margin: 0;
-	color: hsl(var(--color-gray-100));
+	@media (--width-tablet) {
+		grid-column: initial;
+	}
 }
 
 .mentions__origin {
 	--size-icon: 25px;
 
+	grid-column: span 2;
 	place-self: end;
 
 	&::before {
@@ -156,6 +153,20 @@
 		mask-position: 50%;
 		mask-size: 15px;
 	}
+
+	@media (--width-tablet) {
+		grid-column: initial;
+	}
+}
+
+.mentions__form-wrapper {
+	display: grid;
+	gap: 10px;
+}
+
+.mentions__form-description {
+	margin: 0;
+	color: hsl(var(--color-gray-100));
 }
 
 .mentions__form {
