@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.62.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.61.0...@whatislove.dev/whatislove-dev-v1.62.0) (2024-06-15)
+
+
+### Features
+
+* **whatislove-dev:** add more example to bem modifiers article wd-628 ([#629](https://github.com/what1s1ove/whatislove.dev/issues/629)) ([b5cf1c0](https://github.com/what1s1ove/whatislove.dev/commit/b5cf1c0a42feebb4b6c07011cf7862b09843e0f4))
+
 ## [1.61.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.60.0...@whatislove.dev/whatislove-dev-v1.61.0) (2024-06-15)
 
 
