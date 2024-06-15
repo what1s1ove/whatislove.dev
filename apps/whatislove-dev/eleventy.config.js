@@ -70,6 +70,7 @@ let md = markdownIt({
 
 md.use(
 	await shikiHighlight({
+		defaultColor: false,
 		themes: {
 			dark: `github-dark`,
 			light: `github-light`,
