@@ -38,4 +38,8 @@
 	&[class*="--js"] {
 		--background-color: var(--color-yellow-200);
 	}
+
+	&[class*="--css"] {
+		--background-color: var(--color-blue-300);
+	}
 }
