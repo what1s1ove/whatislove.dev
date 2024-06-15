@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.64.1](https://github.com/what1s1ove/whatislove.dev/compare/v1.64.0...v1.64.1) (2024-06-15)
+
+
+### Bug Fixes
+
+* **whatislove-dev/careers-whatislove-dev:** imporve animation performance wd-591 ([#633](https://github.com/what1s1ove/whatislove.dev/issues/633)) ([7018131](https://github.com/what1s1ove/whatislove.dev/commit/70181310469554bfa58218a90a7697ed8261e4c2))
+* **whatislove-dev:** edit comment wrap in mentions wd-631 ([#632](https://github.com/what1s1ove/whatislove.dev/issues/632)) ([24fe1e5](https://github.com/what1s1ove/whatislove.dev/commit/24fe1e5c1099e2a098400da2719d69852a45602c))
+
 ## [1.64.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.63.0...v1.64.0) (2024-06-15)
 
 

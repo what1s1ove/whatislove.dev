@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/careers-whatislove-dev-v1.7.0...@whatislove.dev/careers-whatislove-dev-v1.7.1) (2024-06-15)
+
+
+### Bug Fixes
+
+* **whatislove-dev/careers-whatislove-dev:** imporve animation performance wd-591 ([#633](https://github.com/what1s1ove/whatislove.dev/issues/633)) ([7018131](https://github.com/what1s1ove/whatislove.dev/commit/70181310469554bfa58218a90a7697ed8261e4c2))
+
 ## [1.7.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/careers-whatislove-dev-v1.6.1...@whatislove.dev/careers-whatislove-dev-v1.7.0) (2024-05-02)
 
 
