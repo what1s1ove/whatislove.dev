@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.2](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/careers-whatislove-dev-v1.7.1...@whatislove.dev/careers-whatislove-dev-v1.7.2) (2024-06-16)
+
+
+### Bug Fixes
+
+* **whatislove-dev/careers-whatislove-dev:** remove animation performance properties wd-635 ([#636](https://github.com/what1s1ove/whatislove.dev/issues/636)) ([0a729cd](https://github.com/what1s1ove/whatislove.dev/commit/0a729cdd83d72ad0a4bc4fffdc41f3a29bdf0456))
+
 ## [1.7.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/careers-whatislove-dev-v1.7.0...@whatislove.dev/careers-whatislove-dev-v1.7.1) (2024-06-15)
 
 
