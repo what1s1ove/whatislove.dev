@@ -35,8 +35,7 @@
 	--color-green-100: 92.97 84.73% 25.69%;
 	--color-gray-100: 0 0% 43.92%;
 	--color-black-100: 0 0% 0%;
-	--color-black-200: 0 0% 1%;
-	--color-black-300: 30 0% 3%;
+	--color-black-200: 0 0% 4%;
 
 	/* Focus */
 
@@ -51,9 +50,8 @@
 	/* Backgrounds */
 
 	--background-page: hsl(var(--color-page-background))
-		var(--background-image-page) repeat 0 / var(--background-size-page);
-	--background-image-page: url("/images/noise.svg");
-	--background-size-page: 1000px;
+		var(--background-image-page);
+	--background-image-page: url("/images/noise.png");
 
 	/* fonts */
 
@@ -74,7 +72,7 @@
 	/* theme */
 
 	--color-page-background: light-dark(
-		var(--color-white-100),
+		var(--color-white-200),
 		var(--color-black-200)
 	);
 	--color-page-background-highlight: light-dark(
@@ -82,8 +80,8 @@
 		var(--color-white-100) / 10%
 	);
 	--color-page-background-code: light-dark(
-		var(--color-white-200),
-		var(--color-black-300)
+		var(--color-black-100) / 2%,
+		var(--color-white-100) / 10%
 	);
 	--color-scroll-shadow: light-dark(
 		var(--color-black-100),
@@ -91,7 +89,7 @@
 	);
 	--color-intro-background: light-dark(
 		var(--color-white-100) / 60%,
-		var(--color-black-100) / 15%
+		var(--color-black-100) / 40%
 	);
 	--color-intro-image-mask: light-dark(
 		var(--color-white-100),
