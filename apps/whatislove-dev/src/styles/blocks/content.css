@@ -96,8 +96,6 @@
 		padding-inline: 6px;
 		font-family: var(--font-family-code);
 		background-color: hsl(var(--color-page-background-code));
-		background-image: var(--background-image-page);
-		background-size: var(--background-size-page);
 		border-radius: 4px;
 	}
 
@@ -119,9 +117,7 @@
 		overflow-y: auto;
 		font-family: var(--font-family-code);
 		tab-size: 2;
-		background-color: hsl(var(--color-page-background-code)) !important;
-		background-image: var(--background-image-page);
-		background-size: var(--background-size-page);
+		background-color: hsl(var(--color-page-background-code));
 		border: 1px solid hsl(var(--color-gray-100));
 		border-radius: 5px;
 
@@ -141,6 +137,7 @@
 
 		code[class*="language"] {
 			padding: 0;
+			background-color: initial;
 			border-radius: inherit;
 		}
 	}

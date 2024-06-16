@@ -15,7 +15,6 @@
 	font-weight: 600;
 	background-color: hsl(var(--background-color) / 30%);
 	background-image: var(--background-image-page);
-	background-size: var(--background-size-page);
 	border-radius: 3px;
 
 	/* do not forget to add new colors to OG tags */
