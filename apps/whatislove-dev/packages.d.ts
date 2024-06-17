@@ -6,6 +6,8 @@ declare module '@11ty/eleventy' {
 
 		ignores: Set<string>
 
+		setServerOptions(options: Record<string, unknown>): void
+
 		addPassthroughCopy(
 			fileOrDir: string,
 			copyOptions?: Record<string, unknown>,

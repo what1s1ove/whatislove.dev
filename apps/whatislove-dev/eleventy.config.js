@@ -87,6 +87,12 @@ let init = (config) => {
 		config.ignores.add(Path.PAGE.FORM)
 	}
 
+	// server
+	config.setServerOptions({
+		showAllHosts: true,
+	})
+
+	// collections
 	config.addCollection(`articles`, (collections) => {
 		return collections.getFilteredByGlob(CollectionPath.ARTICLES)
 	})
@@ -151,6 +157,7 @@ let init = (config) => {
 		return getShuffledItems(/** @type {unknown[]} */ (items))
 	})
 
+	// shortcodes
 	config.addNunjucksAsyncShortcode(
 		`inlineImage`,
 		/**
