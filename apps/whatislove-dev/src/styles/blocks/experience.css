@@ -1,5 +1,10 @@
+.experience {
+	display: grid;
+	gap: 20px;
+}
+
 .experience__title {
-	margin-block: 0 25px;
+	margin: 0;
 	font-size: var(--font-size-heading-2);
 	font-weight: 600;
 }
@@ -8,7 +13,6 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 10px;
-	margin-block: 0 40px;
 }
 
 .experience__form-label {
@@ -32,7 +36,7 @@
 .experience__timeline-wrapper {
 	--size-inline-dates: 145px;
 
-	block-size: 75vh;
+	block-size: 450px;
 	overflow-y: auto;
 
 	@media (--width-tablet) {
