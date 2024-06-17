@@ -1,6 +1,7 @@
 .tag-list {
 	display: flex;
 	gap: 4px;
+	place-items: center;
 	padding: 0;
 	margin: 0;
 	list-style: none;
@@ -9,10 +10,11 @@
 .tag-list__tag {
 	--background-color: var(--color-red-200);
 
-	padding-block: 2px;
+	padding-block: 5px;
 	padding-inline: 6px;
 	font-size: var(--font-size-text-small);
 	font-weight: 600;
+	line-height: 1;
 	background-color: hsl(var(--background-color) / 30%);
 	background-image: var(--background-image-page);
 	border-radius: 3px;
