@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.64.3](https://github.com/what1s1ove/whatislove.dev/compare/v1.64.2...v1.64.3) (2024-06-17)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** fix easter egg rerender wd-639 ([#640](https://github.com/what1s1ove/whatislove.dev/issues/640)) ([3eaa6f3](https://github.com/what1s1ove/whatislove.dev/commit/3eaa6f387f0867d31d883cf03378d2d51caf614d))
+
 ## [1.64.2](https://github.com/what1s1ove/whatislove.dev/compare/v1.64.1...v1.64.2) (2024-06-16)
 
 
