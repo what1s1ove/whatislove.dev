@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.62.4](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.62.3...@whatislove.dev/whatislove-dev-v1.62.4) (2024-06-17)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** edit tags height wd-644 ([#645](https://github.com/what1s1ove/whatislove.dev/issues/645)) ([7179603](https://github.com/what1s1ove/whatislove.dev/commit/717960365ae0aada440782712e998b83003da35a))
+* **whatislove-dev:** remove dynamic height from timeline wd-638 ([#642](https://github.com/what1s1ove/whatislove.dev/issues/642)) ([7da7f7f](https://github.com/what1s1ove/whatislove.dev/commit/7da7f7f687e63257a1f15fc685210db6c8f712bd))
+
 ## [1.62.3](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.62.2...@whatislove.dev/whatislove-dev-v1.62.3) (2024-06-17)
 
 
