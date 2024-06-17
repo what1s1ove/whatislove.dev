@@ -40,6 +40,9 @@ class EasterEgg {
 	/** @type {(payload: ToastMessagePayload) => void} */
 	#onNotificationAdd
 
+	/** @type {number} */
+	#windowWidth
+
 	/**
 	 * @param {{
 	 * 	onNotificationAdd: (payload: ToastMessagePayload) => void
@@ -53,6 +56,7 @@ class EasterEgg {
 		this.#easterEggButtonNode = undefined
 		this.#easterEggAudioControlNode = undefined
 		this.#audioNode = undefined
+		this.#windowWidth = window.innerWidth
 
 		this.#handleEasterEggClick = this.#clickEasterEggClickHandler.bind(this)
 		this.#handleWindowResize = initDebounce(
@@ -159,6 +163,14 @@ class EasterEgg {
 
 	/** @returns {void} */
 	#resizeWindowHandler() {
+		let hasSameWidth = this.#windowWidth === window.innerWidth
+
+		if (hasSameWidth) {
+			return
+		}
+
+		this.#windowWidth = window.innerWidth
+
 		this.#setRandomPosition()
 	}
 
