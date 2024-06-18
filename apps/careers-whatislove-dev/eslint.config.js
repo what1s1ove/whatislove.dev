@@ -17,7 +17,7 @@ let ignoresConfig = {
 /** @type {FlatConfig} */
 let litConfig = {
 	plugins: {
-		lit: lit,
+		lit,
 	},
 	rules: /** @type {RulesRecord} */ (lit.configs.all.rules),
 }
