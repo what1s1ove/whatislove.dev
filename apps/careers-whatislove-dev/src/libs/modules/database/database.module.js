@@ -30,7 +30,10 @@ class Database {
 	 * @returns {{ set: (payload: Record<string, unknown>) => Promise<void> }}
 	 */
 	getTableReference(tableName) {
-		let reference = ref(this.#instance, `${tableName}/${Date.now()}`)
+		let reference = ref(
+			this.#instance,
+			`${tableName}/${Date.now().toString()}`,
+		)
 
 		return {
 			/**

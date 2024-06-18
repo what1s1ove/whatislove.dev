@@ -137,7 +137,7 @@ let getDevtoPageMention = async () => {
 
 	for (let article of articles) {
 		let comments = await /** @type {Promise<CommentDevto[]>} */ (
-			callDevtoApi(`/comments?a_id=${article.id}`)
+			callDevtoApi(`/comments?a_id=${article.id.toString()}`)
 		)
 
 		let allComments = getAllDevtoComments(comments)

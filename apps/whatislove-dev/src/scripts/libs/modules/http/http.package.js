@@ -36,7 +36,7 @@ class Http {
 	}
 
 	/**
-	 * @param {Error} error
+	 * @param {unknown} error
 	 * @returns {never}
 	 * @throws {Error}
 	 */
@@ -88,7 +88,7 @@ class Http {
 			.then((response) => /** @type {T} */ (Http.parseJSON(response)))
 			.catch(
 				/**
-				 * @param {Error} error
+				 * @param {unknown} error
 				 * @returns {ReturnType<typeof Http.throwError>}
 				 */
 				(error) => Http.throwError(error),

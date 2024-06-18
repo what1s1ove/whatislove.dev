@@ -6,6 +6,8 @@ import baseConfig from '../../eslint.config.js'
 
 /** @typedef {import('eslint').Linter.FlatConfig} */
 let FlatConfig
+/** @typedef {import('eslint').Linter.RulesRecord} */
+let RulesRecord
 
 /** @type {FlatConfig} */
 let ignoresConfig = {
@@ -15,9 +17,9 @@ let ignoresConfig = {
 /** @type {FlatConfig} */
 let litConfig = {
 	plugins: {
-		lit,
+		lit: lit,
 	},
-	rules: lit.configs.all.rules,
+	rules: /** @type {RulesRecord} */ (lit.configs.all.rules),
 }
 
 let litA11yConfig = {
