@@ -11,8 +11,10 @@ import globals from 'globals'
 
 /** @typedef {import('eslint').Linter.FlatConfig} */
 let FlatConfig
-/** @typedef {import('eslint').Linter.ParserModule} */
-let ParserModule
+/** @typedef {import('eslint').ESLint.Plugin} */
+let Plugin
+/** @typedef {import('eslint').Linter.RulesRecord} */
+let RulesRecord
 
 /** @type {FlatConfig} */
 let ignoresConfig = {
@@ -121,9 +123,9 @@ let importConfig = {
 /** @type {FlatConfig} */
 let sonarConfig = {
 	plugins: {
-		sonarjs,
+		sonarjs: /** @type {Plugin} */ (/** @type {unknown} */ (sonarjs)),
 	},
-	rules: sonarjs.configs.recommended.rules,
+	rules: /** @type {RulesRecord} */ (sonarjs.configs.recommended.rules),
 }
 
 /** @type {FlatConfig} */
@@ -183,16 +185,18 @@ let jsdocConfig = {
 /** @type {FlatConfig} */
 let typescriptPlugin = {
 	languageOptions: {
-		parser: /** @type {ParserModule} */ (tsParser),
+		parser: tsParser,
 		parserOptions: {
 			project: `./tsconfig.json`,
 		},
 	},
 	plugins: {
-		'@typescript-eslint': ts,
+		'@typescript-eslint': /** @type {Plugin} */ (
+			/** @type {unknown} */ (ts)
+		),
 	},
 	rules: {
-		...ts.configs[`strict-type-checked`].rules,
+		...ts.configs[`strict-type-checked`]?.rules,
 		'@typescript-eslint/no-extraneous-class': [
 			`error`,
 			{

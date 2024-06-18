@@ -12,8 +12,11 @@ let generateTocMarkup = (item) => {
 	if (hasLiNode) {
 		markup += `
 			<li class="${BlockName.TOC}__item">
-				<a class="${BlockName.TOC}__link" href="#${item.slug}">
-					${item.text}
+				<a
+					class="${BlockName.TOC}__link"
+					href="#${/** @type {string} */ (item.slug).toString()}"
+				>
+					${/** @type {string} */ (item.text).toString()}
 				</a>
 		`
 	}

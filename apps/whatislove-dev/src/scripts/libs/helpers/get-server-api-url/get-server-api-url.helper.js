@@ -7,7 +7,7 @@
  * @returns {string}
  */
 let getServerApiUrl = ({ apiPrefix = ``, host = ``, port = 0 } = {}) => {
-	return `${host}${port}${apiPrefix}`
+	return `${host}${port.toString()}${apiPrefix}`
 }
 
 export { getServerApiUrl }

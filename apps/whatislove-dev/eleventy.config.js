@@ -120,7 +120,7 @@ let init = (config) => {
 			fonts: [400, 700].map((weight) => ({
 				data: readFileSync(
 					new URL(
-						`src/fonts/red-hat-display-${weight}.woff`,
+						`src/fonts/red-hat-display-${weight.toString()}.woff`,
 						import.meta.url,
 					),
 				),
@@ -332,7 +332,7 @@ let init = (config) => {
 			let extension = extname(source)
 			let name = basename(source, extension)
 
-			return `${name}-${width}w.${format}`
+			return `${name}-${width.toString()}w.${format.toString()}`
 		},
 		formats: [`avif`, `webp`, `png`],
 		widths: [640, 960, 1280, 1920, 2560],
