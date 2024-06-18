@@ -74,35 +74,42 @@ stickersCount: 0
 	<div class="main__row main__row--experience-stickers box">
 		<section class="experience">
 			<h2 class="experience__title">Experience</h2>
-			<form class="experience__form" action="/timeline">
-				<label class="experience__form-label">
-					<input
-						class="experience__form-control visually-hidden"
-						type="radio"
-						name="type"
-						value="position"
-						checked
-					/>
-					Positions
-				</label>
-				<label class="experience__form-label">
-					<input
-						class="experience__form-control visually-hidden"
-						type="radio"
-						name="type"
-						value="certificate"
-					/>
-					Certificates
-				</label>
-				<label class="experience__form-label">
-					<input class="experience__form-control visually-hidden" type="radio" name="type" value="meetup" />
-					Meetups
-				</label>
-				<label class="experience__form-label">
-					<input class="experience__form-control visually-hidden" type="radio" name="type" value="book" />
-					Book
-				</label>
-			</form>
+			<search class="experience__form-wrapper">
+				<form class="experience__form" action="/timeline">
+					<label class="experience__form-label">
+						<input
+							class="experience__form-control visually-hidden"
+							type="radio"
+							name="type"
+							value="position"
+							checked
+						/>
+						Positions
+					</label>
+					<label class="experience__form-label">
+						<input
+							class="experience__form-control visually-hidden"
+							type="radio"
+							name="type"
+							value="certificate"
+						/>
+						Certificates
+					</label>
+					<label class="experience__form-label">
+						<input
+							class="experience__form-control visually-hidden"
+							type="radio"
+							name="type"
+							value="meetup"
+						/>
+						Meetups
+					</label>
+					<label class="experience__form-label">
+						<input class="experience__form-control visually-hidden" type="radio" name="type" value="book" />
+						Book
+					</label>
+				</form>
+			</search>
 			<div class="experience__timeline-wrapper scroll-shadows">
 				<ul class="experience__timeline-list timeline timeline--loading timeline--columns"></ul>
 			</div>
