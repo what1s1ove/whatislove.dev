@@ -121,6 +121,10 @@
 		color-scheme: dark;
 	}
 
+	&:has(.settings--theme .settings__theme-control[value="light"]:checked) {
+		color-scheme: light;
+	}
+
 	@media (prefers-color-scheme: dark) {
 		&:has(.settings--theme .settings__theme-control[value="auto"]:checked) {
 			color-scheme: dark;
