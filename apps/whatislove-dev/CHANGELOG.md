@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.62.5](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.62.4...@whatislove.dev/whatislove-dev-v1.62.5) (2024-06-18)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** add color scheme light to css wd-649 ([#650](https://github.com/what1s1ove/whatislove.dev/issues/650)) ([fed6d4b](https://github.com/what1s1ove/whatislove.dev/commit/fed6d4bd2a4e3de8ffde9b38dc4a507c18fda489))
+
 ## [1.62.4](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.62.3...@whatislove.dev/whatislove-dev-v1.62.4) (2024-06-17)
 
 
