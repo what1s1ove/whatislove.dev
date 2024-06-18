@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/careers-whatislove-dev-v1.7.2...@whatislove.dev/careers-whatislove-dev-v1.8.0) (2024-06-18)
+
+
+### Features
+
+* **whatislove-dev:** add search html element to index page wd-275 ([#653](https://github.com/what1s1ove/whatislove.dev/issues/653)) ([2059f0a](https://github.com/what1s1ove/whatislove.dev/commit/2059f0a6760a1849921375900f50a584f2fd86e6))
+
 ## [1.7.2](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/careers-whatislove-dev-v1.7.1...@whatislove.dev/careers-whatislove-dev-v1.7.2) (2024-06-16)
 
 

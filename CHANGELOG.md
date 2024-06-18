@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.65.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.64.5...v1.65.0) (2024-06-18)
+
+
+### Features
+
+* **whatislove-dev:** add search html element to index page wd-275 ([#653](https://github.com/what1s1ove/whatislove.dev/issues/653)) ([2059f0a](https://github.com/what1s1ove/whatislove.dev/commit/2059f0a6760a1849921375900f50a584f2fd86e6))
+
 ## [1.64.5](https://github.com/what1s1ove/whatislove.dev/compare/v1.64.4...v1.64.5) (2024-06-18)
 
 
