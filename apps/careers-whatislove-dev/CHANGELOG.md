@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/careers-whatislove-dev-v1.9.0...@whatislove.dev/careers-whatislove-dev-v1.9.1) (2024-06-19)
+
+
+### Bug Fixes
+
+* **careers-whatislove-dev:** replace prefetch with preload on process media wd-662 ([#663](https://github.com/what1s1ove/whatislove.dev/issues/663)) ([aadd392](https://github.com/what1s1ove/whatislove.dev/commit/aadd392bda019bdaf0326eccde74f94d4e516645))
+
 ## [1.9.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/careers-whatislove-dev-v1.8.0...@whatislove.dev/careers-whatislove-dev-v1.9.0) (2024-06-19)
 
 
