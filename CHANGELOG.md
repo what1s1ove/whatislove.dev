@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.67.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.66.0...v1.67.0) (2024-06-19)
+
+
+### Features
+
+* **whatislove-dev:** add what successful people do at work book wd-656 ([#658](https://github.com/what1s1ove/whatislove.dev/issues/658)) ([169cdaf](https://github.com/what1s1ove/whatislove.dev/commit/169cdaf7088d556acdc0fa5de682f5a097e0fb6e))
+
 ## [1.66.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.65.0...v1.66.0) (2024-06-19)
 
 
