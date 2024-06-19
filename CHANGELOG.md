@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.66.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.65.0...v1.66.0) (2024-06-19)
+
+
+### Features
+
+* **careers-whatislove-dev:** add preload for process media wd-655 ([#659](https://github.com/what1s1ove/whatislove.dev/issues/659)) ([fd34e6f](https://github.com/what1s1ove/whatislove.dev/commit/fd34e6f79b948024f1792438832197c630837951))
+
 ## [1.65.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.64.5...v1.65.0) (2024-06-18)
 
 
