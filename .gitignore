@@ -4,6 +4,7 @@ node_modules
 # production
 build
 process.mp4
+*.module.css.d.ts
 
 # cache
 .cache

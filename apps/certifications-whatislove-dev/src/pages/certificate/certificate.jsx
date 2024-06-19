@@ -30,7 +30,7 @@ let Certificate = ({ certificationType }) => {
 	}
 
 	return (
-		<PDFViewer className={/** @type {string} */ (styles[`viewer`])}>
+		<PDFViewer className={styles[`viewer`]}>
 			<Document>
 				<Cert user={user} />
 			</Document>

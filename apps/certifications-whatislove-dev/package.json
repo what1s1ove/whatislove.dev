@@ -4,9 +4,10 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"start": "vite",
+		"_tcm": "tcm -p \"src/**/*.module.css\"",
+		"start": "concurrently -n \"CLIENT,TCM\" \"vite\" \"npm run _tcm -- --watch\"",
 		"build:clean": "rm -rf build",
-		"build": "npm run build:clean && vite build",
+		"build": "npm run build:clean && npm run _tcm && vite build",
 		"ci:lint:css": "stylelint \"src/**/*.css\"",
 		"ci:lint:js": "eslint \"./**/*\"",
 		"ci:lint:type": "tsc --noEmit",
@@ -24,6 +25,7 @@
 		"@types/react": "18.2.47",
 		"@types/react-dom": "18.2.18",
 		"@vitejs/plugin-react": "4.2.1",
-		"eslint-plugin-react": "7.33.2"
+		"eslint-plugin-react": "7.33.2",
+		"typed-css-modules": "0.9.1"
 	}
 }
