@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.68.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.67.1...v1.68.0) (2024-06-19)
+
+
+### Features
+
+* **careers-whatislove-dev:** remove preload from process media wd-665 ([#666](https://github.com/what1s1ove/whatislove.dev/issues/666)) ([dab8c6b](https://github.com/what1s1ove/whatislove.dev/commit/dab8c6bd4ed1d1cf78e485b991c8ae09e155e88b))
+
 ## [1.67.1](https://github.com/what1s1ove/whatislove.dev/compare/v1.67.0...v1.67.1) (2024-06-19)
 
 

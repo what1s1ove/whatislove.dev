@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/careers-whatislove-dev-v1.9.1...@whatislove.dev/careers-whatislove-dev-v1.10.0) (2024-06-19)
+
+
+### Features
+
+* **careers-whatislove-dev:** remove preload from process media wd-665 ([#666](https://github.com/what1s1ove/whatislove.dev/issues/666)) ([dab8c6b](https://github.com/what1s1ove/whatislove.dev/commit/dab8c6bd4ed1d1cf78e485b991c8ae09e155e88b))
+
 ## [1.9.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/careers-whatislove-dev-v1.9.0...@whatislove.dev/careers-whatislove-dev-v1.9.1) (2024-06-19)
 
 
