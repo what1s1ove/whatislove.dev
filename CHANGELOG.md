@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.69.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.68.0...v1.69.0) (2024-06-20)
+
+
+### Features
+
+* **careers-whatislove-dev/certifications-whatislove-dev:** update favicons wd-339 ([#668](https://github.com/what1s1ove/whatislove.dev/issues/668)) ([8459a54](https://github.com/what1s1ove/whatislove.dev/commit/8459a545150ad76857ffd8366c8f56e30d062f11))
+
 ## [1.68.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.67.1...v1.68.0) (2024-06-19)
 
 
