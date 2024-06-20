@@ -1,6 +1,6 @@
 {
-	"name": "Whatislove Academy",
-	"description": "Whatislove Academy",
+	"name": "Whatislove Careers",
+	"description": "Whatislove Careers",
 	"lang": "en",
 	"start_url": ".",
 	"display": "standalone",
@@ -9,12 +9,12 @@
 	"theme_color": "#ffffff",
 	"icons": [
 		{
-			"src": "/images/icon/icon-192.png",
+			"src": "/images/favicons/192.png",
 			"type": "image/png",
 			"sizes": "192x192"
 		},
 		{
-			"src": "/images/icon/icon-512.png",
+			"src": "/images/favicons/512.png",
 			"type": "image/png",
 			"sizes": "512x512"
 		}
