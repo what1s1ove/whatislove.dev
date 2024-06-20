@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/certifications-whatislove-dev-v1.8.1...@whatislove.dev/certifications-whatislove-dev-v1.9.0) (2024-06-20)
+
+
+### Features
+
+* **careers-whatislove-dev/certifications-whatislove-dev:** update favicons wd-339 ([#668](https://github.com/what1s1ove/whatislove.dev/issues/668)) ([8459a54](https://github.com/what1s1ove/whatislove.dev/commit/8459a545150ad76857ffd8366c8f56e30d062f11))
+
 ## [1.8.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/certifications-whatislove-dev-v1.8.0...@whatislove.dev/certifications-whatislove-dev-v1.8.1) (2024-06-14)
 
 
