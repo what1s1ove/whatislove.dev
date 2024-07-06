@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.69.1](https://github.com/what1s1ove/whatislove.dev/compare/v1.69.0...v1.69.1) (2024-07-06)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** fix typo in articles header wd-674 ([#675](https://github.com/what1s1ove/whatislove.dev/issues/675)) ([b03c9dd](https://github.com/what1s1ove/whatislove.dev/commit/b03c9dd868448e142e6c040916ec7f26c226e264))
+
 ## [1.69.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.68.0...v1.69.0) (2024-06-20)
 
 
