@@ -1,34 +1,13 @@
 ls:
-  .dir: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
-  .md: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
-  .json: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
-  .yml: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
-  .html: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
-  .njk: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
-  .css: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
-  .js: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
-  .jsx: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
-  .cjs: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
-  .d.ts: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
-  .png: regex:([.a-z0-9@]*)([-.][a-z0-9@]+)*
-  .jpg: regex:([.a-z0-9@]*)([-.][a-z0-9@]+)*
-  .jpeg: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
-  .svg: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
-  .ttf: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
-  apps/**:
-    CHANGELOG.md: SCREAMING_SNAKE_CASE
-  packages/**:
+  .dir: kebab-case
+  .github:
+    .dir: regex:([.a-z]*)*
+  .*: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
+  '**':
     CHANGELOG.md: SCREAMING_SNAKE_CASE
 
 ignore:
   - .git
-  - node_modules
+  - '**/node_modules'
+  - '**/build'
   - CHANGELOG.md
-  - apps/careers-whatislove-dev/node_modules
-  - apps/careers-whatislove-dev/build
-  - apps/certifications-whatislove-dev/node_modules
-  - apps/certifications-whatislove-dev/build
-  - apps/whatislove-dev/node_modules
-  - apps/whatislove-dev/build
-  - packages/shared/node_modules
-  - packages/shared/build
