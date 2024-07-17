@@ -132,13 +132,13 @@ Some readers might suggest that similar behavior could be achieved by continuing
 Undoubtedly, we are pleased with the fact that we now manage our delivery processes in GitHub, and the statistics we collect from people participating in the Academy are a testament to its effectiveness.
 
 <figure>
-	<img src="images/statistics-2022.png" alt="Statistics before GitHub became our main tool." />
-	<figcaption>Before GitHub became our main tool.</figcaption>
+  <img src="images/statistics-2022.png" alt="Statistics before GitHub became our main tool." />
+  <figcaption>Before GitHub became our main tool.</figcaption>
 </figure>
 
 <figure>
-	<img src="images/statistics-2023.png" alt="Statistics after GitHub became our main tool." />
-	<figcaption>After GitHub became our main tool.</figcaption>
+  <img src="images/statistics-2023.png" alt="Statistics after GitHub became our main tool." />
+  <figcaption>After GitHub became our main tool.</figcaption>
 </figure>
 
 While we have not completely eliminated Google Docs/Sheets (although we now use [Notion](https://www.notion.so/) more for this purpose. Yes-yes, one more tool…), it's often easier to quickly create a new MVP for statistics in Google Sheets than to immediately start implementing some logic in GitHub. However, we aim to keep all the essential functionality within GitHub, which serves as the primary tool for controlling all of the Academy's delivery processes.
@@ -148,6 +148,6 @@ Coming into the role of Delivery Head of BSA, I was not tasked with establishing
 Quoting the words of Jimmy Carter, the 39th president of the USA, from my favorite movie "[Miracle](<https://en.wikipedia.org/wiki/Miracle_(2004_film)>)": "_We've always had a faith that the days of our children would be better than our own_", by introducing tools like GitHub and all the other innovations into the Academy, which I have implemented and continue to implement, I wanted to facilitate the experience of participating in the Academy for both the current generation and all those who come after us.
 
 <figure>
-	<img src="images/github-closed-milestones.png" alt="Closed GitHub milestones with all closed issues." />
-	<figcaption>What the ideal end of the Academy looks like to me.</figcaption>
+  <img src="images/github-closed-milestones.png" alt="Closed GitHub milestones with all closed issues." />
+  <figcaption>What the ideal end of the Academy looks like to me.</figcaption>
 </figure>

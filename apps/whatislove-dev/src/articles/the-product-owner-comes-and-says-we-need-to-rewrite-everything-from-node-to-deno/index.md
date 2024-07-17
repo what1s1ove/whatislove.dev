@@ -19,7 +19,7 @@ Let's start with the riddle, who is shown in this photo? 🙂
 Most likely, you have worked with his product. 😉
 
 <details>
-	<summary>Answer</summary>
+  <summary>Answer</summary>
 
     **[Ryan Dahl](https://en.wikipedia.org/wiki/Ryan_Dahl)** is a software engineer and the original developer of the **`Node.js`** (~2009 year). In January 2012, Dahl announced that he turned over the reins to [NPM](<https://en.wikipedia.org/wiki/Npm_(software)>) creator.
 
