@@ -117,13 +117,13 @@ That's it, we took apart a small but useful example of the github action!
 In the github interface, the runs will look like this:
 
 <figure>
-	<img src="images/github-actions-run-history.png" alt="GitHub actions workflow history." />
-	<figcaption>Run History</figcaption>
+  <img src="images/github-actions-run-history.png" alt="GitHub actions workflow history." />
+  <figcaption>Run History</figcaption>
 </figure>
 
 <figure>
-	<img src="images/github-action.png" alt="GitHub actions steps inside workflow." />
-	<figcaption>Inside Each Run</figcaption>
+  <img src="images/github-action.png" alt="GitHub actions steps inside workflow." />
+  <figcaption>Inside Each Run</figcaption>
 </figure>
 
 ## Branch protection

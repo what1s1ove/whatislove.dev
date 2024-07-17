@@ -116,13 +116,13 @@ HTML Element content types:
 - [Interactive content](https://html.spec.whatwg.org/multipage/dom.html#interactive-content-2) — what the user is interacting with.
 
 <figure>
-	<img src="images/html-element-content-types.png" alt="Content types in HTML and how they intersect with each other." />
-	<figcaption>HTML Element content types</figcaption>
+  <img src="images/html-element-content-types.png" alt="Content types in HTML and how they intersect with each other." />
+  <figcaption>HTML Element content types</figcaption>
 </figure>
 
 <figure>
-	<img src="images/html-element-content-types-with-tags.png" alt="Content types in HTML and how they intersect with each other with some examples of tags." />
-	<figcaption>HTML Element content types</figcaption>
+  <img src="images/html-element-content-types-with-tags.png" alt="Content types in HTML and how they intersect with each other with some examples of tags." />
+  <figcaption>HTML Element content types</figcaption>
 </figure>
 
 _When you try to nest one tag in another incorrectly, browser starts fixing errors **at its discretion without asking**._
@@ -138,7 +138,7 @@ Open the [documentation](https://html.spec.whatwg.org/multipage/semantics.html#s
 ```
 
 <details>
-	<summary>Spoiler</summary>
+  <summary>Spoiler</summary>
 
     **Yes, you can!**
 
@@ -168,7 +168,7 @@ Open the [documentation](https://html.spec.whatwg.org/multipage/semantics.html#s
 <!-- prettier-ignore -->
 ```html
 <p>
-	<div>?</div>
+  <div>?</div>
 </p>
 ```
 
