@@ -1,9 +1,13 @@
 ls:
   .dir: kebab-case
+  .*: kebab-case
+  .*.*: kebab-case
+
   .github:
-    .dir: regex:([.a-z]*)*
-  .*: regex:([.a-z0-9]*)([-.][a-z0-9]+)*
-  '**':
+    .dir: regex:[.]*[a-z]+
+    .yml: kebab-case
+
+  '*':
     CHANGELOG.md: SCREAMING_SNAKE_CASE
 
 ignore:
