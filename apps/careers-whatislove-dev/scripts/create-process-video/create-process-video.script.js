@@ -4,15 +4,17 @@ import { ProcessExitCode, getShuffledItems } from '@whatislove.dev/shared'
 import ffmpeg from 'fluent-ffmpeg'
 import { existsSync } from 'node:fs'
 import { readdir } from 'node:fs/promises'
-import { dirname, join } from 'node:path'
+import { join } from 'node:path'
 import { exit } from 'node:process'
-import { fileURLToPath } from 'node:url'
 
 let PROCESS_PIECE_FILE_EXT = /** @type {const} */ (`.mp4`)
 
-let scriptDirname = dirname(fileURLToPath(import.meta.url))
-let processPiecesPath = join(scriptDirname, `./process-pieces`)
-let processFilePath = join(scriptDirname, `../../public/videos`, `process.mp4`)
+let processPiecesPath = join(import.meta.dirname, `./process-pieces`)
+let processFilePath = join(
+	import.meta.dirname,
+	`../../public/videos`,
+	`process.mp4`,
+)
 
 ffmpeg.setFfmpegPath(ffmpegInstaller.path)
 ffmpeg.setFfprobePath(ffprobeInstaller.path)
