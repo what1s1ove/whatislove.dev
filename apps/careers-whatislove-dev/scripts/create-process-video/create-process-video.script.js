@@ -1,7 +1,7 @@
 #!
 import ffmpegInstaller from '@ffmpeg-installer/ffmpeg'
 import ffprobeInstaller from '@ffprobe-installer/ffprobe'
-import { ProcessExitCode, getShuffledItems } from '@whatislove.dev/shared'
+import { getShuffledItems, ProcessExitCode } from '@whatislove.dev/shared'
 import ffmpeg from 'fluent-ffmpeg'
 import { existsSync } from 'node:fs'
 import { readdir } from 'node:fs/promises'

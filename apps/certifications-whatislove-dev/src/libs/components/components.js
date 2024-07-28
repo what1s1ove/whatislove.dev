@@ -2,9 +2,9 @@ export { App } from './app/app.jsx'
 export {
 	Document,
 	G as PDFG,
-	PDFViewer,
 	Page,
 	Path as PDFPath,
+	PDFViewer,
 	Svg as PDFSvg,
 	Text,
 	View,

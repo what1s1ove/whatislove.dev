@@ -1,9 +1,9 @@
 import { Loader } from '~/libs/components/components.js'
 import { checkIsBeforeElement } from '~/libs/helpers/helpers.js'
 import {
-	Timeline as TTimeline,
 	TimelineApi,
 	TimelineFilter,
+	Timeline as TTimeline,
 } from '~/modules/timeline/timeline.js'
 
 import { TimelineForm, TimelineList } from './libs/components/components.js'
