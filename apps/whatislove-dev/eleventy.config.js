@@ -13,9 +13,9 @@ import htmlMin from 'html-minifier-terser'
 import * as lightningcss from 'lightningcss'
 import { parseHTML } from 'linkedom'
 import markdownIt from 'markdown-it'
-import { existsSync, readFileSync } from 'node:fs'
-import { mkdir, readFile, writeFile } from 'node:fs/promises'
-import { basename, extname, join } from 'node:path'
+import fsSync from 'node:fs'
+import fs from 'node:fs/promises'
+import path from 'node:path'
 import svgo from 'svgo'
 
 import { default as environment } from './src/data/environment.js'
@@ -59,7 +59,7 @@ let CollectionPath = /** @type {const} */ ({
 	PAGES: `src/pages/!(404)/index.njk`,
 })
 
-let rawPackageJson = await readFile(new URL(`package.json`, import.meta.url))
+let rawPackageJson = await fs.readFile(new URL(`package.json`, import.meta.url))
 let packageJson = /** @type {(text: string) => PackageJson} */ (JSON.parse)(
 	rawPackageJson.toString(),
 )
@@ -124,7 +124,7 @@ let init = (config) => {
 		outputFileSlug: (ogImage) => ogImage.data.page.fileSlug,
 		satoriOptions: {
 			fonts: [400, 700].map((weight) => ({
-				data: readFileSync(
+				data: fsSync.readFileSync(
 					new URL(
 						`src/fonts/red-hat-display-${weight.toString()}.woff`,
 						import.meta.url,
@@ -161,13 +161,13 @@ let init = (config) => {
 	config.addNunjucksAsyncShortcode(
 		`inlineImage`,
 		/**
-		 * @param {string} path
+		 * @param {string} url
 		 * @returns {Promise<string>}
 		 */
-		async (path) => {
-			let extension = extname(path).slice(1)
-			let imgPath = join(config.dir.input, path)
-			let base64Image = await readFile(imgPath, `base64`)
+		async (url) => {
+			let extension = path.extname(url).slice(1)
+			let imgPath = path.join(config.dir.input, url)
+			let base64Image = await fs.readFile(imgPath, `base64`)
 
 			if (extension === `svg`) {
 				extension = `svg+xml`
@@ -195,15 +195,15 @@ let init = (config) => {
 				return
 			}
 
-			let rawDatabase = await readFile(Path.DB)
+			let rawDatabase = await fs.readFile(Path.DB)
 			let database = /** @type {(text: string) => Database} */ (
 				JSON.parse
 			)(rawDatabase.toString())
 
-			let isFolderExists = existsSync(`build/api`)
+			let isFolderExists = fsSync.existsSync(`build/api`)
 
 			if (!isFolderExists) {
-				await mkdir(`build/api`)
+				await fs.mkdir(`build/api`)
 			}
 
 			await Promise.all(
@@ -212,7 +212,10 @@ let init = (config) => {
 						database[/** @type {keyof Database} */ (databaseKey)],
 					)
 
-					return writeFile(`build/api/${databaseKey}.json`, payload)
+					return fs.writeFile(
+						`build/api/${databaseKey}.json`,
+						payload,
+					)
 				}),
 			)
 		},
@@ -220,8 +223,8 @@ let init = (config) => {
 	})
 
 	// html
-	config.addTransform(`html-minify`, async (content, path) => {
-		if (path.endsWith(`.html`)) {
+	config.addTransform(`html-minify`, async (content, url) => {
+		if (url.endsWith(`.html`)) {
 			return await htmlMin.minify(content, {
 				collapseBooleanAttributes: true,
 				collapseWhitespace: true,
@@ -232,8 +235,8 @@ let init = (config) => {
 		return content
 	})
 
-	config.addTransform(`html-transform`, (content, path) => {
-		if (path.endsWith(`.html`)) {
+	config.addTransform(`html-transform`, (content, url) => {
+		if (url.endsWith(`.html`)) {
 			let window = parseHTML(content)
 
 			for (let transform of TRANSFORMS) {
@@ -336,8 +339,8 @@ let init = (config) => {
 		 * @returns {string}
 		 */
 		filenameFormat: (_id, source, width, format) => {
-			let extension = extname(source)
-			let name = basename(source, extension)
+			let extension = path.extname(source)
+			let name = path.basename(source, extension)
 
 			return `${name}-${width.toString()}w.${format.toString()}`
 		},

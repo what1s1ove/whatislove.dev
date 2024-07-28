@@ -1,5 +1,5 @@
 import reactPlugin from '@vitejs/plugin-react'
-import { join } from 'node:path'
+import path from 'node:path'
 import { defineConfig } from 'vite'
 
 /** @type {import('vite').UserConfig} */
@@ -16,7 +16,7 @@ let config = defineConfig({
 		alias: [
 			{
 				find: `~`,
-				replacement: join(import.meta.dirname, `src`),
+				replacement: path.join(import.meta.dirname, `src`),
 			},
 		],
 	},

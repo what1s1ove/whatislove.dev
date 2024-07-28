@@ -147,9 +147,13 @@ let unicornConfig = {
 /** @type {FlatConfig} */
 let perfectionistConfig = {
 	plugins: {
-		perfectionist,
+		perfectionist: /** @type {Plugin} */ (
+			/** @type {unknown} */ (perfectionist)
+		),
 	},
-	rules: perfectionist.configs[`recommended-natural`].rules,
+	rules: /** @type {RulesRecord} */ (
+		perfectionist.configs[`recommended-natural`].rules
+	),
 }
 
 /** @type {FlatConfig} */

@@ -7,13 +7,13 @@ class WhatisloveMath {
 		MENTEE: `mentee`,
 	})
 
-	static NOTHING_TODO_VALUE = /** @type {const} */ (10)
-
 	static boostEntityToProfessionalValue = /** @type {const} */ ({
 		[WhatisloveMath.BoostEntity.BOOK]: 1,
 		[WhatisloveMath.BoostEntity.COURSE]: 3,
 		[WhatisloveMath.BoostEntity.MENTEE]: 10,
 	})
+
+	static NOTHING_TODO_VALUE = /** @type {const} */ (10)
 
 	/**
 	 * @param {number} initialValue
@@ -24,8 +24,8 @@ class WhatisloveMath {
 	static calculateProfessionalLevel(initialValue = 0, ...boostEntities) {
 		let {
 			BoostEntity,
-			NOTHING_TODO_VALUE,
 			boostEntityToProfessionalValue,
+			NOTHING_TODO_VALUE,
 		} = WhatisloveMath
 
 		let hasBoostEntities = boostEntities.length > 0

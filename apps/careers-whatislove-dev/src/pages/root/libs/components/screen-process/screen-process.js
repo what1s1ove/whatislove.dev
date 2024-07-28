@@ -1,4 +1,4 @@
-import { LitElement, html, nothing } from 'lit'
+import { html, LitElement, nothing } from 'lit'
 import { property } from 'lit/decorators.js'
 import { createRef, ref } from 'lit/directives/ref.js'
 

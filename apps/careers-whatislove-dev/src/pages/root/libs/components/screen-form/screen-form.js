@@ -1,11 +1,11 @@
 import { ControlType, getFormValues } from 'form-payload'
-import { LitElement, html } from 'lit'
+import { html, LitElement } from 'lit'
 
 import {
 	defineCustomElement,
 	parseRawStyleSheet,
 } from '~/libs/helpers/helpers.js'
-import { TableNames, database } from '~/libs/modules/database/database.js'
+import { database, TableNames } from '~/libs/modules/database/database.js'
 import { notify } from '~/libs/modules/notify/notify.js'
 
 import { Scene } from '../../enums/enums.js'
