@@ -1,7 +1,5 @@
-import { join } from 'node:path'
+import 'dotenv/config'
 import process from 'node:process'
-
-process.loadEnvFile(join(import.meta.dirname, `../../`, `.env`))
 
 let { DEVTO_API_KEY, ENVIRONMENT, WEBMENTION_API_KEY } = process.env
 
