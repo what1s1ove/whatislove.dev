@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.70.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.69.1...v1.70.0) (2024-07-28)
+
+
+### Features
+
+* **root:** remove dts file for unicorn & perfectionist eslint plugin wd-270 ([#691](https://github.com/what1s1ove/whatislove.dev/issues/691)) ([2be40dc](https://github.com/what1s1ove/whatislove.dev/commit/2be40dcf528fc4740970690bbcf4433c5afca47a))
+* **root:** update nodejs to lts (20) wd-521 ([#685](https://github.com/what1s1ove/whatislove.dev/issues/685)) ([9d61bad](https://github.com/what1s1ove/whatislove.dev/commit/9d61bad50d9e400186381e1a9fa926e878069e36))
+* **whatislove-dev:** add atomic habits book wd-679 ([#689](https://github.com/what1s1ove/whatislove.dev/issues/689)) ([b57bb05](https://github.com/what1s1ove/whatislove.dev/commit/b57bb055d2865cbfab61cbd10e198b7480b5ad76))
+* **whatislove-dev:** add the subtle art of not giving f*ck book wd-673 ([#687](https://github.com/what1s1ove/whatislove.dev/issues/687)) ([ee73843](https://github.com/what1s1ove/whatislove.dev/commit/ee7384395c1781ef5793c3120700c6d5edec82ad))
+
+
+### Bug Fixes
+
+* **certifications-whatislove-dev:** update react-pdf & remove overrides wd-619 ([#690](https://github.com/what1s1ove/whatislove.dev/issues/690)) ([2c55a72](https://github.com/what1s1ove/whatislove.dev/commit/2c55a72f8be4d8f9d770f51ab4fa05e53378af6b))
+
 ## [1.69.1](https://github.com/what1s1ove/whatislove.dev/compare/v1.69.0...v1.69.1) (2024-07-06)
 
 

@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.10.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/certifications-whatislove-dev-v1.9.0...@whatislove.dev/certifications-whatislove-dev-v1.10.0) (2024-07-28)
+
+
+### Features
+
+* **root:** remove dts file for unicorn & perfectionist eslint plugin wd-270 ([#691](https://github.com/what1s1ove/whatislove.dev/issues/691)) ([2be40dc](https://github.com/what1s1ove/whatislove.dev/commit/2be40dcf528fc4740970690bbcf4433c5afca47a))
+* **root:** update nodejs to lts (20) wd-521 ([#685](https://github.com/what1s1ove/whatislove.dev/issues/685)) ([9d61bad](https://github.com/what1s1ove/whatislove.dev/commit/9d61bad50d9e400186381e1a9fa926e878069e36))
+
 ## [1.9.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/certifications-whatislove-dev-v1.8.1...@whatislove.dev/certifications-whatislove-dev-v1.9.0) (2024-06-20)
 
 

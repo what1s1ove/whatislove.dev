@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/shared-v1.9.0...@whatislove.dev/shared-v1.10.0) (2024-07-28)
+
+
+### Features
+
+* **root:** update nodejs to lts (20) wd-521 ([#685](https://github.com/what1s1ove/whatislove.dev/issues/685)) ([9d61bad](https://github.com/what1s1ove/whatislove.dev/commit/9d61bad50d9e400186381e1a9fa926e878069e36))
+
 ## [1.9.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/shared-v1.8.0...@whatislove.dev/shared-v1.9.0) (2024-05-24)
 
 
