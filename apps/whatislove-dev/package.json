@@ -34,7 +34,6 @@
 		"@types/markdown-it": "14.1.1",
 		"bemlint": "1.7.0",
 		"browserslist": "4.22.1",
-		"dotenv": "16.4.5",
 		"eleventy-plugin-og-image": "4.0.0-beta.7",
 		"esbuild": "0.19.5",
 		"html-minifier-terser": "7.2.0",
