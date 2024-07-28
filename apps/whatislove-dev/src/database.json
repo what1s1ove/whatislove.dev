@@ -1643,6 +1643,18 @@
 			"linkDesc": "",
 			"date": "2024-06-18T00:00:00.000Z",
 			"endDate": ""
+		},
+		{
+			"id": "js-tx97",
+			"type": "book",
+			"title": "The Subtle Art of Not Giving a F*ck: A Counterintuitive Approach to Living a Good Life (Mark Manson)",
+			"desc": "",
+			"origin": "https://www.amazon.com/Subtle-Art-Not-Giving-Counterintuitive/dp/0062457713",
+			"originDesc": "Amazon",
+			"link": "",
+			"linkDesc": "",
+			"date": "2024-07-03T00:00:00.000Z",
+			"endDate": ""
 		}
 	]
 }
