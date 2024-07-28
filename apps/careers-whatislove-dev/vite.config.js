@@ -1,4 +1,4 @@
-import { join } from 'node:path'
+import path from 'node:path'
 import { defineConfig } from 'vite'
 import babel from 'vite-plugin-babel'
 
@@ -29,7 +29,7 @@ let config = defineConfig({
 		alias: [
 			{
 				find: `~`,
-				replacement: join(import.meta.dirname, `src`),
+				replacement: path.join(import.meta.dirname, `src`),
 			},
 		],
 	},

@@ -1,16 +1,17 @@
+#!
 import ffmpegInstaller from '@ffmpeg-installer/ffmpeg'
 import ffprobeInstaller from '@ffprobe-installer/ffprobe'
 import { ProcessExitCode, getShuffledItems } from '@whatislove.dev/shared'
 import ffmpeg from 'fluent-ffmpeg'
 import { existsSync } from 'node:fs'
 import { readdir } from 'node:fs/promises'
-import { join } from 'node:path'
-import { exit } from 'node:process'
+import path from 'node:path'
+import process from 'node:process'
 
 let PROCESS_PIECE_FILE_EXT = /** @type {const} */ (`.mp4`)
 
-let processPiecesPath = join(import.meta.dirname, `./process-pieces`)
-let processFilePath = join(
+let processPiecesPath = path.join(import.meta.dirname, `./process-pieces`)
+let processFilePath = path.join(
 	import.meta.dirname,
 	`../../public/videos`,
 	`process.mp4`,
@@ -39,7 +40,7 @@ let createProcessVideo = async () => {
 let hasProcessFile = existsSync(processFilePath)
 
 if (hasProcessFile) {
-	exit(ProcessExitCode.SUCCESS)
+	process.exit(ProcessExitCode.SUCCESS)
 }
 
 await createProcessVideo()
