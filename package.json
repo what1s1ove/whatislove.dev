@@ -61,9 +61,6 @@
 		"typescript": "5.3.3",
 		"vite": "5.1.5"
 	},
-	"overrides": {
-		"restructure": "3.0.0"
-	},
 	"simple-git-hooks": {
 		"pre-commit": "npm run git:hook:precommit",
 		"commit-msg": "npm run git:hook:commit"
