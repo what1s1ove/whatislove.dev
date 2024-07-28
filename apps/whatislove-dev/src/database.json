@@ -1655,6 +1655,18 @@
 			"linkDesc": "",
 			"date": "2024-07-03T00:00:00.000Z",
 			"endDate": ""
+		},
+		{
+			"id": "l0eNbxa",
+			"type": "book",
+			"title": "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones (James Clear)",
+			"desc": "",
+			"origin": "https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299",
+			"originDesc": "Amazon",
+			"link": "",
+			"linkDesc": "",
+			"date": "2024-07-15T00:00:00.000Z",
+			"endDate": ""
 		}
 	]
 }
