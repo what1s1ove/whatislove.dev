@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/careers-whatislove-dev-v1.12.0...@whatislove.dev/careers-whatislove-dev-v1.13.0) (2024-08-12)
+
+
+### Features
+
+* **careers-whatislove-dev:** add border box on form screen wd-693 ([#694](https://github.com/what1s1ove/whatislove.dev/issues/694)) ([c007540](https://github.com/what1s1ove/whatislove.dev/commit/c0075407d3e6abbbe81baabded2ec040ec5d8383))
+
 ## [1.12.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/careers-whatislove-dev-v1.11.0...@whatislove.dev/careers-whatislove-dev-v1.12.0) (2024-07-28)
 
 
