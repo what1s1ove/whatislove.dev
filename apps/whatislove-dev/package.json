@@ -23,8 +23,8 @@
 		"form-payload": "1.7.2"
 	},
 	"devDependencies": {
-		"@11ty/eleventy": "3.0.0-alpha.10",
-		"@11ty/eleventy-img": "5.0.0-beta.4",
+		"@11ty/eleventy": "3.0.0",
+		"@11ty/eleventy-img": "5.0.0",
 		"@11ty/eleventy-plugin-rss": "1.2.0",
 		"@linthtml/linthtml": "0.10.0-beta.8",
 		"@shikijs/markdown-it": "1.5.2",
@@ -35,7 +35,7 @@
 		"bemlint": "1.7.0",
 		"browserslist": "4.22.1",
 		"dotenv": "16.4.5",
-		"eleventy-plugin-og-image": "4.0.0-beta.7",
+		"eleventy-plugin-og-image": "4.0.0-beta.8",
 		"esbuild": "0.19.5",
 		"html-minifier-terser": "7.2.0",
 		"json-server": "0.17.4",
