@@ -1691,6 +1691,18 @@
 			"linkDesc": "",
 			"date": "2024-08-23T00:00:00.000Z",
 			"endDate": ""
+		},
+		{
+			"id": "IfbM0Kg",
+			"type": "book",
+			"title": "How to Stop Worrying and Start Living (Dale Carnegie)",
+			"desc": "",
+			"origin": "https://www.amazon.com/How-Stop-Worrying-Start-Living/dp/0671733354",
+			"originDesc": "Amazon",
+			"link": "",
+			"linkDesc": "",
+			"date": "2024-09-06T00:00:00.000Z",
+			"endDate": ""
 		}
 	]
 }
