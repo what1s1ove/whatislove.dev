@@ -1679,6 +1679,18 @@
 			"linkDesc": "",
 			"date": "2024-08-06T00:00:00.000Z",
 			"endDate": ""
+		},
+		{
+			"id": "6Dd8mub",
+			"type": "book",
+			"title": "Your Time, Your Way: Time Well Managed, Life Well Lived ( Carl Pullein)",
+			"desc": "",
+			"origin": "https://www.amazon.com/Your-Time-Way-Managed-Lived/dp/1944480811",
+			"originDesc": "Amazon",
+			"link": "",
+			"linkDesc": "",
+			"date": "2024-08-23T00:00:00.000Z",
+			"endDate": ""
 		}
 	]
 }
