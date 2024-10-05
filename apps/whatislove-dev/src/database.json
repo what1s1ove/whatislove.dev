@@ -1667,6 +1667,18 @@
 			"linkDesc": "",
 			"date": "2024-07-15T00:00:00.000Z",
 			"endDate": ""
+		},
+		{
+			"id": "pOdVEAq",
+			"type": "book",
+			"title": "How to Win Friends & Influence People (Dale Carnegie)",
+			"desc": "",
+			"origin": "https://www.amazon.com/How-Win-Friends-Influence-People/dp/0671027034",
+			"originDesc": "Amazon",
+			"link": "",
+			"linkDesc": "",
+			"date": "2024-08-06T00:00:00.000Z",
+			"endDate": ""
 		}
 	]
 }
