@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.66.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.65.0...@whatislove.dev/whatislove-dev-v1.66.0) (2024-10-06)
+
+
+### Features
+
+* **whatislove-dev:** add how to stop worrying book wd-698 ([#705](https://github.com/what1s1ove/whatislove.dev/issues/705)) ([8f0a10f](https://github.com/what1s1ove/whatislove.dev/commit/8f0a10fb150e47362657d63752ce2f4427ef7820))
+* **whatislove-dev:** add how to win friends book wd-692 ([#702](https://github.com/what1s1ove/whatislove.dev/issues/702)) ([77dc68d](https://github.com/what1s1ove/whatislove.dev/commit/77dc68d4956aed2bc3d0a9b124f8847bc58e6511))
+* **whatislove-dev:** add retry functionality for 3d party api calls wd-676 ([#706](https://github.com/what1s1ove/whatislove.dev/issues/706)) ([270c554](https://github.com/what1s1ove/whatislove.dev/commit/270c5548acd45a2b61fe21005b663b044fdbb1b3))
+* **whatislove-dev:** add your time your way book wd-696 ([#704](https://github.com/what1s1ove/whatislove.dev/issues/704)) ([b918c0c](https://github.com/what1s1ove/whatislove.dev/commit/b918c0cdca2be24d8a90382ef4fea268aa3dd971))
+* **whatislove-dev:** update 11ty og img plugin to 4.0 wd-701 ([#707](https://github.com/what1s1ove/whatislove.dev/issues/707)) ([a33c101](https://github.com/what1s1ove/whatislove.dev/commit/a33c1016eff09ebbf53c8fb3e7cfd0025e424e3d))
+* **whatislove-dev:** update 11ty to 3.0 wd-699 ([#700](https://github.com/what1s1ove/whatislove.dev/issues/700)) ([8d4cfd8](https://github.com/what1s1ove/whatislove.dev/commit/8d4cfd8e5719f5972af3f5c298e394fc0299a3d6))
+
 ## [1.65.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.64.1...@whatislove.dev/whatislove-dev-v1.65.0) (2024-07-28)
 
 
