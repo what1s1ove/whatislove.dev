@@ -132,3 +132,6 @@ jobs:
           args: 'deploy --json --prod --site ${{ matrix.project }} --filter ${{ env.PACKAGE_DIR }} --dir ${{ env.PACKAGE_DIR }}/build'
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+      - name: Log Deploy Output
+        run: echo "${{ steps.deployment.outputs.NETLIFY_OUTPUT }}"
