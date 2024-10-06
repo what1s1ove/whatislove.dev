@@ -2,10 +2,11 @@ name: Continuous Delivery
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 12 * * *'
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   release:
@@ -30,7 +31,7 @@ jobs:
   dependencies:
     name: Install Dependencies
     needs: release
-    if: ${{ needs.release.outputs.release_created || github.event_name == 'schedule' }}
+    if: ${{ needs.release.outputs.release_created || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     steps:
       - name: Code Checkout
@@ -131,3 +132,6 @@ jobs:
           args: 'deploy --json --prod --site ${{ matrix.project }} --filter ${{ env.PACKAGE_DIR }} --dir ${{ env.PACKAGE_DIR }}/build'
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+      - name: Log Deploy Output
+        run: echo "${{ steps.deployment.outputs.NETLIFY_OUTPUT }}"

@@ -1,3 +1,4 @@
+import { retryCall } from '@whatislove.dev/shared'
 import { parseHTML } from 'linkedom'
 
 import { default as environment } from './environment.js'
@@ -270,7 +271,10 @@ let loader = async () => {
 	let allPagesMentions = /** @type {PagesMentions} */ ({})
 
 	for (let mentionLoader of mentionLoaders) {
-		let fetchedPageMentions = await mentionLoader()
+		let fetchedPageMentions = await retryCall({
+			callback: mentionLoader,
+			retriesCount: 3,
+		})
 
 		for (let [pageUrl, pageMentions] of Object.entries(
 			fetchedPageMentions,
