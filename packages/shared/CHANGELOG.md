@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/shared-v1.10.0...@whatislove.dev/shared-v1.11.0) (2024-10-06)
+
+
+### Features
+
+* **whatislove-dev:** add retry functionality for 3d party api calls wd-676 ([#706](https://github.com/what1s1ove/whatislove.dev/issues/706)) ([270c554](https://github.com/what1s1ove/whatislove.dev/commit/270c5548acd45a2b61fe21005b663b044fdbb1b3))
+
 ## [1.10.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/shared-v1.9.0...@whatislove.dev/shared-v1.10.0) (2024-07-28)
 
 
