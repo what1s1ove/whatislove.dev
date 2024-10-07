@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.73.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.72.0...v1.73.0) (2024-10-07)
+
+
+### Features
+
+* **whatislove-dev:** add new experience to cv wd-302 ([#711](https://github.com/what1s1ove/whatislove.dev/issues/711)) ([3bc80ab](https://github.com/what1s1ove/whatislove.dev/commit/3bc80abbdff2c9f77b44a595befad74b1c3a3291))
+
 ## [1.72.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.71.0...v1.72.0) (2024-10-06)
 
 
