@@ -32,7 +32,7 @@ class Toast {
 
 		toastNode.textContent = message
 
-		await setAsyncTimeout(() => {}, duration)
+		await setAsyncTimeout(undefined, duration)
 
 		await setAsyncTimeout(() => {
 			toastNode.textContent = ``

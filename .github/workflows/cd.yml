@@ -2,10 +2,11 @@ name: Continuous Delivery
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 12 * * *'
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   release:
@@ -30,7 +31,7 @@ jobs:
   dependencies:
     name: Install Dependencies
     needs: release
-    if: ${{ needs.release.outputs.release_created || github.event_name == 'schedule' }}
+    if: ${{ needs.release.outputs.release_created || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     steps:
       - name: Code Checkout
@@ -113,7 +114,7 @@ jobs:
       PACKAGE_DIR: apps/${{ matrix.project }}
     environment:
       name: ${{ matrix.project }}
-      url: ${{ fromJson(steps.deployment.outputs.NETLIFY_OUTPUT).url }}
+      # url: ${{ fromJson(steps.deployment.outputs.NETLIFY_OUTPUT).url }}
     steps:
       - name: Code Checkout
         uses: actions/checkout@v4
