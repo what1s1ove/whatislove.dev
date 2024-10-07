@@ -1,7 +1,7 @@
 {
 	"extends": "../../tsconfig.json",
 	"exclude": ["build"],
-	"include": ["**/*.js", "**/*.jsx", "packages.d.ts", "vite-env.d.ts"],
+	"include": ["**/*.js", "**/*.jsx", "vite-env.d.ts"],
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {

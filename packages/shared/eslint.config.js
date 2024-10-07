@@ -1,14 +1,14 @@
 import baseConfig from '../../eslint.config.js'
 
-/** @typedef {import('eslint').Linter.FlatConfig} */
-let FlatConfig
+/** @typedef {import('eslint').Linter.Config} */
+let Config
 
-/** @type {FlatConfig} */
+/** @type {Config} */
 let ignoresConfig = {
 	ignores: [`build`],
 }
 
-/** @type {FlatConfig[]} */
+/** @type {Config[]} */
 let config = [ignoresConfig, ...baseConfig]
 
 export default config

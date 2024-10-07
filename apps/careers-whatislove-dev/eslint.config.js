@@ -4,17 +4,17 @@ import wc from 'eslint-plugin-wc'
 
 import baseConfig from '../../eslint.config.js'
 
-/** @typedef {import('eslint').Linter.FlatConfig} */
-let FlatConfig
+/** @typedef {import('eslint').Linter.Config} */
+let Config
 /** @typedef {import('eslint').Linter.RulesRecord} */
 let RulesRecord
 
-/** @type {FlatConfig} */
+/** @type {Config} */
 let ignoresConfig = {
 	ignores: [`build`],
 }
 
-/** @type {FlatConfig} */
+/** @type {Config} */
 let litConfig = {
 	plugins: {
 		lit,
@@ -29,7 +29,7 @@ let litA11yConfig = {
 	rules: litA11y.configs.recommended.rules,
 }
 
-/** @type {FlatConfig} */
+/** @type {Config} */
 let wcConfig = {
 	plugins: {
 		wc,
@@ -40,7 +40,7 @@ let wcConfig = {
 	},
 }
 
-/** @type {FlatConfig[]} */
+/** @type {Config[]} */
 let overridesConfigs = [
 	{
 		files: [`vite.config.js`],
@@ -50,7 +50,7 @@ let overridesConfigs = [
 	},
 ]
 
-/** @type {FlatConfig[]} */
+/** @type {Config[]} */
 let config = [
 	ignoresConfig,
 	...baseConfig,

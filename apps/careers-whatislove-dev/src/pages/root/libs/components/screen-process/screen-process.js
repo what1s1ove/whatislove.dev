@@ -37,6 +37,14 @@ class ScreenProcess extends LitElement {
 	/** @type {() => void} */
 	#handleTimeUpdate
 
+	/** @type {boolean} */
+	@property()
+	accessor #isPlaying = true
+
+	/** @type {ReturnType<typeof setTimeout> | undefined} */
+	@property()
+	accessor #phraseTimeoutId = undefined
+
 	/** @type {NodeReference<HTMLProgressElement>} */
 	#progressNodeRef = createRef()
 
@@ -54,9 +62,13 @@ class ScreenProcess extends LitElement {
 
 	/** @returns {void} */
 	#clickFullscreenHandler() {
-		document.fullscreenElement
-			? void document.exitFullscreen()
-			: void document.documentElement.requestFullscreen()
+		let hasFullScreenElement = Boolean(document.fullscreenElement)
+
+		if (hasFullScreenElement) {
+			void document.exitFullscreen()
+		} else {
+			void document.documentElement.requestFullscreen()
+		}
 	}
 
 	/** @returns {void} */
@@ -216,14 +228,6 @@ class ScreenProcess extends LitElement {
 				: nothing}
 		`
 	}
-
-	/** @type {boolean} */
-	@property()
-	accessor #isPlaying = true
-
-	/** @type {ReturnType<typeof setTimeout> | undefined} */
-	@property()
-	accessor #phraseTimeoutId = undefined
 }
 
 defineCustomElement(`cwd-screen-process`, ScreenProcess)
