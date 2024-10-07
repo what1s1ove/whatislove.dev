@@ -9,19 +9,19 @@ import sonarjs from 'eslint-plugin-sonarjs'
 import unicorn from 'eslint-plugin-unicorn'
 import globals from 'globals'
 
-/** @typedef {import('eslint').Linter.FlatConfig} */
-let FlatConfig
+/** @typedef {import('eslint').Linter.Config} */
+let Config
 /** @typedef {import('eslint').ESLint.Plugin} */
 let Plugin
 /** @typedef {import('eslint').Linter.RulesRecord} */
 let RulesRecord
 
-/** @type {FlatConfig} */
+/** @type {Config} */
 let ignoresConfig = {
 	ignores: [`apps`, `packages`],
 }
 
-/** @type {FlatConfig} */
+/** @type {Config} */
 let jsConfig = {
 	languageOptions: {
 		globals: globals.browser,
@@ -95,7 +95,7 @@ let jsConfig = {
 	},
 }
 
-/** @type {FlatConfig} */
+/** @type {Config} */
 let importConfig = {
 	plugins: {
 		import: importPlugin,
@@ -120,7 +120,7 @@ let importConfig = {
 	},
 }
 
-/** @type {FlatConfig} */
+/** @type {Config} */
 let sonarConfig = {
 	plugins: {
 		sonarjs: /** @type {Plugin} */ (/** @type {unknown} */ (sonarjs)),
@@ -128,7 +128,7 @@ let sonarConfig = {
 	rules: /** @type {RulesRecord} */ (sonarjs.configs.recommended.rules),
 }
 
-/** @type {FlatConfig} */
+/** @type {Config} */
 let unicornConfig = {
 	plugins: {
 		unicorn,
@@ -144,7 +144,7 @@ let unicornConfig = {
 	},
 }
 
-/** @type {FlatConfig} */
+/** @type {Config} */
 let perfectionistConfig = {
 	plugins: {
 		perfectionist: /** @type {Plugin} */ (
@@ -156,7 +156,7 @@ let perfectionistConfig = {
 	),
 }
 
-/** @type {FlatConfig} */
+/** @type {Config} */
 let jsdocConfig = {
 	plugins: {
 		jsdoc,
@@ -186,7 +186,7 @@ let jsdocConfig = {
 	},
 }
 
-/** @type {FlatConfig} */
+/** @type {Config} */
 let typescriptPlugin = {
 	languageOptions: {
 		parser: tsParser,
@@ -218,7 +218,7 @@ let typescriptPlugin = {
 	},
 }
 
-/** @type {FlatConfig[]} */
+/** @type {Config[]} */
 let overridesConfigs = [
 	{
 		files: [
@@ -235,7 +235,7 @@ let overridesConfigs = [
 	},
 ]
 
-/** @type {FlatConfig[]} */
+/** @type {Config[]} */
 let config = [
 	ignoresConfig,
 	jsConfig,

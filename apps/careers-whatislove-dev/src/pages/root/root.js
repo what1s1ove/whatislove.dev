@@ -21,6 +21,10 @@ class Root extends LitElement {
 	/** @type {(scene: ValuesOf<typeof Scene>) => ReturnType<html>} */
 	#handleSceneRender
 
+	/** @type {ValuesOf<typeof Scene>} */
+	@property()
+	accessor #scene = Scene.INITIAL
+
 	constructor() {
 		super()
 
@@ -75,10 +79,6 @@ class Root extends LitElement {
 			${this.#handleSceneRender(this.#scene)}
 		`
 	}
-
-	/** @type {ValuesOf<typeof Scene>} */
-	@property()
-	accessor #scene = Scene.INITIAL
 }
 
 defineCustomElement(`cwd-root`, Root)
