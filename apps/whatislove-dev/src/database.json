@@ -1033,6 +1033,18 @@
 			"endDate": "2022-04-15T00:00:00.000Z"
 		},
 		{
+			"id": "t9VsgOB",
+			"type": "position",
+			"title": "Mentor",
+			"desc": "Students mentorship (1-5 people in parallel).",
+			"origin": "https://foxminded.ua/",
+			"originDesc": "FoxmindEd",
+			"link": "",
+			"linkDesc": "",
+			"date": "2023-10-17T00:00:00.000Z",
+			"endDate": "2024-10-31T00:00:00.000Z"
+		},
+		{
 			"id": "iFI6X1tekP",
 			"type": "position",
 			"title": "Full Stack Engineer",
