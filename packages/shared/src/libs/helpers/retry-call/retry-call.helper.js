@@ -5,20 +5,18 @@ let RETRY_COUNT_DECREMENT_PER_CALL = /** @type {const} */ (1)
 
 /**
  * @template {unknown} T
+ * @param {(...args: unknown[]) => T | Promise<T>} callback
  * @param {{
- * 	callback: (...args: unknown[]) => T | Promise<T>
  * 	retriesCount?: number
  * 	delayMs?: number
  * 	delayFactorCount?: number
- * }} params
+ * }} [options]
  * @returns {Promise<T>}
  */
-let retryCall = async ({
+let retryCall = async (
 	callback,
-	delayFactorCount = 3,
-	delayMs = 1000,
-	retriesCount = 3,
-}) => {
+	{ delayFactorCount = 3, delayMs = 1000, retriesCount = 3 } = {},
+) => {
 	try {
 		return await callback()
 	} catch (error) {
@@ -33,8 +31,7 @@ let retryCall = async ({
 		let updatedDelayMs = delayMs * delayFactorCount
 		let updatedTriesCount = retriesCount - RETRY_COUNT_DECREMENT_PER_CALL
 
-		return retryCall({
-			callback,
+		return retryCall(callback, {
 			delayFactorCount,
 			delayMs: updatedDelayMs,
 			retriesCount: updatedTriesCount,

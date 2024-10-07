@@ -271,8 +271,7 @@ let loader = async () => {
 	let allPagesMentions = /** @type {PagesMentions} */ ({})
 
 	for (let mentionLoader of mentionLoaders) {
-		let fetchedPageMentions = await retryCall({
-			callback: mentionLoader,
+		let fetchedPageMentions = await retryCall(mentionLoader, {
 			retriesCount: 3,
 		})
 
