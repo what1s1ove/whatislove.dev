@@ -15,7 +15,7 @@
 		"_prettier": "prettier \"**/*.{md,json,yml,html,njk,css,js,jsx,cjs,d.ts}\"",
 		"git:hook:precommit": "lint-staged --cwd .",
 		"git:hook:commit": "npx @commitlint/cli --edit",
-		"build": "npm run build --workspaces",
+		"build": "npm run build --workspaces apps/*",
 		"ci:lint:fs": "ls-lint",
 		"ci:lint:editor": "editorconfig-checker",
 		"ci:lint:format": "npm run _prettier -- --check",
