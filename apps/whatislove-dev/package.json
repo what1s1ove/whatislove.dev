@@ -43,7 +43,7 @@
 		"linthtml-config-htmlacademy": "1.0.16",
 		"markdown-it": "14.1.0",
 		"svgo": "3.1.0",
-		"w3c-html-validator": "1.6.1"
+		"w3c-html-validator": "1.9.1"
 	},
 	"browserslist": [
 		"last 2 version",
