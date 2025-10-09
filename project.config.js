@@ -6,7 +6,7 @@ let ProjectPrefix = /** @type {const} */ ({
 			`certifications-whatislove-dev`,
 			`whatislove-dev`,
 		],
-		DEFAULT: `root`,
+		DEFAULT: `workspace`,
 		PACKAGES: [`shared`],
 		RELEASE: `release`,
 	},
