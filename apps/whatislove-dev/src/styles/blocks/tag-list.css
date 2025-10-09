@@ -41,6 +41,6 @@
 	}
 
 	&[class*="--css"] {
-		--background-color: var(--color-blue-300);
+		--background-color: var(--color-purple-100);
 	}
 }
