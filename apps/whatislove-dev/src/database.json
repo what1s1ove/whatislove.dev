@@ -1715,6 +1715,18 @@
 			"linkDesc": "",
 			"date": "2024-09-06T00:00:00.000Z",
 			"endDate": ""
+		},
+		{
+			"id": "DezZIZv",
+			"type": "book",
+			"title": "Benjamin Franklin: An American Life (Walter Isaacson)",
+			"desc": "",
+			"origin": "https://www.amazon.com/Benjamin-Franklin-American-Walter-Isaacson/dp/074325807X",
+			"originDesc": "Amazon",
+			"link": "",
+			"linkDesc": "",
+			"date": "2024-11-17T00:00:00.000Z",
+			"endDate": ""
 		}
 	]
 }
