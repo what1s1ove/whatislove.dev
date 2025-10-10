@@ -1739,6 +1739,18 @@
 			"linkDesc": "",
 			"date": "2024-12-08T00:00:00.000Z",
 			"endDate": ""
+		},
+		{
+			"id": "euPvSXk",
+			"type": "book",
+			"title": "Ramtha: The White Book (Ramtha Ramtha)",
+			"desc": "",
+			"origin": "https://www.amazon.com/Ramtha-White-Book/dp/1578734517",
+			"originDesc": "Amazon",
+			"link": "",
+			"linkDesc": "",
+			"date": "2025-09-14T00:00:00.000Z",
+			"endDate": ""
 		}
 	]
 }
