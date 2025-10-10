@@ -25,8 +25,6 @@ import {
 	replaceImgWrapper,
 } from './src/transforms/transforms.js'
 
-/** @typedef {import('./package.json')} */
-let PackageJson
 /** @typedef {import('./src/database.json')} */
 let Database
 
@@ -59,10 +57,11 @@ let CollectionPath = /** @type {const} */ ({
 	PAGES: `src/pages/!(404)/index.njk`,
 })
 
-let rawPackageJson = await fs.readFile(new URL(`package.json`, import.meta.url))
-let packageJson = /** @type {(text: string) => PackageJson} */ (JSON.parse)(
-	rawPackageJson.toString(),
-)
+let packageJson = await import(`./package.json`, {
+	with: {
+		type: `json`,
+	},
+})
 let md = markdownIt({
 	html: true,
 })
