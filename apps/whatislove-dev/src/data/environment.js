@@ -1,4 +1,3 @@
-import 'dotenv/config'
 import process from 'node:process'
 
 let { DEVTO_API_KEY, ENVIRONMENT, WEBMENTION_API_KEY } = process.env
