@@ -13,6 +13,10 @@
 	&[open] summary::after {
 		mask-image: url("/images/icons.svg#caret-up");
 	}
+
+	&::details-content {
+		padding-block: 20px 0;
+	}
 }
 
 .accordion__title {
@@ -30,8 +34,4 @@
 	&::-webkit-details-marker {
 		display: none;
 	}
-}
-
-.accordion__content {
-	padding-block: 20px 0;
 }

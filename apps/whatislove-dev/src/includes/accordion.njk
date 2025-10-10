@@ -1,7 +1,7 @@
 {% macro accordion(className, title, defaultOpenedWidth = 768) %}
 	<details class="{{ className }} accordion">
 		<summary class="accordion__title action">{{ title }}</summary>
-		<div class="accordion__content">{{ caller() }}</div>
+		{{ caller() }}
 		{% if defaultOpenedWidth %}
 			<!-- prettier-ignore-start -->
 			<script>
