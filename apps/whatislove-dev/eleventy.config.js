@@ -324,12 +324,6 @@ let init = (config) => {
 
 	// images
 	config.addPlugin(Image.eleventyImageTransformPlugin, {
-		defaultAttributes: {
-			decoding: `async`,
-			loading: `lazy`,
-			sizes: [`(min-width: 740px) 700px`, `100vw`],
-		},
-		extensions: `html`,
 		/**
 		 * @param {string} _id
 		 * @param {string} source
@@ -344,6 +338,13 @@ let init = (config) => {
 			return `${name}-${width.toString()}w.${format.toString()}`
 		},
 		formats: [`avif`, `webp`, `png`],
+		htmlOptions: {
+			imgAttributes: {
+				decoding: `async`,
+				loading: `lazy`,
+				sizes: `(min-width: 740px) 700px, 100vw`,
+			},
+		},
 		widths: [640, 960, 1280, 1920, 2560],
 	})
 

@@ -45,18 +45,20 @@ stickersCount: 0
 					</text>
 				</svg>
 			</button>
-			<img
-				src="/images/vladyslav-zubko.png"
-				width="238"
-				height="300"
-				sizes="238px"
-				loading="eager"
-				fetchpriority="high"
-				decoding="async"
-				alt="{{ global.author }} Portrait."
-				eleventy:widths="238,476"
-				eleventy:formats="avif,webp,png"
-			/>
+			<picture class="intro__image-wrapper">
+				<img
+					class="intro__image"
+					src="/images/vladyslav-zubko.png"
+					height="300"
+					sizes="238px"
+					loading="eager"
+					fetchpriority="high"
+					decoding="async"
+					alt="{{ global.author }} Portrait."
+					eleventy:widths="238,476"
+					eleventy:formats="avif,webp,png"
+				/>
+			</picture>
 			<header class="intro__header">
 				<p class="intro__welcome">Hi, my name is</p>
 				<h1 class="intro__name">{{ global.author }}</h1>

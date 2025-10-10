@@ -96,7 +96,7 @@
 	fill: currentcolor;
 }
 
-.intro picture {
+.intro__image-wrapper {
 	place-self: center;
 	margin-block: 0 55px;
 	mask-image: linear-gradient(
@@ -110,7 +110,7 @@
 	}
 }
 
-.intro img {
+.intro__image {
 	display: block;
 	inline-size: 238px;
 	block-size: auto;
