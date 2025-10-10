@@ -179,7 +179,6 @@ let jsdocConfig = {
 		'jsdoc/require-param-description': [`off`],
 		'jsdoc/require-property-description': [`off`],
 		'jsdoc/require-returns-description': [`off`],
-		'jsdoc/valid-types': [`off`],
 	},
 }
 
