@@ -110,7 +110,7 @@
 	}
 }
 
-.intro__image {
+.intro__image-wrapper img {
 	display: block;
 	inline-size: 238px;
 	block-size: auto;
