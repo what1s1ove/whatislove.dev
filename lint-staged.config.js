@@ -1,4 +1,4 @@
-/** @type {import('lint-staged').Config} */
+/** @type {Record<string, import('lint-staged').GenerateTask[]>} */
 let config = {
 	'*': [
 		() => `npm run ci:lint:format`,

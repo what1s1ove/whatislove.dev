@@ -18,7 +18,7 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 import svgo from 'svgo'
 
-import { default as environment } from './src/data/environment.js'
+import environment from './src/data/environment.js'
 import {
 	addToc,
 	changeExternalLinkTarget,
@@ -242,7 +242,7 @@ let init = (config) => {
 				transform(window)
 			}
 
-			return String(window.document)
+			return window.document.toString()
 		}
 
 		return content
@@ -335,7 +335,7 @@ let init = (config) => {
 			let extension = path.extname(source)
 			let name = path.basename(source, extension)
 
-			return `${name}-${width.toString()}w.${format.toString()}`
+			return `${name}-${width.toString()}w.${format}`
 		},
 		formats: [`avif`, `webp`, `png`],
 		htmlOptions: {

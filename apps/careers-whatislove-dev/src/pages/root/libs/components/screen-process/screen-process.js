@@ -157,7 +157,7 @@ class ScreenProcess extends LitElement {
 	connectedCallback() {
 		super.connectedCallback()
 
-		window.addEventListener(`keydown`, this.#handleEscPress)
+		globalThis.addEventListener(`keydown`, this.#handleEscPress)
 	}
 
 	/** @returns {void} */
@@ -171,7 +171,7 @@ class ScreenProcess extends LitElement {
 			void document.exitFullscreen()
 		}
 
-		window.removeEventListener(`keydown`, this.#handleEscPress)
+		globalThis.removeEventListener(`keydown`, this.#handleEscPress)
 	}
 
 	/** @returns {ReturnType<html>} */

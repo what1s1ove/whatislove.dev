@@ -1,7 +1,7 @@
 import { retryCall } from '@whatislove.dev/shared'
 import { parseHTML } from 'linkedom'
 
-import { default as environment } from './environment.js'
+import environment from './environment.js'
 
 let MENTION_PARAGRAPH_COUNT = /** @type {const} */ (2)
 let MENTION_LAST_PARAGRAPH_IDX = /** @type {const} */ (-1)

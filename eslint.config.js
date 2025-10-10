@@ -111,9 +111,6 @@ let importConfig = {
 		'import/no-duplicates': [`error`],
 	},
 	settings: {
-		'import/parsers': {
-			espree: [`.js`, `.cjs`],
-		},
 		'import/resolver': {
 			typescript: tsResolver,
 		},

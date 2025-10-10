@@ -19,6 +19,12 @@ let overridesConfigs = [
 	{
 		files: [`eleventy.config.js`],
 		rules: {
+			'@typescript-eslint/no-base-to-string': [
+				`error`,
+				{
+					ignoredTypeNames: [`Document`],
+				},
+			],
 			'sonarjs/cognitive-complexity': [`off`],
 		},
 	},
