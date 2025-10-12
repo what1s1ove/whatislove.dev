@@ -1,10 +1,10 @@
 class Storage {
-	/** @type {globalThis.Storage} */
+	/** @type {localStorage} */
 	#storage
 
 	/**
 	 * @param {{
-	 * 	storage: globalThis.Storage
+	 * 	storage: localStorage
 	 * }} constructor
 	 */
 	constructor({ storage }) {
