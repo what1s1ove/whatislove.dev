@@ -159,7 +159,7 @@ let jsdocConfig = {
 		jsdoc,
 	},
 	rules: {
-		...jsdoc.configs[`recommended-typescript-flavor-error`].rules,
+		...jsdoc.configs[`flat/recommended-typescript-flavor-error`].rules,
 		'jsdoc/no-undefined-types': [`error`],
 		'jsdoc/require-jsdoc': [
 			`error`,
@@ -179,7 +179,6 @@ let jsdocConfig = {
 		'jsdoc/require-param-description': [`off`],
 		'jsdoc/require-property-description': [`off`],
 		'jsdoc/require-returns-description': [`off`],
-		'jsdoc/valid-types': [`off`],
 	},
 }
 
