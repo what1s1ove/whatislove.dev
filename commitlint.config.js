@@ -13,6 +13,8 @@ let configuration = {
 		},
 	},
 	rules: {
+		'header-case': [RuleConfigSeverity.Error, `always`, `lower-case`],
+		'header-trim': [RuleConfigSeverity.Error, `always`],
 		'references-empty': [RuleConfigSeverity.Error, `never`],
 		'scope-empty': [RuleConfigSeverity.Error, `never`],
 		'scope-enum': [

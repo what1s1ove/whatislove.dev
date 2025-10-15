@@ -72,6 +72,12 @@ jobs:
       - name: Lint Commits
         uses: wagoid/commitlint-github-action@v5
 
+      - name: Lint Pull Request
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx danger ci --failOnErrors --text-only
+
   labeler:
     name: Labeler
     needs: lint

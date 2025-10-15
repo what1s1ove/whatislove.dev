@@ -1,6 +1,9 @@
 /** @type {import('knip').KnipConfig} */
 let config = {
 	workspaces: {
+		'.': {
+			entry: [`./dangerfile.js`],
+		},
 		'apps/careers-whatislove-dev': {
 			entry: [`src/index.js`],
 			ignoreDependencies: [`@babel/plugin-proposal-decorators`],
