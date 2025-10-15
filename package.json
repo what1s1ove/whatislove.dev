@@ -27,7 +27,7 @@
 		"ci:prepare": "simple-git-hooks"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "18.6.1",
+		"@commitlint/cli": "20.1.0",
 		"@commitlint/config-conventional": "20.0.0",
 		"@commitlint/lint": "20.0.0",
 		"@commitlint/load": "20.1.0",
