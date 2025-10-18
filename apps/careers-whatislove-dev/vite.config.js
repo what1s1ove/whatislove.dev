@@ -1,6 +1,5 @@
 import path from 'node:path'
 import { defineConfig } from 'vite'
-import babel from 'vite-plugin-babel'
 
 /** @type {import('vite').UserConfig} */
 let config = defineConfig({
@@ -11,20 +10,11 @@ let config = defineConfig({
 	css: {
 		transformer: `lightningcss`,
 	},
-	plugins: [
-		babel({
-			babelConfig: {
-				plugins: [
-					[
-						`@babel/plugin-proposal-decorators`,
-						{
-							version: `2023-05`,
-						},
-					],
-				],
-			},
-		}),
-	],
+	esbuild: {
+		exclude: [],
+		include: /\.js$/,
+		target: `es2024`,
+	},
 	resolve: {
 		alias: [
 			{
