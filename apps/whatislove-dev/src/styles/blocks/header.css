@@ -1,10 +1,12 @@
 .header {
+	z-index: 2;
 	display: flex;
 	place-content: start space-between;
 	align-items: flex-start;
 	padding-block: var(--padding-block-box);
 	padding-inline: var(--padding-inline-box);
 	overflow: hidden;
+	view-transition-name: header;
 
 	@media (--width-tablet) {
 		align-items: center;

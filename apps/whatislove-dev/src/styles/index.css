@@ -1,6 +1,7 @@
 @import url("./globals/variables.css");
 @import url("./globals/fonts.css");
 @import url("./globals/focus-visible.css");
+@import url("./globals/transitions.css");
 @import url("./blocks/box.css");
 @import url("./blocks/page.css");
 @import url("./blocks/main.css");
