@@ -101,38 +101,13 @@ class Navigation {
 
 		headerButtonNode.ariaExpanded = isOpen.toString()
 
+		headerMenuNode.classList.toggle(`header__menu--opened`, isOpen)
+
 		if (isOpen) {
-			headerMenuNode.classList.remove(`header__menu--closed`)
-
-			setTimeout(() => {
-				headerMenuNode.classList.add(`header__menu--opened`)
-			}, 50)
-
 			this.#initOverlayListeners()
 
 			focusTrap.activate()
 		} else {
-			headerMenuNode.addEventListener(
-				`transitionend`,
-				() => {
-					let hasOpenClass =
-						headerMenuNode.classList.contains(
-							`header__menu--opened`,
-						)
-
-					if (hasOpenClass) {
-						return
-					}
-
-					headerMenuNode.classList.add(`header__menu--closed`)
-				},
-				{
-					once: true,
-				},
-			)
-
-			headerMenuNode.classList.remove(`header__menu--opened`)
-
 			focusTrap.deactivate()
 
 			this.#removeOverlayListeners()
