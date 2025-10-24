@@ -20,6 +20,7 @@ import svgo from 'svgo'
 
 import environment from './src/data/environment.js'
 import {
+	addCodeSnippetScrollShadow,
 	addToc,
 	changeExternalLinkTarget,
 	replaceImgWrapper,
@@ -32,6 +33,7 @@ let TRANSFORMS = /** @type {const} */ ([
 	addToc,
 	changeExternalLinkTarget,
 	replaceImgWrapper,
+	addCodeSnippetScrollShadow,
 ])
 
 let Path = /** @type {const} */ ({

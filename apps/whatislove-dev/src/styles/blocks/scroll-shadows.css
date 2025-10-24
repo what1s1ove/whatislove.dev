@@ -1,53 +1,92 @@
+@keyframes scroll-fade {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes scroll-detect {
+	from,
+	to {
+		--has-scroll: ;
+	}
+}
+
 .scroll-shadows {
 	--shadows-size: 20px;
-	--shadows-background-color: var(--color-page-background);
-	--color: var(--color-scroll-shadow) / 20%;
+	--shadows-start: 16px;
+	--shadows-end: 32px;
+	--shadows-color: var(--color-scroll-shadow) / 20%;
 	--farthest-side-start: 50% 0;
 	--farthest-side-end: 50% 100%;
 
-	display: grid;
-	grid-template: var(--shadows-size) 1fr var(--shadows-size) / auto;
-	background-image: radial-gradient(
-			farthest-side at var(--farthest-side-start),
-			hsl(var(--color)),
-			transparent
-		),
-		radial-gradient(
-			farthest-side at var(--farthest-side-end),
-			hsl(var(--color)),
-			transparent
-		);
-	background-repeat: no-repeat;
-	background-attachment: scroll;
-	background-position:
-		center top,
-		center bottom;
-	background-size: 100% var(--shadows-size);
+	scroll-timeline: --scroll-timeline y;
+	animation: scroll-detect;
+	animation-timeline: --scroll-timeline;
+	animation-fill-mode: none;
 
 	&::before,
 	&::after {
+		--visibility-if-has-scroll: var(--has-scroll) visible;
+
+		position: sticky;
+		inset-inline: 0;
 		display: block;
-		inline-size: 100%;
 		block-size: var(--shadows-size);
-		pointer-events: none;
+		visibility: var(--visibility-if-has-scroll, hidden);
 		content: "";
-		background: var(--background-page);
+		animation-name: scroll-fade;
+		animation-fill-mode: both;
+		animation-timeline: --scroll-timeline;
+	}
+
+	&::before {
+		inset-block-start: 0;
+		background-image: radial-gradient(
+			farthest-side at var(--farthest-side-start),
+			hsl(var(--shadows-color)),
+			transparent
+		);
+		animation-range: var(--shadows-start) var(--shadows-end);
+	}
+
+	&::after {
+		inset-block-end: 0;
+		background-image: radial-gradient(
+			farthest-side at var(--farthest-side-end),
+			hsl(var(--shadows-color)),
+			transparent
+		);
+		animation-direction: reverse;
+		animation-range: calc(100% - var(--shadows-end))
+			calc(100% - var(--shadows-start));
 	}
 
 	&[class*="--horizontal"] {
 		--farthest-side-start: 0 50%;
 		--farthest-side-end: 100% 50%;
 
+		display: grid;
 		grid-template: auto / var(--shadows-size) 1fr var(--shadows-size);
-		background-position:
-			left center,
-			right center;
-		background-size: var(--shadows-size) 100%;
+		scroll-timeline: --scroll-timeline x;
 
 		&::before,
 		&::after {
+			inset-block: 0;
+			inset-inline: auto;
 			inline-size: var(--shadows-size);
 			block-size: 100%;
+		}
+
+		&::before {
+			inset-inline-start: 0;
+		}
+
+		&::after {
+			inset-inline-end: 0;
 		}
 	}
 }
