@@ -1,6 +1,9 @@
 let ARTICLE_CONTENT_BLOCK = /** @type {const} */ (`article__content`)
 
-/** @param {globalThis} window */
+/**
+ * @param {Window} window
+ * @returns {void}
+ */
 let replaceImgWrapper = (window) => {
 	let contentNode = window.document.querySelector(`.${ARTICLE_CONTENT_BLOCK}`)
 

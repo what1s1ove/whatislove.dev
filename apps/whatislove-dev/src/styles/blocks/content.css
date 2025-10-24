@@ -112,7 +112,7 @@
 	}
 
 	pre {
-		padding: 20px;
+		padding-block: 20px;
 		margin: 0;
 		overflow-y: auto;
 		font-family: var(--font-family-code);
