@@ -4,7 +4,10 @@ import { BlockName } from './libs/enums/enums.js'
 import { generateTocMarkup, getTocItemParent } from './libs/helpers/helpers.js'
 import { TocItem } from './libs/types/types.js'
 
-/** @param {globalThis} window */
+/**
+ * @param {Window} window
+ * @returns {void}
+ */
 let addToc = (window) => {
 	let tocWrapperNode = window.document.querySelector(`.${BlockName.TOC}`)
 	let contentNode = window.document.querySelector(
