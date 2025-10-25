@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/shared-v1.11.0...@whatislove.dev/shared-v1.12.0) (2025-10-25)
+
+
+### Features
+
+* **shared:** remove build step wd-730 ([#731](https://github.com/what1s1ove/whatislove.dev/issues/731)) ([f09e7a7](https://github.com/what1s1ove/whatislove.dev/commit/f09e7a78b97edad8724166573b9ea672165c611a))
+
 ## [1.11.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/shared-v1.10.0...@whatislove.dev/shared-v1.11.0) (2024-10-06)
 
 
