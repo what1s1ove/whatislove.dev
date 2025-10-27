@@ -173,7 +173,8 @@ let getDevtoPageMention = async () => {
 /**
  * @typedef {{
  * 	'wm-target': string
- * 	'wm-property': 'like-of' | 'repost-of' | 'in-reply-to'
+ * 	'wm-property': 'like-of' | 'repost-of' | 'in-reply-to' | 'mention-of'
+ * 	'wm-received': string
  * 	'author'?: {
  * 		photo: string
  * 		name: string
@@ -219,12 +220,10 @@ let getWebMentionsPageMention = async () => {
 	for (let webMention of webMentions.children) {
 		let targetUrl = new URL(webMention[`wm-target`])
 
-		if (pageMentions[targetUrl.pathname] === undefined) {
-			pageMentions[targetUrl.pathname] = {
-				likesCount: 0,
-				mentions: [],
-				repostsCount: 0,
-			}
+		pageMentions[targetUrl.pathname] ??= {
+			likesCount: 0,
+			mentions: [],
+			repostsCount: 0,
 		}
 
 		let currentPageMentions = /** @type {PageMention} */ (
@@ -240,7 +239,7 @@ let getWebMentionsPageMention = async () => {
 		}
 
 		if (webMention[`wm-property`] === `in-reply-to`) {
-			let host = new URL(webMention.url).host
+			let { host } = new URL(webMention.url)
 			let fromType =
 				webMentionSourceHostToFromType[
 					/** @type {keyof webMentionSourceHostToFromType} */ (host)
@@ -257,6 +256,27 @@ let getWebMentionsPageMention = async () => {
 				),
 				date: new Date(webMention.published),
 				fromType,
+				url: webMention.url,
+			})
+		}
+
+		if (webMention[`wm-property`] === `mention-of`) {
+			let { host } = new URL(webMention.url)
+
+			currentPageMentions.mentions.push({
+				author: {
+					avatarUrl: `https://www.google.com/s2/favicons?domain=${host}&sz=64`,
+					name: host,
+				},
+				content: prepareMentionContent(
+					`<p>
+						<a href="${webMention.url}">${webMention.url}</a>
+					</p>
+					`,
+					webMention.url,
+				),
+				date: new Date(webMention[`wm-received`]),
+				fromType: undefined,
 				url: webMention.url,
 			})
 		}
@@ -278,12 +298,10 @@ let loader = async () => {
 		for (let [pageUrl, pageMentions] of Object.entries(
 			fetchedPageMentions,
 		)) {
-			if (allPagesMentions[pageUrl] === undefined) {
-				allPagesMentions[pageUrl] = {
-					likesCount: 0,
-					mentions: [],
-					repostsCount: 0,
-				}
+			allPagesMentions[pageUrl] ??= {
+				likesCount: 0,
+				mentions: [],
+				repostsCount: 0,
 			}
 
 			let currentPageMentions = /** @type {PageMention} */ (
