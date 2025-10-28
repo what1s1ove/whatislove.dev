@@ -9,6 +9,7 @@
 	view-transition-name: header;
 
 	@media (--width-tablet) {
+		z-index: initial;
 		align-items: center;
 		padding-block: 30px;
 	}
