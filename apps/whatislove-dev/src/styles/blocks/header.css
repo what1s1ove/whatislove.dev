@@ -170,7 +170,17 @@
 }
 
 @keyframes glitch {
-	50% {
+	0%,
+	70%,
+	72%,
+	100% {
+		text-shadow: none;
+		transform: none;
+	}
+
+	70.1%,
+	70.4%,
+	71% {
 		text-shadow:
 			5px 0 currentcolor,
 			-5px 0 hsl(var(--color-red-100));
@@ -181,7 +191,7 @@
 .header__menu-item {
 	&[class*="--careers"] {
 		@media (prefers-reduced-motion: no-preference) {
-			animation: glitch cubic-bezier(0.5, -0.25, 0.75, 1) 6ms infinite;
+			animation: glitch cubic-bezier(0.5, -0.25, 0.75, 1) 8s infinite;
 		}
 	}
 }
