@@ -1,43 +1,81 @@
 #!
-import ffmpegInstaller from '@ffmpeg-installer/ffmpeg'
-import ffprobeInstaller from '@ffprobe-installer/ffprobe'
 import { getShuffledItems, ProcessExitCode } from '@whatislove.dev/shared'
-import ffmpeg from 'fluent-ffmpeg'
+import ffmpegPath from 'ffmpeg-static'
+import { spawn } from 'node:child_process'
 import { existsSync } from 'node:fs'
-import { readdir } from 'node:fs/promises'
+import { mkdtemp, readdir, writeFile } from 'node:fs/promises'
+import os from 'node:os'
 import path from 'node:path'
 import process from 'node:process'
 
 let PROCESS_PIECE_FILE_EXT = /** @type {const} */ (`.mp4`)
 
-let processPiecesPath = path.join(import.meta.dirname, `./process-pieces`)
-let processFilePath = path.join(
+let processPiecesFolderPath = path.join(import.meta.dirname, `./process-pieces`)
+let processVideoAudioPath = path.join(
+	import.meta.dirname,
+	`../../public/sounds`,
+	`process.mp3`,
+)
+let processVideoFilePath = path.join(
 	import.meta.dirname,
 	`../../public/videos`,
 	`process.mp4`,
 )
 
-ffmpeg.setFfmpegPath(ffmpegInstaller.path)
-ffmpeg.setFfprobePath(ffprobeInstaller.path)
-
 /** @returns {Promise<void>} */
 let createProcessVideo = async () => {
-	let processPiecesFiles = await readdir(processPiecesPath)
+	let processPiecesFiles = await readdir(processPiecesFolderPath)
 	let processPiecesPaths = processPiecesFiles
 		.filter((file) => file.endsWith(PROCESS_PIECE_FILE_EXT))
-		.map((file) => `${processPiecesPath}/${file}`)
+		.map((file) => `${processPiecesFolderPath}/${file}`)
 	let shuffledProcessPiecesPaths = getShuffledItems(processPiecesPaths)
 
-	let processVideo = ffmpeg()
-
-	for (let processPiecePath of shuffledProcessPiecesPaths) {
-		processVideo.input(processPiecePath)
+	if (!ffmpegPath) {
+		process.exit(ProcessExitCode.FAILURE)
 	}
 
-	processVideo.mergeToFile(processFilePath, `./tmp`)
+	let processPiecesListPath = path.join(
+		await mkdtemp(path.join(os.tmpdir(), `ffconcat-`)),
+		`files.txt`,
+	)
+	await writeFile(
+		processPiecesListPath,
+		shuffledProcessPiecesPaths.map((p) => `file ${p}`).join(`\n`),
+	)
+
+	let proc = spawn(
+		ffmpegPath,
+		[
+			`-y`,
+			`-safe`,
+			`0`,
+			`-f`,
+			`concat`,
+			`-i`,
+			processPiecesListPath,
+			`-i`,
+			processVideoAudioPath,
+			`-map`,
+			`0:v:0`,
+			`-map`,
+			`1:a:0`,
+			`-c:v`,
+			`copy`,
+			`-c:a`,
+			`aac`,
+			`-af`,
+			`volume=0`,
+			`-shortest`,
+			processVideoFilePath,
+		],
+		{
+			stdio: `inherit`,
+		},
+	)
+	proc.on(`close`, (code) => process.exit(code))
 }
 
-let hasProcessFile = existsSync(processFilePath)
+let hasProcessFile = existsSync(processVideoFilePath)
 
 if (hasProcessFile) {
 	process.exit(ProcessExitCode.SUCCESS)
