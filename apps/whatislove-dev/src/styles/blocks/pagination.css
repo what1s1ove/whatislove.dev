@@ -10,7 +10,7 @@
 
 .pagination__link {
 	display: inline-flex;
-	color: hsl(var(--color));
+	color: oklch(var(--color));
 	opacity: 0.3;
 
 	&[href] {
@@ -52,11 +52,11 @@
 	place-content: center;
 	inline-size: 43px;
 	block-size: var(--block-size);
-	color: hsl(var(--color));
+	color: oklch(var(--color));
 	background-color: unset;
 
 	&[aria-current="page"] {
-		color: hsl(var(--button-color));
-		background-color: hsl(var(--button-background-color));
+		color: oklch(var(--button-color));
+		background-color: oklch(var(--button-background-color));
 	}
 }

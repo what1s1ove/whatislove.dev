@@ -53,8 +53,8 @@
 		padding-block: 5px;
 		padding-inline: 8px;
 		font-weight: 600;
-		color: hsl(var(--color-blue-100));
-		background-color: hsl(var(--color-page-background-highlight));
+		color: oklch(var(--color-blue-100));
+		background-color: oklch(var(--color-page-background-highlight));
 	}
 
 	&[class*="--icon"] {
@@ -78,8 +78,8 @@
 		--direction-gradient-text: right;
 		--direction-gradient-border: right;
 		--color-gradient:
-			hsl(var(--color-technology-background) / 25%) 0%,
-			hsl(var(--color-technology-background) / 5%) 100%;
+			oklch(var(--color-technology-background) / 25%) 0%,
+			oklch(var(--color-technology-background) / 5%) 100%;
 
 		position: relative;
 		place-self: center;
@@ -154,13 +154,13 @@
 	padding: 5px;
 	background: var(--background-page);
 	border-radius: 50%;
-	fill: hsl(var(--color-blue-100));
+	fill: oklch(var(--color-blue-100));
 }
 
 .channel__link {
 	font-size: var(--font-size-heading-3);
 	font-weight: 600;
-	color: hsl(var(--color-blue-100));
+	color: oklch(var(--color-blue-100));
 	text-underline-offset: 7px;
 }
 

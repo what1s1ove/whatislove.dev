@@ -40,7 +40,7 @@
 }
 
 .timeline__item-dates {
-	--color: hsl(var(--color-red-100));
+	--color: oklch(var(--color-red-100));
 
 	position: relative;
 	padding-inline: var(--padding-inline);
@@ -104,7 +104,7 @@
 		inset-inline-start: 8px;
 		inline-size: 2px;
 		content: "";
-		background-color: hsl(var(--color-page-background-highlight));
+		background-color: oklch(var(--color-page-background-highlight));
 		border-radius: 5px;
 	}
 }
@@ -139,7 +139,7 @@
 		inline-size: var(--size-icon);
 		block-size: var(--size-icon);
 		content: "";
-		background-color: hsl(var(--color-icon));
+		background-color: oklch(var(--color-icon));
 		mask-image: url("/images/icons.svg#link");
 		mask-repeat: no-repeat;
 		mask-position: 50%;
@@ -152,5 +152,5 @@
 }
 
 .timeline__item-wrapper:has(.timeline__item-title) .timeline__item-description {
-	color: hsl(var(--color-gray-100));
+	color: oklch(var(--color-gray-100));
 }

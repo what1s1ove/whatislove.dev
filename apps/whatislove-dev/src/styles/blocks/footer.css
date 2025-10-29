@@ -2,7 +2,7 @@
 	display: grid;
 	gap: 30px;
 	margin-block: auto 0;
-	color: hsl(var(--color-gray-100));
+	color: oklch(var(--color-gray-100));
 
 	@media (--width-tablet) {
 		grid-template-columns: repeat(2, 1fr);

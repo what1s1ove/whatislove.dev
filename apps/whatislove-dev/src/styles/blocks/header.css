@@ -21,15 +21,15 @@
 
 .header__logo-part {
 	&[class*="--colorful"] {
-		fill: hsl(var(--color-icon));
+		fill: oklch(var(--color-icon));
 	}
 
 	&[class*="--colorful-inverted"] {
-		fill: hsl(var(--color-icon-inverted));
+		fill: oklch(var(--color-icon-inverted));
 	}
 
 	&[class*="--sticker"] {
-		fill: hsl(var(--color-sticker));
+		fill: oklch(var(--color-sticker));
 	}
 }
 
@@ -52,7 +52,7 @@
 	display: block;
 	inline-size: 100%;
 	block-size: 2px;
-	background-color: hsl(var(--color-icon));
+	background-color: oklch(var(--color-icon));
 	border-radius: 10px;
 
 	&::before,
@@ -61,7 +61,7 @@
 		inset-inline-end: 0;
 		block-size: 2px;
 		content: "";
-		background-color: hsl(var(--color-icon));
+		background-color: oklch(var(--color-icon));
 		border-radius: 10px;
 	}
 
@@ -183,7 +183,7 @@
 	71% {
 		text-shadow:
 			5px 0 currentcolor,
-			-5px 0 hsl(var(--color-red-100));
+			-5px 0 oklch(var(--color-red-100));
 		transform: skew(180deg);
 	}
 }
@@ -203,7 +203,7 @@
 	text-underline-offset: 5px;
 
 	&[aria-current="page"] {
-		color: hsl(var(--color-red-100));
+		color: oklch(var(--color-red-100));
 	}
 }
 

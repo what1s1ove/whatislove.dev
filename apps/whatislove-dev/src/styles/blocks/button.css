@@ -6,9 +6,9 @@
 
 	padding: 10px;
 	font-weight: 700;
-	color: hsl(var(--button-color));
+	color: oklch(var(--button-color));
 	text-decoration: none;
-	background-color: hsl(var(--button-background-color));
+	background-color: oklch(var(--button-background-color));
 	border-radius: 5px;
 
 	@media (hover: hover) {
