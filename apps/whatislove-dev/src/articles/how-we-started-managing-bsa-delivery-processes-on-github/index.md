@@ -88,7 +88,6 @@ Now, let's discuss the core functionality of GitHub that we use for managing del
 - [**GitHub Actions**](https://docs.github.com/en/actions). At some point, we realized the importance of automation. We started with linters that run on every pull request. Our linters help us maintain a consistent style throughout all our content and serve as the first line of defense that everyone must pass through when they want to introduce changes to the Academy.
 
   Here is a list of our main linters:
-
   - [**remark**](https://remark.js.org/). Primarily, this is a linter for Markdown. Additionally, thanks to its numerous plugins, it allows us to perform additional checks for grammatical mistakes within the content itself. Before using this linter, our content was not scrutinized to this extent.
 
   - [**prettier**](https://prettier.io/). A code formatter and linter for code formatting. It ensures that all our files have a consistent appearance.

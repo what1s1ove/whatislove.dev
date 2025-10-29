@@ -1,3 +1,4 @@
+import { EMPTY_LENGTH_COUNT } from '~/libs/constants/constants.js'
 import { setAsyncTimeout } from '~/libs/helpers/helpers.js'
 import { ToastMessagePayload } from '~/libs/types/types.js'
 
@@ -20,6 +21,26 @@ class Toast {
 		this.#toastNode = undefined
 		this.#messages = []
 		this.#isShowingMessage = false
+	}
+
+	/**
+	 * @param {HTMLElement} toastNode
+	 * @returns {void}
+	 */
+	init(toastNode) {
+		this.#toastNode = toastNode
+	}
+
+	/**
+	 * @param {ToastMessagePayload} message
+	 * @returns {void}
+	 */
+	pushMessage(message) {
+		this.#messages.push(message)
+
+		if (!this.#isShowingMessage) {
+			void this.#initShowingMessages()
+		}
 	}
 
 	/**
@@ -51,7 +72,7 @@ class Toast {
 
 		await this.#displayToastMessage(messagePayload)
 
-		let hasMessages = this.#messages.length > 0
+		let hasMessages = this.#messages.length > EMPTY_LENGTH_COUNT
 
 		if (hasMessages) {
 			void this.#initShowingMessages()
@@ -60,26 +81,6 @@ class Toast {
 		}
 
 		this.#isShowingMessage = false
-	}
-
-	/**
-	 * @param {HTMLElement} toastNode
-	 * @returns {void}
-	 */
-	init(toastNode) {
-		this.#toastNode = toastNode
-	}
-
-	/**
-	 * @param {ToastMessagePayload} message
-	 * @returns {void}
-	 */
-	pushMessage(message) {
-		this.#messages.push(message)
-
-		if (!this.#isShowingMessage) {
-			void this.#initShowingMessages()
-		}
 	}
 }
 

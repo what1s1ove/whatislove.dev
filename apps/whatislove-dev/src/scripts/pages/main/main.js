@@ -93,14 +93,6 @@ class Main {
 		this.#easterEggNode = undefined
 	}
 
-	/**
-	 * @param {ToastMessagePayload} message
-	 * @returns {void}
-	 */
-	#addSettingButtonHandler(message) {
-		this.#toastComponent.pushMessage(message)
-	}
-
 	/** @returns {void} */
 	init() {
 		this.#toastNode = /** @type {HTMLElement | undefined} */ (
@@ -152,6 +144,14 @@ class Main {
 		if (this.#timelineFormNode) {
 			this.#timelineFormComponent.init(this.#timelineFormNode)
 		}
+	}
+
+	/**
+	 * @param {ToastMessagePayload} message
+	 * @returns {void}
+	 */
+	#addSettingButtonHandler(message) {
+		this.#toastComponent.pushMessage(message)
 	}
 }
 

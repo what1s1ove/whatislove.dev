@@ -13,8 +13,6 @@ import globals from 'globals'
 let Config
 /** @typedef {import('eslint').ESLint.Plugin} */
 let Plugin
-/** @typedef {import('eslint').Linter.RulesRecord} */
-let RulesRecord
 
 /** @type {Config} */
 let ignoresConfig = {
@@ -120,9 +118,13 @@ let importConfig = {
 /** @type {Config} */
 let sonarConfig = {
 	plugins: {
-		sonarjs: /** @type {Plugin} */ (/** @type {unknown} */ (sonarjs)),
+		sonarjs,
 	},
-	rules: /** @type {RulesRecord} */ (sonarjs.configs.recommended.rules),
+	rules: {
+		...sonarjs.configs.recommended.rules,
+		'sonarjs/pseudo-random': [`off`],
+		'sonarjs/public-static-readonly': [`off`],
+	},
 }
 
 /** @type {Config} */
@@ -144,13 +146,11 @@ let unicornConfig = {
 /** @type {Config} */
 let perfectionistConfig = {
 	plugins: {
-		perfectionist: /** @type {Plugin} */ (
-			/** @type {unknown} */ (perfectionist)
-		),
+		perfectionist,
 	},
-	rules: /** @type {RulesRecord} */ (
-		perfectionist.configs[`recommended-natural`].rules
-	),
+	rules: {
+		...perfectionist.configs[`recommended-natural`].rules,
+	},
 }
 
 /** @type {Config} */
@@ -177,7 +177,12 @@ let jsdocConfig = {
 			},
 		],
 		'jsdoc/require-param-description': [`off`],
-		'jsdoc/require-property-description': [`off`],
+		'jsdoc/require-returns': [
+			`error`,
+			{
+				forceRequireReturn: true,
+			},
+		],
 		'jsdoc/require-returns-description': [`off`],
 	},
 }
@@ -203,6 +208,15 @@ let typescriptPlugin = {
 				allowStaticOnly: true,
 			},
 		],
+		'@typescript-eslint/no-magic-numbers': [
+			`error`,
+			{
+				ignoreClassFieldInitialValues: true,
+				ignoreDefaultValues: true,
+				ignoreEnums: true,
+				ignoreReadonlyClassProperties: true,
+			},
+		],
 		'@typescript-eslint/no-misused-promises': [
 			`error`,
 			{
@@ -211,6 +225,7 @@ let typescriptPlugin = {
 				},
 			},
 		],
+		'@typescript-eslint/return-await': [`error`, `always`],
 	},
 }
 

@@ -34,6 +34,18 @@ class Control {
 		this.#handleSwitchChange = this.#switchChangeHandler.bind(this)
 	}
 
+	/**
+	 * @param {HTMLFieldSetElement} controlNode
+	 * @returns {void}
+	 */
+	init(controlNode) {
+		this.#controlNode = controlNode
+
+		this.#setInitialValue()
+
+		this.#initListeners()
+	}
+
 	/** @returns {void} */
 	#initListeners() {
 		let controlNode = /** @type {HTMLFieldSetElement} */ (this.#controlNode)
@@ -67,18 +79,6 @@ class Control {
 			this.#name,
 			/** @type {HTMLInputElement} */ (target).value,
 		)
-	}
-
-	/**
-	 * @param {HTMLFieldSetElement} controlNode
-	 * @returns {void}
-	 */
-	init(controlNode) {
-		this.#controlNode = controlNode
-
-		this.#setInitialValue()
-
-		this.#initListeners()
 	}
 }
 

@@ -20,15 +20,6 @@ class ScreenInitial extends LitElement {
 		this.#handlePlay = this.#playHandler.bind(this)
 	}
 
-	/** @returns {void} } */
-	#playHandler() {
-		this.dispatchEvent(
-			new CustomEvent(`changeScene`, {
-				detail: Scene.PROCESS,
-			}),
-		)
-	}
-
 	/** @returns {ReturnType<html>} */
 	render() {
 		return html`
@@ -36,6 +27,15 @@ class ScreenInitial extends LitElement {
 				Join
 			</button>
 		`
+	}
+
+	/** @returns {void} } */
+	#playHandler() {
+		this.dispatchEvent(
+			new CustomEvent(`changeScene`, {
+				detail: Scene.PROCESS,
+			}),
+		)
 	}
 }
 

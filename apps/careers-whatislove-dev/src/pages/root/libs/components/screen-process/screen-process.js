@@ -61,6 +61,82 @@ class ScreenProcess extends LitElement {
 	}
 
 	/** @returns {void} */
+	connectedCallback() {
+		super.connectedCallback()
+
+		globalThis.addEventListener(`keydown`, this.#handleEscPress)
+	}
+
+	/** @returns {void} */
+	disconnectedCallback() {
+		super.disconnectedCallback()
+
+		let hasFullscreen =
+			document.fullscreenEnabled && document.fullscreenElement
+
+		if (hasFullscreen) {
+			void document.exitFullscreen()
+		}
+
+		globalThis.removeEventListener(`keydown`, this.#handleEscPress)
+	}
+
+	/** @returns {ReturnType<html>} */
+	render() {
+		let hasPhrase = this.#phraseTimeoutId !== undefined
+
+		return html`
+			<audio
+				class="audio"
+				src="/sounds/process.mp3"
+				autoplay
+				${ref(this.#audioPlayerNodeRef)}
+				@timeupdate=${this.#handleTimeUpdate}
+				@ended=${this.#handleEnded}
+			></audio>
+			<video
+				class="video"
+				src="/videos/process.mp4"
+				autoplay
+				loop
+				muted
+				playsinline
+				${ref(this.#videoPlayerNodeRef)}
+			></video>
+			<progress class="progress" ${ref(this.#progressNodeRef)}></progress>
+			<button
+				class="play-btn"
+				type="button"
+				role="switch"
+				aria-checked=${this.#isPlaying}
+				@click=${this.#handleClickPlay}
+			>
+				<cwd-icon name=${this.#isPlaying ? `pause` : `play`}>
+					<cwd-visually-hidden>Play</cwd-visually-hidden>
+				</cwd-icon>
+			</button>
+			${document.fullscreenEnabled
+				? html`
+						<button
+							class="fullscreen-btn"
+							type="button"
+							@click=${this.#handleFullscreenClick}
+						>
+							<cwd-icon name="fullscreen">
+								<cwd-visually-hidden
+									>Toggle Fullscreen</cwd-visually-hidden
+								>
+							</cwd-icon>
+						</button>
+					`
+				: nothing}
+			${hasPhrase
+				? html`<div class="phrase">I'll Call U Mine</div>`
+				: nothing}
+		`
+	}
+
+	/** @returns {void} */
 	#clickFullscreenHandler() {
 		let hasFullScreenElement = Boolean(document.fullscreenElement)
 
@@ -151,82 +227,6 @@ class ScreenProcess extends LitElement {
 
 			this.requestUpdate()
 		}
-	}
-
-	/** @returns {void} */
-	connectedCallback() {
-		super.connectedCallback()
-
-		globalThis.addEventListener(`keydown`, this.#handleEscPress)
-	}
-
-	/** @returns {void} */
-	disconnectedCallback() {
-		super.disconnectedCallback()
-
-		let hasFullscreen =
-			document.fullscreenEnabled && document.fullscreenElement
-
-		if (hasFullscreen) {
-			void document.exitFullscreen()
-		}
-
-		globalThis.removeEventListener(`keydown`, this.#handleEscPress)
-	}
-
-	/** @returns {ReturnType<html>} */
-	render() {
-		let hasPhrase = this.#phraseTimeoutId !== undefined
-
-		return html`
-			<audio
-				class="audio"
-				src="/sounds/process.mp3"
-				autoplay
-				${ref(this.#audioPlayerNodeRef)}
-				@timeupdate=${this.#handleTimeUpdate}
-				@ended=${this.#handleEnded}
-			></audio>
-			<video
-				class="video"
-				src="/videos/process.mp4"
-				autoplay
-				loop
-				muted
-				playsinline
-				${ref(this.#videoPlayerNodeRef)}
-			></video>
-			<progress class="progress" ${ref(this.#progressNodeRef)}></progress>
-			<button
-				class="play-btn"
-				type="button"
-				role="switch"
-				aria-checked=${this.#isPlaying}
-				@click=${this.#handleClickPlay}
-			>
-				<cwd-icon name=${this.#isPlaying ? `pause` : `play`}>
-					<cwd-visually-hidden>Play</cwd-visually-hidden>
-				</cwd-icon>
-			</button>
-			${document.fullscreenEnabled
-				? html`
-						<button
-							class="fullscreen-btn"
-							type="button"
-							@click=${this.#handleFullscreenClick}
-						>
-							<cwd-icon name="fullscreen">
-								<cwd-visually-hidden
-									>Toggle Fullscreen</cwd-visually-hidden
-								>
-							</cwd-icon>
-						</button>
-					`
-				: nothing}
-			${hasPhrase
-				? html`<div class="phrase">I'll Call U Mine</div>`
-				: nothing}
-		`
 	}
 }
 

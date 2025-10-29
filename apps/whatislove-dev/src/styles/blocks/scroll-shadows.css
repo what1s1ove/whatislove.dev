@@ -35,8 +35,8 @@
 		position: sticky;
 		inset-inline: 0;
 		display: block;
-		block-size: var(--shadows-size);
 		visibility: var(--visibility-if-has-scroll, hidden);
+		block-size: var(--shadows-size);
 		content: "";
 		animation-name: scroll-fade;
 		animation-fill-mode: both;

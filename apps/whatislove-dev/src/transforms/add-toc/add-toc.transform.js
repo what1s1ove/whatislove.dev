@@ -1,4 +1,5 @@
 import slugify from '@sindresorhus/slugify'
+import { EMPTY_LENGTH_COUNT } from '@whatislove.dev/shared'
 
 import { BlockName } from './libs/enums/enums.js'
 import { generateTocMarkup, getTocItemParent } from './libs/helpers/helpers.js'
@@ -18,7 +19,7 @@ let addToc = (window) => {
 		return
 	}
 
-	let hasTocNodes = tocWrapperNode.children.length > 0
+	let hasTocNodes = tocWrapperNode.children.length > EMPTY_LENGTH_COUNT
 
 	if (hasTocNodes) {
 		return
@@ -38,7 +39,7 @@ let addToc = (window) => {
 	let previous = toc
 
 	for (let heading of headingNodes) {
-		heading.id = slugify(/** @type {string} */ (heading.textContent), {
+		heading.id = slugify(heading.textContent, {
 			decamelize: false,
 		})
 
@@ -48,7 +49,7 @@ let addToc = (window) => {
 			level: Number(heading.tagName.replace(`H`, ``)),
 			parent: undefined,
 			slug: heading.id,
-			text: /** @type {string} */ (heading.textContent).trim(),
+			text: heading.textContent.trim(),
 		}
 
 		let parent = getTocItemParent(previous, current)

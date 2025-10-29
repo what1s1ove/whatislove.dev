@@ -1,4 +1,4 @@
-import { ControlType, getFormValues } from 'form-payload'
+import { ControlElementType, getFormPayload } from 'form-payload'
 import { html, LitElement } from 'lit'
 
 import {
@@ -28,6 +28,51 @@ class ScreenForm extends LitElement {
 		this.#handleClickRepeat = this.#clickRepeatHandler.bind(this)
 	}
 
+	/** @returns {ReturnType<html>} */
+	render() {
+		return html`
+			<div class="form-wrapper">
+				<header class="header">
+					<h2 class="title">Join Form</h2>
+					<p class="description">Run with me or run from me.</p>
+				</header>
+				<form class="form" @submit=${this.#handleSubmit}>
+					<label class="label">
+						Head:
+						<input
+							class="input"
+							type=${ControlElementType.TEXT}
+							name=${MemberFormKey.HEAD}
+							placeholder="O Captain! My Captain..."
+							minlength="3"
+							required
+						/>
+					</label>
+					<label class="label">
+						Body:
+						<textarea
+							class="input"
+							type=${ControlElementType.TEXT}
+							name=${MemberFormKey.BODY}
+							placeholder="I want to join cuz..."
+							minlength="3"
+							rows="5"
+							required
+						></textarea>
+					</label>
+					<button class="submit-btn" type="submit">Join</button>
+				</form>
+			</div>
+			<button
+				class="repeat-btn"
+				type="button"
+				@click=${this.#handleClickRepeat}
+			>
+				Didn't get it. Repeat.
+			</button>
+		`
+	}
+
 	/** @returns {void} } */
 	#clickRepeatHandler() {
 		this.dispatchEvent(
@@ -47,7 +92,7 @@ class ScreenForm extends LitElement {
 		let formNode = /** @type {HTMLFormElement} */ (event_.target)
 		let { set } = database.getTableReference(TableNames.MEMBERS)
 
-		set(getFormValues(formNode))
+		set(getFormPayload(formNode))
 			.then(() => {
 				notify.success(`See u.`)
 			})
@@ -58,51 +103,6 @@ class ScreenForm extends LitElement {
 			})
 
 		formNode.reset()
-	}
-
-	/** @returns {ReturnType<html>} */
-	render() {
-		return html`
-			<div class="form-wrapper">
-				<header class="header">
-					<h2 class="title">Join Form</h2>
-					<p class="description">Run with me or run from me.</p>
-				</header>
-				<form class="form" @submit=${this.#handleSubmit}>
-					<label class="label">
-						Head:
-						<input
-							class="input"
-							type=${ControlType.TEXT}
-							name=${MemberFormKey.HEAD}
-							placeholder="O Captain! My Captain..."
-							minlength="3"
-							required
-						/>
-					</label>
-					<label class="label">
-						Body:
-						<textarea
-							class="input"
-							type=${ControlType.TEXT}
-							name=${MemberFormKey.BODY}
-							placeholder="I want to join cuz..."
-							minlength="3"
-							rows="5"
-							required
-						></textarea>
-					</label>
-					<button class="submit-btn" type="submit">Join</button>
-				</form>
-			</div>
-			<button
-				class="repeat-btn"
-				type="button"
-				@click=${this.#handleClickRepeat}
-			>
-				Didn't get it. Repeat.
-			</button>
-		`
 	}
 }
 

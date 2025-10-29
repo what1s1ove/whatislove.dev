@@ -77,7 +77,8 @@
 	&[class*="--technology"] {
 		--direction-gradient-text: right;
 		--direction-gradient-border: right;
-		--color-gradient: hsl(var(--color-technology-background) / 25%) 0%,
+		--color-gradient:
+			hsl(var(--color-technology-background) / 25%) 0%,
 			hsl(var(--color-technology-background) / 5%) 100%;
 
 		position: relative;

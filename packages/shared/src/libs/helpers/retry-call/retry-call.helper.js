@@ -31,7 +31,7 @@ let retryCall = async (
 		let updatedDelayMs = delayMs * delayFactorCount
 		let updatedTriesCount = retriesCount - RETRY_COUNT_DECREMENT_PER_CALL
 
-		return retryCall(callback, {
+		return await retryCall(callback, {
 			delayFactorCount,
 			delayMs: updatedDelayMs,
 			retriesCount: updatedTriesCount,

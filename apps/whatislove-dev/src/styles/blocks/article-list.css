@@ -44,9 +44,9 @@
 	}
 
 	&:focus-visible::before {
-		border-radius: var(--radius-focus);
 		outline: var(--outline-focus);
 		outline-offset: var(--offset-focus);
+		border-radius: var(--radius-focus);
 	}
 }
 

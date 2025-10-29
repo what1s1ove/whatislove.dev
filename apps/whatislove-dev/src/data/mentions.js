@@ -1,6 +1,7 @@
-import { retryCall } from '@whatislove.dev/shared'
 import { parseHTML } from 'linkedom'
 
+import { EMPTY_LENGTH_COUNT } from '../scripts/libs/constants/constants.js'
+import { retryCall, takeFirst } from '../scripts/libs/helpers/helpers.js'
 import environment from './environment.js'
 
 let MENTION_PARAGRAPH_COUNT = /** @type {const} */ (2)
@@ -60,7 +61,10 @@ let prepareMentionContent = (html, commentUrl) => {
 	`)
 
 	let paragraphNodes = [...window.document.querySelectorAll(`p`)]
-	let mentionParagraphNodes = paragraphNodes.slice(0, MENTION_PARAGRAPH_COUNT)
+	let mentionParagraphNodes = takeFirst(
+		paragraphNodes,
+		MENTION_PARAGRAPH_COUNT,
+	)
 
 	if (paragraphNodes.length > MENTION_PARAGRAPH_COUNT) {
 		let lastComment = /** @type {HTMLParagraphElement} */ (
@@ -123,7 +127,7 @@ let callDevtoApi = (path) => {
 let getAllDevtoComments = (comments) => {
 	return comments.flatMap((comment) => [
 		comment,
-		...(comment.children.length > 0
+		...(comment.children.length > EMPTY_LENGTH_COUNT
 			? getAllDevtoComments(comment.children)
 			: []),
 	])

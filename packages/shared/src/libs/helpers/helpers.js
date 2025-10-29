@@ -6,3 +6,4 @@ export { getShuffledItems } from './get-shuffled-items/get-shuffled-items.helper
 export { initDebounce } from './init-debounce/init-debounce.helper.js'
 export { retryCall } from './retry-call/retry-call.helper.js'
 export { setAsyncTimeout } from './set-async-timeout/set-async-timeout.helper.js'
+export { takeFirst } from './take-first/take-first.helper.js'

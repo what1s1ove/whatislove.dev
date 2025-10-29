@@ -205,7 +205,6 @@ It is in this context that the importance of naming conventions becomes clear. T
   ```
 
   Although the naming convention for functions/methods may seem simple at first glance, their naming is the one that has the most exceptions and other conventions.
-
   - Following the JavaScript writing style (`Number.isNaN()`, `Array.isArray()`, `salary.toFixed()`, [constructor functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new), etc.).
 
   - Naming conventions for event handler functions (`onBtnClick`, `onImgMouseOver`, etc.).
@@ -236,7 +235,6 @@ It is in this context that the importance of naming conventions becomes clear. T
   ```
 
 - **Classes**. When working with classes, it is important to follow several conventions. Here is the list:
-
   - Use `PascalCase` for the class name, following the same case style that JavaScript uses for classes and constructor functions.
 
   - The class name should be a singular noun.
@@ -308,7 +306,6 @@ It is in this context that the importance of naming conventions becomes clear. T
 - **Enums**. Also known as enumerations. In JavaScript, this _data structure_ is used to enumerate a set of fixed values.
 
   Unlike many other programming languages that have a separate data type for enumerations, JavaScript does not have such a data type (at least, as of now). Instead, to simulate an enumeration in JavaScript, a plain object can be used, but with specific naming conventions. Here is a list of these naming conventions:
-
   - The name of the enumeration should start with a capital letter.
 
   - The name of the enumeration should be in the singular noun.
@@ -394,7 +391,6 @@ It is in this context that the importance of naming conventions becomes clear. T
   There is a built-in [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) class in JavaScript. The main difference from a regular object is the ability to use any data type (even an object) as a key. Usually, using the native `Map` class is redundant for creating a map as a data structure. However, if you need the functionality provided by the native `Map`, you can use it to create a map data structure. In most cases, a regular object will suffice.
 
 - **Types & Interfaces**. As mentioned earlier, TypeScript has become an integral part of JavaScript development today. In general, _in most cases_, types and interfaces are interchangeable. However, since there are already enough discussions about which one to choose, in this article, we will focus specifically on naming. For types and interfaces, the following naming conventions exist:
-
   - Names of types and interfaces should be written in `PascalCase` notation.
 
   - The name should describe what the type or interface will be used for, often as straightforwardly as possible: `const user: User = getUserById(id)` / `const users: User[] = getUsers()`.

@@ -32,6 +32,16 @@ class Root extends LitElement {
 		this.#handleSceneRender = this.#renderSceneHandler.bind(this)
 	}
 
+	/** @returns {ReturnType<html>} */
+	render() {
+		return html`
+			${getInfoTemplate({
+				scene: this.#scene,
+			})}
+			${this.#handleSceneRender(this.#scene)}
+		`
+	}
+
 	/**
 	 * @param {CustomEvent<ValuesOf<typeof Scene>>} _event
 	 * @returns {void}
@@ -46,6 +56,13 @@ class Root extends LitElement {
 	 */
 	#renderSceneHandler(scene) {
 		switch (scene) {
+			case Scene.FORM: {
+				return html`
+					<cwd-screen-form
+						@changeScene=${this.#handleChangeScene}
+					></cwd-screen-form>
+				`
+			}
 			case Scene.INITIAL: {
 				return html`
 					<cwd-screen-initial
@@ -60,24 +77,7 @@ class Root extends LitElement {
 					></cwd-screen-process>
 				`
 			}
-			case Scene.FORM: {
-				return html`
-					<cwd-screen-form
-						@changeScene=${this.#handleChangeScene}
-					></cwd-screen-form>
-				`
-			}
 		}
-	}
-
-	/** @returns {ReturnType<html>} */
-	render() {
-		return html`
-			${getInfoTemplate({
-				scene: this.#scene,
-			})}
-			${this.#handleSceneRender(this.#scene)}
-		`
 	}
 }
 

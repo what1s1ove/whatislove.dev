@@ -41,7 +41,7 @@ class Database {
 			 * @returns {Promise<void>}
 			 */
 			async set(payload) {
-				return databaseSet(reference, {
+				await databaseSet(reference, {
 					...payload,
 					createdAt: new Date().toISOString(),
 				})

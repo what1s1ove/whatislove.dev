@@ -45,22 +45,6 @@ class Http {
 	}
 
 	/**
-	 * @param {{
-	 * 	contentType?: ValuesOf<typeof ContentType> | undefined
-	 * }} options
-	 * @returns {Headers}
-	 */
-	#getHeaders({ contentType }) {
-		let headers = new Headers()
-
-		if (contentType) {
-			headers.append(HttpHeader.CONTENT_TYPE, contentType)
-		}
-
-		return headers
-	}
-
-	/**
 	 * @template T
 	 * @param {string} url
 	 * @param {{
@@ -93,6 +77,22 @@ class Http {
 				 */
 				(error) => Http.throwError(error),
 			)
+	}
+
+	/**
+	 * @param {{
+	 * 	contentType?: ValuesOf<typeof ContentType> | undefined
+	 * }} options
+	 * @returns {Headers}
+	 */
+	#getHeaders({ contentType }) {
+		let headers = new Headers()
+
+		if (contentType) {
+			headers.append(HttpHeader.CONTENT_TYPE, contentType)
+		}
+
+		return headers
 	}
 }
 

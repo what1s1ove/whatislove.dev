@@ -124,8 +124,8 @@
 		inline-size: initial;
 		padding: initial;
 		background: initial;
-		transition: initial;
 		translate: initial;
+		transition: initial;
 	}
 
 	@media (--width-desktop) {

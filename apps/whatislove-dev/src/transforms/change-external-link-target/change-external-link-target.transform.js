@@ -1,3 +1,5 @@
+import { EMPTY_LENGTH_COUNT } from '@whatislove.dev/shared'
+
 let CONTENT_FLOW_BLOCK = /** @type {const} */ (`content--flow`)
 
 /**
@@ -9,7 +11,7 @@ let changeExternalLinkTarget = (window) => {
 		`.${CONTENT_FLOW_BLOCK}`,
 	)
 
-	if (contentNodes.length === 0) {
+	if (contentNodes.length === EMPTY_LENGTH_COUNT) {
 		return
 	}
 

@@ -6,10 +6,10 @@
 
 .sticker-list__item {
 	aspect-ratio: 1;
-	filter: var(--filter-sticker);
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	background-size: contain;
+	filter: var(--filter-sticker);
 
 	&[class*="--decoration"] {
 		z-index: -1;

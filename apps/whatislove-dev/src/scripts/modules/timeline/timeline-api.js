@@ -32,22 +32,6 @@ class TimelineApi {
 		this.#apiPath = ApiPath.TIMELINE
 	}
 
-	/**
-	 * @param {string} path
-	 * @returns {string}
-	 */
-	#getApiUrl(path) {
-		return `${this.#baseUrl}${this.#apiPath}${path}`
-	}
-
-	/**
-	 * @param {string} path
-	 * @returns {string}
-	 */
-	#getFileUrl(path) {
-		return `${this.#filesApiPath}${path}.json`
-	}
-
 	/** @returns {Promise<Timeline[]>} */
 	getTimelines() {
 		return this.#http.load(this.#getFileUrl(this.#apiPath), {
@@ -65,6 +49,22 @@ class TimelineApi {
 			method: HttpMethod.POST,
 			payload,
 		})
+	}
+
+	/**
+	 * @param {string} path
+	 * @returns {string}
+	 */
+	#getApiUrl(path) {
+		return `${this.#baseUrl}${this.#apiPath}${path}`
+	}
+
+	/**
+	 * @param {string} path
+	 * @returns {string}
+	 */
+	#getFileUrl(path) {
+		return `${this.#filesApiPath}${path}.json`
 	}
 }
 

@@ -1,7 +1,4 @@
-/** @type {import('@react-pdf/types').Style} */
-let Style
-
-/** @typedef {Style | Style[]} */
+/** @typedef {Required<import('@react-pdf/renderer').NodeProps>['style']} */
 let PdfStyle
 
 export { PdfStyle }

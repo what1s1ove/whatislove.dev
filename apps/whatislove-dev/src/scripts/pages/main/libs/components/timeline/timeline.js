@@ -64,6 +64,22 @@ class Timeline {
 	}
 
 	/**
+	 * @param {HTMLElement} timelineNode
+	 * @returns {void}
+	 */
+	init(timelineNode) {
+		this.#timelineNode = timelineNode
+
+		this.#loaderComponent.init()
+		this.#timelineFormComponent.init()
+		this.#timelineListComponent.init()
+
+		this.#initListeners()
+
+		void this.#showTimelineHandler()
+	}
+
+	/**
 	 * @param {TimelineFilter} formValues
 	 * @returns {void}
 	 */
@@ -110,22 +126,6 @@ class Timeline {
 
 			document.removeEventListener(`scroll`, this.#handleTimelineShow)
 		}
-	}
-
-	/**
-	 * @param {HTMLElement} timelineNode
-	 * @returns {void}
-	 */
-	init(timelineNode) {
-		this.#timelineNode = timelineNode
-
-		this.#loaderComponent.init()
-		this.#timelineFormComponent.init()
-		this.#timelineListComponent.init()
-
-		this.#initListeners()
-
-		void this.#showTimelineHandler()
 	}
 }
 

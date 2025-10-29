@@ -67,6 +67,25 @@ class EasterEgg {
 			this.#clickSettingButtonHandler.bind(this)
 	}
 
+	/**
+	 * @param {HTMLElement} easterEggNode
+	 * @returns {void}
+	 */
+	init(easterEggNode) {
+		this.#easterEggNode = easterEggNode
+
+		this.#easterEggButtonWrapperNode = /** @type {HTMLButtonElement} */ (
+			this.#easterEggNode.querySelector(`.not-easter-egg__button-wrapper`)
+		)
+		this.#easterEggButtonNode = /** @type {HTMLButtonElement} */ (
+			this.#easterEggNode.querySelector(`.not-easter-egg__button`)
+		)
+
+		this.#setRandomPosition()
+
+		this.#initListeners()
+	}
+
 	/** @returns {void} */
 	#clickEasterEggClickHandler() {
 		let easterEggButtonWrapperNode = /** @type {HTMLElement} */ (
@@ -183,25 +202,6 @@ class EasterEgg {
 
 		easterEggButtonWrapperNode.style.insetBlockStart = `${y.toString()}px`
 		easterEggButtonWrapperNode.style.insetInlineStart = `${x.toString()}px`
-	}
-
-	/**
-	 * @param {HTMLElement} easterEggNode
-	 * @returns {void}
-	 */
-	init(easterEggNode) {
-		this.#easterEggNode = easterEggNode
-
-		this.#easterEggButtonWrapperNode = /** @type {HTMLButtonElement} */ (
-			this.#easterEggNode.querySelector(`.not-easter-egg__button-wrapper`)
-		)
-		this.#easterEggButtonNode = /** @type {HTMLButtonElement} */ (
-			this.#easterEggNode.querySelector(`.not-easter-egg__button`)
-		)
-
-		this.#setRandomPosition()
-
-		this.#initListeners()
 	}
 }
 

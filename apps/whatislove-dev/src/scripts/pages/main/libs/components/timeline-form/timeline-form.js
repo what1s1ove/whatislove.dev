@@ -32,6 +32,18 @@ class TimelineForm {
 		this.#handleSubmit = this.#submitHandler.bind(this)
 	}
 
+	/**
+	 * @param {HTMLFormElement} timelineFormNode
+	 * @returns {void}
+	 */
+	init(timelineFormNode) {
+		this.#timelineFormNode = timelineFormNode
+
+		this.#initSelects()
+
+		this.#initListeners()
+	}
+
 	/** @returns {void} */
 	#initListeners() {
 		let timelineFormNode = /** @type {HTMLFormElement} */ (
@@ -72,18 +84,6 @@ class TimelineForm {
 		await this.#timelineApi.saveTimeline(getTransformedTimeline(formValues))
 
 		timelineFormNode.reset()
-	}
-
-	/**
-	 * @param {HTMLFormElement} timelineFormNode
-	 * @returns {void}
-	 */
-	init(timelineFormNode) {
-		this.#timelineFormNode = timelineFormNode
-
-		this.#initSelects()
-
-		this.#initListeners()
 	}
 }
 

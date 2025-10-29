@@ -14,8 +14,8 @@
 	h2,
 	h3 {
 		margin: 0;
-		scroll-margin-block: 50px 0;
 		font-weight: 600;
+		scroll-margin-block: 50px 0;
 	}
 
 	h2 {
@@ -122,9 +122,9 @@
 		border-radius: 5px;
 
 		&:focus-within {
-			border-radius: var(--radius-focus);
 			outline: var(--outline-focus);
 			outline-offset: var(--offset-focus);
+			border-radius: var(--radius-focus);
 		}
 
 		@media (--width-tablet) {

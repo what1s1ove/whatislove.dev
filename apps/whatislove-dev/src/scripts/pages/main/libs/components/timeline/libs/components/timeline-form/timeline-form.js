@@ -4,6 +4,11 @@ import { TimelineFilter } from '~/modules/timeline/timeline.js'
 import { DEBOUNCE_DELAY } from './libs/constants/constants.js'
 
 class TimelineForm {
+	/** @returns {TimelineFilter} */
+	get formValues() {
+		return getFormPayload(/** @type {HTMLFormElement} */ (this.#formNode))
+	}
+
 	/** @type {HTMLFormElement | undefined} */
 	#formNode
 
@@ -27,6 +32,15 @@ class TimelineForm {
 	}
 
 	/** @returns {void} */
+	init() {
+		this.#formNode = /** @type {HTMLFormElement} */ (
+			document.querySelector(`.experience__form`)
+		)
+
+		this.#initListeners()
+	}
+
+	/** @returns {void} */
 	#changeFormHandler() {
 		this.#onChange(this.formValues)
 	}
@@ -39,20 +53,6 @@ class TimelineForm {
 			`change`,
 			initDebounce(this.#handleFormChange, DEBOUNCE_DELAY),
 		)
-	}
-
-	/** @returns {void} */
-	init() {
-		this.#formNode = /** @type {HTMLFormElement} */ (
-			document.querySelector(`.experience__form`)
-		)
-
-		this.#initListeners()
-	}
-
-	/** @returns {TimelineFilter} */
-	get formValues() {
-		return getFormPayload(/** @type {HTMLFormElement} */ (this.#formNode))
 	}
 }
 
