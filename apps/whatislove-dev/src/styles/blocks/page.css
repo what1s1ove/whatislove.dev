@@ -1,5 +1,5 @@
 .page {
-	color: hsl(var(--color-text));
+	color: oklch(var(--color-text));
 	background: var(--background-page);
 
 	@media (prefers-reduced-motion: no-preference) {
