@@ -4,7 +4,7 @@
 		inline-size: 18px;
 		block-size: 10px;
 		content: "";
-		background-color: hsl(var(--color));
+		background-color: oklch(var(--color));
 		mask-image: url("/images/icons.svg#caret-down");
 		mask-repeat: no-repeat;
 		mask-size: contain;
@@ -27,7 +27,7 @@
 	font-family: var(--font-family-highlight);
 	font-size: var(--font-size-heading-2);
 	font-weight: 600;
-	color: hsl(var(--color));
+	color: oklch(var(--color));
 	text-transform: uppercase;
 	list-style: none;
 
