@@ -51,7 +51,7 @@
 
 .play-btn,
 .fullscreen-btn {
-	--icon-color: oklch(var(--color-white-100));
+	--icon-color: var(--color-white-100);
 
 	position: absolute;
 	inline-size: 30px;
