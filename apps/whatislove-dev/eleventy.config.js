@@ -1,12 +1,6 @@
 import Image from '@11ty/eleventy-img'
 import rss from '@11ty/eleventy-plugin-rss'
 import shikiHighlight from '@shikijs/markdown-it'
-import {
-	getFormattedDate,
-	getISODate,
-	getShuffledItems,
-} from '@whatislove.dev/shared'
-import browserslist from 'browserslist'
 import ogImage from 'eleventy-plugin-og-image'
 import esbuild from 'esbuild'
 import htmlMin from 'html-minifier-terser'
@@ -16,9 +10,14 @@ import markdownIt from 'markdown-it'
 import fsSync from 'node:fs'
 import fs from 'node:fs/promises'
 import path from 'node:path'
-import svgo from 'svgo'
+import * as svgo from 'svgo'
 
 import environment from './src/data/environment.js'
+import {
+	getFormattedDate,
+	getISODate,
+	getShuffledItems,
+} from './src/scripts/libs/helpers/helpers.js'
 import {
 	addCodeSnippetScrollShadow,
 	addToc,
@@ -57,6 +56,19 @@ let Path = /** @type {const} */ ({
 let CollectionPath = /** @type {const} */ ({
 	ARTICLES: `src/articles/*/index.md`,
 	PAGES: `src/pages/!(404)/index.njk`,
+})
+
+let FontWeight = /** @type {const} */ ({
+	BOLD: 700,
+	REGULAR: 400,
+})
+
+let ImageWidth = /** @type {const} */ ({
+	LG: 1280,
+	MD: 960,
+	SM: 640,
+	XL: 1920,
+	XXL: 2560,
 })
 
 let packageJson = await import(`./package.json`, {
@@ -124,7 +136,7 @@ let init = (config) => {
 		 */
 		outputFileSlug: (ogImage) => ogImage.data.page.fileSlug,
 		satoriOptions: {
-			fonts: [400, 700].map((weight) => ({
+			fonts: [FontWeight.REGULAR, FontWeight.BOLD].map((weight) => ({
 				data: fsSync.readFileSync(
 					new URL(
 						`src/fonts/red-hat-display-${weight.toString()}.woff`,
@@ -166,7 +178,7 @@ let init = (config) => {
 		 * @returns {Promise<string>}
 		 */
 		async (url) => {
-			let extension = path.extname(url).slice(1)
+			let extension = path.extname(url).replace(`.`, ``)
 			let imgPath = path.join(config.dir.input, url)
 			let base64Image = await fs.readFile(imgPath, `base64`)
 
@@ -190,6 +202,7 @@ let init = (config) => {
 		/**
 		 * @param {string} _content
 		 * @param {string} url
+		 * @returns {Promise<void>}
 		 */
 		compile: async (_content, url) => {
 			if (url !== Path.DB) {
@@ -276,7 +289,7 @@ let init = (config) => {
 					minify: true,
 					sourceMap: environment.APP.FLAGS.IS_DEVELOPMENT,
 					targets: lightningcss.browserslistToTargets(
-						browserslist(packageJson.browserslist),
+						packageJson.default.browserslist,
 					),
 				})
 
@@ -347,7 +360,13 @@ let init = (config) => {
 				sizes: `(min-width: 740px) 700px, 100vw`,
 			},
 		},
-		widths: [640, 960, 1280, 1920, 2560],
+		widths: [
+			ImageWidth.SM,
+			ImageWidth.MD,
+			ImageWidth.LG,
+			ImageWidth.XL,
+			ImageWidth.XXL,
+		],
 	})
 
 	// svg

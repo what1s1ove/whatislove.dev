@@ -35,8 +35,8 @@
 		position: sticky;
 		inset-inline: 0;
 		display: block;
-		block-size: var(--shadows-size);
 		visibility: var(--visibility-if-has-scroll, hidden);
+		block-size: var(--shadows-size);
 		content: "";
 		animation-name: scroll-fade;
 		animation-fill-mode: both;
@@ -47,7 +47,7 @@
 		inset-block-start: 0;
 		background-image: radial-gradient(
 			farthest-side at var(--farthest-side-start),
-			oklch(var(--shadows-color)),
+			var(--shadows-color),
 			transparent
 		);
 		animation-range: var(--shadows-start) var(--shadows-end);
@@ -57,7 +57,7 @@
 		inset-block-end: 0;
 		background-image: radial-gradient(
 			farthest-side at var(--farthest-side-end),
-			oklch(var(--shadows-color)),
+			var(--shadows-color),
 			transparent
 		);
 		animation-direction: reverse;

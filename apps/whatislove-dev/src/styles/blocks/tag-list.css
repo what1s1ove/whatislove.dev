@@ -15,7 +15,7 @@
 	font-size: var(--font-size-text-small);
 	font-weight: 600;
 	line-height: 1;
-	background-color: oklch(var(--background-color) / 30%);
+	background-color: oklch(from var(--background-color) l c h / 30%);
 	background-image: var(--background-image-page);
 	border-radius: 3px;
 

@@ -2,7 +2,7 @@
 	display: grid;
 	gap: 30px;
 	margin-block: auto 0;
-	color: oklch(var(--color-gray-100));
+	color: var(--color-gray-100);
 
 	@media (--width-tablet) {
 		grid-template-columns: repeat(2, 1fr);
@@ -22,8 +22,8 @@
 .footer__link {
 	font-weight: 600;
 	color: inherit;
-	text-underline-offset: 4px;
 	white-space: nowrap;
+	text-underline-offset: 4px;
 }
 
 .footer__webring {

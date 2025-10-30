@@ -3,31 +3,22 @@ import { getShuffledItems, ProcessExitCode } from '@whatislove.dev/shared'
 import ffmpegPath from 'ffmpeg-static'
 import { spawn } from 'node:child_process'
 import { existsSync } from 'node:fs'
-import { mkdtemp, readdir, writeFile } from 'node:fs/promises'
+import { glob, mkdtemp, writeFile } from 'node:fs/promises'
 import os from 'node:os'
 import path from 'node:path'
 import process from 'node:process'
 
-let PROCESS_PIECE_FILE_EXT = /** @type {const} */ (`.mp4`)
-
-let processPiecesFolderPath = path.join(import.meta.dirname, `./process-pieces`)
-let processVideoAudioPath = path.join(
-	import.meta.dirname,
-	`../../public/sounds`,
-	`process.mp3`,
-)
-let processVideoFilePath = path.join(
-	import.meta.dirname,
-	`../../public/videos`,
-	`process.mp4`,
-)
+let ProcessPath = /** @type {const} */ ({
+	AUDIO: path.join(import.meta.dirname, `../../public/sounds/process.mp3`),
+	PIECES_FOLDER: path.join(import.meta.dirname, `./process-pieces`),
+	VIDEO: path.join(import.meta.dirname, `../../public/videos/process.mp4`),
+})
 
 /** @returns {Promise<void>} */
 let createProcessVideo = async () => {
-	let processPiecesFiles = await readdir(processPiecesFolderPath)
-	let processPiecesPaths = processPiecesFiles
-		.filter((file) => file.endsWith(PROCESS_PIECE_FILE_EXT))
-		.map((file) => `${processPiecesFolderPath}/${file}`)
+	let processPiecesPaths = await Array.fromAsync(
+		glob(`${ProcessPath.PIECES_FOLDER}/*.mp4`),
+	)
 	let shuffledProcessPiecesPaths = getShuffledItems(processPiecesPaths)
 
 	if (!ffmpegPath) {
@@ -54,7 +45,7 @@ let createProcessVideo = async () => {
 			`-i`,
 			processPiecesListPath,
 			`-i`,
-			processVideoAudioPath,
+			ProcessPath.AUDIO,
 			`-map`,
 			`0:v:0`,
 			`-map`,
@@ -66,7 +57,7 @@ let createProcessVideo = async () => {
 			`-af`,
 			`volume=0`,
 			`-shortest`,
-			processVideoFilePath,
+			ProcessPath.VIDEO,
 		],
 		{
 			stdio: `inherit`,
@@ -75,7 +66,7 @@ let createProcessVideo = async () => {
 	proc.on(`close`, (code) => process.exit(code))
 }
 
-let hasProcessFile = existsSync(processVideoFilePath)
+let hasProcessFile = existsSync(ProcessPath.VIDEO)
 
 if (hasProcessFile) {
 	process.exit(ProcessExitCode.SUCCESS)

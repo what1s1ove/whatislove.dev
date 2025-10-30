@@ -1,3 +1,4 @@
+import { EMPTY_LENGTH_COUNT } from '../../../../../scripts/libs/constants/constants.js'
 import { BlockName } from '../../enums/enums.js'
 import { TocItem } from '../../types/types.js'
 
@@ -21,7 +22,7 @@ let generateTocMarkup = (item) => {
 		`
 	}
 
-	if (item.children.length > 0) {
+	if (item.children.length > EMPTY_LENGTH_COUNT) {
 		let childrenMarkup = item.children
 			.map((it) => generateTocMarkup(it))
 			.join(``)

@@ -5,15 +5,15 @@
 @media (prefers-reduced-motion: no-preference) {
 	@keyframes fade-in {
 		from {
-			filter: blur(1px);
 			opacity: 0;
+			filter: blur(1px);
 		}
 	}
 
 	@keyframes fade-out {
 		to {
-			filter: blur(1px);
 			opacity: 0;
+			filter: blur(1px);
 		}
 	}
 

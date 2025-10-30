@@ -34,7 +34,7 @@
 		inline-size: var(--size-icon);
 		block-size: var(--size-icon);
 		content: "";
-		background-color: oklch(var(--color-icon));
+		background-color: var(--color-icon);
 		mask-repeat: no-repeat;
 		mask-position: 50%;
 		mask-size: contain;
@@ -65,6 +65,6 @@
 	--size-icon: 28px;
 
 	&::before {
-		background-color: oklch(var(--color-gray-100));
+		background-color: var(--color-gray-100);
 	}
 }

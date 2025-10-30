@@ -9,6 +9,19 @@ let ignoresConfig = {
 }
 
 /** @type {Config[]} */
-let config = [ignoresConfig, ...baseConfig]
+let overridesConfigs = [
+	{
+		files: [
+			`src/libs/helpers/get-random-number/get-random-number.helper.js`,
+			`src/libs/helpers/get-shuffled-items/get-shuffled-items.helper.js`,
+		],
+		rules: {
+			'sonarjs/pseudo-random': [`off`],
+		},
+	},
+]
+
+/** @type {Config[]} */
+let config = [ignoresConfig, ...baseConfig, ...overridesConfigs]
 
 export default config

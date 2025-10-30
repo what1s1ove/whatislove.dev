@@ -1,4 +1,5 @@
 declare module '@11ty/eleventy' {
+	import { type EleventyConfig } from '11ty.ts'
 	class UserConfig {
 		dir: {
 			input: string
@@ -40,7 +41,7 @@ declare module '@11ty/eleventy' {
 		setLibrary(name: string, newLibraryApi: unknown): void
 
 		addPlugin(
-			newPluginCb: (value: unknown) => unknown,
+			newPluginCb: (config: EleventyConfig, options: object) => unknown,
 			pluginOptions?: Record<string, unknown>,
 		): void
 
@@ -53,20 +54,6 @@ declare module '@11ty/eleventy' {
 	}
 
 	export { UserConfig }
-}
-
-declare module '@11ty/eleventy-plugin-rss' {
-	function plugin(options: unknown): void
-
-	export default plugin
-}
-
-declare module '@11ty/eleventy-img' {
-	function eleventyImageTransformPlugin(options: unknown): void
-
-	export default {
-		eleventyImageTransformPlugin,
-	}
 }
 
 declare module 'eleventy-plugin-og-image' {

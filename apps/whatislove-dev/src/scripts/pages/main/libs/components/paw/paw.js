@@ -26,6 +26,16 @@ class Paw {
 		this.#handlePawButtonClick = this.#clickPawButtonHandler.bind(this)
 	}
 
+	/**
+	 * @param {HTMLButtonElement} pawButtonNode
+	 * @returns {void}
+	 */
+	init(pawButtonNode) {
+		this.#pawButtonNode = pawButtonNode
+
+		this.#initListeners()
+	}
+
 	/** @returns {void} */
 	#clickPawButtonHandler() {
 		this.#onNotificationAdd({
@@ -39,16 +49,6 @@ class Paw {
 		let pawButtonNode = /** @type {HTMLElement} */ (this.#pawButtonNode)
 
 		pawButtonNode.addEventListener(`click`, this.#handlePawButtonClick)
-	}
-
-	/**
-	 * @param {HTMLButtonElement} pawButtonNode
-	 * @returns {void}
-	 */
-	init(pawButtonNode) {
-		this.#pawButtonNode = pawButtonNode
-
-		this.#initListeners()
 	}
 }
 

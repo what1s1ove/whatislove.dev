@@ -1,11 +1,11 @@
 export { App } from './app/app.jsx'
 export {
 	Document,
-	G as PDFG,
 	Page,
+	G as PDFG,
 	Path as PDFPath,
-	PDFViewer,
 	Svg as PDFSvg,
+	PDFViewer,
 	Text,
 	View,
 } from '@react-pdf/renderer'

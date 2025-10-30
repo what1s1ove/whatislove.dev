@@ -24,6 +24,11 @@ class Settings {
 		this.#handleControlChange = this.#changeControlHandler.bind(this)
 	}
 
+	/** @returns {void} */
+	init() {
+		this.#initControl(SettingName.THEME)
+	}
+
 	/**
 	 * @param {ValuesOf<typeof SettingName>} name
 	 * @param {string} value
@@ -54,11 +59,6 @@ class Settings {
 				document.querySelector(`.settings--${name}`)
 			),
 		)
-	}
-
-	/** @returns {void} */
-	init() {
-		this.#initControl(SettingName.THEME)
 	}
 }
 

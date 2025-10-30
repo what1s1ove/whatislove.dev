@@ -2,6 +2,13 @@ import { KeyboardKey } from '~/libs/enums/enums.js'
 import { checkIsOneOf, subscribeFocusTrap } from '~/libs/helpers/helpers.js'
 
 class Navigation {
+	/** @returns {NodeListOf<HTMLAnchorElement>} */
+	get headerLinkNodes() {
+		let headerNode = /** @type {HTMLElement} */ (this.#headerNode)
+
+		return headerNode.querySelectorAll(`.navigation__item a[href]`)
+	}
+
 	/** @type {ReturnType<typeof subscribeFocusTrap> | undefined} */
 	#focusTrap
 
@@ -31,6 +38,23 @@ class Navigation {
 		this.#handleNavButtonClick = this.#clickNavButtonHandler.bind(this)
 		this.#handleOverlayClick = this.#clickOverlayHandler.bind(this)
 		this.#handleEscapePress = this.#pressEscapeHandler.bind(this)
+	}
+
+	/**
+	 * @param {HTMLElement} headerNode
+	 * @returns {void}
+	 */
+	init(headerNode) {
+		this.#headerNode = headerNode
+
+		this.#headerMenuNode = /** @type {HTMLElement} */ (
+			headerNode.querySelector(`.header__menu`)
+		)
+		this.#headerButtonNode = /** @type {HTMLButtonElement} */ (
+			headerNode.querySelector(`.header__button`)
+		)
+
+		this.#initListeners()
 	}
 
 	/**
@@ -112,30 +136,6 @@ class Navigation {
 
 			this.#removeOverlayListeners()
 		}
-	}
-
-	/**
-	 * @param {HTMLElement} headerNode
-	 * @returns {void}
-	 */
-	init(headerNode) {
-		this.#headerNode = headerNode
-
-		this.#headerMenuNode = /** @type {HTMLElement} */ (
-			headerNode.querySelector(`.header__menu`)
-		)
-		this.#headerButtonNode = /** @type {HTMLButtonElement} */ (
-			headerNode.querySelector(`.header__button`)
-		)
-
-		this.#initListeners()
-	}
-
-	/** @returns {NodeListOf<HTMLAnchorElement>} */
-	get headerLinkNodes() {
-		let headerNode = /** @type {HTMLElement} */ (this.#headerNode)
-
-		return headerNode.querySelectorAll(`.navigation__item a[href]`)
 	}
 }
 

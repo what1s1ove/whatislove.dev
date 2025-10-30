@@ -11,8 +11,8 @@
 	position: relative;
 	padding-block: 25px;
 	padding-inline: 20px;
-	background-color: oklch(var(--color-page-background));
-	border: 1px solid oklch(var(--color-page-background-highlight));
+	background-color: var(--color-page-background);
+	border: 1px solid var(--color-page-background-highlight);
 	border-radius: 8px;
 }
 
@@ -44,9 +44,9 @@
 	}
 
 	&:focus-visible::before {
-		border-radius: var(--radius-focus);
 		outline: var(--outline-focus);
 		outline-offset: var(--offset-focus);
+		border-radius: var(--radius-focus);
 	}
 }
 
@@ -54,5 +54,5 @@
 	display: flex;
 	place-content: space-between;
 	margin: 0;
-	color: oklch(var(--color-gray-100));
+	color: var(--color-gray-100);
 }

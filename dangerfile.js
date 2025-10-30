@@ -35,7 +35,7 @@ let checkPRTitle = async () => {
 
 /** @returns {void} */
 let checkPRBranch = () => {
-	let githubDefaultBranchRegExp = new RegExp(/^[0-9]+(?:-[a-z]+)+$/)
+	let githubDefaultBranchRegExp = new RegExp(/^\d+(?:-[a-z]+)+$/)
 	let releaseBranchRegExp = new RegExp(`^${ProjectPrefix.SCOPE.RELEASE}.*`)
 	let regExps = [githubDefaultBranchRegExp, releaseBranchRegExp]
 	let isValid = regExps.some((regExp) => {

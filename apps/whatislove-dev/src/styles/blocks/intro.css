@@ -17,7 +17,7 @@
 .intro__wrapper {
 	display: grid;
 	padding: var(--padding-inline-box);
-	background-color: oklch(var(--color-intro-background));
+	background-color: var(--color-intro-background);
 	border-radius: 8px;
 
 	@media (--width-tablet) {
@@ -55,7 +55,7 @@
 	flex-direction: column;
 	place-self: end;
 	margin-block: 0 -25px;
-	color: oklch(var(--color-pink-100));
+	color: var(--color-pink-100);
 	rotate: var(--rotate);
 
 	&::before {
@@ -64,10 +64,10 @@
 		margin-block: 0 -20px;
 		content: "";
 		background-image: url("/images/lapka.svg");
-		filter: var(--filter-sticker);
 		background-position: 50% 50%;
 		background-size: contain;
 		border-radius: 50%;
+		filter: var(--filter-sticker);
 		rotate: calc(0deg - var(--rotate));
 		translate: 5px 0;
 	}
@@ -101,8 +101,8 @@
 	margin-block: 0 55px;
 	mask-image: linear-gradient(
 		to bottom,
-		oklch(var(--color-intro-image-mask) / 80%) 40%,
-		oklch(var(--color-intro-image-mask) / 0%) 95%
+		oklch(from var(--color-intro-image-mask) l c h / 80%) 40%,
+		oklch(from var(--color-intro-image-mask) l c h / 0%) 95%
 	);
 
 	@media (--width-tablet) {
@@ -114,7 +114,7 @@
 	display: block;
 	inline-size: 238px;
 	block-size: auto;
-	filter: drop-shadow(-6px 4px 0 oklch(var(--color-red-200)));
+	filter: drop-shadow(-6px 4px 0 var(--color-red-200));
 }
 
 .intro__header {
@@ -156,7 +156,7 @@
 	margin: 0;
 	font-family: var(--font-family-highlight);
 	font-size: var(--font-size-highlight);
-	color: oklch(var(--color-red-100));
+	color: var(--color-red-100);
 	text-transform: uppercase;
 
 	@media (--width-tablet) {

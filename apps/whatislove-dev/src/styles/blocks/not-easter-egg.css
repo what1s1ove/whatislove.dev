@@ -25,7 +25,7 @@
 		block-size: 100%;
 		pointer-events: none;
 		content: "";
-		background-color: oklch(var(--color-yellow-100) / 20%);
+		background-color: oklch(from var(--color-yellow-100) l c h / 20%);
 		transform: skewX(-25deg);
 		translate: 0 -50%;
 		animation: shine 5s infinite;
@@ -65,7 +65,7 @@
 
 .not-easter-egg__audio-control {
 	--inset: 15px;
-	--color-icon-active: oklch(var(--color-red-100));
+	--color-icon-active: var(--color-red-100);
 	--url-icon: url("/images/icons.svg#brocken-heart");
 	--url-icon-active: url("/images/icons.svg#heart");
 

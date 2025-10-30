@@ -2,8 +2,8 @@
 
 :host {
 	display: flex;
-	flex-direction: column;
 	flex-grow: 1;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 }
@@ -51,7 +51,7 @@
 
 .play-btn,
 .fullscreen-btn {
-	--icon-color: oklch(var(--color-white-100));
+	--icon-color: var(--color-white-100);
 
 	position: absolute;
 	inline-size: 30px;

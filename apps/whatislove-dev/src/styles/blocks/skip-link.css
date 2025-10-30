@@ -2,7 +2,7 @@
 	display: flex;
 	place-content: center;
 	margin: 0;
-	background-color: oklch(var(--color-red-100));
+	background-color: var(--color-red-100);
 }
 
 .skip-link__link {

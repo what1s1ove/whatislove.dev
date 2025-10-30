@@ -264,7 +264,6 @@ Let's start from the end. Two reasons that Ryan talked about in his [presentatio
 Why:
 
 - `package.json`:
-
   - Allow Node's `require()` to inspect package.json files for "main";
 
   - Included NPM in the Node distribution, which much made it the defacto standard;
@@ -280,7 +279,6 @@ Why:
   - If only relative files and URLs were used when importing, the path defines the version. There is no need to list dependencies.
 
 - `node_modules`:
-
   - It massively complicates the module resolution algorithm;
 
   - vendored-by-default has good intentions, but in practice just using `$NODE_PATH` wouldn't have precluded that;
@@ -326,7 +324,6 @@ This is possible but only in NodeJS. In Deno we must always explicitly specify t
 These are two more things Dahl regrets about Node:
 
 - `index.js`:
-
   - I thought it was cute because there was `index.html`;
 
   - It needlessly complicated the module loading system;
@@ -334,7 +331,6 @@ These are two more things Dahl regrets about Node:
   - It became especially unnecessary after `require` supported `package.json`.
 
 - modules without the extension:
-
   - Needlessly less explicit;
 
   - Not how browser JavaScript works. You cannot omit the `.js` in a script tag src attribute;

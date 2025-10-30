@@ -23,13 +23,13 @@
 	border-radius: 5px;
 
 	&:has(:checked) {
-		background-color: oklch(var(--color-page-background-highlight));
+		background-color: var(--color-page-background-highlight);
 	}
 
 	&:focus-within {
-		border-radius: var(--radius-focus);
 		outline: var(--outline-focus);
 		outline-offset: var(--offset-focus);
+		border-radius: var(--radius-focus);
 	}
 }
 

@@ -1,4 +1,6 @@
+import jsxA11y from 'eslint-plugin-jsx-a11y'
 import react from 'eslint-plugin-react'
+import reactHooks from 'eslint-plugin-react-hooks'
 
 import baseConfig from '../../eslint.config.js'
 
@@ -6,8 +8,6 @@ import baseConfig from '../../eslint.config.js'
 let Config
 /** @typedef {import('eslint').ESLint.Plugin} */
 let Plugin
-/** @typedef {import('eslint').Linter.RulesRecord} */
-let RulesRecord
 
 /** @type {Config} */
 let ignoresConfig = {
@@ -18,9 +18,38 @@ let ignoresConfig = {
 let reactConfig = {
 	files: [`**/*.jsx`],
 	plugins: {
-		react: /** @type {Plugin} */ (react),
+		react,
 	},
-	rules: /** @type {RulesRecord} */ (react.configs.flat[`jsx-runtime`].rules),
+	rules: {
+		...react.configs.recommended.rules,
+		...react.configs[`jsx-runtime`].rules,
+		'react/prop-types': [`off`],
+	},
+	settings: {
+		react: {
+			version: `detect`,
+		},
+	},
+}
+
+/** @type {Config} */
+let reactHooksConfig = {
+	files: [`**/*.jsx`],
+	plugins: {
+		'react-hooks': /** @type {Plugin} */ (reactHooks),
+	},
+	rules: reactHooks.configs[`recommended-latest`].rules,
+}
+
+/** @type {Config} */
+let jsxA11yConfig = {
+	files: [`**/*.jsx`],
+	plugins: {
+		'jsx-a11y': jsxA11y,
+	},
+	rules: {
+		...jsxA11y.flatConfigs.strict.rules,
+	},
 }
 
 /** @type {Config[]} */
@@ -34,6 +63,13 @@ let overridesConfigs = [
 ]
 
 /** @type {Config[]} */
-let config = [ignoresConfig, ...baseConfig, reactConfig, ...overridesConfigs]
+let config = [
+	ignoresConfig,
+	...baseConfig,
+	reactConfig,
+	reactHooksConfig,
+	jsxA11yConfig,
+	...overridesConfigs,
+]
 
 export default config

@@ -37,11 +37,11 @@
 	& circle {
 		display: block;
 		fill: transparent;
-		stroke: oklch(var(--color-icon));
+		stroke: var(--color-icon);
+		stroke-width: 6px;
+		stroke-linecap: round;
 		stroke-dasharray: 283;
 		stroke-dashoffset: 280;
-		stroke-linecap: round;
-		stroke-width: 6px;
 		transform-origin: 50% 50%;
 		animation: 800ms ease-in-out infinite both loader-circle-animation;
 	}

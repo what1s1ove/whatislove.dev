@@ -5,7 +5,7 @@
 	padding-block: 8px;
 	padding-inline: 10px;
 	margin: 0;
-	background-color: oklch(var(--color-page-background-highlight));
+	background-color: var(--color-page-background-highlight);
 	border: 0;
 	border-radius: 5px;
 }
@@ -30,7 +30,7 @@
 		inline-size: 100%;
 		block-size: 100%;
 		content: "";
-		background-color: oklch(var(--color-icon));
+		background-color: var(--color-icon);
 		mask-repeat: no-repeat;
 		mask-position: 50%;
 		mask-size: contain;
