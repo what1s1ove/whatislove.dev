@@ -4,7 +4,9 @@ description: Enhance team workflow with gradual linter config updates, ensuring 
 date: 2024-02-05
 tags:
   - CI
-changelogs: []
+changelogs:
+  - date: 2025-10-30
+    message: Added info about ESLint Bulk Suppressions
 stickersCount: 10
 layout: article.njk
 ---
@@ -153,6 +155,12 @@ We need to add two additional steps. The first one is to retrieve all new files,
 It is important to note that in this example, we apply the enhanced config only to new files that will be in the pull request. Depending on the agreements within your team, such as the average size of your pull requests, it is strongly recommended to include not only new files but also modified ones when linting with the enhanced config. This will expedite the process of achieving 100% coverage of the project with updated/new rules.
 
 Also, due to the simplicity of the example, a straightforward GitHub Actions workflow was used where all steps are performed within a single job. While this works, it is recommended to decompose the tasks performed by a GitHub Action into multiple jobs when it makes sense to divide them. This can enhance readability and maintainability of your workflows.
+
+## ESLint Bulk Suppressions
+
+To address the challenge of gradually introducing new rules, the ESLint team introduced [Bulk Suppressions](https://eslint.org/blog/2025/04/introducing-bulk-suppressions/) in [version 9.24.0](https://eslint.org/blog/2025/04/eslint-v9.24.0-released/) – a native way to add or update rules without having to fix the entire project at once. Bulk Suppressions works through the CLI: running eslint `--suppress-all --fix` records all existing violations and saves them in an `eslint-suppressions.json` file. After that, ESLint stops showing those old errors but continues to strictly check new and modified code.
+
+Unlike the enhanced config approach, where you create a separate configuration extending the base one and run it in CI only on new or changed files, Bulk Suppressions is built directly into ESLint and managed through the CLI, without additional logic in your configuration. This is the first step from the ESLint team toward native support for incremental rule adoption. Other linters have not reached this level of flexibility yet, so the _enhanced config approach_ remains the best way to introduce new rules gradually.
 
 ## Conclusion
 
