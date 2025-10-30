@@ -122,7 +122,6 @@ let sonarConfig = {
 	},
 	rules: {
 		...sonarjs.configs.recommended.rules,
-		'sonarjs/pseudo-random': [`off`],
 		'sonarjs/public-static-readonly': [`off`],
 	},
 }
