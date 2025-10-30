@@ -26,6 +26,7 @@ let overridesConfigs = [
 				},
 			],
 			'sonarjs/cognitive-complexity': [`off`],
+			'sonarjs/disabled-auto-escaping': [`off`],
 		},
 	},
 	{

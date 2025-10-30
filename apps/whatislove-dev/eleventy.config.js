@@ -77,7 +77,9 @@ let packageJson = await import(`./package.json`, {
 	},
 })
 
-let md = markdownIt()
+let md = markdownIt({
+	html: true,
+})
 
 md.use(
 	await shikiHighlight({
