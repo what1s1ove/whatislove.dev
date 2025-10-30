@@ -12,7 +12,7 @@
 	text-align: center;
 	background: var(--background-page);
 	border-radius: 5px;
-	box-shadow: 0 0 10px oklch(var(--color-red-100));
+	box-shadow: 0 0 10px var(--color-red-100);
 	opacity: 0;
 	translate: 0 100%;
 

@@ -1,14 +1,15 @@
 .button {
 	--button-background-color-opacity: 6%;
 	--button-color: var(--color-red-100);
-	--button-background-color: var(--color-red-100) /
-		var(--button-background-color-opacity);
+	--button-background-color: oklch(
+		from var(--color-red-100) l c h / var(--button-background-color-opacity)
+	);
 
 	padding: 10px;
 	font-weight: 700;
-	color: oklch(var(--button-color));
+	color: var(--button-color);
 	text-decoration: none;
-	background-color: oklch(var(--button-background-color));
+	background-color: var(--button-background-color);
 	border-radius: 5px;
 
 	@media (hover: hover) {

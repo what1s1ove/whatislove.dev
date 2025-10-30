@@ -288,7 +288,7 @@ let init = (config) => {
 					minify: true,
 					sourceMap: environment.APP.FLAGS.IS_DEVELOPMENT,
 					targets: lightningcss.browserslistToTargets(
-						packageJson.browserslist,
+						packageJson.default.browserslist,
 					),
 				})
 

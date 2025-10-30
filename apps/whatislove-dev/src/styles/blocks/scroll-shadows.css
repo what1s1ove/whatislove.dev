@@ -47,7 +47,7 @@
 		inset-block-start: 0;
 		background-image: radial-gradient(
 			farthest-side at var(--farthest-side-start),
-			oklch(var(--shadows-color)),
+			var(--shadows-color),
 			transparent
 		);
 		animation-range: var(--shadows-start) var(--shadows-end);
@@ -57,7 +57,7 @@
 		inset-block-end: 0;
 		background-image: radial-gradient(
 			farthest-side at var(--farthest-side-end),
-			oklch(var(--shadows-color)),
+			var(--shadows-color),
 			transparent
 		);
 		animation-direction: reverse;

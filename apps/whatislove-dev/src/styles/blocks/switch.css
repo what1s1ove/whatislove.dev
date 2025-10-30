@@ -1,5 +1,5 @@
 .switch {
-	--color-icon-active: oklch(var(--color-icon));
+	--color-icon-active: var(--color-icon);
 	--url-icon: url("/");
 	--url-icon-active: url("/");
 	--size-icon: 22px;
@@ -10,7 +10,7 @@
 	inline-size: 60px;
 	padding-block: 3px;
 	padding-inline: 5px;
-	background-color: oklch(var(--color-icon));
+	background-color: var(--color-icon);
 	border-radius: 20px;
 
 	&::before,
@@ -29,7 +29,7 @@
 	}
 
 	&::after {
-		background-color: oklch(var(--color-icon-inverted));
+		background-color: var(--color-icon-inverted);
 		border-radius: 50%;
 	}
 

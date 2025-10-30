@@ -22,26 +22,26 @@
 
 	/* Colors */
 
-	--color-pink-100: 0.78 0.06 28.55;
-	--color-red-100: 0.65 0.22 25.67;
-	--color-red-200: 0.57 0.19 25.36;
-	--color-white-100: 1 0 0;
-	--color-white-200: 0.99 0 0;
-	--color-blue-100: 0.67 0.14 236.72;
-	--color-blue-200: 0.57 0.14 253.31;
-	--color-yellow-100: 0.89 0.18 96.17;
-	--color-yellow-200: 0.9 0.18 101.68;
-	--color-green-100: 0.51 0.15 135.72;
-	--color-gray-100: 0.55 0 0;
-	--color-purple-100: 0.44 0.16 303.38;
-	--color-black-100: 0 0 0;
-	--color-black-200: 0.14 0 0;
+	--color-pink-100: oklch(78% 0.06 28.55deg);
+	--color-red-100: oklch(65% 0.22 25.67deg);
+	--color-red-200: oklch(57% 0.19 25.36deg);
+	--color-white-100: oklch(100% 0 0deg);
+	--color-white-200: oklch(99% 0 0deg);
+	--color-blue-100: oklch(67% 0.14 236.72deg);
+	--color-blue-200: oklch(57% 0.14 253.31deg);
+	--color-yellow-100: oklch(89% 0.18 96.17deg);
+	--color-yellow-200: oklch(90% 0.18 101.68deg);
+	--color-green-100: oklch(51% 0.15 135.72deg);
+	--color-gray-100: oklch(55% 0 0deg);
+	--color-purple-100: oklch(44% 0.16 303.38deg);
+	--color-black-100: oklch(0% 0 0deg);
+	--color-black-200: oklch(14% 0 0deg);
 
 	/* Focus */
 
 	--radius-focus: 2px;
 	--offset-focus: 2px;
-	--outline-focus: 2px solid oklch(var(--color-red-100));
+	--outline-focus: 2px solid var(--color-red-100);
 
 	/* Filters */
 
@@ -49,11 +49,10 @@
 
 	/* Backgrounds */
 
-	--background-page: oklch(var(--color-page-background))
-		var(--background-image-page);
+	--background-page: var(--color-page-background) var(--background-image-page);
 	--background-image-page: url("/images/noise.png");
 
-	/* fonts */
+	/* Fonts */
 
 	--font-family-text: "Red Hat Display", sans-serif;
 	--font-family-highlight: "Saira Extra Condensed", sans-serif;
@@ -69,27 +68,27 @@
 		--font-family-text: "Red Hat Display Variable", sans-serif;
 	}
 
-	/* theme */
+	/* Theme */
 
 	--color-page-background: light-dark(
 		var(--color-white-200),
 		var(--color-black-200)
 	);
 	--color-page-background-highlight: light-dark(
-		var(--color-black-100) / 5%,
-		var(--color-white-100) / 10%
+		oklch(from var(--color-black-100) l c h / 5%),
+		oklch(from var(--color-white-100) l c h / 10%)
 	);
 	--color-page-background-code: light-dark(
-		var(--color-black-100) / 2%,
-		var(--color-white-100) / 10%
+		oklch(from var(--color-black-100) l c h / 2%),
+		oklch(from var(--color-white-100) l c h / 10%)
 	);
 	--color-scroll-shadow: light-dark(
 		var(--color-black-100),
 		var(--color-white-100)
 	);
 	--color-intro-background: light-dark(
-		var(--color-white-100) / 60%,
-		var(--color-black-100) / 40%
+		oklch(from var(--color-white-100) l c h / 60%),
+		oklch(from var(--color-black-100) l c h / 40%)
 	);
 	--color-intro-image-mask: light-dark(
 		var(--color-white-100),
@@ -105,12 +104,12 @@
 		var(--color-black-200)
 	);
 	--color-sticker: light-dark(
-		var(--color-black-100) / 10%,
+		oklch(from var(--color-black-100) l c h / 10%),
 		var(--color-white-100)
 	);
 	--color-text: light-dark(var(--color-black-200), var(--color-white-100));
 
-	/* code highlight theme */
+	/* Code highlight */
 
 	.shiki,
 	.shiki span {

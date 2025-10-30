@@ -23,7 +23,7 @@
 	border-radius: 5px;
 
 	&:has(:checked) {
-		background-color: oklch(var(--color-page-background-highlight));
+		background-color: var(--color-page-background-highlight);
 	}
 
 	&:focus-within {

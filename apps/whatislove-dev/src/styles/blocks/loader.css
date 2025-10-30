@@ -37,7 +37,7 @@
 	& circle {
 		display: block;
 		fill: transparent;
-		stroke: oklch(var(--color-icon));
+		stroke: var(--color-icon);
 		stroke-width: 6px;
 		stroke-linecap: round;
 		stroke-dasharray: 283;
