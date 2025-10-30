@@ -1,11 +1,6 @@
 import Image from '@11ty/eleventy-img'
 import rss from '@11ty/eleventy-plugin-rss'
 import shikiHighlight from '@shikijs/markdown-it'
-import {
-	getFormattedDate,
-	getISODate,
-	getShuffledItems,
-} from '@whatislove.dev/shared'
 import ogImage from 'eleventy-plugin-og-image'
 import esbuild from 'esbuild'
 import htmlMin from 'html-minifier-terser'
@@ -18,6 +13,11 @@ import path from 'node:path'
 import * as svgo from 'svgo'
 
 import environment from './src/data/environment.js'
+import {
+	getFormattedDate,
+	getISODate,
+	getShuffledItems,
+} from './src/scripts/libs/helpers/helpers.js'
 import {
 	addCodeSnippetScrollShadow,
 	addToc,

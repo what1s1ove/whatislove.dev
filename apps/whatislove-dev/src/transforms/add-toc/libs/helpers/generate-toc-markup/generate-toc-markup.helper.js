@@ -1,5 +1,4 @@
-import { EMPTY_LENGTH_COUNT } from '@whatislove.dev/shared'
-
+import { EMPTY_LENGTH_COUNT } from '../../../../../scripts/libs/constants/constants.js'
 import { BlockName } from '../../enums/enums.js'
 import { TocItem } from '../../types/types.js'
 

@@ -1,4 +1,4 @@
-import { EMPTY_LENGTH_COUNT } from '@whatislove.dev/shared'
+import { EMPTY_LENGTH_COUNT } from '../../scripts/libs/constants/constants.js'
 
 let CONTENT_FLOW_BLOCK = /** @type {const} */ (`content--flow`)
 

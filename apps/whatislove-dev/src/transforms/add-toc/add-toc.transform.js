@@ -1,6 +1,6 @@
 import slugify from '@sindresorhus/slugify'
-import { EMPTY_LENGTH_COUNT } from '@whatislove.dev/shared'
 
+import { EMPTY_LENGTH_COUNT } from '../../scripts/libs/constants/constants.js'
 import { BlockName } from './libs/enums/enums.js'
 import { generateTocMarkup, getTocItemParent } from './libs/helpers/helpers.js'
 import { TocItem } from './libs/types/types.js'

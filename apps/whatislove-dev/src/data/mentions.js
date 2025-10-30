@@ -1,10 +1,7 @@
-import {
-	EMPTY_LENGTH_COUNT,
-	retryCall,
-	takeFirst,
-} from '@whatislove.dev/shared'
 import { parseHTML } from 'linkedom'
 
+import { EMPTY_LENGTH_COUNT } from '../scripts/libs/constants/constants.js'
+import { retryCall, takeFirst } from '../scripts/libs/helpers/helpers.js'
 import environment from './environment.js'
 
 let MENTION_PARAGRAPH_COUNT = /** @type {const} */ (2)
