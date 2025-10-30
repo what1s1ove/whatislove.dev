@@ -16,7 +16,7 @@
 	"dependencies": {
 		"@whatislove.dev/shared": "*",
 		"firebase": "12.4.0",
-		"form-payload": "1.7.3",
+		"form-payload": "1.7.4",
 		"lit": "3.3.1"
 	},
 	"devDependencies": {
