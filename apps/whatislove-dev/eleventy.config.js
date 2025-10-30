@@ -76,7 +76,6 @@ let packageJson = await import(`./package.json`, {
 		type: `json`,
 	},
 })
-
 let md = markdownIt({
 	html: true,
 })
