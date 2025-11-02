@@ -1,5 +1,35 @@
 # Changelog
 
+## [1.68.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.67.0...@whatislove.dev/whatislove-dev-v1.68.0) (2025-11-02)
+
+
+### Features
+
+* **whatislove-dev:** add $100 startup book wd-720 ([#737](https://github.com/what1s1ove/whatislove.dev/issues/737)) ([d2449ab](https://github.com/what1s1ove/whatislove.dev/commit/d2449ab884a07729fd50c1254102a7f5f7b9aceb))
+* **whatislove-dev:** add benjamin franklin book wd-717 ([#732](https://github.com/what1s1ove/whatislove.dev/issues/732)) ([18b83e0](https://github.com/what1s1ove/whatislove.dev/commit/18b83e09f3732dd213349b9af7077b45b73ae4f3))
+* **whatislove-dev:** add external website webmentions fetch wd-672 ([#755](https://github.com/what1s1ove/whatislove.dev/issues/755)) ([9b51c93](https://github.com/what1s1ove/whatislove.dev/commit/9b51c93078ff6ab3054f3342627bf2e9fa046c88))
+* **whatislove-dev:** add info about eslint bulk  suppressions to update linter article wd-723 ([#765](https://github.com/what1s1ove/whatislove.dev/issues/765)) ([d458786](https://github.com/what1s1ove/whatislove.dev/commit/d4587869e67221790caeffb8ccb1f863457a1f08))
+* **whatislove-dev:** add more font styles for code snippets wd-768 ([#769](https://github.com/what1s1ove/whatislove.dev/issues/769)) ([dd8ca52](https://github.com/what1s1ove/whatislove.dev/commit/dd8ca52bb789e0cbb81511b0e56eaf0f7e542e66))
+* **whatislove-dev:** add view-transition wd-257 ([#751](https://github.com/what1s1ove/whatislove.dev/issues/751)) ([9004e89](https://github.com/what1s1ove/whatislove.dev/commit/9004e89766f7f4580368bbaeec069564de5555be))
+* **whatislove-dev:** add white book wd-726 ([#740](https://github.com/what1s1ove/whatislove.dev/issues/740)) ([d0f2401](https://github.com/what1s1ove/whatislove.dev/commit/d0f2401b367b1d13b5bdb6c345a3937d4185e20d))
+* **whatislove-dev:** replace dotenv package with node native env reader wd-686 ([#739](https://github.com/what1s1ove/whatislove.dev/issues/739)) ([58b25e5](https://github.com/what1s1ove/whatislove.dev/commit/58b25e5821938e62ab2c67ecae285ed9469a5b82))
+* **whatislove-dev:** replace fs readfile with import attrs wd-281 ([#738](https://github.com/what1s1ove/whatislove.dev/issues/738)) ([9529405](https://github.com/what1s1ove/whatislove.dev/commit/9529405d9e1a8eb93ae253c360ccb8477866fa82))
+* **whatislove-dev:** replace js code with css starting-style wd-670 ([#750](https://github.com/what1s1ove/whatislove.dev/issues/750)) ([0310ffe](https://github.com/what1s1ove/whatislove.dev/commit/0310ffe7f1cd8810bb6e48c9e9d71401dc637e94))
+* **whatislove-dev:** rewrite image generation wd-721 ([#741](https://github.com/what1s1ove/whatislove.dev/issues/741)) ([5322b6d](https://github.com/what1s1ove/whatislove.dev/commit/5322b6df9761691f32e1bfb95ae8697b2103c1dd))
+* **whatislove-dev:** rewrite scroll shadow using animation-timeline wd-492 ([#752](https://github.com/what1s1ove/whatislove.dev/issues/752)) ([7a1060f](https://github.com/what1s1ove/whatislove.dev/commit/7a1060f3be59fb2a9cb4186ccb3fc219f5a1739f))
+* **whatislove-dev:** update cv with latest changes wd-756 ([#767](https://github.com/what1s1ove/whatislove.dev/issues/767)) ([da557b2](https://github.com/what1s1ove/whatislove.dev/commit/da557b272f822abc1f39ca23e46032e399a891f9))
+* **whatislove-dev:** use calmer careers animation wd-671 ([#761](https://github.com/what1s1ove/whatislove.dev/issues/761)) ([d88bd38](https://github.com/what1s1ove/whatislove.dev/commit/d88bd38d3cea7e26dc4f0292f201b6dde23652a2))
+* **whatislove-dev:** use details-content for details content styling wd-564 ([#742](https://github.com/what1s1ove/whatislove.dev/issues/742)) ([88798ec](https://github.com/what1s1ove/whatislove.dev/commit/88798ec935cc1b3c3489d041e6160c980d188b75))
+* **whatislove-dev:** use official css color wd-718 ([#734](https://github.com/what1s1ove/whatislove.dev/issues/734)) ([19e1819](https://github.com/what1s1ove/whatislove.dev/commit/19e181958654a87109ff5a2c3a06fa786837dd02))
+* **workspace:** restriction to use only oklch for colors wd-612 ([#763](https://github.com/what1s1ove/whatislove.dev/issues/763)) ([a8db9e6](https://github.com/what1s1ove/whatislove.dev/commit/a8db9e6b0c270e6fd7e18b0ec5e6c9e5fc439f47))
+* **workspace:** update engine & dependencies wd-757 ([#764](https://github.com/what1s1ove/whatislove.dev/issues/764)) ([dc15b5b](https://github.com/what1s1ove/whatislove.dev/commit/dc15b5bb7c404f8b0df777e67b5d2f80ce3fded2))
+
+
+### Bug Fixes
+
+* **whatislove-dev:** edit header layering on different screens wd-758 ([#759](https://github.com/what1s1ove/whatislove.dev/issues/759)) ([792ba48](https://github.com/what1s1ove/whatislove.dev/commit/792ba48ddb5aa491b78eb86b7cdd95c06dee0037))
+* **whatislove-dev:** fix oklch color migration issues wd-770 ([#771](https://github.com/what1s1ove/whatislove.dev/issues/771)) ([e52d340](https://github.com/what1s1ove/whatislove.dev/commit/e52d3404004daf557993e737367d029c893604e4))
+
 ## [1.67.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.66.0...@whatislove.dev/whatislove-dev-v1.67.0) (2024-10-07)
 
 
