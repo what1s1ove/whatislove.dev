@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.14.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/careers-whatislove-dev-v1.13.0...@whatislove.dev/careers-whatislove-dev-v1.14.0) (2025-11-02)
+
+
+### Features
+
+* **careers-whatislove-dev:** use native ffmpeg for video generation wd-361 ([#760](https://github.com/what1s1ove/whatislove.dev/issues/760)) ([0943f5e](https://github.com/what1s1ove/whatislove.dev/commit/0943f5ec90e01c25358858745395bfcba3bdd321))
+* **workspace:** restriction to use only oklch for colors wd-612 ([#763](https://github.com/what1s1ove/whatislove.dev/issues/763)) ([a8db9e6](https://github.com/what1s1ove/whatislove.dev/commit/a8db9e6b0c270e6fd7e18b0ec5e6c9e5fc439f47))
+* **workspace:** update engine & dependencies wd-757 ([#764](https://github.com/what1s1ove/whatislove.dev/issues/764)) ([dc15b5b](https://github.com/what1s1ove/whatislove.dev/commit/dc15b5bb7c404f8b0df777e67b5d2f80ce3fded2))
+* **workspace:** update vite & remove useless plugins wd-358 ([#748](https://github.com/what1s1ove/whatislove.dev/issues/748)) ([bf2f062](https://github.com/what1s1ove/whatislove.dev/commit/bf2f062e56b5076c6744ba3b437a7ee8d323841a))
+
 ## [1.13.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/careers-whatislove-dev-v1.12.0...@whatislove.dev/careers-whatislove-dev-v1.13.0) (2024-08-12)
 
 

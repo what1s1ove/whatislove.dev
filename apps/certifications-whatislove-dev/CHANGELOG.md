@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.11.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/certifications-whatislove-dev-v1.10.0...@whatislove.dev/certifications-whatislove-dev-v1.11.0) (2025-11-02)
+
+
+### Features
+
+* **workspace:** update engine & dependencies wd-757 ([#764](https://github.com/what1s1ove/whatislove.dev/issues/764)) ([dc15b5b](https://github.com/what1s1ove/whatislove.dev/commit/dc15b5bb7c404f8b0df777e67b5d2f80ce3fded2))
+* **workspace:** update vite & remove useless plugins wd-358 ([#748](https://github.com/what1s1ove/whatislove.dev/issues/748)) ([bf2f062](https://github.com/what1s1ove/whatislove.dev/commit/bf2f062e56b5076c6744ba3b437a7ee8d323841a))
+
 ## [1.10.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/certifications-whatislove-dev-v1.9.0...@whatislove.dev/certifications-whatislove-dev-v1.10.0) (2024-07-28)
 
 
