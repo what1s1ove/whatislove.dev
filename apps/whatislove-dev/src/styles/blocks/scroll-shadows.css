@@ -19,12 +19,12 @@
 	--shadows-size: 20px;
 	--shadows-start: 16px;
 	--shadows-end: 32px;
-	--shadows-color: var(--color-scroll-shadow) / 20%;
+	--shadows-color: oklch(from var(--color-scroll-shadow) l c h / 20%);
 	--farthest-side-start: 50% 0;
 	--farthest-side-end: 50% 100%;
 
 	scroll-timeline: --scroll-timeline y;
-	animation: scroll-detect;
+	animation-name: scroll-detect;
 	animation-timeline: --scroll-timeline;
 	animation-fill-mode: none;
 
