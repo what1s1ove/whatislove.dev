@@ -78,15 +78,24 @@ let packageJson = await import(`./package.json`, {
 })
 let md = markdownIt({
 	html: true,
-})
-
-md.use(
+}).use(
 	await shikiHighlight({
 		defaultColor: false,
 		themes: {
 			dark: `github-dark`,
 			light: `github-light`,
 		},
+		transformers: [
+			{
+				/**
+				 * @param {{ properties: Record<string, unknown> }} node
+				 * @returns {void}
+				 */
+				pre(node) {
+					Reflect.deleteProperty(node.properties, `tabindex`)
+				},
+			},
+		],
 	}),
 )
 

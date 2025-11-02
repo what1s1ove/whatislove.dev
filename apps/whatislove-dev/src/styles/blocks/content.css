@@ -94,7 +94,9 @@
 		padding-block: 2px;
 		padding-inline: 6px;
 		font-family: var(--font-family-code);
+		hyphens: none;
 		background-color: var(--color-page-background-code);
+		box-decoration-break: clone;
 		border-radius: 4px;
 	}
 
