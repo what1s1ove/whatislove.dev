@@ -95,14 +95,13 @@ class ScreenForm extends LitElement {
 		set(getFormPayload(formNode))
 			.then(() => {
 				notify.success(`See u.`)
+				formNode.reset()
 			})
 			.catch(() => {
 				notify.error(
 					`Failed to submit your form! Reach me another way.`,
 				)
 			})
-
-		formNode.reset()
 	}
 }
 
