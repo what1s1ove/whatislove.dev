@@ -38,6 +38,10 @@
 	font-weight: 600;
 	line-height: 1.25;
 	text-align: center;
+
+	@media (--width-tablet) {
+		line-height: 1.5;
+	}
 }
 
 .article__item-dates {
