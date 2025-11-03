@@ -36,7 +36,12 @@
 	margin: 0;
 	font-size: var(--font-size-heading-1);
 	font-weight: 600;
+	line-height: 1.25;
 	text-align: center;
+
+	@media (--width-tablet) {
+		line-height: 1.5;
+	}
 }
 
 .article__item-dates {

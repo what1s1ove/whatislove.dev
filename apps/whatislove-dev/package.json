@@ -45,7 +45,6 @@
 		"w3c-html-validator": "2.0.0"
 	},
 	"browserslist": [
-		"last 2 version",
-		"not dead"
+		"baseline widely available"
 	]
 }
