@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/careers-whatislove-dev-v1.14.0...@whatislove.dev/careers-whatislove-dev-v1.14.1) (2025-11-03)
+
+
+### Bug Fixes
+
+* **careers-whatislove-dev:** form should reset only after alert confirmation wd-772 ([#773](https://github.com/what1s1ove/whatislove.dev/issues/773)) ([02a0e95](https://github.com/what1s1ove/whatislove.dev/commit/02a0e95973839ca8454118f039e7de727fead186))
+
 ## [1.14.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/careers-whatislove-dev-v1.13.0...@whatislove.dev/careers-whatislove-dev-v1.14.0) (2025-11-02)
 
 

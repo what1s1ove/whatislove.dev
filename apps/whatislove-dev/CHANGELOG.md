@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.68.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.68.0...@whatislove.dev/whatislove-dev-v1.68.1) (2025-11-03)
+
+
+### Bug Fixes
+
+* **whatislove-dev:** adjust font styles for content wd-774 ([#775](https://github.com/what1s1ove/whatislove.dev/issues/775)) ([063cad0](https://github.com/what1s1ove/whatislove.dev/commit/063cad0ef7be8f5c3129bcf1f538cf1403c3ba91))
+
 ## [1.68.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.67.0...@whatislove.dev/whatislove-dev-v1.68.0) (2025-11-02)
 
 
