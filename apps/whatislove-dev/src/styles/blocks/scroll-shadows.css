@@ -70,7 +70,7 @@
 		--farthest-side-end: 100% 50%;
 
 		display: grid;
-		grid-template: auto / var(--shadows-size) 1fr var(--shadows-size);
+		grid-template-columns: var(--shadows-size) 1fr var(--shadows-size);
 		scroll-timeline: --scroll-timeline x;
 
 		&::before,

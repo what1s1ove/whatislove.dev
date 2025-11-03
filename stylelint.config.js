@@ -13,6 +13,12 @@ let config = {
 			`/^ok?lab$/`,
 		],
 		'liberty/use-logical-spec': `always`,
+		'property-no-vendor-prefix': [
+			true,
+			{
+				ignoreProperties: [`text-size-adjust`],
+			},
+		],
 		'selector-class-pattern': `^([a-z]*)((_|-|__|--)[a-z]+)*$`,
 	},
 }
