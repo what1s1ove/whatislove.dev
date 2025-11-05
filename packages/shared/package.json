@@ -4,6 +4,7 @@
 	"private": true,
 	"type": "module",
 	"main": "src/index.js",
+	"types": "src/index.js",
 	"scripts": {
 		"ci:lint:js": "eslint \"./**/*\"",
 		"ci:lint:type": "tsc --noEmit",
