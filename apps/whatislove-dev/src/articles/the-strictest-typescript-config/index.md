@@ -66,7 +66,7 @@ user.hasFriends = undefined // ✅
 // exactOptionalPropertyTypes: true
 
 user.hasFriends = true // ✅
-user.hasFriends = undefined // ❌
+user.hasFriends = undefined // ❌ Error: Type 'undefined' is not assignable to type 'boolean' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the type of the target.
 ```
 
 ## `noPropertyAccessFromIndexSignature`
@@ -97,8 +97,8 @@ settings.wat // ✅
 // noPropertyAccessFromIndexSignature: true
 
 settings.mode // ✅
-settings.kind // ❌
-settings.wat // ❌
+settings.kind // ❌ Error: Property 'kind' comes from an index signature, so it must be accessed with ['kind'].
+settings.wat // ❌ Error: Property 'wat' comes from an index signature, so it must be accessed with ['wat'].
 settings['kind'] // ✅, but it's better to avoid index signatures and describe all type keys explicitly
 settings['wat'] // ✅
 ```
