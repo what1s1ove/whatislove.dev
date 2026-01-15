@@ -27,11 +27,11 @@
 		"ci:prepare": "simple-git-hooks"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "20.1.0",
+		"@commitlint/cli": "20.3.1",
 		"@commitlint/config-conventional": "20.0.0",
 		"@commitlint/lint": "20.0.0",
 		"@commitlint/load": "20.1.0",
-		"@commitlint/types": "20.0.0",
+		"@commitlint/types": "20.3.1",
 		"@eslint/js": "9.38.0",
 		"@ls-lint/ls-lint": "2.3.1",
 		"@typescript-eslint/eslint-plugin": "8.46.2",
