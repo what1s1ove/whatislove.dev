@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.69.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.68.1...@whatislove.dev/whatislove-dev-v1.69.0) (2026-01-15)
+
+
+### Features
+
+* **whatislove-dev:** add error output to strictest ts config article wd-785 ([#786](https://github.com/what1s1ove/whatislove.dev/issues/786)) ([96cdf4c](https://github.com/what1s1ove/whatislove.dev/commit/96cdf4c5aca4ce9f12adde5780ae558c703d23fc))
+* **whatislove-dev:** update cv with latest changes wd-780 ([#781](https://github.com/what1s1ove/whatislove.dev/issues/781)) ([6dde2bd](https://github.com/what1s1ove/whatislove.dev/commit/6dde2bd36b3c1e4d05f1b94137184095fef60a9b))
+
 ## [1.68.1](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.68.0...@whatislove.dev/whatislove-dev-v1.68.1) (2025-11-03)
 
 
