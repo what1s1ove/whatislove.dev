@@ -12,7 +12,8 @@
 	}
 
 	h2,
-	h3 {
+	h3,
+	h4 {
 		margin: 0;
 		font-weight: 600;
 		scroll-margin-block: 50px 0;
@@ -24,6 +25,10 @@
 
 	h3 {
 		font-size: var(--font-size-heading-3);
+	}
+
+	h4 {
+		font-size: var(--font-size-heading-4);
 	}
 
 	a {
