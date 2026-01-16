@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.76.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.75.0...v1.76.0) (2026-01-16)
+
+
+### Features
+
+* **whatislove-dev:** edit heading levels in js naming conventions article wd-787 ([#788](https://github.com/what1s1ove/whatislove.dev/issues/788)) ([a5c50e0](https://github.com/what1s1ove/whatislove.dev/commit/a5c50e08a754b75fd73e5d0c20d15f41a38de539))
+
 ## [1.75.0](https://github.com/what1s1ove/whatislove.dev/compare/v1.74.1...v1.75.0) (2026-01-15)
 
 
