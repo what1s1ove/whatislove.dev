@@ -2,8 +2,6 @@ import lintCommitlint from '@commitlint/lint'
 import loadCommitlintConfig from '@commitlint/load'
 import { danger, fail, schedule } from 'danger'
 
-import { Scope } from './commitlint.config.js'
-
 /** @returns {void} */
 let checkPRAssignee = () => {
 	let hasAssignee = Boolean(danger.github.pr.assignee)
@@ -36,7 +34,7 @@ let checkPRTitle = async () => {
 /** @returns {void} */
 let checkPRBranch = () => {
 	let githubDefaultBranchRegExp = new RegExp(/^\d+(?:-[a-z]+)+$/)
-	let releaseBranchRegExp = new RegExp(`^${Scope.RELEASE}.*`)
+	let releaseBranchRegExp = new RegExp(`^release.*`)
 	let regExps = [githubDefaultBranchRegExp, releaseBranchRegExp]
 	let isValid = regExps.some((regExp) => {
 		return regExp.test(danger.github.pr.head.ref)
