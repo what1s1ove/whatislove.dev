@@ -1,5 +1,6 @@
 import { RuleConfigSeverity } from '@commitlint/types'
 
+let MAX_HEADER_LENGTH = /** @type {const} */ (69)
 let ISSUE_PREFIXES = /** @type {const} */ ([`wd`, `release`])
 let DELIMITERS = /** @satisfies {string[]} */ (/** @type {const} */ ([`/`]))
 let Scope = /** @type {const} */ ({
@@ -10,7 +11,6 @@ let Scope = /** @type {const} */ ({
 	],
 	DEFAULT: `workspace`,
 	PACKAGES: [`shared`],
-	RELEASE: `release`,
 })
 
 /** @type {import('@commitlint/types').UserConfig} */
@@ -23,6 +23,11 @@ let configuration = {
 	},
 	rules: {
 		'header-case': [RuleConfigSeverity.Error, `always`, `lower-case`],
+		'header-max-length': [
+			RuleConfigSeverity.Error,
+			`always`,
+			MAX_HEADER_LENGTH,
+		],
 		'header-trim': [RuleConfigSeverity.Error, `always`],
 		'references-empty': [RuleConfigSeverity.Error, `never`],
 		'scope-delimiter-style': [
@@ -36,12 +41,7 @@ let configuration = {
 			`always`,
 			{
 				delimiters: DELIMITERS,
-				scopes: [
-					Scope.DEFAULT,
-					Scope.RELEASE,
-					...Scope.APPS,
-					...Scope.PACKAGES,
-				],
+				scopes: [Scope.DEFAULT, ...Scope.APPS, ...Scope.PACKAGES],
 			},
 		],
 	},
