@@ -39,6 +39,11 @@
 	line-height: 1.25;
 	text-align: center;
 
+	&::before {
+		font-family: var(--font-family-highlight);
+		content: "# ";
+	}
+
 	@media (--width-tablet) {
 		line-height: 1.5;
 	}
