@@ -17,18 +17,34 @@
 		margin: 0;
 		font-weight: 600;
 		scroll-margin-block: 50px 0;
+
+		&::before {
+			font-family: var(--font-family-highlight);
+		}
 	}
 
 	h2 {
 		font-size: var(--font-size-heading-2);
+
+		&::before {
+			content: "## ";
+		}
 	}
 
 	h3 {
 		font-size: var(--font-size-heading-3);
+
+		&::before {
+			content: "### ";
+		}
 	}
 
 	h4 {
 		font-size: var(--font-size-heading-4);
+
+		&::before {
+			content: "#### ";
+		}
 	}
 
 	a {
