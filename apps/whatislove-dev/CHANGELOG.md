@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.71.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.70.0...@whatislove.dev/whatislove-dev-v1.71.0) (2026-07-12)
+
+
+### Features
+
+* **whatislove-dev:** add symbol for articles headers wd-795 ([#796](https://github.com/what1s1ove/whatislove.dev/issues/796)) ([318107a](https://github.com/what1s1ove/whatislove.dev/commit/318107a78bd7b1c39d13b59e4769998b3724a7d2))
+* **whatislove-dev:** update cv with the latest chasnges wd-790 ([#793](https://github.com/what1s1ove/whatislove.dev/issues/793)) ([b9d7339](https://github.com/what1s1ove/whatislove.dev/commit/b9d73393878ed730cefafc63444f466d2b1170a3))
+
 ## [1.70.0](https://github.com/what1s1ove/whatislove.dev/compare/@whatislove.dev/whatislove-dev-v1.69.0...@whatislove.dev/whatislove-dev-v1.70.0) (2026-01-16)
 
 
